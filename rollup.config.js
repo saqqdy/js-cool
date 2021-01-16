@@ -39,12 +39,12 @@ export default [
       format: 'umd'
     },
     plugins: [
-      babel({ babelHelpers: 'bundled' }),
-      // resolve(), // so Rollup can find `ms`
+      resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
+      babel({ babelHelpers: 'inline' }),
       production && terser()
     ],
-    external: ['core-js']
+    // external: ['core-js', '@babel/runtime']
   },
 
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -55,7 +55,6 @@ export default [
   // `file` and `format` for each target)
   {
     input: 'src/index.js',
-    // external: ['ms'],
     output: [
       {
         file: pkg.main,
