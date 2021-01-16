@@ -1,5 +1,25 @@
 # js-cool
 
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![David deps][david-image]][david-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/js-cool
+[travis-image]: https://travis-ci.org/saqqdy/js-cool.svg?branch=master
+[travis-url]: https://travis-ci.org/saqqdy/js-cool
+[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
+[david-image]: https://img.shields.io/david/saqqdy/js-cool.svg?style=flat-square
+[david-url]: https://david-dm.org/saqqdy/js-cool
+[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/js-cool
+[download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
+[download-url]: https://npmjs.org/package/js-cool
+
 ### 介绍
 JS常用方法，来自于本人前端多年经验积累
 
@@ -122,6 +142,8 @@ getScrollPosition, // 获取滑动到顶部和底部 返回'top' 'bottom'，建�
 
 ### API文档
 
+## Functions
+
 <dl>
 <dt><a href="#addEvent">addEvent(element, type, handler)</a></dt>
 <dd><p>addEvent()事件委托，支持多次委托</p>
@@ -167,13 +189,6 @@ getScrollPosition, // 获取滑动到顶部和底部 返回'top' 'bottom'，建�
 <dd><p>dash2Camel
 将-间隔且全小写的Dash模式转成驼峰字符串</p>
 </dd>
-<dt><a href="#deWxJumpLink">deWxJumpLink(string)</a> ⇒ <code>String</code></dt>
-<dd><p>用=替换<em> 用&amp;替换! 解码成微信跳转链接
-name</em>exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866</p>
-</dd>
-<dt><a href="#deWxJumpLinkOld">deWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
-<dd><p>用=替换~ 用&amp;替换^ 解码成微信跳转链接</p>
-</dd>
 <dt><a href="#debounce">debounce(fn, delay, immediate)</a> ⇒ <code>function</code></dt>
 <dd><p>空闲控制 返回函数连续调用时，空闲时间必须大于或等于 delay，fn 才会执行</p>
 </dd>
@@ -192,18 +207,25 @@ name</em>exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-d
 <dt><a href="#delSession">delSession(name)</a></dt>
 <dd><p>删除sessionStorage</p>
 </dd>
-<dt><a href="#enWxJumpLink">enWxJumpLink(string)</a> ⇒ <code>String</code></dt>
-<dd><p>用<em>替换= 用!替换&amp; 转码成微信跳转链接
-name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMall-detail-goodsInfoId!params(goodsInfoId)*8866</p>
+<dt><a href="#deWxJumpLink">deWxJumpLink(string)</a> ⇒ <code>String</code></dt>
+<dd><p>用=替换* 用&amp;替换! 解码成微信跳转链接
+name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866</p>
 </dd>
-<dt><a href="#enWxJumpLinkOld">enWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
-<dd><p>用~替换= 用^替换&amp; 转码成微信跳转链接</p>
+<dt><a href="#deWxJumpLinkOld">deWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
+<dd><p>用=替换~ 用&amp;替换^ 解码成微信跳转链接</p>
 </dd>
 <dt><a href="#encodeBase64">encodeBase64(input)</a> ⇒ <code>String</code></dt>
 <dd><p>字符串、数字转base64</p>
 </dd>
 <dt><a href="#encodeUtf8">encodeUtf8(input)</a> ⇒ <code>String</code></dt>
 <dd><p>编码Utf8</p>
+</dd>
+<dt><a href="#enWxJumpLink">enWxJumpLink(string)</a> ⇒ <code>String</code></dt>
+<dd><p>用<em>替换= 用!替换&amp; 转码成微信跳转链接
+name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMall-detail-goodsInfoId!params(goodsInfoId)*8866</p>
+</dd>
+<dt><a href="#enWxJumpLinkOld">enWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
+<dd><p>用~替换= 用^替换&amp; 转码成微信跳转链接</p>
 </dd>
 <dt><a href="#formatTime">formatTime(time, fmt)</a> ⇒ <code>String</code></dt>
 <dd><p>日期格式化插件
@@ -310,6 +332,10 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#trim">trim(string, type)</a> ⇒ <code>String</code></dt>
 <dd><p>trim()根据传参来去除空格</p>
+</dd>
+<dt><a href="#upperFirst">upperFirst(string)</a> ⇒ <code>String</code></dt>
+<dd><p>upperFirst
+首字母大写</p>
 </dd>
 </dl>
 
@@ -479,31 +505,6 @@ dash2Camel
 | --- | --- | --- |
 | string | <code>String</code> | 需要转换的字符串 |
 
-<a name="deWxJumpLink"></a>
-
-## deWxJumpLink(string) ⇒ <code>String</code>
-用=替换* 用&替换! 解码成微信跳转链接
-name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
-
-**Kind**: global function  
-**Returns**: <code>String</code> - 返回解码结果  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
-
-<a name="deWxJumpLinkOld"></a>
-
-## deWxJumpLinkOld(string) ⇒ <code>String</code>
-用=替换~ 用&替换^ 解码成微信跳转链接
-
-**Kind**: global function  
-**Returns**: <code>String</code> - 返回解码结果  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
-
 <a name="debounce"></a>
 
 ## debounce(fn, delay, immediate) ⇒ <code>function</code>
@@ -575,26 +576,26 @@ base64解码
 | --- | --- | --- |
 | name | <code>String</code> | 名称 |
 
-<a name="enWxJumpLink"></a>
+<a name="deWxJumpLink"></a>
 
-## enWxJumpLink(string) ⇒ <code>String</code>
-用*替换= 用!替换& 转码成微信跳转链接
-name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866
+## deWxJumpLink(string) ⇒ <code>String</code>
+用=替换* 用&替换! 解码成微信跳转链接
+name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
 
 **Kind**: global function  
-**Returns**: <code>String</code> - 返回转码结果  
+**Returns**: <code>String</code> - 返回解码结果  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>String</code> | 传入字符串 |
 
-<a name="enWxJumpLinkOld"></a>
+<a name="deWxJumpLinkOld"></a>
 
-## enWxJumpLinkOld(string) ⇒ <code>String</code>
-用~替换= 用^替换& 转码成微信跳转链接
+## deWxJumpLinkOld(string) ⇒ <code>String</code>
+用=替换~ 用&替换^ 解码成微信跳转链接
 
 **Kind**: global function  
-**Returns**: <code>String</code> - 返回转码结果  
+**Returns**: <code>String</code> - 返回解码结果  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -623,6 +624,31 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 | Param | Type | Description |
 | --- | --- | --- |
 | input | <code>String</code> | 需要编码的字符串 |
+
+<a name="enWxJumpLink"></a>
+
+## enWxJumpLink(string) ⇒ <code>String</code>
+用*替换= 用!替换& 转码成微信跳转链接
+name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 返回转码结果  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>String</code> | 传入字符串 |
+
+<a name="enWxJumpLinkOld"></a>
+
+## enWxJumpLinkOld(string) ⇒ <code>String</code>
+用~替换= 用^替换& 转码成微信跳转链接
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 返回转码结果  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>String</code> | 传入字符串 |
 
 <a name="formatTime"></a>
 
@@ -1044,6 +1070,20 @@ trim()根据传参来去除空格
 | --- | --- | --- |
 | string | <code>String</code> | 传入字符串 |
 | type | <code>string</code> | 可选，去除空格的类型l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格 |
+
+<a name="upperFirst"></a>
+
+## upperFirst(string) ⇒ <code>String</code>
+upperFirst
+首字母大写
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 返回转换后的字符串  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>String</code> | 需要转换的字符串 |
+
 
 ### 参与贡献
 
