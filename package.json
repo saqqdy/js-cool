@@ -1,6 +1,6 @@
 {
   "name": "js-cool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一些常用的JS方法",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
