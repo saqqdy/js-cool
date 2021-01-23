@@ -107,13 +107,13 @@ formatTimeStr, // 格式化时间成：刚刚、几分钟前
 
 // 缓存、cookie、session
 setCookie, // setCookie写入cookie的方法
-setLocal, // 写localStorage
+setCache, // 写localStorage
 setSession, // 写sessionStorage
 getCookie, // 读取cookies
-getLocal, // 读取localStorage
+getCache, // 读取localStorage
 getSession, // 读取sessionStorage
 delCookie, // 删除cookie
-delLocal, // 删除localStorage
+delCache, // 删除localStorage
 delSession, // 删除sessionStorage
 
 // 编码与解码
