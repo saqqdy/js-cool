@@ -14,6 +14,8 @@
 <dd><p>camel2Dash
 将驼峰字符串转成-间隔且全小写的Dash模式</p>
 </dd>
+<dt><a href="#cleanData">cleanData(data, [Object, Array], map, nullFix, map, nullFix, [Object, Array, String, Number, Boolean])</a> ⇒ <code>object</code></dt>
+<dd></dd>
 <dt><a href="#clearAttr">clearAttr(string)</a> ⇒ <code>String</code></dt>
 <dd><p>去除HTML标签所有属性</p>
 </dd>
@@ -54,11 +56,15 @@
 <dt><a href="#decodeUtf8">decodeUtf8(input)</a> ⇒ <code>String</code></dt>
 <dd><p>解码Utf8</p>
 </dd>
+<dt><a href="#delay">delay()</a></dt>
+<dd><p>防抖节流
+return {Object} class</p>
+</dd>
+<dt><a href="#delCache">delCache(name)</a></dt>
+<dd><p>删除localStorage</p>
+</dd>
 <dt><a href="#delCookie">delCookie(name)</a></dt>
 <dd><p>删除cookie</p>
-</dd>
-<dt><a href="#delLocal">delLocal(name)</a></dt>
-<dd><p>删除localStorage</p>
 </dd>
 <dt><a href="#delSession">delSession(name)</a></dt>
 <dd><p>删除sessionStorage</p>
@@ -83,6 +89,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#enWxJumpLinkOld">enWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
 <dd><p>用~替换= 用^替换&amp; 转码成微信跳转链接</p>
 </dd>
+<dt><a href="#fixNumber">fixNumber([Number, String], number, n)</a> ⇒ <code>number</code></dt>
+<dd><p>截取小数点后几位，不足的不补0</p>
+</dd>
 <dt><a href="#formatTime">formatTime(time, fmt)</a> ⇒ <code>String</code></dt>
 <dd><p>日期格式化插件
 使用方式：formatTime(new Date(), &quot;yyyy-MM-dd&quot;)</p>
@@ -92,6 +101,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#getAppVersion">getAppVersion(appName, withosstr, userAgent)</a> ⇒ <code>Boolean</code> | <code>null</code></dt>
 <dd><p>获取APP版本号</p>
+</dd>
+<dt><a href="#getCache">getCache(name)</a> ⇒</dt>
+<dd><p>获取缓存，存入的如果是Object，取出的也是Object，不需要再转换</p>
 </dd>
 <dt><a href="#getCHSLength">getCHSLength(str)</a> ⇒ <code>Number</code></dt>
 <dd><p>获取文本长度，中文算2个字节</p>
@@ -107,9 +119,6 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#getIsAppVersionLastest">getIsAppVersionLastest(appName, compareVer, userAgent)</a> ⇒ <code>Boolean</code> | <code>null</code></dt>
 <dd><p>版本号大小对比</p>
-</dd>
-<dt><a href="#getLocal">getLocal(name)</a> ⇒ <code>String</code></dt>
-<dd><p>读取localStorage</p>
 </dd>
 <dt><a href="#getNumber">getNumber(string)</a> ⇒ <code>String</code></dt>
 <dd><p>获取字符串中的数字</p>
@@ -135,6 +144,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#getSession">getSession(name)</a> ⇒ <code>String</code></dt>
 <dd><p>读取sessionStorage</p>
 </dd>
+<dt><a href="#getType">getType(target)</a> ⇒ <code>String</code></dt>
+<dd><p>获取目标类型</p>
+</dd>
 <dt><a href="#getUrlParam">getUrlParam(url)</a> ⇒ <code>Object</code></dt>
 <dd><p>获取URL参数</p>
 </dd>
@@ -147,6 +159,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#imgChoose">imgChoose(imgurl)</a> ⇒ <code>String</code></dt>
 <dd><p>扩展图片自动适应多种分辨率@2x @3x</p>
 </dd>
+<dt><a href="#isArray">isArray(arr)</a></dt>
+<dd><p>判断是否数组</p>
+</dd>
 <dt><a href="#isDigitals">isDigitals(str)</a> ⇒ <code>Boolean</code></dt>
 <dd><p>是否为由数字组成的字符串</p>
 </dd>
@@ -156,17 +171,20 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#isExitsVariable">isExitsVariable(variableName)</a> ⇒ <code>Boolean</code></dt>
 <dd><p>是否存在指定变量</p>
 </dd>
+<dt><a href="#nextIndex">nextIndex(min, max)</a> ⇒ <code>Number</code></dt>
+<dd><p>返回下一个zIndex值</p>
+</dd>
 <dt><a href="#pattern">pattern()</a> ⇒ <code>Object</code></dt>
 <dd><p>pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username</p>
 </dd>
 <dt><a href="#removeEvent">removeEvent(element, type, handler)</a></dt>
 <dd><p>removeEvent移除由addEvent创建的事件委托</p>
 </dd>
+<dt><a href="#setCache">setCache(name, value, seconds)</a> ⇒</dt>
+<dd><p>获取缓存，存入的如果是Object，取出的也是Object，不需要再转换</p>
+</dd>
 <dt><a href="#setCookie">setCookie(name, value, seconds)</a></dt>
 <dd><p>setCookie写入cookie的方法</p>
-</dd>
-<dt><a href="#setLocal">setLocal(name, value, seconds)</a></dt>
-<dd><p>写localStorage</p>
 </dd>
 <dt><a href="#setSession">setSession(name, value, seconds)</a></dt>
 <dd><p>写sessionStorage</p>
@@ -243,6 +261,23 @@ camel2Dash
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>String</code> | 需要转换的字符串 |
+
+<a name="cleanData"></a>
+
+## cleanData(data, [Object, Array], map, nullFix, map, nullFix, [Object, Array, String, Number, Boolean]) ⇒ <code>object</code>
+**Kind**: global function  
+**Returns**: <code>object</code> - 返回清洗后的对象  
+**Description:**: 数据清洗方法  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>object</code> | 要清洗的对象，必传 |
+| [Object, Array] |  | map 需要的数据队列，可传数组或者对象 |
+| map |  |  |
+| nullFix |  |  |
+| map |  |  |
+| nullFix |  |  |
+| [Object, Array, String, Number, Boolean] |  | nullFix 选填，没有对应属性时返回的值，默认不返回该属性 |
 
 <a name="clearAttr"></a>
 
@@ -399,6 +434,24 @@ base64解码
 | --- | --- | --- |
 | input | <code>String</code> | 需要解码的字符串 |
 
+<a name="delay"></a>
+
+## delay()
+防抖节流
+return {Object} class
+
+**Kind**: global function  
+<a name="delCache"></a>
+
+## delCache(name)
+删除localStorage
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | 名称 |
+
 <a name="delCookie"></a>
 
 ## delCookie(name)
@@ -409,17 +462,6 @@ base64解码
 | Param | Type | Description |
 | --- | --- | --- |
 | name | <code>String</code> | cookie名称 |
-
-<a name="delLocal"></a>
-
-## delLocal(name)
-删除localStorage
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
 
 <a name="delSession"></a>
 
@@ -506,6 +548,20 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 | --- | --- | --- |
 | string | <code>String</code> | 传入字符串 |
 
+<a name="fixNumber"></a>
+
+## fixNumber([Number, String], number, n) ⇒ <code>number</code>
+截取小数点后几位，不足的不补0
+
+**Kind**: global function  
+**Returns**: <code>number</code> - 返回新数字  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [Number, String] |  | number 要处理的数字，必填 |
+| number |  |  |
+| n | <code>number</code> | 要保留的小数点位数，默认保留2位 |
+
 <a name="formatTime"></a>
 
 ## formatTime(time, fmt) ⇒ <code>String</code>
@@ -546,6 +602,18 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 | appName | <code>String</code> | app名称 |
 | withosstr | <code>Boolean</code> | 是否需要带上名称 |
 | userAgent | <code>String</code> | ua，可不传，默认取navigator.appVersion |
+
+<a name="getCache"></a>
+
+## getCache(name) ⇒
+获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
+
+**Kind**: global function  
+**Returns**: value 返回数据，存的如果是对象，取出的也是对象  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | 缓存名称 |
 
 <a name="getCHSLength"></a>
 
@@ -608,18 +676,6 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 | appName | <code>String</code> | app名称 |
 | compareVer | <code>String</code> | 必传 需要对比的版本号 |
 | userAgent | <code>String</code> | ua，可不传，默认取navigator.appVersion |
-
-<a name="getLocal"></a>
-
-## getLocal(name) ⇒ <code>String</code>
-读取localStorage
-
-**Kind**: global function  
-**Returns**: <code>String</code> - 返回localStorage  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
 
 <a name="getNumber"></a>
 
@@ -716,6 +772,18 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 | --- | --- | --- |
 | name | <code>String</code> | 名称 |
 
+<a name="getType"></a>
+
+## getType(target) ⇒ <code>String</code>
+获取目标类型
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 类型  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | <code>any</code> | 目标 |
+
 <a name="getUrlParam"></a>
 
 ## getUrlParam(url) ⇒ <code>Object</code>
@@ -760,6 +828,17 @@ getWindowSize获取窗口大小
 | --- | --- | --- |
 | imgurl | <code>String</code> | 图片地址 |
 
+<a name="isArray"></a>
+
+## isArray(arr)
+判断是否数组
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| arr | <code>Array</code> | 
+
 <a name="isDigitals"></a>
 
 ## isDigitals(str) ⇒ <code>Boolean</code>
@@ -796,6 +875,19 @@ getWindowSize获取窗口大小
 | --- | --- | --- |
 | variableName | <code>String</code> | 传入变量名称 |
 
+<a name="nextIndex"></a>
+
+## nextIndex(min, max) ⇒ <code>Number</code>
+返回下一个zIndex值
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - 数字  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| min | <code>number</code> | <code>5000</code> | 可选，最小值 |
+| max | <code>number</code> | <code>10000</code> | 可选，最大值 |
+
 <a name="pattern"></a>
 
 ## pattern() ⇒ <code>Object</code>
@@ -816,6 +908,20 @@ removeEvent移除由addEvent创建的事件委托
 | type | <code>String</code> | 事件类型。不需要加on |
 | handler | <code>function</code> | 回调方法 |
 
+<a name="setCache"></a>
+
+## setCache(name, value, seconds) ⇒
+获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
+
+**Kind**: global function  
+**Returns**: value 返回数据，存的如果是对象，取出的也是对象  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | 缓存名称 |
+| value |  | [String, Boolean, Number, Object] 缓存数据，可以直接传入Object |
+| seconds | <code>Number</code> | 缓存时间（秒） |
+
 <a name="setCookie"></a>
 
 ## setCookie(name, value, seconds)
@@ -828,19 +934,6 @@ setCookie写入cookie的方法
 | name | <code>String</code> | cookie名称 |
 | value | <code>\*</code> | 设置要存储的值，可以是对象或字符串 |
 | seconds | <code>Number</code> | cookie有效时间 |
-
-<a name="setLocal"></a>
-
-## setLocal(name, value, seconds)
-写localStorage
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
-| value | <code>\*</code> | 设置要存储的值，可以是对象或字符串 |
-| seconds | <code>Number</code> | 有效时间 |
 
 <a name="setSession"></a>
 

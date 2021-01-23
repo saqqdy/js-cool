@@ -18,8 +18,6 @@
     "test": "node test/test.js",
     "pretest": "npm run build",
     "docs": "jsdoc2md src/**/*.js > API.md",
-    "lib": "rm -rf src/**/tempCodeRunnerFile.js && rm -rf ./lib && mkdir -p lib && cp -rf ./src/* lib",
-    "lib1": "rm -rf src/**/tempCodeRunnerFile.js && mkdir -p lib && cp -rf ./src/* lib && rm -rf lib/**/*.js && npx babel src -d lib",
     "pub": "git add . && git commit -m $npm_package_version && git pull && git push"
   },
   "dependencies": {
