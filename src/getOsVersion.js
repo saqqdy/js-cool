@@ -8,22 +8,22 @@ import getAppVersion from './getAppVersion'
  * @return {Boolean|null} null/true/false
  */
 function getOsVersion(osName, withosstr, userAgent) {
-  userAgent = userAgent || navigator.appVersion
-  var d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS'],
-    name = osName,
-    index = d.indexOf(osName)
-  if (index > -1 && userAgent.indexOf('like Mac OS X') > -1) {
-    name = 'OS'
-  }
-  var reg = eval('/' + name + '\\s[\\d\\_]+/')
-  var isApp = userAgent.includes(name)
-  var ver = (userAgent.match(reg, 'ig') + '').replace(/\s/gi, '/').replace(/_/gi, '.')
-  if (index > -1) {
-    ver = ver.replace(/OS\//gi, osName + '/')
-  }
-  // console.log(userAgent, reg)
-  // console.log(ver)
-  return getAppVersion(osName, withosstr, ver)
+	userAgent = userAgent || navigator.appVersion
+	var d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS'],
+		name = osName,
+		index = d.indexOf(osName)
+	if (index > -1 && userAgent.indexOf('like Mac OS X') > -1) {
+		name = 'OS'
+	}
+	var reg = eval('/' + name + '\\s[\\d\\_]+/')
+	var isApp = userAgent.includes(name)
+	var ver = (userAgent.match(reg, 'ig') + '').replace(/\s/gi, '/').replace(/_/gi, '.')
+	if (index > -1) {
+		ver = ver.replace(/OS\//gi, osName + '/')
+	}
+	// console.log(userAgent, reg)
+	// console.log(ver)
+	return getAppVersion(osName, withosstr, ver)
 }
 
 export default getOsVersion

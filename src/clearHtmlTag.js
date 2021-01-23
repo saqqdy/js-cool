@@ -4,7 +4,7 @@
  * @returns {String}
  */
 const clearHtmlTag = string => {
-  return string.replace(/<[^>]+>/g, '')
+	return string.replace(/<[^>]+>/g, '')
 }
 
 export default clearHtmlTag

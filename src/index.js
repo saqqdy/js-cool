@@ -1,11 +1,3 @@
-/**
- * @Author: saqqdy
- * @Date: 2019-04-08 20:35:04
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-01-16 22:51:30
- * 正则：import [a-zA-Z0-9]{1,} from './([a-zA-Z0-9]{1,})'
- */
-
 // 全局参数
 import client from './client' // client方法返回一个浏览器判断结果对象
 import pattern from './pattern' // pattern返回一些常用的正则
@@ -52,13 +44,13 @@ import formatTimeStr from './formatTimeStr' // 格式化时间成：刚刚、几
 
 // 缓存、cookie、session
 import setCookie from './setCookie' // setCookie写入cookie的方法
-import setLocal from './setLocal' // 写localStorage
+import setCache from './setCache' // 写localStorage
 import setSession from './setSession' // 写sessionStorage
 import getCookie from './getCookie' // 读取cookies
-import getLocal from './getLocal' // 读取localStorage
+import getCache from './getCache' // 读取localStorage
 import getSession from './getSession' // 读取sessionStorage
 import delCookie from './delCookie' // 删除cookie
-import delLocal from './delLocal' // 删除localStorage
+import delCache from './delCache' // 删除localStorage
 import delSession from './delSession' // 删除sessionStorage
 
 // 编码与解码
@@ -82,72 +74,82 @@ import addEvent from './addEvent' // 事件委托，支持多次委托
 import removeEvent from './removeEvent' // removeEvent移除由addEvent创建的事件委托
 import getScrollPosition from './getScrollPosition' // 获取滑动到顶部和底部 返回'top' 'bottom'，建议使用限流
 
+// 工具类
+import nextIndex from './nextIndex' // 返回下一个zIndex值
+import fixNumber from './fixNumber' // 截取小数点后几位，不足的不补0
+import extend from './extend' // 深拷贝
+import delay from './delay' // 防抖节流
+import getType from './getType' // 获取目标类型
+import isArray from './isArray' // 判断是否数组
+import cleanData from './cleanData' // 清洗数据
+
 export {
-  client,
-  pattern,
-
-  trim,
-  clearAttr,
-  clearBr,
-  clearHtml,
-  clearHtmlExpSN,
-  clearHtmlN,
-  clearHtmlNS,
-  clearHtmlTag,
-  getNumber,
-  imgAdapt,
-  imgChoose,
-  camel2Dash,
-  dash2Camel,
-  upperFirst,
-  getRandomNum,
-  getRandomStr,
-  getRandomStrWidthSpecialChar,
-  getCHSLength,
-  cutCHSString,
-  textareaInsertText,
-  textareaMoveToEnd,
-
-  isDigitals,
-  isExitsFunction,
-  isExitsVariable,
-  getWindowSize,
-  getAppVersion,
-  getOsVersion,
-  getIsAppVersionLastest,
-  getDirParam,
-  getParameter,
-  getFileType,
-  getUrlParam,
-
-  formatTime,
-  formatTimeStr,
-
-  setCookie,
-  setLocal,
-  setSession,
-  getCookie,
-  getLocal,
-  getSession,
-  delCookie,
-  delLocal,
-  delSession,
-
-  encodeBase64,
-  encodeUtf8,
-  decodeBase64,
-  decodeUtf8,
-  enWxJumpLink,
-  enWxJumpLinkOld,
-  deWxJumpLink,
-  deWxJumpLinkOld,
-
-  debounce,
-  throttle,
-
-  stopBubble,
-  stopDefault,
-  addEvent,
-  removeEvent,
-  getScrollPosition
+	//
+	client,
+	pattern,
+	trim,
+	clearAttr,
+	clearBr,
+	clearHtml,
+	clearHtmlExpSN,
+	clearHtmlN,
+	clearHtmlNS,
+	clearHtmlTag,
+	getNumber,
+	imgAdapt,
+	imgChoose,
+	camel2Dash,
+	dash2Camel,
+	upperFirst,
+	getRandomNum,
+	getRandomStr,
+	getRandomStrWidthSpecialChar,
+	getCHSLength,
+	cutCHSString,
+	textareaInsertText,
+	textareaMoveToEnd,
+	isDigitals,
+	isExitsFunction,
+	isExitsVariable,
+	getWindowSize,
+	getAppVersion,
+	getOsVersion,
+	getIsAppVersionLastest,
+	getDirParam,
+	getParameter,
+	getFileType,
+	getUrlParam,
+	formatTime,
+	formatTimeStr,
+	setCookie,
+	setCache,
+	setSession,
+	getCookie,
+	getCache,
+	getSession,
+	delCookie,
+	delCache,
+	delSession,
+	encodeBase64,
+	encodeUtf8,
+	decodeBase64,
+	decodeUtf8,
+	enWxJumpLink,
+	enWxJumpLinkOld,
+	deWxJumpLink,
+	deWxJumpLinkOld,
+	debounce,
+	throttle,
+	stopBubble,
+	stopDefault,
+	addEvent,
+	removeEvent,
+	getScrollPosition,
+	nextIndex,
+	fixNumber,
+	delay,
+	extend,
+	getType,
+	isArray,
+	cleanData
 }

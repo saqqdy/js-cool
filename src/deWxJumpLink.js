@@ -5,15 +5,15 @@
  * @returns {String} 返回解码结果
  */
 const deWxJumpLink = string => {
-  return (
-    string
-      // .replace(/[~]{1}/g, '=')
-      .replace(/[*]{1}/g, '=')
-      // .replace(/[\^]{1}/g, '&')
-      .replace(/[!]{1}/g, '&')
-      .replace(/[\(]{1}/g, '[')
-      .replace(/[\)]{1}/g, ']')
-  )
+	return (
+		string
+			// .replace(/[~]{1}/g, '=')
+			.replace(/[*]{1}/g, '=')
+			// .replace(/[\^]{1}/g, '&')
+			.replace(/[!]{1}/g, '&')
+			.replace(/[\(]{1}/g, '[')
+			.replace(/[\)]{1}/g, ']')
+	)
 }
 
 export default deWxJumpLink

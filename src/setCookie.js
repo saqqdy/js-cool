@@ -5,17 +5,17 @@
  * @param {Number} seconds cookie有效时间
  */
 function setCookie(name, value, seconds) {
-  var e = new Date()
-  var expires = ''
-  if (seconds !== '' && typeof seconds !== 'undefined') {
-    seconds = seconds * 1000
-    expires = e.getTime() + seconds
-  } else {
-    seconds = 2592000000 //没有设定时间的默认30天
-  }
-  var obj = encodeURIComponent(JSON.stringify({ value, expires }))
-  e.setTime(e.getTime() + seconds)
-  document.cookie = name + '=' + obj + ';expires=' + e.toGMTString() + ';path=/'
+	var e = new Date()
+	var expires = ''
+	if (seconds !== '' && typeof seconds !== 'undefined') {
+		seconds = seconds * 1000
+		expires = e.getTime() + seconds
+	} else {
+		seconds = 2592000000 //没有设定时间的默认30天
+	}
+	var obj = encodeURIComponent(JSON.stringify({ value, expires }))
+	e.setTime(e.getTime() + seconds)
+	document.cookie = name + '=' + obj + ';expires=' + e.toGMTString() + ';path=/'
 }
 
 export default setCookie

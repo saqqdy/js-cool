@@ -4,7 +4,7 @@
  * @returns {String} 返回转码结果
  */
 const enWxJumpLinkOld = string => {
-  return string.replace(/[=]/gi, '~').replace(/[&]/gi, '^')
+	return string.replace(/[=]/gi, '~').replace(/[&]/gi, '^')
 }
 
 export default enWxJumpLinkOld

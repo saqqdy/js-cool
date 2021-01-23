@@ -8,7 +8,7 @@ import throttle from './throttle'
  * @return {function}实际调用函数
  */
 const debounce = (fn, delay, immediate) => {
-  return throttle(fn, delay, immediate, true)
+	return throttle(fn, delay, immediate, true)
 }
 
 export default debounce

@@ -4,7 +4,7 @@
  * @returns {String}
  */
 const clearHtmlExpSN = string => {
-  return string.replace(/<\/?[^\/?(br)][^><]*>/gi, '')
+	return string.replace(/<\/?[^\/?(br)][^><]*>/gi, '')
 }
 
 export default clearHtmlExpSN
