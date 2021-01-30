@@ -35,7 +35,7 @@ export default [
     input: 'src/index.js',
     output: {
       name: 'JSCOOL',
-      file: pkg.browser,
+      file: 'lib/index.umd.js',
       format: 'umd'
     },
     plugins: [
@@ -43,7 +43,7 @@ export default [
       commonjs(), // so Rollup can convert `ms` to an ES module
       babel({ babelHelpers: 'inline' }),
       production && terser()
-    ],
+    ]
     // external: ['core-js', '@babel/runtime']
   },
 
@@ -61,7 +61,7 @@ export default [
         format: 'cjs'
       },
       {
-        file: pkg.module,
+        file: 'lib/index.esm.js',
         format: 'es'
       }
     ],
