@@ -183,7 +183,7 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#setCache">setCache(name, value, seconds)</a> ⇒</dt>
 <dd><p>获取缓存，存入的如果是Object，取出的也是Object，不需要再转换</p>
 </dd>
-<dt><a href="#setCookie">setCookie(name, value, seconds)</a></dt>
+<dt><a href="#setCookie">setCookie(name, value, seconds, path, samesite)</a></dt>
 <dd><p>setCookie写入cookie的方法</p>
 </dd>
 <dt><a href="#setSession">setSession(name, value, seconds)</a></dt>
@@ -924,16 +924,18 @@ removeEvent移除由addEvent创建的事件委托
 
 <a name="setCookie"></a>
 
-## setCookie(name, value, seconds)
+## setCookie(name, value, seconds, path, samesite)
 setCookie写入cookie的方法
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | cookie名称 |
-| value | <code>\*</code> | 设置要存储的值，可以是对象或字符串 |
-| seconds | <code>Number</code> | cookie有效时间 |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| name | <code>String</code> |  | cookie名称 |
+| value | <code>String</code> |  | 设置要存储的值，可以是对象或字符串 |
+| seconds | <code>Number</code> | <code>86400</code> | cookie有效时间默认1天 |
+| path | <code>String</code> | <code>/</code> | 路径，默认'/' |
+| samesite | <code>Boolean</code> | <code>true</code> | SameSite，默认true |
 
 <a name="setSession"></a>
 

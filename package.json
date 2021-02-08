@@ -1,6 +1,6 @@
 {
   "name": "js-cool",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "一些常用的JS方法",
   "main": "lib/index.js",
   "files": [
@@ -22,18 +22,18 @@
     "core-js": "^3.8.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.1.0",
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.13",
+    "@rollup/plugin-babel": "^5.2.3",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
     "@saqqdy/prettier-config": "^1.0.3",
     "babel-loader": "^8.2.2",
     "eslint-config-sets": "^1.0.6",
     "jsdoc-to-markdown": "^6.0.1",
-    "rollup": "^2.36.2",
+    "rollup": "^2.38.5",
     "rollup-plugin-terser": "^7.0.2"
   },
   "repository": {
