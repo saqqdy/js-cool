@@ -107,7 +107,7 @@ module.exports = {
 
 ### 所有方法汇总
 
-```json
+```js
 {
     // 全局参数
     client, // client方法返回一个浏览器判断结果对象
