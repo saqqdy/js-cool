@@ -1,3 +1,6 @@
+# 2021.02.18 v1.0.5更新日志
+1. 新增download/searchTreeObject方法
+
 # 2021.02.08 v1.0.4更新日志
 1. 更新getCookie/setCookie方法
 

@@ -76,6 +76,18 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 <dt><a href="#deWxJumpLinkOld">deWxJumpLinkOld(string)</a> ⇒ <code>String</code></dt>
 <dd><p>用=替换~ 用&amp;替换^ 解码成微信跳转链接</p>
 </dd>
+<dt><a href="#download">download(url, filename, type)</a></dt>
+<dd><p>文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求</p>
+</dd>
+<dt><a href="#openFile">openFile(url, filename)</a></dt>
+<dd><p>新标签页下载文件</p>
+</dd>
+<dt><a href="#downloadUrlFile">downloadUrlFile(url, filename)</a></dt>
+<dd><p>下载二级制文件</p>
+</dd>
+<dt><a href="#saveFile">saveFile(data, filename)</a></dt>
+<dd><p>保存文件</p>
+</dd>
 <dt><a href="#encodeBase64">encodeBase64(input)</a> ⇒ <code>String</code></dt>
 <dd><p>字符串、数字转base64</p>
 </dd>
@@ -179,6 +191,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#removeEvent">removeEvent(element, type, handler)</a></dt>
 <dd><p>removeEvent移除由addEvent创建的事件委托</p>
+</dd>
+<dt><a href="#searchTreeObject">searchTreeObject(tree, [String, Object, Function], expression, keySet, number)</a> ⇒ <code>Array</code></dt>
+<dd><p>tree对象深度查找</p>
 </dd>
 <dt><a href="#setCache">setCache(name, value, seconds)</a> ⇒</dt>
 <dd><p>获取缓存，存入的如果是Object，取出的也是Object，不需要再转换</p>
@@ -498,6 +513,55 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>String</code> | 传入字符串 |
+
+<a name="download"></a>
+
+## download(url, filename, type)
+文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求
+
+**Kind**: global function  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| url | <code>String</code> |  | 链接 |
+| filename | <code>String</code> |  | 文件名 |
+| type | <code>String</code> | <code>download</code> | 下载类型 'href','open','download','request' |
+
+<a name="openFile"></a>
+
+## openFile(url, filename)
+新标签页下载文件
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | 链接 |
+| filename | <code>String</code> | 文件名 |
+
+<a name="downloadUrlFile"></a>
+
+## downloadUrlFile(url, filename)
+下载二级制文件
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | 链接 |
+| filename | <code>String</code> | 文件名 |
+
+<a name="saveFile"></a>
+
+## saveFile(data, filename)
+保存文件
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Object</code> | 文件数据 |
+| filename | <code>String</code> | 文件名 |
 
 <a name="encodeBase64"></a>
 
@@ -907,6 +971,35 @@ removeEvent移除由addEvent创建的事件委托
 | element | <code>Object</code> | js dom对象 |
 | type | <code>String</code> | 事件类型。不需要加on |
 | handler | <code>function</code> | 回调方法 |
+
+<a name="searchTreeObject"></a>
+
+## searchTreeObject(tree, [String, Object, Function], expression, keySet, number) ⇒ <code>Array</code>
+tree对象深度查找
+
+**Kind**: global function  
+**Returns**: <code>Array</code> - 返回查询到的数组  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tree | <code>string</code> | 树形对象 |
+| [String, Object, Function] |  | expression 必填 查询方式 |
+| expression |  |  |
+| keySet | <code>object</code> | 选填 默认的子类名称、查询name |
+| number | <code>number</code> | 选填 查找个数，不传则查询全部 |
+
+<a name="searchTreeObject..deepSearch"></a>
+
+### searchTreeObject~deepSearch([Object, Array], expression) ⇒ <code>Object</code>
+递归查找
+
+**Kind**: inner method of [<code>searchTreeObject</code>](#searchTreeObject)  
+**Returns**: <code>Object</code> - Nodes  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [Object, Array] |  | tree 对象 |
+| expression | <code>String</code> | 表达式 |
 
 <a name="setCache"></a>
 

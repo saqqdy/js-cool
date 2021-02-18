@@ -82,6 +82,8 @@ import delay from './delay' // 防抖节流
 import getType from './getType' // 获取目标类型
 import isArray from './isArray' // 判断是否数组
 import cleanData from './cleanData' // 清洗数据
+import download from './download' // 文件下载
+import searchTreeObject from './searchTreeObject' // 对象查找
 
 export {
 	//
@@ -151,5 +153,7 @@ export {
 	extend,
 	getType,
 	isArray,
-	cleanData
+	cleanData,
+	download,
+	searchTreeObject
 }
