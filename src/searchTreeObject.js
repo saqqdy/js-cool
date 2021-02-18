@@ -17,6 +17,7 @@ function searchTreeObject(tree, expression, keySet, number = null) {
 	keySet = { childName: 'child', keyName: 'name', ...keySet }
 	/**
 	 * @description 递归查找
+	 * @private
 	 * @param [Object, Array] tree 对象
 	 * @param {String} expression 表达式
 	 * @returns {Object} Nodes

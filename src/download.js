@@ -55,6 +55,7 @@ function downloadUrlFile(url, filename) {
 
 /**
  * @description 保存文件
+ * @private
  * @param {Object} data 文件数据
  * @param {String} filename 文件名
  */

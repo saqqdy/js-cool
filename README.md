@@ -204,12 +204,6 @@ searchTreeObject, // 对象查找
 <dt><a href="#addEvent">addEvent(element, type, handler)</a></dt>
 <dd><p>addEvent()事件委托，支持多次委托</p>
 </dd>
-<dt><a href="#handleEvent">handleEvent(event)</a> ⇒ <code>Boolean</code></dt>
-<dd><p>handleEvent()执行事件</p>
-</dd>
-<dt><a href="#fixEvent">fixEvent(event)</a> ⇒ <code>Object</code></dt>
-<dd><p>为IE的事件对象添加一些“缺失的”函数</p>
-</dd>
 <dt><a href="#camel2Dash">camel2Dash(string)</a> ⇒ <code>String</code></dt>
 <dd><p>camel2Dash
 将驼峰字符串转成-间隔且全小写的Dash模式</p>
@@ -278,9 +272,6 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 </dd>
 <dt><a href="#download">download(url, filename, type)</a></dt>
 <dd><p>文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求</p>
-</dd>
-<dt><a href="#saveFile">saveFile(data, filename)</a></dt>
-<dd><p>保存文件</p>
 </dd>
 <dt><a href="#encodeBase64">encodeBase64(input)</a> ⇒ <code>String</code></dt>
 <dd><p>字符串、数字转base64</p>
@@ -434,29 +425,6 @@ addEvent()事件委托，支持多次委托
 | element | <code>Object</code>   | js dom对象           |
 | type    | <code>String</code>   | 事件类型。不需要加on |
 | handler | <code>function</code> | 回调方法             |
-
-<a name="handleEvent"></a>
-
-## handleEvent(event) ⇒ <code>Boolean</code>
-handleEvent()执行事件
-
-**Kind**: global function  
-
-| Param | Type                | Description |
-| ----- | ------------------- | ----------- |
-| event | <code>String</code> | 事件类型    |
-
-<a name="fixEvent"></a>
-
-## fixEvent(event) ⇒ <code>Object</code>
-为IE的事件对象添加一些“缺失的”函数
-
-**Kind**: global function  
-**Returns**: <code>Object</code> - 返回补齐了缺失方法的的event  
-
-| Param | Type                | Description |
-| ----- | ------------------- | ----------- |
-| event | <code>String</code> | 事件类型    |
 
 <a name="camel2Dash"></a>
 
@@ -720,18 +688,6 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 | url      | <code>String</code> |                       | 链接                                        |
 | filename | <code>String</code> |                       | 文件名                                      |
 | type     | <code>String</code> | <code>download</code> | 下载类型 'href','open','download','request' |
-
-<a name="saveFile"></a>
-
-## saveFile(data, filename)
-保存文件
-
-**Kind**: global function  
-
-| Param    | Type                | Description |
-| -------- | ------------------- | ----------- |
-| data     | <code>Object</code> | 文件数据    |
-| filename | <code>String</code> | 文件名      |
 
 <a name="encodeBase64"></a>
 
@@ -1157,19 +1113,6 @@ tree对象深度查找
 | expression                 |                     |                               |
 | keySet                     | <code>object</code> | 选填 默认的子类名称、查询name |
 | number                     | <code>number</code> | 选填 查找个数，不传则查询全部 |
-
-<a name="searchTreeObject..deepSearch"></a>
-
-### searchTreeObject~deepSearch([Object, Array], expression) ⇒ <code>Object</code>
-递归查找
-
-**Kind**: inner method of [<code>searchTreeObject</code>](#searchTreeObject)  
-**Returns**: <code>Object</code> - Nodes  
-
-| Param           | Type                | Description |
-| --------------- | ------------------- | ----------- |
-| [Object, Array] |                     | tree 对象   |
-| expression      | <code>String</code> | 表达式      |
 
 <a name="setCache"></a>
 

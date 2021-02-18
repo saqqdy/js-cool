@@ -33,6 +33,7 @@ addEvent.guid = 1
 /**
  * handleEvent()执行事件
  *
+ * @private
  * @param {String} event 事件类型
  * @returns {Boolean}
  */
@@ -54,6 +55,7 @@ function handleEvent(event) {
 
 /**
  * 为IE的事件对象添加一些“缺失的”函数
+ * @private
  * @param {String} event 事件类型
  * @returns {Object} 返回补齐了缺失方法的的event
  */
