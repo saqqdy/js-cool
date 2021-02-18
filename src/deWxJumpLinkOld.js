@@ -4,7 +4,7 @@
  * @returns {String} 返回解码结果
  */
 const deWxJumpLinkOld = string => {
-	return string.replace(/[~]/gi, '=').replace(/[\^]/gi, '&')
+    return string.replace(/[~]/gi, '=').replace(/[\^]/gi, '&')
 }
 
 export default deWxJumpLinkOld

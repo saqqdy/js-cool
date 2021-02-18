@@ -48,18 +48,18 @@
  * @returns {Object} 返回参数列表
  */
 function getUrlParam(url) {
-	url = url !== '' && typeof url !== 'undefined' ? url.substr(url.indexOf('?')).split('#')[0] : location.search //获取url中"?"符后的字串
-	var search = url.substring(url.lastIndexOf('?') + 1)
-	var obj = {}
-	var reg = /([^?&=]+)=([^?&=]*)/g
-	search.replace(reg, function (rs, $1, $2) {
-		var name = decodeURIComponent($1)
-		var val = decodeURIComponent($2)
-		val = String(val)
-		obj[name] = val
-		return rs
-	})
-	return obj
+    url = url !== '' && typeof url !== 'undefined' ? url.substr(url.indexOf('?')).split('#')[0] : location.search //获取url中"?"符后的字串
+    var search = url.substring(url.lastIndexOf('?') + 1)
+    var obj = {}
+    var reg = /([^?&=]+)=([^?&=]*)/g
+    search.replace(reg, function (rs, $1, $2) {
+        var name = decodeURIComponent($1)
+        var val = decodeURIComponent($2)
+        val = String(val)
+        obj[name] = val
+        return rs
+    })
+    return obj
 }
 
 export default getUrlParam

@@ -5,13 +5,13 @@
  * @param {Number} seconds 有效时间
  */
 function setSession(name, value, seconds) {
-	var e = new Date()
-	var expires = seconds ? e.getTime() + seconds * 1000 : ''
-	var obj = {}
-	obj.value = value
-	obj.expires = expires
-	obj = JSON.stringify(obj)
-	sessionStorage.setItem(name, obj)
+    var e = new Date()
+    var expires = seconds ? e.getTime() + seconds * 1000 : ''
+    var obj = {}
+    obj.value = value
+    obj.expires = expires
+    obj = JSON.stringify(obj)
+    sessionStorage.setItem(name, obj)
 }
 
 export default setSession

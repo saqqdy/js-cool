@@ -90,18 +90,18 @@ yarn add -D babel-plugin-import
 ```js
 // babel.config.js
 module.exports = {
-	plugins: [
-		[
-			'import',
-			{
-				libraryName: 'js-cool',
-				style: false,
-				libraryDirectory: 'lib',
-				camel2DashComponentName: false
-			},
-			'js-cool'
-		]
-	]
+    plugins: [
+        [
+            'import',
+            {
+                libraryName: 'js-cool',
+                style: false,
+                libraryDirectory: 'lib',
+                camel2DashComponentName: false
+            },
+            'js-cool'
+        ]
+    ]
 }
 ```
 

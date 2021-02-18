@@ -5,10 +5,10 @@
  * @returns {String} 返回转换后的字符串
  */
 const camel2Dash = string => {
-	return string
-		.replace(/([A-Z]{1,1})/g, '-$1')
-		.replace(/^-/, '')
-		.toLocaleLowerCase()
+    return string
+        .replace(/([A-Z]{1,1})/g, '-$1')
+        .replace(/^-/, '')
+        .toLocaleLowerCase()
 }
 
 export default camel2Dash

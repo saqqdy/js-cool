@@ -4,7 +4,7 @@
  * @returns {Boolean} 返回true/false
  */
 const isDigitals = str => {
-	return /^[0-9]*$/.test(str)
+    return /^[0-9]*$/.test(str)
 }
 
 export default isDigitals

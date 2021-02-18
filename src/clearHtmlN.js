@@ -4,7 +4,7 @@
  * @returns {String}
  */
 const clearHtmlN = string => {
-	return string.replace(/<\/?.+?>|[\r\n]/g, '')
+    return string.replace(/<\/?.+?>|[\r\n]/g, '')
 }
 
 export default clearHtmlN

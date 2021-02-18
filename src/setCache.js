@@ -7,13 +7,13 @@
  * @returns value 返回数据，存的如果是对象，取出的也是对象
  */
 function setCache(name, value, seconds) {
-	let e = new Date(),
-		expires = seconds ? e.getTime() + seconds * 1000 : '',
-		o = {}
-	o.value = value
-	o.expires = expires
-	o = JSON.stringify(o)
-	localStorage.setItem(name, o)
+    let e = new Date(),
+        expires = seconds ? e.getTime() + seconds * 1000 : '',
+        o = {}
+    o.value = value
+    o.expires = expires
+    o = JSON.stringify(o)
+    localStorage.setItem(name, o)
 }
 
 export default setCache

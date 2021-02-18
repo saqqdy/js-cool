@@ -4,12 +4,12 @@
  * @returns {Boolean} 返回true/false
  */
 function isExitsFunction(funcName) {
-	try {
-		if (typeof eval(funcName) === 'function') {
-			return true
-		}
-	} catch (e) {}
-	return false
+    try {
+        if (typeof eval(funcName) === 'function') {
+            return true
+        }
+    } catch (e) {}
+    return false
 }
 
 export default isExitsFunction

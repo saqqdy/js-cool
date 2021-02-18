@@ -5,17 +5,17 @@
  * @param {String} type 下载类型 'href','open','download','request'
  */
 const download = (url, filename, type = 'download') => {
-	let name = /[^\/]+$/.exec(url)[0],
-		fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
-	if (type === 'open') {
-		window.open(url)
-	} else if (type === 'href') {
-		window.location.href = url
-	} else if (type === 'request') {
-		downloadUrlFile(url, filename || name)
-	} else {
-		openFile(url, filename || name, fileType)
-	}
+    let name = /[^\/]+$/.exec(url)[0],
+        fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
+    if (type === 'open') {
+        window.open(url)
+    } else if (type === 'href') {
+        window.location.href = url
+    } else if (type === 'request') {
+        downloadUrlFile(url, filename || name)
+    } else {
+        openFile(url, filename || name, fileType)
+    }
 }
 
 /**
@@ -25,14 +25,14 @@ const download = (url, filename, type = 'download') => {
  * @param {String} filename 文件名
  */
 function openFile(url, filename, fileType) {
-	let dom = document.createElement('a')
-	// if (['pdf', 'txt'].includes(fileType)) console.log('is pdf')
-	dom.style.display = 'none'
-	dom.download = filename
-	dom.href = url
-	document.body.appendChild(dom)
-	dom.click()
-	document.body.removeChild(dom)
+    let dom = document.createElement('a')
+    // if (['pdf', 'txt'].includes(fileType)) console.log('is pdf')
+    dom.style.display = 'none'
+    dom.download = filename
+    dom.href = url
+    document.body.appendChild(dom)
+    dom.click()
+    document.body.removeChild(dom)
 }
 
 /**
@@ -42,15 +42,15 @@ function openFile(url, filename, fileType) {
  * @param {String} filename 文件名
  */
 function downloadUrlFile(url, filename) {
-	let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
-	xhr.open('GET', url, true)
-	xhr.responseType = 'blob'
-	xhr.onload = () => {
-		if (xhr.status === 200) {
-			saveFile(xhr.response, filename)
-		}
-	}
-	xhr.send()
+    let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
+    xhr.open('GET', url, true)
+    xhr.responseType = 'blob'
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            saveFile(xhr.response, filename)
+        }
+    }
+    xhr.send()
 }
 
 /**
@@ -60,12 +60,12 @@ function downloadUrlFile(url, filename) {
  * @param {String} filename 文件名
  */
 function saveFile(data, filename) {
-	const urlObject = window.URL || window.webkitURL || window
-	const blob = new Blob([data])
-	let link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
-	link.href = urlObject.createObjectURL(blob)
-	link.download = filename
-	link.click()
+    const urlObject = window.URL || window.webkitURL || window
+    const blob = new Blob([data])
+    let link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+    link.href = urlObject.createObjectURL(blob)
+    link.download = filename
+    link.click()
 }
 
 export default download
