@@ -279,12 +279,6 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 <dt><a href="#download">download(url, filename, type)</a></dt>
 <dd><p>文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求</p>
 </dd>
-<dt><a href="#openFile">openFile(url, filename)</a></dt>
-<dd><p>新标签页下载文件</p>
-</dd>
-<dt><a href="#downloadUrlFile">downloadUrlFile(url, filename)</a></dt>
-<dd><p>下载二级制文件</p>
-</dd>
 <dt><a href="#saveFile">saveFile(data, filename)</a></dt>
 <dd><p>保存文件</p>
 </dd>
@@ -726,30 +720,6 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 | url      | <code>String</code> |                       | 链接                                        |
 | filename | <code>String</code> |                       | 文件名                                      |
 | type     | <code>String</code> | <code>download</code> | 下载类型 'href','open','download','request' |
-
-<a name="openFile"></a>
-
-## openFile(url, filename)
-新标签页下载文件
-
-**Kind**: global function  
-
-| Param    | Type                | Description |
-| -------- | ------------------- | ----------- |
-| url      | <code>String</code> | 链接        |
-| filename | <code>String</code> | 文件名      |
-
-<a name="downloadUrlFile"></a>
-
-## downloadUrlFile(url, filename)
-下载二级制文件
-
-**Kind**: global function  
-
-| Param    | Type                | Description |
-| -------- | ------------------- | ----------- |
-| url      | <code>String</code> | 链接        |
-| filename | <code>String</code> | 文件名      |
 
 <a name="saveFile"></a>
 

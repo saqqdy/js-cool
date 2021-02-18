@@ -20,6 +20,7 @@ const download = (url, filename, type = 'download') => {
 
 /**
  * @description 新标签页下载文件
+ * @private
  * @param {String} url 链接
  * @param {String} filename 文件名
  */
@@ -36,6 +37,7 @@ function openFile(url, filename, fileType) {
 
 /**
  * @description 下载二级制文件
+ * @private
  * @param {String} url 链接
  * @param {String} filename 文件名
  */

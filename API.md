@@ -79,12 +79,6 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 <dt><a href="#download">download(url, filename, type)</a></dt>
 <dd><p>文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求</p>
 </dd>
-<dt><a href="#openFile">openFile(url, filename)</a></dt>
-<dd><p>新标签页下载文件</p>
-</dd>
-<dt><a href="#downloadUrlFile">downloadUrlFile(url, filename)</a></dt>
-<dd><p>下载二级制文件</p>
-</dd>
 <dt><a href="#saveFile">saveFile(data, filename)</a></dt>
 <dd><p>保存文件</p>
 </dd>
@@ -235,11 +229,11 @@ addEvent()事件委托，支持多次委托
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| element | <code>Object</code> | js dom对象 |
-| type | <code>String</code> | 事件类型。不需要加on |
-| handler | <code>function</code> | 回调方法 |
+| Param   | Type                  | Description          |
+| ------- | --------------------- | -------------------- |
+| element | <code>Object</code>   | js dom对象           |
+| type    | <code>String</code>   | 事件类型。不需要加on |
+| handler | <code>function</code> | 回调方法             |
 
 <a name="handleEvent"></a>
 
@@ -248,9 +242,9 @@ handleEvent()执行事件
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>String</code> | 事件类型 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| event | <code>String</code> | 事件类型    |
 
 <a name="fixEvent"></a>
 
@@ -260,9 +254,9 @@ handleEvent()执行事件
 **Kind**: global function  
 **Returns**: <code>Object</code> - 返回补齐了缺失方法的的event  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>String</code> | 事件类型 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| event | <code>String</code> | 事件类型    |
 
 <a name="camel2Dash"></a>
 
@@ -273,8 +267,8 @@ camel2Dash
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回转换后的字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description      |
+| ------ | ------------------- | ---------------- |
 | string | <code>String</code> | 需要转换的字符串 |
 
 <a name="cleanData"></a>
@@ -284,15 +278,15 @@ camel2Dash
 **Returns**: <code>object</code> - 返回清洗后的对象  
 **Description:**: 数据清洗方法  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>object</code> | 要清洗的对象，必传 |
-| [Object, Array] |  | map 需要的数据队列，可传数组或者对象 |
-| map |  |  |
-| nullFix |  |  |
-| map |  |  |
-| nullFix |  |  |
-| [Object, Array, String, Number, Boolean] |  | nullFix 选填，没有对应属性时返回的值，默认不返回该属性 |
+| Param                                    | Type                | Description                                            |
+| ---------------------------------------- | ------------------- | ------------------------------------------------------ |
+| data                                     | <code>object</code> | 要清洗的对象，必传                                     |
+| [Object, Array]                          |                     | map 需要的数据队列，可传数组或者对象                   |
+| map                                      |                     |                                                        |
+| nullFix                                  |                     |                                                        |
+| map                                      |                     |                                                        |
+| nullFix                                  |                     |                                                        |
+| [Object, Array, String, Number, Boolean] |                     | nullFix 选填，没有对应属性时返回的值，默认不返回该属性 |
 
 <a name="clearAttr"></a>
 
@@ -301,9 +295,9 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| string | <code>String</code> | 传入字符串  |
 
 <a name="clearBr"></a>
 
@@ -312,8 +306,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="clearHtml"></a>
@@ -323,8 +317,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="clearHtmlExpSN"></a>
@@ -334,8 +328,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="clearHtmlN"></a>
@@ -345,8 +339,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="clearHtmlNS"></a>
@@ -356,8 +350,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="clearHtmlTag"></a>
@@ -367,8 +361,8 @@ camel2Dash
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 带html标签的字符串 |
 
 <a name="client"></a>
@@ -379,9 +373,9 @@ client方法返回一个浏览器判断结果：{ ANDROID: true, GECKO: true, GL
 **Kind**: global function  
 **Returns**: <code>Object</code> \| <code>Boolean</code> - 返回常用ua匹配表，如果传了name，那么返回是否匹配该终端true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 可选，比如传入MicroMessenger，返回是否为微信内置浏览器 |
+| Param     | Type                | Description                                              |
+| --------- | ------------------- | -------------------------------------------------------- |
+| name      | <code>String</code> | 可选，比如传入MicroMessenger，返回是否为微信内置浏览器   |
 | userAgent | <code>String</code> | 可选，传入自定义的ua，默认取浏览器的navigator.appVersion |
 
 <a name="cutCHSString"></a>
@@ -392,11 +386,11 @@ client方法返回一个浏览器判断结果：{ ANDROID: true, GECKO: true, GL
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回截取后的字符串  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| str | <code>String</code> |  | 要截取的字符串 |
-| len | <code>Number</code> |  |  |
-| hasDot | <code>Boolean</code> | <code>false</code> |  |
+| Param  | Type                 | Default            | Description    |
+| ------ | -------------------- | ------------------ | -------------- |
+| str    | <code>String</code>  |                    | 要截取的字符串 |
+| len    | <code>Number</code>  |                    |                |
+| hasDot | <code>Boolean</code> | <code>false</code> |                |
 
 <a name="dash2Camel"></a>
 
@@ -407,8 +401,8 @@ dash2Camel
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回转换后的字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description      |
+| ------ | ------------------- | ---------------- |
 | string | <code>String</code> | 需要转换的字符串 |
 
 <a name="debounce"></a>
@@ -419,11 +413,11 @@ dash2Camel
 **Kind**: global function  
 **Returns**: <code>function</code> - 实际调用函数  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| fn | <code>function</code> | 要调用的函数 |
-| delay | <code>number</code> | 空闲时间 |
-| immediate | <code>bool</code> | 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。 |
+| Param     | Type                  | Description                                                       |
+| --------- | --------------------- | ----------------------------------------------------------------- |
+| fn        | <code>function</code> | 要调用的函数                                                      |
+| delay     | <code>number</code>   | 空闲时间                                                          |
+| immediate | <code>bool</code>     | 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。 |
 
 <a name="decodeBase64"></a>
 
@@ -433,8 +427,8 @@ base64解码
 **Kind**: global function  
 **Returns**: <code>String</code> - 解码后的字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description      |
+| ----- | ------------------- | ---------------- |
 | input | <code>String</code> | 需要解码的字符串 |
 
 <a name="decodeUtf8"></a>
@@ -445,8 +439,8 @@ base64解码
 **Kind**: global function  
 **Returns**: <code>String</code> - 解码后的字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description      |
+| ----- | ------------------- | ---------------- |
 | input | <code>String</code> | 需要解码的字符串 |
 
 <a name="delay"></a>
@@ -463,9 +457,9 @@ return {Object} class
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | 名称        |
 
 <a name="delCookie"></a>
 
@@ -474,9 +468,9 @@ return {Object} class
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | cookie名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | cookie名称  |
 
 <a name="delSession"></a>
 
@@ -485,9 +479,9 @@ return {Object} class
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | 名称        |
 
 <a name="deWxJumpLink"></a>
 
@@ -498,9 +492,9 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回解码结果  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| string | <code>String</code> | 传入字符串  |
 
 <a name="deWxJumpLinkOld"></a>
 
@@ -510,9 +504,9 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回解码结果  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| string | <code>String</code> | 传入字符串  |
 
 <a name="download"></a>
 
@@ -521,35 +515,11 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 
 **Kind**: global function  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| url | <code>String</code> |  | 链接 |
-| filename | <code>String</code> |  | 文件名 |
-| type | <code>String</code> | <code>download</code> | 下载类型 'href','open','download','request' |
-
-<a name="openFile"></a>
-
-## openFile(url, filename)
-新标签页下载文件
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | 链接 |
-| filename | <code>String</code> | 文件名 |
-
-<a name="downloadUrlFile"></a>
-
-## downloadUrlFile(url, filename)
-下载二级制文件
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | 链接 |
-| filename | <code>String</code> | 文件名 |
+| Param    | Type                | Default               | Description                                 |
+| -------- | ------------------- | --------------------- | ------------------------------------------- |
+| url      | <code>String</code> |                       | 链接                                        |
+| filename | <code>String</code> |                       | 文件名                                      |
+| type     | <code>String</code> | <code>download</code> | 下载类型 'href','open','download','request' |
 
 <a name="saveFile"></a>
 
@@ -558,10 +528,10 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Object</code> | 文件数据 |
-| filename | <code>String</code> | 文件名 |
+| Param    | Type                | Description |
+| -------- | ------------------- | ----------- |
+| data     | <code>Object</code> | 文件数据    |
+| filename | <code>String</code> | 文件名      |
 
 <a name="encodeBase64"></a>
 
@@ -571,8 +541,8 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回BASE64编码  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description      |
+| ----- | ------------------- | ---------------- |
 | input | <code>String</code> | 需要编码的字符串 |
 
 <a name="encodeUtf8"></a>
@@ -583,8 +553,8 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回UTF-8编码  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description      |
+| ----- | ------------------- | ---------------- |
 | input | <code>String</code> | 需要编码的字符串 |
 
 <a name="enWxJumpLink"></a>
@@ -596,9 +566,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回转码结果  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| string | <code>String</code> | 传入字符串  |
 
 <a name="enWxJumpLinkOld"></a>
 
@@ -608,9 +578,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回转码结果  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| string | <code>String</code> | 传入字符串  |
 
 <a name="fixNumber"></a>
 
@@ -620,11 +590,11 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>number</code> - 返回新数字  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| [Number, String] |  | number 要处理的数字，必填 |
-| number |  |  |
-| n | <code>number</code> | 要保留的小数点位数，默认保留2位 |
+| Param            | Type                | Description                     |
+| ---------------- | ------------------- | ------------------------------- |
+| [Number, String] |                     | number 要处理的数字，必填       |
+| number           |                     |                                 |
+| n                | <code>number</code> | 要保留的小数点位数，默认保留2位 |
 
 <a name="formatTime"></a>
 
@@ -635,10 +605,10 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回字符串  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| time | <code>Date/String</code> |  | 时间对象或者字符串 |
-| fmt | <code>String</code> | <code>yyyy-MM-dd</code> | 格式化风格 |
+| Param | Type                     | Default                 | Description        |
+| ----- | ------------------------ | ----------------------- | ------------------ |
+| time  | <code>Date/String</code> |                         | 时间对象或者字符串 |
+| fmt   | <code>String</code>      | <code>yyyy-MM-dd</code> | 格式化风格         |
 
 <a name="formatTimeStr"></a>
 
@@ -648,10 +618,10 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| time | <code>Date/String</code> | 时间对象或者字符串 |
-| fmt | <code>String</code> | 格式化风格 |
+| Param | Type                     | Description        |
+| ----- | ------------------------ | ------------------ |
+| time  | <code>Date/String</code> | 时间对象或者字符串 |
+| fmt   | <code>String</code>      | 格式化风格         |
 
 <a name="getAppVersion"></a>
 
@@ -661,11 +631,11 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Boolean</code> \| <code>null</code> - null/true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| appName | <code>String</code> | app名称 |
-| withosstr | <code>Boolean</code> | 是否需要带上名称 |
-| userAgent | <code>String</code> | ua，可不传，默认取navigator.appVersion |
+| Param     | Type                 | Description                            |
+| --------- | -------------------- | -------------------------------------- |
+| appName   | <code>String</code>  | app名称                                |
+| withosstr | <code>Boolean</code> | 是否需要带上名称                       |
+| userAgent | <code>String</code>  | ua，可不传，默认取navigator.appVersion |
 
 <a name="getCache"></a>
 
@@ -675,9 +645,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: value 返回数据，存的如果是对象，取出的也是对象  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 缓存名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | 缓存名称    |
 
 <a name="getCHSLength"></a>
 
@@ -687,9 +657,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Number</code> - 返回长度  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| str | <code>String</code> | 字符串 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| str   | <code>String</code> | 字符串      |
 
 <a name="getCookie"></a>
 
@@ -699,9 +669,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回cookie字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | cookie名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | cookie名称  |
 
 <a name="getDirParam"></a>
 
@@ -711,9 +681,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Object</code> - 返回参数对象  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | 传入url地址 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| url   | <code>String</code> | 传入url地址 |
 
 <a name="getFileType"></a>
 
@@ -723,9 +693,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回文件后缀  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | 文件名 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| url   | <code>String</code> | 文件名      |
 
 <a name="getIsAppVersionLastest"></a>
 
@@ -735,11 +705,11 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Boolean</code> \| <code>null</code> - null/true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| appName | <code>String</code> | app名称 |
-| compareVer | <code>String</code> | 必传 需要对比的版本号 |
-| userAgent | <code>String</code> | ua，可不传，默认取navigator.appVersion |
+| Param      | Type                | Description                            |
+| ---------- | ------------------- | -------------------------------------- |
+| appName    | <code>String</code> | app名称                                |
+| compareVer | <code>String</code> | 必传 需要对比的版本号                  |
+| userAgent  | <code>String</code> | ua，可不传，默认取navigator.appVersion |
 
 <a name="getNumber"></a>
 
@@ -749,8 +719,8 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回纯数字字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description        |
+| ------ | ------------------- | ------------------ |
 | string | <code>String</code> | 传入带数字的字符串 |
 
 <a name="getOsVersion"></a>
@@ -761,11 +731,11 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Boolean</code> \| <code>null</code> - null/true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| osName | <code>String</code> | 系统类型字符串Android、iPod、iWatch或iPhone |
-| withosstr | <code>Boolean</code> | 是否需要带上名称 |
-| userAgent | <code>String</code> | ua，可不传，默认取navigator.appVersion |
+| Param     | Type                 | Description                                 |
+| --------- | -------------------- | ------------------------------------------- |
+| osName    | <code>String</code>  | 系统类型字符串Android、iPod、iWatch或iPhone |
+| withosstr | <code>Boolean</code> | 是否需要带上名称                            |
+| userAgent | <code>String</code>  | ua，可不传，默认取navigator.appVersion      |
 
 <a name="getParameter"></a>
 
@@ -775,9 +745,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: 返回参数值  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 参数名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | 参数名称    |
 
 <a name="getRandomNum"></a>
 
@@ -787,10 +757,10 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Number</code> - 返回数字  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| min | <code>Number</code> | <code>1</code> | 随机数的最小值 |
-| max | <code>Number</code> | <code>10</code> | 随机数的最大值 |
+| Param | Type                | Default         | Description    |
+| ----- | ------------------- | --------------- | -------------- |
+| min   | <code>Number</code> | <code>1</code>  | 随机数的最小值 |
+| max   | <code>Number</code> | <code>10</code> | 随机数的最大值 |
 
 <a name="getRandomStr"></a>
 
@@ -800,9 +770,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 随机串  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| len | <code>Number</code> | <code>32</code> | 需要获取随机字符串的长度 |
+| Param            | Type                 | Default            | Description                      |
+| ---------------- | -------------------- | ------------------ | -------------------------------- |
+| len              | <code>Number</code>  | <code>32</code>    | 需要获取随机字符串的长度         |
 | widthSpecialChar | <code>Boolean</code> | <code>false</code> | 可选，是否需要生成带特殊字符的串 |
 
 <a name="getRandomStrWidthSpecialChar"></a>
@@ -813,9 +783,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 随机串  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| len | <code>Number</code> | <code>32</code> | 需要获取随机字符串的长度 |
+| Param | Type                | Default         | Description              |
+| ----- | ------------------- | --------------- | ------------------------ |
+| len   | <code>Number</code> | <code>32</code> | 需要获取随机字符串的长度 |
 
 <a name="getScrollPosition"></a>
 
@@ -832,9 +802,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回sessionStorage  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| name  | <code>String</code> | 名称        |
 
 <a name="getType"></a>
 
@@ -844,9 +814,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 类型  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| target | <code>any</code> | 目标 |
+| Param  | Type             | Description |
+| ------ | ---------------- | ----------- |
+| target | <code>any</code> | 目标        |
 
 <a name="getUrlParam"></a>
 
@@ -856,9 +826,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>Object</code> - 返回参数列表  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | 传入url参数 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| url   | <code>String</code> | 传入url参数 |
 
 <a name="getWindowSize"></a>
 
@@ -875,10 +845,10 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回新地址  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| imgurl | <code>String</code> | 图片url |
-| size | <code>String</code> | 图片规格 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| imgurl | <code>String</code> | 图片url     |
+| size   | <code>String</code> | 图片规格    |
 
 <a name="imgChoose"></a>
 
@@ -888,9 +858,9 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回新地址  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| imgurl | <code>String</code> | 图片地址 |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
+| imgurl | <code>String</code> | 图片地址    |
 
 <a name="isArray"></a>
 
@@ -899,9 +869,9 @@ getWindowSize获取窗口大小
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>Array</code> | 
+| Param | Type               |
+| ----- | ------------------ |
+| arr   | <code>Array</code> |
 
 <a name="isDigitals"></a>
 
@@ -911,9 +881,9 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - 返回true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| str | <code>String</code> | 待检测的字符串 |
+| Param | Type                | Description    |
+| ----- | ------------------- | -------------- |
+| str   | <code>String</code> | 待检测的字符串 |
 
 <a name="isExitsFunction"></a>
 
@@ -923,9 +893,9 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - 返回true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| funcName | <code>String</code> | 传入函数名 |
+| Param    | Type                | Description |
+| -------- | ------------------- | ----------- |
+| funcName | <code>String</code> | 传入函数名  |
 
 <a name="isExitsVariable"></a>
 
@@ -935,8 +905,8 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - 返回true/false  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description  |
+| ------------ | ------------------- | ------------ |
 | variableName | <code>String</code> | 传入变量名称 |
 
 <a name="nextIndex"></a>
@@ -947,10 +917,10 @@ getWindowSize获取窗口大小
 **Kind**: global function  
 **Returns**: <code>Number</code> - 数字  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| min | <code>number</code> | <code>5000</code> | 可选，最小值 |
-| max | <code>number</code> | <code>10000</code> | 可选，最大值 |
+| Param | Type                | Default            | Description  |
+| ----- | ------------------- | ------------------ | ------------ |
+| min   | <code>number</code> | <code>5000</code>  | 可选，最小值 |
+| max   | <code>number</code> | <code>10000</code> | 可选，最大值 |
 
 <a name="pattern"></a>
 
@@ -966,11 +936,11 @@ removeEvent移除由addEvent创建的事件委托
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| element | <code>Object</code> | js dom对象 |
-| type | <code>String</code> | 事件类型。不需要加on |
-| handler | <code>function</code> | 回调方法 |
+| Param   | Type                  | Description          |
+| ------- | --------------------- | -------------------- |
+| element | <code>Object</code>   | js dom对象           |
+| type    | <code>String</code>   | 事件类型。不需要加on |
+| handler | <code>function</code> | 回调方法             |
 
 <a name="searchTreeObject"></a>
 
@@ -980,13 +950,13 @@ tree对象深度查找
 **Kind**: global function  
 **Returns**: <code>Array</code> - 返回查询到的数组  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tree | <code>string</code> | 树形对象 |
-| [String, Object, Function] |  | expression 必填 查询方式 |
-| expression |  |  |
-| keySet | <code>object</code> | 选填 默认的子类名称、查询name |
-| number | <code>number</code> | 选填 查找个数，不传则查询全部 |
+| Param                      | Type                | Description                   |
+| -------------------------- | ------------------- | ----------------------------- |
+| tree                       | <code>string</code> | 树形对象                      |
+| [String, Object, Function] |                     | expression 必填 查询方式      |
+| expression                 |                     |                               |
+| keySet                     | <code>object</code> | 选填 默认的子类名称、查询name |
+| number                     | <code>number</code> | 选填 查找个数，不传则查询全部 |
 
 <a name="searchTreeObject..deepSearch"></a>
 
@@ -996,10 +966,10 @@ tree对象深度查找
 **Kind**: inner method of [<code>searchTreeObject</code>](#searchTreeObject)  
 **Returns**: <code>Object</code> - Nodes  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| [Object, Array] |  | tree 对象 |
-| expression | <code>String</code> | 表达式 |
+| Param           | Type                | Description |
+| --------------- | ------------------- | ----------- |
+| [Object, Array] |                     | tree 对象   |
+| expression      | <code>String</code> | 表达式      |
 
 <a name="setCache"></a>
 
@@ -1009,11 +979,11 @@ tree对象深度查找
 **Kind**: global function  
 **Returns**: value 返回数据，存的如果是对象，取出的也是对象  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 缓存名称 |
-| value |  | [String, Boolean, Number, Object] 缓存数据，可以直接传入Object |
-| seconds | <code>Number</code> | 缓存时间（秒） |
+| Param   | Type                | Description                                                    |
+| ------- | ------------------- | -------------------------------------------------------------- |
+| name    | <code>String</code> | 缓存名称                                                       |
+| value   |                     | [String, Boolean, Number, Object] 缓存数据，可以直接传入Object |
+| seconds | <code>Number</code> | 缓存时间（秒）                                                 |
 
 <a name="setCookie"></a>
 
@@ -1022,13 +992,13 @@ setCookie写入cookie的方法
 
 **Kind**: global function  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| name | <code>String</code> |  | cookie名称 |
-| value | <code>String</code> |  | 设置要存储的值，可以是对象或字符串 |
-| seconds | <code>Number</code> | <code>86400</code> | cookie有效时间默认1天 |
-| path | <code>String</code> | <code>/</code> | 路径，默认'/' |
-| samesite | <code>Boolean</code> | <code>true</code> | SameSite，默认true |
+| Param    | Type                 | Default            | Description                        |
+| -------- | -------------------- | ------------------ | ---------------------------------- |
+| name     | <code>String</code>  |                    | cookie名称                         |
+| value    | <code>String</code>  |                    | 设置要存储的值，可以是对象或字符串 |
+| seconds  | <code>Number</code>  | <code>86400</code> | cookie有效时间默认1天              |
+| path     | <code>String</code>  | <code>/</code>     | 路径，默认'/'                      |
+| samesite | <code>Boolean</code> | <code>true</code>  | SameSite，默认true                 |
 
 <a name="setSession"></a>
 
@@ -1037,11 +1007,11 @@ setCookie写入cookie的方法
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | 名称 |
-| value | <code>\*</code> | 设置要存储的值，可以是对象或字符串 |
-| seconds | <code>Number</code> | 有效时间 |
+| Param   | Type                | Description                        |
+| ------- | ------------------- | ---------------------------------- |
+| name    | <code>String</code> | 名称                               |
+| value   | <code>\*</code>     | 设置要存储的值，可以是对象或字符串 |
+| seconds | <code>Number</code> | 有效时间                           |
 
 <a name="stopBubble"></a>
 
@@ -1050,9 +1020,9 @@ setCookie写入cookie的方法
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| e | <code>Object</code> | dom的event对象 |
+| Param | Type                | Description    |
+| ----- | ------------------- | -------------- |
+| e     | <code>Object</code> | dom的event对象 |
 
 <a name="stopDefault"></a>
 
@@ -1061,9 +1031,9 @@ setCookie写入cookie的方法
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| e | <code>Object</code> | dom的event对象 |
+| Param | Type                | Description    |
+| ----- | ------------------- | -------------- |
+| e     | <code>Object</code> | dom的event对象 |
 
 <a name="textareaInsertText"></a>
 
@@ -1072,10 +1042,10 @@ textarea或input对象在指定的光标位置插入文字
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Object</code> | dom对象 |
-| str | <code>String</code> | 要插入的文字 |
+| Param | Type                | Description  |
+| ----- | ------------------- | ------------ |
+| obj   | <code>Object</code> | dom对象      |
+| str   | <code>String</code> | 要插入的文字 |
 
 <a name="textareaMoveToEnd"></a>
 
@@ -1084,9 +1054,9 @@ textarea或input对象将光标定位到文字尾部
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Object</code> | dom对象 |
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| obj   | <code>Object</code> | dom对象     |
 
 <a name="throttle"></a>
 
@@ -1096,11 +1066,11 @@ textarea或input对象将光标定位到文字尾部
 **Kind**: global function  
 **Returns**: <code>function</code> - 实际调用函数  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| fn | <code>function</code> | 需要调用的函数 |
-| delay | <code>number</code> | 延迟时间，单位毫秒 |
-| immediate | <code>bool</code> | 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。 |
+| Param     | Type                  | Description                                                       |
+| --------- | --------------------- | ----------------------------------------------------------------- |
+| fn        | <code>function</code> | 需要调用的函数                                                    |
+| delay     | <code>number</code>   | 延迟时间，单位毫秒                                                |
+| immediate | <code>bool</code>     | 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。 |
 
 <a name="trim"></a>
 
@@ -1110,10 +1080,10 @@ trim()根据传参来去除空格
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回新字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| string | <code>String</code> | 传入字符串 |
-| type | <code>string</code> | 可选，去除空格的类型l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格 |
+| Param  | Type                | Description                                                                             |
+| ------ | ------------------- | --------------------------------------------------------------------------------------- |
+| string | <code>String</code> | 传入字符串                                                                              |
+| type   | <code>string</code> | 可选，去除空格的类型l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格 |
 
 <a name="upperFirst"></a>
 
@@ -1124,7 +1094,7 @@ upperFirst
 **Kind**: global function  
 **Returns**: <code>String</code> - 返回转换后的字符串  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description      |
+| ------ | ------------------- | ---------------- |
 | string | <code>String</code> | 需要转换的字符串 |
 
