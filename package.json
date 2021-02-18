@@ -1,53 +1,54 @@
 {
-  "name": "js-cool",
-  "version": "1.0.5",
-  "description": "一些常用的JS方法，支持按需引入",
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
-  "directories": {
-    "lib": "lib",
-    "src": "src"
-  },
-  "scripts": {
-    "build": "rm -rf ./lib && rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build",
-    "docs": "jsdoc2md src/**/*.js > API.md",
-    "pub": "git add . && git commit -m $npm_package_version && git pull && git push"
-  },
-  "dependencies": {
-    "core-js": "^3.8.3"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.12.15",
-    "@babel/preset-env": "^7.12.13",
-    "@rollup/plugin-babel": "^5.2.3",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.1.1",
-    "@saqqdy/prettier-config": "^1.0.3",
-    "babel-loader": "^8.2.2",
-    "eslint-config-sets": "^1.0.6",
-    "jsdoc-to-markdown": "^6.0.1",
-    "rollup": "^2.38.5",
-    "rollup-plugin-terser": "^7.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saqqdy/js-cool.git"
-  },
-  "keywords": [
-    "js-cool",
-    "saqqdy"
-  ],
-  "author": "saqqdy@qq.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/saqqdy/js-cool/issues"
-  },
-  "homepage": "https://github.com/saqqdy/js-cool#readme"
+	"name": "js-cool",
+	"version": "1.0.5",
+	"description": "一些常用的JS方法，支持按需引入",
+	"main": "lib/index.js",
+	"files": [
+		"lib"
+	],
+	"directories": {
+		"lib": "lib",
+		"src": "src"
+	},
+	"scripts": {
+		"build": "rm -rf ./lib && rollup -c",
+		"dev": "rollup -c -w",
+		"test": "node test/test.js",
+		"pretest": "npm run build",
+		"docs": "jsdoc2md src/**/*.js > API.md",
+		"prettier": "prettier --write \"**/*.{js,ts,sh,json,md}\"",
+		"pub": "git add . && git commit -m $npm_package_version && git pull && git push"
+	},
+	"dependencies": {
+		"core-js": "^3.8.3"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.12.13",
+		"@babel/core": "^7.12.13",
+		"@babel/plugin-transform-runtime": "^7.12.15",
+		"@babel/preset-env": "^7.12.13",
+		"@rollup/plugin-babel": "^5.2.3",
+		"@rollup/plugin-commonjs": "^17.1.0",
+		"@rollup/plugin-node-resolve": "^11.1.1",
+		"@saqqdy/prettier-config": "^1.0.3",
+		"babel-loader": "^8.2.2",
+		"eslint-config-sets": "^1.0.6",
+		"jsdoc-to-markdown": "^6.0.1",
+		"rollup": "^2.38.5",
+		"rollup-plugin-terser": "^7.0.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saqqdy/js-cool.git"
+	},
+	"keywords": [
+		"js-cool",
+		"saqqdy"
+	],
+	"author": "saqqdy@qq.com",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/saqqdy/js-cool/issues"
+	},
+	"homepage": "https://github.com/saqqdy/js-cool#readme"
 }
