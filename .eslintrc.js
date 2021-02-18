@@ -1,4 +1,6 @@
-const { simple: config } = 'eslint-config-stes'
-module.exports = {
-    ...config
-}
+const { simple: config } = require('eslint-config-sets')
+module.exports = Object.assign(config, {
+    rules: {
+        semi: [2, 'never']
+    }
+})

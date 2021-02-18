@@ -84,6 +84,7 @@ import isArray from './isArray' // 判断是否数组
 import cleanData from './cleanData' // 清洗数据
 import download from './download' // 文件下载
 import searchTreeObject from './searchTreeObject' // 对象查找
+import openUrl from './openUrl' // 新标签页打开链接（浏览器不能解析的文件跳转下载）
 
 export {
     //
@@ -155,5 +156,6 @@ export {
     isArray,
     cleanData,
     download,
-    searchTreeObject
+    searchTreeObject,
+    openUrl
 }

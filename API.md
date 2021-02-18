@@ -171,6 +171,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#nextIndex">nextIndex(min, max)</a> ⇒ <code>Number</code></dt>
 <dd><p>返回下一个zIndex值</p>
 </dd>
+<dt><a href="#openUrl">openUrl(url)</a></dt>
+<dd><p>新标签页打开链接（浏览器不能解析的文件跳转下载）</p>
+</dd>
 <dt><a href="#pattern">pattern()</a> ⇒ <code>Object</code></dt>
 <dd><p>pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username</p>
 </dd>
@@ -932,6 +935,18 @@ getWindowSize 获取窗口大小
 | ----- | ------------------- | ------------------ | ------------ |
 | min   | <code>number</code> | <code>5000</code>  | 可选，最小值 |
 | max   | <code>number</code> | <code>10000</code> | 可选，最大值 |
+
+<a name="openUrl"></a>
+
+## openUrl(url)
+
+新标签页打开链接（浏览器不能解析的文件跳转下载）
+
+**Kind**: global function
+
+| Param | Type                | Description |
+| ----- | ------------------- | ----------- |
+| url   | <code>String</code> | 链接        |
 
 <a name="pattern"></a>
 
