@@ -6,7 +6,7 @@
  */
 function nextIndex(min = 5000, max = 10000) {
     let doms = [min]
-    ;[...document.querySelectorAll('body > *')].forEach(e => {
+    Array.prototype.forEach.call(document.querySelectorAll('body > *'), e => {
         let n = +window.getComputedStyle(e).zIndex || 0
         n > min && n < max && doms.push(n)
     })
