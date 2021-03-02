@@ -186,7 +186,8 @@ module.exports = {
         cleanData, // 清洗数据
         download, // 文件下载
         searchTreeObject, // 对象查找
-        openUrl // 新标签页打开链接（浏览器不能解析的文件跳转下载）
+        openUrl, // 新标签页打开链接（浏览器不能解析的文件跳转下载）
+        splitThousand, // 千分位分割方法
 }
 ```
 
@@ -385,6 +386,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#setSession">setSession(name, value, seconds)</a></dt>
 <dd><p>写sessionStorage</p>
+</dd>
+<dt><a href="#splitThousand">splitThousand([String, Number])</a> ⇒ <code>String</code></dt>
+<dd><p>数字千分位分割</p>
 </dd>
 <dt><a href="#stopBubble">stopBubble(e)</a> ⇒ <code>Boolean</code></dt>
 <dd><p>阻止冒泡</p>
@@ -1225,6 +1229,19 @@ setCookie 写入 cookie 的方法
 | name    | <code>String</code> | 名称                               |
 | value   | <code>\*</code>     | 设置要存储的值，可以是对象或字符串 |
 | seconds | <code>Number</code> | 有效时间                           |
+
+<a name="splitThousand"></a>
+
+## splitThousand([String, Number]) ⇒ <code>String</code>
+
+数字千分位分割
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 分割后的字符串
+
+| Param            | Description |
+| ---------------- | ----------- |
+| [String, Number] | value 数字  |
 
 <a name="stopBubble"></a>
 

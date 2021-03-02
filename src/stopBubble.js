@@ -1,5 +1,5 @@
 /**
- * 阻止冒泡
+ * @description 阻止冒泡
  * @param {Object} e dom的event对象
  * @returns {Boolean}
  */
