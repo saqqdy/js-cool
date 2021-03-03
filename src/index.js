@@ -86,6 +86,14 @@ import download from './download' // 文件下载
 import searchTreeObject from './searchTreeObject' // 对象查找
 import openUrl from './openUrl' // 新标签页打开链接（浏览器不能解析的文件跳转下载）
 import splitThousand from './splitThousand' // 千分位分割方法
+import all from './all' // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
+import any from './any' // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
+import uuid from './uuid' // 浏览器端生成uuid，采用v4方法
+import arrayToCSV from './arrayToCSV' // 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
+import CSVToArray from './CSVToArray' // 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+import CSVToJSON from './CSVToJSON' // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
+import JSONToCSV from './JSONToCSV' // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
+import RGBToHex from './RGBToHex' // 将RGB组件的值转换为颜色代码。
 
 export {
     //
@@ -159,5 +167,13 @@ export {
     download,
     searchTreeObject,
     openUrl,
-    splitThousand
+    splitThousand,
+    all,
+    any,
+    uuid,
+    arrayToCSV,
+    CSVToArray,
+    CSVToJSON,
+    JSONToCSV,
+    RGBToHex
 }

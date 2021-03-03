@@ -4,6 +4,15 @@
 <dt><a href="#addEvent">addEvent(element, type, handler)</a></dt>
 <dd><p>addEvent()事件委托，支持多次委托</p>
 </dd>
+<dt><a href="#all">all(arr, fn)</a> ⇒ <code>Boolean</code></dt>
+<dd><p>如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。</p>
+</dd>
+<dt><a href="#any">any(arr, fn)</a> ⇒ <code>Boolean</code></dt>
+<dd><p>如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。</p>
+</dd>
+<dt><a href="#arrayToCSV">arrayToCSV(data, delimiter)</a> ⇒ <code>String</code></dt>
+<dd><p>将一个二维数组转换为一个逗号分隔的值（CSV）字符串。</p>
+</dd>
 <dt><a href="#camel2Dash">camel2Dash(string)</a> ⇒ <code>String</code></dt>
 <dd><p>camel2Dash
 将驼峰字符串转成-间隔且全小写的Dash模式</p>
@@ -33,6 +42,12 @@
 </dd>
 <dt><a href="#client">client(name, userAgent)</a> ⇒ <code>Object</code> | <code>Boolean</code></dt>
 <dd><p>client方法返回一个浏览器判断结果：{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE: true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }</p>
+</dd>
+<dt><a href="#CSVToArray">CSVToArray(data, delimiter, omitFirstRow)</a> ⇒ <code>Object</code></dt>
+<dd><p>将一个逗号分隔的值（CSV）字符串转换为一个2D数组。</p>
+</dd>
+<dt><a href="#CSVToJSON">CSVToJSON(data, delimiter)</a> ⇒ <code>Object</code></dt>
+<dd><p>将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。</p>
 </dd>
 <dt><a href="#cutCHSString">cutCHSString(str, len, hasDot)</a> ⇒ <code>String</code></dt>
 <dd><p>截取字符串，中文算2个字节</p>
@@ -168,6 +183,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dt><a href="#isExitsVariable">isExitsVariable(variableName)</a> ⇒ <code>Boolean</code></dt>
 <dd><p>是否存在指定变量</p>
 </dd>
+<dt><a href="#JSONToCSV">JSONToCSV(data, columns, delimiter)</a> ⇒ <code>String</code></dt>
+<dd><p>将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。</p>
+</dd>
 <dt><a href="#nextIndex">nextIndex(min, max)</a> ⇒ <code>Number</code></dt>
 <dd><p>返回下一个zIndex值</p>
 </dd>
@@ -179,6 +197,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 </dd>
 <dt><a href="#removeEvent">removeEvent(element, type, handler)</a></dt>
 <dd><p>removeEvent移除由addEvent创建的事件委托</p>
+</dd>
+<dt><a href="#RGBToHex">RGBToHex(r, g, b)</a> ⇒ <code>String</code></dt>
+<dd><p>将RGB组件的值转换为颜色代码。</p>
 </dd>
 <dt><a href="#searchTreeObject">searchTreeObject(tree, [String, Object, Function], expression, keySet, number)</a> ⇒ <code>Array</code></dt>
 <dd><p>tree对象深度查找</p>
@@ -217,6 +238,9 @@ name=exMall-detail-goodsInfoId&amp;params[goodsInfoId]=8866 转成 name</em>exMa
 <dd><p>upperFirst
 首字母大写</p>
 </dd>
+<dt><a href="#uuid">uuid()</a> ⇒ <code>String</code></dt>
+<dd><p>浏览器端生成uuid，采用v4方法</p>
+</dd>
 </dl>
 
 <a name="addEvent"></a>
@@ -232,6 +256,102 @@ addEvent()事件委托，支持多次委托
 | element | <code>Object</code>   | js dom 对象           |
 | type    | <code>String</code>   | 事件类型。不需要加 on |
 | handler | <code>function</code> | 回调方法              |
+
+<a name="all"></a>
+
+## all(arr, fn) ⇒ <code>Boolean</code>
+
+如果所提供的谓词函数对一个集合中的所有元素都返回 true，则返回 true，否则返回 false。
+
+**Kind**: global function  
+**Returns**: <code>Boolean</code> - 返回判断结果
+
+| Param | Type                  | Description |
+| ----- | --------------------- | ----------- |
+| arr   | <code>Array</code>    | 目标数组    |
+| fn    | <code>function</code> | 判断方法    |
+
+**Example**
+
+```js
+all([4, 2, 3], x => x > 1) // true
+```
+
+**Example**
+
+```js
+all([1, 2, 3]) // true
+```
+
+<a name="any"></a>
+
+## any(arr, fn) ⇒ <code>Boolean</code>
+
+如果所提供的谓词函数对一个集合中的至少一个元素返回 true，则返回 true，否则返回 false。
+
+**Kind**: global function  
+**Returns**: <code>Boolean</code> - 返回判断结果
+
+| Param | Type                  | Description |
+| ----- | --------------------- | ----------- |
+| arr   | <code>Array</code>    | 目标数组    |
+| fn    | <code>function</code> | 判断方法    |
+
+**Example**
+
+```js
+any([0, 1, 2, 0], x => x >= 2) // true
+```
+
+**Example**
+
+```js
+any([0, 0, 1, 0]) // true
+```
+
+<a name="arrayToCSV"></a>
+
+## arrayToCSV(data, delimiter) ⇒ <code>String</code>
+
+将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
+
+**Kind**: global function  
+**Returns**: <code>String</code> - CSV 数据
+
+| Param     | Type                | Description     |
+| --------- | ------------------- | --------------- |
+| data      | <code>Array</code>  | json 数据       |
+| delimiter | <code>String</code> | 分隔符，默认',' |
+
+**Example**
+
+```js
+arrayToCSV([
+    ['a', 'b'],
+    ['c', 'd']
+]) // '"a","b"\n"c","d"'
+```
+
+**Example**
+
+```js
+arrayToCSV(
+    [
+        ['a', 'b'],
+        ['c', 'd']
+    ],
+    ';'
+) // '"a";"b"\n"c";"d"'
+```
+
+**Example**
+
+```js
+arrayToCSV([
+    ['a', '"b" great'],
+    ['c', 3.1415]
+]) // '"a","""b"" great"\n"c",3.1415'
+```
 
 <a name="camel2Dash"></a>
 
@@ -362,6 +482,65 @@ client 方法返回一个浏览器判断结果：{ ANDROID: true, GECKO: true, G
 | --------- | ------------------- | ---------------------------------------------------------- |
 | name      | <code>String</code> | 可选，比如传入 MicroMessenger，返回是否为微信内置浏览器    |
 | userAgent | <code>String</code> | 可选，传入自定义的 ua，默认取浏览器的 navigator.appVersion |
+
+<a name="CSVToArray"></a>
+
+## CSVToArray(data, delimiter, omitFirstRow) ⇒ <code>Object</code>
+
+将一个逗号分隔的值（CSV）字符串转换为一个 2D 数组。
+
+**Kind**: global function  
+**Returns**: <code>Object</code> - array
+
+| Param        | Type                 | Default            | Description                  |
+| ------------ | -------------------- | ------------------ | ---------------------------- |
+| data         | <code>String</code>  |                    | csv 数据                     |
+| delimiter    | <code>String</code>  | <code>,</code>     | 分隔符，默认','              |
+| omitFirstRow | <code>Boolean</code> | <code>false</code> | 第一行是表头数据，默认 false |
+
+**Example**
+
+```js
+CSVToArray('a,b\nc,d') // [['a','b'],['c','d']];
+```
+
+**Example**
+
+```js
+CSVToArray('a;b\nc;d', ';') // [['a','b'],['c','d']];
+```
+
+**Example**
+
+```js
+CSVToArray('col1,col2\na,b\nc,d', ',', true) // [['a','b'],['c','d']];
+```
+
+<a name="CSVToJSON"></a>
+
+## CSVToJSON(data, delimiter) ⇒ <code>Object</code>
+
+将一个逗号分隔的值(CSV)字符串转换为一个 2D 对象数组。字符串的第一行作为标题行。
+
+**Kind**: global function  
+**Returns**: <code>Object</code> - json
+
+| Param     | Type                | Default        | Description     |
+| --------- | ------------------- | -------------- | --------------- |
+| data      | <code>String</code> |                | csv 数据        |
+| delimiter | <code>String</code> | <code>,</code> | 分隔符，默认',' |
+
+**Example**
+
+```js
+CSVToJSON('col1,col2\na,b\nc,d') // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
+```
+
+**Example**
+
+```js
+CSVToJSON('col1;col2\na;b\nc;d', ';') // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
+```
 
 <a name="cutCHSString"></a>
 
@@ -822,9 +1001,9 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 **Kind**: global function  
 **Returns**: <code>String</code> - 类型
 
-| Param  | Type             | Description |
-| ------ | ---------------- | ----------- |
-| target | <code>any</code> | 目标        |
+| Param  | Type                     | Description |
+| ------ | ------------------------ | ----------- |
+| target | [<code>any</code>](#any) | 目标        |
 
 <a name="getUrlParam"></a>
 
@@ -925,6 +1104,33 @@ getWindowSize 获取窗口大小
 | ------------ | ------------------- | ------------ |
 | variableName | <code>String</code> | 传入变量名称 |
 
+<a name="JSONToCSV"></a>
+
+## JSONToCSV(data, columns, delimiter) ⇒ <code>String</code>
+
+将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
+
+**Kind**: global function  
+**Returns**: <code>String</code> - CSV 数据
+
+| Param     | Type                | Description     |
+| --------- | ------------------- | --------------- |
+| data      | <code>Array</code>  | json 数据       |
+| columns   | <code>Array</code>  | 指定列          |
+| delimiter | <code>String</code> | 分隔符，默认',' |
+
+**Example**
+
+```js
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']) // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
+```
+
+**Example**
+
+```js
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';') // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
+```
+
 <a name="nextIndex"></a>
 
 ## nextIndex(min, max) ⇒ <code>Number</code>
@@ -972,6 +1178,27 @@ removeEvent 移除由 addEvent 创建的事件委托
 | element | <code>Object</code>   | js dom 对象           |
 | type    | <code>String</code>   | 事件类型。不需要加 on |
 | handler | <code>function</code> | 回调方法              |
+
+<a name="RGBToHex"></a>
+
+## RGBToHex(r, g, b) ⇒ <code>String</code>
+
+将 RGB 组件的值转换为颜色代码。
+
+**Kind**: global function  
+**Returns**: <code>String</code> - hex 值
+
+| Param | Type                | Description   |
+| ----- | ------------------- | ------------- |
+| r     | <code>Number</code> | RGB 第 1 个值 |
+| g     | <code>Number</code> | RGB 第 2 个值 |
+| b     | <code>Number</code> | RGB 第 3 个值 |
+
+**Example**
+
+```js
+RGBToHex(255, 165, 1) // 'ffa501'
+```
 
 <a name="searchTreeObject"></a>
 
@@ -1139,3 +1366,17 @@ upperFirst
 | Param  | Type                | Description      |
 | ------ | ------------------- | ---------------- |
 | string | <code>String</code> | 需要转换的字符串 |
+
+<a name="uuid"></a>
+
+## uuid() ⇒ <code>String</code>
+
+浏览器端生成 uuid，采用 v4 方法
+
+**Kind**: global function  
+**Returns**: <code>String</code> - uuid  
+**Example**
+
+```js
+uuid(255, 165, 1) // '4222fcfe-5721-4632-bede-6043885be57d'
+```

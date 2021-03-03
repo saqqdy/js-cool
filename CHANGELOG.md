@@ -1,3 +1,8 @@
+# 2021.03.03 v1.0.9 更新日志
+
+1. 新增 all/any/RGBToHex/uuid 等方法
+2. 新增 CSV 与对象之间的互转方法：arrayToCSV/CSVToArray/CSVToJSON/JSONtoCSV
+
 # 2021.03.02 v1.0.8 更新日志
 
 1. 新增 splitThousand 千分位分割方法
