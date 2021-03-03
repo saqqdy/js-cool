@@ -18,19 +18,17 @@
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
 [download-url]: https://npmjs.org/package/js-cool
 
-# js-cool
+# **完整文档请查阅： [API 完整文档](./API.md)**
 
-# **完整文档请查阅： [JS-COOL API 完整文档](./API.md)**
-
-### 介绍
+# 介绍
 
 JS 常用方法，支持按需打包
 
-### 软件架构
+# 软件架构
 
 集成了大量常用方法，采用了纯原生 ES6+babel+webpack 的开发方式
 
-### 安装教程
+# 安装教程
 
 ```shell
 # 通过npm安装
@@ -39,7 +37,7 @@ npm install --save js-cool
 yarn add js-cool
 ```
 
-#### 通过 import 引入模块的方式
+## 通过 import 引入模块的方式
 
 ```js
 // 在你的.vue或者main.js里面写上import
@@ -50,7 +48,7 @@ getOsVersion()  // 返回系统版本
 // ...
 ```
 
-#### 按需引入
+## 按需引入
 
 ```js
 // 在你的.vue或者main.js里面写上import
@@ -60,7 +58,7 @@ download(url, filename) // 下载文件
 // ...
 ```
 
-#### 使用文件引入的方式
+## 使用文件引入的方式
 
 1. 通过 require 引入
 
@@ -76,7 +74,7 @@ require('js-cool')
 <script src="https://unpkg.com/js-cool@1.0.9/lib/index.umd.js"></script>
 ```
 
-#### 使用按需打包
+## 使用按需打包
 
 1. 安装依赖
 
@@ -107,7 +105,7 @@ module.exports = {
 }
 ```
 
-### 所有方法汇总
+# 所有方法汇总
 
 ```js
 {
@@ -201,17 +199,16 @@ module.exports = {
 }
 ```
 
-### 参与贡献
+# 参与贡献
 
 1. Fork 本仓库
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
 
-### 我的相关
+# 我的相关
 
 -   **_使用_** _Readme_XXX.md_ 来支持不同的语言，`例如` _Readme_en.md, Readme_zh.md_
--   我的码云：[https://gitee.com/saqqdy](https://gitee.com/saqqdy)
 -   我的 Github：[https://github.com/saqqdy](https://github.com/saqqdy)
 -   我的 npm：[https://npmjs.com/~saqqdy](https://npmjs.com/~saqqdy)
 -   我的个人网站 [http://www.saqqdy.com](http://www.saqqdy.com)
