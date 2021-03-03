@@ -1378,5 +1378,5 @@ upperFirst
 **Example**
 
 ```js
-uuid(255, 165, 1) // '4222fcfe-5721-4632-bede-6043885be57d'
+uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
 ```
