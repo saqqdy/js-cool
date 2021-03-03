@@ -71,7 +71,7 @@ require('js-cool')
 
 ```html
 <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-<script src="https://unpkg.com/js-cool@1.0.5/lib/index.umd.js"></script>
+<script src="https://unpkg.com/js-cool@1.0.9/lib/index.umd.js"></script>
 ```
 
 #### 使用按需打包
