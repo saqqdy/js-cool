@@ -1,6 +1,6 @@
 {
     "name": "js-cool",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "description": "一些常用的JS方法，支持按需引入",
     "main": "lib/index.js",
     "files": [
@@ -12,6 +12,7 @@
     },
     "scripts": {
         "build": "rm -rf ./lib && rollup -c",
+        "build:umd": "webpack --config webpack.config.js",
         "dev": "rollup -c -w",
         "test": "node test/test.js",
         "pretest": "npm run build",
@@ -29,16 +30,20 @@
         "@babel/plugin-transform-runtime": "^7.12.15",
         "@babel/preset-env": "^7.12.13",
         "@rollup/plugin-babel": "^5.2.3",
-        "@rollup/plugin-commonjs": "^17.1.0",
-        "@rollup/plugin-node-resolve": "^11.1.1",
+        "@rollup/plugin-commonjs": "^19.0.1",
+        "@rollup/plugin-node-resolve": "^13.0.4",
         "@saqqdy/prettier-config": "^1.0.3",
         "babel-loader": "^8.2.2",
         "eslint": "^7.20.0",
         "eslint-config-sets": "^1.0.10",
         "jsdoc-to-markdown": "^6.0.1",
         "prettier": "^2.2.1",
+        "progress-bar-webpack-plugin": "^2.1.0",
         "rollup": "^2.38.5",
-        "rollup-plugin-terser": "^7.0.2"
+        "rollup-plugin-terser": "^7.0.2",
+        "webpack": "^5.46.0",
+        "webpack-cli": "^4.7.2",
+        "webpack-node-externals": "^3.0.0"
     },
     "repository": {
         "type": "git",

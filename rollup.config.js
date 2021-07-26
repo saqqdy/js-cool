@@ -31,21 +31,21 @@ const production = !process.env.ROLLUP_WATCH
 
 export default [
     // browser-friendly UMD build
-    {
-        input: 'src/index.js',
-        output: {
-            name: 'JSCOOL',
-            file: 'lib/index.umd.js',
-            format: 'umd'
-        },
-        plugins: [
-            resolve(), // so Rollup can find `ms`
-            commonjs(), // so Rollup can convert `ms` to an ES module
-            babel({ babelHelpers: 'inline' }),
-            production && terser()
-        ]
-        // external: ['core-js', '@babel/runtime']
-    },
+    // {
+    //     input: 'src/index.js',
+    //     output: {
+    //         name: 'JSCOOL',
+    //         file: 'lib/index.umd.js',
+    //         format: 'umd'
+    //     },
+    //     plugins: [
+    //         resolve(), // so Rollup can find `ms`
+    //         commonjs(), // so Rollup can convert `ms` to an ES module
+    //         babel({ babelHelpers: 'inline' }),
+    //         production && terser()
+    //     ]
+    //     // external: ['core-js', '@babel/runtime']
+    // },
 
     // CommonJS (for Node) and ES module (for bundlers) build.
     // (We could have three entries in the configuration array
