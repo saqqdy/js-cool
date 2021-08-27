@@ -12,7 +12,7 @@
         "src": "src"
     },
     "scripts": {
-        "build": "rm -rf ./lib && rollup -c",
+        "build": "rimraf lib && rollup -c",
         "build:umd": "webpack --config webpack.config.js",
         "build:types": "run-s build-temp-types roll-types",
         "build-temp-types": "tsc --emitDeclarationOnly --outDir temp/ -p src/",
@@ -22,7 +22,7 @@
         "test": "node test/test.js",
         "pretest": "npm run build",
         "dist": "run-s eslint prettier build build:umd build:types",
-        "docs": "jsdoc2md --files src/**/*.ts --configure jsdoc2md.json > API.md",
+        "docs": "rimraf docs && typedoc",
         "eslint": "eslint --fix --ext .ts,.js",
         "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
         "pub": "git add . && git commit -m $npm_package_version && git pull && git push"
@@ -48,8 +48,6 @@
         "babel-loader": "^8.2.2",
         "eslint": "^7.32.0",
         "eslint-config-sets": "^1.4.0",
-        "jsdoc-babel": "^0.5.0",
-        "jsdoc-to-markdown": "^7.0.1",
         "npm-run-all": "^4.1.5",
         "prettier": "^2.2.1",
         "progress-bar-webpack-plugin": "^2.1.0",
@@ -57,6 +55,8 @@
         "rollup": "^2.56.3",
         "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.30.0",
+        "typedoc": "^0.21.7",
+        "typedoc-plugin-markdown": "^3.10.4",
         "typescript": "^4.4.2",
         "webpack": "^5.51.1",
         "webpack-cli": "^4.8.0",

@@ -1,3 +1,5 @@
+index.md - v2.0.0 / [Exports](modules.md)
+
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
