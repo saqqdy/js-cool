@@ -5,7 +5,7 @@
  * @param arr - 目标数组
  * @param fn - 判断方法
  * @returns 返回判断结果
-*/
-import type { AnyFunction } from "../typings/common";
+ */
+import type { AnyFunction } from '../typings/common';
 declare const all: (arr: any[], fn: AnyFunction) => boolean;
 export default all;

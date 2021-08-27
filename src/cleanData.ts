@@ -10,7 +10,7 @@ import isArray from './isArray'
  * @param nullFix - 选填，没有对应属性时返回的值，默认不返回该属性
  * @returns 返回清洗后的对象
  */
-import type { AnyObject } from "../typings/common";
+import type { AnyObject } from '../typings/common'
 
 function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
     let result: any = {}

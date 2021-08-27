@@ -1,8 +1,8 @@
 /**
  * @description 防抖节流
  * return {Object} class
-*/
-import type { AnyFunction } from "../typings/common";
+ */
+import type { AnyFunction } from '../typings/common'
 
 function delay() {
     return {

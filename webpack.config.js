@@ -7,7 +7,7 @@ let plugins = [new ProgressBarPlugin()]
 module.exports = {
     mode: 'production',
     target: 'web',
-    entry: './src/index.js',
+    entry: './src/index.ts',
     output: {
         path: path.resolve(process.cwd(), './lib'),
         publicPath: '/',
@@ -20,7 +20,7 @@ module.exports = {
         globalObject: "typeof self !== 'undefined' ? self : this"
     },
     resolve: {
-        extensions: ['.js', '.json'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'],
         alias: config.alias,
         modules: ['node_modules']
     },
@@ -32,7 +32,7 @@ module.exports = {
         children: false
     },
     optimization: {
-        minimize: true,
+        minimize: true
     },
     module: {
         rules: [

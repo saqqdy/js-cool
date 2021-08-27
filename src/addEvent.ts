@@ -4,7 +4,7 @@
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-import type { AnyElement, AnyFunction } from "../typings/common";
+import type { AnyElement, AnyFunction } from '../typings/common'
 
 export interface CustomEvent extends Event {
     returnValue: boolean
@@ -59,7 +59,7 @@ function handleEvent(event: CustomEvent): boolean {
     //执行每一个处理函数
     for (var i in handlers) {
         // @ts-ignore
-        (this as any).$$handleEvent = handlers[i]
+        ;(this as any).$$handleEvent = handlers[i]
         // @ts-ignore
         if ((this as any).$$handleEvent(event) === false) {
             returnValue = false
@@ -81,10 +81,10 @@ function fixEvent(event: any): any {
     return event
 }
 fixEvent.preventDefault = function () {
-    (this as any).returnValue = false
+    ;(this as any).returnValue = false
 }
 fixEvent.stopPropagation = function () {
-    (this as any).cancelBubble = true
+    ;(this as any).cancelBubble = true
 }
 
 export default addEvent

@@ -5,8 +5,8 @@
  * @param arr - 目标数组
  * @param fn - 判断方法
  * @returns 返回判断结果
-*/
-import type { AnyFunction } from "../typings/common";
+ */
+import type { AnyFunction } from '../typings/common'
 
 const any = (arr: any[], fn: AnyFunction) => arr.some(fn)
 

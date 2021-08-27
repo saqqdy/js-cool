@@ -4,7 +4,7 @@
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-import type { AnyElement, AnyFunction } from "../typings/common";
+import type { AnyElement, AnyFunction } from '../typings/common';
 export interface CustomEvent extends Event {
     returnValue: boolean;
     cancelBubble: boolean;

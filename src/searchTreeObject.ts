@@ -17,7 +17,7 @@ export interface Expression {
  * @param keySet - 选填 默认的子类名称、查询name
  * @param number - 选填 查找个数，不传则查询全部
  * @returns 返回查询到的数组
-*/
+ */
 function searchTreeObject(tree: object | any[], expression: any, keySet: SearchkeySet, number: number = 0) {
     let retNode: any[] = [],
         isLimit = number > 0
@@ -27,7 +27,7 @@ function searchTreeObject(tree: object | any[], expression: any, keySet: Searchk
     if (Object.prototype.toString.call(tree) === '[object Object]') tree = [tree]
     /**
      * @description 递归查找
-     * 
+     *
      * @private
      * @param tree - 对象
      * @param expression - 表达式

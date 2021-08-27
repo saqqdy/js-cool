@@ -1,6 +1,7 @@
 # 2021.07.26 v1.1.0 更新日志
 
-1. 采用webpack打umd包
+1. 采用 webpack 打 umd 包
+
 # 2021.03.03 v1.0.9 更新日志
 
 1. 新增 all/any/RGBToHex/uuid 等方法

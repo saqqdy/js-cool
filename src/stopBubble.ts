@@ -1,6 +1,6 @@
 /**
  * @description 阻止冒泡
- * @example 
+ * @example
  * @param e - dom的event对象
  * @returns
  */

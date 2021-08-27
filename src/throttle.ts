@@ -1,12 +1,12 @@
 /**
  * 频率控制 返回函数连续调用时，fn 执行频率限定为每多少时间执行一次
- * 
+ *
  * @param fn - 需要调用的函数
  * @param delay - 延迟时间，单位毫秒
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
-*/
-import type { AnyFunction } from "../typings/common";
+ */
+import type { AnyFunction } from '../typings/common'
 
 const throttle = function (fn: AnyFunction, delay: number, immediate: boolean, debounce: boolean) {
     var curr = +new Date(), //当前事件
@@ -22,8 +22,8 @@ const throttle = function (fn: AnyFunction, delay: number, immediate: boolean, d
         }
     return function () {
         curr = +new Date()
-            // @ts-ignore
-            ; (context = (this as any)), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay)
+        // @ts-ignore
+        ;(context = this as any), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay)
         clearTimeout(timer)
         if (debounce) {
             if (immediate) {

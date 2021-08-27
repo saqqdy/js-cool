@@ -8,7 +8,7 @@ function isExitsFunction(funcName: string): boolean {
         if (typeof eval(funcName) === 'function') {
             return true
         }
-    } catch (e) { }
+    } catch (e) {}
     return false
 }
 

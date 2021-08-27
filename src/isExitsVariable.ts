@@ -10,7 +10,7 @@ function isExitsVariable(variableName: string): boolean {
         } else {
             return true
         }
-    } catch (e) { }
+    } catch (e) {}
     return false
 }
 

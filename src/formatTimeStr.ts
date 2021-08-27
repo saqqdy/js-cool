@@ -16,11 +16,11 @@ function formatTimeStr(time: string | number, fmt: string): string {
     if (t < 60 * 2) {
         newTimeStr = '刚刚'
     } else if (t < 60 * 60) {
-        newTimeStr = parseInt('' + (t / 60)) + '\u5206\u949F\u524D'
+        newTimeStr = parseInt('' + t / 60) + '\u5206\u949F\u524D'
     } else if (t < 60 * 60 * 24) {
-        newTimeStr = parseInt('' + (t / (60 * 60))) + '\u5C0F\u65F6\u524D'
+        newTimeStr = parseInt('' + t / (60 * 60)) + '\u5C0F\u65F6\u524D'
     } else if (t < 60 * 60 * 24 * 30) {
-        newTimeStr = parseInt('' + (t / (60 * 60 * 24))) + '\u5929\u524D'
+        newTimeStr = parseInt('' + t / (60 * 60 * 24)) + '\u5929\u524D'
     } else {
         newTimeStr = formatTime(new Date(time), format)
     }

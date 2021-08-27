@@ -43,7 +43,7 @@ export default [
             }
         ],
         plugins: [
-            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'] }),
+            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'] }),
             typescript({
                 tsconfigOverride: {
                     compilerOptions: {
@@ -56,7 +56,7 @@ export default [
             }),
             babel({
                 babelHelpers: 'bundled',
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'],
                 // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true
@@ -83,12 +83,9 @@ export default [
             }
         ],
         plugins: [
-            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'] }),
+            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'] }),
             typescript({
                 tsconfigOverride: {
-                    // compilerOptions: {
-                    //     declaration: false
-                    // },
                     include: ['src/**/*'],
                     exclude: ['node_modules', '__tests__', 'core-js']
                 },
@@ -96,7 +93,7 @@ export default [
             }),
             babel({
                 babelHelpers: 'bundled',
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'],
                 // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true

@@ -5,7 +5,7 @@
  * @param delay - 延迟时间，单位毫秒
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
-*/
-import type { AnyFunction } from "../typings/common";
+ */
+import type { AnyFunction } from '../typings/common';
 declare const throttle: (fn: AnyFunction, delay: number, immediate: boolean, debounce: boolean) => () => void;
 export default throttle;

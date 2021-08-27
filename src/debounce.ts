@@ -7,7 +7,7 @@ import throttle from './throttle'
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
  */
-import type { AnyFunction } from "../typings/common";
+import type { AnyFunction } from '../typings/common'
 
 const debounce = (fn: AnyFunction, delay: number, immediate: boolean) => {
     return throttle(fn, delay, immediate, true)
