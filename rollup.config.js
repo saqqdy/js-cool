@@ -46,9 +46,9 @@ export default [
             resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'] }),
             typescript({
                 tsconfigOverride: {
-                    // compilerOptions: {
-                    //     declaration: false
-                    // },
+                    compilerOptions: {
+                        declaration: false
+                    },
                     include: ['src/**/*'],
                     exclude: ['node_modules', '__tests__', 'core-js']
                 },
