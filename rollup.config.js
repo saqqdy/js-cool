@@ -50,20 +50,21 @@ export default [
                         declaration: false
                     },
                     include: ['src/**/*'],
-                    exclude: ['node_modules', '__tests__']
+                    exclude: ['node_modules', '__tests__', 'core-js']
                 },
                 abortOnError: false
             }),
             babel({
                 babelHelpers: 'bundled',
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
-                exclude: [/\/core-js\//],
+                exclude: ['node_modules/@babel/**', 'node_modules/core-js/**'],
+                // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true
             }),
             commonjs()
-        ]
-        // external: ['core-js']
+        ],
+        external: ['core-js']
     },
     {
         input: fileList,
@@ -87,14 +88,15 @@ export default [
                         declaration: false
                     },
                     include: ['src/**/*'],
-                    exclude: ['node_modules', '__tests__']
+                    exclude: ['node_modules', '__tests__', 'core-js']
                 },
                 abortOnError: false
             }),
             babel({
                 babelHelpers: 'bundled',
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
-                exclude: [/\/core-js\//],
+                exclude: ['node_modules/@babel/**', 'node_modules/core-js/**'],
+                // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true
             }),
