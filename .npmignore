@@ -12,6 +12,7 @@ selenium-debug.log
 
 *.bak
 *_bak
+temp
 
 # Editor directories and files
 .idea
