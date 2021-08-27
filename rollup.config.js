@@ -4,7 +4,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
-// import typescript from '@rollup/plugin-typescript'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
@@ -17,8 +16,7 @@ const readDir = entry => {
         if (info.isDirectory()) {
             readDir(name)
         } else {
-            let fileName = name.split('/').reverse()
-            ;/^[\S]*\.(js|ts)$/.test(fileName[0]) && getInfo(name)
+            ;/^[\S]*\.ts$/.test(item) && item !== 'index.ts' && getInfo(name)
         }
     })
 }
@@ -32,29 +30,6 @@ readDir('./src')
 const production = !process.env.ROLLUP_WATCH
 
 export default [
-    // browser-friendly UMD build
-    // {
-    //     input: 'src/index.js',
-    //     output: {
-    //         name: 'JSCOOL',
-    //         file: 'lib/index.umd.js',
-    //         format: 'umd'
-    //     },
-    //     plugins: [
-    //         resolve(), // so Rollup can find `ms`
-    //         commonjs(), // so Rollup can convert `ms` to an ES module
-    //         babel({ babelHelpers: 'inline' }),
-    //         production && terser()
-    //     ]
-    //     // external: ['core-js', '@babel/runtime']
-    // },
-
-    // CommonJS (for Node) and ES module (for bundlers) build.
-    // (We could have three entries in the configuration array
-    // instead of two, but it's quicker to generate multiple
-    // builds from a single configuration where possible, using
-    // an array for the `output` option, where we can specify
-    // `file` and `format` for each target)
     {
         input: 'src/index.ts',
         output: [
@@ -68,18 +43,27 @@ export default [
             }
         ],
         plugins: [
-            // resolve(),
-            // commonjs(),
-            babel({ babelHelpers: 'bundled' }),
+            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'] }),
             typescript({
                 tsconfigOverride: {
+                    compilerOptions: {
+                        declaration: false
+                    },
                     include: ['src/**/*'],
-                    exclude: ['node_modules', 'src/**/__tests__/*']
+                    exclude: ['node_modules', '__tests__']
                 },
                 abortOnError: false
-            })
-        ],
-        external: ['core-js']
+            }),
+            babel({
+                babelHelpers: 'bundled',
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
+                exclude: [/\/core-js\//],
+                // runtimeHelpers: true,
+                sourceMap: true
+            }),
+            commonjs()
+        ]
+        // external: ['core-js']
     },
     {
         input: fileList,
@@ -96,16 +80,25 @@ export default [
             }
         ],
         plugins: [
-            // resolve(),
-            // commonjs(),
-            babel({ babelHelpers: 'bundled' }),
+            resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'] }),
             typescript({
                 tsconfigOverride: {
+                    compilerOptions: {
+                        declaration: false
+                    },
                     include: ['src/**/*'],
-                    exclude: ['node_modules', 'src/**/__tests__/*']
+                    exclude: ['node_modules', '__tests__']
                 },
                 abortOnError: false
-            })
+            }),
+            babel({
+                babelHelpers: 'bundled',
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
+                exclude: [/\/core-js\//],
+                // runtimeHelpers: true,
+                sourceMap: true
+            }),
+            commonjs()
         ],
         external: ['core-js']
     }
