@@ -8,7 +8,8 @@ module.exports = {
                 useBuiltIns: 'usage',
                 corejs: 3
             }
-        ]
+        ],
+        // '@babel/typescript'
     ]
     // plugins: ['@babel/plugin-transform-runtime']
 }

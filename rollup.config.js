@@ -4,6 +4,8 @@ import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
+// import typescript from '@rollup/plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
 let fileList = []
@@ -16,7 +18,7 @@ const readDir = entry => {
             readDir(name)
         } else {
             let fileName = name.split('/').reverse()
-            ;/^[\S]*\.js$/.test(fileName[0]) && getInfo(name)
+            ;/^[\S]*\.(js|ts)$/.test(fileName[0]) && getInfo(name)
         }
     })
 }
@@ -54,7 +56,7 @@ export default [
     // an array for the `output` option, where we can specify
     // `file` and `format` for each target)
     {
-        input: 'src/index.js',
+        input: 'src/index.ts',
         output: [
             {
                 file: pkg.main,
@@ -65,7 +67,18 @@ export default [
                 format: 'es'
             }
         ],
-        plugins: [babel({ babelHelpers: 'bundled' })],
+        plugins: [
+            // resolve(),
+            // commonjs(),
+            babel({ babelHelpers: 'bundled' }),
+            typescript({
+                tsconfigOverride: {
+                    include: ['src/**/*'],
+                    exclude: ['node_modules', 'src/**/__tests__/*']
+                },
+                abortOnError: false
+            })
+        ],
         external: ['core-js']
     },
     {
@@ -82,7 +95,18 @@ export default [
                 sourcemap: false
             }
         ],
-        plugins: [babel({ babelHelpers: 'bundled' })],
+        plugins: [
+            // resolve(),
+            // commonjs(),
+            babel({ babelHelpers: 'bundled' }),
+            typescript({
+                tsconfigOverride: {
+                    include: ['src/**/*'],
+                    exclude: ['node_modules', 'src/**/__tests__/*']
+                },
+                abortOnError: false
+            })
+        ],
         external: ['core-js']
     }
 ]
