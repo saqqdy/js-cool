@@ -57,7 +57,6 @@ export default [
             babel({
                 babelHelpers: 'bundled',
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
-                exclude: ['node_modules/@babel/**', 'node_modules/core-js/**'],
                 // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true
@@ -65,7 +64,8 @@ export default [
             commonjs()
         ],
         external(id) {
-            return ['cores-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
+            // return ['core-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
+            return ['core-js'].some(k => new RegExp('^' + k).test(id))
         }
     },
     {
@@ -97,7 +97,6 @@ export default [
             babel({
                 babelHelpers: 'bundled',
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts'],
-                exclude: ['node_modules/@babel/**', 'node_modules/core-js/**'],
                 // exclude: [/\/core-js\//],
                 // runtimeHelpers: true,
                 sourceMap: true
@@ -105,7 +104,7 @@ export default [
             commonjs()
         ],
         external(id) {
-            return ['cores-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
+            return ['core-js'].some(k => new RegExp('^' + k).test(id))
         }
     }
 ]
