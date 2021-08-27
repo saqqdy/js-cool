@@ -65,7 +65,7 @@ export default [
             commonjs()
         ],
         external(id) {
-            return /^core-js/.test(id)
+            return ['cores-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
         }
     },
     {
@@ -105,7 +105,7 @@ export default [
             commonjs()
         ],
         external(id) {
-            return /^core-js/.test(id)
+            return ['cores-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
         }
     }
 ]
