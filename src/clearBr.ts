@@ -1,7 +1,7 @@
 /**
  * 去除换行
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 const clearBr = (string: string) => {
     return string

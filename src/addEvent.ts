@@ -1,5 +1,6 @@
 /**
  * addEvent()事件委托，支持多次委托
+ *
  * @param element - js dom对象
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
@@ -46,7 +47,7 @@ addEvent.guid = 1
  *
  * @private
  * @param event - 事件类型
- * @returns
+ * @returns returnValue
  */
 function handleEvent(event: CustomEvent): boolean {
     var returnValue = true
@@ -72,7 +73,7 @@ function handleEvent(event: CustomEvent): boolean {
  * 为IE的事件对象添加一些“缺失的”函数
  * @private
  * @param event - 事件类型
- * @returns 返回补齐了缺失方法的的event
+ * @returns event 返回补齐了缺失方法的的event
  */
 function fixEvent(event: any): any {
     //添加标准的W3C方法
