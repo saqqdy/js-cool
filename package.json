@@ -21,7 +21,7 @@
         "dev": "rollup -c -w",
         "test": "node test/test.js",
         "pretest": "npm run build",
-        "dist": "run-s eslint prettier build build:umd build:types",
+        "dist": "run-s docs eslint prettier build build:umd build:types",
         "docs": "rimraf docs && typedoc",
         "eslint": "eslint --fix --ext .ts,.js",
         "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

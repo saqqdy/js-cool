@@ -9,7 +9,7 @@ export interface Expression {
     [prop: string]: any;
 }
 /**
- * @description tree对象深度查找
+ * tree对象深度查找
  *
  * @param tree - 树形对象
  * @param expression - 必填 查询方式

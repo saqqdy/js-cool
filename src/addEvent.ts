@@ -1,10 +1,3 @@
-/**
- * addEvent()事件委托，支持多次委托
- *
- * @param element - js dom对象
- * @param type - 事件类型。不需要加on
- * @param handler - 回调方法
- */
 import type { AnyElement, AnyFunction } from '../typings/common'
 
 export interface CustomEvent extends Event {
@@ -16,6 +9,13 @@ export interface CustomAnyFunction extends AnyFunction {
     $$guid: number
 }
 
+/**
+ * addEvent()事件委托，支持多次委托
+ *
+ * @param element - js dom对象
+ * @param type - 事件类型。不需要加on
+ * @param handler - 回调方法
+ */
 const addEvent = (element: AnyElement, type: string, handler: CustomAnyFunction) => {
     if (element.addEventListener) {
         element.addEventListener(type, handler, false)

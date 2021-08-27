@@ -1,8 +1,8 @@
 /**
- * @description 阻止冒泡
- * @example
+ * 阻止冒泡
+ *
  * @param e - dom的event对象
- * @returns
+ * @returns bool false
  */
 declare function stopBubble(e: Event): boolean;
 export default stopBubble;

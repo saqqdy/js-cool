@@ -1,5 +1,6 @@
 /**
- * @description 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
+ * 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
+ *
  * @example all([4, 2, 3], x => x > 1); // true
  * @example all([1, 2, 3]); // true
  * @param arr - 目标数组

@@ -1,5 +1,6 @@
 /**
- * @description 判断是否数组
+ * 判断是否数组
+ *
  * @param arr -
  */
 function isArray(arr: any): arr is any[] {

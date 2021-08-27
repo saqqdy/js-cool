@@ -6,7 +6,7 @@
 
 ### Variables
 
-- [guid](addEvent.md#guid)
+-   [guid](addEvent.md#guid)
 
 ## Variables
 

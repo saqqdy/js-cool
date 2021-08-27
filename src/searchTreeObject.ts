@@ -10,7 +10,7 @@ export interface Expression {
 }
 
 /**
- * @description tree对象深度查找
+ * tree对象深度查找
  *
  * @param tree - 树形对象
  * @param expression - 必填 查询方式
@@ -26,7 +26,7 @@ function searchTreeObject(tree: object | any[], expression: any, keySet: Searchk
     }
     if (Object.prototype.toString.call(tree) === '[object Object]') tree = [tree]
     /**
-     * @description 递归查找
+     * 递归查找
      *
      * @private
      * @param tree - 对象

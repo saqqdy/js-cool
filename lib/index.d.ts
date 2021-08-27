@@ -1,3 +1,10 @@
+/**
+ * addEvent()事件委托，支持多次委托
+ *
+ * @param element - js dom对象
+ * @param type - 事件类型。不需要加on
+ * @param handler - 回调方法
+ */
 export declare const addEvent: {
     (element: AnyElement, type: string, handler: CustomAnyFunction): void;
     guid: number;
@@ -21,7 +28,8 @@ declare interface AnyObject {
 }
 
 /**
- * @description 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
+ * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
+ *
  * @example
  * ```js
  * arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
@@ -41,8 +49,8 @@ declare interface AnyObject {
 export declare const arrayToCSV: (arr: any[], delimiter?: string) => string;
 
 /**
- * camel2Dash
  * 将驼峰字符串转成-间隔且全小写的Dash模式
+ *
  * @param string - 需要转换的字符串
  * @returns 返回转换后的字符串
  */
@@ -53,49 +61,49 @@ export declare function cleanData(data: any, map: any[] | AnyObject, nullFix?: a
 /**
  * 去除HTML标签所有属性
  * @param string - 传入字符串
- * @returns
+ * @returns newString
  */
 export declare const clearAttr: (string: string) => string;
 
 /**
  * 去除换行
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearBr: (string: string) => string;
 
 /**
  * 去除HTML标签
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearHtml: (string: string) => string;
 
 /**
  * 去除HTML标签保留空格、换行
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearHtmlExpSN: (string: string) => string;
 
 /**
  * 去除HTML标签及换行
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearHtmlN: (string: string) => string;
 
 /**
  * 去除HTML标签及空格、换行
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearHtmlNS: (string: string) => string;
 
 /**
  * 去除HTML标签及标签里面的文字
  * @param string - 带html标签的字符串
- * @returns
+ * @returns newString
  */
 export declare const clearHtmlTag: (string: string) => string;
 
@@ -122,7 +130,8 @@ export declare const client: (name?: string, userAgent?: string) => boolean | {
 };
 
 /**
- * @description 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+ * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+ *
  * @example
  * ```js
  * CSVToArray('a,b\\nc,d'); // `[['a','b'],['c','d']]`;
@@ -143,7 +152,8 @@ export declare const client: (name?: string, userAgent?: string) => boolean | {
 export declare const CSVToArray: (data: string, delimiter?: string, omitFirstRow?: boolean) => string[][];
 
 /**
- * @description 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
+ * 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
+ *
  * @example
  * ```js
  * CSVToJSON('col1,col2\\na,b\\nc,d'); // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`;
@@ -324,6 +334,11 @@ declare const _default: {
 };
 export default _default;
 
+/**
+ * 防抖节流
+ *
+ * @returns class
+ */
 export declare function delay(): {
     map: any;
     register(id: string, fn: AnyFunction, time: number, boo: boolean): void;
@@ -364,7 +379,8 @@ export declare const deWxJumpLink: (string: string) => string;
 export declare const deWxJumpLinkOld: (string: string) => string;
 
 /**
- * @description 文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求
+ * 文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；2. 使用a标签download属性（或者js创建a标签）；3. 浏览器可识别的pdf、txt文件，后端兼容处理attachment；4. 在header增加token用于鉴权下载，使用XmlHttpRequest来想后台发起请求
+ *
  * @param url - 链接
  * @param filename - 文件名
  * @param type - 下载类型 'href','open','download','request'
@@ -547,7 +563,8 @@ export declare function getSession(name: string): any;
 
 /**
  * getType
- * @description 获取目标类型
+ * 获取目标类型
+ *
  * @param target - 目标
  * @returns 类型
  */
@@ -578,7 +595,8 @@ export declare const imgAdapt: (imgurl: string, size: string) => string | false;
 export declare const imgChoose: (imgurl: string) => string;
 
 /**
- * @description 判断是否数组
+ * 判断是否数组
+ *
  * @param arr -
  */
 export declare function isArray(arr: any): arr is any[];
@@ -605,7 +623,8 @@ export declare function isExitsFunction(funcName: string): boolean;
 export declare function isExitsVariable(variableName: string): boolean;
 
 /**
- * @description 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
+ * 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
+ *
  * @example
  * ```js
  * JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
@@ -622,7 +641,8 @@ export declare function isExitsVariable(variableName: string): boolean;
 export declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
 
 /**
- * @description 返回下一个zIndex值
+ * 返回下一个zIndex值
+ *
  * @param min - 可选，最小值
  * @param max - 可选，最大值
  * @returns 数字
@@ -630,7 +650,8 @@ export declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string)
 export declare function nextIndex(min?: number, max?: number): number;
 
 /**
- * @description 新标签页打开链接（浏览器不能解析的文件跳转下载）
+ * 新标签页打开链接（浏览器不能解析的文件跳转下载）
+ *
  * @param url - 链接
  */
 export declare function openUrl(url: string): void;
@@ -663,7 +684,8 @@ export declare const pattern: {
 export declare function removeEvent(element: AnyElement, type: string, handler: CustomAnyFunction_2): void;
 
 /**
- * @description 将RGB组件的值转换为颜色代码。
+ * 将RGB组件的值转换为颜色代码。
+ *
  * @example RGBToHex(255, 165, 1); // 'ffa501'
  * @param r - RGB第1个值
  * @param g - RGB第2个值
@@ -679,7 +701,7 @@ declare interface SearchkeySet {
 }
 
 /**
- * @description tree对象深度查找
+ * tree对象深度查找
  *
  * @param tree - 树形对象
  * @param expression - 必填 查询方式
@@ -712,17 +734,17 @@ export declare function setSession(name: string, value: any, seconds: number): v
 export declare function splitThousand(val: string | number): string | 0;
 
 /**
- * @description 阻止冒泡
- * @example
+ * 阻止冒泡
+ *
  * @param e - dom的event对象
- * @returns
+ * @returns bool false
  */
 export declare function stopBubble(e: Event): boolean;
 
 /**
  * 阻止默认事件
  * @param e - dom的event对象
- * @returns
+ * @returns bool false
  */
 export declare function stopDefault(e: Event): boolean;
 
@@ -758,7 +780,8 @@ export declare const trim: (string: string, type?: string) => string | void;
 export declare const upperFirst: (string: string) => string;
 
 /**
- * @description 浏览器端生成uuid，采用v4方法
+ * 浏览器端生成uuid，采用v4方法
+ *
  * @example
  * ```js
  * uuid(); // '4222fcfe-5721-4632-bede-6043885be57d'

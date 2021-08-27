@@ -1,5 +1,6 @@
 /**
- * @description 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+ * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+ *
  * @example
  * ```js
  * CSVToArray('a,b\\nc,d'); // `[['a','b'],['c','d']]`;

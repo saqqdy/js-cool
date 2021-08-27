@@ -1,6 +1,7 @@
 import isArray from './isArray'
 /**
- * @description: 数据清洗方法
+ * 数据清洗方法
+ *
  * @param data - 要清洗的对象，必传
  * @param  map - 需要的数据队列，可传数组或者对象
  * @param map -
