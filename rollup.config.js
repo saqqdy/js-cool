@@ -64,7 +64,9 @@ export default [
             }),
             commonjs()
         ],
-        external: ['core-js']
+        external(id) {
+            return /^core-js/.test(id)
+        }
     },
     {
         input: fileList,
@@ -102,6 +104,8 @@ export default [
             }),
             commonjs()
         ],
-        external: ['core-js']
+        external(id) {
+            return /^core-js/.test(id)
+        }
     }
 ]
