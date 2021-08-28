@@ -685,7 +685,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/9abdf88/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/5202fd7/src/CSVToArray.ts#L21)
 
 ---
 
@@ -723,7 +723,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/5202fd7/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -751,7 +751,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/9abdf88/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/5202fd7/src/RGBToHex.ts#L10)
 
 ---
 
@@ -775,7 +775,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/9abdf88/src/addEvent.ts#L15)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/5202fd7/src/addEvent.ts#L15)
 
 ---
 
@@ -812,7 +812,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/5202fd7/src/all.ts#L17)
 
 ---
 
@@ -849,7 +849,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/5202fd7/src/any.ts#L17)
 
 ---
 
@@ -904,7 +904,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/9abdf88/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/5202fd7/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -929,7 +929,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/9abdf88/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/5202fd7/src/client.ts#L8)
 
 ---
 
@@ -949,7 +949,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/9abdf88/src/extend.ts#L13)
+[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/5202fd7/src/extend.ts#L13)
 
 ---
 
@@ -967,7 +967,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/9abdf88/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/5202fd7/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -991,4 +991,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/9abdf88/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/5202fd7/src/uuid.ts#L11)
