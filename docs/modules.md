@@ -48,6 +48,13 @@
 
 -   [addEvent](modules/addEvent.md)
 
+### Interfaces
+
+-   [AnyFunction](interfaces/AnyFunction.md)
+-   [AnyObject](interfaces/AnyObject.md)
+-   [SearchkeySet](interfaces/SearchkeySet.md)
+-   [WindowSizeObj](interfaces/WindowSizeObj.md)
+
 ### Properties
 
 -   [default](modules.md#default)
@@ -336,13 +343,13 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `CSVToJSON`                    | (`data`: `string`, `delimiter`: `string`) => `any`[]                                                                                                                                                                                                                                                                                                                                                                                            |
 | `JSONToCSV`                    | (`arr`: `any`[], `columns`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                         |
 | `RGBToHex`                     | (`r`: `number`, `g`: `number`, `b`: `number`) => `string`                                                                                                                                                                                                                                                                                                                                                                                       |
-| `addEvent`                     | (`element`: `AnyElement`, `type`: `string`, `handler`: `CustomAnyFunction`) => `void`                                                                                                                                                                                                                                                                                                                                                           |
+| `addEvent`                     | (`element`: [`AnyObject`](interfaces/AnyObject.md), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                          |
 | `addEvent.guid`                | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `all`                          | (`arr`: `any`[], `fn`: `AnyFunction`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                              |
-| `any`                          | (`arr`: `any`[], `fn`: `AnyFunction`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                              |
+| `all`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                 |
+| `any`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                 |
 | `arrayToCSV`                   | (`arr`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                             |
 | `camel2Dash`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `cleanData`                    | (`data`: `any`, `map`: `any`[] \| `AnyObject`, `nullFix?`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                                      |
+| `cleanData`                    | (`data`: `any`, `map`: `any`[] \| [`AnyObject`](interfaces/AnyObject.md), `nullFix?`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                           |
 | `clearAttr`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `clearBr`                      | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `clearHtml`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -355,13 +362,13 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `dash2Camel`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `deWxJumpLink`                 | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `deWxJumpLinkOld`              | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `debounce`                     | (`fn`: `AnyFunction`, `delay`: `number`, `immediate`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                                                                                |
+| `debounce`                     | (`fn`: [`AnyFunction`](interfaces/AnyFunction.md), `delay`: `number`, `immediate`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                                                   |
 | `decodeBase64`                 | (`input`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `decodeUtf8`                   | (`utftext`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `delCache`                     | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `delCookie`                    | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `delSession`                   | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `delay`                        | () => { `map`: `any` ; `destroy`: (`id`: `string`) => `void` ; `register`: (`id`: `string`, `fn`: `AnyFunction`, `time`: `number`, `boo`: `boolean`) => `void` }                                                                                                                                                                                                                                                                                |
+| `delay`                        | () => { `map`: `any` ; `destroy`: (`id`: `string`) => `void` ; `register`: (`id`: `string`, `fn`: [`AnyFunction`](interfaces/AnyFunction.md), `time`: `number`, `boo`: `boolean`) => `void` }                                                                                                                                                                                                                                                   |
 | `download`                     | (`url`: `string`, `filename`: `string`, `type`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                             |
 | `enWxJumpLink`                 | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `enWxJumpLinkOld`              | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -388,7 +395,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `getSession`                   | (`name`: `string`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `getType`                      | (`target`: `any`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `getUrlParam`                  | (`url`: `string`) => `object`                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `getWindowSize`                | () => `WindowSizeObj`                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `getWindowSize`                | () => [`WindowSizeObj`](interfaces/WindowSizeObj.md)                                                                                                                                                                                                                                                                                                                                                                                            |
 | `imgAdapt`                     | (`imgurl`: `string`, `size`: `string`) => `string` \| `false`                                                                                                                                                                                                                                                                                                                                                                                   |
 | `imgChoose`                    | (`imgurl`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `isArray`                      | (`arr`: `any`) => arr is any[]                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -416,8 +423,8 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `pattern.textarea`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `pattern.url`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `pattern.username`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `removeEvent`                  | (`element`: `AnyElement`, `type`: `string`, `handler`: `CustomAnyFunction`) => `void`                                                                                                                                                                                                                                                                                                                                                           |
-| `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: `SearchkeySet`, `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                                                     |
+| `removeEvent`                  | (`element`: [`AnyObject`](interfaces/AnyObject.md), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                          |
+| `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: [`SearchkeySet`](interfaces/SearchkeySet.md), `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                       |
 | `setCache`                     | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                               |
 | `setCookie`                    | (`name`: `string`, `value`: `any`, `seconds`: `number`, `path`: `string`, `samesite`: `boolean`) => `void`                                                                                                                                                                                                                                                                                                                                      |
 | `setSession`                   | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                               |
@@ -426,7 +433,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `stopDefault`                  | (`e`: `Event`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `textareaInsertText`           | (`obj`: `HTMLTextAreaElement`, `str`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                       |
 | `textareaMoveToEnd`            | (`obj`: `HTMLTextAreaElement`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `throttle`                     | (`fn`: `AnyFunction`, `delay`: `number`, `immediate`: `boolean`, `debounce`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                                                         |
+| `throttle`                     | (`fn`: [`AnyFunction`](interfaces/AnyFunction.md), `delay`: `number`, `immediate`: `boolean`, `debounce`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                            |
 | `trim`                         | (`string`: `string`, `type`: `string`) => `string` \| `void`                                                                                                                                                                                                                                                                                                                                                                                    |
 | `upperFirst`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `uuid`                         | () => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -476,11 +483,11 @@ addEvent()事件委托，支持多次委托
 
 ##### Parameters
 
-| Name      | Type                | Description           |
-| :-------- | :------------------ | :-------------------- |
-| `element` | `AnyElement`        | js dom 对象           |
-| `type`    | `string`            | 事件类型。不需要加 on |
-| `handler` | `CustomAnyFunction` | 回调方法              |
+| Name      | Type                                       | Description           |
+| :-------- | :----------------------------------------- | :-------------------- |
+| `element` | [`AnyObject`](interfaces/AnyObject.md)     | js dom 对象           |
+| `type`    | `string`                                   | 事件类型。不需要加 on |
+| `handler` | [`AnyFunction`](interfaces/AnyFunction.md) | 回调方法              |
 
 ##### Returns
 
@@ -494,7 +501,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[addEvent.ts:19](https://github.com/saqqdy/js-cool/blob/180a34d/src/addEvent.ts#L19)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/4221ee0/src/addEvent.ts#L15)
 
 ## Functions
 
@@ -538,7 +545,7 @@ array
 
 #### Defined in
 
-[CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/180a34d/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/4221ee0/src/CSVToArray.ts#L21)
 
 ---
 
@@ -575,7 +582,7 @@ json
 
 #### Defined in
 
-[CSVToJSON.ts:16](https://github.com/saqqdy/js-cool/blob/180a34d/src/CSVToJSON.ts#L16)
+[src/CSVToJSON.ts:16](https://github.com/saqqdy/js-cool/blob/4221ee0/src/CSVToJSON.ts#L16)
 
 ---
 
@@ -613,7 +620,7 @@ CSV 数据
 
 #### Defined in
 
-[JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/180a34d/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/4221ee0/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -641,7 +648,7 @@ hex 值
 
 #### Defined in
 
-[RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/180a34d/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/4221ee0/src/RGBToHex.ts#L10)
 
 ---
 
@@ -651,10 +658,10 @@ hex 值
 
 #### Parameters
 
-| Name  | Type          |
-| :---- | :------------ |
-| `arr` | `any`[]       |
-| `fn`  | `AnyFunction` |
+| Name  | Type                                       |
+| :---- | :----------------------------------------- |
+| `arr` | `any`[]                                    |
+| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) |
 
 #### Returns
 
@@ -662,7 +669,7 @@ hex 值
 
 #### Defined in
 
-[all.ts:12](https://github.com/saqqdy/js-cool/blob/180a34d/src/all.ts#L12)
+[src/all.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/all.ts#L12)
 
 ---
 
@@ -672,10 +679,10 @@ hex 值
 
 #### Parameters
 
-| Name  | Type          |
-| :---- | :------------ |
-| `arr` | `any`[]       |
-| `fn`  | `AnyFunction` |
+| Name  | Type                                       |
+| :---- | :----------------------------------------- |
+| `arr` | `any`[]                                    |
+| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) |
 
 #### Returns
 
@@ -683,7 +690,7 @@ hex 值
 
 #### Defined in
 
-[any.ts:12](https://github.com/saqqdy/js-cool/blob/180a34d/src/any.ts#L12)
+[src/any.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/any.ts#L12)
 
 ---
 
@@ -738,7 +745,7 @@ CSV 数据
 
 #### Defined in
 
-[arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/180a34d/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/4221ee0/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -762,7 +769,7 @@ CSV 数据
 
 #### Defined in
 
-[camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/camel2Dash.ts#L7)
+[src/camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/camel2Dash.ts#L7)
 
 ---
 
@@ -786,7 +793,7 @@ newString
 
 #### Defined in
 
-[clearAttr.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearAttr.ts#L6)
+[src/clearAttr.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearAttr.ts#L6)
 
 ---
 
@@ -810,7 +817,7 @@ newString
 
 #### Defined in
 
-[clearBr.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearBr.ts#L6)
+[src/clearBr.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearBr.ts#L6)
 
 ---
 
@@ -834,7 +841,7 @@ newString
 
 #### Defined in
 
-[clearHtml.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearHtml.ts#L6)
+[src/clearHtml.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtml.ts#L6)
 
 ---
 
@@ -858,7 +865,7 @@ newString
 
 #### Defined in
 
-[clearHtmlExpSN.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearHtmlExpSN.ts#L6)
+[src/clearHtmlExpSN.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlExpSN.ts#L6)
 
 ---
 
@@ -882,7 +889,7 @@ newString
 
 #### Defined in
 
-[clearHtmlN.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearHtmlN.ts#L6)
+[src/clearHtmlN.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlN.ts#L6)
 
 ---
 
@@ -906,7 +913,7 @@ newString
 
 #### Defined in
 
-[clearHtmlNS.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearHtmlNS.ts#L6)
+[src/clearHtmlNS.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlNS.ts#L6)
 
 ---
 
@@ -930,7 +937,7 @@ newString
 
 #### Defined in
 
-[clearHtmlTag.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/clearHtmlTag.ts#L6)
+[src/clearHtmlTag.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlTag.ts#L6)
 
 ---
 
@@ -955,7 +962,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[client.ts:8](https://github.com/saqqdy/js-cool/blob/180a34d/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/4221ee0/src/client.ts#L8)
 
 ---
 
@@ -980,7 +987,7 @@ dash2Camel
 
 #### Defined in
 
-[dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/dash2Camel.ts#L7)
+[src/dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/dash2Camel.ts#L7)
 
 ---
 
@@ -1005,7 +1012,7 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-deta
 
 #### Defined in
 
-[deWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/deWxJumpLink.ts#L7)
+[src/deWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/deWxJumpLink.ts#L7)
 
 ---
 
@@ -1029,7 +1036,7 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-deta
 
 #### Defined in
 
-[deWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/deWxJumpLinkOld.ts#L6)
+[src/deWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/deWxJumpLinkOld.ts#L6)
 
 ---
 
@@ -1039,11 +1046,11 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-deta
 
 #### Parameters
 
-| Name        | Type          |
-| :---------- | :------------ |
-| `fn`        | `AnyFunction` |
-| `delay`     | `number`      |
-| `immediate` | `boolean`     |
+| Name        | Type                                       |
+| :---------- | :----------------------------------------- |
+| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) |
+| `delay`     | `number`                                   |
+| `immediate` | `boolean`                                  |
 
 #### Returns
 
@@ -1057,7 +1064,7 @@ name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-deta
 
 #### Defined in
 
-[debounce.ts:12](https://github.com/saqqdy/js-cool/blob/180a34d/src/debounce.ts#L12)
+[src/debounce.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/debounce.ts#L12)
 
 ---
 
@@ -1081,7 +1088,7 @@ base64 解码
 
 #### Defined in
 
-[decodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/180a34d/src/decodeBase64.ts#L9)
+[src/decodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/4221ee0/src/decodeBase64.ts#L9)
 
 ---
 
@@ -1105,7 +1112,7 @@ base64 解码
 
 #### Defined in
 
-[decodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/decodeUtf8.ts#L6)
+[src/decodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/decodeUtf8.ts#L6)
 
 ---
 
@@ -1129,7 +1136,7 @@ base64 解码
 
 #### Defined in
 
-[download.ts:8](https://github.com/saqqdy/js-cool/blob/180a34d/src/download.ts#L8)
+[src/download.ts:8](https://github.com/saqqdy/js-cool/blob/4221ee0/src/download.ts#L8)
 
 ---
 
@@ -1154,7 +1161,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[enWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/enWxJumpLink.ts#L7)
+[src/enWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/enWxJumpLink.ts#L7)
 
 ---
 
@@ -1178,7 +1185,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[enWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/enWxJumpLinkOld.ts#L6)
+[src/enWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/enWxJumpLinkOld.ts#L6)
 
 ---
 
@@ -1202,7 +1209,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[encodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/180a34d/src/encodeBase64.ts#L9)
+[src/encodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/4221ee0/src/encodeBase64.ts#L9)
 
 ---
 
@@ -1226,7 +1233,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[encodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/encodeUtf8.ts#L6)
+[src/encodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/encodeUtf8.ts#L6)
 
 ---
 
@@ -1246,7 +1253,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[extend.ts:13](https://github.com/saqqdy/js-cool/blob/180a34d/src/extend.ts#L13)
+[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/4221ee0/src/extend.ts#L13)
 
 ---
 
@@ -1270,7 +1277,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[getNumber.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/getNumber.ts#L6)
+[src/getNumber.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getNumber.ts#L6)
 
 ---
 
@@ -1295,7 +1302,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[getRandomNum.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/getRandomNum.ts#L7)
+[src/getRandomNum.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomNum.ts#L7)
 
 ---
 
@@ -1320,7 +1327,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[getRandomStr.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/getRandomStr.ts#L7)
+[src/getRandomStr.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomStr.ts#L7)
 
 ---
 
@@ -1344,7 +1351,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[getRandomStrWidthSpecialChar.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/getRandomStrWidthSpecialChar.ts#L6)
+[src/getRandomStrWidthSpecialChar.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomStrWidthSpecialChar.ts#L6)
 
 ---
 
@@ -1362,7 +1369,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[getScrollPosition.ts:5](https://github.com/saqqdy/js-cool/blob/180a34d/src/getScrollPosition.ts#L5)
+[src/getScrollPosition.ts:5](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getScrollPosition.ts#L5)
 
 ---
 
@@ -1387,7 +1394,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[imgAdapt.ts:10](https://github.com/saqqdy/js-cool/blob/180a34d/src/imgAdapt.ts#L10)
+[src/imgAdapt.ts:10](https://github.com/saqqdy/js-cool/blob/4221ee0/src/imgAdapt.ts#L10)
 
 ---
 
@@ -1411,7 +1418,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[imgChoose.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/imgChoose.ts#L6)
+[src/imgChoose.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/imgChoose.ts#L6)
 
 ---
 
@@ -1435,7 +1442,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[isDigitals.ts:6](https://github.com/saqqdy/js-cool/blob/180a34d/src/isDigitals.ts#L6)
+[src/isDigitals.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/isDigitals.ts#L6)
 
 ---
 
@@ -1445,12 +1452,12 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Parameters
 
-| Name        | Type          |
-| :---------- | :------------ |
-| `fn`        | `AnyFunction` |
-| `delay`     | `number`      |
-| `immediate` | `boolean`     |
-| `debounce`  | `boolean`     |
+| Name        | Type                                       |
+| :---------- | :----------------------------------------- |
+| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) |
+| `delay`     | `number`                                   |
+| `immediate` | `boolean`                                  |
+| `debounce`  | `boolean`                                  |
 
 #### Returns
 
@@ -1464,7 +1471,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[throttle.ts:11](https://github.com/saqqdy/js-cool/blob/180a34d/src/throttle.ts#L11)
+[src/throttle.ts:11](https://github.com/saqqdy/js-cool/blob/4221ee0/src/throttle.ts#L11)
 
 ---
 
@@ -1489,7 +1496,7 @@ trim()根据传参来去除空格
 
 #### Defined in
 
-[trim.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/trim.ts#L7)
+[src/trim.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/trim.ts#L7)
 
 ---
 
@@ -1514,7 +1521,7 @@ upperFirst
 
 #### Defined in
 
-[upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/180a34d/src/upperFirst.ts#L7)
+[src/upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/upperFirst.ts#L7)
 
 ---
 
@@ -1538,4 +1545,4 @@ uuid
 
 #### Defined in
 
-[uuid.ts:11](https://github.com/saqqdy/js-cool/blob/180a34d/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/4221ee0/src/uuid.ts#L11)

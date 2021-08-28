@@ -4,9 +4,6 @@
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-import type { AnyElement, AnyFunction } from '../typings/common';
-export interface CustomAnyFunction extends AnyFunction {
-    $$guid: number;
-}
-declare function removeEvent(element: AnyElement, type: string, handler: CustomAnyFunction): void;
+import type { AnyObject, AnyFunction } from '../typings/common';
+declare function removeEvent(element: AnyObject, type: string, handler: AnyFunction): void;
 export default removeEvent;

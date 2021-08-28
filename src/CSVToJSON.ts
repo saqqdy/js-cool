@@ -13,7 +13,7 @@
  * @param delimiter - 分隔符，默认','
  * @returns json
  */
-const CSVToJSON = (data: string, delimiter = ',') => {
+function CSVToJSON(data: string, delimiter = ',') {
     const titles = data.slice(0, data.indexOf('\n')).split(delimiter)
     return data
         .slice(data.indexOf('\n') + 1)

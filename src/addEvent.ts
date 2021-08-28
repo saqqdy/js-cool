@@ -1,13 +1,9 @@
-import type { AnyElement, AnyFunction } from '../typings/common'
+import type { AnyObject, AnyFunction } from '../typings/common'
 
-export interface CustomEvent extends Event {
-    returnValue: boolean
-    cancelBubble: boolean
-}
-
-export interface CustomAnyFunction extends AnyFunction {
-    $$guid: number
-}
+// export interface CustomEvent extends Event {
+//     returnValue: boolean
+//     cancelBubble: boolean
+// }
 
 /**
  * addEvent()事件委托，支持多次委托
@@ -16,7 +12,7 @@ export interface CustomAnyFunction extends AnyFunction {
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-const addEvent = (element: AnyElement, type: string, handler: CustomAnyFunction) => {
+function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
     if (element.addEventListener) {
         element.addEventListener(type, handler, false)
     } else {
@@ -49,7 +45,7 @@ addEvent.guid = 1
  * @param event - 事件类型
  * @returns returnValue
  */
-function handleEvent(event: CustomEvent): boolean {
+function handleEvent(event: any): boolean {
     var returnValue = true
     //抓获事件对象(IE使用全局事件对象)
     // @ts-ignore
@@ -60,7 +56,7 @@ function handleEvent(event: CustomEvent): boolean {
     //执行每一个处理函数
     for (var i in handlers) {
         // @ts-ignore
-        ;(this as any).$$handleEvent = handlers[i]
+        ; (this as any).$$handleEvent = handlers[i]
         // @ts-ignore
         if ((this as any).$$handleEvent(event) === false) {
             returnValue = false
@@ -71,6 +67,7 @@ function handleEvent(event: CustomEvent): boolean {
 
 /**
  * 为IE的事件对象添加一些“缺失的”函数
+ * 
  * @private
  * @param event - 事件类型
  * @returns event 返回补齐了缺失方法的的event
@@ -82,10 +79,10 @@ function fixEvent(event: any): any {
     return event
 }
 fixEvent.preventDefault = function () {
-    ;(this as any).returnValue = false
+    ; (this as any).returnValue = false
 }
 fixEvent.stopPropagation = function () {
-    ;(this as any).cancelBubble = true
+    ; (this as any).cancelBubble = true
 }
 
 export default addEvent

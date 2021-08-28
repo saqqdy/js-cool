@@ -1,9 +1,10 @@
 /**
  * 扩展图片自动适应多种分辨率`@2x @3x`
+ * 
  * @param imgurl - 图片地址
  * @returns 返回新地址
  */
-const imgChoose = (imgurl: string): string => {
+function imgChoose(imgurl: string): string {
     var width = window.innerWidth
     var imgPre = ''
     var urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp)', 'i')

@@ -3,10 +3,11 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 
 /**
  * 字符串、数字转base64
+ * 
  * @param input - 需要编码的字符串
  * @returns 返回BASE64编码
  */
-const encodeBase64 = (input: string) => {
+function encodeBase64(input: string) {
     var output = ''
     var chr1, chr2, chr3, enc1, enc2, enc3, enc4
     var i = 0

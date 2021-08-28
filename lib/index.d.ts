@@ -6,7 +6,7 @@
  * @param handler - 回调方法
  */
 export declare const addEvent: {
-    (element: AnyElement, type: string, handler: CustomAnyFunction): void;
+    (element: AnyObject, type: string, handler: AnyFunction): void;
     guid: number;
 };
 
@@ -14,16 +14,11 @@ export declare const all: (arr: any[], fn: AnyFunction) => boolean;
 
 export declare const any: (arr: any[], fn: AnyFunction) => boolean;
 
-declare interface AnyElement extends Node {
-    events?: any
-    [prop: string]: any
-}
-
-declare interface AnyFunction {
+export declare interface AnyFunction extends AnyObject {
     (...args: any[]): any
 }
 
-declare interface AnyObject {
+export declare interface AnyObject {
     [prop: string]: any
 }
 
@@ -168,14 +163,6 @@ export declare const CSVToArray: (data: string, delimiter?: string, omitFirstRow
  */
 export declare const CSVToJSON: (data: string, delimiter?: string) => any[];
 
-declare interface CustomAnyFunction extends AnyFunction {
-    $$guid: number;
-}
-
-declare interface CustomAnyFunction_2 extends AnyFunction {
-    $$guid: number;
-}
-
 /**
  * js截取字符串，中英文都能用
  * @private
@@ -307,7 +294,7 @@ declare const _default: {
     stopBubble: typeof stopBubble;
     stopDefault: typeof stopDefault;
     addEvent: {
-        (element: AnyElement, type: string, handler: CustomAnyFunction): void;
+        (element: AnyObject, type: string, handler: AnyFunction): void;
         guid: number;
     };
     removeEvent: typeof removeEvent;
@@ -681,7 +668,7 @@ export declare const pattern: {
     textarea: RegExp;
 };
 
-export declare function removeEvent(element: AnyElement, type: string, handler: CustomAnyFunction_2): void;
+export declare function removeEvent(element: AnyObject, type: string, handler: AnyFunction): void;
 
 /**
  * 将RGB组件的值转换为颜色代码。
@@ -694,7 +681,7 @@ export declare function removeEvent(element: AnyElement, type: string, handler: 
  */
 export declare const RGBToHex: (r: number, g: number, b: number) => string;
 
-declare interface SearchkeySet {
+export declare interface SearchkeySet {
     childName: string;
     keyName: string;
     [prop: string]: any;
@@ -794,7 +781,7 @@ export declare const uuid: () => string;
  * getWindowSize获取窗口大小
  * @returns 返回宽高
  */
-declare interface WindowSizeObj {
+export declare interface WindowSizeObj {
     width: number;
     height: number;
 }

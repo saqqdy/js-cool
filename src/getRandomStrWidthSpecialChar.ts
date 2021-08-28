@@ -1,9 +1,10 @@
 /**
  * 获取随机字符串带特殊符号
+ * 
  * @param len - 需要获取随机字符串的长度
  * @returns 随机串
  */
-const getRandomStrWidthSpecialChar = (len: number = 32): string => {
+function getRandomStrWidthSpecialChar(len: number = 32): string {
     var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' //默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
     var maxPos = chars.length
     var str = ''

@@ -1,11 +1,4 @@
-import type { AnyElement, AnyFunction } from '../typings/common';
-export interface CustomEvent extends Event {
-    returnValue: boolean;
-    cancelBubble: boolean;
-}
-export interface CustomAnyFunction extends AnyFunction {
-    $$guid: number;
-}
+import type { AnyObject, AnyFunction } from '../typings/common';
 /**
  * addEvent()事件委托，支持多次委托
  *
@@ -14,7 +7,7 @@ export interface CustomAnyFunction extends AnyFunction {
  * @param handler - 回调方法
  */
 declare const addEvent: {
-    (element: AnyElement, type: string, handler: CustomAnyFunction): void;
+    (element: AnyObject, type: string, handler: AnyFunction): void;
     guid: number;
 };
 export default addEvent;

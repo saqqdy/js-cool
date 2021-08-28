@@ -1,13 +1,11 @@
 /**
  * 扩展图片自动适应多种分辨率small original
+ * 
  * @param imgurl - 图片url
  * @param size - 图片规格
  * @returns 返回新地址
  */
-
-// export enum Size { s = 's', m = 'm', l = 'l' }
-
-const imgAdapt = (imgurl: string, size: string) => {
+function imgAdapt(imgurl: string, size: string) {
     if (!imgurl) {
         return false
     }

@@ -3,11 +3,6 @@ export interface SearchkeySet {
     keyName: string;
     [prop: string]: any;
 }
-export interface Expression {
-    childName?: string;
-    keyName?: string;
-    [prop: string]: any;
-}
 /**
  * tree对象深度查找
  *

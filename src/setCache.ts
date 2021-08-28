@@ -1,3 +1,9 @@
+
+interface Data {
+    value: any
+    expires: number | string
+}
+
 /**
  * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
  *
@@ -6,11 +12,6 @@
  * @param seconds -缓存时间（秒）
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
-interface Data {
-    value: any
-    expires: number | string
-}
-
 function setCache(name: string, value: any, seconds: number) {
     let e = new Date(),
         expires = seconds ? e.getTime() + seconds * 1000 : '',
