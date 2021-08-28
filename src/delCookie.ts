@@ -2,7 +2,7 @@ import getCookie from './getCookie'
 
 /**
  * 删除cookie
- * 
+ *
  * @param name - cookie名称
  */
 function delCookie(name: string) {

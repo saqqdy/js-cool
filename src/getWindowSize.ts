@@ -1,4 +1,3 @@
-
 export interface WindowSizeObj {
     width: number
     height: number
@@ -6,7 +5,7 @@ export interface WindowSizeObj {
 
 /**
  * getWindowSize获取窗口大小
- * 
+ *
  * @returns 返回宽高
  */
 function getWindowSize(): WindowSizeObj {

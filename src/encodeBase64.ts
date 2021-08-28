@@ -3,7 +3,7 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 
 /**
  * 字符串、数字转base64
- * 
+ *
  * @param input - 需要编码的字符串
  * @returns 返回BASE64编码
  */

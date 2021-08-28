@@ -12,8 +12,8 @@ selenium-debug.log
 
 *.bak
 *_bak
-temp
 
+/temp
 /docs
 /script
 /src

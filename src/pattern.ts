@@ -1,6 +1,6 @@
 /**
  * pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
- * 
+ *
  * @returns 返回对象
  */
 export default {
@@ -25,4 +25,3 @@ export default {
     isjson: /[\s\S]*(\{[\s\S]*\})[\s\S]*/,
     textarea: /[\u4e00-\u9fa5_a-zA-Z0-9\,\.\/\?\;\:\'\"\[\]\-\*\(\)\（\）\%\$\@\\\!\，\《\》\。\、\？\；\：\‘\’\“\”\…\￥\！]/
 }
-

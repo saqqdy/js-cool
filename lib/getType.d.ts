@@ -1,5 +1,4 @@
 /**
- * getType
  * 获取目标类型
  *
  * @param target - 目标

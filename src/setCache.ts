@@ -1,4 +1,3 @@
-
 interface Data {
     value: any
     expires: number | string

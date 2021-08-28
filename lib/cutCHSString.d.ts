@@ -6,6 +6,7 @@
  */
 /**
  * 截取字符串，中文算2个字节
+ *
  * @param str - 要截取的字符串
  * @param len -
  * @param hasDot -

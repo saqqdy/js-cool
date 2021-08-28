@@ -1,6 +1,6 @@
 /**
  * 日期格式化插件
- * 
+ *
  * @example 使用方式
  * ```js
  * formatTime(new Date(), "yyyy-MM-dd")

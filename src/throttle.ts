@@ -22,8 +22,8 @@ function throttle(fn: AnyFunction, delay: number, immediate: boolean, debounce: 
         }
     return function () {
         curr = +new Date()
-            // @ts-ignore
-            ; (context = this as any), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay)
+        // @ts-ignore
+        ;(context = this as any), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay)
         clearTimeout(timer)
         if (debounce) {
             if (immediate) {

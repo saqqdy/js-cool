@@ -1,17 +1,13 @@
-[index.md - v2.0.0](../README.md) / [Exports](../modules.md) / WindowSizeObj
+[index.md - v2.0.1](../README.md) / [Exports](../modules.md) / WindowSizeObj
 
 # Interface: WindowSizeObj
-
-getWindowSize 获取窗口大小
-
-**`returns`** 返回宽高
 
 ## Table of contents
 
 ### Properties
 
--   [height](WindowSizeObj.md#height)
--   [width](WindowSizeObj.md#width)
+- [height](WindowSizeObj.md#height)
+- [width](WindowSizeObj.md#width)
 
 ## Properties
 
@@ -21,9 +17,9 @@ getWindowSize 获取窗口大小
 
 #### Defined in
 
-[src/getWindowSize.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getWindowSize.ts#L7)
+[src/getWindowSize.ts:3](https://github.com/saqqdy/js-cool/blob/9abdf88/src/getWindowSize.ts#L3)
 
----
+___
 
 ### width
 
@@ -31,4 +27,4 @@ getWindowSize 获取窗口大小
 
 #### Defined in
 
-[src/getWindowSize.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getWindowSize.ts#L6)
+[src/getWindowSize.ts:2](https://github.com/saqqdy/js-cool/blob/9abdf88/src/getWindowSize.ts#L2)

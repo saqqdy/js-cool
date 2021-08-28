@@ -1,17 +1,37 @@
-[index.md - v2.0.0](README.md) / Exports
+[index.md - v2.0.1](README.md) / Exports
 
-# index.md - v2.0.0
+# index.md - v2.0.1
 
 ## Table of contents
 
 ### References
 
+-   [CSVToJSON](modules.md#csvtojson)
+-   [camel2Dash](modules.md#camel2dash)
 -   [cleanData](modules.md#cleandata)
+-   [clearAttr](modules.md#clearattr)
+-   [clearBr](modules.md#clearbr)
+-   [clearHtml](modules.md#clearhtml)
+-   [clearHtmlExpSN](modules.md#clearhtmlexpsn)
+-   [clearHtmlN](modules.md#clearhtmln)
+-   [clearHtmlNS](modules.md#clearhtmlns)
+-   [clearHtmlTag](modules.md#clearhtmltag)
 -   [cutCHSString](modules.md#cutchsstring)
+-   [dash2Camel](modules.md#dash2camel)
+-   [deWxJumpLink](modules.md#dewxjumplink)
+-   [deWxJumpLinkOld](modules.md#dewxjumplinkold)
+-   [debounce](modules.md#debounce)
+-   [decodeBase64](modules.md#decodebase64)
+-   [decodeUtf8](modules.md#decodeutf8)
 -   [delCache](modules.md#delcache)
 -   [delCookie](modules.md#delcookie)
 -   [delSession](modules.md#delsession)
 -   [delay](modules.md#delay)
+-   [download](modules.md#download)
+-   [enWxJumpLink](modules.md#enwxjumplink)
+-   [enWxJumpLinkOld](modules.md#enwxjumplinkold)
+-   [encodeBase64](modules.md#encodebase64)
+-   [encodeUtf8](modules.md#encodeutf8)
 -   [fixNumber](modules.md#fixnumber)
 -   [formatTime](modules.md#formattime)
 -   [formatTimeStr](modules.md#formattimestr)
@@ -22,13 +42,20 @@
 -   [getDirParam](modules.md#getdirparam)
 -   [getFileType](modules.md#getfiletype)
 -   [getIsAppVersionLastest](modules.md#getisappversionlastest)
+-   [getNumber](modules.md#getnumber)
 -   [getOsVersion](modules.md#getosversion)
 -   [getParameter](modules.md#getparameter)
+-   [getRandomNum](modules.md#getrandomnum)
+-   [getRandomStr](modules.md#getrandomstr)
+-   [getRandomStrWidthSpecialChar](modules.md#getrandomstrwidthspecialchar)
 -   [getSession](modules.md#getsession)
 -   [getType](modules.md#gettype)
 -   [getUrlParam](modules.md#geturlparam)
 -   [getWindowSize](modules.md#getwindowsize)
+-   [imgAdapt](modules.md#imgadapt)
+-   [imgChoose](modules.md#imgchoose)
 -   [isArray](modules.md#isarray)
+-   [isDigitals](modules.md#isdigitals)
 -   [isExitsFunction](modules.md#isexitsfunction)
 -   [isExitsVariable](modules.md#isexitsvariable)
 -   [nextIndex](modules.md#nextindex)
@@ -43,6 +70,9 @@
 -   [stopDefault](modules.md#stopdefault)
 -   [textareaInsertText](modules.md#textareainserttext)
 -   [textareaMoveToEnd](modules.md#textareamovetoend)
+-   [throttle](modules.md#throttle)
+-   [trim](modules.md#trim)
+-   [upperFirst](modules.md#upperfirst)
 
 ### Namespaces
 
@@ -60,54 +90,33 @@
 -   [default](modules.md#default)
 -   [pattern](modules.md#pattern)
 
-### Variables
-
--   [addEvent](modules.md#addevent)
-
 ### Functions
 
 -   [CSVToArray](modules.md#csvtoarray)
--   [CSVToJSON](modules.md#csvtojson)
 -   [JSONToCSV](modules.md#jsontocsv)
 -   [RGBToHex](modules.md#rgbtohex)
+-   [addEvent](modules.md#addevent)
 -   [all](modules.md#all)
 -   [any](modules.md#any)
 -   [arrayToCSV](modules.md#arraytocsv)
--   [camel2Dash](modules.md#camel2dash)
--   [clearAttr](modules.md#clearattr)
--   [clearBr](modules.md#clearbr)
--   [clearHtml](modules.md#clearhtml)
--   [clearHtmlExpSN](modules.md#clearhtmlexpsn)
--   [clearHtmlN](modules.md#clearhtmln)
--   [clearHtmlNS](modules.md#clearhtmlns)
--   [clearHtmlTag](modules.md#clearhtmltag)
 -   [client](modules.md#client)
--   [dash2Camel](modules.md#dash2camel)
--   [deWxJumpLink](modules.md#dewxjumplink)
--   [deWxJumpLinkOld](modules.md#dewxjumplinkold)
--   [debounce](modules.md#debounce)
--   [decodeBase64](modules.md#decodebase64)
--   [decodeUtf8](modules.md#decodeutf8)
--   [download](modules.md#download)
--   [enWxJumpLink](modules.md#enwxjumplink)
--   [enWxJumpLinkOld](modules.md#enwxjumplinkold)
--   [encodeBase64](modules.md#encodebase64)
--   [encodeUtf8](modules.md#encodeutf8)
 -   [extend](modules.md#extend)
--   [getNumber](modules.md#getnumber)
--   [getRandomNum](modules.md#getrandomnum)
--   [getRandomStr](modules.md#getrandomstr)
--   [getRandomStrWidthSpecialChar](modules.md#getrandomstrwidthspecialchar)
 -   [getScrollPosition](modules.md#getscrollposition)
--   [imgAdapt](modules.md#imgadapt)
--   [imgChoose](modules.md#imgchoose)
--   [isDigitals](modules.md#isdigitals)
--   [throttle](modules.md#throttle)
--   [trim](modules.md#trim)
--   [upperFirst](modules.md#upperfirst)
 -   [uuid](modules.md#uuid)
 
 ## References
+
+### CSVToJSON
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### camel2Dash
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
 
 ### cleanData
 
@@ -115,7 +124,85 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 ---
 
+### clearAttr
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearBr
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearHtml
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlExpSN
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlN
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlNS
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlTag
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
 ### cutCHSString
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### dash2Camel
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### deWxJumpLink
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### deWxJumpLinkOld
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### debounce
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### decodeBase64
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### decodeUtf8
 
 Renames and exports: [\_\_type](modules.md#__type)
 
@@ -140,6 +227,36 @@ Renames and exports: [\_\_type](modules.md#__type)
 ---
 
 ### delay
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### download
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### enWxJumpLink
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### enWxJumpLinkOld
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### encodeBase64
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### encodeUtf8
 
 Renames and exports: [\_\_type](modules.md#__type)
 
@@ -205,6 +322,12 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 ---
 
+### getNumber
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
 ### getOsVersion
 
 Renames and exports: [\_\_type](modules.md#__type)
@@ -212,6 +335,24 @@ Renames and exports: [\_\_type](modules.md#__type)
 ---
 
 ### getParameter
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### getRandomNum
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### getRandomStr
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### getRandomStrWidthSpecialChar
 
 Renames and exports: [\_\_type](modules.md#__type)
 
@@ -241,7 +382,25 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 ---
 
+### imgAdapt
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### imgChoose
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
 ### isArray
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### isDigitals
 
 Renames and exports: [\_\_type](modules.md#__type)
 
@@ -329,6 +488,24 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 Renames and exports: [\_\_type](modules.md#__type)
 
+---
+
+### throttle
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### trim
+
+Renames and exports: [\_\_type](modules.md#__type)
+
+---
+
+### upperFirst
+
+Renames and exports: [\_\_type](modules.md#__type)
+
 ## Properties
 
 ### default
@@ -343,8 +520,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `CSVToJSON`                    | (`data`: `string`, `delimiter`: `string`) => `any`[]                                                                                                                                                                                                                                                                                                                                                                                            |
 | `JSONToCSV`                    | (`arr`: `any`[], `columns`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                         |
 | `RGBToHex`                     | (`r`: `number`, `g`: `number`, `b`: `number`) => `string`                                                                                                                                                                                                                                                                                                                                                                                       |
-| `addEvent`                     | (`element`: [`AnyObject`](interfaces/AnyObject.md), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                          |
-| `addEvent.guid`                | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `addEvent`                     | typeof [`addEvent`](modules.md#addevent)                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `all`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                 |
 | `any`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                 |
 | `arrayToCSV`                   | (`arr`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -467,42 +643,6 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `url`      | `RegExp` |
 | `username` | `RegExp` |
 
-## Variables
-
-### addEvent
-
-• `Const` **addEvent**: `Object`
-
-addEvent()事件委托，支持多次委托
-
-#### Call signature
-
-▸ (`element`, `type`, `handler`): `void`
-
-addEvent()事件委托，支持多次委托
-
-##### Parameters
-
-| Name      | Type                                       | Description           |
-| :-------- | :----------------------------------------- | :-------------------- |
-| `element` | [`AnyObject`](interfaces/AnyObject.md)     | js dom 对象           |
-| `type`    | `string`                                   | 事件类型。不需要加 on |
-| `handler` | [`AnyFunction`](interfaces/AnyFunction.md) | 回调方法              |
-
-##### Returns
-
-`void`
-
-#### Type declaration
-
-| Name   | Type     |
-| :----- | :------- |
-| `guid` | `number` |
-
-#### Defined in
-
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/4221ee0/src/addEvent.ts#L15)
-
 ## Functions
 
 ### CSVToArray
@@ -545,44 +685,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/4221ee0/src/CSVToArray.ts#L21)
-
----
-
-### CSVToJSON
-
-▸ `Const` **CSVToJSON**(`data`, `delimiter?`): `any`[]
-
-将一个逗号分隔的值(CSV)字符串转换为一个 2D 对象数组。字符串的第一行作为标题行。
-
-**`example`**
-
-```js
-CSVToJSON('col1,col2\\na,b\\nc,d') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`;
-```
-
-**`example`**
-
-```js
-CSVToJSON('col1;col2\\na;b\\nc;d', ';') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`;
-```
-
-#### Parameters
-
-| Name        | Type     | Default value | Description     |
-| :---------- | :------- | :------------ | :-------------- |
-| `data`      | `string` | `undefined`   | csv 数据        |
-| `delimiter` | `string` | `','`         | 分隔符，默认',' |
-
-#### Returns
-
-`any`[]
-
-json
-
-#### Defined in
-
-[src/CSVToJSON.ts:16](https://github.com/saqqdy/js-cool/blob/4221ee0/src/CSVToJSON.ts#L16)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/9abdf88/src/CSVToArray.ts#L21)
 
 ---
 
@@ -620,7 +723,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/4221ee0/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -648,7 +751,31 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/4221ee0/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/9abdf88/src/RGBToHex.ts#L10)
+
+---
+
+### addEvent
+
+▸ **addEvent**(`element`, `type`, `handler`): `void`
+
+addEvent()事件委托，支持多次委托
+
+#### Parameters
+
+| Name      | Type                                       | Description           |
+| :-------- | :----------------------------------------- | :-------------------- |
+| `element` | [`AnyObject`](interfaces/AnyObject.md)     | js dom 对象           |
+| `type`    | `string`                                   | 事件类型。不需要加 on |
+| `handler` | [`AnyFunction`](interfaces/AnyFunction.md) | 回调方法              |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/9abdf88/src/addEvent.ts#L15)
 
 ---
 
@@ -656,20 +783,36 @@ hex 值
 
 ▸ `Const` **all**(`arr`, `fn`): `boolean`
 
+如果所提供的谓词函数对一个集合中的所有元素都返回 true，则返回 true，否则返回 false。
+
+**`example`**
+
+```js
+all([4, 2, 3], x => x > 1) // true
+```
+
+**`example`**
+
+```js
+all([1, 2, 3]) // true
+```
+
 #### Parameters
 
-| Name  | Type                                       |
-| :---- | :----------------------------------------- |
-| `arr` | `any`[]                                    |
-| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) |
+| Name  | Type                                       | Description |
+| :---- | :----------------------------------------- | :---------- |
+| `arr` | `any`[]                                    | 目标数组    |
+| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) | 判断方法    |
 
 #### Returns
 
 `boolean`
 
+返回判断结果
+
 #### Defined in
 
-[src/all.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/all.ts#L12)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/all.ts#L17)
 
 ---
 
@@ -677,20 +820,36 @@ hex 值
 
 ▸ `Const` **any**(`arr`, `fn`): `boolean`
 
+如果所提供的谓词函数对一个集合中的至少一个元素返回 true，则返回 true，否则返回 false。
+
+**`example`**
+
+```js
+any([0, 1, 2, 0], x => x >= 2) // true
+```
+
+**`example`**
+
+```js
+any([0, 0, 1, 0]) // true
+```
+
 #### Parameters
 
-| Name  | Type                                       |
-| :---- | :----------------------------------------- |
-| `arr` | `any`[]                                    |
-| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) |
+| Name  | Type                                       | Description |
+| :---- | :----------------------------------------- | :---------- |
+| `arr` | `any`[]                                    | 目标数组    |
+| `fn`  | [`AnyFunction`](interfaces/AnyFunction.md) | 判断方法    |
 
 #### Returns
 
 `boolean`
 
+返回判断结果
+
 #### Defined in
 
-[src/any.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/any.ts#L12)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/9abdf88/src/any.ts#L17)
 
 ---
 
@@ -745,199 +904,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/4221ee0/src/arrayToCSV.ts#L20)
-
----
-
-### camel2Dash
-
-▸ `Const` **camel2Dash**(`string`): `string`
-
-将驼峰字符串转成-间隔且全小写的 Dash 模式
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/camel2Dash.ts#L7)
-
----
-
-### clearAttr
-
-▸ `Const` **clearAttr**(`string`): `string`
-
-去除 HTML 标签所有属性
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearAttr.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearAttr.ts#L6)
-
----
-
-### clearBr
-
-▸ `Const` **clearBr**(`string`): `string`
-
-去除换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearBr.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearBr.ts#L6)
-
----
-
-### clearHtml
-
-▸ `Const` **clearHtml**(`string`): `string`
-
-去除 HTML 标签
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtml.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtml.ts#L6)
-
----
-
-### clearHtmlExpSN
-
-▸ `Const` **clearHtmlExpSN**(`string`): `string`
-
-去除 HTML 标签保留空格、换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlExpSN.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlExpSN.ts#L6)
-
----
-
-### clearHtmlN
-
-▸ `Const` **clearHtmlN**(`string`): `string`
-
-去除 HTML 标签及换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlN.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlN.ts#L6)
-
----
-
-### clearHtmlNS
-
-▸ `Const` **clearHtmlNS**(`string`): `string`
-
-去除 HTML 标签及空格、换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlNS.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlNS.ts#L6)
-
----
-
-### clearHtmlTag
-
-▸ `Const` **clearHtmlTag**(`string`): `string`
-
-去除 HTML 标签及标签里面的文字
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlTag.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/clearHtmlTag.ts#L6)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/9abdf88/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -962,278 +929,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/4221ee0/src/client.ts#L8)
-
----
-
-### dash2Camel
-
-▸ `Const` **dash2Camel**(`string`): `string`
-
-dash2Camel
-将-间隔且全小写的 Dash 模式转成驼峰字符串
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/dash2Camel.ts#L7)
-
----
-
-### deWxJumpLink
-
-▸ `Const` **deWxJumpLink**(`string`): `string`
-
-用=替换* 用&替换! 解码成微信跳转链接
-name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回解码结果
-
-#### Defined in
-
-[src/deWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/deWxJumpLink.ts#L7)
-
----
-
-### deWxJumpLinkOld
-
-▸ `Const` **deWxJumpLinkOld**(`string`): `string`
-
-用=替换~ 用&替换^ 解码成微信跳转链接
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回解码结果
-
-#### Defined in
-
-[src/deWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/deWxJumpLinkOld.ts#L6)
-
----
-
-### debounce
-
-▸ `Const` **debounce**(`fn`, `delay`, `immediate`): () => `void`
-
-#### Parameters
-
-| Name        | Type                                       |
-| :---------- | :----------------------------------------- |
-| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) |
-| `delay`     | `number`                                   |
-| `immediate` | `boolean`                                  |
-
-#### Returns
-
-`fn`
-
-▸ (): `void`
-
-##### Returns
-
-`void`
-
-#### Defined in
-
-[src/debounce.ts:12](https://github.com/saqqdy/js-cool/blob/4221ee0/src/debounce.ts#L12)
-
----
-
-### decodeBase64
-
-▸ `Const` **decodeBase64**(`input`): `string`
-
-base64 解码
-
-#### Parameters
-
-| Name    | Type     | Description      |
-| :------ | :------- | :--------------- |
-| `input` | `string` | 需要解码的字符串 |
-
-#### Returns
-
-`string`
-
-解码后的字符串
-
-#### Defined in
-
-[src/decodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/4221ee0/src/decodeBase64.ts#L9)
-
----
-
-### decodeUtf8
-
-▸ **decodeUtf8**(`utftext`): `string`
-
-解码 Utf8
-
-#### Parameters
-
-| Name      | Type     |
-| :-------- | :------- |
-| `utftext` | `string` |
-
-#### Returns
-
-`string`
-
-解码后的字符串
-
-#### Defined in
-
-[src/decodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/decodeUtf8.ts#L6)
-
----
-
-### download
-
-▸ `Const` **download**(`url`, `filename`, `type?`): `void`
-
-文件下载的几种方式：1. 针对一些浏览器无法识别的文件格式。地址栏输入文件 URL、window.location.href = URL、window.open(URL)；2. 使用 a 标签 download 属性（或者 js 创建 a 标签）；3. 浏览器可识别的 pdf、txt 文件，后端兼容处理 attachment；4. 在 header 增加 token 用于鉴权下载，使用 XmlHttpRequest 来想后台发起请求
-
-#### Parameters
-
-| Name       | Type     | Default value | Description                                 |
-| :--------- | :------- | :------------ | :------------------------------------------ |
-| `url`      | `string` | `undefined`   | 链接                                        |
-| `filename` | `string` | `undefined`   | 文件名                                      |
-| `type`     | `string` | `'download'`  | 下载类型 'href','open','download','request' |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/download.ts:8](https://github.com/saqqdy/js-cool/blob/4221ee0/src/download.ts#L8)
-
----
-
-### enWxJumpLink
-
-▸ `Const` **enWxJumpLink**(`string`): `string`
-
-用*替换= 用!替换& 转码成微信跳转链接
-name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回转码结果
-
-#### Defined in
-
-[src/enWxJumpLink.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/enWxJumpLink.ts#L7)
-
----
-
-### enWxJumpLinkOld
-
-▸ `Const` **enWxJumpLinkOld**(`string`): `string`
-
-用~替换= 用^替换& 转码成微信跳转链接
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回转码结果
-
-#### Defined in
-
-[src/enWxJumpLinkOld.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/enWxJumpLinkOld.ts#L6)
-
----
-
-### encodeBase64
-
-▸ `Const` **encodeBase64**(`input`): `string`
-
-字符串、数字转 base64
-
-#### Parameters
-
-| Name    | Type     | Description      |
-| :------ | :------- | :--------------- |
-| `input` | `string` | 需要编码的字符串 |
-
-#### Returns
-
-`string`
-
-返回 BASE64 编码
-
-#### Defined in
-
-[src/encodeBase64.ts:9](https://github.com/saqqdy/js-cool/blob/4221ee0/src/encodeBase64.ts#L9)
-
----
-
-### encodeUtf8
-
-▸ `Const` **encodeUtf8**(`string`): `string`
-
-编码 Utf8
-
-#### Parameters
-
-| Name     | Type     |
-| :------- | :------- |
-| `string` | `string` |
-
-#### Returns
-
-`string`
-
-返回 UTF-8 编码
-
-#### Defined in
-
-[src/encodeUtf8.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/encodeUtf8.ts#L6)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/9abdf88/src/client.ts#L8)
 
 ---
 
@@ -1253,105 +949,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/4221ee0/src/extend.ts#L13)
-
----
-
-### getNumber
-
-▸ `Const` **getNumber**(`string`): `string`
-
-获取字符串中的数字
-
-#### Parameters
-
-| Name     | Type     | Description        |
-| :------- | :------- | :----------------- |
-| `string` | `string` | 传入带数字的字符串 |
-
-#### Returns
-
-`string`
-
-返回纯数字字符串
-
-#### Defined in
-
-[src/getNumber.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getNumber.ts#L6)
-
----
-
-### getRandomNum
-
-▸ `Const` **getRandomNum**(`min?`, `max?`): `number`
-
-获取随机整数
-
-#### Parameters
-
-| Name  | Type     | Default value | Description    |
-| :---- | :------- | :------------ | :------------- |
-| `min` | `number` | `1`           | 随机数的最小值 |
-| `max` | `number` | `10`          | 随机数的最大值 |
-
-#### Returns
-
-`number`
-
-返回数字
-
-#### Defined in
-
-[src/getRandomNum.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomNum.ts#L7)
-
----
-
-### getRandomStr
-
-▸ `Const` **getRandomStr**(`len?`, `widthSpecialChar?`): `string`
-
-获取随机字符串
-
-#### Parameters
-
-| Name               | Type      | Default value | Description                      |
-| :----------------- | :-------- | :------------ | :------------------------------- |
-| `len`              | `number`  | `32`          | 需要获取随机字符串的长度         |
-| `widthSpecialChar` | `boolean` | `false`       | 可选，是否需要生成带特殊字符的串 |
-
-#### Returns
-
-`string`
-
-随机串
-
-#### Defined in
-
-[src/getRandomStr.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomStr.ts#L7)
-
----
-
-### getRandomStrWidthSpecialChar
-
-▸ `Const` **getRandomStrWidthSpecialChar**(`len?`): `string`
-
-获取随机字符串带特殊符号
-
-#### Parameters
-
-| Name  | Type     | Default value | Description              |
-| :---- | :------- | :------------ | :----------------------- |
-| `len` | `number` | `32`          | 需要获取随机字符串的长度 |
-
-#### Returns
-
-`string`
-
-随机串
-
-#### Defined in
-
-[src/getRandomStrWidthSpecialChar.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getRandomStrWidthSpecialChar.ts#L6)
+[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/9abdf88/src/extend.ts#L13)
 
 ---
 
@@ -1369,159 +967,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[src/getScrollPosition.ts:5](https://github.com/saqqdy/js-cool/blob/4221ee0/src/getScrollPosition.ts#L5)
-
----
-
-### imgAdapt
-
-▸ `Const` **imgAdapt**(`imgurl`, `size`): `string` \| `false`
-
-扩展图片自动适应多种分辨率 small original
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `imgurl` | `string` | 图片 url    |
-| `size`   | `string` | 图片规格    |
-
-#### Returns
-
-`string` \| `false`
-
-返回新地址
-
-#### Defined in
-
-[src/imgAdapt.ts:10](https://github.com/saqqdy/js-cool/blob/4221ee0/src/imgAdapt.ts#L10)
-
----
-
-### imgChoose
-
-▸ `Const` **imgChoose**(`imgurl`): `string`
-
-扩展图片自动适应多种分辨率`@2x @3x`
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `imgurl` | `string` | 图片地址    |
-
-#### Returns
-
-`string`
-
-返回新地址
-
-#### Defined in
-
-[src/imgChoose.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/imgChoose.ts#L6)
-
----
-
-### isDigitals
-
-▸ `Const` **isDigitals**(`str`): `boolean`
-
-是否为由数字组成的字符串
-
-#### Parameters
-
-| Name  | Type  | Description    |
-| :---- | :---- | :------------- |
-| `str` | `any` | 待检测的字符串 |
-
-#### Returns
-
-`boolean`
-
-返回 true/false
-
-#### Defined in
-
-[src/isDigitals.ts:6](https://github.com/saqqdy/js-cool/blob/4221ee0/src/isDigitals.ts#L6)
-
----
-
-### throttle
-
-▸ `Const` **throttle**(`fn`, `delay`, `immediate`, `debounce`): () => `void`
-
-#### Parameters
-
-| Name        | Type                                       |
-| :---------- | :----------------------------------------- |
-| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) |
-| `delay`     | `number`                                   |
-| `immediate` | `boolean`                                  |
-| `debounce`  | `boolean`                                  |
-
-#### Returns
-
-`fn`
-
-▸ (): `void`
-
-##### Returns
-
-`void`
-
-#### Defined in
-
-[src/throttle.ts:11](https://github.com/saqqdy/js-cool/blob/4221ee0/src/throttle.ts#L11)
-
----
-
-### trim
-
-▸ `Const` **trim**(`string`, `type?`): `string` \| `void`
-
-trim()根据传参来去除空格
-
-#### Parameters
-
-| Name     | Type     | Default value | Description                                                                              |
-| :------- | :------- | :------------ | :--------------------------------------------------------------------------------------- |
-| `string` | `string` | `undefined`   | 传入字符串                                                                               |
-| `type`   | `string` | `''`          | 可选，去除空格的类型 l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格 |
-
-#### Returns
-
-`string` \| `void`
-
-返回新字符串
-
-#### Defined in
-
-[src/trim.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/trim.ts#L7)
-
----
-
-### upperFirst
-
-▸ `Const` **upperFirst**(`string`): `string`
-
-upperFirst
-首字母大写
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/4221ee0/src/upperFirst.ts#L7)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/9abdf88/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1545,4 +991,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/4221ee0/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/9abdf88/src/uuid.ts#L11)

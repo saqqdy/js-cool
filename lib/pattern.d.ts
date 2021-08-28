@@ -1,7 +1,3 @@
-/**
- * pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
- * @returns 返回对象
- */
 declare const _default: {
     any: RegExp;
     number: RegExp;
@@ -22,4 +18,9 @@ declare const _default: {
     isjson: RegExp;
     textarea: RegExp;
 };
+/**
+ * pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
+ *
+ * @returns 返回对象
+ */
 export default _default;

@@ -6,8 +6,8 @@ import type { AnyObject, AnyFunction } from '../typings/common';
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-declare const addEvent: {
-    (element: AnyObject, type: string, handler: AnyFunction): void;
-    guid: number;
-};
+declare function addEvent(element: AnyObject, type: string, handler: AnyFunction): void;
+declare namespace addEvent {
+    var guid: number;
+}
 export default addEvent;

@@ -56,7 +56,7 @@ function handleEvent(event: any): boolean {
     //执行每一个处理函数
     for (var i in handlers) {
         // @ts-ignore
-        ; (this as any).$$handleEvent = handlers[i]
+        ;(this as any).$$handleEvent = handlers[i]
         // @ts-ignore
         if ((this as any).$$handleEvent(event) === false) {
             returnValue = false
@@ -67,7 +67,7 @@ function handleEvent(event: any): boolean {
 
 /**
  * 为IE的事件对象添加一些“缺失的”函数
- * 
+ *
  * @private
  * @param event - 事件类型
  * @returns event 返回补齐了缺失方法的的event
@@ -79,10 +79,10 @@ function fixEvent(event: any): any {
     return event
 }
 fixEvent.preventDefault = function () {
-    ; (this as any).returnValue = false
+    ;(this as any).returnValue = false
 }
 fixEvent.stopPropagation = function () {
-    ; (this as any).cancelBubble = true
+    ;(this as any).cancelBubble = true
 }
 
 export default addEvent

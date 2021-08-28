@@ -8,6 +8,10 @@
         "lib": "lib",
         "src": "src"
     },
+    "files": [
+        "lib",
+        "typings"
+    ],
     "scripts": {
         "build": "rimraf lib && rollup -c",
         "build:umd": "webpack --config webpack.config.js",
