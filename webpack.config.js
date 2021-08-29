@@ -1,15 +1,16 @@
 const path = require('path')
+const { merge } = require('webpack-merge')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 const config = require('./config')
 let plugins = [new ProgressBarPlugin()]
 
-module.exports = {
+const baseConfig = {
     mode: 'production',
     target: 'web',
     entry: './src/index.ts',
     output: {
-        path: path.resolve(process.cwd(), './lib'),
+        // path: path.resolve(process.cwd(), './lib'),
         publicPath: '/',
         filename: 'index.umd.js',
         chunkFilename: '[id].js',
@@ -20,7 +21,7 @@ module.exports = {
         globalObject: "typeof self !== 'undefined' ? self : this"
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json'],
+        extensions: config.extensions,
         alias: config.alias,
         modules: ['node_modules']
     },
@@ -34,15 +35,53 @@ module.exports = {
     optimization: {
         minimize: true
     },
-    module: {
-        rules: [
-            {
-                test: /\.(ts|js)x?$/,
-                include: process.cwd(),
-                exclude: config.jsexclude,
-                loader: 'babel-loader'
-            }
-        ]
-    },
     plugins: plugins
 }
+
+module.exports = [
+    merge(baseConfig, {
+        output: {
+            path: path.resolve(process.cwd(), './lib')
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(ts|js)x?$/,
+                    include: process.cwd(),
+                    exclude: config.jsexclude,
+                    loader: 'babel-loader'
+                }
+            ]
+        }
+    }),
+    merge(baseConfig, {
+        output: {
+            path: path.resolve(process.cwd(), './es')
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(ts|js)x?$/,
+                    include: process.cwd(),
+                    exclude: config.jsexclude,
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                '@babel/preset-env',
+                                {
+                                    loose: true,
+                                    modules: 'auto',
+                                    useBuiltIns: 'usage',
+                                    corejs: 3,
+                                    targets: ['defaults', 'not IE <= 11', 'maintained node versions']
+                                    // targets: { chrome: '58', ie: '11' }
+                                }
+                            ]
+                        ]
+                    }
+                }
+            ]
+        }
+    })
+]
