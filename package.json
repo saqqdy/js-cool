@@ -32,7 +32,7 @@
         "pub": "git add . && git commit -m $npm_package_version && git pull && git push"
     },
     "dependencies": {
-        "core-js": "^3.16.3"
+        "core-js": "^3.17.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.13",
@@ -46,9 +46,9 @@
         "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
         "@saqqdy/prettier-config": "^1.0.4",
-        "@types/node": "^16.7.2",
-        "@typescript-eslint/eslint-plugin": "^4.29.3",
-        "@typescript-eslint/parser": "^4.29.3",
+        "@types/node": "14.17.3",
+        "@typescript-eslint/eslint-plugin": "^4.30.0",
+        "@typescript-eslint/parser": "^4.30.0",
         "babel-loader": "^8.2.2",
         "eslint": "^7.32.0",
         "eslint-config-sets": "^1.4.0",
@@ -59,10 +59,10 @@
         "rollup": "^2.56.3",
         "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.30.0",
-        "typedoc": "^0.21.7",
+        "typedoc": "^0.21.9",
         "typedoc-plugin-markdown": "^3.10.4",
         "typescript": "^4.4.2",
-        "webpack": "^5.51.1",
+        "webpack": "^5.51.2",
         "webpack-cli": "^4.8.0",
         "webpack-merge": "^5.8.0",
         "webpack-node-externals": "^3.0.0"
