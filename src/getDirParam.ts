@@ -5,12 +5,14 @@
  * @returns 返回参数对象
  */
 function getDirParam(url: string) {
-    var patt = new RegExp(/^http[s]?:\/\/[^\/]+([\s\S]*)/)
-    var urlStr = url != '' && typeof url != 'undefined' ? url.replace(patt, '$1') : location.pathname //获取url中域名后的字串:/post/0703/a1.html
+    var urlStr = url !== '' && typeof url !== 'undefined' ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1') : location.pathname // 获取url中域名后的字串:/post/0703/a1.html
     urlStr = urlStr.replace(/^\//, '')
     var dirParam: { [prop: string]: any } = {}
-    // @ts-ignore
-    dirParam.host = url != '' && typeof url != 'undefined' ? url.match(/^http[s]?:\/\/[^\/]+/)[0] : location.host //获取域名，包含http://
+    // 获取域名，包含http://
+    if (url !== '' && typeof url !== 'undefined') {
+        var match = url.match(/^http[s]?:\/\/[^\/]+/)
+        if (match) dirParam.host = match[0]
+    } else dirParam.host = location.host
     if (urlStr.includes('/')) {
         //dirParam = unescape(urlStr).split("/");
         dirParam.path = decodeURI(urlStr).split('/')

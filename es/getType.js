@@ -19,7 +19,6 @@ function getType(target) {
     };
     if (target === null)
         return target + '';
-    // @ts-ignore
     return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target;
 }
 

@@ -5,7 +5,7 @@
  * @returns 类型
  */
 function getType(target: any): string {
-    let type = {
+    let type: any = {
         '[object Array]': 'array',
         '[object Boolean]': 'boolean',
         '[object Date]': 'date',
@@ -17,7 +17,6 @@ function getType(target: any): string {
     }
 
     if (target === null) return target + ''
-    // @ts-ignore
     return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target
 }
 

@@ -1,6 +1,6 @@
-[index.md - v2.1.0](README.md) / Exports
+[index.md - v2.1.1](README.md) / Exports
 
-# index.md - v2.1.0
+# index.md - v2.1.1
 
 ## Table of contents
 
@@ -524,7 +524,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/ab1800b/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/160523e/typings/common.d.ts#L9)
 
 ## Properties
 
@@ -705,7 +705,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/ab1800b/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/160523e/src/CSVToArray.ts#L21)
 
 ---
 
@@ -743,7 +743,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/160523e/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -771,7 +771,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/ab1800b/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/160523e/src/RGBToHex.ts#L10)
 
 ---
 
@@ -795,7 +795,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/ab1800b/src/addEvent.ts#L15)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/160523e/src/addEvent.ts#L15)
 
 ---
 
@@ -832,7 +832,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/160523e/src/all.ts#L17)
 
 ---
 
@@ -869,7 +869,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/160523e/src/any.ts#L17)
 
 ---
 
@@ -924,7 +924,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/ab1800b/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/160523e/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -949,7 +949,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/ab1800b/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/160523e/src/client.ts#L8)
 
 ---
 
@@ -976,7 +976,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/ab1800b/src/extend.ts#L14)
+[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/160523e/src/extend.ts#L14)
 
 ---
 
@@ -994,7 +994,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/ab1800b/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/160523e/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1018,4 +1018,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/ab1800b/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/160523e/src/uuid.ts#L11)
