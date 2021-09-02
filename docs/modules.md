@@ -1,6 +1,6 @@
-[index.md - v2.0.1](README.md) / Exports
+[index.md - v2.1.0](README.md) / Exports
 
-# index.md - v2.0.1
+# index.md - v2.1.0
 
 ## Table of contents
 
@@ -84,6 +84,10 @@
 -   [AnyObject](interfaces/AnyObject.md)
 -   [SearchkeySet](interfaces/SearchkeySet.md)
 -   [WindowSizeObj](interfaces/WindowSizeObj.md)
+
+### Type aliases
+
+-   [ArrayOneMore](modules.md#arrayonemore)
 
 ### Properties
 
@@ -506,6 +510,22 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 Renames and exports: [\_\_type](modules.md#__type)
 
+## Type aliases
+
+### ArrayOneMore
+
+Ƭ **ArrayOneMore**<`T`\>: { `0`: `T` } & `T`[]
+
+#### Type parameters
+
+| Name |
+| :--- |
+| `T`  |
+
+#### Defined in
+
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/ab1800b/typings/common.d.ts#L9)
+
 ## Properties
 
 ### default
@@ -550,7 +570,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `enWxJumpLinkOld`              | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `encodeBase64`                 | (`input`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `encodeUtf8`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `extend`                       | (`target`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `extend`                       | <T\>(`target`: `boolean` \| `T`, ...`args`: [`ArrayOneMore`](modules.md#arrayonemore)<`any`\>) => `boolean` \| `T`                                                                                                                                                                                                                                                                                                                              |
 | `fixNumber`                    | (`number`: `string` \| `number`, `n`: `number`) => `string` \| `number`                                                                                                                                                                                                                                                                                                                                                                         |
 | `formatTime`                   | (`time`: `Date` \| `string`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                       |
 | `formatTimeStr`                | (`time`: `string` \| `number`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -685,7 +705,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/ab1800b/src/CSVToArray.ts#L21)
 
 ---
 
@@ -723,7 +743,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -751,7 +771,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/ab1800b/src/RGBToHex.ts#L10)
 
 ---
 
@@ -775,7 +795,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/addEvent.ts#L15)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/ab1800b/src/addEvent.ts#L15)
 
 ---
 
@@ -812,7 +832,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/all.ts#L17)
 
 ---
 
@@ -849,7 +869,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/ab1800b/src/any.ts#L17)
 
 ---
 
@@ -904,7 +924,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/ab1800b/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -929,27 +949,34 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/ab1800b/src/client.ts#L8)
 
 ---
 
 ### extend
 
-▸ `Let` **extend**(`target`): `any`
+▸ `Let` **extend**<`T`\>(`target`, ...`args`): `boolean` \| `T`
+
+#### Type parameters
+
+| Name |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name     | Type  |
-| :------- | :---- |
-| `target` | `any` |
+| Name      | Type                                              |
+| :-------- | :------------------------------------------------ |
+| `target`  | `boolean` \| `T`                                  |
+| `...args` | [`ArrayOneMore`](modules.md#arrayonemore)<`any`\> |
 
 #### Returns
 
-`any`
+`boolean` \| `T`
 
 #### Defined in
 
-[src/extend.ts:13](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/extend.ts#L13)
+[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/ab1800b/src/extend.ts#L14)
 
 ---
 
@@ -967,7 +994,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/ab1800b/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -991,4 +1018,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/04bfaf9/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/ab1800b/src/uuid.ts#L11)

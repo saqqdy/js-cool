@@ -1,4 +1,4 @@
-export type { AnyObject, AnyFunction } from '../typings/common'
+export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
 // export type { CustomObject, CustomEvent } from "./addEvent";
 export type { WindowSizeObj } from './getWindowSize'
 export type { SearchkeySet } from './searchTreeObject'

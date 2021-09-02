@@ -1,12 +1,12 @@
-[index.md - v2.0.1](../README.md) / [Exports](../modules.md) / AnyObject
+[index.md - v2.1.0](../README.md) / [Exports](../modules.md) / AnyObject
 
 # Interface: AnyObject
 
 ## Hierarchy
 
-- **`AnyObject`**
+-   **`AnyObject`**
 
-  ↳ [`AnyFunction`](AnyFunction.md)
+    ↳ [`AnyFunction`](AnyFunction.md)
 
 ## Indexable
 

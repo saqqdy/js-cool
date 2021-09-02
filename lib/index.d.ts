@@ -53,6 +53,10 @@ export declare interface AnyObject {
     [prop: string]: any
 }
 
+export declare type ArrayOneMore<T> = {
+    0: T
+} & Array<T>
+
 /**
  * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
  *
@@ -361,7 +365,7 @@ declare const _default: {
     nextIndex: typeof nextIndex;
     fixNumber: typeof fixNumber;
     delay: typeof delay;
-    extend: (target: any) => any;
+    extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => boolean | T;
     getType: typeof getType;
     isArray: typeof isArray;
     cleanData: typeof cleanData;
@@ -475,7 +479,7 @@ export declare function enWxJumpLink(string: string): string;
  */
 export declare function enWxJumpLinkOld(string: string): string;
 
-export declare let extend: (target: any) => any;
+export declare let extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => boolean | T;
 
 /**
  * 截取小数点后几位，不足的不补0

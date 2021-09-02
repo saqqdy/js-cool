@@ -1419,11 +1419,10 @@ function isPlainObject(obj) {
 //对象扩展
 let extend = (function () {
     /**
-     * @param target
-     * @param source
-     * @param deep
+     * @param target - 目标
+     * @param source - 源
+     * @param deep - 是否深拷贝
      */
-    // @ts-ignore
     function extend(target, source, deep) {
         for (let key in source)
             if (source.hasOwnProperty(key)) {
@@ -1438,16 +1437,13 @@ let extend = (function () {
                     target[key] = source[key];
             }
     }
-    // @ts-ignore
-    return function (target) {
-        // @ts-ignore
-        let deep, args = Array.prototype.slice.call(arguments, 1);
+    return function (target, ...args) {
+        let deep = false;
         if (typeof target === 'boolean') {
             deep = target;
             target = args.shift();
         }
         args.forEach(function (arg) {
-            // @ts-ignore
             extend(target, arg, deep);
         });
         return target;

@@ -1,4 +1,4 @@
-export type { AnyObject, AnyFunction } from '../typings/common';
+export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common';
 export type { WindowSizeObj } from './getWindowSize';
 export type { SearchkeySet } from './searchTreeObject';
 import client from './client';
@@ -178,7 +178,7 @@ declare const _default: {
     nextIndex: typeof nextIndex;
     fixNumber: typeof fixNumber;
     delay: typeof delay;
-    extend: (target: any) => any;
+    extend: <T>(target: boolean | T, ...args: import("../typings/common").ArrayOneMore<any>) => boolean | T;
     getType: typeof getType;
     isArray: typeof isArray;
     cleanData: typeof cleanData;

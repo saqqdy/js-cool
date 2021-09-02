@@ -1,12 +1,12 @@
-[index.md - v2.0.1](../README.md) / [Exports](../modules.md) / AnyFunction
+[index.md - v2.1.0](../README.md) / [Exports](../modules.md) / AnyFunction
 
 # Interface: AnyFunction
 
 ## Hierarchy
 
-- [`AnyObject`](AnyObject.md)
+-   [`AnyObject`](AnyObject.md)
 
-  ↳ **`AnyFunction`**
+    ↳ **`AnyFunction`**
 
 ## Callable
 
@@ -16,8 +16,8 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type    |
+| :-------- | :------ |
 | `...args` | `any`[] |
 
 #### Returns
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[typings/common.d.ts:6](https://github.com/saqqdy/js-cool/blob/04bfaf9/typings/common.d.ts#L6)
+[typings/common.d.ts:6](https://github.com/saqqdy/js-cool/blob/ab1800b/typings/common.d.ts#L6)
