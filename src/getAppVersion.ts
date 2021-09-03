@@ -6,15 +6,11 @@
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-function getAppVersion(appName: string, withappstr: boolean, userAgent: string): string | boolean | null {
-    // console.log(getAppVersion("Chrome"));
-    // const userAgent = navigator.userAgent;
+function getAppVersion(appName: string, withappstr?: boolean, userAgent?: string): string | boolean | null {
     userAgent = userAgent || navigator.appVersion
     var reg = eval('/' + appName + '\\/([\\d\\.]+)/i')
     var isApp = userAgent.includes(appName)
     var ver = userAgent.match(reg)
-    // console.log(userAgent)
-    // console.log(ver)
     // withappstr = typeof(withappstr) != "undefined" ? withappstr : false;
     if (ver) {
         if (withappstr) {

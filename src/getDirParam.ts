@@ -1,13 +1,18 @@
+export interface DirParamType {
+    path?: string[]
+    host?: string
+}
+
 /**
  * 获取目录形式URL参数
  *
  * @param url - 传入url地址
  * @returns 返回参数对象
  */
-function getDirParam(url: string) {
+function getDirParam(url: string): DirParamType {
     var urlStr = url !== '' && typeof url !== 'undefined' ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1') : location.pathname // 获取url中域名后的字串:/post/0703/a1.html
     urlStr = urlStr.replace(/^\//, '')
-    var dirParam: { [prop: string]: any } = {}
+    var dirParam: DirParamType = { path: [], host: '' }
     // 获取域名，包含http://
     if (url !== '' && typeof url !== 'undefined') {
         var match = url.match(/^http[s]?:\/\/[^\/]+/)

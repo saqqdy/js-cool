@@ -4,7 +4,7 @@
  * @param name - cookie名称
  * @returns 返回cookie字符串
  */
-function getCookie(name: string) {
+function getCookie(name: string): any {
     var arr,
         reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
     arr = document.cookie.match(reg)
