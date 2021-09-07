@@ -7,8 +7,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/js-cool
-[travis-image]: https://travis-ci.org/saqqdy/js-cool.svg?branch=master
-[travis-url]: https://travis-ci.org/saqqdy/js-cool
+[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
+[travis-url]: https://travis-ci.com/saqqdy/js-cool
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
 [david-image]: https://img.shields.io/david/saqqdy/js-cool.svg?style=flat-square
