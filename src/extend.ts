@@ -27,11 +27,11 @@ let extend = (function () {
                 } else if (source[key] !== undefined) target[key] = source[key]
             }
     }
-    return function <T>(target: boolean | T, ...args: ArrayOneMore<any>) {
+    return function <T>(target: boolean | T, ...args: ArrayOneMore<any>): T {
         let deep: boolean = false
         if (typeof target === 'boolean') {
             deep = target
-            target = args.shift()
+            target = args.shift() as T
         }
         args.forEach(function (arg) {
             extend(target, arg, deep)
