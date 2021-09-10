@@ -14,10 +14,8 @@ const client = (name = '', userAgent = navigator.appVersion) => {
     }
     else {
         return {
-            // @ts-ignore
-            IE: userAgentL.indexOf('msie') > -1 && !userAgentL.indexOf('opera') > -1,
-            // @ts-ignore
-            GECKO: userAgentL.indexOf('gecko') > -1 && !userAgentL.indexOf('khtml') > -1,
+            IE: userAgentL.indexOf('msie') > -1 && userAgentL.indexOf('opera') === -1,
+            GECKO: userAgentL.indexOf('gecko') > -1 && userAgentL.indexOf('khtml') === -1,
             WEBKIT: userAgentL.indexOf('applewebkit') > -1,
             OPERA: userAgentL.indexOf('opera') > -1 && userAgentL.indexOf('presto') > -1,
             TRIDENT: userAgentL.indexOf('trident') > -1,
@@ -30,8 +28,7 @@ const client = (name = '', userAgent = navigator.appVersion) => {
             // WEBAPP: !userAgent.indexOf('Safari') > -1, //是否web应该程序，没有头部与底部
             QQBROWSER: userAgent.indexOf('QQBrowser') > -1,
             WEIXIN: userAgent.indexOf('MicroMessenger') > -1,
-            // @ts-ignore
-            QQ: userAgent.match(/\sQQ/i) === ' qq' // 是否QQ
+            QQ: userAgent.match(/\sQQ/i) // 是否QQ
         };
     }
 };

@@ -9,7 +9,7 @@
 function getDirParam(url) {
     var urlStr = url !== '' && typeof url !== 'undefined' ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1') : location.pathname; // 获取url中域名后的字串:/post/0703/a1.html
     urlStr = urlStr.replace(/^\//, '');
-    var dirParam = {};
+    var dirParam = { path: [], host: '' };
     // 获取域名，包含http://
     if (url !== '' && typeof url !== 'undefined') {
         var match = url.match(/^http[s]?:\/\/[^\/]+/);

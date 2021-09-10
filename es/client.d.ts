@@ -18,6 +18,6 @@ declare const client: (name?: string, userAgent?: string) => boolean | {
     IPAD: boolean;
     QQBROWSER: boolean;
     WEIXIN: boolean;
-    QQ: boolean;
+    QQ: RegExpMatchArray | null;
 };
 export default client;
