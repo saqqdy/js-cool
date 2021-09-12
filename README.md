@@ -4,6 +4,8 @@
 [![David deps][david-image]][david-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
+[![gzip][gzip-image]][gzip-url]
+[![License][license-image]][license-url]
 
 [npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/js-cool
@@ -17,6 +19,10 @@
 [snyk-url]: https://snyk.io/test/npm/js-cool
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
 [download-url]: https://npmjs.org/package/js-cool
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: LICENSE
 
 # **完整文档请查阅： [API 完整文档](./docs/modules.md)**
 
