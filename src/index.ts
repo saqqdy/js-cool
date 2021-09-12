@@ -2,6 +2,7 @@ export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
 // export type { CustomObject, CustomEvent } from "./addEvent";
 export type { WindowSizeObj } from './getWindowSize'
 export type { SearchkeySet } from './searchTreeObject'
+export type { DirParamType } from './getDirParam'
 
 // 全局参数
 import client from './client' // client方法返回一个浏览器判断结果对象

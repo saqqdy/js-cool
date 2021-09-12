@@ -176,7 +176,7 @@ export declare const client: (name?: string, userAgent?: string) => boolean | {
     IPAD: boolean;
     QQBROWSER: boolean;
     WEIXIN: boolean;
-    QQ: boolean;
+    QQ: RegExpMatchArray | null;
 };
 
 /**
@@ -282,7 +282,7 @@ declare const _default: {
         IPAD: boolean;
         QQBROWSER: boolean;
         WEIXIN: boolean;
-        QQ: boolean;
+        QQ: RegExpMatchArray | null;
     };
     pattern: {
         any: RegExp;
@@ -365,7 +365,7 @@ declare const _default: {
     nextIndex: typeof nextIndex;
     fixNumber: typeof fixNumber;
     delay: typeof delay;
-    extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => boolean | T;
+    extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => T;
     getType: typeof getType;
     isArray: typeof isArray;
     cleanData: typeof cleanData;
@@ -433,6 +433,11 @@ export declare function deWxJumpLink(string: string): string;
  */
 export declare function deWxJumpLinkOld(string: string): string;
 
+export declare interface DirParamType {
+    path?: string[];
+    host?: string;
+}
+
 /**
  * 文件下载的几种方式：
  * 1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；
@@ -479,7 +484,7 @@ export declare function enWxJumpLink(string: string): string;
  */
 export declare function enWxJumpLinkOld(string: string): string;
 
-export declare let extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => boolean | T;
+export declare let extend: <T>(target: boolean | T, ...args: ArrayOneMore<any>) => T;
 
 /**
  * 截取小数点后几位，不足的不补0
@@ -520,7 +525,7 @@ export declare function formatTimeStr(time: string | number, fmt: string): strin
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export declare function getAppVersion(appName: string, withappstr: boolean, userAgent: string): string | boolean | null;
+export declare function getAppVersion(appName: string, withappstr?: boolean, userAgent?: string): string | boolean | null;
 
 /**
  * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
@@ -544,7 +549,7 @@ export declare function getCHSLength(str: string): number;
  * @param name - cookie名称
  * @returns 返回cookie字符串
  */
-export declare function getCookie(name: string): string | null;
+export declare function getCookie(name: string): any;
 
 /**
  * 获取目录形式URL参数
@@ -552,31 +557,48 @@ export declare function getCookie(name: string): string | null;
  * @param url - 传入url地址
  * @returns 返回参数对象
  */
-export declare function getDirParam(url: string): {
-    [prop: string]: any;
-};
+export declare function getDirParam(url: string): DirParamType;
 
 /**
  * 文件后缀名
  *
+ * @example
+ * ```js
+ * getFileType('http://www.saqqdy.com/test.jpg'); // .jpg;
+ * ```
+ * @example
+ * ```js
+ * getFileType('http://www.saqqdy.com/test.JPEG'); // .jpeg;
+ * ```
  * @param url - 文件名
  * @returns 返回文件后缀
  */
-export declare function getFileType(url: string): string | null;
+export declare function getFileType(url: string): string;
 
 /**
  * 版本号大小对比
  *
+ * @example
+ * ```js
+ * // navigator.appVersion = "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"
+ * getIsAppVersionLastest('Chrome', '90.0.4515.159'); // true;
+ * getIsAppVersionLastest('Chrome', '94.10.4515.159', navigator.appVersion); // false;
+ * ```
  * @param appName - app名称
  * @param compareVer - 必传 需要对比的版本号
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export declare function getIsAppVersionLastest(appName: string, compareVer: string, userAgent: string): boolean | null;
+export declare function getIsAppVersionLastest(appName: string, compareVer: string, userAgent?: string): boolean | null;
 
 /**
  * 获取字符串中的数字
  *
+ * @example
+ * ```js
+ * getNumber('Chrome123.33'); // '123.33';
+ * getNumber('234test.88'); // '234.88';
+ * ```
  * @param string - 传入带数字的字符串
  * @returns 返回纯数字字符串
  */
@@ -585,12 +607,17 @@ export declare function getNumber(string: string): string;
 /**
  * 获取手机系统版本
  *
+ * @example
+ * ```
+ * getAppVersion('iPhone') // '13.2.3'
+ * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
+ * ```
  * @param osName - 系统类型字符串Android、iPod、iWatch或iPhone
  * @param withosstr - 是否需要带上名称
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export declare function getOsVersion(osName: string, withosstr: boolean, userAgent: string): string | boolean | null;
+export declare function getOsVersion(osName: string, withosstr?: boolean, userAgent?: string): string | boolean | null;
 
 /**
  * 获取单个URL参数

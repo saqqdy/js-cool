@@ -3,25 +3,16 @@
 /**
  * 获取APP版本号
  *
- * @example
- * ```
- * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
- * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
- * ```
  * @param appName - app名称
  * @param withosstr - 是否需要带上名称
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
 function getAppVersion(appName, withappstr, userAgent) {
-    // console.log(getAppVersion("Chrome"));
-    // const userAgent = navigator.userAgent;
     userAgent = userAgent || navigator.appVersion;
     var reg = eval('/' + appName + '\\/([\\d\\.]+)/i');
     var isApp = userAgent.includes(appName);
     var ver = userAgent.match(reg);
-    // console.log(userAgent)
-    // console.log(ver)
     // withappstr = typeof(withappstr) != "undefined" ? withappstr : false;
     if (ver) {
         if (withappstr) {

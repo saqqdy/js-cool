@@ -1,6 +1,7 @@
 export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common';
 export type { WindowSizeObj } from './getWindowSize';
 export type { SearchkeySet } from './searchTreeObject';
+export type { DirParamType } from './getDirParam';
 import client from './client';
 import pattern from './pattern';
 import trim from './trim';
@@ -95,7 +96,7 @@ declare const _default: {
         IPAD: boolean;
         QQBROWSER: boolean;
         WEIXIN: boolean;
-        QQ: boolean;
+        QQ: RegExpMatchArray | null;
     };
     pattern: {
         any: RegExp;
@@ -178,7 +179,7 @@ declare const _default: {
     nextIndex: typeof nextIndex;
     fixNumber: typeof fixNumber;
     delay: typeof delay;
-    extend: <T>(target: boolean | T, ...args: import("../typings/common").ArrayOneMore<any>) => boolean | T;
+    extend: <T>(target: boolean | T, ...args: import("../typings/common").ArrayOneMore<any>) => T;
     getType: typeof getType;
     isArray: typeof isArray;
     cleanData: typeof cleanData;

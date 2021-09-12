@@ -5,6 +5,11 @@ var getAppVersion = require('./getAppVersion.js');
 /**
  * 获取手机系统版本
  *
+ * @example
+ * ```
+ * getAppVersion('iPhone') // '13.2.3'
+ * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
+ * ```
  * @param osName - 系统类型字符串Android、iPod、iWatch或iPhone
  * @param withosstr - 是否需要带上名称
  * @param userAgent - ua，可不传，默认取navigator.appVersion
