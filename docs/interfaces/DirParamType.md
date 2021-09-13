@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/getDirParam.ts:3](https://github.com/saqqdy/js-cool/blob/e4a31f9/src/getDirParam.ts#L3)
+[src/getDirParam.ts:3](https://github.com/saqqdy/js-cool/blob/14abc08/src/getDirParam.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/getDirParam.ts:2](https://github.com/saqqdy/js-cool/blob/e4a31f9/src/getDirParam.ts#L2)
+[src/getDirParam.ts:2](https://github.com/saqqdy/js-cool/blob/14abc08/src/getDirParam.ts#L2)

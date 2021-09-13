@@ -27,7 +27,7 @@ let extend = (function () {
                 } else if (source[key] !== undefined) target[key] = source[key]
             }
     }
-    return function <T>(target: boolean | T, ...args: ArrayOneMore<any>): T {
+    return function <T = any[] | object>(target: boolean | T, ...args: ArrayOneMore<any>) {
         let deep: boolean = false
         if (typeof target === 'boolean') {
             deep = target
