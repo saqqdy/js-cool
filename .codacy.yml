@@ -21,6 +21,7 @@ exclude_paths:
   - "benchmarks/**/*"
   - "**.min.js"
   - "**/tests/**"
+  - "docs/**"
   - "lib/**"
   - "es/**"
   - "script/**"
