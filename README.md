@@ -10,25 +10,6 @@
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
-[npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/js-cool
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
-[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
-[travis-url]: https://travis-ci.com/saqqdy/js-cool
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
-[david-image]: https://img.shields.io/david/saqqdy/js-cool.svg?style=flat-square
-[david-url]: https://david-dm.org/saqqdy/js-cool
-[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/js-cool
-[download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
-[download-url]: https://npmjs.org/package/js-cool
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: LICENSE
-
 ## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
 
 ## 介绍
@@ -216,3 +197,22 @@ download(url, filename) // 下载文件
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
+
+[npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/js-cool
+[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
+[codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
+[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
+[travis-url]: https://travis-ci.com/saqqdy/js-cool
+[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
+[david-image]: https://img.shields.io/david/saqqdy/js-cool.svg?style=flat-square
+[david-url]: https://david-dm.org/saqqdy/js-cool
+[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/js-cool
+[download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
+[download-url]: https://npmjs.org/package/js-cool
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: LICENSE
