@@ -16,6 +16,7 @@ languages:
       - "-css.resource"
 exclude_paths:
   - "*.md"
+  - "*.js"
   - "spec/**/*"
   - "benchmarks/**/*"
   - "**.min.js"
