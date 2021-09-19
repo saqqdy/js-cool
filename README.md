@@ -216,7 +216,7 @@ download(url, filename) // 下载文件
 
 ## 参与贡献
 
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
+1. fork 本仓库
+2. 新建 feature_xxx 分支
 3. 提交代码
-4. 新建 Pull Request
+4. 新建 pull request
