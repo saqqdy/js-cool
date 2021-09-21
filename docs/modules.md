@@ -1,6 +1,6 @@
-[index.md - v2.1.2](README.md) / Exports
+[index.md - v2.1.3](README.md) / Exports
 
-# index.md - v2.1.2
+# index.md - v2.1.3
 
 ## Table of contents
 
@@ -117,7 +117,7 @@
 
 #### Defined in
 
-[src/index.ts:182](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L182)
+[src/index.ts:182](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L182)
 
 ---
 
@@ -127,7 +127,7 @@
 
 #### Defined in
 
-[src/index.ts:119](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L119)
+[src/index.ts:119](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L119)
 
 ---
 
@@ -137,7 +137,7 @@
 
 #### Defined in
 
-[src/index.ts:172](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L172)
+[src/index.ts:172](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L172)
 
 ---
 
@@ -147,7 +147,7 @@
 
 #### Defined in
 
-[src/index.ts:109](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L109)
+[src/index.ts:109](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L109)
 
 ---
 
@@ -157,7 +157,7 @@
 
 #### Defined in
 
-[src/index.ts:110](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L110)
+[src/index.ts:110](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L110)
 
 ---
 
@@ -167,7 +167,7 @@
 
 #### Defined in
 
-[src/index.ts:111](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L111)
+[src/index.ts:111](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L111)
 
 ---
 
@@ -177,7 +177,7 @@
 
 #### Defined in
 
-[src/index.ts:112](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L112)
+[src/index.ts:112](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L112)
 
 ---
 
@@ -187,7 +187,7 @@
 
 #### Defined in
 
-[src/index.ts:113](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L113)
+[src/index.ts:113](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L113)
 
 ---
 
@@ -197,7 +197,7 @@
 
 #### Defined in
 
-[src/index.ts:114](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L114)
+[src/index.ts:114](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L114)
 
 ---
 
@@ -207,7 +207,7 @@
 
 #### Defined in
 
-[src/index.ts:115](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L115)
+[src/index.ts:115](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L115)
 
 ---
 
@@ -217,7 +217,7 @@
 
 #### Defined in
 
-[src/index.ts:126](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L126)
+[src/index.ts:126](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L126)
 
 ---
 
@@ -227,7 +227,7 @@
 
 #### Defined in
 
-[src/index.ts:120](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L120)
+[src/index.ts:120](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L120)
 
 ---
 
@@ -237,7 +237,7 @@
 
 #### Defined in
 
-[src/index.ts:157](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L157)
+[src/index.ts:157](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L157)
 
 ---
 
@@ -247,7 +247,7 @@
 
 #### Defined in
 
-[src/index.ts:158](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L158)
+[src/index.ts:158](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L158)
 
 ---
 
@@ -257,7 +257,7 @@
 
 #### Defined in
 
-[src/index.ts:159](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L159)
+[src/index.ts:159](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L159)
 
 ---
 
@@ -267,7 +267,7 @@
 
 #### Defined in
 
-[src/index.ts:153](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L153)
+[src/index.ts:153](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L153)
 
 ---
 
@@ -277,7 +277,7 @@
 
 #### Defined in
 
-[src/index.ts:154](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L154)
+[src/index.ts:154](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L154)
 
 ---
 
@@ -287,7 +287,7 @@
 
 #### Defined in
 
-[src/index.ts:149](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L149)
+[src/index.ts:149](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L149)
 
 ---
 
@@ -297,7 +297,7 @@
 
 #### Defined in
 
-[src/index.ts:148](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L148)
+[src/index.ts:148](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L148)
 
 ---
 
@@ -307,7 +307,7 @@
 
 #### Defined in
 
-[src/index.ts:150](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L150)
+[src/index.ts:150](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L150)
 
 ---
 
@@ -317,7 +317,7 @@
 
 #### Defined in
 
-[src/index.ts:168](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L168)
+[src/index.ts:168](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L168)
 
 ---
 
@@ -327,7 +327,7 @@
 
 #### Defined in
 
-[src/index.ts:173](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L173)
+[src/index.ts:173](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L173)
 
 ---
 
@@ -337,7 +337,7 @@
 
 #### Defined in
 
-[src/index.ts:155](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L155)
+[src/index.ts:155](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L155)
 
 ---
 
@@ -347,7 +347,7 @@
 
 #### Defined in
 
-[src/index.ts:156](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L156)
+[src/index.ts:156](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L156)
 
 ---
 
@@ -357,7 +357,7 @@
 
 #### Defined in
 
-[src/index.ts:151](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L151)
+[src/index.ts:151](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L151)
 
 ---
 
@@ -367,7 +367,7 @@
 
 #### Defined in
 
-[src/index.ts:152](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L152)
+[src/index.ts:152](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L152)
 
 ---
 
@@ -377,7 +377,7 @@
 
 #### Defined in
 
-[src/index.ts:167](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L167)
+[src/index.ts:167](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L167)
 
 ---
 
@@ -387,7 +387,7 @@
 
 #### Defined in
 
-[src/index.ts:140](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L140)
+[src/index.ts:140](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L140)
 
 ---
 
@@ -397,7 +397,7 @@
 
 #### Defined in
 
-[src/index.ts:141](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L141)
+[src/index.ts:141](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L141)
 
 ---
 
@@ -407,7 +407,7 @@
 
 #### Defined in
 
-[src/index.ts:133](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L133)
+[src/index.ts:133](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L133)
 
 ---
 
@@ -417,7 +417,7 @@
 
 #### Defined in
 
-[src/index.ts:125](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L125)
+[src/index.ts:125](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L125)
 
 ---
 
@@ -427,7 +427,7 @@
 
 #### Defined in
 
-[src/index.ts:146](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L146)
+[src/index.ts:146](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L146)
 
 ---
 
@@ -437,7 +437,7 @@
 
 #### Defined in
 
-[src/index.ts:145](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L145)
+[src/index.ts:145](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L145)
 
 ---
 
@@ -447,7 +447,7 @@
 
 #### Defined in
 
-[src/index.ts:136](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L136)
+[src/index.ts:136](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L136)
 
 ---
 
@@ -457,7 +457,7 @@
 
 #### Defined in
 
-[src/index.ts:138](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L138)
+[src/index.ts:138](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L138)
 
 ---
 
@@ -467,7 +467,7 @@
 
 #### Defined in
 
-[src/index.ts:135](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L135)
+[src/index.ts:135](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L135)
 
 ---
 
@@ -477,7 +477,7 @@
 
 #### Defined in
 
-[src/index.ts:116](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L116)
+[src/index.ts:116](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L116)
 
 ---
 
@@ -487,7 +487,7 @@
 
 #### Defined in
 
-[src/index.ts:134](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L134)
+[src/index.ts:134](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L134)
 
 ---
 
@@ -497,7 +497,7 @@
 
 #### Defined in
 
-[src/index.ts:137](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L137)
+[src/index.ts:137](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L137)
 
 ---
 
@@ -507,7 +507,7 @@
 
 #### Defined in
 
-[src/index.ts:122](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L122)
+[src/index.ts:122](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L122)
 
 ---
 
@@ -517,7 +517,7 @@
 
 #### Defined in
 
-[src/index.ts:123](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L123)
+[src/index.ts:123](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L123)
 
 ---
 
@@ -527,7 +527,7 @@
 
 #### Defined in
 
-[src/index.ts:124](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L124)
+[src/index.ts:124](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L124)
 
 ---
 
@@ -537,7 +537,7 @@
 
 #### Defined in
 
-[src/index.ts:147](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L147)
+[src/index.ts:147](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L147)
 
 ---
 
@@ -547,7 +547,7 @@
 
 #### Defined in
 
-[src/index.ts:170](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L170)
+[src/index.ts:170](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L170)
 
 ---
 
@@ -557,7 +557,7 @@
 
 #### Defined in
 
-[src/index.ts:139](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L139)
+[src/index.ts:139](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L139)
 
 ---
 
@@ -567,7 +567,7 @@
 
 #### Defined in
 
-[src/index.ts:132](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L132)
+[src/index.ts:132](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L132)
 
 ---
 
@@ -577,7 +577,7 @@
 
 #### Defined in
 
-[src/index.ts:117](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L117)
+[src/index.ts:117](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L117)
 
 ---
 
@@ -587,7 +587,7 @@
 
 #### Defined in
 
-[src/index.ts:118](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L118)
+[src/index.ts:118](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L118)
 
 ---
 
@@ -597,7 +597,7 @@
 
 #### Defined in
 
-[src/index.ts:171](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L171)
+[src/index.ts:171](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L171)
 
 ---
 
@@ -607,7 +607,7 @@
 
 #### Defined in
 
-[src/index.ts:129](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L129)
+[src/index.ts:129](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L129)
 
 ---
 
@@ -617,7 +617,7 @@
 
 #### Defined in
 
-[src/index.ts:130](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L130)
+[src/index.ts:130](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L130)
 
 ---
 
@@ -627,7 +627,7 @@
 
 #### Defined in
 
-[src/index.ts:131](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L131)
+[src/index.ts:131](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L131)
 
 ---
 
@@ -637,7 +637,7 @@
 
 #### Defined in
 
-[src/index.ts:166](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L166)
+[src/index.ts:166](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L166)
 
 ---
 
@@ -647,7 +647,7 @@
 
 #### Defined in
 
-[src/index.ts:175](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L175)
+[src/index.ts:175](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L175)
 
 ---
 
@@ -657,7 +657,7 @@
 
 #### Defined in
 
-[src/index.ts:164](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L164)
+[src/index.ts:164](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L164)
 
 ---
 
@@ -667,7 +667,7 @@
 
 #### Defined in
 
-[src/index.ts:174](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L174)
+[src/index.ts:174](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L174)
 
 ---
 
@@ -677,7 +677,7 @@
 
 #### Defined in
 
-[src/index.ts:143](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L143)
+[src/index.ts:143](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L143)
 
 ---
 
@@ -687,7 +687,7 @@
 
 #### Defined in
 
-[src/index.ts:142](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L142)
+[src/index.ts:142](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L142)
 
 ---
 
@@ -697,7 +697,7 @@
 
 #### Defined in
 
-[src/index.ts:144](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L144)
+[src/index.ts:144](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L144)
 
 ---
 
@@ -707,7 +707,7 @@
 
 #### Defined in
 
-[src/index.ts:176](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L176)
+[src/index.ts:176](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L176)
 
 ---
 
@@ -717,7 +717,7 @@
 
 #### Defined in
 
-[src/index.ts:161](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L161)
+[src/index.ts:161](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L161)
 
 ---
 
@@ -727,7 +727,7 @@
 
 #### Defined in
 
-[src/index.ts:162](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L162)
+[src/index.ts:162](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L162)
 
 ---
 
@@ -737,7 +737,7 @@
 
 #### Defined in
 
-[src/index.ts:127](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L127)
+[src/index.ts:127](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L127)
 
 ---
 
@@ -747,7 +747,7 @@
 
 #### Defined in
 
-[src/index.ts:128](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L128)
+[src/index.ts:128](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L128)
 
 ---
 
@@ -757,7 +757,7 @@
 
 #### Defined in
 
-[src/index.ts:160](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L160)
+[src/index.ts:160](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L160)
 
 ---
 
@@ -767,7 +767,7 @@
 
 #### Defined in
 
-[src/index.ts:108](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L108)
+[src/index.ts:108](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L108)
 
 ---
 
@@ -777,7 +777,7 @@
 
 #### Defined in
 
-[src/index.ts:121](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L121)
+[src/index.ts:121](https://github.com/saqqdy/js-cool/blob/d129203/src/index.ts#L121)
 
 ## Type aliases
 
@@ -793,7 +793,7 @@
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/4382b95/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/d129203/typings/common.d.ts#L9)
 
 ## Properties
 
@@ -974,7 +974,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/4382b95/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/d129203/src/CSVToArray.ts#L21)
 
 ---
 
@@ -1012,7 +1012,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/d129203/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -1040,7 +1040,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/4382b95/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/d129203/src/RGBToHex.ts#L10)
 
 ---
 
@@ -1064,7 +1064,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/4382b95/src/addEvent.ts#L15)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/d129203/src/addEvent.ts#L15)
 
 ---
 
@@ -1101,7 +1101,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/d129203/src/all.ts#L17)
 
 ---
 
@@ -1138,7 +1138,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/d129203/src/any.ts#L17)
 
 ---
 
@@ -1193,7 +1193,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/4382b95/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/d129203/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1218,7 +1218,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/4382b95/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/d129203/src/client.ts#L8)
 
 ---
 
@@ -1245,7 +1245,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/4382b95/src/extend.ts#L14)
+[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/d129203/src/extend.ts#L14)
 
 ---
 
@@ -1263,7 +1263,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/4382b95/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/d129203/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1287,4 +1287,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/4382b95/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/d129203/src/uuid.ts#L11)

@@ -1,4 +1,4 @@
-[index.md - v2.1.2](../README.md) / [Exports](../modules.md) / SearchkeySet
+[index.md - v2.1.3](../README.md) / [Exports](../modules.md) / SearchkeySet
 
 # Interface: SearchkeySet
 
@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/4382b95/src/searchTreeObject.ts#L2)
+[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/d129203/src/searchTreeObject.ts#L2)
 
 ---
 
@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/4382b95/src/searchTreeObject.ts#L3)
+[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/d129203/src/searchTreeObject.ts#L3)
