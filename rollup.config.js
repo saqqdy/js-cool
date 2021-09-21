@@ -37,11 +37,13 @@ export default [
         output: [
             {
                 file: pkg.main,
-                format: 'cjs'
+                format: 'cjs',
+                banner: config.banner
             },
             {
                 file: 'lib/index.esm.js',
-                format: 'es'
+                format: 'es',
+                banner: config.banner
             }
         ],
         plugins: [
@@ -81,7 +83,8 @@ export default [
                 exports: 'auto',
                 format: 'cjs',
                 // format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-                sourcemap: false
+                sourcemap: false,
+                banner: config.banner
             }
         ],
         plugins: [
@@ -112,11 +115,13 @@ export default [
         output: [
             {
                 file: 'es/index.js',
-                format: 'cjs'
+                format: 'cjs',
+                banner: config.banner
             },
             {
                 file: 'es/index.esm.js',
-                format: 'es'
+                format: 'es',
+                banner: config.banner
             }
         ],
         plugins: [
@@ -150,7 +155,8 @@ export default [
                 exports: 'auto',
                 format: 'cjs',
                 // format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-                sourcemap: false
+                sourcemap: false,
+                banner: config.banner
             }
         ],
         plugins: [

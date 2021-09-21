@@ -1,3 +1,9 @@
+/*!
+ * js-cool v2.1.2
+ * 一些常用的JS方法，支持按需引入
+ * (c) 2019-2021 saqqdy 
+ * Released under the MIT License.
+ */
 /**
  * client方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE: true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
  *

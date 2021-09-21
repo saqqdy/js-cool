@@ -113,403 +113,671 @@
 
 ### CSVToJSON
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **CSVToJSON**: `Object`
+
+#### Defined in
+
+[src/index.ts:182](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L182)
 
 ---
 
 ### camel2Dash
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **camel2Dash**: `Object`
+
+#### Defined in
+
+[src/index.ts:119](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L119)
 
 ---
 
 ### cleanData
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **cleanData**: `Object`
+
+#### Defined in
+
+[src/index.ts:172](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L172)
 
 ---
 
 ### clearAttr
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearAttr**: `Object`
+
+#### Defined in
+
+[src/index.ts:109](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L109)
 
 ---
 
 ### clearBr
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearBr**: `Object`
+
+#### Defined in
+
+[src/index.ts:110](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L110)
 
 ---
 
 ### clearHtml
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearHtml**: `Object`
+
+#### Defined in
+
+[src/index.ts:111](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L111)
 
 ---
 
 ### clearHtmlExpSN
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearHtmlExpSN**: `Object`
+
+#### Defined in
+
+[src/index.ts:112](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L112)
 
 ---
 
 ### clearHtmlN
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearHtmlN**: `Object`
+
+#### Defined in
+
+[src/index.ts:113](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L113)
 
 ---
 
 ### clearHtmlNS
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearHtmlNS**: `Object`
+
+#### Defined in
+
+[src/index.ts:114](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L114)
 
 ---
 
 ### clearHtmlTag
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **clearHtmlTag**: `Object`
+
+#### Defined in
+
+[src/index.ts:115](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L115)
 
 ---
 
 ### cutCHSString
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **cutCHSString**: `Object`
+
+#### Defined in
+
+[src/index.ts:126](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L126)
 
 ---
 
 ### dash2Camel
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **dash2Camel**: `Object`
+
+#### Defined in
+
+[src/index.ts:120](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L120)
 
 ---
 
 ### deWxJumpLink
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **deWxJumpLink**: `Object`
+
+#### Defined in
+
+[src/index.ts:157](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L157)
 
 ---
 
 ### deWxJumpLinkOld
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **deWxJumpLinkOld**: `Object`
+
+#### Defined in
+
+[src/index.ts:158](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L158)
 
 ---
 
 ### debounce
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **debounce**: `Object`
+
+#### Defined in
+
+[src/index.ts:159](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L159)
 
 ---
 
 ### decodeBase64
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **decodeBase64**: `Object`
+
+#### Defined in
+
+[src/index.ts:153](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L153)
 
 ---
 
 ### decodeUtf8
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **decodeUtf8**: `Object`
+
+#### Defined in
+
+[src/index.ts:154](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L154)
 
 ---
 
 ### delCache
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **delCache**: `Object`
+
+#### Defined in
+
+[src/index.ts:149](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L149)
 
 ---
 
 ### delCookie
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **delCookie**: `Object`
+
+#### Defined in
+
+[src/index.ts:148](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L148)
 
 ---
 
 ### delSession
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **delSession**: `Object`
+
+#### Defined in
+
+[src/index.ts:150](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L150)
 
 ---
 
 ### delay
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **delay**: `Object`
+
+#### Defined in
+
+[src/index.ts:168](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L168)
 
 ---
 
 ### download
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **download**: `Object`
+
+#### Defined in
+
+[src/index.ts:173](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L173)
 
 ---
 
 ### enWxJumpLink
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **enWxJumpLink**: `Object`
+
+#### Defined in
+
+[src/index.ts:155](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L155)
 
 ---
 
 ### enWxJumpLinkOld
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **enWxJumpLinkOld**: `Object`
+
+#### Defined in
+
+[src/index.ts:156](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L156)
 
 ---
 
 ### encodeBase64
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **encodeBase64**: `Object`
+
+#### Defined in
+
+[src/index.ts:151](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L151)
 
 ---
 
 ### encodeUtf8
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **encodeUtf8**: `Object`
+
+#### Defined in
+
+[src/index.ts:152](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L152)
 
 ---
 
 ### fixNumber
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **fixNumber**: `Object`
+
+#### Defined in
+
+[src/index.ts:167](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L167)
 
 ---
 
 ### formatTime
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **formatTime**: `Object`
+
+#### Defined in
+
+[src/index.ts:140](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L140)
 
 ---
 
 ### formatTimeStr
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **formatTimeStr**: `Object`
+
+#### Defined in
+
+[src/index.ts:141](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L141)
 
 ---
 
 ### getAppVersion
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getAppVersion**: `Object`
+
+#### Defined in
+
+[src/index.ts:133](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L133)
 
 ---
 
 ### getCHSLength
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getCHSLength**: `Object`
+
+#### Defined in
+
+[src/index.ts:125](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L125)
 
 ---
 
 ### getCache
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getCache**: `Object`
+
+#### Defined in
+
+[src/index.ts:146](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L146)
 
 ---
 
 ### getCookie
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getCookie**: `Object`
+
+#### Defined in
+
+[src/index.ts:145](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L145)
 
 ---
 
 ### getDirParam
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getDirParam**: `Object`
+
+#### Defined in
+
+[src/index.ts:136](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L136)
 
 ---
 
 ### getFileType
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getFileType**: `Object`
+
+#### Defined in
+
+[src/index.ts:138](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L138)
 
 ---
 
 ### getIsAppVersionLastest
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getIsAppVersionLastest**: `Object`
+
+#### Defined in
+
+[src/index.ts:135](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L135)
 
 ---
 
 ### getNumber
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getNumber**: `Object`
+
+#### Defined in
+
+[src/index.ts:116](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L116)
 
 ---
 
 ### getOsVersion
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getOsVersion**: `Object`
+
+#### Defined in
+
+[src/index.ts:134](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L134)
 
 ---
 
 ### getParameter
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getParameter**: `Object`
+
+#### Defined in
+
+[src/index.ts:137](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L137)
 
 ---
 
 ### getRandomNum
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getRandomNum**: `Object`
+
+#### Defined in
+
+[src/index.ts:122](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L122)
 
 ---
 
 ### getRandomStr
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getRandomStr**: `Object`
+
+#### Defined in
+
+[src/index.ts:123](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L123)
 
 ---
 
 ### getRandomStrWidthSpecialChar
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getRandomStrWidthSpecialChar**: `Object`
+
+#### Defined in
+
+[src/index.ts:124](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L124)
 
 ---
 
 ### getSession
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getSession**: `Object`
+
+#### Defined in
+
+[src/index.ts:147](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L147)
 
 ---
 
 ### getType
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getType**: `Object`
+
+#### Defined in
+
+[src/index.ts:170](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L170)
 
 ---
 
 ### getUrlParam
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getUrlParam**: `Object`
+
+#### Defined in
+
+[src/index.ts:139](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L139)
 
 ---
 
 ### getWindowSize
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **getWindowSize**: `Object`
+
+#### Defined in
+
+[src/index.ts:132](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L132)
 
 ---
 
 ### imgAdapt
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **imgAdapt**: `Object`
+
+#### Defined in
+
+[src/index.ts:117](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L117)
 
 ---
 
 ### imgChoose
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **imgChoose**: `Object`
+
+#### Defined in
+
+[src/index.ts:118](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L118)
 
 ---
 
 ### isArray
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **isArray**: `Object`
+
+#### Defined in
+
+[src/index.ts:171](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L171)
 
 ---
 
 ### isDigitals
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **isDigitals**: `Object`
+
+#### Defined in
+
+[src/index.ts:129](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L129)
 
 ---
 
 ### isExitsFunction
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **isExitsFunction**: `Object`
+
+#### Defined in
+
+[src/index.ts:130](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L130)
 
 ---
 
 ### isExitsVariable
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **isExitsVariable**: `Object`
+
+#### Defined in
+
+[src/index.ts:131](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L131)
 
 ---
 
 ### nextIndex
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **nextIndex**: `Object`
+
+#### Defined in
+
+[src/index.ts:166](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L166)
 
 ---
 
 ### openUrl
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **openUrl**: `Object`
+
+#### Defined in
+
+[src/index.ts:175](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L175)
 
 ---
 
 ### removeEvent
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **removeEvent**: `Object`
+
+#### Defined in
+
+[src/index.ts:164](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L164)
 
 ---
 
 ### searchTreeObject
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **searchTreeObject**: `Object`
+
+#### Defined in
+
+[src/index.ts:174](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L174)
 
 ---
 
 ### setCache
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **setCache**: `Object`
+
+#### Defined in
+
+[src/index.ts:143](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L143)
 
 ---
 
 ### setCookie
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **setCookie**: `Object`
+
+#### Defined in
+
+[src/index.ts:142](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L142)
 
 ---
 
 ### setSession
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **setSession**: `Object`
+
+#### Defined in
+
+[src/index.ts:144](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L144)
 
 ---
 
 ### splitThousand
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **splitThousand**: `Object`
+
+#### Defined in
+
+[src/index.ts:176](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L176)
 
 ---
 
 ### stopBubble
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **stopBubble**: `Object`
+
+#### Defined in
+
+[src/index.ts:161](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L161)
 
 ---
 
 ### stopDefault
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **stopDefault**: `Object`
+
+#### Defined in
+
+[src/index.ts:162](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L162)
 
 ---
 
 ### textareaInsertText
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **textareaInsertText**: `Object`
+
+#### Defined in
+
+[src/index.ts:127](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L127)
 
 ---
 
 ### textareaMoveToEnd
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **textareaMoveToEnd**: `Object`
+
+#### Defined in
+
+[src/index.ts:128](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L128)
 
 ---
 
 ### throttle
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **throttle**: `Object`
+
+#### Defined in
+
+[src/index.ts:160](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L160)
 
 ---
 
 ### trim
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **trim**: `Object`
+
+#### Defined in
+
+[src/index.ts:108](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L108)
 
 ---
 
 ### upperFirst
 
-Renames and exports: [\_\_type](modules.md#__type)
+• **upperFirst**: `Object`
+
+#### Defined in
+
+[src/index.ts:121](https://github.com/saqqdy/js-cool/blob/4382b95/src/index.ts#L121)
 
 ## Type aliases
 
@@ -525,7 +793,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/5875e1f/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/4382b95/typings/common.d.ts#L9)
 
 ## Properties
 
@@ -573,7 +841,7 @@ Renames and exports: [\_\_type](modules.md#__type)
 | `encodeUtf8`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `extend`                       | <T\>(`target`: `boolean` \| `T`, ...`args`: [`ArrayOneMore`](modules.md#arrayonemore)<`any`\>) => `T`                                                                                                                                                                                                                                                                                                                                                              |
 | `fixNumber`                    | (`number`: `string` \| `number`, `n`: `number`) => `string` \| `number`                                                                                                                                                                                                                                                                                                                                                                                            |
-| `formatTime`                   | (`time`: `Date` \| `string`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `formatTime`                   | (`time`: `string` \| `Date`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `formatTimeStr`                | (`time`: `string` \| `number`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `getAppVersion`                | (`appName`: `string`, `withappstr?`: `boolean`, `userAgent?`: `string`) => `string` \| `boolean` \| `null`                                                                                                                                                                                                                                                                                                                                                         |
 | `getCHSLength`                 | (`str`: `string`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -706,7 +974,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/5875e1f/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/4382b95/src/CSVToArray.ts#L21)
 
 ---
 
@@ -744,7 +1012,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/5875e1f/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -772,7 +1040,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/5875e1f/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/4382b95/src/RGBToHex.ts#L10)
 
 ---
 
@@ -796,7 +1064,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/5875e1f/src/addEvent.ts#L15)
+[src/addEvent.ts:15](https://github.com/saqqdy/js-cool/blob/4382b95/src/addEvent.ts#L15)
 
 ---
 
@@ -833,7 +1101,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/5875e1f/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/all.ts#L17)
 
 ---
 
@@ -870,7 +1138,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/5875e1f/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/4382b95/src/any.ts#L17)
 
 ---
 
@@ -925,7 +1193,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/5875e1f/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/4382b95/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -950,13 +1218,13 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/5875e1f/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/4382b95/src/client.ts#L8)
 
 ---
 
 ### extend
 
-▸ `Let` **extend**<`T`\>(`target`, ...`args`): `T`
+▸ **extend**<`T`\>(`target`, ...`args`): `T`
 
 #### Type parameters
 
@@ -977,7 +1245,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/5875e1f/src/extend.ts#L14)
+[src/extend.ts:14](https://github.com/saqqdy/js-cool/blob/4382b95/src/extend.ts#L14)
 
 ---
 
@@ -995,7 +1263,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/5875e1f/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/4382b95/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1019,4 +1287,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/5875e1f/src/uuid.ts#L11)
+[src/uuid.ts:11](https://github.com/saqqdy/js-cool/blob/4382b95/src/uuid.ts#L11)

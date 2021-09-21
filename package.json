@@ -32,7 +32,7 @@
         "pub": "git add . && git commit -m $npm_package_version && git pull && git push"
     },
     "dependencies": {
-        "core-js": "^3.17.1"
+        "core-js": "^3.18.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.15.4",
@@ -41,14 +41,14 @@
         "@babel/plugin-transform-runtime": "^7.15.0",
         "@babel/preset-env": "^7.15.6",
         "@babel/preset-typescript": "^7.15.0",
-        "@microsoft/api-extractor": "^7.18.7",
+        "@microsoft/api-extractor": "^7.18.9",
         "@rollup/plugin-babel": "^5.2.3",
         "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
         "@saqqdy/prettier-config": "^1.0.4",
         "@types/node": "14.17.3",
-        "@typescript-eslint/eslint-plugin": "^4.30.0",
-        "@typescript-eslint/parser": "^4.30.0",
+        "@typescript-eslint/eslint-plugin": "^4.31.2",
+        "@typescript-eslint/parser": "^4.31.2",
         "babel-loader": "^8.2.2",
         "eslint": "^7.32.0",
         "eslint-config-sets": "^1.5.1",
@@ -59,10 +59,11 @@
         "rollup": "^2.56.3",
         "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.30.0",
-        "typedoc": "^0.21.9",
-        "typedoc-plugin-markdown": "^3.10.4",
-        "typescript": "^4.4.2",
-        "webpack": "^5.51.2",
+        "terser-webpack-plugin": "^5.2.4",
+        "typedoc": "^0.22.4",
+        "typedoc-plugin-markdown": "^3.11.0",
+        "typescript": "^4.4.3",
+        "webpack": "^5.53.0",
         "webpack-cli": "^4.8.0",
         "webpack-merge": "^5.8.0",
         "webpack-node-externals": "^3.0.0"

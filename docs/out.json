@@ -1,7 +1,7 @@
 {
     "id": 0,
     "name": "index.md - v2.1.2",
-    "kind": 0,
+    "kind": 1,
     "kindString": "Project",
     "flags": {},
     "originalName": "index.md",
@@ -1014,7 +1014,7 @@
         {
             "id": 528,
             "name": "addEvent",
-            "kind": 2,
+            "kind": 4,
             "kindString": "Namespace",
             "flags": {},
             "children": [
@@ -1390,6 +1390,7 @@
                                     ],
                                     "type": {
                                         "type": "reference",
+                                        "id": 418,
                                         "name": "T"
                                     }
                                 }
@@ -1414,6 +1415,7 @@
                         "type": "array",
                         "elementType": {
                             "type": "reference",
+                            "id": 418,
                             "name": "T"
                         }
                     }
@@ -1482,7 +1484,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "csv数据"
+                                                        "shortText": "csv数据"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1496,7 +1498,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "分隔符，默认','"
+                                                        "shortText": "分隔符，默认','"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1511,7 +1513,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "第一行是表头数据，默认false"
+                                                        "shortText": "第一行是表头数据，默认false"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1578,7 +1580,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "csv数据"
+                                                        "shortText": "csv数据"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1592,7 +1594,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "分隔符，默认','"
+                                                        "shortText": "分隔符，默认','"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1670,7 +1672,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "指定列"
+                                                        "shortText": "指定列"
                                                     },
                                                     "type": {
                                                         "type": "array",
@@ -1687,7 +1689,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "分隔符，默认','"
+                                                        "shortText": "分隔符，默认','"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1744,7 +1746,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "RGB第1个值"
+                                                        "shortText": "RGB第1个值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1758,7 +1760,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "RGB第2个值"
+                                                        "shortText": "RGB第2个值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1772,7 +1774,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "RGB第3个值"
+                                                        "shortText": "RGB第3个值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -1847,7 +1849,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "目标数组"
+                                                        "shortText": "目标数组"
                                                     },
                                                     "type": {
                                                         "type": "array",
@@ -1864,7 +1866,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "判断方法"
+                                                        "shortText": "判断方法"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -1925,7 +1927,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "目标数组"
+                                                        "shortText": "目标数组"
                                                     },
                                                     "type": {
                                                         "type": "array",
@@ -1942,7 +1944,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "判断方法"
+                                                        "shortText": "判断方法"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -2021,7 +2023,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "分隔符，默认','"
+                                                        "shortText": "分隔符，默认','"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2072,7 +2074,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要转换的字符串"
+                                                        "shortText": "需要转换的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2122,7 +2124,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要清洗的对象，必传"
+                                                        "shortText": "要清洗的对象，必传"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2136,7 +2138,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "shortText": "-"
+                                                        "shortText": "需要的数据队列，可传数组或者对象"
                                                     },
                                                     "type": {
                                                         "type": "union",
@@ -2215,7 +2217,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2265,7 +2267,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2315,7 +2317,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2365,7 +2367,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2415,7 +2417,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2465,7 +2467,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2515,7 +2517,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "带html标签的字符串"
+                                                        "shortText": "带html标签的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2565,7 +2567,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，比如传入MicroMessenger，返回是否为微信内置浏览器"
+                                                        "shortText": "可选，比如传入MicroMessenger，返回是否为微信内置浏览器"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2580,7 +2582,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，传入自定义的ua，默认取浏览器的navigator.appVersion"
+                                                        "shortText": "可选，传入自定义的ua，默认取浏览器的navigator.appVersion"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2820,7 +2822,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要截取的字符串"
+                                                        "shortText": "要截取的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2834,7 +2836,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "-"
+                                                        "shortText": "-"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2849,7 +2851,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "-"
+                                                        "shortText": "-"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2900,7 +2902,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要转换的字符串"
+                                                        "shortText": "需要转换的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -2950,7 +2952,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3000,7 +3002,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3050,7 +3052,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要调用的函数"
+                                                        "shortText": "要调用的函数"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -3065,7 +3067,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "空闲时间"
+                                                        "shortText": "空闲时间"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3079,7 +3081,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。"
+                                                        "shortText": "给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3148,7 +3150,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要解码的字符串"
+                                                        "shortText": "需要解码的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3244,7 +3246,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "名称\n"
+                                                        "shortText": "名称\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3293,7 +3295,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "cookie名称\n"
+                                                        "shortText": "cookie名称\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3342,7 +3344,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "名称\n"
+                                                        "shortText": "名称\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3571,7 +3573,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "链接"
+                                                        "shortText": "链接"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3585,7 +3587,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "文件名"
+                                                        "shortText": "文件名"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3599,7 +3601,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "下载类型 'href','open','download','request'\n"
+                                                        "shortText": "下载类型 'href','open','download','request'\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3650,7 +3652,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3700,7 +3702,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3750,7 +3752,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要编码的字符串"
+                                                        "shortText": "需要编码的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -3876,6 +3878,7 @@
                                                             },
                                                             {
                                                                 "type": "reference",
+                                                                "id": 330,
                                                                 "name": "T"
                                                             }
                                                         ]
@@ -3904,6 +3907,7 @@
                                             ],
                                             "type": {
                                                 "type": "reference",
+                                                "id": 330,
                                                 "name": "T"
                                             }
                                         }
@@ -3944,7 +3948,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要处理的数字，必填"
+                                                        "shortText": "要处理的数字，必填"
                                                     },
                                                     "type": {
                                                         "type": "union",
@@ -3967,7 +3971,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要保留的小数点位数，默认保留2位"
+                                                        "shortText": "要保留的小数点位数，默认保留2位"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4033,18 +4037,18 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "时间对象或者字符串"
+                                                        "shortText": "时间对象或者字符串"
                                                     },
                                                     "type": {
                                                         "type": "union",
                                                         "types": [
                                                             {
-                                                                "type": "reference",
-                                                                "name": "Date"
-                                                            },
-                                                            {
                                                                 "type": "intrinsic",
                                                                 "name": "string"
+                                                            },
+                                                            {
+                                                                "type": "reference",
+                                                                "name": "Date"
                                                             }
                                                         ]
                                                     }
@@ -4056,7 +4060,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "格式化风格"
+                                                        "shortText": "格式化风格"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4107,7 +4111,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "时间对象或者字符串"
+                                                        "shortText": "时间对象或者字符串"
                                                     },
                                                     "type": {
                                                         "type": "union",
@@ -4130,7 +4134,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "格式化风格"
+                                                        "shortText": "格式化风格"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4180,7 +4184,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "app名称"
+                                                        "shortText": "app名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4209,7 +4213,7 @@
                                                         "isOptional": true
                                                     },
                                                     "comment": {
-                                                        "text": "ua，可不传，默认取navigator.appVersion"
+                                                        "shortText": "ua，可不传，默认取navigator.appVersion"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4272,7 +4276,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "字符串"
+                                                        "shortText": "字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4322,7 +4326,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "缓存名称"
+                                                        "shortText": "缓存名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4372,7 +4376,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "cookie名称"
+                                                        "shortText": "cookie名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4422,7 +4426,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入url地址"
+                                                        "shortText": "传入url地址"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4483,7 +4487,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "文件名"
+                                                        "shortText": "文件名"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4539,7 +4543,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "app名称"
+                                                        "shortText": "app名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4553,7 +4557,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "必传 需要对比的版本号"
+                                                        "shortText": "必传 需要对比的版本号"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4569,7 +4573,7 @@
                                                         "isOptional": true
                                                     },
                                                     "comment": {
-                                                        "text": "ua，可不传，默认取navigator.appVersion"
+                                                        "shortText": "ua，可不传，默认取navigator.appVersion"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4634,7 +4638,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入带数字的字符串"
+                                                        "shortText": "传入带数字的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4690,7 +4694,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "系统类型字符串Android、iPod、iWatch或iPhone"
+                                                        "shortText": "系统类型字符串Android、iPod、iWatch或iPhone"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4706,7 +4710,7 @@
                                                         "isOptional": true
                                                     },
                                                     "comment": {
-                                                        "text": "是否需要带上名称"
+                                                        "shortText": "是否需要带上名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4722,7 +4726,7 @@
                                                         "isOptional": true
                                                     },
                                                     "comment": {
-                                                        "text": "ua，可不传，默认取navigator.appVersion"
+                                                        "shortText": "ua，可不传，默认取navigator.appVersion"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4785,7 +4789,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "参数名称"
+                                                        "shortText": "参数名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4844,7 +4848,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "随机数的最小值"
+                                                        "shortText": "随机数的最小值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4859,7 +4863,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "随机数的最大值"
+                                                        "shortText": "随机数的最大值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4910,7 +4914,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要获取随机字符串的长度"
+                                                        "shortText": "需要获取随机字符串的长度"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4925,7 +4929,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，是否需要生成带特殊字符的串"
+                                                        "shortText": "可选，是否需要生成带特殊字符的串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -4976,7 +4980,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要获取随机字符串的长度"
+                                                        "shortText": "需要获取随机字符串的长度"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5070,7 +5074,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "名称"
+                                                        "shortText": "名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5120,7 +5124,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "目标"
+                                                        "shortText": "目标"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5170,7 +5174,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入url参数"
+                                                        "shortText": "传入url参数"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5255,7 +5259,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "图片url"
+                                                        "shortText": "图片url"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5269,7 +5273,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "图片规格"
+                                                        "shortText": "图片规格"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5328,7 +5332,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "图片地址"
+                                                        "shortText": "图片地址"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5377,7 +5381,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "-\n"
+                                                        "shortText": "-\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5435,7 +5439,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "待检测的字符串"
+                                                        "shortText": "待检测的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5485,7 +5489,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入函数名"
+                                                        "shortText": "传入函数名"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5535,7 +5539,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入变量名称"
+                                                        "shortText": "传入变量名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5585,7 +5589,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，最小值"
+                                                        "shortText": "可选，最小值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5600,7 +5604,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，最大值"
+                                                        "shortText": "可选，最大值"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5650,7 +5654,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "链接\n"
+                                                        "shortText": "链接\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5941,7 +5945,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "js dom对象"
+                                                        "shortText": "js dom对象"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -5956,7 +5960,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "事件类型。不需要加on"
+                                                        "shortText": "事件类型。不需要加on"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -5970,7 +5974,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "回调方法\n"
+                                                        "shortText": "回调方法\n"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6021,7 +6025,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "树形对象"
+                                                        "shortText": "树形对象"
                                                     },
                                                     "type": {
                                                         "type": "union",
@@ -6047,7 +6051,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "必填 查询方式"
+                                                        "shortText": "必填 查询方式"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6061,7 +6065,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "选填 默认的子类名称、查询name"
+                                                        "shortText": "选填 默认的子类名称、查询name"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6076,7 +6080,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "选填 查找个数，不传则查询全部"
+                                                        "shortText": "选填 查找个数，不传则查询全部"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6130,7 +6134,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "缓存名称"
+                                                        "shortText": "缓存名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6144,7 +6148,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "缓存数据，可以直接传入Object"
+                                                        "shortText": "缓存数据，可以直接传入Object"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6158,7 +6162,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "-缓存时间（秒）"
+                                                        "shortText": "-缓存时间（秒）"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6207,7 +6211,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "cookie名称"
+                                                        "shortText": "cookie名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6221,7 +6225,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "设置要存储的值，可以是对象或字符串"
+                                                        "shortText": "设置要存储的值，可以是对象或字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6235,7 +6239,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "cookie有效时间默认1天"
+                                                        "shortText": "cookie有效时间默认1天"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6250,7 +6254,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "路径，默认'/'"
+                                                        "shortText": "路径，默认'/'"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6265,7 +6269,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "SameSite，默认true\n"
+                                                        "shortText": "SameSite，默认true\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6315,7 +6319,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "名称"
+                                                        "shortText": "名称"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6329,7 +6333,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "设置要存储的值，可以是对象或字符串"
+                                                        "shortText": "设置要存储的值，可以是对象或字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6343,7 +6347,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "有效时间\n"
+                                                        "shortText": "有效时间\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6458,7 +6462,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "dom的event对象"
+                                                        "shortText": "dom的event对象"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6508,7 +6512,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "dom的event对象"
+                                                        "shortText": "dom的event对象"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6568,7 +6572,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "要插入的文字\n"
+                                                        "shortText": "要插入的文字\n"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6617,7 +6621,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "dom对象\n"
+                                                        "shortText": "dom对象\n"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6667,7 +6671,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要调用的函数"
+                                                        "shortText": "需要调用的函数"
                                                     },
                                                     "type": {
                                                         "type": "reference",
@@ -6682,7 +6686,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "延迟时间，单位毫秒"
+                                                        "shortText": "延迟时间，单位毫秒"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6696,7 +6700,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。"
+                                                        "shortText": "给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6776,7 +6780,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "传入字符串"
+                                                        "shortText": "传入字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6790,7 +6794,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "可选，去除空格的类型l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格"
+                                                        "shortText": "可选，去除空格的类型l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -6850,7 +6854,7 @@
                                                     "kindString": "Parameter",
                                                     "flags": {},
                                                     "comment": {
-                                                        "text": "需要转换的字符串"
+                                                        "shortText": "需要转换的字符串"
                                                     },
                                                     "type": {
                                                         "type": "intrinsic",
@@ -7211,7 +7215,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "csv数据"
+                                "shortText": "csv数据"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7225,7 +7229,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "分隔符，默认','"
+                                "shortText": "分隔符，默认','"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7240,7 +7244,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "第一行是表头数据，默认false"
+                                "shortText": "第一行是表头数据，默认false"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7320,7 +7324,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "指定列"
+                                "shortText": "指定列"
                             },
                             "type": {
                                 "type": "array",
@@ -7337,7 +7341,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "分隔符，默认','"
+                                "shortText": "分隔符，默认','"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7393,7 +7397,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "RGB第1个值"
+                                "shortText": "RGB第1个值"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7407,7 +7411,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "RGB第2个值"
+                                "shortText": "RGB第2个值"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7421,7 +7425,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "RGB第3个值"
+                                "shortText": "RGB第3个值"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7467,7 +7471,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "js dom对象"
+                                "shortText": "js dom对象"
                             },
                             "type": {
                                 "type": "reference",
@@ -7482,7 +7486,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "事件类型。不需要加on"
+                                "shortText": "事件类型。不需要加on"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7496,7 +7500,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "回调方法\n"
+                                "shortText": "回调方法\n"
                             },
                             "type": {
                                 "type": "reference",
@@ -7556,7 +7560,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "目标数组"
+                                "shortText": "目标数组"
                             },
                             "type": {
                                 "type": "array",
@@ -7573,7 +7577,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "判断方法"
+                                "shortText": "判断方法"
                             },
                             "type": {
                                 "type": "reference",
@@ -7633,7 +7637,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "目标数组"
+                                "shortText": "目标数组"
                             },
                             "type": {
                                 "type": "array",
@@ -7650,7 +7654,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "判断方法"
+                                "shortText": "判断方法"
                             },
                             "type": {
                                 "type": "reference",
@@ -7728,7 +7732,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "分隔符，默认','"
+                                "shortText": "分隔符，默认','"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7778,7 +7782,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "可选，比如传入MicroMessenger，返回是否为微信内置浏览器"
+                                "shortText": "可选，比如传入MicroMessenger，返回是否为微信内置浏览器"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -7793,7 +7797,7 @@
                             "kindString": "Parameter",
                             "flags": {},
                             "comment": {
-                                "text": "可选，传入自定义的ua，默认取浏览器的navigator.appVersion"
+                                "shortText": "可选，传入自定义的ua，默认取浏览器的navigator.appVersion"
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -8003,9 +8007,7 @@
             "name": "extend",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isLet": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/extend.ts",
@@ -8061,6 +8063,7 @@
                                     },
                                     {
                                         "type": "reference",
+                                        "id": 330,
                                         "name": "T"
                                     }
                                 ]
@@ -8089,6 +8092,7 @@
                     ],
                     "type": {
                         "type": "reference",
+                        "id": 330,
                         "name": "T"
                     }
                 }
@@ -8187,7 +8191,7 @@
         },
         {
             "title": "Namespaces",
-            "kind": 2,
+            "kind": 4,
             "children": [528]
         },
         {
