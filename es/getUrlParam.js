@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /* 获取URL参数 */
 /*function getUrlParam(url){
     var urlStr = url != "" && url != null ? url.substr(url.indexOf("?")) : location.search;//获取url中"?"符后的字串
@@ -69,4 +71,5 @@ function getUrlParam(url) {
     return obj;
 }
 
-module.exports = getUrlParam;
+exports["default"] = getUrlParam;
+exports.getUrlParam = getUrlParam;

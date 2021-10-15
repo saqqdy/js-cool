@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 防抖节流
  *
@@ -58,4 +60,5 @@ function delay() {
     };
 }
 
-module.exports = delay;
+exports["default"] = delay;
+exports.delay = delay;

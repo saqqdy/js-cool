@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var decodeUtf8 = require('./decodeUtf8.js');
 
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -37,8 +39,9 @@ function decodeBase64(input) {
             output = output + String.fromCharCode(chr3);
         }
     }
-    output = decodeUtf8(output);
+    output = decodeUtf8.decodeUtf8(output);
     return output;
 }
 
-module.exports = decodeBase64;
+exports.decodeBase64 = decodeBase64;
+exports["default"] = decodeBase64;

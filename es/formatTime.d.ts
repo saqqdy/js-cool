@@ -9,5 +9,5 @@
  * @param fmt - 格式化风格
  * @returns 返回字符串
  */
-declare function formatTime(time: Date | string, fmt?: string): string;
+export declare function formatTime(time: Date | string, fmt?: string): string;
 export default formatTime;

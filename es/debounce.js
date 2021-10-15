@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var throttle = require('./throttle.js');
 
 /**
@@ -17,7 +19,8 @@ var throttle = require('./throttle.js');
  * @return 实际调用函数
  */
 function debounce(fn, delay, immediate) {
-    return throttle(fn, delay, immediate, true);
+    return throttle.throttle(fn, delay, immediate, true);
 }
 
-module.exports = debounce;
+exports.debounce = debounce;
+exports["default"] = debounce;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * removeEvent移除由addEvent创建的事件委托
  *
@@ -25,4 +27,5 @@ function removeEvent(element, type, handler) {
     }
 }
 
-module.exports = removeEvent;
+exports["default"] = removeEvent;
+exports.removeEvent = removeEvent;

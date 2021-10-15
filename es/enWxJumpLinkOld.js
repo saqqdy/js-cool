@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 用~替换= 用^替换& 转码成微信跳转链接
  *
@@ -16,4 +18,5 @@ function enWxJumpLinkOld(string) {
     return string.replace(/[=]/gi, '~').replace(/[&]/gi, '^');
 }
 
-module.exports = enWxJumpLinkOld;
+exports["default"] = enWxJumpLinkOld;
+exports.enWxJumpLinkOld = enWxJumpLinkOld;

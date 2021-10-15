@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 返回下一个zIndex值
  *
@@ -23,4 +25,5 @@ function nextIndex(min = 5000, max = 10000) {
     return doms[0] + 1;
 }
 
-module.exports = nextIndex;
+exports["default"] = nextIndex;
+exports.nextIndex = nextIndex;

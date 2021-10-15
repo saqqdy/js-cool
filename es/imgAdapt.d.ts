@@ -5,5 +5,5 @@
  * @param size - 图片规格
  * @returns 返回新地址
  */
-declare function imgAdapt(imgurl: string, size: string): string | false;
+export declare function imgAdapt(imgurl: string, size: string): string | false;
 export default imgAdapt;

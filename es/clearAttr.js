@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除HTML标签所有属性
  *
@@ -16,4 +18,5 @@ function clearAttr(string) {
     return string.replace(/<([a-zA-Z1-7]+)\s*[^><]*>/g, '<$1>');
 }
 
-module.exports = clearAttr;
+exports.clearAttr = clearAttr;
+exports["default"] = clearAttr;

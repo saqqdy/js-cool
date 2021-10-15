@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取随机字符串
  *
@@ -24,4 +26,5 @@ function getRandomStr(len = 32, widthSpecialChar = false) {
     return str;
 }
 
-module.exports = getRandomStr;
+exports["default"] = getRandomStr;
+exports.getRandomStr = getRandomStr;

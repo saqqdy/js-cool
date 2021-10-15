@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除HTML标签
  *
@@ -16,4 +18,5 @@ function clearHtml(string) {
     return string.replace(/<\/?.+?>/g, '').replace(/[\r\n]/g, '');
 }
 
-module.exports = clearHtml;
+exports.clearHtml = clearHtml;
+exports["default"] = clearHtml;

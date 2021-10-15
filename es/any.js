@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
  *
@@ -23,4 +25,5 @@
  */
 const any = (arr, fn) => arr.some(fn);
 
-module.exports = any;
+exports.any = any;
+exports["default"] = any;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 扩展图片自动适应多种分辨率`@2x @3x`
  *
@@ -29,4 +31,5 @@ function imgChoose(imgurl) {
     return imgurl.replace(preReg, '').replace(urlReg, imgPre + '$1');
 }
 
-module.exports = imgChoose;
+exports["default"] = imgChoose;
+exports.imgChoose = imgChoose;

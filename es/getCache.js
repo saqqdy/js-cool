@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
  *
@@ -34,4 +36,5 @@ function getCache(name) {
     return null;
 }
 
-module.exports = getCache;
+exports["default"] = getCache;
+exports.getCache = getCache;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除HTML标签及空格、换行
  *
@@ -16,4 +18,5 @@ function clearHtmlNS(string) {
     return string.replace(/<\/?.+?>|[\r\n\s]|(\ )/g, '');
 }
 
-module.exports = clearHtmlNS;
+exports.clearHtmlNS = clearHtmlNS;
+exports["default"] = clearHtmlNS;

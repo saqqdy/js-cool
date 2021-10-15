@@ -3,5 +3,5 @@
  *
  * @param arr -
  */
-declare function isArray(arr: any): arr is any[];
+export declare function isArray(arr: any): arr is any[];
 export default isArray;

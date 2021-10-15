@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 文件后缀名
  *
@@ -28,4 +30,5 @@ function getFileType(url) {
     return type ? type[0].toLowerCase() : '';
 }
 
-module.exports = getFileType;
+exports["default"] = getFileType;
+exports.getFileType = getFileType;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 阻止默认事件
  *
@@ -22,4 +24,5 @@ function stopDefault(e) {
     return false;
 }
 
-module.exports = stopDefault;
+exports["default"] = stopDefault;
+exports.stopDefault = stopDefault;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 删除localStorage
  *
@@ -15,4 +17,5 @@ function delCache(name) {
     localStorage.removeItem(name);
 }
 
-module.exports = delCache;
+exports["default"] = delCache;
+exports.delCache = delCache;

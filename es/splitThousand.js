@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 数字千分位分割
  *
@@ -21,4 +23,5 @@ function splitThousand(val) {
     return val.split('.')[0].replace(/(\d)(?=(?:\d{3})+$)/g, '$&,') + '.' + val.split('.')[1];
 }
 
-module.exports = splitThousand;
+exports["default"] = splitThousand;
+exports.splitThousand = splitThousand;

@@ -11,5 +11,5 @@
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-declare function getOsVersion(osName: string, withosstr?: boolean, userAgent?: string): string | boolean | null;
+export declare function getOsVersion(osName: string, withosstr?: boolean, userAgent?: string): string | boolean | null;
 export default getOsVersion;

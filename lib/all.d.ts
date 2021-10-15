@@ -14,5 +14,5 @@ import type { AnyFunction } from '../typings/common';
  * @param fn - 判断方法
  * @returns 返回判断结果
  */
-declare const all: (arr: any[], fn: AnyFunction) => boolean;
+export declare const all: (arr: any[], fn: AnyFunction) => boolean;
 export default all;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var contains = require('./contains.js');
 
 /**
@@ -20,9 +22,10 @@ var contains = require('./contains.js');
 function unique(arr) {
     let newArray = [];
     for (const el of arr) {
-        !contains(newArray, el) && newArray.push(el);
+        !contains.contains(newArray, el) && newArray.push(el);
     }
     return newArray;
 }
 
-module.exports = unique;
+exports["default"] = unique;
+exports.unique = unique;

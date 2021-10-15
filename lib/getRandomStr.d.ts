@@ -5,5 +5,5 @@
  * @param widthSpecialChar - 可选，是否需要生成带特殊字符的串
  * @returns 随机串
  */
-declare function getRandomStr(len?: number, widthSpecialChar?: boolean): string;
+export declare function getRandomStr(len?: number, widthSpecialChar?: boolean): string;
 export default getRandomStr;

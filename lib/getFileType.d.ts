@@ -12,5 +12,5 @@
  * @param url - 文件名
  * @returns 返回文件后缀
  */
-declare function getFileType(url: string): string;
+export declare function getFileType(url: string): string;
 export default getFileType;

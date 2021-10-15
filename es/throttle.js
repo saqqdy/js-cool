@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 频率控制 返回函数连续调用时，fn 执行频率限定为每多少时间执行一次
  *
@@ -46,4 +48,5 @@ function throttle(fn, delay, immediate, debounce) {
     };
 }
 
-module.exports = throttle;
+exports["default"] = throttle;
+exports.throttle = throttle;

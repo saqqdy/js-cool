@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 文件下载的几种方式：
  * 1. 针对一些浏览器无法识别的文件格式。地址栏输入文件URL、window.location.href = URL、window.open(URL)；
@@ -87,4 +89,5 @@ function saveFile(data, filename) {
     link.click();
 }
 
-module.exports = download;
+exports["default"] = download;
+exports.download = download;

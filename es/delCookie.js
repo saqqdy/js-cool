@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var getCookie = require('./getCookie.js');
 
 /**
@@ -16,10 +18,11 @@ var getCookie = require('./getCookie.js');
 function delCookie(name) {
     var e = new Date();
     e.setTime(e.getTime() - 1);
-    var cval = getCookie(name);
+    var cval = getCookie.getCookie(name);
     if (cval !== null) {
         document.cookie = name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/';
     }
 }
 
-module.exports = delCookie;
+exports["default"] = delCookie;
+exports.delCookie = delCookie;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取单个URL参数
  *
@@ -20,4 +22,5 @@ function getParameter(name) {
     return null;
 }
 
-module.exports = getParameter;
+exports["default"] = getParameter;
+exports.getParameter = getParameter;

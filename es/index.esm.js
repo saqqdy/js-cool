@@ -42,7 +42,7 @@ const client = (name = '', userAgent = navigator.appVersion) => {
  *
  * @returns 返回对象
  */
-var pattern = {
+const pattern = {
     any: /[\w\W]+/,
     number: /^\d+$/,
     string: /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
@@ -1922,6 +1922,20 @@ function contains(arr, item) {
 }
 
 /**
+ * 求多个数组的交集
+ *
+ * @example
+ * ```js
+ * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function intersect(...args) {
+    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
+}
+
+/**
  * 数组去重
  *
  * @example
@@ -1939,19 +1953,6 @@ function unique(arr) {
 }
 
 /**
- * 求多个数组的交集
- *
- * @example
- * ```js
- * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
- * ```
- * @param args - 参数
- * @returns array
- */
-function intersect(...args) {
-    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
-}
-/**
  * 求多个数组的并集
  *
  * @example
@@ -1964,6 +1965,7 @@ function intersect(...args) {
 function union(...args) {
     return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))));
 }
+
 /**
  * 求多个数组的差集，属于A但不属于B/C/D...的元素
  *
@@ -1980,6 +1982,7 @@ function minus(...args) {
         return pre.filter(item => !contains(cur, item));
     });
 }
+
 /**
  * 求多个数组的补集
  *
@@ -1996,94 +1999,4 @@ function complement(...args) {
     return unionArray.filter(item => !contains(intersectArray, item));
 }
 
-// 全局参数
-var index = {
-    //
-    client,
-    pattern,
-    trim,
-    clearAttr,
-    clearBr,
-    clearHtml,
-    clearHtmlExpSN,
-    clearHtmlN,
-    clearHtmlNS,
-    clearHtmlTag,
-    getNumber,
-    imgAdapt,
-    imgChoose,
-    camel2Dash,
-    dash2Camel,
-    upperFirst,
-    getRandomNum,
-    getRandomStr,
-    getRandomStrWidthSpecialChar,
-    getCHSLength,
-    cutCHSString,
-    textareaInsertText,
-    textareaMoveToEnd,
-    isDigitals,
-    isExitsFunction,
-    isExitsVariable,
-    getWindowSize,
-    getAppVersion,
-    getOsVersion,
-    getIsAppVersionLastest,
-    getDirParam,
-    getParameter,
-    getFileType,
-    getUrlParam,
-    formatTime,
-    formatTimeStr,
-    setCookie,
-    setCache,
-    setSession,
-    getCookie,
-    getCache,
-    getSession,
-    delCookie,
-    delCache,
-    delSession,
-    encodeBase64,
-    encodeUtf8,
-    decodeBase64,
-    decodeUtf8,
-    enWxJumpLink,
-    enWxJumpLinkOld,
-    deWxJumpLink,
-    deWxJumpLinkOld,
-    debounce,
-    throttle,
-    stopBubble,
-    stopDefault,
-    addEvent,
-    removeEvent,
-    getScrollPosition,
-    nextIndex,
-    fixNumber,
-    delay,
-    extend,
-    getType,
-    isArray,
-    cleanData,
-    download,
-    searchTreeObject,
-    openUrl,
-    splitThousand,
-    all,
-    any,
-    uuid,
-    arrayToCSV,
-    CSVToArray,
-    CSVToJSON,
-    JSONToCSV,
-    RGBToHex,
-    intersect,
-    union,
-    minus,
-    complement,
-    contains,
-    unique
-};
-
-export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, complement, contains, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, index as default, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, intersect, isArray, isDigitals, isExitsFunction, isExitsVariable, minus, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, union, unique, upperFirst, uuid };
+export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, complement, contains, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, intersect, isArray, isDigitals, isExitsFunction, isExitsVariable, minus, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, union, unique, upperFirst, uuid };

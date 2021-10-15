@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取APP版本号
  *
@@ -43,4 +45,5 @@ function getAppVersion(appName, withappstr, userAgent) {
     }
 }
 
-module.exports = getAppVersion;
+exports["default"] = getAppVersion;
+exports.getAppVersion = getAppVersion;

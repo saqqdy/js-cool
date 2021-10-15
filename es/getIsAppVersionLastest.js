@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var getAppVersion = require('./getAppVersion.js');
 
 /**
@@ -24,7 +26,7 @@ var getAppVersion = require('./getAppVersion.js');
  */
 function getIsAppVersionLastest(appName, compareVer, userAgent) {
     userAgent = userAgent || navigator.appVersion;
-    var basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+    var basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion.getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
     if (basicVer === null) {
         return null;
     } // 不是指定客户端
@@ -53,4 +55,5 @@ function getIsAppVersionLastest(appName, compareVer, userAgent) {
     }
 }
 
-module.exports = getIsAppVersionLastest;
+exports["default"] = getIsAppVersionLastest;
+exports.getIsAppVersionLastest = getIsAppVersionLastest;

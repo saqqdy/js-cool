@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 日期格式化插件
  *
@@ -39,4 +41,5 @@ function formatTime(time, fmt = 'yyyy-MM-dd') {
     return fmt;
 }
 
-module.exports = formatTime;
+exports["default"] = formatTime;
+exports.formatTime = formatTime;

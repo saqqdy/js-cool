@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
  *
@@ -24,4 +26,5 @@
  */
 const JSONToCSV = (arr, columns, delimiter = ',') => [columns.join(delimiter), ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))].join('\n');
 
-module.exports = JSONToCSV;
+exports.JSONToCSV = JSONToCSV;
+exports["default"] = JSONToCSV;

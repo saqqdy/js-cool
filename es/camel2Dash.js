@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将驼峰字符串转成-间隔且全小写的Dash模式
  *
@@ -19,4 +21,5 @@ function camel2Dash(string) {
         .toLocaleLowerCase();
 }
 
-module.exports = camel2Dash;
+exports.camel2Dash = camel2Dash;
+exports["default"] = camel2Dash;

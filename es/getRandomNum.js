@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取随机整数
  *
@@ -19,4 +21,5 @@ function getRandomNum(min = 1, max = 10) {
     return min + Math.round(Rand * Range);
 }
 
-module.exports = getRandomNum;
+exports["default"] = getRandomNum;
+exports.getRandomNum = getRandomNum;

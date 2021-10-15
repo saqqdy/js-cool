@@ -7,5 +7,5 @@
  * @param path - 路径，默认'/'
  * @param samesite - SameSite，默认true
  */
-declare function setCookie(name: string, value: any, seconds?: number, path?: string, samesite?: boolean): void;
+export declare function setCookie(name: string, value: any, seconds?: number, path?: string, samesite?: boolean): void;
 export default setCookie;

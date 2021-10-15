@@ -7,5 +7,5 @@
  * ```
  * @returns uuid
  */
-declare const uuid: () => string;
+export declare const uuid: () => string;
 export default uuid;

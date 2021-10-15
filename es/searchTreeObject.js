@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * tree对象深度查找
  *
@@ -78,4 +80,5 @@ function searchTreeObject(tree, expression, keySet, number = 0) {
     return retNode;
 }
 
-module.exports = searchTreeObject;
+exports["default"] = searchTreeObject;
+exports.searchTreeObject = searchTreeObject;

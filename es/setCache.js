@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
  *
@@ -21,4 +23,5 @@ function setCache(name, value, seconds) {
     localStorage.setItem(name, JSON.stringify(o));
 }
 
-module.exports = setCache;
+exports["default"] = setCache;
+exports.setCache = setCache;

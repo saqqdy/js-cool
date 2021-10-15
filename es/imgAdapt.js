@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 扩展图片自动适应多种分辨率small original
  *
@@ -37,4 +39,5 @@ function imgAdapt(imgurl, size) {
     //return this.replace(urlReg,"$1" + imgPre + "$1");
 }
 
-module.exports = imgAdapt;
+exports["default"] = imgAdapt;
+exports.imgAdapt = imgAdapt;

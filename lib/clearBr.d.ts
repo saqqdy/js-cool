@@ -4,5 +4,5 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-declare function clearBr(string: string): string;
+export declare function clearBr(string: string): string;
 export default clearBr;

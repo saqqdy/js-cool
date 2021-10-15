@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 读取sessionStorage
  *
@@ -35,4 +37,5 @@ function getSession(name) {
     }
 }
 
-module.exports = getSession;
+exports["default"] = getSession;
+exports.getSession = getSession;

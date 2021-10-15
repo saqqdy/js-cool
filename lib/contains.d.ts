@@ -10,5 +10,5 @@
  * @param item - 要查找的目标
  * @returns boolean
  */
-declare function contains(arr: any[], item: any): boolean;
+export declare function contains(arr: any[], item: any): boolean;
 export default contains;

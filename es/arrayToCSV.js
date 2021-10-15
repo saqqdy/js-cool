@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
  *
@@ -27,4 +29,5 @@
  */
 const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.map((x) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)).join('\n');
 
-module.exports = arrayToCSV;
+exports.arrayToCSV = arrayToCSV;
+exports["default"] = arrayToCSV;

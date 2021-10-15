@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 首字母大写
  *
@@ -16,4 +18,5 @@ function upperFirst(string) {
     return string.slice(0, 1).toLocaleUpperCase() + string.slice(1);
 }
 
-module.exports = upperFirst;
+exports["default"] = upperFirst;
+exports.upperFirst = upperFirst;

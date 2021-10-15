@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取目录形式URL参数
  *
@@ -31,4 +33,5 @@ function getDirParam(url) {
     return dirParam; //{"host":"http://192.168.2.243:7004","path":["media","video","chidaoyan.mp4"]}
 }
 
-module.exports = getDirParam;
+exports["default"] = getDirParam;
+exports.getDirParam = getDirParam;

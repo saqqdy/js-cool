@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
  *
@@ -31,4 +33,5 @@ const CSVToArray = (data, delimiter = ',', omitFirstRow = false) => data
     .split('\n')
     .map(v => v.split(delimiter));
 
-module.exports = CSVToArray;
+exports.CSVToArray = CSVToArray;
+exports["default"] = CSVToArray;

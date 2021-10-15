@@ -4,5 +4,5 @@
  * @param string - 传入字符串
  * @returns 返回转码结果
  */
-declare function enWxJumpLinkOld(string: string): string;
+export declare function enWxJumpLinkOld(string: string): string;
 export default enWxJumpLinkOld;

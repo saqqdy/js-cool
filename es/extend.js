@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var isArray = require('./isArray.js');
 var getType = require('./getType.js');
 
@@ -13,7 +15,7 @@ function isWindow(obj) {
     return obj !== null && obj === obj.window;
 }
 function isPlainObject(obj) {
-    return getType(obj) === 'object' && !isWindow(obj) && Object.getPrototypeOf(obj) === Object.prototype;
+    return getType.getType(obj) === 'object' && !isWindow(obj) && Object.getPrototypeOf(obj) === Object.prototype;
 }
 //对象扩展
 let extend = (function () {
@@ -25,10 +27,10 @@ let extend = (function () {
     function extend(target, source, deep) {
         for (let key in source)
             if (source.hasOwnProperty(key)) {
-                if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
+                if (deep && (isPlainObject(source[key]) || isArray.isArray(source[key]))) {
                     if (isPlainObject(source[key]) && !isPlainObject(target[key]))
                         target[key] = {};
-                    if (isArray(source[key]) && !isArray(target[key]))
+                    if (isArray.isArray(source[key]) && !isArray.isArray(target[key]))
                         target[key] = [];
                     extend(target[key], source[key], deep);
                 }
@@ -49,4 +51,5 @@ let extend = (function () {
     };
 })();
 
-module.exports = extend;
+exports["default"] = extend;
+exports.extend = extend;

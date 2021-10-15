@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除HTML标签及标签里面的文字
  *
@@ -16,4 +18,5 @@ function clearHtmlTag(string) {
     return string.replace(/<[^>]+>/g, '');
 }
 
-module.exports = clearHtmlTag;
+exports.clearHtmlTag = clearHtmlTag;
+exports["default"] = clearHtmlTag;

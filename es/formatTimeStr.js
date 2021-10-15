@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var formatTime = require('./formatTime.js');
 
 /**
@@ -37,9 +39,10 @@ function formatTimeStr(time, fmt) {
         newTimeStr = parseInt('' + t / (60 * 60 * 24)) + '\u5929\u524D';
     }
     else {
-        newTimeStr = formatTime(new Date(time), format);
+        newTimeStr = formatTime.formatTime(new Date(time), format);
     }
     return newTimeStr;
 }
 
-module.exports = formatTimeStr;
+exports["default"] = formatTimeStr;
+exports.formatTimeStr = formatTimeStr;

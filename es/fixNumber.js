@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 截取小数点后几位，不足的不补0
  *
@@ -23,4 +25,5 @@ function fixNumber(number, n = 2) {
     return parseFloat(number.replace(reg, '$1'));
 }
 
-module.exports = fixNumber;
+exports["default"] = fixNumber;
+exports.fixNumber = fixNumber;

@@ -3,5 +3,5 @@
  *
  * @returns 返回位置
  */
-declare const getScrollPosition: () => string | void;
+export declare const getScrollPosition: () => string | void;
 export default getScrollPosition;

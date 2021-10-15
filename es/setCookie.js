@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * setCookie写入cookie的方法
  *
@@ -21,4 +23,5 @@ function setCookie(name, value, seconds = 86400, path = '/', samesite = true) {
     document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + exp.toUTCString() + ';path=' + path + (samesite && location.protocol === 'https:' ? ';SameSite=None;Secure' : '');
 }
 
-module.exports = setCookie;
+exports["default"] = setCookie;
+exports.setCookie = setCookie;

@@ -4,7 +4,7 @@ import type { AnyFunction } from '../typings/common';
  *
  * @returns class
  */
-declare function delay(): {
+export declare function delay(): {
     map: any;
     register(id: string, fn: AnyFunction, time: number, boo: boolean): void;
     destroy(id: string): void;

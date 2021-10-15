@@ -12,5 +12,5 @@
  * @param hasDot -
  * @returns 返回截取后的字符串
  */
-declare function cutCHSString(str: string, len?: number, hasDot?: boolean): string;
+export declare function cutCHSString(str: string, len?: number, hasDot?: boolean): string;
 export default cutCHSString;

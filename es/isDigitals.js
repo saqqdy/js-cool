@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 是否为由数字组成的字符串
  *
@@ -16,4 +18,5 @@ function isDigitals(str) {
     return /^[0-9]*$/.test(str);
 }
 
-module.exports = isDigitals;
+exports["default"] = isDigitals;
+exports.isDigitals = isDigitals;

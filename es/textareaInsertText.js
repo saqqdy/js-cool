@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * textarea或input对象在指定的光标位置插入文字
  *
@@ -31,4 +33,5 @@ function textareaInsertText(obj, str) {
     }
 }
 
-module.exports = textareaInsertText;
+exports["default"] = textareaInsertText;
+exports.textareaInsertText = textareaInsertText;

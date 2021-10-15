@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 阻止冒泡
  *
@@ -24,4 +26,5 @@ function stopBubble(e) {
     return false;
 }
 
-module.exports = stopBubble;
+exports["default"] = stopBubble;
+exports.stopBubble = stopBubble;

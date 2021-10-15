@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 判断是否数组
  *
@@ -15,4 +17,5 @@ function isArray(arr) {
     return Object.prototype.toString.call(arr).indexOf('Array') !== -1;
 }
 
-module.exports = isArray;
+exports["default"] = isArray;
+exports.isArray = isArray;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 //获取字符串长度，中文算2个字符
 // var getStrLen = function getStrLen(str) {
 //   var realLength = 0
@@ -31,4 +33,5 @@ function getCHSLength(str) {
     return str.replace(/[^\x00-\xff]/g, '**').length;
 }
 
-module.exports = getCHSLength;
+exports["default"] = getCHSLength;
+exports.getCHSLength = getCHSLength;

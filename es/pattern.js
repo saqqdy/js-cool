@@ -6,12 +6,14 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
  *
  * @returns 返回对象
  */
-var pattern = {
+const pattern = {
     any: /[\w\W]+/,
     number: /^\d+$/,
     string: /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
@@ -34,4 +36,5 @@ var pattern = {
     textarea: /[\u4e00-\u9fa5_a-zA-Z0-9\,\.\/\?\;\:\'\"\[\]\-\*\(\)\（\）\%\$\@\\\!\，\《\》\。\、\？\；\：\‘\’\“\”\…\￥\！]/
 };
 
-module.exports = pattern;
+exports["default"] = pattern;
+exports.pattern = pattern;

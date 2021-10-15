@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将-间隔且全小写的Dash模式转成驼峰字符串
  *
@@ -18,4 +20,5 @@ function dash2Camel(string) {
     });
 }
 
-module.exports = dash2Camel;
+exports.dash2Camel = dash2Camel;
+exports["default"] = dash2Camel;

@@ -12,5 +12,5 @@ export interface SearchkeySet {
  * @param number - 选填 查找个数，不传则查询全部
  * @returns 返回查询到的数组
  */
-declare function searchTreeObject(tree: object | any[], expression: any, keySet: SearchkeySet, number?: number): any[];
+export declare function searchTreeObject(tree: object | any[], expression: any, keySet: SearchkeySet, number?: number): any[];
 export default searchTreeObject;

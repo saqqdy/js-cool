@@ -12,5 +12,5 @@
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-declare function getIsAppVersionLastest(appName: string, compareVer: string, userAgent?: string): boolean | null;
+export declare function getIsAppVersionLastest(appName: string, compareVer: string, userAgent?: string): boolean | null;
 export default getIsAppVersionLastest;

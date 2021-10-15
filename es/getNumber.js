@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取字符串中的数字
  *
@@ -21,4 +23,5 @@ function getNumber(string) {
     return string.replace(/[^0-9.]/gi, '');
 }
 
-module.exports = getNumber;
+exports["default"] = getNumber;
+exports.getNumber = getNumber;

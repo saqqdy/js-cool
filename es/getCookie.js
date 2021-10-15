@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 读取cookies
  *
@@ -23,4 +25,5 @@ function getCookie(name) {
     }
 }
 
-module.exports = getCookie;
+exports["default"] = getCookie;
+exports.getCookie = getCookie;

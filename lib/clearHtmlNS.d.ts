@@ -4,5 +4,5 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-declare function clearHtmlNS(string: string): string;
+export declare function clearHtmlNS(string: string): string;
 export default clearHtmlNS;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
  *
@@ -32,4 +34,5 @@ function CSVToJSON(data, delimiter = ',') {
     });
 }
 
-module.exports = CSVToJSON;
+exports.CSVToJSON = CSVToJSON;
+exports["default"] = CSVToJSON;

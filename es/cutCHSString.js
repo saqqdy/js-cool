@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * js截取字符串，中英文都能用
  * @private
@@ -73,4 +75,5 @@ function cutCHSString(str, len = str.length, hasDot = false) {
     }
 }
 
-module.exports = cutCHSString;
+exports.cutCHSString = cutCHSString;
+exports["default"] = cutCHSString;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 写sessionStorage
  *
@@ -22,4 +24,5 @@ function setSession(name, value, seconds) {
     sessionStorage.setItem(name, JSON.stringify(obj));
 }
 
-module.exports = setSession;
+exports["default"] = setSession;
+exports.setSession = setSession;

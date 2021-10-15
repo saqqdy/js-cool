@@ -46,7 +46,7 @@ const client = (name = '', userAgent = navigator.appVersion) => {
  *
  * @returns 返回对象
  */
-var pattern = {
+const pattern = {
     any: /[\w\W]+/,
     number: /^\d+$/,
     string: /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
@@ -1926,6 +1926,20 @@ function contains(arr, item) {
 }
 
 /**
+ * 求多个数组的交集
+ *
+ * @example
+ * ```js
+ * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function intersect(...args) {
+    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
+}
+
+/**
  * 数组去重
  *
  * @example
@@ -1943,19 +1957,6 @@ function unique(arr) {
 }
 
 /**
- * 求多个数组的交集
- *
- * @example
- * ```js
- * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
- * ```
- * @param args - 参数
- * @returns array
- */
-function intersect(...args) {
-    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
-}
-/**
  * 求多个数组的并集
  *
  * @example
@@ -1968,6 +1969,7 @@ function intersect(...args) {
 function union(...args) {
     return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))));
 }
+
 /**
  * 求多个数组的差集，属于A但不属于B/C/D...的元素
  *
@@ -1984,6 +1986,7 @@ function minus(...args) {
         return pre.filter(item => !contains(cur, item));
     });
 }
+
 /**
  * 求多个数组的补集
  *
@@ -1999,96 +2002,6 @@ function complement(...args) {
     const unionArray = union(...args); // 补集
     return unionArray.filter(item => !contains(intersectArray, item));
 }
-
-// 全局参数
-var index = {
-    //
-    client,
-    pattern,
-    trim,
-    clearAttr,
-    clearBr,
-    clearHtml,
-    clearHtmlExpSN,
-    clearHtmlN,
-    clearHtmlNS,
-    clearHtmlTag,
-    getNumber,
-    imgAdapt,
-    imgChoose,
-    camel2Dash,
-    dash2Camel,
-    upperFirst,
-    getRandomNum,
-    getRandomStr,
-    getRandomStrWidthSpecialChar,
-    getCHSLength,
-    cutCHSString,
-    textareaInsertText,
-    textareaMoveToEnd,
-    isDigitals,
-    isExitsFunction,
-    isExitsVariable,
-    getWindowSize,
-    getAppVersion,
-    getOsVersion,
-    getIsAppVersionLastest,
-    getDirParam,
-    getParameter,
-    getFileType,
-    getUrlParam,
-    formatTime,
-    formatTimeStr,
-    setCookie,
-    setCache,
-    setSession,
-    getCookie,
-    getCache,
-    getSession,
-    delCookie,
-    delCache,
-    delSession,
-    encodeBase64,
-    encodeUtf8,
-    decodeBase64,
-    decodeUtf8,
-    enWxJumpLink,
-    enWxJumpLinkOld,
-    deWxJumpLink,
-    deWxJumpLinkOld,
-    debounce,
-    throttle,
-    stopBubble,
-    stopDefault,
-    addEvent,
-    removeEvent,
-    getScrollPosition,
-    nextIndex,
-    fixNumber,
-    delay,
-    extend,
-    getType,
-    isArray,
-    cleanData,
-    download,
-    searchTreeObject,
-    openUrl,
-    splitThousand,
-    all,
-    any,
-    uuid,
-    arrayToCSV,
-    CSVToArray,
-    CSVToJSON,
-    JSONToCSV,
-    RGBToHex,
-    intersect,
-    union,
-    minus,
-    complement,
-    contains,
-    unique
-};
 
 exports.CSVToArray = CSVToArray;
 exports.CSVToJSON = CSVToJSON;
@@ -2117,7 +2030,6 @@ exports.deWxJumpLinkOld = deWxJumpLinkOld;
 exports.debounce = debounce;
 exports.decodeBase64 = decodeBase64;
 exports.decodeUtf8 = decodeUtf8;
-exports["default"] = index;
 exports.delCache = delCache;
 exports.delCookie = delCookie;
 exports.delSession = delSession;

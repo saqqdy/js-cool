@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var isArray = require('./isArray.js');
 
 /**
@@ -26,7 +28,7 @@ function cleanData(data, map, nullFix) {
         return;
     if (!map)
         return data;
-    if (isArray(map)) {
+    if (isArray.isArray(map)) {
         map.forEach(key => {
             if (data.hasOwnProperty(key)) {
                 result[key] = data[key];
@@ -56,4 +58,5 @@ function cleanData(data, map, nullFix) {
     return result;
 }
 
-module.exports = cleanData;
+exports.cleanData = cleanData;
+exports["default"] = cleanData;

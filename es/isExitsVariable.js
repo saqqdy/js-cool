@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 是否存在指定变量
  *
@@ -25,4 +27,5 @@ function isExitsVariable(variableName) {
     return false;
 }
 
-module.exports = isExitsVariable;
+exports["default"] = isExitsVariable;
+exports.isExitsVariable = isExitsVariable;

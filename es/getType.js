@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取目标类型
  *
@@ -28,4 +30,5 @@ function getType(target) {
     return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target;
 }
 
-module.exports = getType;
+exports["default"] = getType;
+exports.getType = getType;

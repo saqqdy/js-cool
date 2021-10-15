@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 数组是否包含指定元素
  *
@@ -26,4 +28,5 @@ function contains(arr, item) {
     return false;
 }
 
-module.exports = contains;
+exports.contains = contains;
+exports["default"] = contains;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var getAppVersion = require('./getAppVersion.js');
 
 /**
@@ -33,7 +35,8 @@ function getOsVersion(osName, withosstr, userAgent) {
     if (index > -1) {
         ver = ver.replace(/OS\//gi, osName + '/');
     }
-    return getAppVersion(osName, withosstr, ver);
+    return getAppVersion.getAppVersion(osName, withosstr, ver);
 }
 
-module.exports = getOsVersion;
+exports["default"] = getOsVersion;
+exports.getOsVersion = getOsVersion;

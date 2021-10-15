@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 // export interface CustomEvent extends Event {
 //     returnValue: boolean
 //     cancelBubble: boolean
@@ -90,4 +92,5 @@ fixEvent.stopPropagation = function () {
     this.cancelBubble = true;
 };
 
-module.exports = addEvent;
+exports.addEvent = addEvent;
+exports["default"] = addEvent;

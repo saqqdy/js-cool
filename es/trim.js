@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * trim()根据传参来去除空格
  *
@@ -28,4 +30,5 @@ function trim(string, type = '') {
     }
 }
 
-module.exports = trim;
+exports["default"] = trim;
+exports.trim = trim;

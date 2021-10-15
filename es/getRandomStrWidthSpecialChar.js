@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 获取随机字符串带特殊符号
  *
@@ -22,4 +24,5 @@ function getRandomStrWidthSpecialChar(len = 32) {
     return str;
 }
 
-module.exports = getRandomStrWidthSpecialChar;
+exports["default"] = getRandomStrWidthSpecialChar;
+exports.getRandomStrWidthSpecialChar = getRandomStrWidthSpecialChar;

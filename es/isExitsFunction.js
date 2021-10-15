@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 是否存在指定函数
  *
@@ -22,4 +24,5 @@ function isExitsFunction(funcName) {
     return false;
 }
 
-module.exports = isExitsFunction;
+exports["default"] = isExitsFunction;
+exports.isExitsFunction = isExitsFunction;

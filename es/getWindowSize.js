@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * getWindowSize获取窗口大小
  *
@@ -29,4 +31,5 @@ function getWindowSize() {
     return s;
 }
 
-module.exports = getWindowSize;
+exports["default"] = getWindowSize;
+exports.getWindowSize = getWindowSize;

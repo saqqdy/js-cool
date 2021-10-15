@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 将RGB组件的值转换为颜色代码。
  *
@@ -17,4 +19,5 @@
  */
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
-module.exports = RGBToHex;
+exports.RGBToHex = RGBToHex;
+exports["default"] = RGBToHex;

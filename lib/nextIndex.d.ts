@@ -5,5 +5,5 @@
  * @param max - 可选，最大值
  * @returns 数字
  */
-declare function nextIndex(min?: number, max?: number): number;
+export declare function nextIndex(min?: number, max?: number): number;
 export default nextIndex;

@@ -4,5 +4,5 @@
  * @param target - 目标
  * @returns 类型
  */
-declare function getType(target: any): string;
+export declare function getType(target: any): string;
 export default getType;

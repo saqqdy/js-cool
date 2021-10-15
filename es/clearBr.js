@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除换行
  *
@@ -19,4 +21,5 @@ function clearBr(string) {
         .replace(/[\r\n]/g, '');
 }
 
-module.exports = clearBr;
+exports.clearBr = clearBr;
+exports["default"] = clearBr;

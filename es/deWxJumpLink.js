@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 用=替换* 用&替换! 解码成微信跳转链接
  * name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
@@ -23,4 +25,5 @@ function deWxJumpLink(string) {
         .replace(/[\)]{1}/g, ']'));
 }
 
-module.exports = deWxJumpLink;
+exports.deWxJumpLink = deWxJumpLink;
+exports["default"] = deWxJumpLink;

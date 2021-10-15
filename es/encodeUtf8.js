@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 编码Utf8
  *
@@ -33,4 +35,5 @@ function encodeUtf8(string) {
     return utftext;
 }
 
-module.exports = encodeUtf8;
+exports["default"] = encodeUtf8;
+exports.encodeUtf8 = encodeUtf8;

@@ -6,6 +6,8 @@
  */
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * 去除HTML标签保留空格、换行
  *
@@ -16,4 +18,5 @@ function clearHtmlExpSN(string) {
     return string.replace(/<\/?[^\/?(br)][^><]*>/gi, '');
 }
 
-module.exports = clearHtmlExpSN;
+exports.clearHtmlExpSN = clearHtmlExpSN;
+exports["default"] = clearHtmlExpSN;
