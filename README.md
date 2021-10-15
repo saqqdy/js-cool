@@ -86,7 +86,7 @@ download(url, filename) // 下载文件
 
     ```html
     <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-    <script src="https://unpkg.com/js-cool@1.0.9/lib/index.umd.js"></script>
+    <script src="https://unpkg.com/js-cool@2.2.0/lib/index.umd.js"></script>
     ```
 
 ### 使用按需打包
@@ -210,8 +210,10 @@ download(url, filename) // 下载文件
     CSVToArray, // 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
     CSVToJSON, // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
     JSONtoCSV, // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
-    RGBToHex, // 将RGB组件的值转换为颜色代码。
-    array, // 多个数组求交集、并集、差集、补集
+    RGBToHex, // 将RGB组件的值转换为颜色代码。export * from './intersect' // 多个数组求交集
+    union. // 多个数组求交集
+    minus, // 多个数组求差集
+    complement, // 多个数组求补集
     contains, // 数组是否包含指定元素
     unique, // 数组去重
 }
