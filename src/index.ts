@@ -100,6 +100,9 @@ import CSVToArray from './CSVToArray' // 将一个逗号分隔的值（CSV）字
 import CSVToJSON from './CSVToJSON' // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
 import JSONToCSV from './JSONToCSV' // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
 import RGBToHex from './RGBToHex' // 将RGB组件的值转换为颜色代码。
+import { intersect, union, minus, complement } from './array' // 多个数组求交集、并集、差集、补集
+import contains from './contains' // 数组是否包含指定元素
+import unique from './unique' // 数组去重
 
 export {
     //
@@ -181,7 +184,13 @@ export {
     CSVToArray,
     CSVToJSON,
     JSONToCSV,
-    RGBToHex
+    RGBToHex,
+    intersect,
+    union,
+    minus,
+    complement,
+    contains,
+    unique
 }
 export default {
     //
@@ -263,5 +272,11 @@ export default {
     CSVToArray,
     CSVToJSON,
     JSONToCSV,
-    RGBToHex
+    RGBToHex,
+    intersect,
+    union,
+    minus,
+    complement,
+    contains,
+    unique
 }

@@ -211,6 +211,9 @@ download(url, filename) // 下载文件
     CSVToJSON, // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
     JSONtoCSV, // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
     RGBToHex, // 将RGB组件的值转换为颜色代码。
+    array, // 多个数组求交集、并集、差集、补集
+    contains, // 数组是否包含指定元素
+    unique, // 数组去重
 }
 ```
 
