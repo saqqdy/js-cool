@@ -81,7 +81,10 @@ import CSVToArray from './CSVToArray';
 import CSVToJSON from './CSVToJSON';
 import JSONToCSV from './JSONToCSV';
 import RGBToHex from './RGBToHex';
-export { client, pattern, trim, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, getNumber, imgAdapt, imgChoose, camel2Dash, dash2Camel, upperFirst, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getCHSLength, cutCHSString, textareaInsertText, textareaMoveToEnd, isDigitals, isExitsFunction, isExitsVariable, getWindowSize, getAppVersion, getOsVersion, getIsAppVersionLastest, getDirParam, getParameter, getFileType, getUrlParam, formatTime, formatTimeStr, setCookie, setCache, setSession, getCookie, getCache, getSession, delCookie, delCache, delSession, encodeBase64, encodeUtf8, decodeBase64, decodeUtf8, enWxJumpLink, enWxJumpLinkOld, deWxJumpLink, deWxJumpLinkOld, debounce, throttle, stopBubble, stopDefault, addEvent, removeEvent, getScrollPosition, nextIndex, fixNumber, delay, extend, getType, isArray, cleanData, download, searchTreeObject, openUrl, splitThousand, all, any, uuid, arrayToCSV, CSVToArray, CSVToJSON, JSONToCSV, RGBToHex };
+import { intersect, union, minus, complement } from './array';
+import contains from './contains';
+import unique from './unique';
+export { client, pattern, trim, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, getNumber, imgAdapt, imgChoose, camel2Dash, dash2Camel, upperFirst, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getCHSLength, cutCHSString, textareaInsertText, textareaMoveToEnd, isDigitals, isExitsFunction, isExitsVariable, getWindowSize, getAppVersion, getOsVersion, getIsAppVersionLastest, getDirParam, getParameter, getFileType, getUrlParam, formatTime, formatTimeStr, setCookie, setCache, setSession, getCookie, getCache, getSession, delCookie, delCache, delSession, encodeBase64, encodeUtf8, decodeBase64, decodeUtf8, enWxJumpLink, enWxJumpLinkOld, deWxJumpLink, deWxJumpLinkOld, debounce, throttle, stopBubble, stopDefault, addEvent, removeEvent, getScrollPosition, nextIndex, fixNumber, delay, extend, getType, isArray, cleanData, download, searchTreeObject, openUrl, splitThousand, all, any, uuid, arrayToCSV, CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, intersect, union, minus, complement, contains, unique };
 declare const _default: {
     client: (name?: string, userAgent?: string) => boolean | {
         IE: boolean;
@@ -195,5 +198,11 @@ declare const _default: {
     CSVToJSON: typeof CSVToJSON;
     JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
     RGBToHex: (r: number, g: number, b: number) => string;
+    intersect: typeof intersect;
+    union: typeof union;
+    minus: typeof minus;
+    complement: typeof complement;
+    contains: typeof contains;
+    unique: typeof unique;
 };
 export default _default;

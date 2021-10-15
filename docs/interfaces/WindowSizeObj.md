@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/getWindowSize.ts:3](https://github.com/saqqdy/js-cool/blob/d129203/src/getWindowSize.ts#L3)
+[src/getWindowSize.ts:3](https://github.com/saqqdy/js-cool/blob/d8dea10/src/getWindowSize.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/getWindowSize.ts:2](https://github.com/saqqdy/js-cool/blob/d129203/src/getWindowSize.ts#L2)
+[src/getWindowSize.ts:2](https://github.com/saqqdy/js-cool/blob/d8dea10/src/getWindowSize.ts#L2)

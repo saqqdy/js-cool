@@ -7,7 +7,7 @@
     "originalName": "index.md",
     "children": [
         {
-            "id": 567,
+            "id": 597,
             "name": "CSVToJSON",
             "kind": 16777216,
             "kindString": "Reference",
@@ -15,585 +15,15 @@
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 182,
+                    "line": 185,
                     "character": 4
                 }
             ],
             "target": 393
         },
         {
-            "id": 479,
-            "name": "camel2Dash",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 119,
-                    "character": 4
-                }
-            ],
-            "target": 89
-        },
-        {
-            "id": 543,
-            "name": "cleanData",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 172,
-                    "character": 4
-                }
-            ],
-            "target": 342
-        },
-        {
-            "id": 469,
-            "name": "clearAttr",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 109,
-                    "character": 4
-                }
-            ],
-            "target": 48
-        },
-        {
-            "id": 470,
-            "name": "clearBr",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 110,
-                    "character": 4
-                }
-            ],
-            "target": 52
-        },
-        {
-            "id": 471,
-            "name": "clearHtml",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 111,
-                    "character": 4
-                }
-            ],
-            "target": 56
-        },
-        {
-            "id": 472,
-            "name": "clearHtmlExpSN",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 112,
-                    "character": 4
-                }
-            ],
-            "target": 60
-        },
-        {
-            "id": 473,
-            "name": "clearHtmlN",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 113,
-                    "character": 4
-                }
-            ],
-            "target": 64
-        },
-        {
-            "id": 474,
-            "name": "clearHtmlNS",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 114,
-                    "character": 4
-                }
-            ],
-            "target": 68
-        },
-        {
-            "id": 475,
-            "name": "clearHtmlTag",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 115,
-                    "character": 4
-                }
-            ],
-            "target": 72
-        },
-        {
-            "id": 486,
-            "name": "cutCHSString",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 126,
-                    "character": 4
-                }
-            ],
-            "target": 119
-        },
-        {
-            "id": 480,
-            "name": "dash2Camel",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 120,
-                    "character": 4
-                }
-            ],
-            "target": 93
-        },
-        {
-            "id": 517,
-            "name": "deWxJumpLink",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 157,
-                    "character": 4
-                }
-            ],
-            "target": 261
-        },
-        {
-            "id": 518,
-            "name": "deWxJumpLinkOld",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 158,
-                    "character": 4
-                }
-            ],
-            "target": 265
-        },
-        {
-            "id": 519,
-            "name": "debounce",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 159,
-                    "character": 4
-                }
-            ],
-            "target": 269
-        },
-        {
-            "id": 513,
-            "name": "decodeBase64",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 153,
-                    "character": 4
-                }
-            ],
-            "target": 245
-        },
-        {
-            "id": 514,
-            "name": "decodeUtf8",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 154,
-                    "character": 4
-                }
-            ],
-            "target": 249
-        },
-        {
             "id": 509,
-            "name": "delCache",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 149,
-                    "character": 4
-                }
-            ],
-            "target": 229
-        },
-        {
-            "id": 508,
-            "name": "delCookie",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 148,
-                    "character": 4
-                }
-            ],
-            "target": 225
-        },
-        {
-            "id": 510,
-            "name": "delSession",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 150,
-                    "character": 4
-                }
-            ],
-            "target": 233
-        },
-        {
-            "id": 535,
-            "name": "delay",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 168,
-                    "character": 4
-                }
-            ],
-            "target": 314
-        },
-        {
-            "id": 544,
-            "name": "download",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 173,
-                    "character": 4
-                }
-            ],
-            "target": 348
-        },
-        {
-            "id": 515,
-            "name": "enWxJumpLink",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 155,
-                    "character": 4
-                }
-            ],
-            "target": 253
-        },
-        {
-            "id": 516,
-            "name": "enWxJumpLinkOld",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 156,
-                    "character": 4
-                }
-            ],
-            "target": 257
-        },
-        {
-            "id": 511,
-            "name": "encodeBase64",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 151,
-                    "character": 4
-                }
-            ],
-            "target": 237
-        },
-        {
-            "id": 512,
-            "name": "encodeUtf8",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 152,
-                    "character": 4
-                }
-            ],
-            "target": 241
-        },
-        {
-            "id": 534,
-            "name": "fixNumber",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 167,
-                    "character": 4
-                }
-            ],
-            "target": 309
-        },
-        {
-            "id": 500,
-            "name": "formatTime",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 140,
-                    "character": 4
-                }
-            ],
-            "target": 183
-        },
-        {
-            "id": 501,
-            "name": "formatTimeStr",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 141,
-                    "character": 4
-                }
-            ],
-            "target": 188
-        },
-        {
-            "id": 493,
-            "name": "getAppVersion",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 133,
-                    "character": 4
-                }
-            ],
-            "target": 149
-        },
-        {
-            "id": 485,
-            "name": "getCHSLength",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 125,
-                    "character": 4
-                }
-            ],
-            "target": 115
-        },
-        {
-            "id": 506,
-            "name": "getCache",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 146,
-                    "character": 4
-                }
-            ],
-            "target": 217
-        },
-        {
-            "id": 505,
-            "name": "getCookie",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 145,
-                    "character": 4
-                }
-            ],
-            "target": 213
-        },
-        {
-            "id": 496,
-            "name": "getDirParam",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 136,
-                    "character": 4
-                }
-            ],
-            "target": 167
-        },
-        {
-            "id": 498,
-            "name": "getFileType",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 138,
-                    "character": 4
-                }
-            ],
-            "target": 175
-        },
-        {
-            "id": 495,
-            "name": "getIsAppVersionLastest",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 135,
-                    "character": 4
-                }
-            ],
-            "target": 161
-        },
-        {
-            "id": 476,
-            "name": "getNumber",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 116,
-                    "character": 4
-                }
-            ],
-            "target": 76
-        },
-        {
-            "id": 494,
-            "name": "getOsVersion",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 134,
-                    "character": 4
-                }
-            ],
-            "target": 155
-        },
-        {
-            "id": 497,
-            "name": "getParameter",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 137,
-                    "character": 4
-                }
-            ],
-            "target": 171
-        },
-        {
-            "id": 482,
-            "name": "getRandomNum",
+            "name": "camel2Dash",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
@@ -604,206 +34,11 @@
                     "character": 4
                 }
             ],
-            "target": 101
+            "target": 89
         },
         {
-            "id": 483,
-            "name": "getRandomStr",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 123,
-                    "character": 4
-                }
-            ],
-            "target": 106
-        },
-        {
-            "id": 484,
-            "name": "getRandomStrWidthSpecialChar",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 124,
-                    "character": 4
-                }
-            ],
-            "target": 111
-        },
-        {
-            "id": 507,
-            "name": "getSession",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 147,
-                    "character": 4
-                }
-            ],
-            "target": 221
-        },
-        {
-            "id": 541,
-            "name": "getType",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 170,
-                    "character": 4
-                }
-            ],
-            "target": 334
-        },
-        {
-            "id": 499,
-            "name": "getUrlParam",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 139,
-                    "character": 4
-                }
-            ],
-            "target": 179
-        },
-        {
-            "id": 492,
-            "name": "getWindowSize",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 132,
-                    "character": 4
-                }
-            ],
-            "target": 146
-        },
-        {
-            "id": 477,
-            "name": "imgAdapt",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 117,
-                    "character": 4
-                }
-            ],
-            "target": 80
-        },
-        {
-            "id": 478,
-            "name": "imgChoose",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 118,
-                    "character": 4
-                }
-            ],
-            "target": 85
-        },
-        {
-            "id": 542,
-            "name": "isArray",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 171,
-                    "character": 4
-                }
-            ],
-            "target": 338
-        },
-        {
-            "id": 489,
-            "name": "isDigitals",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 129,
-                    "character": 4
-                }
-            ],
-            "target": 134
-        },
-        {
-            "id": 490,
-            "name": "isExitsFunction",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 130,
-                    "character": 4
-                }
-            ],
-            "target": 138
-        },
-        {
-            "id": 491,
-            "name": "isExitsVariable",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 131,
-                    "character": 4
-                }
-            ],
-            "target": 142
-        },
-        {
-            "id": 533,
-            "name": "nextIndex",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 166,
-                    "character": 4
-                }
-            ],
-            "target": 304
-        },
-        {
-            "id": 546,
-            "name": "openUrl",
+            "id": 573,
+            "name": "cleanData",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
@@ -814,161 +49,176 @@
                     "character": 4
                 }
             ],
-            "target": 361
+            "target": 342
         },
         {
-            "id": 530,
-            "name": "removeEvent",
+            "id": 499,
+            "name": "clearAttr",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 164,
+                    "line": 112,
                     "character": 4
                 }
             ],
-            "target": 295
+            "target": 48
         },
         {
-            "id": 545,
-            "name": "searchTreeObject",
+            "id": 500,
+            "name": "clearBr",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 174,
+                    "line": 113,
                     "character": 4
                 }
             ],
-            "target": 354
+            "target": 52
         },
         {
-            "id": 503,
-            "name": "setCache",
+            "id": 501,
+            "name": "clearHtml",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 143,
+                    "line": 114,
                     "character": 4
                 }
             ],
-            "target": 201
+            "target": 56
         },
         {
             "id": 502,
-            "name": "setCookie",
+            "name": "clearHtmlExpSN",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 142,
+                    "line": 115,
                     "character": 4
                 }
             ],
-            "target": 193
+            "target": 60
+        },
+        {
+            "id": 503,
+            "name": "clearHtmlN",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 116,
+                    "character": 4
+                }
+            ],
+            "target": 64
         },
         {
             "id": 504,
-            "name": "setSession",
+            "name": "clearHtmlNS",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 144,
+                    "line": 117,
                     "character": 4
                 }
             ],
-            "target": 207
+            "target": 68
+        },
+        {
+            "id": 505,
+            "name": "clearHtmlTag",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 118,
+                    "character": 4
+                }
+            ],
+            "target": 72
+        },
+        {
+            "id": 611,
+            "name": "complement",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 191,
+                    "character": 4
+                }
+            ],
+            "target": 425
+        },
+        {
+            "id": 612,
+            "name": "contains",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 192,
+                    "character": 4
+                }
+            ],
+            "target": 430
+        },
+        {
+            "id": 516,
+            "name": "cutCHSString",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 129,
+                    "character": 4
+                }
+            ],
+            "target": 119
+        },
+        {
+            "id": 510,
+            "name": "dash2Camel",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 123,
+                    "character": 4
+                }
+            ],
+            "target": 93
         },
         {
             "id": 547,
-            "name": "splitThousand",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 176,
-                    "character": 4
-                }
-            ],
-            "target": 365
-        },
-        {
-            "id": 521,
-            "name": "stopBubble",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 161,
-                    "character": 4
-                }
-            ],
-            "target": 286
-        },
-        {
-            "id": 522,
-            "name": "stopDefault",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 162,
-                    "character": 4
-                }
-            ],
-            "target": 290
-        },
-        {
-            "id": 487,
-            "name": "textareaInsertText",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 127,
-                    "character": 4
-                }
-            ],
-            "target": 125
-        },
-        {
-            "id": 488,
-            "name": "textareaMoveToEnd",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "src/index.ts",
-                    "line": 128,
-                    "character": 4
-                }
-            ],
-            "target": 130
-        },
-        {
-            "id": 520,
-            "name": "throttle",
+            "name": "deWxJumpLink",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
@@ -979,26 +229,521 @@
                     "character": 4
                 }
             ],
-            "target": 277
+            "target": 261
         },
         {
-            "id": 468,
-            "name": "trim",
+            "id": 548,
+            "name": "deWxJumpLinkOld",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
             "sources": [
                 {
                     "fileName": "src/index.ts",
-                    "line": 108,
+                    "line": 161,
                     "character": 4
                 }
             ],
-            "target": 43
+            "target": 265
         },
         {
-            "id": 481,
-            "name": "upperFirst",
+            "id": 549,
+            "name": "debounce",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 162,
+                    "character": 4
+                }
+            ],
+            "target": 269
+        },
+        {
+            "id": 543,
+            "name": "decodeBase64",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 156,
+                    "character": 4
+                }
+            ],
+            "target": 245
+        },
+        {
+            "id": 544,
+            "name": "decodeUtf8",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 157,
+                    "character": 4
+                }
+            ],
+            "target": 249
+        },
+        {
+            "id": 539,
+            "name": "delCache",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 152,
+                    "character": 4
+                }
+            ],
+            "target": 229
+        },
+        {
+            "id": 538,
+            "name": "delCookie",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 151,
+                    "character": 4
+                }
+            ],
+            "target": 225
+        },
+        {
+            "id": 540,
+            "name": "delSession",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 153,
+                    "character": 4
+                }
+            ],
+            "target": 233
+        },
+        {
+            "id": 565,
+            "name": "delay",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 171,
+                    "character": 4
+                }
+            ],
+            "target": 314
+        },
+        {
+            "id": 574,
+            "name": "download",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 176,
+                    "character": 4
+                }
+            ],
+            "target": 348
+        },
+        {
+            "id": 545,
+            "name": "enWxJumpLink",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 158,
+                    "character": 4
+                }
+            ],
+            "target": 253
+        },
+        {
+            "id": 546,
+            "name": "enWxJumpLinkOld",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 159,
+                    "character": 4
+                }
+            ],
+            "target": 257
+        },
+        {
+            "id": 541,
+            "name": "encodeBase64",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 154,
+                    "character": 4
+                }
+            ],
+            "target": 237
+        },
+        {
+            "id": 542,
+            "name": "encodeUtf8",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 155,
+                    "character": 4
+                }
+            ],
+            "target": 241
+        },
+        {
+            "id": 564,
+            "name": "fixNumber",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 170,
+                    "character": 4
+                }
+            ],
+            "target": 309
+        },
+        {
+            "id": 530,
+            "name": "formatTime",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 143,
+                    "character": 4
+                }
+            ],
+            "target": 183
+        },
+        {
+            "id": 531,
+            "name": "formatTimeStr",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 144,
+                    "character": 4
+                }
+            ],
+            "target": 188
+        },
+        {
+            "id": 523,
+            "name": "getAppVersion",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 136,
+                    "character": 4
+                }
+            ],
+            "target": 149
+        },
+        {
+            "id": 515,
+            "name": "getCHSLength",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 128,
+                    "character": 4
+                }
+            ],
+            "target": 115
+        },
+        {
+            "id": 536,
+            "name": "getCache",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 149,
+                    "character": 4
+                }
+            ],
+            "target": 217
+        },
+        {
+            "id": 535,
+            "name": "getCookie",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 148,
+                    "character": 4
+                }
+            ],
+            "target": 213
+        },
+        {
+            "id": 526,
+            "name": "getDirParam",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 139,
+                    "character": 4
+                }
+            ],
+            "target": 167
+        },
+        {
+            "id": 528,
+            "name": "getFileType",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 141,
+                    "character": 4
+                }
+            ],
+            "target": 175
+        },
+        {
+            "id": 525,
+            "name": "getIsAppVersionLastest",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 138,
+                    "character": 4
+                }
+            ],
+            "target": 161
+        },
+        {
+            "id": 506,
+            "name": "getNumber",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 119,
+                    "character": 4
+                }
+            ],
+            "target": 76
+        },
+        {
+            "id": 524,
+            "name": "getOsVersion",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 137,
+                    "character": 4
+                }
+            ],
+            "target": 155
+        },
+        {
+            "id": 527,
+            "name": "getParameter",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 140,
+                    "character": 4
+                }
+            ],
+            "target": 171
+        },
+        {
+            "id": 512,
+            "name": "getRandomNum",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 125,
+                    "character": 4
+                }
+            ],
+            "target": 101
+        },
+        {
+            "id": 513,
+            "name": "getRandomStr",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 126,
+                    "character": 4
+                }
+            ],
+            "target": 106
+        },
+        {
+            "id": 514,
+            "name": "getRandomStrWidthSpecialChar",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 127,
+                    "character": 4
+                }
+            ],
+            "target": 111
+        },
+        {
+            "id": 537,
+            "name": "getSession",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 150,
+                    "character": 4
+                }
+            ],
+            "target": 221
+        },
+        {
+            "id": 571,
+            "name": "getType",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 173,
+                    "character": 4
+                }
+            ],
+            "target": 334
+        },
+        {
+            "id": 529,
+            "name": "getUrlParam",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 142,
+                    "character": 4
+                }
+            ],
+            "target": 179
+        },
+        {
+            "id": 522,
+            "name": "getWindowSize",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 135,
+                    "character": 4
+                }
+            ],
+            "target": 146
+        },
+        {
+            "id": 507,
+            "name": "imgAdapt",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 120,
+                    "character": 4
+                }
+            ],
+            "target": 80
+        },
+        {
+            "id": 508,
+            "name": "imgChoose",
             "kind": 16777216,
             "kindString": "Reference",
             "flags": {},
@@ -1009,17 +754,362 @@
                     "character": 4
                 }
             ],
+            "target": 85
+        },
+        {
+            "id": 608,
+            "name": "intersect",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 188,
+                    "character": 4
+                }
+            ],
+            "target": 410
+        },
+        {
+            "id": 572,
+            "name": "isArray",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 174,
+                    "character": 4
+                }
+            ],
+            "target": 338
+        },
+        {
+            "id": 519,
+            "name": "isDigitals",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 132,
+                    "character": 4
+                }
+            ],
+            "target": 134
+        },
+        {
+            "id": 520,
+            "name": "isExitsFunction",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 133,
+                    "character": 4
+                }
+            ],
+            "target": 138
+        },
+        {
+            "id": 521,
+            "name": "isExitsVariable",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 134,
+                    "character": 4
+                }
+            ],
+            "target": 142
+        },
+        {
+            "id": 610,
+            "name": "minus",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 190,
+                    "character": 4
+                }
+            ],
+            "target": 420
+        },
+        {
+            "id": 563,
+            "name": "nextIndex",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 169,
+                    "character": 4
+                }
+            ],
+            "target": 304
+        },
+        {
+            "id": 576,
+            "name": "openUrl",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 178,
+                    "character": 4
+                }
+            ],
+            "target": 361
+        },
+        {
+            "id": 560,
+            "name": "removeEvent",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 167,
+                    "character": 4
+                }
+            ],
+            "target": 295
+        },
+        {
+            "id": 575,
+            "name": "searchTreeObject",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 177,
+                    "character": 4
+                }
+            ],
+            "target": 354
+        },
+        {
+            "id": 533,
+            "name": "setCache",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 146,
+                    "character": 4
+                }
+            ],
+            "target": 201
+        },
+        {
+            "id": 532,
+            "name": "setCookie",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 145,
+                    "character": 4
+                }
+            ],
+            "target": 193
+        },
+        {
+            "id": 534,
+            "name": "setSession",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 147,
+                    "character": 4
+                }
+            ],
+            "target": 207
+        },
+        {
+            "id": 577,
+            "name": "splitThousand",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 179,
+                    "character": 4
+                }
+            ],
+            "target": 365
+        },
+        {
+            "id": 551,
+            "name": "stopBubble",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 164,
+                    "character": 4
+                }
+            ],
+            "target": 286
+        },
+        {
+            "id": 552,
+            "name": "stopDefault",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 165,
+                    "character": 4
+                }
+            ],
+            "target": 290
+        },
+        {
+            "id": 517,
+            "name": "textareaInsertText",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 130,
+                    "character": 4
+                }
+            ],
+            "target": 125
+        },
+        {
+            "id": 518,
+            "name": "textareaMoveToEnd",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 131,
+                    "character": 4
+                }
+            ],
+            "target": 130
+        },
+        {
+            "id": 550,
+            "name": "throttle",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 163,
+                    "character": 4
+                }
+            ],
+            "target": 277
+        },
+        {
+            "id": 498,
+            "name": "trim",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 111,
+                    "character": 4
+                }
+            ],
+            "target": 43
+        },
+        {
+            "id": 609,
+            "name": "union",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 189,
+                    "character": 4
+                }
+            ],
+            "target": 415
+        },
+        {
+            "id": 613,
+            "name": "unique",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 193,
+                    "character": 4
+                }
+            ],
+            "target": 435
+        },
+        {
+            "id": 511,
+            "name": "upperFirst",
+            "kind": 16777216,
+            "kindString": "Reference",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/index.ts",
+                    "line": 124,
+                    "character": 4
+                }
+            ],
             "target": 97
         },
         {
-            "id": 528,
+            "id": 558,
             "name": "addEvent",
             "kind": 4,
             "kindString": "Namespace",
             "flags": {},
             "children": [
                 {
-                    "id": 529,
+                    "id": 559,
                     "name": "guid",
                     "kind": 32,
                     "kindString": "Variable",
@@ -1034,12 +1124,12 @@
                 {
                     "title": "Variables",
                     "kind": 32,
-                    "children": [529]
+                    "children": [559]
                 }
             ]
         },
         {
-            "id": 412,
+            "id": 442,
             "name": "AnyFunction",
             "kind": 256,
             "kindString": "Interface",
@@ -1053,14 +1143,14 @@
             ],
             "signatures": [
                 {
-                    "id": 413,
+                    "id": 443,
                     "name": "AnyFunction",
                     "kind": 4096,
                     "kindString": "Call signature",
                     "flags": {},
                     "parameters": [
                         {
-                            "id": 414,
+                            "id": 444,
                             "name": "args",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -1085,13 +1175,13 @@
             "extendedTypes": [
                 {
                     "type": "reference",
-                    "id": 409,
+                    "id": 439,
                     "name": "AnyObject"
                 }
             ]
         },
         {
-            "id": 409,
+            "id": 439,
             "name": "AnyObject",
             "kind": 256,
             "kindString": "Interface",
@@ -1104,14 +1194,14 @@
                 }
             ],
             "indexSignature": {
-                "id": 410,
+                "id": 440,
                 "name": "__index",
                 "kind": 8192,
                 "kindString": "Index signature",
                 "flags": {},
                 "parameters": [
                     {
-                        "id": 411,
+                        "id": 441,
                         "name": "prop",
                         "kind": 32768,
                         "flags": {},
@@ -1129,20 +1219,20 @@
             "extendedBy": [
                 {
                     "type": "reference",
-                    "id": 412,
+                    "id": 442,
                     "name": "AnyFunction"
                 }
             ]
         },
         {
-            "id": 427,
+            "id": 457,
             "name": "DirParamType",
             "kind": 256,
             "kindString": "Interface",
             "flags": {},
             "children": [
                 {
-                    "id": 429,
+                    "id": 459,
                     "name": "host",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1162,7 +1252,7 @@
                     }
                 },
                 {
-                    "id": 428,
+                    "id": 458,
                     "name": "path",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1189,7 +1279,7 @@
                 {
                     "title": "Properties",
                     "kind": 1024,
-                    "children": [429, 428]
+                    "children": [459, 458]
                 }
             ],
             "sources": [
@@ -1201,14 +1291,14 @@
             ]
         },
         {
-            "id": 422,
+            "id": 452,
             "name": "SearchkeySet",
             "kind": 256,
             "kindString": "Interface",
             "flags": {},
             "children": [
                 {
-                    "id": 423,
+                    "id": 453,
                     "name": "childName",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1226,7 +1316,7 @@
                     }
                 },
                 {
-                    "id": 424,
+                    "id": 454,
                     "name": "keyName",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1248,7 +1338,7 @@
                 {
                     "title": "Properties",
                     "kind": 1024,
-                    "children": [423, 424]
+                    "children": [453, 454]
                 }
             ],
             "sources": [
@@ -1259,14 +1349,14 @@
                 }
             ],
             "indexSignature": {
-                "id": 425,
+                "id": 455,
                 "name": "__index",
                 "kind": 8192,
                 "kindString": "Index signature",
                 "flags": {},
                 "parameters": [
                     {
-                        "id": 426,
+                        "id": 456,
                         "name": "prop",
                         "kind": 32768,
                         "flags": {},
@@ -1283,14 +1373,14 @@
             }
         },
         {
-            "id": 419,
+            "id": 449,
             "name": "WindowSizeObj",
             "kind": 256,
             "kindString": "Interface",
             "flags": {},
             "children": [
                 {
-                    "id": 421,
+                    "id": 451,
                     "name": "height",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1308,7 +1398,7 @@
                     }
                 },
                 {
-                    "id": 420,
+                    "id": 450,
                     "name": "width",
                     "kind": 1024,
                     "kindString": "Property",
@@ -1330,7 +1420,7 @@
                 {
                     "title": "Properties",
                     "kind": 1024,
-                    "children": [421, 420]
+                    "children": [451, 450]
                 }
             ],
             "sources": [
@@ -1342,7 +1432,7 @@
             ]
         },
         {
-            "id": 415,
+            "id": 445,
             "name": "ArrayOneMore",
             "kind": 4194304,
             "kindString": "Type alias",
@@ -1356,7 +1446,7 @@
             ],
             "typeParameter": [
                 {
-                    "id": 418,
+                    "id": 448,
                     "name": "T",
                     "kind": 131072,
                     "kindString": "Type parameter",
@@ -1369,14 +1459,14 @@
                     {
                         "type": "reflection",
                         "declaration": {
-                            "id": 416,
+                            "id": 446,
                             "name": "__type",
                             "kind": 65536,
                             "kindString": "Type literal",
                             "flags": {},
                             "children": [
                                 {
-                                    "id": 417,
+                                    "id": 447,
                                     "name": "0",
                                     "kind": 1024,
                                     "kindString": "Property",
@@ -1390,7 +1480,7 @@
                                     ],
                                     "type": {
                                         "type": "reference",
-                                        "id": 418,
+                                        "id": 448,
                                         "name": "T"
                                     }
                                 }
@@ -1399,7 +1489,7 @@
                                 {
                                     "title": "Properties",
                                     "kind": 1024,
-                                    "children": [417]
+                                    "children": [447]
                                 }
                             ],
                             "sources": [
@@ -1415,7 +1505,7 @@
                         "type": "array",
                         "elementType": {
                             "type": "reference",
-                            "id": 418,
+                            "id": 448,
                             "name": "T"
                         }
                     }
@@ -1801,7 +1891,7 @@
                                 "type": "query",
                                 "queryType": {
                                     "type": "reference",
-                                    "id": 523,
+                                    "id": 553,
                                     "name": "addEvent"
                                 }
                             }
@@ -1870,7 +1960,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 412,
+                                                        "id": 442,
                                                         "name": "AnyFunction"
                                                     }
                                                 }
@@ -1948,7 +2038,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 412,
+                                                        "id": 442,
                                                         "name": "AnyFunction"
                                                     }
                                                 }
@@ -2152,7 +2242,7 @@
                                                             },
                                                             {
                                                                 "type": "reference",
-                                                                "id": 409,
+                                                                "id": 439,
                                                                 "name": "AnyObject"
                                                             }
                                                         ]
@@ -2790,6 +2880,161 @@
                             }
                         },
                         {
+                            "id": 424,
+                            "name": "complement",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 425,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 426,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "求多个数组的补集",
+                                                "returns": "array\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\ncomplement([1, 2], [2, '33'], [2]) // [1, '33']\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "typeParameter": [
+                                                {
+                                                    "id": 427,
+                                                    "name": "T",
+                                                    "kind": 131072,
+                                                    "kindString": "Type parameter",
+                                                    "flags": {},
+                                                    "default": {
+                                                        "type": "intrinsic",
+                                                        "name": "unknown"
+                                                    }
+                                                }
+                                            ],
+                                            "parameters": [
+                                                {
+                                                    "id": 428,
+                                                    "name": "args",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {
+                                                        "isRest": true
+                                                    },
+                                                    "comment": {
+                                                        "shortText": "参数"
+                                                    },
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "array",
+                                                            "elementType": {
+                                                                "type": "reference",
+                                                                "id": 427,
+                                                                "name": "T"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "array",
+                                                "elementType": {
+                                                    "type": "reference",
+                                                    "id": 427,
+                                                    "name": "T"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": 429,
+                            "name": "contains",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 430,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 431,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "数组是否包含指定元素",
+                                                "returns": "boolean\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\ncontains([1, 2], 2) // true\ncontains([1, 2], 3) // false\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "parameters": [
+                                                {
+                                                    "id": 432,
+                                                    "name": "arr",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {},
+                                                    "comment": {
+                                                        "shortText": "目标数组"
+                                                    },
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "intrinsic",
+                                                            "name": "any"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "id": 433,
+                                                    "name": "item",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {},
+                                                    "comment": {
+                                                        "shortText": "要查找的目标"
+                                                    },
+                                                    "type": {
+                                                        "type": "intrinsic",
+                                                        "name": "any"
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "intrinsic",
+                                                "name": "boolean"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
                             "id": 118,
                             "name": "cutCHSString",
                             "kind": 1024,
@@ -3056,7 +3301,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 412,
+                                                        "id": 442,
                                                         "name": "AnyFunction"
                                                     }
                                                 },
@@ -3487,7 +3732,7 @@
                                                                             "flags": {},
                                                                             "type": {
                                                                                 "type": "reference",
-                                                                                "id": 412,
+                                                                                "id": 442,
                                                                                 "name": "AnyFunction"
                                                                             }
                                                                         },
@@ -3894,7 +4139,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 415,
+                                                        "id": 445,
                                                         "typeArguments": [
                                                             {
                                                                 "type": "intrinsic",
@@ -4436,7 +4681,7 @@
                                             ],
                                             "type": {
                                                 "type": "reference",
-                                                "id": 427,
+                                                "id": 457,
                                                 "name": "DirParamType"
                                             }
                                         }
@@ -5218,7 +5463,7 @@
                                             },
                                             "type": {
                                                 "type": "reference",
-                                                "id": 419,
+                                                "id": 449,
                                                 "name": "WindowSizeObj"
                                             }
                                         }
@@ -5343,6 +5588,88 @@
                                             "type": {
                                                 "type": "intrinsic",
                                                 "name": "string"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": 409,
+                            "name": "intersect",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 410,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 411,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "求多个数组的交集",
+                                                "returns": "array\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\nintersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "typeParameter": [
+                                                {
+                                                    "id": 412,
+                                                    "name": "T",
+                                                    "kind": 131072,
+                                                    "kindString": "Type parameter",
+                                                    "flags": {},
+                                                    "default": {
+                                                        "type": "intrinsic",
+                                                        "name": "unknown"
+                                                    }
+                                                }
+                                            ],
+                                            "parameters": [
+                                                {
+                                                    "id": 413,
+                                                    "name": "args",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {
+                                                        "isRest": true
+                                                    },
+                                                    "comment": {
+                                                        "shortText": "参数"
+                                                    },
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "array",
+                                                            "elementType": {
+                                                                "type": "reference",
+                                                                "id": 412,
+                                                                "name": "T"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "array",
+                                                "elementType": {
+                                                    "type": "reference",
+                                                    "id": 412,
+                                                    "name": "T"
+                                                }
                                             }
                                         }
                                     ]
@@ -5550,6 +5877,88 @@
                                             "type": {
                                                 "type": "intrinsic",
                                                 "name": "boolean"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": 419,
+                            "name": "minus",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 420,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 421,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "求多个数组的差集，属于A但不属于B/C/D...的元素",
+                                                "returns": "array\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\nminus([1, 2], [2, '33'], [2, 4]) // [1]\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "typeParameter": [
+                                                {
+                                                    "id": 422,
+                                                    "name": "T",
+                                                    "kind": 131072,
+                                                    "kindString": "Type parameter",
+                                                    "flags": {},
+                                                    "default": {
+                                                        "type": "intrinsic",
+                                                        "name": "unknown"
+                                                    }
+                                                }
+                                            ],
+                                            "parameters": [
+                                                {
+                                                    "id": 423,
+                                                    "name": "args",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {
+                                                        "isRest": true
+                                                    },
+                                                    "comment": {
+                                                        "shortText": "参数"
+                                                    },
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "array",
+                                                            "elementType": {
+                                                                "type": "reference",
+                                                                "id": 422,
+                                                                "name": "T"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "array",
+                                                "elementType": {
+                                                    "type": "reference",
+                                                    "id": 422,
+                                                    "name": "T"
+                                                }
                                             }
                                         }
                                     ]
@@ -5949,7 +6358,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 409,
+                                                        "id": 439,
                                                         "name": "AnyObject"
                                                     }
                                                 },
@@ -5978,7 +6387,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 412,
+                                                        "id": 442,
                                                         "name": "AnyFunction"
                                                     }
                                                 }
@@ -6069,7 +6478,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 422,
+                                                        "id": 452,
                                                         "name": "SearchkeySet"
                                                     }
                                                 },
@@ -6675,7 +7084,7 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
-                                                        "id": 412,
+                                                        "id": 442,
                                                         "name": "AnyFunction"
                                                     }
                                                 },
@@ -6822,6 +7231,162 @@
                             }
                         },
                         {
+                            "id": 414,
+                            "name": "union",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 415,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 416,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "求多个数组的并集",
+                                                "returns": "array\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\nunion([1, 2], [2, '33']) // [1, 2, '33']\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "typeParameter": [
+                                                {
+                                                    "id": 417,
+                                                    "name": "T",
+                                                    "kind": 131072,
+                                                    "kindString": "Type parameter",
+                                                    "flags": {},
+                                                    "default": {
+                                                        "type": "intrinsic",
+                                                        "name": "unknown"
+                                                    }
+                                                }
+                                            ],
+                                            "parameters": [
+                                                {
+                                                    "id": 418,
+                                                    "name": "args",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {
+                                                        "isRest": true
+                                                    },
+                                                    "comment": {
+                                                        "shortText": "参数"
+                                                    },
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "array",
+                                                            "elementType": {
+                                                                "type": "reference",
+                                                                "id": 417,
+                                                                "name": "T"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "array",
+                                                "elementType": {
+                                                    "type": "reference",
+                                                    "id": 417,
+                                                    "name": "T"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": 434,
+                            "name": "unique",
+                            "kind": 1024,
+                            "kindString": "Property",
+                            "flags": {},
+                            "type": {
+                                "type": "reflection",
+                                "declaration": {
+                                    "id": 435,
+                                    "name": "__type",
+                                    "kind": 65536,
+                                    "kindString": "Type literal",
+                                    "flags": {},
+                                    "signatures": [
+                                        {
+                                            "id": 436,
+                                            "name": "__type",
+                                            "kind": 4096,
+                                            "kindString": "Call signature",
+                                            "flags": {},
+                                            "comment": {
+                                                "shortText": "数组去重",
+                                                "returns": "array\n",
+                                                "tags": [
+                                                    {
+                                                        "tag": "example",
+                                                        "text": "\n```js\nunique([1, 2, 2, '33']) // [1, 2, '33']\n```"
+                                                    }
+                                                ]
+                                            },
+                                            "typeParameter": [
+                                                {
+                                                    "id": 437,
+                                                    "name": "T",
+                                                    "kind": 131072,
+                                                    "kindString": "Type parameter",
+                                                    "flags": {},
+                                                    "default": {
+                                                        "type": "intrinsic",
+                                                        "name": "unknown"
+                                                    }
+                                                }
+                                            ],
+                                            "parameters": [
+                                                {
+                                                    "id": 438,
+                                                    "name": "arr",
+                                                    "kind": 32768,
+                                                    "kindString": "Parameter",
+                                                    "flags": {},
+                                                    "type": {
+                                                        "type": "array",
+                                                        "elementType": {
+                                                            "type": "reference",
+                                                            "id": 437,
+                                                            "name": "T"
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": {
+                                                "type": "array",
+                                                "elementType": {
+                                                    "type": "reference",
+                                                    "id": 437,
+                                                    "name": "T"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
                             "id": 96,
                             "name": "upperFirst",
                             "kind": 1024,
@@ -6917,8 +7482,8 @@
                             "title": "Properties",
                             "kind": 1024,
                             "children": [
-                                386, 392, 397, 403, 293, 368, 373, 381, 88, 341, 47, 51, 55, 59, 63, 67, 71, 3, 118, 92, 260, 264, 268, 244, 248, 228, 224, 232, 313, 347, 252, 256, 236, 240, 327, 308, 182, 187, 148, 114, 216, 212, 166, 174,
-                                160, 75, 154, 170, 100, 105, 110, 300, 220, 333, 178, 145, 79, 84, 337, 133, 137, 141, 303, 360, 22, 294, 353, 200, 192, 206, 364, 285, 289, 124, 129, 276, 42, 96, 378
+                                386, 392, 397, 403, 293, 368, 373, 381, 88, 341, 47, 51, 55, 59, 63, 67, 71, 3, 424, 429, 118, 92, 260, 264, 268, 244, 248, 228, 224, 232, 313, 347, 252, 256, 236, 240, 327, 308, 182, 187, 148, 114, 216, 212,
+                                166, 174, 160, 75, 154, 170, 100, 105, 110, 300, 220, 333, 178, 145, 79, 84, 409, 337, 133, 137, 141, 419, 303, 360, 22, 294, 353, 200, 192, 206, 364, 285, 289, 124, 129, 276, 42, 414, 434, 96, 378
                             ]
                         }
                     ]
@@ -6926,7 +7491,7 @@
             }
         },
         {
-            "id": 448,
+            "id": 478,
             "name": "pattern",
             "kind": 1024,
             "kindString": "Property",
@@ -6934,14 +7499,14 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 449,
+                    "id": 479,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
                     "flags": {},
                     "children": [
                         {
-                            "id": 450,
+                            "id": 480,
                             "name": "any",
                             "kind": 1024,
                             "kindString": "Property",
@@ -6953,7 +7518,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 465,
+                            "id": 495,
                             "name": "array",
                             "kind": 1024,
                             "kindString": "Property",
@@ -6965,7 +7530,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 464,
+                            "id": 494,
                             "name": "arrjson",
                             "kind": 1024,
                             "kindString": "Property",
@@ -6977,7 +7542,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 459,
+                            "id": 489,
                             "name": "chinese",
                             "kind": 1024,
                             "kindString": "Property",
@@ -6989,7 +7554,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 457,
+                            "id": 487,
                             "name": "email",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7001,7 +7566,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 456,
+                            "id": 486,
                             "name": "float",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7013,7 +7578,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 466,
+                            "id": 496,
                             "name": "isjson",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7025,7 +7590,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 463,
+                            "id": 493,
                             "name": "json",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7037,7 +7602,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 458,
+                            "id": 488,
                             "name": "mobile",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7049,7 +7614,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 451,
+                            "id": 481,
                             "name": "number",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7061,7 +7626,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 462,
+                            "id": 492,
                             "name": "pass",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7073,7 +7638,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 453,
+                            "id": 483,
                             "name": "postcode",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7085,7 +7650,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 461,
+                            "id": 491,
                             "name": "qq",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7097,7 +7662,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 452,
+                            "id": 482,
                             "name": "string",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7109,7 +7674,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 460,
+                            "id": 490,
                             "name": "tel",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7121,7 +7686,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 467,
+                            "id": 497,
                             "name": "textarea",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7133,7 +7698,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 454,
+                            "id": 484,
                             "name": "url",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7145,7 +7710,7 @@
                             "defaultValue": "..."
                         },
                         {
-                            "id": 455,
+                            "id": 485,
                             "name": "username",
                             "kind": 1024,
                             "kindString": "Property",
@@ -7161,14 +7726,14 @@
                         {
                             "title": "Properties",
                             "kind": 1024,
-                            "children": [450, 465, 464, 459, 457, 456, 466, 463, 458, 451, 462, 453, 461, 452, 460, 467, 454, 455]
+                            "children": [480, 495, 494, 489, 487, 486, 496, 493, 488, 481, 492, 483, 491, 482, 490, 497, 484, 485]
                         }
                     ]
                 }
             }
         },
         {
-            "id": 562,
+            "id": 592,
             "name": "CSVToArray",
             "kind": 64,
             "kindString": "Function",
@@ -7184,7 +7749,7 @@
             ],
             "signatures": [
                 {
-                    "id": 563,
+                    "id": 593,
                     "name": "CSVToArray",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7209,7 +7774,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 564,
+                            "id": 594,
                             "name": "data",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7223,7 +7788,7 @@
                             }
                         },
                         {
-                            "id": 565,
+                            "id": 595,
                             "name": "delimiter",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7238,7 +7803,7 @@
                             "defaultValue": "','"
                         },
                         {
-                            "id": 566,
+                            "id": 596,
                             "name": "omitFirstRow",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7267,7 +7832,7 @@
             ]
         },
         {
-            "id": 568,
+            "id": 598,
             "name": "JSONToCSV",
             "kind": 64,
             "kindString": "Function",
@@ -7283,7 +7848,7 @@
             ],
             "signatures": [
                 {
-                    "id": 569,
+                    "id": 599,
                     "name": "JSONToCSV",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7304,7 +7869,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 570,
+                            "id": 600,
                             "name": "arr",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7318,7 +7883,7 @@
                             }
                         },
                         {
-                            "id": 571,
+                            "id": 601,
                             "name": "columns",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7335,7 +7900,7 @@
                             }
                         },
                         {
-                            "id": 572,
+                            "id": 602,
                             "name": "delimiter",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7358,7 +7923,7 @@
             ]
         },
         {
-            "id": 573,
+            "id": 603,
             "name": "RGBToHex",
             "kind": 64,
             "kindString": "Function",
@@ -7374,7 +7939,7 @@
             ],
             "signatures": [
                 {
-                    "id": 574,
+                    "id": 604,
                     "name": "RGBToHex",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7391,7 +7956,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 575,
+                            "id": 605,
                             "name": "r",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7405,7 +7970,7 @@
                             }
                         },
                         {
-                            "id": 576,
+                            "id": 606,
                             "name": "g",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7419,7 +7984,7 @@
                             }
                         },
                         {
-                            "id": 577,
+                            "id": 607,
                             "name": "b",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7441,7 +8006,7 @@
             ]
         },
         {
-            "id": 523,
+            "id": 553,
             "name": "addEvent",
             "kind": 64,
             "kindString": "Function",
@@ -7455,7 +8020,7 @@
             ],
             "signatures": [
                 {
-                    "id": 524,
+                    "id": 554,
                     "name": "addEvent",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7465,7 +8030,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 525,
+                            "id": 555,
                             "name": "element",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7475,12 +8040,12 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "id": 409,
+                                "id": 439,
                                 "name": "AnyObject"
                             }
                         },
                         {
-                            "id": 526,
+                            "id": 556,
                             "name": "type",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7494,7 +8059,7 @@
                             }
                         },
                         {
-                            "id": 527,
+                            "id": 557,
                             "name": "handler",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7504,7 +8069,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "id": 412,
+                                "id": 442,
                                 "name": "AnyFunction"
                             }
                         }
@@ -7517,7 +8082,7 @@
             ]
         },
         {
-            "id": 548,
+            "id": 578,
             "name": "all",
             "kind": 64,
             "kindString": "Function",
@@ -7533,7 +8098,7 @@
             ],
             "signatures": [
                 {
-                    "id": 549,
+                    "id": 579,
                     "name": "all",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7554,7 +8119,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 550,
+                            "id": 580,
                             "name": "arr",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7571,7 +8136,7 @@
                             }
                         },
                         {
-                            "id": 551,
+                            "id": 581,
                             "name": "fn",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7581,7 +8146,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "id": 412,
+                                "id": 442,
                                 "name": "AnyFunction"
                             }
                         }
@@ -7594,7 +8159,7 @@
             ]
         },
         {
-            "id": 552,
+            "id": 582,
             "name": "any",
             "kind": 64,
             "kindString": "Function",
@@ -7610,7 +8175,7 @@
             ],
             "signatures": [
                 {
-                    "id": 553,
+                    "id": 583,
                     "name": "any",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7631,7 +8196,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 554,
+                            "id": 584,
                             "name": "arr",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7648,7 +8213,7 @@
                             }
                         },
                         {
-                            "id": 555,
+                            "id": 585,
                             "name": "fn",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7658,7 +8223,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "id": 412,
+                                "id": 442,
                                 "name": "AnyFunction"
                             }
                         }
@@ -7671,7 +8236,7 @@
             ]
         },
         {
-            "id": 558,
+            "id": 588,
             "name": "arrayToCSV",
             "kind": 64,
             "kindString": "Function",
@@ -7687,7 +8252,7 @@
             ],
             "signatures": [
                 {
-                    "id": 559,
+                    "id": 589,
                     "name": "arrayToCSV",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7712,7 +8277,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 560,
+                            "id": 590,
                             "name": "arr",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7726,7 +8291,7 @@
                             }
                         },
                         {
-                            "id": 561,
+                            "id": 591,
                             "name": "delimiter",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7749,7 +8314,7 @@
             ]
         },
         {
-            "id": 430,
+            "id": 460,
             "name": "client",
             "kind": 64,
             "kindString": "Function",
@@ -7765,7 +8330,7 @@
             ],
             "signatures": [
                 {
-                    "id": 431,
+                    "id": 461,
                     "name": "client",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -7776,7 +8341,7 @@
                     },
                     "parameters": [
                         {
-                            "id": 432,
+                            "id": 462,
                             "name": "name",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7791,7 +8356,7 @@
                             "defaultValue": "''"
                         },
                         {
-                            "id": 433,
+                            "id": 463,
                             "name": "userAgent",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -7816,14 +8381,14 @@
                             {
                                 "type": "reflection",
                                 "declaration": {
-                                    "id": 434,
+                                    "id": 464,
                                     "name": "__type",
                                     "kind": 65536,
                                     "kindString": "Type literal",
                                     "flags": {},
                                     "children": [
                                         {
-                                            "id": 442,
+                                            "id": 472,
                                             "name": "ANDROID",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7835,7 +8400,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 436,
+                                            "id": 466,
                                             "name": "GECKO",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7847,7 +8412,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 435,
+                                            "id": 465,
                                             "name": "IE",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7859,7 +8424,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 441,
+                                            "id": 471,
                                             "name": "IOS",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7871,7 +8436,7 @@
                                             "defaultValue": "!!userAgent.match(/\\(i[^;]+;( U;)? CPU.+Mac OS X/)"
                                         },
                                         {
-                                            "id": 444,
+                                            "id": 474,
                                             "name": "IPAD",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7883,7 +8448,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 443,
+                                            "id": 473,
                                             "name": "IPHONE",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7895,7 +8460,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 440,
+                                            "id": 470,
                                             "name": "MOBILE",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7907,7 +8472,7 @@
                                             "defaultValue": "!!userAgent.match(/AppleWebKit.*Mobile.*/)"
                                         },
                                         {
-                                            "id": 438,
+                                            "id": 468,
                                             "name": "OPERA",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7919,7 +8484,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 447,
+                                            "id": 477,
                                             "name": "QQ",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7940,7 +8505,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 445,
+                                            "id": 475,
                                             "name": "QQBROWSER",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7952,7 +8517,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 439,
+                                            "id": 469,
                                             "name": "TRIDENT",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7964,7 +8529,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 437,
+                                            "id": 467,
                                             "name": "WEBKIT",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7976,7 +8541,7 @@
                                             "defaultValue": "..."
                                         },
                                         {
-                                            "id": 446,
+                                            "id": 476,
                                             "name": "WEIXIN",
                                             "kind": 1024,
                                             "kindString": "Property",
@@ -7992,7 +8557,7 @@
                                         {
                                             "title": "Properties",
                                             "kind": 1024,
-                                            "children": [442, 436, 435, 441, 444, 443, 440, 438, 447, 445, 439, 437, 446]
+                                            "children": [472, 466, 465, 471, 474, 473, 470, 468, 477, 475, 469, 467, 476]
                                         }
                                     ]
                                 }
@@ -8003,7 +8568,7 @@
             ]
         },
         {
-            "id": 536,
+            "id": 566,
             "name": "extend",
             "kind": 64,
             "kindString": "Function",
@@ -8017,14 +8582,14 @@
             ],
             "signatures": [
                 {
-                    "id": 537,
+                    "id": 567,
                     "name": "extend",
                     "kind": 4096,
                     "kindString": "Call signature",
                     "flags": {},
                     "typeParameter": [
                         {
-                            "id": 538,
+                            "id": 568,
                             "name": "T",
                             "kind": 131072,
                             "kindString": "Type parameter",
@@ -8049,7 +8614,7 @@
                     ],
                     "parameters": [
                         {
-                            "id": 539,
+                            "id": 569,
                             "name": "target",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -8070,7 +8635,7 @@
                             }
                         },
                         {
-                            "id": 540,
+                            "id": 570,
                             "name": "args",
                             "kind": 32768,
                             "kindString": "Parameter",
@@ -8079,7 +8644,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "id": 415,
+                                "id": 445,
                                 "typeArguments": [
                                     {
                                         "type": "intrinsic",
@@ -8099,7 +8664,7 @@
             ]
         },
         {
-            "id": 531,
+            "id": 561,
             "name": "getScrollPosition",
             "kind": 64,
             "kindString": "Function",
@@ -8115,7 +8680,7 @@
             ],
             "signatures": [
                 {
-                    "id": 532,
+                    "id": 562,
                     "name": "getScrollPosition",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -8141,7 +8706,7 @@
             ]
         },
         {
-            "id": 556,
+            "id": 586,
             "name": "uuid",
             "kind": 64,
             "kindString": "Function",
@@ -8157,7 +8722,7 @@
             ],
             "signatures": [
                 {
-                    "id": 557,
+                    "id": 587,
                     "name": "uuid",
                     "kind": 4096,
                     "kindString": "Call signature",
@@ -8185,34 +8750,34 @@
             "title": "References",
             "kind": 16777216,
             "children": [
-                567, 479, 543, 469, 470, 471, 472, 473, 474, 475, 486, 480, 517, 518, 519, 513, 514, 509, 508, 510, 535, 544, 515, 516, 511, 512, 534, 500, 501, 493, 485, 506, 505, 496, 498, 495, 476, 494, 497, 482, 483, 484, 507, 541, 499,
-                492, 477, 478, 542, 489, 490, 491, 533, 546, 530, 545, 503, 502, 504, 547, 521, 522, 487, 488, 520, 468, 481
+                597, 509, 573, 499, 500, 501, 502, 503, 504, 505, 611, 612, 516, 510, 547, 548, 549, 543, 544, 539, 538, 540, 565, 574, 545, 546, 541, 542, 564, 530, 531, 523, 515, 536, 535, 526, 528, 525, 506, 524, 527, 512, 513, 514, 537,
+                571, 529, 522, 507, 508, 608, 572, 519, 520, 521, 610, 563, 576, 560, 575, 533, 532, 534, 577, 551, 552, 517, 518, 550, 498, 609, 613, 511
             ]
         },
         {
             "title": "Namespaces",
             "kind": 4,
-            "children": [528]
+            "children": [558]
         },
         {
             "title": "Interfaces",
             "kind": 256,
-            "children": [412, 409, 427, 422, 419]
+            "children": [442, 439, 457, 452, 449]
         },
         {
             "title": "Type aliases",
             "kind": 4194304,
-            "children": [415]
+            "children": [445]
         },
         {
             "title": "Properties",
             "kind": 1024,
-            "children": [1, 448]
+            "children": [1, 478]
         },
         {
             "title": "Functions",
             "kind": 64,
-            "children": [562, 568, 573, 523, 548, 552, 558, 430, 536, 531, 556]
+            "children": [592, 598, 603, 553, 578, 582, 588, 460, 566, 561, 586]
         }
     ],
     "sources": [

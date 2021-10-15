@@ -1901,6 +1901,101 @@ const JSONToCSV = (arr, columns, delimiter = ',') => [columns.join(delimiter), .
  */
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
+/**
+ * 数组是否包含指定元素
+ *
+ * @example
+ * ```js
+ * contains([1, 2], 2) // true
+ * contains([1, 2], 3) // false
+ * ```
+ * @param arr - 目标数组
+ * @param item - 要查找的目标
+ * @returns boolean
+ */
+function contains(arr, item) {
+    for (const el of arr) {
+        if (el === item)
+            return true;
+    }
+    return false;
+}
+
+/**
+ * 数组去重
+ *
+ * @example
+ * ```js
+ * unique([1, 2, 2, '33']) // [1, 2, '33']
+ * ```
+ * @returns array
+ */
+function unique(arr) {
+    let newArray = [];
+    for (const el of arr) {
+        !contains(newArray, el) && newArray.push(el);
+    }
+    return newArray;
+}
+
+/**
+ * 求多个数组的交集
+ *
+ * @example
+ * ```js
+ * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function intersect(...args) {
+    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
+}
+/**
+ * 求多个数组的并集
+ *
+ * @example
+ * ```js
+ * union([1, 2], [2, '33']) // [1, 2, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function union(...args) {
+    return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))));
+}
+/**
+ * 求多个数组的差集，属于A但不属于B/C/D...的元素
+ *
+ * @example
+ * ```js
+ * minus([1, 2], [2, '33'], [2, 4]) // [1]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function minus(...args) {
+    return args.reduce((pre, cur, index) => {
+        index === 1 && (pre = unique(pre));
+        return pre.filter(item => !contains(cur, item));
+    });
+}
+/**
+ * 求多个数组的补集
+ *
+ * @example
+ * ```js
+ * complement([1, 2], [2, '33'], [2]) // [1, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function complement(...args) {
+    const intersectArray = intersect(...args); // 交集
+    const unionArray = union(...args); // 补集
+    return unionArray.filter(item => !contains(intersectArray, item));
+}
+
 // 全局参数
 var index = {
     //
@@ -1982,7 +2077,13 @@ var index = {
     CSVToArray,
     CSVToJSON,
     JSONToCSV,
-    RGBToHex
+    RGBToHex,
+    intersect,
+    union,
+    minus,
+    complement,
+    contains,
+    unique
 };
 
-export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, index as default, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, isArray, isDigitals, isExitsFunction, isExitsVariable, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, upperFirst, uuid };
+export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, complement, contains, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, index as default, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, intersect, isArray, isDigitals, isExitsFunction, isExitsVariable, minus, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, union, unique, upperFirst, uuid };

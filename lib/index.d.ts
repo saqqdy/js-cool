@@ -180,6 +180,32 @@ export declare const client: (name?: string, userAgent?: string) => boolean | {
 };
 
 /**
+ * 求多个数组的补集
+ *
+ * @example
+ * ```js
+ * complement([1, 2], [2, '33'], [2]) // [1, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+export declare function complement<T = unknown>(...args: T[][]): T[];
+
+/**
+ * 数组是否包含指定元素
+ *
+ * @example
+ * ```js
+ * contains([1, 2], 2) // true
+ * contains([1, 2], 3) // false
+ * ```
+ * @param arr - 目标数组
+ * @param item - 要查找的目标
+ * @returns boolean
+ */
+export declare function contains(arr: any[], item: any): boolean;
+
+/**
  * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
  *
  * @example
@@ -381,6 +407,12 @@ declare const _default: {
     CSVToJSON: typeof CSVToJSON;
     JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
     RGBToHex: (r: number, g: number, b: number) => string;
+    intersect: typeof intersect;
+    union: typeof union;
+    minus: typeof minus;
+    complement: typeof complement;
+    contains: typeof contains;
+    unique: typeof unique;
 };
 export default _default;
 
@@ -709,6 +741,18 @@ export declare function imgAdapt(imgurl: string, size: string): string | false;
 export declare function imgChoose(imgurl: string): string;
 
 /**
+ * 求多个数组的交集
+ *
+ * @example
+ * ```js
+ * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+export declare function intersect<T = unknown>(...args: T[][]): T[];
+
+/**
  * 判断是否数组
  *
  * @param arr -
@@ -756,6 +800,18 @@ export declare function isExitsVariable(variableName: string): boolean;
  * @returns CSV数据
  */
 export declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
+
+/**
+ * 求多个数组的差集，属于A但不属于B/C/D...的元素
+ *
+ * @example
+ * ```js
+ * minus([1, 2], [2, '33'], [2, 4]) // [1]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+export declare function minus<T = unknown>(...args: T[][]): T[];
 
 /**
  * 返回下一个zIndex值
@@ -918,6 +974,29 @@ export declare function throttle(fn: AnyFunction, delay: number, immediate: bool
  * @returns 返回新字符串
  */
 export declare function trim(string: string, type?: string): string | void;
+
+/**
+ * 求多个数组的并集
+ *
+ * @example
+ * ```js
+ * union([1, 2], [2, '33']) // [1, 2, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+export declare function union<T = unknown>(...args: T[][]): T[];
+
+/**
+ * 数组去重
+ *
+ * @example
+ * ```js
+ * unique([1, 2, 2, '33']) // [1, 2, '33']
+ * ```
+ * @returns array
+ */
+export declare function unique<T = unknown>(arr: T[]): T[];
 
 /**
  * 首字母大写

@@ -1905,6 +1905,101 @@ const JSONToCSV = (arr, columns, delimiter = ',') => [columns.join(delimiter), .
  */
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
+/**
+ * 数组是否包含指定元素
+ *
+ * @example
+ * ```js
+ * contains([1, 2], 2) // true
+ * contains([1, 2], 3) // false
+ * ```
+ * @param arr - 目标数组
+ * @param item - 要查找的目标
+ * @returns boolean
+ */
+function contains(arr, item) {
+    for (const el of arr) {
+        if (el === item)
+            return true;
+    }
+    return false;
+}
+
+/**
+ * 数组去重
+ *
+ * @example
+ * ```js
+ * unique([1, 2, 2, '33']) // [1, 2, '33']
+ * ```
+ * @returns array
+ */
+function unique(arr) {
+    let newArray = [];
+    for (const el of arr) {
+        !contains(newArray, el) && newArray.push(el);
+    }
+    return newArray;
+}
+
+/**
+ * 求多个数组的交集
+ *
+ * @example
+ * ```js
+ * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function intersect(...args) {
+    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
+}
+/**
+ * 求多个数组的并集
+ *
+ * @example
+ * ```js
+ * union([1, 2], [2, '33']) // [1, 2, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function union(...args) {
+    return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))));
+}
+/**
+ * 求多个数组的差集，属于A但不属于B/C/D...的元素
+ *
+ * @example
+ * ```js
+ * minus([1, 2], [2, '33'], [2, 4]) // [1]
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function minus(...args) {
+    return args.reduce((pre, cur, index) => {
+        index === 1 && (pre = unique(pre));
+        return pre.filter(item => !contains(cur, item));
+    });
+}
+/**
+ * 求多个数组的补集
+ *
+ * @example
+ * ```js
+ * complement([1, 2], [2, '33'], [2]) // [1, '33']
+ * ```
+ * @param args - 参数
+ * @returns array
+ */
+function complement(...args) {
+    const intersectArray = intersect(...args); // 交集
+    const unionArray = union(...args); // 补集
+    return unionArray.filter(item => !contains(intersectArray, item));
+}
+
 // 全局参数
 var index = {
     //
@@ -1986,7 +2081,13 @@ var index = {
     CSVToArray,
     CSVToJSON,
     JSONToCSV,
-    RGBToHex
+    RGBToHex,
+    intersect,
+    union,
+    minus,
+    complement,
+    contains,
+    unique
 };
 
 exports.CSVToArray = CSVToArray;
@@ -2007,6 +2108,8 @@ exports.clearHtmlN = clearHtmlN;
 exports.clearHtmlNS = clearHtmlNS;
 exports.clearHtmlTag = clearHtmlTag;
 exports.client = client;
+exports.complement = complement;
+exports.contains = contains;
 exports.cutCHSString = cutCHSString;
 exports.dash2Camel = dash2Camel;
 exports.deWxJumpLink = deWxJumpLink;
@@ -2014,7 +2117,7 @@ exports.deWxJumpLinkOld = deWxJumpLinkOld;
 exports.debounce = debounce;
 exports.decodeBase64 = decodeBase64;
 exports.decodeUtf8 = decodeUtf8;
-exports['default'] = index;
+exports["default"] = index;
 exports.delCache = delCache;
 exports.delCookie = delCookie;
 exports.delSession = delSession;
@@ -2048,10 +2151,12 @@ exports.getUrlParam = getUrlParam;
 exports.getWindowSize = getWindowSize;
 exports.imgAdapt = imgAdapt;
 exports.imgChoose = imgChoose;
+exports.intersect = intersect;
 exports.isArray = isArray;
 exports.isDigitals = isDigitals;
 exports.isExitsFunction = isExitsFunction;
 exports.isExitsVariable = isExitsVariable;
+exports.minus = minus;
 exports.nextIndex = nextIndex;
 exports.openUrl = openUrl;
 exports.pattern = pattern;
@@ -2067,5 +2172,7 @@ exports.textareaInsertText = textareaInsertText;
 exports.textareaMoveToEnd = textareaMoveToEnd;
 exports.throttle = throttle;
 exports.trim = trim;
+exports.union = union;
+exports.unique = unique;
 exports.upperFirst = upperFirst;
 exports.uuid = uuid;
