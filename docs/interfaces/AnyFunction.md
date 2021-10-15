@@ -1,4 +1,4 @@
-[index.md - v2.1.3](../README.md) / [Exports](../modules.md) / AnyFunction
+[index.md - v2.2.1](../README.md) / [Exports](../modules.md) / AnyFunction
 
 # Interface: AnyFunction
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[typings/common.d.ts:6](https://github.com/saqqdy/js-cool/blob/d76432c/typings/common.d.ts#L6)
+[typings/common.d.ts:6](https://github.com/saqqdy/js-cool/blob/f9587cf/typings/common.d.ts#L6)
