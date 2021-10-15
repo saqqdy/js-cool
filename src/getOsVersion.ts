@@ -13,7 +13,7 @@ import getAppVersion from './getAppVersion'
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-function getOsVersion(osName: string, withosstr?: boolean, userAgent?: string): string | boolean | null {
+export function getOsVersion(osName: string, withosstr?: boolean, userAgent?: string): string | boolean | null {
     userAgent = userAgent || navigator.appVersion
     var d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS'],
         name = osName,

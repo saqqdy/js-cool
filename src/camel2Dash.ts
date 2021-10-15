@@ -4,7 +4,7 @@
  * @param string - 需要转换的字符串
  * @returns 返回转换后的字符串
  */
-function camel2Dash(string: string) {
+export function camel2Dash(string: string) {
     return string
         .replace(/([A-Z]{1,1})/g, '-$1')
         .replace(/^-/, '')

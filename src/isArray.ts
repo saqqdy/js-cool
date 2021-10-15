@@ -3,7 +3,7 @@
  *
  * @param arr -
  */
-function isArray(arr: any): arr is any[] {
+export function isArray(arr: any): arr is any[] {
     return Object.prototype.toString.call(arr).indexOf('Array') !== -1
 }
 

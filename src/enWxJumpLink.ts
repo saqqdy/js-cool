@@ -5,7 +5,7 @@
  * @param string - 传入字符串
  * @returns 返回转码结果
  */
-function enWxJumpLink(string: string) {
+export function enWxJumpLink(string: string) {
     return (
         string
             // .replace(/[=]{1}/g, '~')

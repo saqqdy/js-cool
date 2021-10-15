@@ -7,7 +7,7 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
  * @param input - 需要解码的字符串
  * @returns 解码后的字符串
  */
-function decodeBase64(input: string) {
+export function decodeBase64(input: string) {
     var output = ''
     var chr1, chr2, chr3
     var enc1, enc2, enc3, enc4

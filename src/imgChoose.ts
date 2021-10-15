@@ -4,7 +4,7 @@
  * @param imgurl - 图片地址
  * @returns 返回新地址
  */
-function imgChoose(imgurl: string): string {
+export function imgChoose(imgurl: string): string {
     var width = window.innerWidth
     var imgPre = ''
     var urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp)', 'i')

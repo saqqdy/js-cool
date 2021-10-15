@@ -4,7 +4,7 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-function clearBr(string: string) {
+export function clearBr(string: string) {
     return string
         .replace(/<\/br>/g, '')
         .replace(/<br>/g, '')

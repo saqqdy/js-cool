@@ -18,7 +18,7 @@
  * @param omitFirstRow - 第一行是表头数据，默认false
  * @returns array
  */
-const CSVToArray = (data: string, delimiter: string = ',', omitFirstRow: boolean = false) =>
+export const CSVToArray = (data: string, delimiter: string = ',', omitFirstRow: boolean = false) =>
     data
         .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
         .split('\n')

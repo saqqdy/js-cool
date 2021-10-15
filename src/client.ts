@@ -5,7 +5,7 @@
  * @param userAgent - 可选，传入自定义的ua，默认取浏览器的navigator.appVersion
  * @returns 返回常用ua匹配表，如果传了name，那么返回是否匹配该终端true/false
  */
-const client = (name = '', userAgent = navigator.appVersion) => {
+export const client = (name = '', userAgent = navigator.appVersion) => {
     const userAgentL = userAgent.toLowerCase()
     if (name) {
         return userAgent.indexOf(name) > -1

@@ -4,7 +4,7 @@
  * @param e - dom的event对象
  * @returns bool false
  */
-function stopBubble(e: Event) {
+export function stopBubble(e: Event) {
     if (e && e.stopPropagation) {
         // Firefox
         e.stopPropagation() // e.preventDefault();

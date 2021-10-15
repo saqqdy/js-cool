@@ -4,7 +4,7 @@
  * @param input - 需要编码的字符串
  * @returns 返回UTF-8编码
  */
-function encodeUtf8(string: string) {
+export function encodeUtf8(string: string) {
     string = string.replace(/\r\n/g, '\n')
     var utftext = ''
     for (var n = 0; n < string.length; n++) {

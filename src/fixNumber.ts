@@ -5,7 +5,7 @@
  * @param n - 要保留的小数点位数，默认保留2位
  * @returns 返回新数字
  */
-function fixNumber(number: string | number, n = 2) {
+export function fixNumber(number: string | number, n = 2) {
     let reg = new RegExp('^(.*\\..{' + n + '}).*$')
     number = '' + number
     if (!/^(\-|\+)?\d+(\.\d+)?$/.test(number)) {

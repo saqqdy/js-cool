@@ -4,7 +4,7 @@
  * @param target - 目标
  * @returns 类型
  */
-function getType(target: any): string {
+export function getType(target: any): string {
     let type = {
         '[object Array]': 'array',
         '[object Boolean]': 'boolean',

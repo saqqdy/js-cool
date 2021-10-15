@@ -3,7 +3,7 @@
  *
  * @returns 返回位置
  */
-const getScrollPosition = (): string | void => {
+export const getScrollPosition = (): string | void => {
     var innerH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     var docScrollTop = document.documentElement.scrollTop
     var bodyScrollTop = document.body.scrollTop

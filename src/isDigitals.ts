@@ -4,7 +4,7 @@
  * @param str - 待检测的字符串
  * @returns 返回true/false
  */
-function isDigitals(str: any): boolean {
+export function isDigitals(str: any): boolean {
     return /^[0-9]*$/.test(str)
 }
 

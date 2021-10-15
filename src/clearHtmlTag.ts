@@ -4,7 +4,7 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-function clearHtmlTag(string: string) {
+export function clearHtmlTag(string: string) {
     return string.replace(/<[^>]+>/g, '')
 }
 

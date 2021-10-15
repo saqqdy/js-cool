@@ -10,7 +10,7 @@
  * @param item - 要查找的目标
  * @returns boolean
  */
-function contains(arr: any[], item: any): boolean {
+export function contains(arr: any[], item: any): boolean {
     for (const el of arr) {
         if (el === item) return true
     }

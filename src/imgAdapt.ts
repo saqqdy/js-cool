@@ -5,7 +5,7 @@
  * @param size - 图片规格
  * @returns 返回新地址
  */
-function imgAdapt(imgurl: string, size: string) {
+export function imgAdapt(imgurl: string, size: string) {
     if (!imgurl) {
         return false
     }

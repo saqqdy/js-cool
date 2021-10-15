@@ -3,7 +3,7 @@
  *
  * @returns 返回对象
  */
-export default {
+export const pattern = {
     any: /[\w\W]+/,
     number: /^\d+$/,
     string: /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
@@ -25,3 +25,5 @@ export default {
     isjson: /[\s\S]*(\{[\s\S]*\})[\s\S]*/,
     textarea: /[\u4e00-\u9fa5_a-zA-Z0-9\,\.\/\?\;\:\'\"\[\]\-\*\(\)\（\）\%\$\@\\\!\，\《\》\。\、\？\；\：\‘\’\“\”\…\￥\！]/
 }
+
+export default pattern

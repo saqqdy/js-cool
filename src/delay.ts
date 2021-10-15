@@ -5,7 +5,7 @@ import type { AnyFunction } from '../typings/common'
  *
  * @returns class
  */
-function delay() {
+export function delay() {
     return {
         map: {} as any,
         register(id: string, fn: AnyFunction, time: number, boo: boolean) {

@@ -3,7 +3,7 @@
  *
  * @param name - 名称
  */
-function delCache(name: string) {
+export function delCache(name: string) {
     localStorage.removeItem(name)
 }
 

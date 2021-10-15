@@ -13,7 +13,7 @@ import type { AnyObject } from '../typings/common'
  * @param nullFix - 选填，没有对应属性时返回的值，默认不返回该属性
  * @returns 返回清洗后的对象
  */
-function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
+export function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
     let result: any = {}
     if (!data) return
     if (!map) return data

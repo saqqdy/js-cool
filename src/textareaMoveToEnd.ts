@@ -3,7 +3,7 @@
  *
  * @param obj - dom对象
  */
-function textareaMoveToEnd(obj: HTMLTextAreaElement) {
+export function textareaMoveToEnd(obj: HTMLTextAreaElement) {
     obj.focus()
     var len = obj.value.length
     if ((document as any).selection) {

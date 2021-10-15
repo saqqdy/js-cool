@@ -11,7 +11,7 @@ function isPlainObject(obj: any) {
 }
 
 //对象扩展
-let extend = (function () {
+export let extend = (function () {
     /**
      * @param target - 目标
      * @param source - 源

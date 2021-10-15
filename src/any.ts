@@ -14,6 +14,6 @@ import type { AnyFunction } from '../typings/common'
  * @param fn - 判断方法
  * @returns 返回判断结果
  */
-const any = (arr: any[], fn: AnyFunction) => arr.some(fn)
+export const any = (arr: any[], fn: AnyFunction) => arr.some(fn)
 
 export default any

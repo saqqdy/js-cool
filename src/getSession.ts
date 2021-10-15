@@ -4,7 +4,7 @@
  * @param name - 名称
  * @returns 返回sessionStorage
  */
-function getSession(name: string): any {
+export function getSession(name: string): any {
     var str = sessionStorage.getItem(name)
     var exp = new Date()
     if (str) {

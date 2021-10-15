@@ -20,7 +20,7 @@
  * @param str - 字符串
  * @returns 返回长度
  */
-function getCHSLength(str: string): number {
+export function getCHSLength(str: string): number {
     return str.replace(/[^\x00-\xff]/g, '**').length
 }
 

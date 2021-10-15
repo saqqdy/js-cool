@@ -8,7 +8,7 @@ import type { AnyFunction } from '../typings/common'
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
  */
-function throttle(fn: AnyFunction, delay: number, immediate: boolean, debounce: boolean) {
+export function throttle(fn: AnyFunction, delay: number, immediate: boolean, debounce: boolean) {
     var curr = +new Date(), //当前事件
         last_call = 0,
         last_exec = 0,

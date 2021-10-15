@@ -4,7 +4,7 @@
  * @param string - 需要转换的字符串
  * @returns 返回转换后的字符串
  */
-function dash2Camel(string: string) {
+export function dash2Camel(string: string) {
     return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {
         return arguments[1].toLocaleUpperCase()
     })
