@@ -397,6 +397,18 @@ export declare function enWxJumpLinkOld(string: string): string;
 export declare let extend: <T = object | any[]>(target: boolean | T, ...args: ArrayOneMore<any>) => T;
 
 /**
+ * 读取完整IPv6
+ *
+ * @example
+ * ```js
+ * fillIPv6('2409:8005:800::2'); // '2409:8005:0800:0000:0000:0000:0000:0002'
+ * fillIPv6('2409:8005:800::1c'); // '2409:8005:0800:0000:0000:0000:0000:001c'
+ * ```
+ * @returns string
+ */
+export declare function fillIPv6(ip: string): string;
+
+/**
  * 截取小数点后几位，不足的不补0
  *
  * @param number - 要处理的数字，必填

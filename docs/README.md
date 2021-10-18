@@ -1,4 +1,4 @@
-index.md - v2.2.1 / [Exports](modules.md)
+index.md - v2.2.2 / [Exports](modules.md)
 
 # js-cool
 
@@ -218,6 +218,7 @@ download(url, filename) // 下载文件
     complement, // 多个数组求补集
     contains, // 数组是否包含指定元素
     unique, // 数组去重
+    fillIPv6, // ipv6地址补全
 }
 ```
 

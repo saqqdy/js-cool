@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.1
+ * js-cool v2.2.2
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -2003,6 +2003,28 @@ function complement(...args) {
     return unionArray.filter(item => !contains(intersectArray, item));
 }
 
+/**
+ * 读取完整IPv6
+ *
+ * @example
+ * ```js
+ * fillIPv6('2409:8005:800::2'); // '2409:8005:0800:0000:0000:0000:0000:0002'
+ * fillIPv6('2409:8005:800::1c'); // '2409:8005:0800:0000:0000:0000:0000:001c'
+ * ```
+ * @returns string
+ */
+function fillIPv6(ip) {
+    return ip
+        .replace(/\w+/g, a => ('000' + a).substr(-4))
+        .replace(/::/, () => {
+        let dotLen = 8 - ip.match(/:/g).length, str = ':';
+        while (dotLen--) {
+            str += '0000:';
+        }
+        return str;
+    });
+}
+
 exports.CSVToArray = CSVToArray;
 exports.CSVToJSON = CSVToJSON;
 exports.JSONToCSV = JSONToCSV;
@@ -2040,6 +2062,7 @@ exports.enWxJumpLinkOld = enWxJumpLinkOld;
 exports.encodeBase64 = encodeBase64;
 exports.encodeUtf8 = encodeUtf8;
 exports.extend = extend;
+exports.fillIPv6 = fillIPv6;
 exports.fixNumber = fixNumber;
 exports.formatTime = formatTime;
 exports.formatTimeStr = formatTimeStr;

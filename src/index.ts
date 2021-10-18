@@ -106,3 +106,4 @@ export * from './minus' // 多个数组求差集
 export * from './complement' // 多个数组求补集
 export * from './contains' // 数组是否包含指定元素
 export * from './unique' // 数组去重
+export * from './fillIPv6' // ipv6地址补全

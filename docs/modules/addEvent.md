@@ -1,4 +1,4 @@
-[index.md - v2.2.1](../README.md) / [Exports](../modules.md) / addEvent
+[index.md - v2.2.2](../README.md) / [Exports](../modules.md) / addEvent
 
 # Namespace: addEvent
 

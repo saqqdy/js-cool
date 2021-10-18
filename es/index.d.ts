@@ -87,3 +87,4 @@ export * from './minus';
 export * from './complement';
 export * from './contains';
 export * from './unique';
+export * from './fillIPv6';
