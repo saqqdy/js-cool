@@ -3,6 +3,11 @@
     "version": "2.2.2",
     "description": "一些常用的JS方法，支持按需引入",
     "main": "lib/index.js",
+    "module": "lib/index.esm.js",
+    "browser": {
+        "lib/index.js": "lib/index.umd.js"
+    },
+    "unpkg": "lib/index.js",
     "typings": "lib/index.d.ts",
     "directories": {
         "es": "es",
