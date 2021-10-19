@@ -14,7 +14,22 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export const JSONToCSV = (arr: any[], columns: any[], delimiter: string = ','): string =>
-    [columns.join(delimiter), ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))].join('\n')
+export const JSONToCSV = (
+    arr: any[],
+    columns: any[],
+    delimiter: string = ','
+): string =>
+    [
+        columns.join(delimiter),
+        ...arr.map(obj =>
+            columns.reduce(
+                (acc, key) =>
+                    `${acc}${!acc.length ? '' : delimiter}"${
+                        !obj[key] ? '' : obj[key]
+                    }"`,
+                ''
+            )
+        )
+    ].join('\n')
 
 export default JSONToCSV

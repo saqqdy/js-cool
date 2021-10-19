@@ -87,7 +87,11 @@ module.exports = [
                                     modules: 'auto',
                                     useBuiltIns: 'usage',
                                     corejs: 3,
-                                    targets: ['defaults', 'not IE <= 11', 'maintained node versions']
+                                    targets: [
+                                        'defaults',
+                                        'not IE <= 11',
+                                        'maintained node versions'
+                                    ]
                                     // targets: { chrome: '58', ie: '11' }
                                 }
                             ]

@@ -20,7 +20,10 @@ export function CSVToJSON(data: string, delimiter = ',') {
         .split('\n')
         .map((v: string) => {
             const values = v.split(delimiter)
-            return titles.reduce((obj: any, title, index) => ((obj[title] = values[index]), obj), {})
+            return titles.reduce(
+                (obj: any, title, index) => ((obj[title] = values[index]), obj),
+                {}
+            )
         })
 }
 

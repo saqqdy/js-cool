@@ -9,12 +9,18 @@ export function textareaInsertText(obj: HTMLTextAreaElement, str: string) {
         // IE
         var sel = (document as any).selection.createRange()
         sel.text = str
-    } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+    } else if (
+        typeof obj.selectionStart === 'number' &&
+        typeof obj.selectionEnd === 'number'
+    ) {
         var startPos = obj.selectionStart,
             endPos = obj.selectionEnd,
             curPos = startPos,
             tmpStr = obj.value
-        obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length)
+        obj.value =
+            tmpStr.substring(0, startPos) +
+            str +
+            tmpStr.substring(endPos, tmpStr.length)
         curPos += str.length
         setTimeout(function () {
             obj.selectionStart = obj.selectionEnd = curPos

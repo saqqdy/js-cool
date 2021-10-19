@@ -9,7 +9,11 @@
  * @param filename - 文件名
  * @param type - 下载类型 'href','open','download','request'
  */
-export function download(url: string, filename: string, type: string = 'download') {
+export function download(
+    url: string,
+    filename: string,
+    type: string = 'download'
+) {
     // @ts-ignore
     let name = /[^\/]+$/.exec(url)[0],
         // @ts-ignore
@@ -52,7 +56,9 @@ function openFile(url: string, filename: string, fileType: string) {
  */
 function downloadUrlFile(url: string, filename: string) {
     // @ts-ignore
-    let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
+    let xhr = window.XMLHttpRequest
+        ? new XMLHttpRequest()
+        : new ActiveXObject('Microsoft.XMLHTTP')
     xhr.open('GET', url, true)
     xhr.responseType = 'blob'
     xhr.onload = () => {
@@ -73,7 +79,10 @@ function downloadUrlFile(url: string, filename: string) {
 function saveFile(data: any, filename: string) {
     const urlObject = window.URL || window.webkitURL || window
     const blob = new Blob([data])
-    let link: any = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+    let link: any = document.createElementNS(
+        'http://www.w3.org/1999/xhtml',
+        'a'
+    )
     link.href = urlObject.createObjectURL(blob)
     link.download = filename
     link.click()

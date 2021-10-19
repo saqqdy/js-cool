@@ -14,9 +14,16 @@ import getAppVersion from './getAppVersion'
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export function getIsAppVersionLastest(appName: string, compareVer: string, userAgent?: string): boolean | null {
+export function getIsAppVersionLastest(
+    appName: string,
+    compareVer: string,
+    userAgent?: string
+): boolean | null {
     userAgent = userAgent || navigator.appVersion
-    var basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+    var basicVer =
+        appName.indexOf('.') > 0
+            ? appName
+            : getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
     if (basicVer === null) {
         return null
     } // 不是指定客户端

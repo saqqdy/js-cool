@@ -36,7 +36,11 @@
  * @param hasDot -
  * @returns 返回截取后的字符串
  */
-export function cutCHSString(str: string, len: number = str.length, hasDot: boolean = false) {
+export function cutCHSString(
+    str: string,
+    len: number = str.length,
+    hasDot: boolean = false
+) {
     if (str == '' || !str) {
         return ''
     } else {

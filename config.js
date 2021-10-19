@@ -6,12 +6,46 @@ let externals = {}
 
 // externals = [Object.assign({}, externals), nodeExternals() /*, /^core-js\/.+$/, /^js-cool\/.+$/*/]
 
-exports.banner = '/*!\n' + ' * ' + pkg.name + ' v' + pkg.version + '\n' + ' * ' + pkg.description + '\n' + ' * (c) 2019-' + new Date().getFullYear() + ' saqqdy \n' + ' * Released under the MIT License.\n' + ' */'
-exports.bannerText = pkg.name + ' v' + pkg.version + '\n' + pkg.description + '\n' + '(c) 2019-' + new Date().getFullYear() + ' saqqdy \n' + 'Released under the MIT License.'
+exports.banner =
+    '/*!\n' +
+    ' * ' +
+    pkg.name +
+    ' v' +
+    pkg.version +
+    '\n' +
+    ' * ' +
+    pkg.description +
+    '\n' +
+    ' * (c) 2019-' +
+    new Date().getFullYear() +
+    ' saqqdy \n' +
+    ' * Released under the MIT License.\n' +
+    ' */'
+exports.bannerText =
+    pkg.name +
+    ' v' +
+    pkg.version +
+    '\n' +
+    pkg.description +
+    '\n' +
+    '(c) 2019-' +
+    new Date().getFullYear() +
+    ' saqqdy \n' +
+    'Released under the MIT License.'
 exports.externals = externals
 exports.version = pkg.version
 
-exports.extensions = ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json']
+exports.extensions = [
+    '.js',
+    '.jsx',
+    '.ts',
+    '.tsx',
+    '.es6',
+    '.es',
+    '.mjs',
+    '.ts',
+    '.json'
+]
 
 exports.alias = {
     '@': path.resolve(__dirname, '../src'),

@@ -7,6 +7,7 @@
  * @param b - RGB第3个值
  * @returns hex值
  */
-export const RGBToHex = (r: number, g: number, b: number): string => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')
+export const RGBToHex = (r: number, g: number, b: number): string =>
+    ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')
 
 export default RGBToHex

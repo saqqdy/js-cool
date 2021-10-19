@@ -17,6 +17,13 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export const arrayToCSV = (arr: any[], delimiter: string = ',') => arr.map(v => v.map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)).join('\n')
+export const arrayToCSV = (arr: any[], delimiter: string = ',') =>
+    arr
+        .map(v =>
+            v
+                .map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x))
+                .join(delimiter)
+        )
+        .join('\n')
 
 export default arrayToCSV

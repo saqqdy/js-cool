@@ -6,7 +6,11 @@
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export function getAppVersion(appName: string, withappstr?: boolean, userAgent?: string): string | boolean | null {
+export function getAppVersion(
+    appName: string,
+    withappstr?: boolean,
+    userAgent?: string
+): string | boolean | null {
     userAgent = userAgent || navigator.appVersion
     var reg = eval('/' + appName + '\\/([\\d\\.]+)/i')
     var isApp = userAgent.includes(appName)

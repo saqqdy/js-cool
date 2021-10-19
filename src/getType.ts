@@ -17,7 +17,9 @@ export function getType(target: any): string {
     } as any
 
     if (target === null) return target + ''
-    return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target
+    return typeof target === 'object' || typeof target === 'function'
+        ? type[Object.prototype.toString.call(target)] || 'object'
+        : typeof target
 }
 
 export default getType

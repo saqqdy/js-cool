@@ -23,7 +23,9 @@ export function decodeUtf8(utftext: string) {
         } else {
             c2 = utftext.charCodeAt(i + 1)
             c3 = utftext.charCodeAt(i + 2)
-            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63))
+            string += String.fromCharCode(
+                ((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63)
+            )
             i += 3
         }
     }

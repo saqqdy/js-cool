@@ -4,7 +4,10 @@
  * @returns 返回位置
  */
 export const getScrollPosition = (): string | void => {
-    var innerH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    var innerH =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight
     var docScrollTop = document.documentElement.scrollTop
     var bodyScrollTop = document.body.scrollTop
     var docScrollHeight = document.documentElement.scrollHeight
@@ -24,7 +27,10 @@ export const getScrollPosition = (): string | void => {
     // if(bodyScrollTop === 0 && docScrollTop === 0){
     //   return 'top';
     // }
-    if (innerH + Math.floor(scrollT) === scrollH || innerH + Math.ceil(scrollT) === scrollH) {
+    if (
+        innerH + Math.floor(scrollT) === scrollH ||
+        innerH + Math.ceil(scrollT) === scrollH
+    ) {
         return 'bottom'
     }
 }

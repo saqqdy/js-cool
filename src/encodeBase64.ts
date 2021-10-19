@@ -1,5 +1,6 @@
 import encodeUtf8 from './encodeUtf8'
-const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+const _keyStr =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 /**
  * 字符串、数字转base64
@@ -25,7 +26,12 @@ export function encodeBase64(input: string) {
         } else if (isNaN(chr3)) {
             enc4 = 64
         }
-        output = output + _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + _keyStr.charAt(enc3) + _keyStr.charAt(enc4)
+        output =
+            output +
+            _keyStr.charAt(enc1) +
+            _keyStr.charAt(enc2) +
+            _keyStr.charAt(enc3) +
+            _keyStr.charAt(enc4)
     }
     return output
 }

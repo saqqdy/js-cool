@@ -12,7 +12,11 @@ import type { AnyObject, AnyFunction } from '../typings/common'
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-export function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
+export function addEvent(
+    element: AnyObject,
+    type: string,
+    handler: AnyFunction
+) {
     if (element.addEventListener) {
         element.addEventListener(type, handler, false)
     } else {
@@ -49,7 +53,17 @@ function handleEvent(event: any): boolean {
     var returnValue = true
     //抓获事件对象(IE使用全局事件对象)
     // @ts-ignore
-    event = event || fixEvent((((this as any).ownerDocument || (this as any).document || (this as any)).parentWindow || window).event)
+    event =
+        event ||
+        fixEvent(
+            (
+                (
+                    (this as any).ownerDocument ||
+                    (this as any).document ||
+                    (this as any)
+                ).parentWindow || window
+            ).event
+        )
     // 取得事件处理函数的哈希表的引用
     // @ts-ignore
     var handlers = (this as any).events[event.type]

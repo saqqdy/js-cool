@@ -11,7 +11,10 @@ export function textareaMoveToEnd(obj: HTMLTextAreaElement) {
         sel.moveStart('character', len)
         sel.collapse()
         sel.select()
-    } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+    } else if (
+        typeof obj.selectionStart == 'number' &&
+        typeof obj.selectionEnd == 'number'
+    ) {
         obj.selectionStart = obj.selectionEnd = len
     }
 }
