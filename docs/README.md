@@ -1,4 +1,4 @@
-index.md - v2.2.2 / [Exports](modules.md)
+index.md - v2.2.3 / [Exports](modules.md)
 
 # js-cool
 

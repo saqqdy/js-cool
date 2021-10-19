@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.2
+ * js-cool v2.2.3
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
