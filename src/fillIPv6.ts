@@ -11,13 +11,13 @@
 export function fillIPv6(ip: string): string {
     return ip
         .replace(/\w+/g, a => ('000' + a).substr(-4))
-        .replace(/::/, () => {
+        .replace(/(\w*)::(\w*)/, (a, b, c) => {
             let dotLen = 8 - ip.match(/:/g)!.length,
                 str = ':'
             while (dotLen--) {
                 str += '0000:'
             }
-            return str
+            return (b || '0000') + str + (c || '0000')
         })
 }
 
