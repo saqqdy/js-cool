@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -57,7 +57,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @returns 返回参数列表
  */
 function getUrlParam(url) {
-    url = url !== '' && typeof url !== 'undefined' ? url.substr(url.indexOf('?')).split('#')[0] : location.search; //获取url中"?"符后的字串
+    url =
+        url !== '' && typeof url !== 'undefined'
+            ? url.substr(url.indexOf('?')).split('#')[0]
+            : location.search; //获取url中"?"符后的字串
     var search = url.substring(url.lastIndexOf('?') + 1);
     var obj = {};
     var reg = /([^?&=]+)=([^?&=]*)/g;

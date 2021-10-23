@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -20,7 +20,9 @@ function splitThousand(val) {
     val = val.toString();
     if (val.split('.').length == 1)
         return (val || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
-    return val.split('.')[0].replace(/(\d)(?=(?:\d{3})+$)/g, '$&,') + '.' + val.split('.')[1];
+    return (val.split('.')[0].replace(/(\d)(?=(?:\d{3})+$)/g, '$&,') +
+        '.' +
+        val.split('.')[1]);
 }
 
 exports["default"] = splitThousand;

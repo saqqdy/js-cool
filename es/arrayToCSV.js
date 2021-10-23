@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -27,7 +27,11 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.map((x) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)).join('\n');
+const arrayToCSV = (arr, delimiter = ',') => arr
+    .map(v => v
+    .map((x) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x))
+    .join(delimiter))
+    .join('\n');
 
 exports.arrayToCSV = arrayToCSV;
 exports["default"] = arrayToCSV;

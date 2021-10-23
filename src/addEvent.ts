@@ -1,10 +1,5 @@
 import type { AnyObject, AnyFunction } from '../typings/common'
 
-// export interface CustomEvent extends Event {
-//     returnValue: boolean
-//     cancelBubble: boolean
-// }
-
 /**
  * addEvent()事件委托，支持多次委托
  *
@@ -51,17 +46,15 @@ addEvent.guid = 1
  */
 function handleEvent(event: any): boolean {
     var returnValue = true
-    //抓获事件对象(IE使用全局事件对象)
     // @ts-ignore
+    var that: any = this
+    //抓获事件对象(IE使用全局事件对象)
     event =
         event ||
         fixEvent(
             (
-                (
-                    (this as any).ownerDocument ||
-                    (this as any).document ||
-                    (this as any)
-                ).parentWindow || window
+                (that.ownerDocument || that.document || that).parentWindow ||
+                window
             ).event
         )
     // 取得事件处理函数的哈希表的引用

@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -62,8 +62,10 @@ function openFile(url, filename, fileType) {
  * @param filename - 文件名
  */
 function downloadUrlFile(url, filename) {
-    // @ts-ignore
-    let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let xhr = window.XMLHttpRequest
+        ? new XMLHttpRequest()
+        : // @ts-ignore
+            new ActiveXObject('Microsoft.XMLHTTP');
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';
     xhr.onload = () => {

@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -26,7 +26,9 @@ function throttle(fn, delay, immediate, debounce) {
     };
     return function () {
         curr = +new Date();
-        (context = this), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay);
+        (context = this),
+            (args = arguments),
+            (diff = curr - (debounce ? last_call : last_exec) - delay);
         clearTimeout(timer);
         if (debounce) {
             if (immediate) {

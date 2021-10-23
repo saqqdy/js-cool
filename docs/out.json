@@ -1,6 +1,6 @@
 {
     "id": 0,
-    "name": "index.md - v2.2.3",
+    "name": "index.md - v2.2.4",
     "kind": 1,
     "kindString": "Project",
     "flags": {},
@@ -1036,7 +1036,7 @@
             "sources": [
                 {
                     "fileName": "src/addEvent.ts",
-                    "line": 15,
+                    "line": 10,
                     "character": 16
                 }
             ],
@@ -2529,7 +2529,7 @@
             "sources": [
                 {
                     "fileName": "src/decodeBase64.ts",
-                    "line": 10,
+                    "line": 11,
                     "character": 16
                 }
             ],
@@ -3104,7 +3104,7 @@
             "sources": [
                 {
                     "fileName": "src/encodeBase64.ts",
-                    "line": 10,
+                    "line": 11,
                     "character": 16
                 }
             ],
@@ -3195,7 +3195,7 @@
             "sources": [
                 {
                     "fileName": "src/extend.ts",
-                    "line": 14,
+                    "line": 18,
                     "character": 11
                 }
             ],
@@ -4189,6 +4189,101 @@
                                 "value": null
                             }
                         ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": 384,
+            "name": "getProperty",
+            "kind": 64,
+            "kindString": "Function",
+            "flags": {},
+            "sources": [
+                {
+                    "fileName": "src/getProperty.ts",
+                    "line": 21,
+                    "character": 16
+                }
+            ],
+            "signatures": [
+                {
+                    "id": 385,
+                    "name": "getProperty",
+                    "kind": 4096,
+                    "kindString": "Call signature",
+                    "flags": {},
+                    "comment": {
+                        "shortText": "根据路径字符串获取数组、对象属性值",
+                        "returns": "返回对应的值\n",
+                        "tags": [
+                            {
+                                "tag": "example",
+                                "text": "\n```js\nconst target = {\n     a: 1,\n     b: [{\n         c: 2\n     }]\n}\ngetProperty(target, 'a') // 1\ngetProperty(target, 'b[0].c') // 2\ngetProperty(target, () => 'a') // 1\n```"
+                            }
+                        ]
+                    },
+                    "parameters": [
+                        {
+                            "id": 386,
+                            "name": "target",
+                            "kind": 32768,
+                            "kindString": "Parameter",
+                            "flags": {},
+                            "comment": {
+                                "shortText": "目标数组、对象"
+                            },
+                            "type": {
+                                "type": "intrinsic",
+                                "name": "any"
+                            }
+                        },
+                        {
+                            "id": 387,
+                            "name": "prop",
+                            "kind": 32768,
+                            "kindString": "Parameter",
+                            "flags": {},
+                            "comment": {
+                                "shortText": "查询目标，可传function"
+                            },
+                            "type": {
+                                "type": "union",
+                                "types": [
+                                    {
+                                        "type": "intrinsic",
+                                        "name": "string"
+                                    },
+                                    {
+                                        "type": "reflection",
+                                        "declaration": {
+                                            "id": 388,
+                                            "name": "__type",
+                                            "kind": 65536,
+                                            "kindString": "Type literal",
+                                            "flags": {},
+                                            "signatures": [
+                                                {
+                                                    "id": 389,
+                                                    "name": "__type",
+                                                    "kind": 4096,
+                                                    "kindString": "Call signature",
+                                                    "flags": {},
+                                                    "type": {
+                                                        "type": "intrinsic",
+                                                        "name": "string"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "type": {
+                        "type": "intrinsic",
+                        "name": "any"
                     }
                 }
             ]
@@ -6241,7 +6336,7 @@
             "sources": [
                 {
                     "fileName": "src/uuid.ts",
-                    "line": 11,
+                    "line": 10,
                     "character": 13
                 }
             ],
@@ -6298,10 +6393,10 @@
                 338, 343, 347, 352, 256, 324, 328, 334, 95, 302, 64, 67, 70, 73,
                 76, 79, 82, 22, 369, 373, 118, 98, 229, 232, 235, 217, 220, 205,
                 202, 208, 283, 307, 223, 226, 211, 214, 278, 381, 274, 168, 172,
-                141, 115, 196, 193, 156, 162, 151, 85, 146, 159, 104, 108, 112,
-                268, 199, 296, 165, 139, 88, 92, 357, 299, 130, 133, 136, 365,
-                270, 318, 263, 312, 183, 176, 188, 321, 250, 253, 123, 127, 242,
-                60, 361, 377, 101, 332
+                141, 115, 196, 193, 156, 162, 151, 85, 146, 159, 384, 104, 108,
+                112, 268, 199, 296, 165, 139, 88, 92, 357, 299, 130, 133, 136,
+                365, 270, 318, 263, 312, 183, 176, 188, 321, 250, 253, 123, 127,
+                242, 60, 361, 377, 101, 332
             ]
         }
     ],

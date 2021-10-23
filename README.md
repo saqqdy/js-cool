@@ -217,6 +217,7 @@ download(url, filename) // 下载文件
     contains, // 数组是否包含指定元素
     unique, // 数组去重
     fillIPv6, // ipv6地址补全
+    getProperty', // 根据路径字符串获取数组、对象属性值
 }
 ```
 

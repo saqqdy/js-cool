@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -31,7 +31,9 @@ function getOsVersion(osName, withosstr, userAgent) {
     }
     var reg = eval('/' + name + '\\s[\\d\\_]+/ig');
     // var isApp = userAgent.includes(name)
-    var ver = (userAgent.match(reg) + '').replace(/\s/gi, '/').replace(/_/gi, '.');
+    var ver = (userAgent.match(reg) + '')
+        .replace(/\s/gi, '/')
+        .replace(/_/gi, '.');
     if (index > -1) {
         ver = ver.replace(/OS\//gi, osName + '/');
     }

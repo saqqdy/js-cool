@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -36,7 +36,9 @@ function formatTime(time, fmt = 'yyyy-MM-dd') {
         fmt = fmt.replace(RegExp.$1, ('' + time.getFullYear()).substr(4 - RegExp.$1.length));
     for (var k in o) {
         if (new RegExp('(' + k + ')').test(fmt))
-            fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+            fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1
+                ? o[k]
+                : ('00' + o[k]).substr(('' + o[k]).length));
     }
     return fmt;
 }

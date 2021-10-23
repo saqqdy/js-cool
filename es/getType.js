@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -27,7 +27,9 @@ function getType(target) {
     };
     if (target === null)
         return target + '';
-    return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target;
+    return typeof target === 'object' || typeof target === 'function'
+        ? type[Object.prototype.toString.call(target)] || 'object'
+        : typeof target;
 }
 
 exports["default"] = getType;

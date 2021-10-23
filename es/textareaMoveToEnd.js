@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -22,7 +22,8 @@ function textareaMoveToEnd(obj) {
         sel.collapse();
         sel.select();
     }
-    else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+    else if (typeof obj.selectionStart == 'number' &&
+        typeof obj.selectionEnd == 'number') {
         obj.selectionStart = obj.selectionEnd = len;
     }
 }

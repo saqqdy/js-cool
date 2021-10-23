@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -18,15 +18,19 @@ const client = (name = '', userAgent = navigator.appVersion) => {
     }
     else {
         return {
-            IE: userAgentL.indexOf('msie') > -1 && userAgentL.indexOf('opera') === -1,
-            GECKO: userAgentL.indexOf('gecko') > -1 && userAgentL.indexOf('khtml') === -1,
+            IE: userAgentL.indexOf('msie') > -1 &&
+                userAgentL.indexOf('opera') === -1,
+            GECKO: userAgentL.indexOf('gecko') > -1 &&
+                userAgentL.indexOf('khtml') === -1,
             WEBKIT: userAgentL.indexOf('applewebkit') > -1,
-            OPERA: userAgentL.indexOf('opera') > -1 && userAgentL.indexOf('presto') > -1,
+            OPERA: userAgentL.indexOf('opera') > -1 &&
+                userAgentL.indexOf('presto') > -1,
             TRIDENT: userAgentL.indexOf('trident') > -1,
             MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/),
             // MOBILEDEVICE: !!userAgentL.match(/iphone|android|phone|mobile|wap|netfront|x11|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i), // 是否为移动终端
             IOS: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
-            ANDROID: userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1,
+            ANDROID: userAgent.indexOf('Android') > -1 ||
+                userAgent.indexOf('Adr') > -1,
             IPHONE: userAgent.indexOf('iPhone') > -1,
             IPAD: userAgent.indexOf('iPad') > -1,
             // WEBAPP: !userAgent.indexOf('Safari') > -1, //是否web应该程序，没有头部与底部
@@ -285,7 +289,9 @@ function getRandomNum(min = 1, max = 10) {
  * @returns 随机串
  */
 function getRandomStr(len = 32, widthSpecialChar = false) {
-    var chars = !widthSpecialChar ? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678' : 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.'; //默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+    var chars = !widthSpecialChar
+        ? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+        : 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.'; //默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
     //var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
     var maxPos = chars.length;
     var str = '';
@@ -415,9 +421,13 @@ function textareaInsertText(obj, str) {
         var sel = document.selection.createRange();
         sel.text = str;
     }
-    else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+    else if (typeof obj.selectionStart === 'number' &&
+        typeof obj.selectionEnd === 'number') {
         var startPos = obj.selectionStart, endPos = obj.selectionEnd, curPos = startPos, tmpStr = obj.value;
-        obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+        obj.value =
+            tmpStr.substring(0, startPos) +
+                str +
+                tmpStr.substring(endPos, tmpStr.length);
         curPos += str.length;
         setTimeout(function () {
             obj.selectionStart = obj.selectionEnd = curPos;
@@ -442,7 +452,8 @@ function textareaMoveToEnd(obj) {
         sel.collapse();
         sel.select();
     }
-    else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+    else if (typeof obj.selectionStart == 'number' &&
+        typeof obj.selectionEnd == 'number') {
         obj.selectionStart = obj.selectionEnd = len;
     }
 }
@@ -573,7 +584,9 @@ function getOsVersion(osName, withosstr, userAgent) {
     }
     var reg = eval('/' + name + '\\s[\\d\\_]+/ig');
     // var isApp = userAgent.includes(name)
-    var ver = (userAgent.match(reg) + '').replace(/\s/gi, '/').replace(/_/gi, '.');
+    var ver = (userAgent.match(reg) + '')
+        .replace(/\s/gi, '/')
+        .replace(/_/gi, '.');
     if (index > -1) {
         ver = ver.replace(/OS\//gi, osName + '/');
     }
@@ -596,7 +609,9 @@ function getOsVersion(osName, withosstr, userAgent) {
  */
 function getIsAppVersionLastest(appName, compareVer, userAgent) {
     userAgent = userAgent || navigator.appVersion;
-    var basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+    var basicVer = appName.indexOf('.') > 0
+        ? appName
+        : getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
     if (basicVer === null) {
         return null;
     } // 不是指定客户端
@@ -632,7 +647,9 @@ function getIsAppVersionLastest(appName, compareVer, userAgent) {
  * @returns 返回参数对象
  */
 function getDirParam(url) {
-    var urlStr = url !== '' && typeof url !== 'undefined' ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1') : location.pathname; // 获取url中域名后的字串:/post/0703/a1.html
+    var urlStr = url !== '' && typeof url !== 'undefined'
+        ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1')
+        : location.pathname; // 获取url中域名后的字串:/post/0703/a1.html
     urlStr = urlStr.replace(/^\//, '');
     var dirParam = { path: [], host: '' };
     // 获取域名，包含http://
@@ -735,7 +752,10 @@ function getFileType(url) {
  * @returns 返回参数列表
  */
 function getUrlParam(url) {
-    url = url !== '' && typeof url !== 'undefined' ? url.substr(url.indexOf('?')).split('#')[0] : location.search; //获取url中"?"符后的字串
+    url =
+        url !== '' && typeof url !== 'undefined'
+            ? url.substr(url.indexOf('?')).split('#')[0]
+            : location.search; //获取url中"?"符后的字串
     var search = url.substring(url.lastIndexOf('?') + 1);
     var obj = {};
     var reg = /([^?&=]+)=([^?&=]*)/g;
@@ -777,7 +797,9 @@ function formatTime(time, fmt = 'yyyy-MM-dd') {
         fmt = fmt.replace(RegExp.$1, ('' + time.getFullYear()).substr(4 - RegExp.$1.length));
     for (var k in o) {
         if (new RegExp('(' + k + ')').test(fmt))
-            fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+            fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1
+                ? o[k]
+                : ('00' + o[k]).substr(('' + o[k]).length));
     }
     return fmt;
 }
@@ -828,7 +850,17 @@ function formatTimeStr(time, fmt) {
 function setCookie(name, value, seconds = 86400, path = '/', samesite = true) {
     var exp = new Date();
     exp.setTime(exp.getTime() + seconds * 1000);
-    document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + exp.toUTCString() + ';path=' + path + (samesite && location.protocol === 'https:' ? ';SameSite=None;Secure' : '');
+    document.cookie =
+        name +
+            '=' +
+            encodeURIComponent(value) +
+            ';expires=' +
+            exp.toUTCString() +
+            ';path=' +
+            path +
+            (samesite && location.protocol === 'https:'
+                ? ';SameSite=None;Secure'
+                : '');
 }
 
 /**
@@ -946,7 +978,8 @@ function delCookie(name) {
     e.setTime(e.getTime() - 1);
     var cval = getCookie(name);
     if (cval !== null) {
-        document.cookie = name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/';
+        document.cookie =
+            name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/';
     }
 }
 
@@ -1021,7 +1054,12 @@ function encodeBase64(input) {
         else if (isNaN(chr3)) {
             enc4 = 64;
         }
-        output = output + _keyStr$1.charAt(enc1) + _keyStr$1.charAt(enc2) + _keyStr$1.charAt(enc3) + _keyStr$1.charAt(enc4);
+        output =
+            output +
+                _keyStr$1.charAt(enc1) +
+                _keyStr$1.charAt(enc2) +
+                _keyStr$1.charAt(enc3) +
+                _keyStr$1.charAt(enc4);
     }
     return output;
 }
@@ -1164,7 +1202,9 @@ function throttle(fn, delay, immediate, debounce) {
     };
     return function () {
         curr = +new Date();
-        (context = this), (args = arguments), (diff = curr - (debounce ? last_call : last_exec) - delay);
+        (context = this),
+            (args = arguments),
+            (diff = curr - (debounce ? last_call : last_exec) - delay);
         clearTimeout(timer);
         if (debounce) {
             if (immediate) {
@@ -1232,10 +1272,6 @@ function stopDefault(e) {
     return false;
 }
 
-// export interface CustomEvent extends Event {
-//     returnValue: boolean
-//     cancelBubble: boolean
-// }
 /**
  * addEvent()事件委托，支持多次委托
  *
@@ -1280,9 +1316,13 @@ addEvent.guid = 1;
  */
 function handleEvent(event) {
     var returnValue = true;
-    //抓获事件对象(IE使用全局事件对象)
     // @ts-ignore
-    event = event || fixEvent(((this.ownerDocument || this.document || this).parentWindow || window).event);
+    var that = this;
+    //抓获事件对象(IE使用全局事件对象)
+    event =
+        event ||
+            fixEvent(((that.ownerDocument || that.document || that).parentWindow ||
+                window).event);
     // 取得事件处理函数的哈希表的引用
     // @ts-ignore
     var handlers = this.events[event.type];
@@ -1341,7 +1381,9 @@ function removeEvent(element, type, handler) {
  * @returns 返回位置
  */
 const getScrollPosition = () => {
-    var innerH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var innerH = window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
     var docScrollTop = document.documentElement.scrollTop;
     var bodyScrollTop = document.body.scrollTop;
     var docScrollHeight = document.documentElement.scrollHeight;
@@ -1361,7 +1403,8 @@ const getScrollPosition = () => {
     // if(bodyScrollTop === 0 && docScrollTop === 0){
     //   return 'top';
     // }
-    if (innerH + Math.floor(scrollT) === scrollH || innerH + Math.ceil(scrollT) === scrollH) {
+    if (innerH + Math.floor(scrollT) === scrollH ||
+        innerH + Math.ceil(scrollT) === scrollH) {
         return 'bottom';
     }
 };
@@ -1428,14 +1471,18 @@ function getType(target) {
     };
     if (target === null)
         return target + '';
-    return typeof target === 'object' || typeof target === 'function' ? type[Object.prototype.toString.call(target)] || 'object' : typeof target;
+    return typeof target === 'object' || typeof target === 'function'
+        ? type[Object.prototype.toString.call(target)] || 'object'
+        : typeof target;
 }
 
 function isWindow(obj) {
     return obj !== null && obj === obj.window;
 }
 function isPlainObject(obj) {
-    return getType(obj) === 'object' && !isWindow(obj) && Object.getPrototypeOf(obj) === Object.prototype;
+    return (getType(obj) === 'object' &&
+        !isWindow(obj) &&
+        Object.getPrototypeOf(obj) === Object.prototype);
 }
 //对象扩展
 let extend = (function () {
@@ -1447,8 +1494,10 @@ let extend = (function () {
     function extend(target, source, deep) {
         for (let key in source)
             if (source.hasOwnProperty(key)) {
-                if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
-                    if (isPlainObject(source[key]) && !isPlainObject(target[key]))
+                if (deep &&
+                    (isPlainObject(source[key]) || isArray(source[key]))) {
+                    if (isPlainObject(source[key]) &&
+                        !isPlainObject(target[key]))
                         target[key] = {};
                     if (isArray(source[key]) && !isArray(target[key]))
                         target[key] = [];
@@ -1625,8 +1674,10 @@ function openFile(url, filename, fileType) {
  * @param filename - 文件名
  */
 function downloadUrlFile(url, filename) {
-    // @ts-ignore
-    let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let xhr = window.XMLHttpRequest
+        ? new XMLHttpRequest()
+        : // @ts-ignore
+            new ActiveXObject('Microsoft.XMLHTTP');
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';
     xhr.onload = () => {
@@ -1678,7 +1729,8 @@ function searchTreeObject(tree, expression, keySet, number = 0) {
      */
     function deepSearch(tree, expression) {
         for (let i = 0; i < tree.length; i++) {
-            if (tree[i][keySet.childName] && tree[i][keySet.childName].length > 0) {
+            if (tree[i][keySet.childName] &&
+                tree[i][keySet.childName].length > 0) {
                 deepSearch(tree[i][keySet.childName], expression);
             }
             let result = true;
@@ -1751,7 +1803,9 @@ function splitThousand(val) {
     val = val.toString();
     if (val.split('.').length == 1)
         return (val || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
-    return val.split('.')[0].replace(/(\d)(?=(?:\d{3})+$)/g, '$&,') + '.' + val.split('.')[1];
+    return (val.split('.')[0].replace(/(\d)(?=(?:\d{3})+$)/g, '$&,') +
+        '.' +
+        val.split('.')[1]);
 }
 
 /**
@@ -1797,8 +1851,10 @@ const any = (arr, fn) => arr.some(fn);
  * ```
  * @returns uuid
  */
+const uuid = () => 
 // @ts-ignore
-const uuid = () => ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16));
+([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^
+    (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16));
 
 /**
  * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
@@ -1819,7 +1875,11 @@ const uuid = () => ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.map((x) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)).join('\n');
+const arrayToCSV = (arr, delimiter = ',') => arr
+    .map(v => v
+    .map((x) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x))
+    .join(delimiter))
+    .join('\n');
 
 /**
  * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
@@ -1888,7 +1948,10 @@ function CSVToJSON(data, delimiter = ',') {
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-const JSONToCSV = (arr, columns, delimiter = ',') => [columns.join(delimiter), ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))].join('\n');
+const JSONToCSV = (arr, columns, delimiter = ',') => [
+    columns.join(delimiter),
+    ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))
+].join('\n');
 
 /**
  * 将RGB组件的值转换为颜色代码。
@@ -2021,4 +2084,40 @@ function fillIPv6(ip) {
     });
 }
 
-export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, complement, contains, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fillIPv6, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, intersect, isArray, isDigitals, isExitsFunction, isExitsVariable, minus, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, union, unique, upperFirst, uuid };
+/**
+ * 根据路径字符串获取数组、对象属性值
+ *
+ * @example
+ * ```js
+ * const target = {
+ *      a: 1,
+ *      b: [{
+ *          c: 2
+ *      }]
+ * }
+ * getProperty(target, 'a') // 1
+ * getProperty(target, 'b[0].c') // 2
+ * getProperty(target, () => 'a') // 1
+ * ```
+ * @param target - 目标数组、对象
+ * @param prop - 查询目标，可传function
+ * @returns 返回对应的值
+ */
+function getProperty(target, prop) {
+    if (!target)
+        throw new Error('请传入target');
+    if (prop instanceof Function)
+        prop = prop();
+    const arr = prop.split('.');
+    for (const p of arr) {
+        let index = -1;
+        p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''));
+        if (p)
+            target = target[p];
+        if (index !== -1 && target)
+            target = target[index];
+    }
+    return target;
+}
+
+export { CSVToArray, CSVToJSON, JSONToCSV, RGBToHex, addEvent, all, any, arrayToCSV, camel2Dash, cleanData, clearAttr, clearBr, clearHtml, clearHtmlExpSN, clearHtmlN, clearHtmlNS, clearHtmlTag, client, complement, contains, cutCHSString, dash2Camel, deWxJumpLink, deWxJumpLinkOld, debounce, decodeBase64, decodeUtf8, delCache, delCookie, delSession, delay, download, enWxJumpLink, enWxJumpLinkOld, encodeBase64, encodeUtf8, extend, fillIPv6, fixNumber, formatTime, formatTimeStr, getAppVersion, getCHSLength, getCache, getCookie, getDirParam, getFileType, getIsAppVersionLastest, getNumber, getOsVersion, getParameter, getProperty, getRandomNum, getRandomStr, getRandomStrWidthSpecialChar, getScrollPosition, getSession, getType, getUrlParam, getWindowSize, imgAdapt, imgChoose, intersect, isArray, isDigitals, isExitsFunction, isExitsVariable, minus, nextIndex, openUrl, pattern, removeEvent, searchTreeObject, setCache, setCookie, setSession, splitThousand, stopBubble, stopDefault, textareaInsertText, textareaMoveToEnd, throttle, trim, union, unique, upperFirst, uuid };

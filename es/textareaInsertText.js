@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -20,9 +20,13 @@ function textareaInsertText(obj, str) {
         var sel = document.selection.createRange();
         sel.text = str;
     }
-    else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+    else if (typeof obj.selectionStart === 'number' &&
+        typeof obj.selectionEnd === 'number') {
         var startPos = obj.selectionStart, endPos = obj.selectionEnd, curPos = startPos, tmpStr = obj.value;
-        obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+        obj.value =
+            tmpStr.substring(0, startPos) +
+                str +
+                tmpStr.substring(endPos, tmpStr.length);
         curPos += str.length;
         setTimeout(function () {
             obj.selectionStart = obj.selectionEnd = curPos;

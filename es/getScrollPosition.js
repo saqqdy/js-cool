@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -14,7 +14,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @returns 返回位置
  */
 const getScrollPosition = () => {
-    var innerH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var innerH = window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
     var docScrollTop = document.documentElement.scrollTop;
     var bodyScrollTop = document.body.scrollTop;
     var docScrollHeight = document.documentElement.scrollHeight;
@@ -34,7 +36,8 @@ const getScrollPosition = () => {
     // if(bodyScrollTop === 0 && docScrollTop === 0){
     //   return 'top';
     // }
-    if (innerH + Math.floor(scrollT) === scrollH || innerH + Math.ceil(scrollT) === scrollH) {
+    if (innerH + Math.floor(scrollT) === scrollH ||
+        innerH + Math.ceil(scrollT) === scrollH) {
         return 'bottom';
     }
 };

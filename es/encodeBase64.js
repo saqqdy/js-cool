@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -36,7 +36,12 @@ function encodeBase64(input) {
         else if (isNaN(chr3)) {
             enc4 = 64;
         }
-        output = output + _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+        output =
+            output +
+                _keyStr.charAt(enc1) +
+                _keyStr.charAt(enc2) +
+                _keyStr.charAt(enc3) +
+                _keyStr.charAt(enc4);
     }
     return output;
 }

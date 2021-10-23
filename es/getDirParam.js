@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -15,7 +15,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @returns 返回参数对象
  */
 function getDirParam(url) {
-    var urlStr = url !== '' && typeof url !== 'undefined' ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1') : location.pathname; // 获取url中域名后的字串:/post/0703/a1.html
+    var urlStr = url !== '' && typeof url !== 'undefined'
+        ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1')
+        : location.pathname; // 获取url中域名后的字串:/post/0703/a1.html
     urlStr = urlStr.replace(/^\//, '');
     var dirParam = { path: [], host: '' };
     // 获取域名，包含http://

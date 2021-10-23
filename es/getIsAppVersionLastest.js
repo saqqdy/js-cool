@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -26,7 +26,9 @@ var getAppVersion = require('./getAppVersion.js');
  */
 function getIsAppVersionLastest(appName, compareVer, userAgent) {
     userAgent = userAgent || navigator.appVersion;
-    var basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion.getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+    var basicVer = appName.indexOf('.') > 0
+        ? appName
+        : getAppVersion.getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
     if (basicVer === null) {
         return null;
     } // 不是指定客户端

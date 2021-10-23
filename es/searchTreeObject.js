@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -34,7 +34,8 @@ function searchTreeObject(tree, expression, keySet, number = 0) {
      */
     function deepSearch(tree, expression) {
         for (let i = 0; i < tree.length; i++) {
-            if (tree[i][keySet.childName] && tree[i][keySet.childName].length > 0) {
+            if (tree[i][keySet.childName] &&
+                tree[i][keySet.childName].length > 0) {
                 deepSearch(tree[i][keySet.childName], expression);
             }
             let result = true;

@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -24,7 +24,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-const JSONToCSV = (arr, columns, delimiter = ',') => [columns.join(delimiter), ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))].join('\n');
+const JSONToCSV = (arr, columns, delimiter = ',') => [
+    columns.join(delimiter),
+    ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))
+].join('\n');
 
 exports.JSONToCSV = JSONToCSV;
 exports["default"] = JSONToCSV;

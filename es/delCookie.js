@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -20,7 +20,8 @@ function delCookie(name) {
     e.setTime(e.getTime() - 1);
     var cval = getCookie.getCookie(name);
     if (cval !== null) {
-        document.cookie = name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/';
+        document.cookie =
+            name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/';
     }
 }
 

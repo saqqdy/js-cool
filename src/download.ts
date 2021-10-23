@@ -55,10 +55,10 @@ function openFile(url: string, filename: string, fileType: string) {
  * @param filename - 文件名
  */
 function downloadUrlFile(url: string, filename: string) {
-    // @ts-ignore
     let xhr = window.XMLHttpRequest
         ? new XMLHttpRequest()
-        : new ActiveXObject('Microsoft.XMLHTTP')
+        : // @ts-ignore
+          new ActiveXObject('Microsoft.XMLHTTP')
     xhr.open('GET', url, true)
     xhr.responseType = 'blob'
     xhr.onload = () => {

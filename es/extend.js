@@ -1,5 +1,5 @@
 /*!
- * js-cool v2.2.3
+ * js-cool v2.2.4
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
@@ -15,7 +15,9 @@ function isWindow(obj) {
     return obj !== null && obj === obj.window;
 }
 function isPlainObject(obj) {
-    return getType.getType(obj) === 'object' && !isWindow(obj) && Object.getPrototypeOf(obj) === Object.prototype;
+    return (getType.getType(obj) === 'object' &&
+        !isWindow(obj) &&
+        Object.getPrototypeOf(obj) === Object.prototype);
 }
 //对象扩展
 let extend = (function () {
@@ -27,8 +29,10 @@ let extend = (function () {
     function extend(target, source, deep) {
         for (let key in source)
             if (source.hasOwnProperty(key)) {
-                if (deep && (isPlainObject(source[key]) || isArray.isArray(source[key]))) {
-                    if (isPlainObject(source[key]) && !isPlainObject(target[key]))
+                if (deep &&
+                    (isPlainObject(source[key]) || isArray.isArray(source[key]))) {
+                    if (isPlainObject(source[key]) &&
+                        !isPlainObject(target[key]))
                         target[key] = {};
                     if (isArray.isArray(source[key]) && !isArray.isArray(target[key]))
                         target[key] = [];
