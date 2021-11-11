@@ -66,39 +66,39 @@ module.exports = [
                 }
             ]
         }
-    }),
-    merge(baseConfig, {
-        output: {
-            path: path.resolve(process.cwd(), './es')
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.(ts|js)x?$/,
-                    include: process.cwd(),
-                    exclude: config.jsexclude,
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            [
-                                '@babel/preset-env',
-                                {
-                                    loose: true,
-                                    modules: 'auto',
-                                    useBuiltIns: 'usage',
-                                    corejs: 3,
-                                    targets: [
-                                        'defaults',
-                                        'not IE <= 11',
-                                        'maintained node versions'
-                                    ]
-                                    // targets: { chrome: '58', ie: '11' }
-                                }
-                            ]
-                        ]
-                    }
-                }
-            ]
-        }
     })
+    // merge(baseConfig, {
+    //     output: {
+    //         path: path.resolve(process.cwd(), './es')
+    //     },
+    //     module: {
+    //         rules: [
+    //             {
+    //                 test: /\.(ts|js)x?$/,
+    //                 include: process.cwd(),
+    //                 exclude: config.jsexclude,
+    //                 loader: 'babel-loader',
+    //                 options: {
+    //                     presets: [
+    //                         [
+    //                             '@babel/preset-env',
+    //                             {
+    //                                 loose: true,
+    //                                 modules: 'auto',
+    //                                 useBuiltIns: 'usage',
+    //                                 corejs: 3,
+    //                                 targets: [
+    //                                     'defaults',
+    //                                     'not IE <= 11',
+    //                                     'maintained node versions'
+    //                                 ]
+    //                                 // targets: { chrome: '58', ie: '11' }
+    //                             }
+    //                         ]
+    //                     ]
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // })
 ]

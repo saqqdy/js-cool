@@ -111,6 +111,35 @@ export default [
     },
     // es module----------------------------------------------------
     {
+        input: 'src/index.ts',
+        output: [
+            {
+                file: 'es/index.js',
+                format: 'es',
+                banner: config.banner
+            }
+        ],
+        plugins: [
+            resolve({ extensions: config.extensions }),
+            commonjs(),
+            typescript({
+                tsconfigOverride: {
+                    compilerOptions: {
+                        declaration: false,
+                        target: 'es6'
+                    },
+                    include: ['src/**/*'],
+                    exclude: ['node_modules', '__tests__', 'core-js']
+                },
+                abortOnError: false
+            })
+        ],
+        external(id) {
+            // return ['core-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
+            return ['core-js'].some(k => new RegExp('^' + k).test(id))
+        }
+    },
+    {
         input: fileList,
         output: [
             {
