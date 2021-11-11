@@ -8,7 +8,7 @@ import contains from './contains'
  * ```
  * @returns array
  */
-export function unique<T = unknown>(arr: T[]): T[] {
+function unique<T = unknown>(arr: T[]): T[] {
     let newArray: T[] = []
     for (const el of arr) {
         !contains(newArray, el) && newArray.push(el)

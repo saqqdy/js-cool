@@ -4,7 +4,7 @@
  * @param variableName - 传入变量名称
  * @returns 返回true/false
  */
-export function isExitsVariable(variableName: string): boolean {
+function isExitsVariable(variableName: string): boolean {
     try {
         if (typeof variableName === 'undefined') {
             return false

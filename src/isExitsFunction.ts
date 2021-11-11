@@ -4,7 +4,7 @@
  * @param funcName - 传入函数名
  * @returns 返回true/false
  */
-export function isExitsFunction(funcName: string): boolean {
+function isExitsFunction(funcName: string): boolean {
     try {
         if (typeof eval(funcName) === 'function') {
             return true

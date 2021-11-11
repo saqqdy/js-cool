@@ -9,7 +9,7 @@ export interface DirParamType {
  * @param url - 传入url地址
  * @returns 返回参数对象
  */
-export function getDirParam(url: string): DirParamType {
+function getDirParam(url: string): DirParamType {
     var urlStr =
         url !== '' && typeof url !== 'undefined'
             ? url.replace(/^http[s]?:\/\/[^\/]+([\s\S]*)/, '$1')

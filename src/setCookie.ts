@@ -7,7 +7,7 @@
  * @param path - 路径，默认'/'
  * @param samesite - SameSite，默认true
  */
-export function setCookie(
+function setCookie(
     name: string,
     value: any,
     seconds: number = 86400,

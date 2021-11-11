@@ -9,7 +9,7 @@ import type { AnyFunction } from '../typings/common'
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
  */
-export function debounce(fn: AnyFunction, delay: number, immediate: boolean) {
+function debounce(fn: AnyFunction, delay: number, immediate: boolean) {
     return throttle(fn, delay, immediate, true)
 }
 

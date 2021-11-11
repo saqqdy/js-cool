@@ -8,7 +8,7 @@
  * ```
  * @returns string
  */
-export function fillIPv6(ip: string): string {
+function fillIPv6(ip: string): string {
     return ip
         .replace(/\w+/g, a => ('000' + a).substr(-4))
         .replace(/(\w*)::(\w*)/, (a, b, c) => {

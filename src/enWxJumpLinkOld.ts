@@ -4,7 +4,7 @@
  * @param string - 传入字符串
  * @returns 返回转码结果
  */
-export function enWxJumpLinkOld(string: string) {
+function enWxJumpLinkOld(string: string) {
     return string.replace(/[=]/gi, '~').replace(/[&]/gi, '^')
 }
 

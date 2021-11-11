@@ -3,7 +3,7 @@
  *
  * @returns 返回对象
  */
-export const pattern = {
+const pattern = {
     any: /[\w\W]+/,
     number: /^\d+$/,
     string: /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,

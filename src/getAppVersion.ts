@@ -6,7 +6,7 @@
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export function getAppVersion(
+function getAppVersion(
     appName: string,
     withappstr?: boolean,
     userAgent?: string

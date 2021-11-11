@@ -13,7 +13,7 @@ import getAppVersion from './getAppVersion'
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export function getOsVersion(
+function getOsVersion(
     osName: string,
     withosstr?: boolean,
     userAgent?: string

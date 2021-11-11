@@ -4,7 +4,7 @@
  * @param obj-  dom对象
  * @param str - 要插入的文字
  */
-export function textareaInsertText(obj: HTMLTextAreaElement, str: string) {
+function textareaInsertText(obj: HTMLTextAreaElement, str: string) {
     if ((document as any).selection) {
         // IE
         var sel = (document as any).selection.createRange()

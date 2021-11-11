@@ -11,6 +11,7 @@ selenium-debug.log
 
 *.bak
 *_bak
+*.bak.js
 temp
 
 # Editor directories and files

@@ -4,7 +4,7 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-export function clearHtmlN(string: string) {
+function clearHtmlN(string: string) {
     return string.replace(/<\/?.+?>|[\r\n]/g, '')
 }
 

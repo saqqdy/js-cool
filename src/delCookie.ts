@@ -5,7 +5,7 @@ import getCookie from './getCookie'
  *
  * @param name - cookie名称
  */
-export function delCookie(name: string) {
+function delCookie(name: string) {
     var e = new Date()
     e.setTime(e.getTime() - 1)
     var cval = getCookie(name)

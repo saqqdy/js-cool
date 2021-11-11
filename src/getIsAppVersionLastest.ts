@@ -14,7 +14,7 @@ import getAppVersion from './getAppVersion'
  * @param userAgent - ua，可不传，默认取navigator.appVersion
  * @return null/true/false
  */
-export function getIsAppVersionLastest(
+function getIsAppVersionLastest(
     appName: string,
     compareVer: string,
     userAgent?: string

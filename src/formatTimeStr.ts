@@ -7,7 +7,7 @@ import formatTime from './formatTime'
  * @param fmt - 格式化风格
  * @returns 返回字符串
  */
-export function formatTimeStr(time: string | number, fmt: string): string {
+function formatTimeStr(time: string | number, fmt: string): string {
     var now = new Date().getTime()
     var format = fmt != '' && fmt != null ? fmt : 'MM-dd'
     if (typeof time === 'string') time = parseInt(time, 10)

@@ -3,7 +3,7 @@
  *
  * @param name - 名称
  */
-export function delSession(name: string) {
+function delSession(name: string) {
     sessionStorage.removeItem(name)
 }
 

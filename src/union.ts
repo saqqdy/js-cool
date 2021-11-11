@@ -11,7 +11,7 @@ import unique from './unique'
  * @param args - 参数
  * @returns array
  */
-export function union<T = unknown>(...args: T[][]): T[] {
+function union<T = unknown>(...args: T[][]): T[] {
     return unique(
         args.reduce((pre, cur) =>
             pre.concat(cur.filter(item => !contains(pre, item)))

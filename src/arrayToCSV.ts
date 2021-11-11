@@ -17,7 +17,7 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export const arrayToCSV = (arr: any[], delimiter: string = ',') =>
+const arrayToCSV = (arr: any[], delimiter: string = ',') =>
     arr
         .map(v =>
             v

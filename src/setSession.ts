@@ -10,7 +10,7 @@ interface Data {
  * @param value - 设置要存储的值，可以是对象或字符串
  * @param seconds - 有效时间
  */
-export function setSession(name: string, value: any, seconds: number): void {
+function setSession(name: string, value: any, seconds: number): void {
     var e = new Date()
     var expires = seconds ? e.getTime() + seconds * 1000 : ''
     var obj = {} as Data

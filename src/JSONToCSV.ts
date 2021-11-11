@@ -14,7 +14,7 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export const JSONToCSV = (
+const JSONToCSV = (
     arr: any[],
     columns: any[],
     delimiter: string = ','

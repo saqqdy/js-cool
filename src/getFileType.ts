@@ -12,7 +12,7 @@
  * @param url - 文件名
  * @returns 返回文件后缀
  */
-export function getFileType(url: string): string {
+function getFileType(url: string): string {
     if (typeof url != 'string' || url == '') {
         return ''
     }

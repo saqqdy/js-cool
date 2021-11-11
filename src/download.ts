@@ -9,7 +9,7 @@
  * @param filename - 文件名
  * @param type - 下载类型 'href','open','download','request'
  */
-export function download(
+function download(
     url: string,
     filename: string,
     type: string = 'download'

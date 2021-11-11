@@ -10,7 +10,7 @@ import contains from './contains'
  * @param args - 参数
  * @returns array
  */
-export function intersect<T = unknown>(...args: T[][]): T[] {
+function intersect<T = unknown>(...args: T[][]): T[] {
     return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)))
 }
 

@@ -11,7 +11,7 @@ interface Data {
  * @param seconds -缓存时间（秒）
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
-export function setCache(name: string, value: any, seconds: number) {
+function setCache(name: string, value: any, seconds: number) {
     let e = new Date(),
         expires = seconds ? e.getTime() + seconds * 1000 : '',
         o = {} as Data

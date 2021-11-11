@@ -48,7 +48,7 @@
  * @param url - 传入url参数
  * @returns 返回参数列表
  */
-export function getUrlParam(url: string): object {
+function getUrlParam(url: string): object {
     url =
         url !== '' && typeof url !== 'undefined'
             ? url.substr(url.indexOf('?')).split('#')[0]

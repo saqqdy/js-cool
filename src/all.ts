@@ -14,6 +14,6 @@ import type { AnyFunction } from '../typings/common'
  * @param fn - 判断方法
  * @returns 返回判断结果
  */
-export const all = (arr: any[], fn: AnyFunction) => arr.every(fn)
+const all = (arr: any[], fn: AnyFunction) => arr.every(fn)
 
 export default all

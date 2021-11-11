@@ -4,7 +4,7 @@
  * @param e - dom的event对象
  * @returns bool false
  */
-export function stopDefault(e: Event) {
+function stopDefault(e: Event) {
     if (e && e.preventDefault) {
         e.preventDefault()
     } else {

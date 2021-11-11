@@ -18,7 +18,7 @@
  * @returns 返回对应的值
  */
 
-export function getProperty(target: any, prop: string | { (): string }): any {
+function getProperty(target: any, prop: string | { (): string }): any {
     if (!target) throw new Error('请传入target')
     if (prop instanceof Function) prop = prop()
     const arr = prop.split('.')
