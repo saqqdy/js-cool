@@ -1,21 +1,17 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var isArray = require('./isArray.js');
-var getType = require('./getType.js');
+import isArray from './isArray.js';
+import getType from './getType.js';
 
 function isWindow(obj) {
     return obj !== null && obj === obj.window;
 }
 function isPlainObject(obj) {
-    return (getType.getType(obj) === 'object' &&
+    return (getType(obj) === 'object' &&
         !isWindow(obj) &&
         Object.getPrototypeOf(obj) === Object.prototype);
 }
@@ -30,11 +26,11 @@ let extend = (function () {
         for (let key in source)
             if (source.hasOwnProperty(key)) {
                 if (deep &&
-                    (isPlainObject(source[key]) || isArray.isArray(source[key]))) {
+                    (isPlainObject(source[key]) || isArray(source[key]))) {
                     if (isPlainObject(source[key]) &&
                         !isPlainObject(target[key]))
                         target[key] = {};
-                    if (isArray.isArray(source[key]) && !isArray.isArray(target[key]))
+                    if (isArray(source[key]) && !isArray(target[key]))
                         target[key] = [];
                     extend(target[key], source[key], deep);
                 }
@@ -55,5 +51,4 @@ let extend = (function () {
     };
 })();
 
-exports["default"] = extend;
-exports.extend = extend;
+export { extend as default };

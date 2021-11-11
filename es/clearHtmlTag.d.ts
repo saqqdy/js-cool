@@ -4,5 +4,5 @@
  * @param string - 带html标签的字符串
  * @returns newString
  */
-export declare function clearHtmlTag(string: string): string;
+declare function clearHtmlTag(string: string): string;
 export default clearHtmlTag;

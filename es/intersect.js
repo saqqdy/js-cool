@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var contains = require('./contains.js');
+import contains from './contains.js';
 
 /**
  * 求多个数组的交集
@@ -21,8 +17,7 @@ var contains = require('./contains.js');
  * @returns array
  */
 function intersect(...args) {
-    return args.reduce((pre, cur) => pre.filter(item => contains.contains(cur, item)));
+    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)));
 }
 
-exports["default"] = intersect;
-exports.intersect = intersect;
+export { intersect as default };

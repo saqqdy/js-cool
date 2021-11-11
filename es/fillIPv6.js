@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 读取完整IPv6
  *
@@ -30,5 +26,4 @@ function fillIPv6(ip) {
     });
 }
 
-exports["default"] = fillIPv6;
-exports.fillIPv6 = fillIPv6;
+export { fillIPv6 as default };

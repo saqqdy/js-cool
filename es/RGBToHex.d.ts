@@ -7,5 +7,5 @@
  * @param b - RGB第3个值
  * @returns hex值
  */
-export declare const RGBToHex: (r: number, g: number, b: number) => string;
+declare const RGBToHex: (r: number, g: number, b: number) => string;
 export default RGBToHex;

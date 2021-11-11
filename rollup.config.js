@@ -3,7 +3,7 @@ const path = require('path')
 import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
+// import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
@@ -111,40 +111,6 @@ export default [
     },
     // es module----------------------------------------------------
     {
-        input: 'src/index.ts',
-        output: [
-            {
-                file: 'es/index.js',
-                format: 'cjs',
-                banner: config.banner
-            },
-            {
-                file: 'es/index.esm.js',
-                format: 'es',
-                banner: config.banner
-            }
-        ],
-        plugins: [
-            resolve({ extensions: config.extensions }),
-            commonjs(),
-            typescript({
-                tsconfigOverride: {
-                    compilerOptions: {
-                        declaration: false,
-                        target: 'es6'
-                    },
-                    include: ['src/**/*'],
-                    exclude: ['node_modules', '__tests__', 'core-js']
-                },
-                abortOnError: false
-            })
-        ],
-        external(id) {
-            // return ['core-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
-            return ['core-js'].some(k => new RegExp('^' + k).test(id))
-        }
-    },
-    {
         input: fileList,
         output: [
             {
@@ -153,7 +119,7 @@ export default [
                 preserveModules: true,
                 preserveModulesRoot: 'src',
                 exports: 'auto',
-                format: 'cjs',
+                format: 'es',
                 // format: 'iife', // immediately-invoked function expression — suitable for <script> tags
                 sourcemap: false,
                 banner: config.banner

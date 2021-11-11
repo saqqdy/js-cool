@@ -7,5 +7,5 @@ export interface WindowSizeObj {
  *
  * @returns 返回宽高
  */
-export declare function getWindowSize(): WindowSizeObj;
+declare function getWindowSize(): WindowSizeObj;
 export default getWindowSize;

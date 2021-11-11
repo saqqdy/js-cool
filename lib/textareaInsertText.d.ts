@@ -4,5 +4,5 @@
  * @param obj-  dom对象
  * @param str - 要插入的文字
  */
-export declare function textareaInsertText(obj: HTMLTextAreaElement, str: string): void;
+declare function textareaInsertText(obj: HTMLTextAreaElement, str: string): void;
 export default textareaInsertText;

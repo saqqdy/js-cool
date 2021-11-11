@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * trim()根据传参来去除空格
  *
@@ -30,5 +26,4 @@ function trim(string, type = '') {
     }
 }
 
-exports["default"] = trim;
-exports.trim = trim;
+export { trim as default };

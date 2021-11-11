@@ -4,5 +4,5 @@
  * @param name - 缓存名称
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
-export declare function getCache(name: string): any;
+declare function getCache(name: string): any;
 export default getCache;

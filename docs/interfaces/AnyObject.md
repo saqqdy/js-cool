@@ -1,4 +1,4 @@
-[index.md - v2.2.4](../README.md) / [Exports](../modules.md) / AnyObject
+[index.md - v2.3.0](../README.md) / [Exports](../modules.md) / AnyObject
 
 # Interface: AnyObject
 

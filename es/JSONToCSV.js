@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
  *
@@ -29,5 +25,4 @@ const JSONToCSV = (arr, columns, delimiter = ',') => [
     ...arr.map(obj => columns.reduce((acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`, ''))
 ].join('\n');
 
-exports.JSONToCSV = JSONToCSV;
-exports["default"] = JSONToCSV;
+export { JSONToCSV as default };

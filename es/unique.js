@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var contains = require('./contains.js');
+import contains from './contains.js';
 
 /**
  * 数组去重
@@ -22,10 +18,9 @@ var contains = require('./contains.js');
 function unique(arr) {
     let newArray = [];
     for (const el of arr) {
-        !contains.contains(newArray, el) && newArray.push(el);
+        !contains(newArray, el) && newArray.push(el);
     }
     return newArray;
 }
 
-exports["default"] = unique;
-exports.unique = unique;
+export { unique as default };

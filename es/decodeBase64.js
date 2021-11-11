@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var decodeUtf8 = require('./decodeUtf8.js');
+import decodeUtf8 from './decodeUtf8.js';
 
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 /**
@@ -39,9 +35,8 @@ function decodeBase64(input) {
             output = output + String.fromCharCode(chr3);
         }
     }
-    output = decodeUtf8.decodeUtf8(output);
+    output = decodeUtf8(output);
     return output;
 }
 
-exports.decodeBase64 = decodeBase64;
-exports["default"] = decodeBase64;
+export { decodeBase64 as default };

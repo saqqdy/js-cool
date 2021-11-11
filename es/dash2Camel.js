@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 将-间隔且全小写的Dash模式转成驼峰字符串
  *
@@ -20,5 +16,4 @@ function dash2Camel(string) {
     });
 }
 
-exports.dash2Camel = dash2Camel;
-exports["default"] = dash2Camel;
+export { dash2Camel as default };

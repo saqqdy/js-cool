@@ -7,11 +7,7 @@ import type { AnyObject, AnyFunction } from '../typings/common'
  * @param type - 事件类型。不需要加on
  * @param handler - 回调方法
  */
-function removeEvent(
-    element: AnyObject,
-    type: string,
-    handler: AnyFunction
-) {
+function removeEvent(element: AnyObject, type: string, handler: AnyFunction) {
     if (element.removeEventListener) {
         element.removeEventListener(type, handler, false)
     } else {

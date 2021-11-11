@@ -3,7 +3,7 @@
  *
  * @returns 返回对象
  */
-export declare const pattern: {
+declare const pattern: {
     any: RegExp;
     number: RegExp;
     string: RegExp;

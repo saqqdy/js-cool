@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var isArray = require('./isArray.js');
+import isArray from './isArray.js';
 
 /**
  * 数据清洗方法
@@ -28,7 +24,7 @@ function cleanData(data, map, nullFix) {
         return;
     if (!map)
         return data;
-    if (isArray.isArray(map)) {
+    if (isArray(map)) {
         map.forEach(key => {
             if (data.hasOwnProperty(key)) {
                 result[key] = data[key];
@@ -58,5 +54,4 @@ function cleanData(data, map, nullFix) {
     return result;
 }
 
-exports.cleanData = cleanData;
-exports["default"] = cleanData;
+export { cleanData as default };

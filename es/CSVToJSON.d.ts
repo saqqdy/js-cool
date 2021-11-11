@@ -13,5 +13,5 @@
  * @param delimiter - 分隔符，默认','
  * @returns json
  */
-export declare function CSVToJSON(data: string, delimiter?: string): any[];
+declare function CSVToJSON(data: string, delimiter?: string): any[];
 export default CSVToJSON;

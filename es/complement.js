@@ -1,16 +1,12 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var contains = require('./contains.js');
-var intersect = require('./intersect.js');
-var union = require('./union.js');
+import contains from './contains.js';
+import intersect from './intersect.js';
+import union from './union.js';
 
 /**
  * 求多个数组的补集
@@ -23,10 +19,9 @@ var union = require('./union.js');
  * @returns array
  */
 function complement(...args) {
-    const intersectArray = intersect.intersect(...args); // 交集
-    const unionArray = union.union(...args); // 补集
-    return unionArray.filter(item => !contains.contains(intersectArray, item));
+    const intersectArray = intersect(...args); // 交集
+    const unionArray = union(...args); // 补集
+    return unionArray.filter(item => !contains(intersectArray, item));
 }
 
-exports.complement = complement;
-exports["default"] = complement;
+export { complement as default };

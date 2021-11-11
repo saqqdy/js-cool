@@ -9,10 +9,7 @@
  * @param fmt - 格式化风格
  * @returns 返回字符串
  */
-function formatTime(
-    time: Date | string,
-    fmt: string = 'yyyy-MM-dd'
-): string {
+function formatTime(time: Date | string, fmt: string = 'yyyy-MM-dd'): string {
     if (typeof time === 'string') {
         time = new Date(time)
     }

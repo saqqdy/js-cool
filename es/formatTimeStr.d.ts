@@ -5,5 +5,5 @@
  * @param fmt - 格式化风格
  * @returns 返回字符串
  */
-export declare function formatTimeStr(time: string | number, fmt: string): string;
+declare function formatTimeStr(time: string | number, fmt: string): string;
 export default formatTimeStr;

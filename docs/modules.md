@@ -1,39 +1,12 @@
-[index.md - v2.2.4](README.md) / Exports
+[index.md - v2.3.0](README.md) / Exports
 
-# index.md - v2.2.4
+# index.md - v2.3.0
 
 ## Table of contents
 
-### Namespaces
+### References
 
--   [addEvent](modules/addEvent.md)
-
-### Interfaces
-
--   [AnyFunction](interfaces/AnyFunction.md)
--   [AnyObject](interfaces/AnyObject.md)
--   [DirParamType](interfaces/DirParamType.md)
--   [SearchkeySet](interfaces/SearchkeySet.md)
--   [WindowSizeObj](interfaces/WindowSizeObj.md)
-
-### Type aliases
-
--   [ArrayOneMore](modules.md#arrayonemore)
-
-### Variables
-
--   [pattern](modules.md#pattern)
-
-### Functions
-
--   [CSVToArray](modules.md#csvtoarray)
 -   [CSVToJSON](modules.md#csvtojson)
--   [JSONToCSV](modules.md#jsontocsv)
--   [RGBToHex](modules.md#rgbtohex)
--   [addEvent](modules.md#addevent)
--   [all](modules.md#all)
--   [any](modules.md#any)
--   [arrayToCSV](modules.md#arraytocsv)
 -   [camel2Dash](modules.md#camel2dash)
 -   [cleanData](modules.md#cleandata)
 -   [clearAttr](modules.md#clearattr)
@@ -43,7 +16,6 @@
 -   [clearHtmlN](modules.md#clearhtmln)
 -   [clearHtmlNS](modules.md#clearhtmlns)
 -   [clearHtmlTag](modules.md#clearhtmltag)
--   [client](modules.md#client)
 -   [complement](modules.md#complement)
 -   [contains](modules.md#contains)
 -   [cutCHSString](modules.md#cutchsstring)
@@ -62,7 +34,6 @@
 -   [enWxJumpLinkOld](modules.md#enwxjumplinkold)
 -   [encodeBase64](modules.md#encodebase64)
 -   [encodeUtf8](modules.md#encodeutf8)
--   [extend](modules.md#extend)
 -   [fillIPv6](modules.md#fillipv6)
 -   [fixNumber](modules.md#fixnumber)
 -   [formatTime](modules.md#formattime)
@@ -81,7 +52,6 @@
 -   [getRandomNum](modules.md#getrandomnum)
 -   [getRandomStr](modules.md#getrandomstr)
 -   [getRandomStrWidthSpecialChar](modules.md#getrandomstrwidthspecialchar)
--   [getScrollPosition](modules.md#getscrollposition)
 -   [getSession](modules.md#getsession)
 -   [getType](modules.md#gettype)
 -   [getUrlParam](modules.md#geturlparam)
@@ -111,7 +81,494 @@
 -   [union](modules.md#union)
 -   [unique](modules.md#unique)
 -   [upperFirst](modules.md#upperfirst)
+
+### Namespaces
+
+-   [addEvent](modules/addEvent.md)
+
+### Interfaces
+
+-   [AnyFunction](interfaces/AnyFunction.md)
+-   [AnyObject](interfaces/AnyObject.md)
+-   [DirParamType](interfaces/DirParamType.md)
+-   [SearchkeySet](interfaces/SearchkeySet.md)
+-   [WindowSizeObj](interfaces/WindowSizeObj.md)
+
+### Type aliases
+
+-   [ArrayOneMore](modules.md#arrayonemore)
+
+### Properties
+
+-   [default](modules.md#default)
+
+### Variables
+
+-   [pattern](modules.md#pattern)
+
+### Functions
+
+-   [CSVToArray](modules.md#csvtoarray)
+-   [JSONToCSV](modules.md#jsontocsv)
+-   [RGBToHex](modules.md#rgbtohex)
+-   [addEvent](modules.md#addevent)
+-   [all](modules.md#all)
+-   [any](modules.md#any)
+-   [arrayToCSV](modules.md#arraytocsv)
+-   [client](modules.md#client)
+-   [extend](modules.md#extend)
+-   [getScrollPosition](modules.md#getscrollposition)
 -   [uuid](modules.md#uuid)
+
+## References
+
+### CSVToJSON
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### camel2Dash
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### cleanData
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearAttr
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearBr
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearHtml
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlExpSN
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlN
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlNS
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### clearHtmlTag
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### complement
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### contains
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### cutCHSString
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### dash2Camel
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### deWxJumpLink
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### deWxJumpLinkOld
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### debounce
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### decodeBase64
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### decodeUtf8
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### delCache
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### delCookie
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### delSession
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### delay
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### download
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### enWxJumpLink
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### enWxJumpLinkOld
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### encodeBase64
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### encodeUtf8
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### fillIPv6
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### fixNumber
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### formatTime
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### formatTimeStr
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getAppVersion
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getCHSLength
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getCache
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getCookie
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getDirParam
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getFileType
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getIsAppVersionLastest
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getNumber
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getOsVersion
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getParameter
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getProperty
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getRandomNum
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getRandomStr
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getRandomStrWidthSpecialChar
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getSession
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getType
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getUrlParam
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### getWindowSize
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### imgAdapt
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### imgChoose
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### intersect
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### isArray
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### isDigitals
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### isExitsFunction
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### isExitsVariable
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### minus
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### nextIndex
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### openUrl
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### removeEvent
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### searchTreeObject
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### setCache
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### setCookie
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### setSession
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### splitThousand
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### stopBubble
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### stopDefault
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### textareaInsertText
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### textareaMoveToEnd
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### throttle
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### trim
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### union
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### unique
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### upperFirst
+
+Renames and re-exports [\_\_type](modules.md#__type)
 
 ## Type aliases
 
@@ -127,7 +584,123 @@
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/4221aa6/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/995d293/typings/common.d.ts#L9)
+
+## Properties
+
+### default
+
+• **default**: `Object`
+
+#### Type declaration
+
+| Name                           | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CSVToArray`                   | (`data`: `string`, `delimiter`: `string`, `omitFirstRow`: `boolean`) => `string`[][]                                                                                                                                                                                                                                                                                                                                                                               |
+| `CSVToJSON`                    | (`data`: `string`, `delimiter`: `string`) => `any`[]                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `JSONToCSV`                    | (`arr`: `any`[], `columns`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                            |
+| `RGBToHex`                     | (`r`: `number`, `g`: `number`, `b`: `number`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `addEvent`                     | typeof [`addEvent`](modules.md#addevent)                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `all`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                    |
+| `any`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                    |
+| `arrayToCSV`                   | (`arr`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `camel2Dash`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `cleanData`                    | (`data`: `any`, `map`: `any`[] \| [`AnyObject`](interfaces/AnyObject.md), `nullFix?`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                              |
+| `clearAttr`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearBr`                      | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearHtml`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearHtmlExpSN`               | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearHtmlN`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearHtmlNS`                  | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `clearHtmlTag`                 | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `client`                       | (`name`: `string`, `userAgent`: `string`) => `boolean` \| { `ANDROID`: `boolean` ; `GECKO`: `boolean` ; `IE`: `boolean` ; `IOS`: `boolean` = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); `IPAD`: `boolean` ; `IPHONE`: `boolean` ; `MOBILE`: `boolean` = !!userAgent.match(/AppleWebKit._Mobile._/); `OPERA`: `boolean` ; `QQ`: `null` \| `RegExpMatchArray` ; `QQBROWSER`: `boolean` ; `TRIDENT`: `boolean` ; `WEBKIT`: `boolean` ; `WEIXIN`: `boolean` } |
+| `complement`                   | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `contains`                     | (`arr`: `any`[], `item`: `any`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `cutCHSString`                 | (`str`: `string`, `len`: `number`, `hasDot`: `boolean`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                |
+| `dash2Camel`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `deWxJumpLink`                 | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `deWxJumpLinkOld`              | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `debounce`                     | (`fn`: [`AnyFunction`](interfaces/AnyFunction.md), `delay`: `number`, `immediate`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                                                                      |
+| `decodeBase64`                 | (`input`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `decodeUtf8`                   | (`utftext`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `delCache`                     | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `delCookie`                    | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `delSession`                   | (`name`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `delay`                        | () => { `map`: `any` ; `destroy`: (`id`: `string`) => `void` ; `register`: (`id`: `string`, `fn`: [`AnyFunction`](interfaces/AnyFunction.md), `time`: `number`, `boo`: `boolean`) => `void` }                                                                                                                                                                                                                                                                      |
+| `download`                     | (`url`: `string`, `filename`: `string`, `type`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                |
+| `enWxJumpLink`                 | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `enWxJumpLinkOld`              | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `encodeBase64`                 | (`input`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `encodeUtf8`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `extend`                       | <T\>(`target`: `boolean` \| `T`, ...`args`: [`ArrayOneMore`](modules.md#arrayonemore)<`any`\>) => `T`                                                                                                                                                                                                                                                                                                                                                              |
+| `fillIPv6`                     | (`ip`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `fixNumber`                    | (`number`: `string` \| `number`, `n`: `number`) => `string` \| `number`                                                                                                                                                                                                                                                                                                                                                                                            |
+| `formatTime`                   | (`time`: `string` \| `Date`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `formatTimeStr`                | (`time`: `string` \| `number`, `fmt`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `getAppVersion`                | (`appName`: `string`, `withappstr?`: `boolean`, `userAgent?`: `string`) => `string` \| `boolean` \| `null`                                                                                                                                                                                                                                                                                                                                                         |
+| `getCHSLength`                 | (`str`: `string`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `getCache`                     | (`name`: `string`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `getCookie`                    | (`name`: `string`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `getDirParam`                  | (`url`: `string`) => [`DirParamType`](interfaces/DirParamType.md)                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `getFileType`                  | (`url`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `getIsAppVersionLastest`       | (`appName`: `string`, `compareVer`: `string`, `userAgent?`: `string`) => `boolean` \| `null`                                                                                                                                                                                                                                                                                                                                                                       |
+| `getNumber`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `getOsVersion`                 | (`osName`: `string`, `withosstr?`: `boolean`, `userAgent?`: `string`) => `string` \| `boolean` \| `null`                                                                                                                                                                                                                                                                                                                                                           |
+| `getParameter`                 | (`name`: `string`) => `string` \| `null`                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `getProperty`                  | (`target`: `any`, `prop`: `string` \| () => `string`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `getRandomNum`                 | (`min`: `number`, `max`: `number`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `getRandomStr`                 | (`len`: `number`, `widthSpecialChar`: `boolean`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `getRandomStrWidthSpecialChar` | (`len`: `number`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `getScrollPosition`            | () => `string` \| `void`                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `getSession`                   | (`name`: `string`) => `any`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `getType`                      | (`target`: `any`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `getUrlParam`                  | (`url`: `string`) => `object`                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `getWindowSize`                | () => [`WindowSizeObj`](interfaces/WindowSizeObj.md)                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `imgAdapt`                     | (`imgurl`: `string`, `size`: `string`) => `string` \| `false`                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `imgChoose`                    | (`imgurl`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `intersect`                    | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `isArray`                      | (`arr`: `any`) => arr is any[]                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `isDigitals`                   | (`str`: `any`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `isExitsFunction`              | (`funcName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `isExitsVariable`              | (`variableName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `minus`                        | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `nextIndex`                    | (`min`: `number`, `max`: `number`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `openUrl`                      | (`url`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `pattern`                      | `Object`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.any`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.array`                | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.arrjson`              | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.chinese`              | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.email`                | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.float`                | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.isjson`               | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.json`                 | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.mobile`               | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.number`               | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.pass`                 | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.postcode`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.qq`                   | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.string`               | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.tel`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.textarea`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.url`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern.username`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `removeEvent`                  | (`element`: [`AnyObject`](interfaces/AnyObject.md), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                                             |
+| `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: [`SearchkeySet`](interfaces/SearchkeySet.md), `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                                          |
+| `setCache`                     | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `setCookie`                    | (`name`: `string`, `value`: `any`, `seconds`: `number`, `path`: `string`, `samesite`: `boolean`) => `void`                                                                                                                                                                                                                                                                                                                                                         |
+| `setSession`                   | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `splitThousand`                | (`val`: `string` \| `number`) => `string` \| `0`                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `stopBubble`                   | (`e`: `Event`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `stopDefault`                  | (`e`: `Event`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `textareaInsertText`           | (`obj`: `HTMLTextAreaElement`, `str`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `textareaMoveToEnd`            | (`obj`: `HTMLTextAreaElement`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `throttle`                     | (`fn`: [`AnyFunction`](interfaces/AnyFunction.md), `delay`: `number`, `immediate`: `boolean`, `debounce`: `boolean`) => () => `void`                                                                                                                                                                                                                                                                                                                               |
+| `trim`                         | (`string`: `string`, `type`: `string`) => `string` \| `void`                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `union`                        | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `unique`                       | <T\>(`arr`: `T`[]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `upperFirst`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `uuid`                         | () => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 ## Variables
 
@@ -164,7 +737,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/995d293/src/pattern.ts#L6)
 
 ## Functions
 
@@ -208,44 +781,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/4221aa6/src/CSVToArray.ts#L21)
-
----
-
-### CSVToJSON
-
-▸ **CSVToJSON**(`data`, `delimiter?`): `any`[]
-
-将一个逗号分隔的值(CSV)字符串转换为一个 2D 对象数组。字符串的第一行作为标题行。
-
-**`example`**
-
-```js
-CSVToJSON('col1,col2\\na,b\\nc,d') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`;
-```
-
-**`example`**
-
-```js
-CSVToJSON('col1;col2\\na;b\\nc;d', ';') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`;
-```
-
-#### Parameters
-
-| Name        | Type     | Default value | Description     |
-| :---------- | :------- | :------------ | :-------------- |
-| `data`      | `string` | `undefined`   | csv 数据        |
-| `delimiter` | `string` | `','`         | 分隔符，默认',' |
-
-#### Returns
-
-`any`[]
-
-json
-
-#### Defined in
-
-[src/CSVToJSON.ts:16](https://github.com/saqqdy/js-cool/blob/4221aa6/src/CSVToJSON.ts#L16)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/995d293/src/CSVToArray.ts#L21)
 
 ---
 
@@ -290,7 +826,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/4221aa6/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/995d293/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -318,7 +854,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/995d293/src/RGBToHex.ts#L10)
 
 ---
 
@@ -342,7 +878,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/995d293/src/addEvent.ts#L10)
 
 ---
 
@@ -379,7 +915,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/4221aa6/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/995d293/src/all.ts#L17)
 
 ---
 
@@ -416,7 +952,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/4221aa6/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/995d293/src/any.ts#L17)
 
 ---
 
@@ -471,225 +1007,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/4221aa6/src/arrayToCSV.ts#L20)
-
----
-
-### camel2Dash
-
-▸ **camel2Dash**(`string`): `string`
-
-将驼峰字符串转成-间隔且全小写的 Dash 模式
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/camel2Dash.ts#L7)
-
----
-
-### cleanData
-
-▸ **cleanData**(`data`, `map`, `nullFix?`): `any`
-
-数据清洗方法
-
-#### Parameters
-
-| Name       | Type                                              | Description                      |
-| :--------- | :------------------------------------------------ | :------------------------------- |
-| `data`     | `any`                                             | 要清洗的对象，必传               |
-| `map`      | `any`[] \| [`AnyObject`](interfaces/AnyObject.md) | 需要的数据队列，可传数组或者对象 |
-| `nullFix?` | `any`                                             | -                                |
-
-#### Returns
-
-`any`
-
-返回清洗后的对象
-
-#### Defined in
-
-[src/cleanData.ts:16](https://github.com/saqqdy/js-cool/blob/4221aa6/src/cleanData.ts#L16)
-
----
-
-### clearAttr
-
-▸ **clearAttr**(`string`): `string`
-
-去除 HTML 标签所有属性
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearAttr.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearAttr.ts#L7)
-
----
-
-### clearBr
-
-▸ **clearBr**(`string`): `string`
-
-去除换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearBr.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearBr.ts#L7)
-
----
-
-### clearHtml
-
-▸ **clearHtml**(`string`): `string`
-
-去除 HTML 标签
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtml.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearHtml.ts#L7)
-
----
-
-### clearHtmlExpSN
-
-▸ **clearHtmlExpSN**(`string`): `string`
-
-去除 HTML 标签保留空格、换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlExpSN.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearHtmlExpSN.ts#L7)
-
----
-
-### clearHtmlN
-
-▸ **clearHtmlN**(`string`): `string`
-
-去除 HTML 标签及换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlN.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearHtmlN.ts#L7)
-
----
-
-### clearHtmlNS
-
-▸ **clearHtmlNS**(`string`): `string`
-
-去除 HTML 标签及空格、换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlNS.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearHtmlNS.ts#L7)
-
----
-
-### clearHtmlTag
-
-▸ **clearHtmlTag**(`string`): `string`
-
-去除 HTML 标签及标签里面的文字
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearHtmlTag.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/clearHtmlTag.ts#L7)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/995d293/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -714,470 +1032,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/client.ts#L8)
-
----
-
-### complement
-
-▸ **complement**<`T`\>(...`args`): `T`[]
-
-求多个数组的补集
-
-**`example`**
-
-```js
-complement([1, 2], [2, '33'], [2]) // [1, '33']
-```
-
-#### Type parameters
-
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
-
-#### Parameters
-
-| Name      | Type    | Description |
-| :-------- | :------ | :---------- |
-| `...args` | `T`[][] | 参数        |
-
-#### Returns
-
-`T`[]
-
-array
-
-#### Defined in
-
-[src/complement.ts:15](https://github.com/saqqdy/js-cool/blob/4221aa6/src/complement.ts#L15)
-
----
-
-### contains
-
-▸ **contains**(`arr`, `item`): `boolean`
-
-数组是否包含指定元素
-
-**`example`**
-
-```js
-contains([1, 2], 2) // true
-contains([1, 2], 3) // false
-```
-
-#### Parameters
-
-| Name   | Type    | Description  |
-| :----- | :------ | :----------- |
-| `arr`  | `any`[] | 目标数组     |
-| `item` | `any`   | 要查找的目标 |
-
-#### Returns
-
-`boolean`
-
-boolean
-
-#### Defined in
-
-[src/contains.ts:13](https://github.com/saqqdy/js-cool/blob/4221aa6/src/contains.ts#L13)
-
----
-
-### cutCHSString
-
-▸ **cutCHSString**(`str`, `len?`, `hasDot?`): `string`
-
-截取字符串，中文算 2 个字节
-
-#### Parameters
-
-| Name     | Type      | Default value | Description    |
-| :------- | :-------- | :------------ | :------------- |
-| `str`    | `string`  | `undefined`   | 要截取的字符串 |
-| `len`    | `number`  | `str.length`  | -              |
-| `hasDot` | `boolean` | `false`       | -              |
-
-#### Returns
-
-`string`
-
-返回截取后的字符串
-
-#### Defined in
-
-[src/cutCHSString.ts:39](https://github.com/saqqdy/js-cool/blob/4221aa6/src/cutCHSString.ts#L39)
-
----
-
-### dash2Camel
-
-▸ **dash2Camel**(`string`): `string`
-
-将-间隔且全小写的 Dash 模式转成驼峰字符串
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/dash2Camel.ts#L7)
-
----
-
-### deWxJumpLink
-
-▸ **deWxJumpLink**(`string`): `string`
-
-用=替换* 用&替换! 解码成微信跳转链接
-name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回解码结果
-
-#### Defined in
-
-[src/deWxJumpLink.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/deWxJumpLink.ts#L8)
-
----
-
-### deWxJumpLinkOld
-
-▸ **deWxJumpLinkOld**(`string`): `string`
-
-用=替换~ 用&替换^ 解码成微信跳转链接
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回解码结果
-
-#### Defined in
-
-[src/deWxJumpLinkOld.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/deWxJumpLinkOld.ts#L7)
-
----
-
-### debounce
-
-▸ **debounce**(`fn`, `delay`, `immediate`): () => `void`
-
-空闲控制 返回函数连续调用时，空闲时间必须大于或等于 delay，fn 才会执行
-
-#### Parameters
-
-| Name        | Type                                       | Description                                                           |
-| :---------- | :----------------------------------------- | :-------------------------------------------------------------------- |
-| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) | 要调用的函数                                                          |
-| `delay`     | `number`                                   | 空闲时间                                                              |
-| `immediate` | `boolean`                                  | 给 immediate 参数传递 false 绑定的函数先执行，而不是 delay 后后执行。 |
-
-#### Returns
-
-`fn`
-
-实际调用函数
-
-▸ (): `void`
-
-##### Returns
-
-`void`
-
-#### Defined in
-
-[src/debounce.ts:12](https://github.com/saqqdy/js-cool/blob/4221aa6/src/debounce.ts#L12)
-
----
-
-### decodeBase64
-
-▸ **decodeBase64**(`input`): `string`
-
-base64 解码
-
-#### Parameters
-
-| Name    | Type     | Description      |
-| :------ | :------- | :--------------- |
-| `input` | `string` | 需要解码的字符串 |
-
-#### Returns
-
-`string`
-
-解码后的字符串
-
-#### Defined in
-
-[src/decodeBase64.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/decodeBase64.ts#L11)
-
----
-
-### decodeUtf8
-
-▸ **decodeUtf8**(`utftext`): `string`
-
-解码 Utf8
-
-#### Parameters
-
-| Name      | Type     |
-| :-------- | :------- |
-| `utftext` | `string` |
-
-#### Returns
-
-`string`
-
-解码后的字符串
-
-#### Defined in
-
-[src/decodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/decodeUtf8.ts#L7)
-
----
-
-### delCache
-
-▸ **delCache**(`name`): `void`
-
-删除 localStorage
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | 名称        |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/delCache.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/delCache.ts#L6)
-
----
-
-### delCookie
-
-▸ **delCookie**(`name`): `void`
-
-删除 cookie
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | cookie 名称 |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/delCookie.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/delCookie.ts#L8)
-
----
-
-### delSession
-
-▸ **delSession**(`name`): `void`
-
-删除 sessionStorage
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | 名称        |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/delSession.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/delSession.ts#L6)
-
----
-
-### delay
-
-▸ **delay**(): `Object`
-
-防抖节流
-
-#### Returns
-
-`Object`
-
-class
-
-| Name       | Type                                                                                                             |
-| :--------- | :--------------------------------------------------------------------------------------------------------------- |
-| `map`      | `any`                                                                                                            |
-| `destroy`  | (`id`: `string`) => `void`                                                                                       |
-| `register` | (`id`: `string`, `fn`: [`AnyFunction`](interfaces/AnyFunction.md), `time`: `number`, `boo`: `boolean`) => `void` |
-
-#### Defined in
-
-[src/delay.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/delay.ts#L8)
-
----
-
-### download
-
-▸ **download**(`url`, `filename`, `type?`): `void`
-
-文件下载的几种方式：
-
-1. 针对一些浏览器无法识别的文件格式。地址栏输入文件 URL、window.location.href = URL、window.open(URL)；
-2. 使用 a 标签 download 属性（或者 js 创建 a 标签）；
-3. 浏览器可识别的 pdf、txt 文件，后端兼容处理 attachment；
-4. 在 header 增加 token 用于鉴权下载，使用 XmlHttpRequest 来想后台发起请求
-
-#### Parameters
-
-| Name       | Type     | Default value | Description                                 |
-| :--------- | :------- | :------------ | :------------------------------------------ |
-| `url`      | `string` | `undefined`   | 链接                                        |
-| `filename` | `string` | `undefined`   | 文件名                                      |
-| `type`     | `string` | `'download'`  | 下载类型 'href','open','download','request' |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/download.ts:12](https://github.com/saqqdy/js-cool/blob/4221aa6/src/download.ts#L12)
-
----
-
-### enWxJumpLink
-
-▸ **enWxJumpLink**(`string`): `string`
-
-用*替换= 用!替换& 转码成微信跳转链接
-name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detail-goodsInfoId!params(goodsInfoId)\*8866
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回转码结果
-
-#### Defined in
-
-[src/enWxJumpLink.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/enWxJumpLink.ts#L8)
-
----
-
-### enWxJumpLinkOld
-
-▸ **enWxJumpLinkOld**(`string`): `string`
-
-用~替换= 用^替换& 转码成微信跳转链接
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `string` | `string` | 传入字符串  |
-
-#### Returns
-
-`string`
-
-返回转码结果
-
-#### Defined in
-
-[src/enWxJumpLinkOld.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/enWxJumpLinkOld.ts#L7)
-
----
-
-### encodeBase64
-
-▸ **encodeBase64**(`input`): `string`
-
-字符串、数字转 base64
-
-#### Parameters
-
-| Name    | Type     | Description      |
-| :------ | :------- | :--------------- |
-| `input` | `string` | 需要编码的字符串 |
-
-#### Returns
-
-`string`
-
-返回 BASE64 编码
-
-#### Defined in
-
-[src/encodeBase64.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/encodeBase64.ts#L11)
-
----
-
-### encodeUtf8
-
-▸ **encodeUtf8**(`string`): `string`
-
-编码 Utf8
-
-#### Parameters
-
-| Name     | Type     |
-| :------- | :------- |
-| `string` | `string` |
-
-#### Returns
-
-`string`
-
-返回 UTF-8 编码
-
-#### Defined in
-
-[src/encodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/encodeUtf8.ts#L7)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/995d293/src/client.ts#L8)
 
 ---
 
@@ -1204,514 +1059,7 @@ name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866 转成 name*exMall-detai
 
 #### Defined in
 
-[src/extend.ts:18](https://github.com/saqqdy/js-cool/blob/4221aa6/src/extend.ts#L18)
-
----
-
-### fillIPv6
-
-▸ **fillIPv6**(`ip`): `string`
-
-读取完整 IPv6
-
-**`example`**
-
-```js
-fillIPv6('2409:8005:800::2') // '2409:8005:0800:0000:0000:0000:0000:0002'
-fillIPv6('2409:8005:800::1c') // '2409:8005:0800:0000:0000:0000:0000:001c'
-```
-
-#### Parameters
-
-| Name | Type     |
-| :--- | :------- |
-| `ip` | `string` |
-
-#### Returns
-
-`string`
-
-string
-
-#### Defined in
-
-[src/fillIPv6.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/fillIPv6.ts#L11)
-
----
-
-### fixNumber
-
-▸ **fixNumber**(`number`, `n?`): `string` \| `number`
-
-截取小数点后几位，不足的不补 0
-
-#### Parameters
-
-| Name     | Type                 | Default value | Description                       |
-| :------- | :------------------- | :------------ | :-------------------------------- |
-| `number` | `string` \| `number` | `undefined`   | 要处理的数字，必填                |
-| `n`      | `number`             | `2`           | 要保留的小数点位数，默认保留 2 位 |
-
-#### Returns
-
-`string` \| `number`
-
-返回新数字
-
-#### Defined in
-
-[src/fixNumber.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/fixNumber.ts#L8)
-
----
-
-### formatTime
-
-▸ **formatTime**(`time`, `fmt?`): `string`
-
-日期格式化插件
-
-**`example`** 使用方式
-
-```js
-formatTime(new Date(), 'yyyy-MM-dd')
-```
-
-#### Parameters
-
-| Name   | Type               | Default value  | Description        |
-| :----- | :----------------- | :------------- | :----------------- |
-| `time` | `string` \| `Date` | `undefined`    | 时间对象或者字符串 |
-| `fmt`  | `string`           | `'yyyy-MM-dd'` | 格式化风格         |
-
-#### Returns
-
-`string`
-
-返回字符串
-
-#### Defined in
-
-[src/formatTime.ts:12](https://github.com/saqqdy/js-cool/blob/4221aa6/src/formatTime.ts#L12)
-
----
-
-### formatTimeStr
-
-▸ **formatTimeStr**(`time`, `fmt`): `string`
-
-格式化时间成：刚刚、几分钟前
-
-#### Parameters
-
-| Name   | Type                 | Description        |
-| :----- | :------------------- | :----------------- |
-| `time` | `string` \| `number` | 时间对象或者字符串 |
-| `fmt`  | `string`             | 格式化风格         |
-
-#### Returns
-
-`string`
-
-返回字符串
-
-#### Defined in
-
-[src/formatTimeStr.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/formatTimeStr.ts#L10)
-
----
-
-### getAppVersion
-
-▸ **getAppVersion**(`appName`, `withappstr?`, `userAgent?`): `string` \| `boolean` \| `null`
-
-获取 APP 版本号
-
-#### Parameters
-
-| Name          | Type      | Description                             |
-| :------------ | :-------- | :-------------------------------------- |
-| `appName`     | `string`  | app 名称                                |
-| `withappstr?` | `boolean` | -                                       |
-| `userAgent?`  | `string`  | ua，可不传，默认取 navigator.appVersion |
-
-#### Returns
-
-`string` \| `boolean` \| `null`
-
-null/true/false
-
-#### Defined in
-
-[src/getAppVersion.ts:9](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getAppVersion.ts#L9)
-
----
-
-### getCHSLength
-
-▸ **getCHSLength**(`str`): `number`
-
-获取文本长度，中文算 2 个字节
-
-#### Parameters
-
-| Name  | Type     | Description |
-| :---- | :------- | :---------- |
-| `str` | `string` | 字符串      |
-
-#### Returns
-
-`number`
-
-返回长度
-
-#### Defined in
-
-[src/getCHSLength.ts:23](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getCHSLength.ts#L23)
-
----
-
-### getCache
-
-▸ **getCache**(`name`): `any`
-
-获取缓存，存入的如果是 Object，取出的也是 Object，不需要再转换
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | 缓存名称    |
-
-#### Returns
-
-`any`
-
-返回数据，存的如果是对象，取出的也是对象
-
-#### Defined in
-
-[src/getCache.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getCache.ts#L7)
-
----
-
-### getCookie
-
-▸ **getCookie**(`name`): `any`
-
-读取 cookies
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | cookie 名称 |
-
-#### Returns
-
-`any`
-
-返回 cookie 字符串
-
-#### Defined in
-
-[src/getCookie.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getCookie.ts#L7)
-
----
-
-### getDirParam
-
-▸ **getDirParam**(`url`): [`DirParamType`](interfaces/DirParamType.md)
-
-获取目录形式 URL 参数
-
-#### Parameters
-
-| Name  | Type     | Description   |
-| :---- | :------- | :------------ |
-| `url` | `string` | 传入 url 地址 |
-
-#### Returns
-
-[`DirParamType`](interfaces/DirParamType.md)
-
-返回参数对象
-
-#### Defined in
-
-[src/getDirParam.ts:12](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getDirParam.ts#L12)
-
----
-
-### getFileType
-
-▸ **getFileType**(`url`): `string`
-
-文件后缀名
-
-**`example`**
-
-```js
-getFileType('http://www.saqqdy.com/test.jpg') // .jpg;
-```
-
-**`example`**
-
-```js
-getFileType('http://www.saqqdy.com/test.JPEG') // .jpeg;
-```
-
-#### Parameters
-
-| Name  | Type     | Description |
-| :---- | :------- | :---------- |
-| `url` | `string` | 文件名      |
-
-#### Returns
-
-`string`
-
-返回文件后缀
-
-#### Defined in
-
-[src/getFileType.ts:15](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getFileType.ts#L15)
-
----
-
-### getIsAppVersionLastest
-
-▸ **getIsAppVersionLastest**(`appName`, `compareVer`, `userAgent?`): `boolean` \| `null`
-
-版本号大小对比
-
-**`example`**
-
-```js
-// navigator.appVersion = "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"
-getIsAppVersionLastest('Chrome', '90.0.4515.159') // true;
-getIsAppVersionLastest('Chrome', '94.10.4515.159', navigator.appVersion) // false;
-```
-
-#### Parameters
-
-| Name         | Type     | Description                             |
-| :----------- | :------- | :-------------------------------------- |
-| `appName`    | `string` | app 名称                                |
-| `compareVer` | `string` | 必传 需要对比的版本号                   |
-| `userAgent?` | `string` | ua，可不传，默认取 navigator.appVersion |
-
-#### Returns
-
-`boolean` \| `null`
-
-null/true/false
-
-#### Defined in
-
-[src/getIsAppVersionLastest.ts:17](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getIsAppVersionLastest.ts#L17)
-
----
-
-### getNumber
-
-▸ **getNumber**(`string`): `string`
-
-获取字符串中的数字
-
-**`example`**
-
-```js
-getNumber('Chrome123.33') // '123.33';
-getNumber('234test.88') // '234.88';
-```
-
-#### Parameters
-
-| Name     | Type     | Description        |
-| :------- | :------- | :----------------- |
-| `string` | `string` | 传入带数字的字符串 |
-
-#### Returns
-
-`string`
-
-返回纯数字字符串
-
-#### Defined in
-
-[src/getNumber.ts:12](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getNumber.ts#L12)
-
----
-
-### getOsVersion
-
-▸ **getOsVersion**(`osName`, `withosstr?`, `userAgent?`): `string` \| `boolean` \| `null`
-
-获取手机系统版本
-
-**`example`**
-
-```
-getAppVersion('iPhone') // '13.2.3'
-getAppVersion('iPhone', true) // 'iPhone/13.2.3'
-```
-
-#### Parameters
-
-| Name         | Type      | Description                                    |
-| :----------- | :-------- | :--------------------------------------------- |
-| `osName`     | `string`  | 系统类型字符串 Android、iPod、iWatch 或 iPhone |
-| `withosstr?` | `boolean` | 是否需要带上名称                               |
-| `userAgent?` | `string`  | ua，可不传，默认取 navigator.appVersion        |
-
-#### Returns
-
-`string` \| `boolean` \| `null`
-
-null/true/false
-
-#### Defined in
-
-[src/getOsVersion.ts:16](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getOsVersion.ts#L16)
-
----
-
-### getParameter
-
-▸ **getParameter**(`name`): `string` \| `null`
-
-获取单个 URL 参数
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | 参数名称    |
-
-#### Returns
-
-`string` \| `null`
-
-返回参数值
-
-#### Defined in
-
-[src/getParameter.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getParameter.ts#L7)
-
----
-
-### getProperty
-
-▸ **getProperty**(`target`, `prop`): `any`
-
-根据路径字符串获取数组、对象属性值
-
-**`example`**
-
-```js
-const target = {
-    a: 1,
-    b: [
-        {
-            c: 2
-        }
-    ]
-}
-getProperty(target, 'a') // 1
-getProperty(target, 'b[0].c') // 2
-getProperty(target, () => 'a') // 1
-```
-
-#### Parameters
-
-| Name     | Type                       | Description             |
-| :------- | :------------------------- | :---------------------- |
-| `target` | `any`                      | 目标数组、对象          |
-| `prop`   | `string` \| () => `string` | 查询目标，可传 function |
-
-#### Returns
-
-`any`
-
-返回对应的值
-
-#### Defined in
-
-src/getProperty.ts:21
-
----
-
-### getRandomNum
-
-▸ **getRandomNum**(`min?`, `max?`): `number`
-
-获取随机整数
-
-#### Parameters
-
-| Name  | Type     | Default value | Description    |
-| :---- | :------- | :------------ | :------------- |
-| `min` | `number` | `1`           | 随机数的最小值 |
-| `max` | `number` | `10`          | 随机数的最大值 |
-
-#### Returns
-
-`number`
-
-返回数字
-
-#### Defined in
-
-[src/getRandomNum.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getRandomNum.ts#L8)
-
----
-
-### getRandomStr
-
-▸ **getRandomStr**(`len?`, `widthSpecialChar?`): `string`
-
-获取随机字符串
-
-#### Parameters
-
-| Name               | Type      | Default value | Description                      |
-| :----------------- | :-------- | :------------ | :------------------------------- |
-| `len`              | `number`  | `32`          | 需要获取随机字符串的长度         |
-| `widthSpecialChar` | `boolean` | `false`       | 可选，是否需要生成带特殊字符的串 |
-
-#### Returns
-
-`string`
-
-随机串
-
-#### Defined in
-
-[src/getRandomStr.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getRandomStr.ts#L8)
-
----
-
-### getRandomStrWidthSpecialChar
-
-▸ **getRandomStrWidthSpecialChar**(`len?`): `string`
-
-获取随机字符串带特殊符号
-
-#### Parameters
-
-| Name  | Type     | Default value | Description              |
-| :---- | :------- | :------------ | :----------------------- |
-| `len` | `number` | `32`          | 需要获取随机字符串的长度 |
-
-#### Returns
-
-`string`
-
-随机串
-
-#### Defined in
-
-[src/getRandomStrWidthSpecialChar.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getRandomStrWidthSpecialChar.ts#L7)
+[src/extend.ts:18](https://github.com/saqqdy/js-cool/blob/995d293/src/extend.ts#L18)
 
 ---
 
@@ -1729,757 +1077,7 @@ src/getProperty.ts:21
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getScrollPosition.ts#L6)
-
----
-
-### getSession
-
-▸ **getSession**(`name`): `any`
-
-读取 sessionStorage
-
-#### Parameters
-
-| Name   | Type     | Description |
-| :----- | :------- | :---------- |
-| `name` | `string` | 名称        |
-
-#### Returns
-
-`any`
-
-返回 sessionStorage
-
-#### Defined in
-
-[src/getSession.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getSession.ts#L7)
-
----
-
-### getType
-
-▸ **getType**(`target`): `string`
-
-获取目标类型
-
-#### Parameters
-
-| Name     | Type  | Description |
-| :------- | :---- | :---------- |
-| `target` | `any` | 目标        |
-
-#### Returns
-
-`string`
-
-类型
-
-#### Defined in
-
-[src/getType.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getType.ts#L7)
-
----
-
-### getUrlParam
-
-▸ **getUrlParam**(`url`): `object`
-
-获取 URL 参数
-
-#### Parameters
-
-| Name  | Type     | Description   |
-| :---- | :------- | :------------ |
-| `url` | `string` | 传入 url 参数 |
-
-#### Returns
-
-`object`
-
-返回参数列表
-
-#### Defined in
-
-[src/getUrlParam.ts:51](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getUrlParam.ts#L51)
-
----
-
-### getWindowSize
-
-▸ **getWindowSize**(): [`WindowSizeObj`](interfaces/WindowSizeObj.md)
-
-getWindowSize 获取窗口大小
-
-#### Returns
-
-[`WindowSizeObj`](interfaces/WindowSizeObj.md)
-
-返回宽高
-
-#### Defined in
-
-[src/getWindowSize.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/getWindowSize.ts#L11)
-
----
-
-### imgAdapt
-
-▸ **imgAdapt**(`imgurl`, `size`): `string` \| `false`
-
-扩展图片自动适应多种分辨率 small original
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `imgurl` | `string` | 图片 url    |
-| `size`   | `string` | 图片规格    |
-
-#### Returns
-
-`string` \| `false`
-
-返回新地址
-
-#### Defined in
-
-[src/imgAdapt.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/imgAdapt.ts#L8)
-
----
-
-### imgChoose
-
-▸ **imgChoose**(`imgurl`): `string`
-
-扩展图片自动适应多种分辨率`@2x @3x`
-
-#### Parameters
-
-| Name     | Type     | Description |
-| :------- | :------- | :---------- |
-| `imgurl` | `string` | 图片地址    |
-
-#### Returns
-
-`string`
-
-返回新地址
-
-#### Defined in
-
-[src/imgChoose.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/imgChoose.ts#L7)
-
----
-
-### intersect
-
-▸ **intersect**<`T`\>(...`args`): `T`[]
-
-求多个数组的交集
-
-**`example`**
-
-```js
-intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
-```
-
-#### Type parameters
-
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
-
-#### Parameters
-
-| Name      | Type    | Description |
-| :-------- | :------ | :---------- |
-| `...args` | `T`[][] | 参数        |
-
-#### Returns
-
-`T`[]
-
-array
-
-#### Defined in
-
-[src/intersect.ts:13](https://github.com/saqqdy/js-cool/blob/4221aa6/src/intersect.ts#L13)
-
----
-
-### isArray
-
-▸ **isArray**(`arr`): arr is any[]
-
-判断是否数组
-
-#### Parameters
-
-| Name  | Type  | Description |
-| :---- | :---- | :---------- |
-| `arr` | `any` | -           |
-
-#### Returns
-
-arr is any[]
-
-#### Defined in
-
-[src/isArray.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/isArray.ts#L6)
-
----
-
-### isDigitals
-
-▸ **isDigitals**(`str`): `boolean`
-
-是否为由数字组成的字符串
-
-#### Parameters
-
-| Name  | Type  | Description    |
-| :---- | :---- | :------------- |
-| `str` | `any` | 待检测的字符串 |
-
-#### Returns
-
-`boolean`
-
-返回 true/false
-
-#### Defined in
-
-[src/isDigitals.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/isDigitals.ts#L7)
-
----
-
-### isExitsFunction
-
-▸ **isExitsFunction**(`funcName`): `boolean`
-
-是否存在指定函数
-
-#### Parameters
-
-| Name       | Type     | Description |
-| :--------- | :------- | :---------- |
-| `funcName` | `string` | 传入函数名  |
-
-#### Returns
-
-`boolean`
-
-返回 true/false
-
-#### Defined in
-
-[src/isExitsFunction.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/isExitsFunction.ts#L7)
-
----
-
-### isExitsVariable
-
-▸ **isExitsVariable**(`variableName`): `boolean`
-
-是否存在指定变量
-
-#### Parameters
-
-| Name           | Type     | Description  |
-| :------------- | :------- | :----------- |
-| `variableName` | `string` | 传入变量名称 |
-
-#### Returns
-
-`boolean`
-
-返回 true/false
-
-#### Defined in
-
-[src/isExitsVariable.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/isExitsVariable.ts#L7)
-
----
-
-### minus
-
-▸ **minus**<`T`\>(...`args`): `T`[]
-
-求多个数组的差集，属于 A 但不属于 B/C/D...的元素
-
-**`example`**
-
-```js
-minus([1, 2], [2, '33'], [2, 4]) // [1]
-```
-
-#### Type parameters
-
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
-
-#### Parameters
-
-| Name      | Type    | Description |
-| :-------- | :------ | :---------- |
-| `...args` | `T`[][] | 参数        |
-
-#### Returns
-
-`T`[]
-
-array
-
-#### Defined in
-
-[src/minus.ts:14](https://github.com/saqqdy/js-cool/blob/4221aa6/src/minus.ts#L14)
-
----
-
-### nextIndex
-
-▸ **nextIndex**(`min?`, `max?`): `number`
-
-返回下一个 zIndex 值
-
-#### Parameters
-
-| Name  | Type     | Default value | Description  |
-| :---- | :------- | :------------ | :----------- |
-| `min` | `number` | `5000`        | 可选，最小值 |
-| `max` | `number` | `10000`       | 可选，最大值 |
-
-#### Returns
-
-`number`
-
-数字
-
-#### Defined in
-
-[src/nextIndex.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/nextIndex.ts#L8)
-
----
-
-### openUrl
-
-▸ **openUrl**(`url`): `void`
-
-新标签页打开链接（浏览器不能解析的文件跳转下载）
-
-#### Parameters
-
-| Name  | Type     | Description |
-| :---- | :------- | :---------- |
-| `url` | `string` | 链接        |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/openUrl.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/openUrl.ts#L6)
-
----
-
-### removeEvent
-
-▸ **removeEvent**(`element`, `type`, `handler`): `void`
-
-removeEvent 移除由 addEvent 创建的事件委托
-
-#### Parameters
-
-| Name      | Type                                       | Description           |
-| :-------- | :----------------------------------------- | :-------------------- |
-| `element` | [`AnyObject`](interfaces/AnyObject.md)     | js dom 对象           |
-| `type`    | `string`                                   | 事件类型。不需要加 on |
-| `handler` | [`AnyFunction`](interfaces/AnyFunction.md) | 回调方法              |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/removeEvent.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/removeEvent.ts#L10)
-
----
-
-### searchTreeObject
-
-▸ **searchTreeObject**(`tree`, `expression`, `keySet`, `number?`): `any`[]
-
-tree 对象深度查找
-
-#### Parameters
-
-| Name         | Type                                         | Default value | Description                    |
-| :----------- | :------------------------------------------- | :------------ | :----------------------------- |
-| `tree`       | `object` \| `any`[]                          | `undefined`   | 树形对象                       |
-| `expression` | `any`                                        | `undefined`   | 必填 查询方式                  |
-| `keySet`     | [`SearchkeySet`](interfaces/SearchkeySet.md) | `undefined`   | 选填 默认的子类名称、查询 name |
-| `number`     | `number`                                     | `0`           | 选填 查找个数，不传则查询全部  |
-
-#### Returns
-
-`any`[]
-
-返回查询到的数组
-
-#### Defined in
-
-[src/searchTreeObject.ts:16](https://github.com/saqqdy/js-cool/blob/4221aa6/src/searchTreeObject.ts#L16)
-
----
-
-### setCache
-
-▸ **setCache**(`name`, `value`, `seconds`): `void`
-
-获取缓存，存入的如果是 Object，取出的也是 Object，不需要再转换
-
-#### Parameters
-
-| Name      | Type     | Description                   |
-| :-------- | :------- | :---------------------------- |
-| `name`    | `string` | 缓存名称                      |
-| `value`   | `any`    | 缓存数据，可以直接传入 Object |
-| `seconds` | `number` | -缓存时间（秒）               |
-
-#### Returns
-
-`void`
-
-返回数据，存的如果是对象，取出的也是对象
-
-#### Defined in
-
-[src/setCache.ts:14](https://github.com/saqqdy/js-cool/blob/4221aa6/src/setCache.ts#L14)
-
----
-
-### setCookie
-
-▸ **setCookie**(`name`, `value`, `seconds?`, `path?`, `samesite?`): `void`
-
-setCookie 写入 cookie 的方法
-
-#### Parameters
-
-| Name       | Type      | Default value | Description                        |
-| :--------- | :-------- | :------------ | :--------------------------------- |
-| `name`     | `string`  | `undefined`   | cookie 名称                        |
-| `value`    | `any`     | `undefined`   | 设置要存储的值，可以是对象或字符串 |
-| `seconds`  | `number`  | `86400`       | cookie 有效时间默认 1 天           |
-| `path`     | `string`  | `'/'`         | 路径，默认'/'                      |
-| `samesite` | `boolean` | `true`        | SameSite，默认 true                |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/setCookie.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/setCookie.ts#L10)
-
----
-
-### setSession
-
-▸ **setSession**(`name`, `value`, `seconds`): `void`
-
-写 sessionStorage
-
-#### Parameters
-
-| Name      | Type     | Description                        |
-| :-------- | :------- | :--------------------------------- |
-| `name`    | `string` | 名称                               |
-| `value`   | `any`    | 设置要存储的值，可以是对象或字符串 |
-| `seconds` | `number` | 有效时间                           |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/setSession.ts:13](https://github.com/saqqdy/js-cool/blob/4221aa6/src/setSession.ts#L13)
-
----
-
-### splitThousand
-
-▸ **splitThousand**(`val`): `string` \| `0`
-
-数字千分位分割
-
-#### Parameters
-
-| Name  | Type                 |
-| :---- | :------------------- |
-| `val` | `string` \| `number` |
-
-#### Returns
-
-`string` \| `0`
-
-分割后的字符串
-
-#### Defined in
-
-[src/splitThousand.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/splitThousand.ts#L7)
-
----
-
-### stopBubble
-
-▸ **stopBubble**(`e`): `boolean`
-
-阻止冒泡
-
-#### Parameters
-
-| Name | Type    | Description       |
-| :--- | :------ | :---------------- |
-| `e`  | `Event` | dom 的 event 对象 |
-
-#### Returns
-
-`boolean`
-
-bool false
-
-#### Defined in
-
-[src/stopBubble.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/stopBubble.ts#L7)
-
----
-
-### stopDefault
-
-▸ **stopDefault**(`e`): `boolean`
-
-阻止默认事件
-
-#### Parameters
-
-| Name | Type    | Description       |
-| :--- | :------ | :---------------- |
-| `e`  | `Event` | dom 的 event 对象 |
-
-#### Returns
-
-`boolean`
-
-bool false
-
-#### Defined in
-
-[src/stopDefault.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/stopDefault.ts#L7)
-
----
-
-### textareaInsertText
-
-▸ **textareaInsertText**(`obj`, `str`): `void`
-
-textarea 或 input 对象在指定的光标位置插入文字
-
-#### Parameters
-
-| Name  | Type                  | Description  |
-| :---- | :-------------------- | :----------- |
-| `obj` | `HTMLTextAreaElement` | -            |
-| `str` | `string`              | 要插入的文字 |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/textareaInsertText.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/textareaInsertText.ts#L7)
-
----
-
-### textareaMoveToEnd
-
-▸ **textareaMoveToEnd**(`obj`): `void`
-
-textarea 或 input 对象将光标定位到文字尾部
-
-#### Parameters
-
-| Name  | Type                  | Description |
-| :---- | :-------------------- | :---------- |
-| `obj` | `HTMLTextAreaElement` | dom 对象    |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/textareaMoveToEnd.ts:6](https://github.com/saqqdy/js-cool/blob/4221aa6/src/textareaMoveToEnd.ts#L6)
-
----
-
-### throttle
-
-▸ **throttle**(`fn`, `delay`, `immediate`, `debounce`): () => `void`
-
-频率控制 返回函数连续调用时，fn 执行频率限定为每多少时间执行一次
-
-#### Parameters
-
-| Name        | Type                                       | Description                                                           |
-| :---------- | :----------------------------------------- | :-------------------------------------------------------------------- |
-| `fn`        | [`AnyFunction`](interfaces/AnyFunction.md) | 需要调用的函数                                                        |
-| `delay`     | `number`                                   | 延迟时间，单位毫秒                                                    |
-| `immediate` | `boolean`                                  | 给 immediate 参数传递 false 绑定的函数先执行，而不是 delay 后后执行。 |
-| `debounce`  | `boolean`                                  | -                                                                     |
-
-#### Returns
-
-`fn`
-
-实际调用函数
-
-▸ (): `void`
-
-##### Returns
-
-`void`
-
-#### Defined in
-
-[src/throttle.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/throttle.ts#L11)
-
----
-
-### trim
-
-▸ **trim**(`string`, `type?`): `string` \| `void`
-
-trim()根据传参来去除空格
-
-#### Parameters
-
-| Name     | Type     | Default value | Description                                                                              |
-| :------- | :------- | :------------ | :--------------------------------------------------------------------------------------- |
-| `string` | `string` | `undefined`   | 传入字符串                                                                               |
-| `type`   | `string` | `''`          | 可选，去除空格的类型 l:去除开头空格 r:去除尾部空格 lr:去除两端空格，为空的话去除所有空格 |
-
-#### Returns
-
-`string` \| `void`
-
-返回新字符串
-
-#### Defined in
-
-[src/trim.ts:8](https://github.com/saqqdy/js-cool/blob/4221aa6/src/trim.ts#L8)
-
----
-
-### union
-
-▸ **union**<`T`\>(...`args`): `T`[]
-
-求多个数组的并集
-
-**`example`**
-
-```js
-union([1, 2], [2, '33']) // [1, 2, '33']
-```
-
-#### Type parameters
-
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
-
-#### Parameters
-
-| Name      | Type    | Description |
-| :-------- | :------ | :---------- |
-| `...args` | `T`[][] | 参数        |
-
-#### Returns
-
-`T`[]
-
-array
-
-#### Defined in
-
-[src/union.ts:14](https://github.com/saqqdy/js-cool/blob/4221aa6/src/union.ts#L14)
-
----
-
-### unique
-
-▸ **unique**<`T`\>(`arr`): `T`[]
-
-数组去重
-
-**`example`**
-
-```js
-unique([1, 2, 2, '33']) // [1, 2, '33']
-```
-
-#### Type parameters
-
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
-
-#### Parameters
-
-| Name  | Type  |
-| :---- | :---- |
-| `arr` | `T`[] |
-
-#### Returns
-
-`T`[]
-
-array
-
-#### Defined in
-
-[src/unique.ts:11](https://github.com/saqqdy/js-cool/blob/4221aa6/src/unique.ts#L11)
-
----
-
-### upperFirst
-
-▸ **upperFirst**(`string`): `string`
-
-首字母大写
-
-#### Parameters
-
-| Name     | Type     | Description      |
-| :------- | :------- | :--------------- |
-| `string` | `string` | 需要转换的字符串 |
-
-#### Returns
-
-`string`
-
-返回转换后的字符串
-
-#### Defined in
-
-[src/upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/4221aa6/src/upperFirst.ts#L7)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/995d293/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -2503,4 +1101,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/4221aa6/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/995d293/src/uuid.ts#L10)

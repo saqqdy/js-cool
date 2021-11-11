@@ -6,5 +6,5 @@
  * @param seconds -缓存时间（秒）
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
-export declare function setCache(name: string, value: any, seconds: number): void;
+declare function setCache(name: string, value: any, seconds: number): void;
 export default setCache;

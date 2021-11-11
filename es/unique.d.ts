@@ -7,5 +7,5 @@
  * ```
  * @returns array
  */
-export declare function unique<T = unknown>(arr: T[]): T[];
+declare function unique<T = unknown>(arr: T[]): T[];
 export default unique;

@@ -5,5 +5,5 @@
  * @param n - 要保留的小数点位数，默认保留2位
  * @returns 返回新数字
  */
-export declare function fixNumber(number: string | number, n?: number): string | number;
+declare function fixNumber(number: string | number, n?: number): string | number;
 export default fixNumber;

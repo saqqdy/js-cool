@@ -1,15 +1,11 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var contains = require('./contains.js');
-var unique = require('./unique.js');
+import contains from './contains.js';
+import unique from './unique.js';
 
 /**
  * 求多个数组的并集
@@ -22,8 +18,7 @@ var unique = require('./unique.js');
  * @returns array
  */
 function union(...args) {
-    return unique.unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains.contains(pre, item)))));
+    return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))));
 }
 
-exports["default"] = union;
-exports.union = union;
+export { union as default };

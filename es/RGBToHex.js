@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 将RGB组件的值转换为颜色代码。
  *
@@ -19,5 +15,4 @@ Object.defineProperty(exports, '__esModule', { value: true });
  */
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
-exports.RGBToHex = RGBToHex;
-exports["default"] = RGBToHex;
+export { RGBToHex as default };

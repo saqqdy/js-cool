@@ -17,5 +17,5 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export declare const arrayToCSV: (arr: any[], delimiter?: string) => string;
+declare const arrayToCSV: (arr: any[], delimiter?: string) => string;
 export default arrayToCSV;

@@ -4,5 +4,5 @@
  * @param string - 传入字符串
  * @returns 返回解码结果
  */
-export declare function deWxJumpLinkOld(string: string): string;
+declare function deWxJumpLinkOld(string: string): string;
 export default deWxJumpLinkOld;

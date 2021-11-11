@@ -8,5 +8,5 @@ export interface DirParamType {
  * @param url - 传入url地址
  * @returns 返回参数对象
  */
-export declare function getDirParam(url: string): DirParamType;
+declare function getDirParam(url: string): DirParamType;
 export default getDirParam;

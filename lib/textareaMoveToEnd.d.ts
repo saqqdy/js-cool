@@ -3,5 +3,5 @@
  *
  * @param obj - dom对象
  */
-export declare function textareaMoveToEnd(obj: HTMLTextAreaElement): void;
+declare function textareaMoveToEnd(obj: HTMLTextAreaElement): void;
 export default textareaMoveToEnd;

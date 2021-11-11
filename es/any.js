@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
  *
@@ -25,5 +21,4 @@ Object.defineProperty(exports, '__esModule', { value: true });
  */
 const any = (arr, fn) => arr.some(fn);
 
-exports.any = any;
-exports["default"] = any;
+export { any as default };

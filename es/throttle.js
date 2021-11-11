@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 频率控制 返回函数连续调用时，fn 执行频率限定为每多少时间执行一次
  *
@@ -50,5 +46,4 @@ function throttle(fn, delay, immediate, debounce) {
     };
 }
 
-exports["default"] = throttle;
-exports.throttle = throttle;
+export { throttle as default };

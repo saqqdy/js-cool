@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var throttle = require('./throttle.js');
+import throttle from './throttle.js';
 
 /**
  * 空闲控制 返回函数连续调用时，空闲时间必须大于或等于 delay，fn 才会执行
@@ -19,8 +15,7 @@ var throttle = require('./throttle.js');
  * @return 实际调用函数
  */
 function debounce(fn, delay, immediate) {
-    return throttle.throttle(fn, delay, immediate, true);
+    return throttle(fn, delay, immediate, true);
 }
 
-exports.debounce = debounce;
-exports["default"] = debounce;
+export { debounce as default };

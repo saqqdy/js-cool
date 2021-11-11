@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 扩展图片自动适应多种分辨率`@2x @3x`
  *
@@ -31,5 +27,4 @@ function imgChoose(imgurl) {
     return imgurl.replace(preReg, '').replace(urlReg, imgPre + '$1');
 }
 
-exports["default"] = imgChoose;
-exports.imgChoose = imgChoose;
+export { imgChoose as default };

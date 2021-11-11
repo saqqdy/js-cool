@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
  *
@@ -33,5 +29,4 @@ const arrayToCSV = (arr, delimiter = ',') => arr
     .join(delimiter))
     .join('\n');
 
-exports.arrayToCSV = arrayToCSV;
-exports["default"] = arrayToCSV;
+export { arrayToCSV as default };

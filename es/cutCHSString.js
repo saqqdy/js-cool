@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * js截取字符串，中英文都能用
  * @private
@@ -75,5 +71,4 @@ function cutCHSString(str, len = str.length, hasDot = false) {
     }
 }
 
-exports.cutCHSString = cutCHSString;
-exports["default"] = cutCHSString;
+export { cutCHSString as default };

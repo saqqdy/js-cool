@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * addEvent()事件委托，支持多次委托
  *
@@ -92,5 +88,4 @@ fixEvent.stopPropagation = function () {
     this.cancelBubble = true;
 };
 
-exports.addEvent = addEvent;
-exports["default"] = addEvent;
+export { addEvent as default };

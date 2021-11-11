@@ -4,5 +4,5 @@
  * @param string - 需要转换的字符串
  * @returns 返回转换后的字符串
  */
-export declare function dash2Camel(string: string): string;
+declare function dash2Camel(string: string): string;
 export default dash2Camel;

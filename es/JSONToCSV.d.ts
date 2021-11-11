@@ -14,5 +14,5 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-export declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
+declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string;
 export default JSONToCSV;

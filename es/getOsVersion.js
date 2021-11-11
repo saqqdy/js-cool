@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var getAppVersion = require('./getAppVersion.js');
+import getAppVersion from './getAppVersion.js';
 
 /**
  * 获取手机系统版本
@@ -37,8 +33,7 @@ function getOsVersion(osName, withosstr, userAgent) {
     if (index > -1) {
         ver = ver.replace(/OS\//gi, osName + '/');
     }
-    return getAppVersion.getAppVersion(osName, withosstr, ver);
+    return getAppVersion(osName, withosstr, ver);
 }
 
-exports["default"] = getOsVersion;
-exports.getOsVersion = getOsVersion;
+export { getOsVersion as default };

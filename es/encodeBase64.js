@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var encodeUtf8 = require('./encodeUtf8.js');
+import encodeUtf8 from './encodeUtf8.js';
 
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 /**
@@ -21,7 +17,7 @@ function encodeBase64(input) {
     var output = '';
     var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
     var i = 0;
-    input = encodeUtf8.encodeUtf8(input);
+    input = encodeUtf8(input);
     while (i < input.length) {
         chr1 = input.charCodeAt(i++);
         chr2 = input.charCodeAt(i++);
@@ -46,5 +42,4 @@ function encodeBase64(input) {
     return output;
 }
 
-exports["default"] = encodeBase64;
-exports.encodeBase64 = encodeBase64;
+export { encodeBase64 as default };

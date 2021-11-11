@@ -3,5 +3,5 @@
  *
  * @param url - 链接
  */
-export declare function openUrl(url: string): void;
+declare function openUrl(url: string): void;
 export default openUrl;

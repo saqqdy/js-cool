@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var getAppVersion = require('./getAppVersion.js');
+import getAppVersion from './getAppVersion.js';
 
 /**
  * 版本号大小对比
@@ -28,7 +24,7 @@ function getIsAppVersionLastest(appName, compareVer, userAgent) {
     userAgent = userAgent || navigator.appVersion;
     var basicVer = appName.indexOf('.') > 0
         ? appName
-        : getAppVersion.getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+        : getAppVersion(appName, false, userAgent); // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
     if (basicVer === null) {
         return null;
     } // 不是指定客户端
@@ -57,5 +53,4 @@ function getIsAppVersionLastest(appName, compareVer, userAgent) {
     }
 }
 
-exports["default"] = getIsAppVersionLastest;
-exports.getIsAppVersionLastest = getIsAppVersionLastest;
+export { getIsAppVersionLastest as default };

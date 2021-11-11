@@ -1,15 +1,11 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var contains = require('./contains.js');
-var unique = require('./unique.js');
+import contains from './contains.js';
+import unique from './unique.js';
 
 /**
  * 求多个数组的差集，属于A但不属于B/C/D...的元素
@@ -23,10 +19,9 @@ var unique = require('./unique.js');
  */
 function minus(...args) {
     return args.reduce((pre, cur, index) => {
-        index === 1 && (pre = unique.unique(pre));
-        return pre.filter(item => !contains.contains(cur, item));
+        index === 1 && (pre = unique(pre));
+        return pre.filter(item => !contains(cur, item));
     });
 }
 
-exports["default"] = minus;
-exports.minus = minus;
+export { minus as default };

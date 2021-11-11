@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * removeEvent移除由addEvent创建的事件委托
  *
@@ -27,5 +23,4 @@ function removeEvent(element, type, handler) {
     }
 }
 
-exports["default"] = removeEvent;
-exports.removeEvent = removeEvent;
+export { removeEvent as default };

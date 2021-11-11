@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
  *
@@ -36,5 +32,4 @@ function getCache(name) {
     return null;
 }
 
-exports["default"] = getCache;
-exports.getCache = getCache;
+export { getCache as default };

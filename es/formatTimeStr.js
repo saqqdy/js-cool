@@ -1,14 +1,10 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var formatTime = require('./formatTime.js');
+import formatTime from './formatTime.js';
 
 /**
  * 格式化时间成：刚刚、几分钟前
@@ -39,10 +35,9 @@ function formatTimeStr(time, fmt) {
         newTimeStr = parseInt('' + t / (60 * 60 * 24)) + '\u5929\u524D';
     }
     else {
-        newTimeStr = formatTime.formatTime(new Date(time), format);
+        newTimeStr = formatTime(new Date(time), format);
     }
     return newTimeStr;
 }
 
-exports["default"] = formatTimeStr;
-exports.formatTimeStr = formatTimeStr;
+export { formatTimeStr as default };

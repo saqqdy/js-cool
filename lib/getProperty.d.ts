@@ -17,7 +17,7 @@
  * @param prop - 查询目标，可传function
  * @returns 返回对应的值
  */
-export declare function getProperty(target: any, prop: string | {
+declare function getProperty(target: any, prop: string | {
     (): string;
 }): any;
 export default getProperty;

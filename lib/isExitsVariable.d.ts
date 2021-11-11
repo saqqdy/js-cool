@@ -4,5 +4,5 @@
  * @param variableName - 传入变量名称
  * @returns 返回true/false
  */
-export declare function isExitsVariable(variableName: string): boolean;
+declare function isExitsVariable(variableName: string): boolean;
 export default isExitsVariable;

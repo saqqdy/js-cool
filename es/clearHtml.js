@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 去除HTML标签
  *
@@ -18,5 +14,4 @@ function clearHtml(string) {
     return string.replace(/<\/?.+?>/g, '').replace(/[\r\n]/g, '');
 }
 
-exports.clearHtml = clearHtml;
-exports["default"] = clearHtml;
+export { clearHtml as default };

@@ -8,5 +8,5 @@
  * @param args - 参数
  * @returns array
  */
-export declare function union<T = unknown>(...args: T[][]): T[];
+declare function union<T = unknown>(...args: T[][]): T[];
 export default union;

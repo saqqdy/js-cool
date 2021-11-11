@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * setCookie写入cookie的方法
  *
@@ -33,5 +29,4 @@ function setCookie(name, value, seconds = 86400, path = '/', samesite = true) {
                 : '');
 }
 
-exports["default"] = setCookie;
-exports.setCookie = setCookie;
+export { setCookie as default };

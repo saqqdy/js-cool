@@ -9,11 +9,7 @@
  * @param filename - 文件名
  * @param type - 下载类型 'href','open','download','request'
  */
-function download(
-    url: string,
-    filename: string,
-    type: string = 'download'
-) {
+function download(url: string, filename: string, type: string = 'download') {
     // @ts-ignore
     let name = /[^\/]+$/.exec(url)[0],
         // @ts-ignore

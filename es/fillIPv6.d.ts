@@ -8,5 +8,5 @@
  * ```
  * @returns string
  */
-export declare function fillIPv6(ip: string): string;
+declare function fillIPv6(ip: string): string;
 export default fillIPv6;

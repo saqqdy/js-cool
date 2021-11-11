@@ -4,5 +4,5 @@
  * @param str - 字符串
  * @returns 返回长度
  */
-export declare function getCHSLength(str: string): number;
+declare function getCHSLength(str: string): number;
 export default getCHSLength;

@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 获取随机整数
  *
@@ -21,5 +17,4 @@ function getRandomNum(min = 1, max = 10) {
     return min + Math.round(Rand * Range);
 }
 
-exports["default"] = getRandomNum;
-exports.getRandomNum = getRandomNum;
+export { getRandomNum as default };

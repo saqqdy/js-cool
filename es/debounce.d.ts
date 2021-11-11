@@ -7,5 +7,5 @@ import type { AnyFunction } from '../typings/common';
  * @param immediate - 给 immediate参数传递false 绑定的函数先执行，而不是delay后后执行。
  * @return 实际调用函数
  */
-export declare function debounce(fn: AnyFunction, delay: number, immediate: boolean): () => void;
+declare function debounce(fn: AnyFunction, delay: number, immediate: boolean): () => void;
 export default debounce;

@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 用=替换* 用&替换! 解码成微信跳转链接
  * name*exMall-detail-goodsInfoId!params(goodsInfoId)*8866 转成 name=exMall-detail-goodsInfoId&params[goodsInfoId]=8866
@@ -25,5 +21,4 @@ function deWxJumpLink(string) {
         .replace(/[\)]{1}/g, ']'));
 }
 
-exports.deWxJumpLink = deWxJumpLink;
-exports["default"] = deWxJumpLink;
+export { deWxJumpLink as default };

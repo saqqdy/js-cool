@@ -4,5 +4,5 @@
  * @param imgurl - 图片地址
  * @returns 返回新地址
  */
-export declare function imgChoose(imgurl: string): string;
+declare function imgChoose(imgurl: string): string;
 export default imgChoose;

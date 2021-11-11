@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * 新标签页打开链接（浏览器不能解析的文件跳转下载）
  *
@@ -23,5 +19,4 @@ function openUrl(url) {
     document.body.removeChild(dom);
 }
 
-exports["default"] = openUrl;
-exports.openUrl = openUrl;
+export { openUrl as default };

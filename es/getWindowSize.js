@@ -1,13 +1,9 @@
 /*!
- * js-cool v2.2.4
+ * js-cool v2.3.0
  * 一些常用的JS方法，支持按需引入
  * (c) 2019-2021 saqqdy 
  * Released under the MIT License.
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * getWindowSize获取窗口大小
  *
@@ -31,5 +27,4 @@ function getWindowSize() {
     return s;
 }
 
-exports["default"] = getWindowSize;
-exports.getWindowSize = getWindowSize;
+export { getWindowSize as default };

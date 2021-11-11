@@ -18,5 +18,5 @@
  * @param omitFirstRow - 第一行是表头数据，默认false
  * @returns array
  */
-export declare const CSVToArray: (data: string, delimiter?: string, omitFirstRow?: boolean) => string[][];
+declare const CSVToArray: (data: string, delimiter?: string, omitFirstRow?: boolean) => string[][];
 export default CSVToArray;
