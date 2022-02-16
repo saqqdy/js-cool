@@ -4,7 +4,6 @@
 [![Codacy Badge][codacy-image]][codacy-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
@@ -20,8 +19,6 @@
 [travis-url]: https://travis-ci.com/saqqdy/js-cool
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
-[david-image]: https://img.shields.io/david/saqqdy/js-cool.svg?style=flat-square
-[david-url]: https://david-dm.org/saqqdy/js-cool
 [snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/js-cool
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
