@@ -1,7 +1,7 @@
 /*!
- * js-cool v2.3.0
+ * js-cool v2.3.1
  * 一些常用的JS方法，支持按需引入
- * (c) 2019-2021 saqqdy 
+ * (c) 2019-2022 saqqdy 
  * Released under the MIT License.
  */
 //获取字符串长度，中文算2个字符

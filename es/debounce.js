@@ -1,7 +1,7 @@
 /*!
- * js-cool v2.3.0
+ * js-cool v2.3.1
  * 一些常用的JS方法，支持按需引入
- * (c) 2019-2021 saqqdy 
+ * (c) 2019-2022 saqqdy 
  * Released under the MIT License.
  */
 import throttle from './throttle.js';
