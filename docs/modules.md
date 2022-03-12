@@ -1,6 +1,6 @@
-[index.md - v2.3.1](README.md) / Exports
+[index.md - v2.3.2](README.md) / Exports
 
-# index.md - v2.3.1
+# index.md - v2.3.2
 
 ## Table of contents
 
@@ -584,7 +584,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/68f6c53/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/78645ce/typings/common.d.ts#L9)
 
 ## Properties
 
@@ -666,7 +666,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `minus`                        | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `nextIndex`                    | (`min`: `number`, `max`: `number`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `openUrl`                      | (`url`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `pattern`                      | `Object`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `pattern`                      | { `any`: `RegExp` ; `array`: `RegExp` ; `arrjson`: `RegExp` ; `chinese`: `RegExp` ; `email`: `RegExp` ; `float`: `RegExp` ; `isjson`: `RegExp` ; `json`: `RegExp` ; `mobile`: `RegExp` ; `number`: `RegExp` ; `pass`: `RegExp` ; `postcode`: `RegExp` ; `qq`: `RegExp` ; `string`: `RegExp` ; `tel`: `RegExp` ; `textarea`: `RegExp` ; `url`: `RegExp` ; `username`: `RegExp` }                                                                                    |
 | `pattern.any`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `pattern.array`                | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `pattern.arrjson`              | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -706,7 +706,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 ### pattern
 
-• **pattern**: `Object`
+• `Const` **pattern**: `Object`
 
 pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
 
@@ -737,13 +737,13 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/68f6c53/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/78645ce/src/pattern.ts#L6)
 
 ## Functions
 
 ### CSVToArray
 
-▸ `Const` **CSVToArray**(`data`, `delimiter?`, `omitFirstRow?`): `string`[][]
+▸ **CSVToArray**(`data`, `delimiter?`, `omitFirstRow?`): `string`[][]
 
 将一个逗号分隔的值（CSV）字符串转换为一个 2D 数组。
 
@@ -781,13 +781,13 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/68f6c53/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/78645ce/src/CSVToArray.ts#L21)
 
 ---
 
 ### JSONToCSV
 
-▸ `Const` **JSONToCSV**(`arr`, `columns`, `delimiter?`): `string`
+▸ **JSONToCSV**(`arr`, `columns`, `delimiter?`): `string`
 
 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
 
@@ -826,13 +826,13 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/68f6c53/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/JSONToCSV.ts#L17)
 
 ---
 
 ### RGBToHex
 
-▸ `Const` **RGBToHex**(`r`, `g`, `b`): `string`
+▸ **RGBToHex**(`r`, `g`, `b`): `string`
 
 将 RGB 组件的值转换为颜色代码。
 
@@ -854,7 +854,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/68f6c53/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/RGBToHex.ts#L10)
 
 ---
 
@@ -878,13 +878,13 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/68f6c53/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/addEvent.ts#L10)
 
 ---
 
 ### all
 
-▸ `Const` **all**(`arr`, `fn`): `boolean`
+▸ **all**(`arr`, `fn`): `boolean`
 
 如果所提供的谓词函数对一个集合中的所有元素都返回 true，则返回 true，否则返回 false。
 
@@ -915,13 +915,13 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/68f6c53/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/all.ts#L17)
 
 ---
 
 ### any
 
-▸ `Const` **any**(`arr`, `fn`): `boolean`
+▸ **any**(`arr`, `fn`): `boolean`
 
 如果所提供的谓词函数对一个集合中的至少一个元素返回 true，则返回 true，否则返回 false。
 
@@ -952,13 +952,13 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/68f6c53/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/any.ts#L17)
 
 ---
 
 ### arrayToCSV
 
-▸ `Const` **arrayToCSV**(`arr`, `delimiter?`): `string`
+▸ **arrayToCSV**(`arr`, `delimiter?`): `string`
 
 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
 
@@ -1007,13 +1007,13 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/68f6c53/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/78645ce/src/arrayToCSV.ts#L20)
 
 ---
 
 ### client
 
-▸ `Const` **client**(`name?`, `userAgent?`): `boolean` \| { `ANDROID`: `boolean` ; `GECKO`: `boolean` ; `IE`: `boolean` ; `IOS`: `boolean` = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); `IPAD`: `boolean` ; `IPHONE`: `boolean` ; `MOBILE`: `boolean` = !!userAgent.match(/AppleWebKit._Mobile._/); `OPERA`: `boolean` ; `QQ`: `null` \| `RegExpMatchArray` ; `QQBROWSER`: `boolean` ; `TRIDENT`: `boolean` ; `WEBKIT`: `boolean` ; `WEIXIN`: `boolean` }
+▸ **client**(`name?`, `userAgent?`): `boolean` \| { `ANDROID`: `boolean` ; `GECKO`: `boolean` ; `IE`: `boolean` ; `IOS`: `boolean` = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); `IPAD`: `boolean` ; `IPHONE`: `boolean` ; `MOBILE`: `boolean` = !!userAgent.match(/AppleWebKit._Mobile._/); `OPERA`: `boolean` ; `QQ`: `null` \| `RegExpMatchArray` ; `QQBROWSER`: `boolean` ; `TRIDENT`: `boolean` ; `WEBKIT`: `boolean` ; `WEIXIN`: `boolean` }
 
 client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE: true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
 
@@ -1032,7 +1032,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/68f6c53/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/78645ce/src/client.ts#L8)
 
 ---
 
@@ -1059,13 +1059,13 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:18](https://github.com/saqqdy/js-cool/blob/68f6c53/src/extend.ts#L18)
+[src/extend.ts:18](https://github.com/saqqdy/js-cool/blob/78645ce/src/extend.ts#L18)
 
 ---
 
 ### getScrollPosition
 
-▸ `Const` **getScrollPosition**(): `string` \| `void`
+▸ **getScrollPosition**(): `string` \| `void`
 
 获取滑动到顶部和底部 返回'top' 'bottom'，建议使用限流
 
@@ -1077,13 +1077,13 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/68f6c53/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/78645ce/src/getScrollPosition.ts#L6)
 
 ---
 
 ### uuid
 
-▸ `Const` **uuid**(): `string`
+▸ **uuid**(): `string`
 
 浏览器端生成 uuid，采用 v4 方法
 
@@ -1101,4 +1101,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/68f6c53/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/uuid.ts#L10)

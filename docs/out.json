@@ -1,6 +1,6 @@
 {
     "id": 0,
-    "name": "index.md - v2.3.1",
+    "name": "index.md - v2.3.2",
     "kind": 1,
     "kindString": "Project",
     "flags": {},
@@ -2838,6 +2838,8 @@
                                                                             },
                                                                             {
                                                                                 "type": "reference",
+                                                                                "qualifiedName": "RegExpMatchArray",
+                                                                                "package": "typescript",
                                                                                 "name": "RegExpMatchArray"
                                                                             }
                                                                         ]
@@ -4386,6 +4388,8 @@
                                                             },
                                                             {
                                                                 "type": "reference",
+                                                                "qualifiedName": "Date",
+                                                                "package": "typescript",
                                                                 "name": "Date"
                                                             }
                                                         ]
@@ -6294,6 +6298,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6306,6 +6312,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6318,6 +6326,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6330,6 +6340,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6342,6 +6354,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6354,6 +6368,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6366,6 +6382,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6378,6 +6396,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6390,6 +6410,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6402,6 +6424,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6414,6 +6438,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6426,6 +6452,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6438,6 +6466,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6450,6 +6480,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6462,6 +6494,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6474,6 +6508,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6486,6 +6522,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -6498,6 +6536,8 @@
                                             "flags": {},
                                             "type": {
                                                 "type": "reference",
+                                                "qualifiedName": "RegExp",
+                                                "package": "typescript",
                                                 "name": "RegExp"
                                             },
                                             "defaultValue": "..."
@@ -7070,6 +7110,8 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
+                                                        "qualifiedName": "Event",
+                                                        "package": "typescript",
                                                         "name": "Event"
                                                     }
                                                 }
@@ -7120,6 +7162,8 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
+                                                        "qualifiedName": "Event",
+                                                        "package": "typescript",
                                                         "name": "Event"
                                                     }
                                                 }
@@ -7166,6 +7210,8 @@
                                                     "flags": {},
                                                     "type": {
                                                         "type": "reference",
+                                                        "qualifiedName": "HTMLTextAreaElement",
+                                                        "package": "typescript",
                                                         "name": "HTMLTextAreaElement"
                                                     }
                                                 },
@@ -7229,6 +7275,8 @@
                                                     },
                                                     "type": {
                                                         "type": "reference",
+                                                        "qualifiedName": "HTMLTextAreaElement",
+                                                        "package": "typescript",
                                                         "name": "HTMLTextAreaElement"
                                                     }
                                                 }
@@ -7697,7 +7745,9 @@
             "name": "pattern",
             "kind": 32,
             "kindString": "Variable",
-            "flags": {},
+            "flags": {
+                "isConst": true
+            },
             "comment": {
                 "shortText": "pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username",
                 "tags": [
@@ -7731,6 +7781,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7743,6 +7795,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7755,6 +7809,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7767,6 +7823,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7779,6 +7837,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7791,6 +7851,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7803,6 +7865,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7815,6 +7879,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7827,6 +7893,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7839,6 +7907,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7851,6 +7921,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7863,6 +7935,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7875,6 +7949,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7887,6 +7963,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7899,6 +7977,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7911,6 +7991,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7923,6 +8005,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7935,6 +8019,8 @@
                             "flags": {},
                             "type": {
                                 "type": "reference",
+                                "qualifiedName": "RegExp",
+                                "package": "typescript",
                                 "name": "RegExp"
                             },
                             "defaultValue": "..."
@@ -7959,9 +8045,7 @@
             "name": "CSVToArray",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/CSVToArray.ts",
@@ -8058,9 +8142,7 @@
             "name": "JSONToCSV",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/JSONToCSV.ts",
@@ -8149,9 +8231,7 @@
             "name": "RGBToHex",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/RGBToHex.ts",
@@ -8308,9 +8388,7 @@
             "name": "all",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/all.ts",
@@ -8385,9 +8463,7 @@
             "name": "any",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/any.ts",
@@ -8462,9 +8538,7 @@
             "name": "arrayToCSV",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/arrayToCSV.ts",
@@ -8540,9 +8614,7 @@
             "name": "client",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/client.ts",
@@ -8720,6 +8792,8 @@
                                                     },
                                                     {
                                                         "type": "reference",
+                                                        "qualifiedName": "RegExpMatchArray",
+                                                        "package": "typescript",
                                                         "name": "RegExpMatchArray"
                                                     }
                                                 ]
@@ -8894,9 +8968,7 @@
             "name": "getScrollPosition",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/getScrollPosition.ts",
@@ -8936,9 +9008,7 @@
             "name": "uuid",
             "kind": 64,
             "kindString": "Function",
-            "flags": {
-                "isConst": true
-            },
+            "flags": {},
             "sources": [
                 {
                     "fileName": "src/uuid.ts",

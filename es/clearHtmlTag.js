@@ -1,6 +1,6 @@
 /*!
- * js-cool v2.3.1
- * 一些常用的JS方法，支持按需引入
+ * js-cool v2.3.2
+ * 这是一个纯原生ES6开发的Javascript常用方法库
  * (c) 2019-2022 saqqdy 
  * Released under the MIT License.
  */
