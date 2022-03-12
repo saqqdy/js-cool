@@ -1,4 +1,16 @@
+<div style="text-align: center;" align="center">
+
 # js-cool
+
+</div>
+
+<div style="text-align: center;" align="center">
+
+这是一个纯原生 ES6 开发的 Javascript 常用方法库
+
+</div>
+
+<div style="text-align: center;" align="center">
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -11,43 +23,28 @@
 
 [![Sonar][sonar-image]][sonar-url]
 
-[npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/js-cool
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
-[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
-[travis-url]: https://travis-ci.com/saqqdy/js-cool
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
-[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/js-cool
-[download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
-[download-url]: https://npmjs.org/package/js-cool
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: LICENSE
-[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_js-cool
-[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_js-cool
+</div>
 
-## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
+<div style="text-align: center; margin-bottom: 20px;" align="center">
 
-## 介绍
+### **[使用文档](./docs/modules.md)**&nbsp; &nbsp; &nbsp; &nbsp;[更新日志](./CHANGELOG.md)
 
-JS 常用方法，支持按需打包
+</div>
 
-## 软件架构
-
-集成了大量常用方法，采用了纯原生 ES6+babel+webpack 的开发方式
-
-## 安装教程
+## 安装
 
 ```shell
 # 通过npm安装
 npm install --save js-cool
+
 # 或者通过yarn安装
 yarn add js-cool
+
+# 或者通过pnpm安装
+pnpm install js-cool
 ```
+
+## 使用
 
 ### 通过 import 引入模块的方式
 
@@ -83,7 +80,7 @@ download(url, filename) // 下载文件
 
     ```html
     <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-    <script src="https://unpkg.com/js-cool@2.2.0/lib/index.umd.js"></script>
+    <script src="https://unpkg.com/js-cool@2.3.2/lib/index.umd.js"></script>
     ```
 
 ### 使用按需打包
@@ -224,3 +221,22 @@ download(url, filename) // 下载文件
 2. 新建 feature_xxx 分支
 3. 提交代码
 4. 新建 pull request
+
+[npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/js-cool
+[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
+[codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
+[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
+[travis-url]: https://travis-ci.com/saqqdy/js-cool
+[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
+[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/js-cool
+[download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
+[download-url]: https://npmjs.org/package/js-cool
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: LICENSE
+[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_js-cool
+[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_js-cool
