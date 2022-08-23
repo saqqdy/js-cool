@@ -2,6 +2,8 @@
 .idea/
 node_modules/
 dist/
+es/
+lib/
 npm-debug.log
 yarn.lock
 yarn-error.log
