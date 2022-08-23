@@ -16,7 +16,6 @@
 [![Codacy Badge][codacy-image]][codacy-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
@@ -205,13 +204,12 @@ download(url, filename) // 下载文件
     CSVToJSON, // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
     JSONtoCSV, // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
     RGBToHex, // 将RGB组件的值转换为颜色代码。export * from './intersect' // 多个数组求交集
-    union. // 多个数组求交集
-    minus, // 多个数组求差集
+    union.minus, // 多个数组求交集 // 多个数组求差集
     complement, // 多个数组求补集
     contains, // 数组是否包含指定元素
     unique, // 数组去重
     fillIPv6, // ipv6地址补全
-    getProperty', // 根据路径字符串获取数组、对象属性值
+    getProperty // 根据路径字符串获取数组、对象属性值
 }
 ```
 
@@ -230,13 +228,11 @@ download(url, filename) // 下载文件
 [travis-url]: https://travis-ci.com/saqqdy/js-cool
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
-[snyk-image]: https://snyk.io/test/npm/js-cool/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/js-cool
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
 [download-url]: https://npmjs.org/package/js-cool
 [gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
 [gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
 [sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_js-cool
 [sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_js-cool
