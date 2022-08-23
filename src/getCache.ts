@@ -5,24 +5,24 @@
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
 function getCache(name: string): any {
-    let str = localStorage.getItem(name),
-        exp = new Date(),
-        o
-    if (str) {
-        try {
-            o = JSON.parse(str)
-        } catch (err) {
-            o = str
-        }
-        if (typeof o !== 'object') return o
-        if (!o.value) return null
-        if (!o.expires || o.expires > exp.getTime()) {
-            return o.value
-        }
-        localStorage.removeItem(name)
-        return null
-    }
-    return null
+	let str = localStorage.getItem(name),
+		exp = new Date(),
+		o
+	if (str) {
+		try {
+			o = JSON.parse(str)
+		} catch (err) {
+			o = str
+		}
+		if (typeof o !== 'object') return o
+		if (!o.value) return null
+		if (!o.expires || o.expires > exp.getTime()) {
+			return o.value
+		}
+		localStorage.removeItem(name)
+		return null
+	}
+	return null
 }
 
 export default getCache

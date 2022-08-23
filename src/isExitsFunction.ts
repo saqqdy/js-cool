@@ -5,12 +5,12 @@
  * @returns 返回true/false
  */
 function isExitsFunction(funcName: string): boolean {
-    try {
-        if (typeof eval(funcName) === 'function') {
-            return true
-        }
-    } catch {}
-    return false
+	try {
+		if (typeof eval(funcName) === 'function') {
+			return true
+		}
+	} catch {}
+	return false
 }
 
 export default isExitsFunction

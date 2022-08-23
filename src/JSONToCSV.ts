@@ -15,21 +15,21 @@
  * @returns CSV数据
  */
 const JSONToCSV = (
-    arr: any[],
-    columns: any[],
-    delimiter: string = ','
+	arr: any[],
+	columns: any[],
+	delimiter: string = ','
 ): string =>
-    [
-        columns.join(delimiter),
-        ...arr.map(obj =>
-            columns.reduce(
-                (acc, key) =>
-                    `${acc}${!acc.length ? '' : delimiter}"${
-                        !obj[key] ? '' : obj[key]
-                    }"`,
-                ''
-            )
-        )
-    ].join('\n')
+	[
+		columns.join(delimiter),
+		...arr.map(obj =>
+			columns.reduce(
+				(acc, key) =>
+					`${acc}${!acc.length ? '' : delimiter}"${
+						!obj[key] ? '' : obj[key]
+					}"`,
+				''
+			)
+		)
+	].join('\n')
 
 export default JSONToCSV

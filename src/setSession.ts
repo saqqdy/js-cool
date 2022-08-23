@@ -1,6 +1,6 @@
 interface Data {
-    value: any
-    expires: number | string
+	value: any
+	expires: number | string
 }
 
 /**
@@ -11,12 +11,12 @@ interface Data {
  * @param seconds - 有效时间
  */
 function setSession(name: string, value: any, seconds: number): void {
-    var e = new Date()
-    var expires = seconds ? e.getTime() + seconds * 1000 : ''
-    var obj = {} as Data
-    obj.value = value
-    obj.expires = expires
-    sessionStorage.setItem(name, JSON.stringify(obj))
+	var e = new Date()
+	var expires = seconds ? e.getTime() + seconds * 1000 : ''
+	var obj = {} as Data
+	obj.value = value
+	obj.expires = expires
+	sessionStorage.setItem(name, JSON.stringify(obj))
 }
 
 export default setSession

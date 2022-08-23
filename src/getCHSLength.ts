@@ -21,7 +21,7 @@
  * @returns 返回长度
  */
 function getCHSLength(str: string): number {
-    return str.replace(/[^\x00-\xff]/g, '**').length
+	return str.replace(/[^\x00-\xff]/g, '**').length
 }
 
 export default getCHSLength

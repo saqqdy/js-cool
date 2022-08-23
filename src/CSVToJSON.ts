@@ -14,17 +14,17 @@
  * @returns json
  */
 function CSVToJSON(data: string, delimiter = ',') {
-    const titles = data.slice(0, data.indexOf('\n')).split(delimiter)
-    return data
-        .slice(data.indexOf('\n') + 1)
-        .split('\n')
-        .map((v: string) => {
-            const values = v.split(delimiter)
-            return titles.reduce(
-                (obj: any, title, index) => ((obj[title] = values[index]), obj),
-                {}
-            )
-        })
+	const titles = data.slice(0, data.indexOf('\n')).split(delimiter)
+	return data
+		.slice(data.indexOf('\n') + 1)
+		.split('\n')
+		.map((v: string) => {
+			const values = v.split(delimiter)
+			return titles.reduce(
+				(obj: any, title, index) => ((obj[title] = values[index]), obj),
+				{}
+			)
+		})
 }
 
 export default CSVToJSON

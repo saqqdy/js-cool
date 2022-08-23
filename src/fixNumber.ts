@@ -6,13 +6,13 @@
  * @returns 返回新数字
  */
 function fixNumber(number: string | number, n = 2) {
-    let reg = new RegExp('^(.*\\..{' + n + '}).*$')
-    number = '' + number
-    if (!/^(\-|\+)?\d+(\.\d+)?$/.test(number)) {
-        console.warn('请传入数字')
-        return number
-    }
-    return parseFloat(number.replace(reg, '$1'))
+	let reg = new RegExp('^(.*\\..{' + n + '}).*$')
+	number = '' + number
+	if (!/^(\-|\+)?\d+(\.\d+)?$/.test(number)) {
+		console.warn('请传入数字')
+		return number
+	}
+	return parseFloat(number.replace(reg, '$1'))
 }
 
 export default fixNumber

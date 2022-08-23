@@ -10,7 +10,7 @@ import type { AnyFunction } from '../typings/common'
  * @return 实际调用函数
  */
 function debounce(fn: AnyFunction, delay: number, immediate: boolean) {
-    return throttle(fn, delay, immediate, true)
+	return throttle(fn, delay, immediate, true)
 }
 
 export default debounce

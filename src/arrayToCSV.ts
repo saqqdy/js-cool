@@ -18,12 +18,12 @@
  * @returns CSV数据
  */
 const arrayToCSV = (arr: any[], delimiter: string = ',') =>
-    arr
-        .map(v =>
-            v
-                .map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x))
-                .join(delimiter)
-        )
-        .join('\n')
+	arr
+		.map(v =>
+			v
+				.map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x))
+				.join(delimiter)
+		)
+		.join('\n')
 
 export default arrayToCSV

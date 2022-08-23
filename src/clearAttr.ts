@@ -5,7 +5,7 @@
  * @returns newString
  */
 function clearAttr(string: string) {
-    return string.replace(/<([a-zA-Z1-7]+)\s*[^><]*>/g, '<$1>')
+	return string.replace(/<([a-zA-Z1-7]+)\s*[^><]*>/g, '<$1>')
 }
 
 export default clearAttr

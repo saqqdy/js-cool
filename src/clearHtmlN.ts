@@ -5,7 +5,7 @@
  * @returns newString
  */
 function clearHtmlN(string: string) {
-    return string.replace(/<\/?.+?>|[\r\n]/g, '')
+	return string.replace(/<\/?.+?>|[\r\n]/g, '')
 }
 
 export default clearHtmlN

@@ -11,10 +11,10 @@
  * @returns boolean
  */
 function contains(arr: any[], item: any): boolean {
-    for (const el of arr) {
-        if (el === item) return true
-    }
-    return false
+	for (const el of arr) {
+		if (el === item) return true
+	}
+	return false
 }
 
 export default contains

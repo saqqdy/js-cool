@@ -1,7 +1,7 @@
 export interface SearchkeySet {
-    childName: string
-    keyName: string
-    [prop: string]: any
+	childName: string
+	keyName: string
+	[prop: string]: any
 }
 
 /**
@@ -14,71 +14,71 @@ export interface SearchkeySet {
  * @returns 返回查询到的数组
  */
 function searchTreeObject(
-    tree: object | any[],
-    expression: any,
-    keySet: SearchkeySet,
-    number: number = 0
+	tree: object | any[],
+	expression: any,
+	keySet: SearchkeySet,
+	number: number = 0
 ) {
-    let retNode: any[] = [],
-        isLimit = number > 0
-    if (!keySet || typeof keySet !== 'object') {
-        keySet = { childName: 'child', keyName: 'name' }
-    }
-    if (Object.prototype.toString.call(tree) === '[object Object]')
-        tree = [tree]
-    /**
-     * 递归查找
-     *
-     * @private
-     * @param tree - 对象
-     * @param expression - 表达式
-     * @returns Nodes
-     */
-    function deepSearch(tree: any, expression: any) {
-        for (let i = 0; i < tree.length; i++) {
-            if (
-                tree[i][keySet.childName] &&
-                tree[i][keySet.childName].length > 0
-            ) {
-                deepSearch(tree[i][keySet.childName], expression)
-            }
-            let result = true
-            if (typeof expression === 'object') {
-                let keys = Object.keys(expression)
-                for (let key of keys) {
-                    if (expression[key] !== tree[i][key]) {
-                        result = false
-                        break
-                    }
-                }
-            } else if (typeof expression === 'function') {
-                result = expression.call(tree[i], tree[i])
-            } else {
-                result = tree[i][keySet.keyName] === expression
-            }
-            if (isLimit) {
-                // 限制查询个数
-                if (number > 0) {
-                    if (result) {
-                        let treeNode = { ...tree[i] }
-                        delete treeNode[keySet.childName]
-                        retNode.push(treeNode)
-                        number--
-                    }
-                } else {
-                    break
-                }
-            } else {
-                if (result) {
-                    let treeNode = { ...tree[i] }
-                    delete treeNode[keySet.childName]
-                    retNode.push(treeNode)
-                }
-            }
-        }
-    }
-    deepSearch(tree, expression)
-    return retNode
+	let retNode: any[] = [],
+		isLimit = number > 0
+	if (!keySet || typeof keySet !== 'object') {
+		keySet = { childName: 'child', keyName: 'name' }
+	}
+	if (Object.prototype.toString.call(tree) === '[object Object]')
+		tree = [tree]
+	/**
+	 * 递归查找
+	 *
+	 * @private
+	 * @param tree - 对象
+	 * @param expression - 表达式
+	 * @returns Nodes
+	 */
+	function deepSearch(tree: any, expression: any) {
+		for (let i = 0; i < tree.length; i++) {
+			if (
+				tree[i][keySet.childName] &&
+				tree[i][keySet.childName].length > 0
+			) {
+				deepSearch(tree[i][keySet.childName], expression)
+			}
+			let result = true
+			if (typeof expression === 'object') {
+				let keys = Object.keys(expression)
+				for (let key of keys) {
+					if (expression[key] !== tree[i][key]) {
+						result = false
+						break
+					}
+				}
+			} else if (typeof expression === 'function') {
+				result = expression.call(tree[i], tree[i])
+			} else {
+				result = tree[i][keySet.keyName] === expression
+			}
+			if (isLimit) {
+				// 限制查询个数
+				if (number > 0) {
+					if (result) {
+						let treeNode = { ...tree[i] }
+						delete treeNode[keySet.childName]
+						retNode.push(treeNode)
+						number--
+					}
+				} else {
+					break
+				}
+			} else {
+				if (result) {
+					let treeNode = { ...tree[i] }
+					delete treeNode[keySet.childName]
+					retNode.push(treeNode)
+				}
+			}
+		}
+	}
+	deepSearch(tree, expression)
+	return retNode
 }
 
 export default searchTreeObject

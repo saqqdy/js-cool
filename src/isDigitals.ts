@@ -5,7 +5,7 @@
  * @returns 返回true/false
  */
 function isDigitals(str: any): boolean {
-    return /^[0-9]*$/.test(str)
+	return /^[0-9]*$/.test(str)
 }
 
 export default isDigitals

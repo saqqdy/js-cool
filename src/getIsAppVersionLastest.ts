@@ -15,38 +15,38 @@ import getAppVersion from './getAppVersion'
  * @return null/true/false
  */
 function getIsAppVersionLastest(
-    appName: string,
-    compareVer: string,
-    userAgent?: string
+	appName: string,
+	compareVer: string,
+	userAgent?: string
 ): boolean | null {
-    userAgent = userAgent || navigator.appVersion
-    var basicVer =
-        appName.indexOf('.') > 0
-            ? appName
-            : getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
-    if (basicVer === null) {
-        return null
-    } // 不是指定客户端
-    if (basicVer === false) {
-        return false
-    } // 是指定客户端但是版本号未知
-    basicVer = basicVer + '.'
-    compareVer = compareVer + '.'
-    var bStr = parseFloat(basicVer)
-    var cStr = parseFloat(compareVer)
-    var bStrNext = parseFloat(basicVer.replace(bStr + '.', '')) || 0
-    var cStrNext = parseFloat(compareVer.replace(cStr + '.', '')) || 0
-    if (cStr > bStr) {
-        return false
-    } else if (cStr < bStr) {
-        return true
-    } else {
-        if (bStrNext >= cStrNext) {
-            return true
-        } else {
-            return false
-        }
-    }
+	userAgent = userAgent || navigator.appVersion
+	var basicVer =
+		appName.indexOf('.') > 0
+			? appName
+			: getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+	if (basicVer === null) {
+		return null
+	} // 不是指定客户端
+	if (basicVer === false) {
+		return false
+	} // 是指定客户端但是版本号未知
+	basicVer = basicVer + '.'
+	compareVer = compareVer + '.'
+	var bStr = parseFloat(basicVer)
+	var cStr = parseFloat(compareVer)
+	var bStrNext = parseFloat(basicVer.replace(bStr + '.', '')) || 0
+	var cStrNext = parseFloat(compareVer.replace(cStr + '.', '')) || 0
+	if (cStr > bStr) {
+		return false
+	} else if (cStr < bStr) {
+		return true
+	} else {
+		if (bStrNext >= cStrNext) {
+			return true
+		} else {
+			return false
+		}
+	}
 }
 
 export default getIsAppVersionLastest

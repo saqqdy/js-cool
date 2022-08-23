@@ -5,9 +5,9 @@
  * @returns 返回转换后的字符串
  */
 function dash2Camel(string: string) {
-    return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {
-        return arguments[1].toLocaleUpperCase()
-    })
+	return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {
+		return arguments[1].toLocaleUpperCase()
+	})
 }
 
 export default dash2Camel

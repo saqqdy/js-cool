@@ -5,7 +5,7 @@
  * @returns 返回解码结果
  */
 function deWxJumpLinkOld(string: string) {
-    return string.replace(/[~]/gi, '=').replace(/[\^]/gi, '&')
+	return string.replace(/[~]/gi, '=').replace(/[\^]/gi, '&')
 }
 
 export default deWxJumpLinkOld

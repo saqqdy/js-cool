@@ -13,11 +13,11 @@
  * @returns 返回文件后缀
  */
 function getFileType(url: string): string {
-    if (typeof url != 'string' || url == '') {
-        return ''
-    }
-    var type = /\.[^\.]+$/.exec(url) // [".docx", index: 31, input: "http://192.168.2.243:7005/doc/2.docx"]
-    return type ? type[0].toLowerCase() : ''
+	if (typeof url != 'string' || url == '') {
+		return ''
+	}
+	var type = /\.[^\.]+$/.exec(url) // [".docx", index: 31, input: "http://192.168.2.243:7005/doc/2.docx"]
+	return type ? type[0].toLowerCase() : ''
 }
 
 export default getFileType

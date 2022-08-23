@@ -5,7 +5,7 @@
  * @returns newString
  */
 function clearHtmlTag(string: string) {
-    return string.replace(/<[^>]+>/g, '')
+	return string.replace(/<[^>]+>/g, '')
 }
 
 export default clearHtmlTag

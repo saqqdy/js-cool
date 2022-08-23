@@ -4,7 +4,7 @@
  * @param arr -
  */
 function isArray(arr: any): arr is any[] {
-    return Object.prototype.toString.call(arr).indexOf('Array') !== -1
+	return Object.prototype.toString.call(arr).indexOf('Array') !== -1
 }
 
 export default isArray

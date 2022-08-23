@@ -13,9 +13,9 @@ import union from './union'
  * @returns array
  */
 function complement<T = unknown>(...args: T[][]): T[] {
-    const intersectArray = intersect(...args) // 交集
-    const unionArray = union(...args) // 补集
-    return unionArray.filter(item => !contains(intersectArray, item))
+	const intersectArray = intersect(...args) // 交集
+	const unionArray = union(...args) // 补集
+	return unionArray.filter(item => !contains(intersectArray, item))
 }
 
 export default complement

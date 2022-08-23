@@ -19,13 +19,13 @@
  * @returns array
  */
 const CSVToArray = (
-    data: string,
-    delimiter: string = ',',
-    omitFirstRow: boolean = false
+	data: string,
+	delimiter: string = ',',
+	omitFirstRow: boolean = false
 ) =>
-    data
-        .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-        .split('\n')
-        .map(v => v.split(delimiter))
+	data
+		.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+		.split('\n')
+		.map(v => v.split(delimiter))
 
 export default CSVToArray

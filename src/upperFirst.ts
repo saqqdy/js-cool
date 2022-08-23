@@ -5,7 +5,7 @@
  * @returns 返回转换后的字符串
  */
 function upperFirst(string: string): string {
-    return string.slice(0, 1).toLocaleUpperCase() + string.slice(1)
+	return string.slice(0, 1).toLocaleUpperCase() + string.slice(1)
 }
 
 export default upperFirst

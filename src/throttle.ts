@@ -9,44 +9,44 @@ import type { AnyFunction } from '../typings/common'
  * @return 实际调用函数
  */
 function throttle(
-    fn: AnyFunction,
-    delay: number,
-    immediate: boolean,
-    debounce: boolean
+	fn: AnyFunction,
+	delay: number,
+	immediate: boolean,
+	debounce: boolean
 ) {
-    var curr = +new Date(), //当前事件
-        last_call = 0,
-        last_exec = 0,
-        timer: any,
-        diff: number, // 时间差
-        context: any, //上下文
-        args: any,
-        exec = function () {
-            last_exec = curr
-            fn.apply(context, args)
-        }
-    return function () {
-        curr = +new Date()
-        // @ts-ignore
-        ;(context = this as any),
-            (args = arguments),
-            (diff = curr - (debounce ? last_call : last_exec) - delay)
-        clearTimeout(timer)
-        if (debounce) {
-            if (immediate) {
-                timer = setTimeout(exec, delay)
-            } else if (diff >= 0) {
-                exec()
-            }
-        } else {
-            if (diff >= 0) {
-                exec()
-            } else if (immediate) {
-                timer = setTimeout(exec, -diff)
-            }
-        }
-        last_call = curr
-    }
+	var curr = +new Date(), //当前事件
+		last_call = 0,
+		last_exec = 0,
+		timer: any,
+		diff: number, // 时间差
+		context: any, //上下文
+		args: any,
+		exec = function () {
+			last_exec = curr
+			fn.apply(context, args)
+		}
+	return function () {
+		curr = +new Date()
+		// @ts-ignore
+		;(context = this as any),
+			(args = arguments),
+			(diff = curr - (debounce ? last_call : last_exec) - delay)
+		clearTimeout(timer)
+		if (debounce) {
+			if (immediate) {
+				timer = setTimeout(exec, delay)
+			} else if (diff >= 0) {
+				exec()
+			}
+		} else {
+			if (diff >= 0) {
+				exec()
+			} else if (immediate) {
+				timer = setTimeout(exec, -diff)
+			}
+		}
+		last_call = curr
+	}
 }
 
 export default throttle

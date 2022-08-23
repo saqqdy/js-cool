@@ -10,7 +10,7 @@
  * @returns 返回纯数字字符串
  */
 function getNumber(string: string): string {
-    return string.replace(/[^0-9.]/gi, '')
+	return string.replace(/[^0-9.]/gi, '')
 }
 
 export default getNumber

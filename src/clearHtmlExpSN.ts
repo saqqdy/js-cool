@@ -5,7 +5,7 @@
  * @returns newString
  */
 function clearHtmlExpSN(string: string) {
-    return string.replace(/<\/?[^\/?(br)][^><]*>/gi, '')
+	return string.replace(/<\/?[^\/?(br)][^><]*>/gi, '')
 }
 
 export default clearHtmlExpSN

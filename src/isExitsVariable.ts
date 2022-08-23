@@ -5,14 +5,14 @@
  * @returns 返回true/false
  */
 function isExitsVariable(variableName: string): boolean {
-    try {
-        if (typeof variableName === 'undefined') {
-            return false
-        } else {
-            return true
-        }
-    } catch {}
-    return false
+	try {
+		if (typeof variableName === 'undefined') {
+			return false
+		} else {
+			return true
+		}
+	} catch {}
+	return false
 }
 
 export default isExitsVariable

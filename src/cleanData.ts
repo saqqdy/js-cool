@@ -14,32 +14,32 @@ import type { AnyObject } from '../typings/common'
  * @returns 返回清洗后的对象
  */
 function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
-    let result: any = {}
-    if (!data) return
-    if (!map) return data
-    if (isArray(map)) {
-        map.forEach(key => {
-            if (data.hasOwnProperty(key)) {
-                result[key] = data[key]
-            } else if (typeof nullFix !== 'undefined') {
-                result[key] = nullFix
-            }
-        })
-    } else if (typeof map === 'object') {
-        for (let key in map) {
-            if (typeof map[key] === 'function') {
-                result[key] = map[key](data)
-            } else {
-                if (!map[key]) map[key] = key
-                if (data.hasOwnProperty(map[key])) {
-                    result[key] = data[map[key]]
-                } else if (typeof nullFix !== 'undefined') {
-                    result[key] = nullFix
-                }
-            }
-        }
-    }
-    return result
+	let result: any = {}
+	if (!data) return
+	if (!map) return data
+	if (isArray(map)) {
+		map.forEach(key => {
+			if (data.hasOwnProperty(key)) {
+				result[key] = data[key]
+			} else if (typeof nullFix !== 'undefined') {
+				result[key] = nullFix
+			}
+		})
+	} else if (typeof map === 'object') {
+		for (let key in map) {
+			if (typeof map[key] === 'function') {
+				result[key] = map[key](data)
+			} else {
+				if (!map[key]) map[key] = key
+				if (data.hasOwnProperty(map[key])) {
+					result[key] = data[map[key]]
+				} else if (typeof nullFix !== 'undefined') {
+					result[key] = nullFix
+				}
+			}
+		}
+	}
+	return result
 }
 
 export default cleanData

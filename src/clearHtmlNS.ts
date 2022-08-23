@@ -5,7 +5,7 @@
  * @returns newString
  */
 function clearHtmlNS(string: string) {
-    return string.replace(/<\/?.+?>|[\r\n\s]|(\ )/g, '')
+	return string.replace(/<\/?.+?>|[\r\n\s]|(\ )/g, '')
 }
 
 export default clearHtmlNS

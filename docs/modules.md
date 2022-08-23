@@ -1,6 +1,6 @@
-[index.md - v2.3.2](README.md) / Exports
+[index.md - v2.4.0](README.md) / Exports
 
-# index.md - v2.3.2
+# index.md - v2.4.0
 
 ## Table of contents
 
@@ -94,16 +94,13 @@
 -   [SearchkeySet](interfaces/SearchkeySet.md)
 -   [WindowSizeObj](interfaces/WindowSizeObj.md)
 
-### Type aliases
+### Type Aliases
 
 -   [ArrayOneMore](modules.md#arrayonemore)
 
-### Properties
-
--   [default](modules.md#default)
-
 ### Variables
 
+-   [default](modules.md#default)
 -   [pattern](modules.md#pattern)
 
 ### Functions
@@ -570,7 +567,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 Renames and re-exports [\_\_type](modules.md#__type)
 
-## Type aliases
+## Type Aliases
 
 ### ArrayOneMore
 
@@ -584,9 +581,9 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/78645ce/typings/common.d.ts#L9)
+[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/2d8a9ac/typings/common.d.ts#L9)
 
-## Properties
+## Variables
 
 ### default
 
@@ -702,15 +699,17 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `upperFirst`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `uuid`                         | () => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-## Variables
+#### Defined in
+
+[src/index.ts:202](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/index.ts#L202)
+
+---
 
 ### pattern
 
 • `Const` **pattern**: `Object`
 
 pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
-
-**`returns`** 返回对象
 
 #### Type declaration
 
@@ -737,7 +736,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/78645ce/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/pattern.ts#L6)
 
 ## Functions
 
@@ -747,19 +746,19 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 将一个逗号分隔的值（CSV）字符串转换为一个 2D 数组。
 
-**`example`**
+**`Example`**
 
 ```js
 CSVToArray('a,b\\nc,d') // `[['a','b'],['c','d']]`;
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 CSVToArray('a;b\\nc;d', ';') // `[['a','b'],['c','d']]`;
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 CSVToArray('col1,col2\\na,b\\nc,d', ',', true) // `[['a','b'],['c','d']]`;
@@ -781,7 +780,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/78645ce/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/CSVToArray.ts#L21)
 
 ---
 
@@ -791,7 +790,7 @@ array
 
 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
 
-**`example`**
+**`Example`**
 
 ```js
 JSONToCSV(
@@ -800,7 +799,7 @@ JSONToCSV(
 ) // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 JSONToCSV(
@@ -826,7 +825,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -836,7 +835,11 @@ CSV 数据
 
 将 RGB 组件的值转换为颜色代码。
 
-**`example`** RGBToHex(255, 165, 1); // 'ffa501'
+**`Example`**
+
+```ts
+RGBToHex(255, 165, 1) // 'ffa501'
+```
 
 #### Parameters
 
@@ -854,7 +857,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/RGBToHex.ts#L10)
 
 ---
 
@@ -878,7 +881,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/addEvent.ts#L10)
 
 ---
 
@@ -888,13 +891,13 @@ addEvent()事件委托，支持多次委托
 
 如果所提供的谓词函数对一个集合中的所有元素都返回 true，则返回 true，否则返回 false。
 
-**`example`**
+**`Example`**
 
 ```js
 all([4, 2, 3], x => x > 1) // true
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 all([1, 2, 3]) // true
@@ -915,7 +918,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/all.ts#L17)
 
 ---
 
@@ -925,13 +928,13 @@ all([1, 2, 3]) // true
 
 如果所提供的谓词函数对一个集合中的至少一个元素返回 true，则返回 true，否则返回 false。
 
-**`example`**
+**`Example`**
 
 ```js
 any([0, 1, 2, 0], x => x >= 2) // true
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 any([0, 0, 1, 0]) // true
@@ -952,7 +955,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/78645ce/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/any.ts#L17)
 
 ---
 
@@ -962,7 +965,7 @@ any([0, 0, 1, 0]) // true
 
 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
 
-**`example`**
+**`Example`**
 
 ```js
 arrayToCSV([
@@ -971,7 +974,7 @@ arrayToCSV([
 ]) // '"a","b"\n"c","d"'
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 arrayToCSV(
@@ -983,7 +986,7 @@ arrayToCSV(
 ) // '"a";"b"\n"c";"d"'
 ```
 
-**`example`**
+**`Example`**
 
 ```js
 arrayToCSV([
@@ -1007,7 +1010,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/78645ce/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1032,7 +1035,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/78645ce/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/client.ts#L8)
 
 ---
 
@@ -1059,7 +1062,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:18](https://github.com/saqqdy/js-cool/blob/78645ce/src/extend.ts#L18)
+[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/extend.ts#L42)
 
 ---
 
@@ -1077,7 +1080,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/78645ce/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1087,7 +1090,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 浏览器端生成 uuid，采用 v4 方法
 
-**`example`**
+**`Example`**
 
 ```js
 uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
@@ -1101,4 +1104,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/78645ce/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/uuid.ts#L10)

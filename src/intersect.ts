@@ -11,7 +11,7 @@ import contains from './contains'
  * @returns array
  */
 function intersect<T = unknown>(...args: T[][]): T[] {
-    return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)))
+	return args.reduce((pre, cur) => pre.filter(item => contains(cur, item)))
 }
 
 export default intersect

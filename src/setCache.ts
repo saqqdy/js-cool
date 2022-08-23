@@ -1,6 +1,6 @@
 interface Data {
-    value: any
-    expires: number | string
+	value: any
+	expires: number | string
 }
 
 /**
@@ -12,12 +12,12 @@ interface Data {
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
 function setCache(name: string, value: any, seconds: number) {
-    let e = new Date(),
-        expires = seconds ? e.getTime() + seconds * 1000 : '',
-        o = {} as Data
-    o.value = value
-    o.expires = expires
-    localStorage.setItem(name, JSON.stringify(o))
+	let e = new Date(),
+		expires = seconds ? e.getTime() + seconds * 1000 : '',
+		o = {} as Data
+	o.value = value
+	o.expires = expires
+	localStorage.setItem(name, JSON.stringify(o))
 }
 
 export default setCache

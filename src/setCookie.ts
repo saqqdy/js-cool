@@ -8,25 +8,25 @@
  * @param samesite - SameSite，默认true
  */
 function setCookie(
-    name: string,
-    value: any,
-    seconds: number = 86400,
-    path: string = '/',
-    samesite: boolean = true
+	name: string,
+	value: any,
+	seconds: number = 86400,
+	path: string = '/',
+	samesite: boolean = true
 ) {
-    var exp: Date = new Date()
-    exp.setTime(exp.getTime() + seconds * 1000)
-    document.cookie =
-        name +
-        '=' +
-        encodeURIComponent(value) +
-        ';expires=' +
-        exp.toUTCString() +
-        ';path=' +
-        path +
-        (samesite && location.protocol === 'https:'
-            ? ';SameSite=None;Secure'
-            : '')
+	var exp: Date = new Date()
+	exp.setTime(exp.getTime() + seconds * 1000)
+	document.cookie =
+		name +
+		'=' +
+		encodeURIComponent(value) +
+		';expires=' +
+		exp.toUTCString() +
+		';path=' +
+		path +
+		(samesite && location.protocol === 'https:'
+			? ';SameSite=None;Secure'
+			: '')
 }
 
 export default setCookie
