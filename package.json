@@ -1,6 +1,6 @@
 {
 	"name": "js-cool",
-	"version": "2.4.0",
+	"version": "2.4.0-beta.1",
 	"packageManager": "pnpm@7.7.0",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
 	"main": "lib/index.js",
