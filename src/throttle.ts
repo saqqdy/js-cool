@@ -14,12 +14,12 @@ function throttle(
 	immediate: boolean,
 	debounce: boolean
 ) {
-	var curr = +new Date(), //当前事件
+	let curr = +new Date(), // 当前事件
 		last_call = 0,
 		last_exec = 0,
 		timer: any,
 		diff: number, // 时间差
-		context: any, //上下文
+		context: any, // 上下文
 		args: any,
 		exec = function () {
 			last_exec = curr

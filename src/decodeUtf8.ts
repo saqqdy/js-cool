@@ -5,9 +5,9 @@
  * @returns 解码后的字符串
  */
 function decodeUtf8(utftext: string) {
-	var string = ''
-	var i = 0
-	var c = 0,
+	let string = '',
+		i = 0,
+		c = 0,
 		// c1 = 0,
 		c2 = 0,
 		c3 = 0

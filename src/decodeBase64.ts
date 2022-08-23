@@ -9,10 +9,15 @@ const _keyStr =
  * @returns 解码后的字符串
  */
 function decodeBase64(input: string) {
-	var output = ''
-	var chr1, chr2, chr3
-	var enc1, enc2, enc3, enc4
-	var i = 0
+	let output = '',
+		chr1,
+		chr2,
+		chr3,
+		enc1,
+		enc2,
+		enc3,
+		enc4,
+		i = 0
 	input = input.replace(/[^A-Za-z0-9\+\/\=]/g, '')
 	while (i < input.length) {
 		enc1 = _keyStr.indexOf(input.charAt(i++))

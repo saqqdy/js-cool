@@ -11,9 +11,9 @@ interface Data {
  * @param seconds - 有效时间
  */
 function setSession(name: string, value: any, seconds: number): void {
-	var e = new Date()
-	var expires = seconds ? e.getTime() + seconds * 1000 : ''
-	var obj = {} as Data
+	const e = new Date()
+	const expires = seconds ? e.getTime() + seconds * 1000 : ''
+	const obj = {} as Data
 	obj.value = value
 	obj.expires = expires
 	sessionStorage.setItem(name, JSON.stringify(obj))

@@ -5,8 +5,8 @@
  * @returns 返回参数值
  */
 function getParameter(name: string): string | null {
-	var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
-	var r = window.location.search.substr(1).match(reg)
+	const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+	const r = window.location.search.substr(1).match(reg)
 	if (r != null) return unescape(r[2])
 	return null
 }

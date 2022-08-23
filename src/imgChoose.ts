@@ -5,10 +5,10 @@
  * @returns 返回新地址
  */
 function imgChoose(imgurl: string): string {
-	var width = window.innerWidth
-	var imgPre = ''
-	var urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp)', 'i')
-	var preReg = new RegExp('(@[2|3]x)', 'i') //匹配@2x @3x
+	let width = window.innerWidth,
+		imgPre = '',
+		urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp)', 'i'),
+		preReg = new RegExp('(@[2|3]x)', 'i') // 匹配@2x @3x
 	if (width >= 480) {
 		imgPre = '@3x'
 	} else if (width >= 320) {

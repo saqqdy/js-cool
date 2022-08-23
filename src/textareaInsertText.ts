@@ -7,13 +7,13 @@
 function textareaInsertText(obj: HTMLTextAreaElement, str: string) {
 	if ((document as any).selection) {
 		// IE
-		var sel = (document as any).selection.createRange()
+		const sel = (document as any).selection.createRange()
 		sel.text = str
 	} else if (
 		typeof obj.selectionStart === 'number' &&
 		typeof obj.selectionEnd === 'number'
 	) {
-		var startPos = obj.selectionStart,
+		let startPos = obj.selectionStart,
 			endPos = obj.selectionEnd,
 			curPos = startPos,
 			tmpStr = obj.value

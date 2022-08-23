@@ -1,5 +1,5 @@
-import throttle from './throttle'
 import type { AnyFunction } from '../typings/common'
+import throttle from './throttle'
 
 /**
  * 空闲控制 返回函数连续调用时，空闲时间必须大于或等于 delay，fn 才会执行

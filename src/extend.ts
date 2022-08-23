@@ -1,6 +1,6 @@
+import type { ArrayOneMore } from '../typings/common'
 import isArray from './isArray'
 import getType from './getType'
-import { ArrayOneMore } from '../typings/common'
 
 function isWindow(obj: any) {
 	return obj !== null && obj === obj.window
@@ -14,15 +14,15 @@ function isPlainObject(obj: any) {
 	)
 }
 
-//对象扩展
-let extend = (function () {
+// 对象扩展
+const extend = (function () {
 	/**
 	 * @param target - 目标
 	 * @param source - 源
 	 * @param deep - 是否深拷贝
 	 */
 	function extend(target: any, source: any, deep: boolean) {
-		for (let key in source)
+		for (const key in source)
 			if (source.hasOwnProperty(key)) {
 				if (
 					deep &&
@@ -43,7 +43,7 @@ let extend = (function () {
 		target: boolean | T,
 		...args: ArrayOneMore<any>
 	) {
-		let deep: boolean = false
+		let deep = false
 		if (typeof target === 'boolean') {
 			deep = target
 			target = args.shift() as T

@@ -1,4 +1,4 @@
-//获取字符串长度，中文算2个字符
+// 获取字符串长度，中文算2个字符
 // var getStrLen = function getStrLen(str) {
 //   var realLength = 0
 //   var len = str.length
@@ -21,7 +21,7 @@
  * @returns 返回长度
  */
 function getCHSLength(str: string): number {
-	return str.replace(/[^\x00-\xff]/g, '**').length
+	return str.replace(/[^\x00-\xFF]/g, '**').length
 }
 
 export default getCHSLength

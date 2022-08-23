@@ -19,17 +19,17 @@ function getOsVersion(
 	userAgent?: string
 ): string | boolean | null {
 	userAgent = userAgent || navigator.appVersion
-	var d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS'],
+	let d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS'],
 		name = osName,
 		index = d.indexOf(osName)
-	if (index > -1 && userAgent.indexOf('like Mac OS X') > -1) {
+	if (index > -1 && userAgent.includes('like Mac OS X')) {
 		name = 'OS'
 	}
-	var reg = eval('/' + name + '\\s[\\d\\_]+/ig')
-	// var isApp = userAgent.includes(name)
-	var ver = (userAgent.match(reg) + '')
-		.replace(/\s/gi, '/')
-		.replace(/_/gi, '.')
+	let reg = eval('/' + name + '\\s[\\d\\_]+/ig'),
+		// var isApp = userAgent.includes(name)
+		ver = (userAgent.match(reg) + '')
+			.replace(/\s/gi, '/')
+			.replace(/_/gi, '.')
 	if (index > -1) {
 		ver = ver.replace(/OS\//gi, osName + '/')
 	}

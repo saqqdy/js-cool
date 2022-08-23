@@ -5,17 +5,14 @@
  * @param widthSpecialChar - 可选，是否需要生成带特殊字符的串
  * @returns 随机串
  */
-function getRandomStr(
-	len: number = 32,
-	widthSpecialChar: boolean = false
-): string {
-	var chars = !widthSpecialChar
-		? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
-		: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' //默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
-	//var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-	var maxPos = chars.length
-	var str = ''
-	for (var i = 0; i < len; i++) {
+function getRandomStr(len = 32, widthSpecialChar = false): string {
+	let chars = !widthSpecialChar
+			? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+			: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.', // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+		// var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+		maxPos = chars.length,
+		str = ''
+	for (let i = 0; i < len; i++) {
 		str += chars.charAt(Math.floor(Math.random() * maxPos))
 	}
 	return str

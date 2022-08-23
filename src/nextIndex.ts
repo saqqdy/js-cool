@@ -5,10 +5,10 @@
  * @param max - 可选，最大值
  * @returns 数字
  */
-function nextIndex(min: number = 5000, max: number = 10000): number {
-	let doms = [min]
+function nextIndex(min = 5000, max = 10000): number {
+	const doms = [min]
 	Array.prototype.forEach.call(document.querySelectorAll('body > *'), e => {
-		let n = +window.getComputedStyle(e).zIndex || 0
+		const n = +window.getComputedStyle(e).zIndex || 0
 		n > min && n < max && doms.push(n)
 	})
 	doms.sort((a, b) => b - a)

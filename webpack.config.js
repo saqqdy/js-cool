@@ -5,7 +5,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
 const config = require('./config')
-let plugins = [new ProgressBarPlugin()]
+const plugins = [new ProgressBarPlugin()]
 
 const baseConfig = {
 	mode: 'production',
@@ -48,7 +48,7 @@ const baseConfig = {
 			})
 		]
 	},
-	plugins: plugins
+	plugins
 }
 
 module.exports = [

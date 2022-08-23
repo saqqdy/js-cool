@@ -20,7 +20,7 @@ function getIsAppVersionLastest(
 	userAgent?: string
 ): boolean | null {
 	userAgent = userAgent || navigator.appVersion
-	var basicVer =
+	let basicVer =
 		appName.indexOf('.') > 0
 			? appName
 			: getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
@@ -32,10 +32,10 @@ function getIsAppVersionLastest(
 	} // 是指定客户端但是版本号未知
 	basicVer = basicVer + '.'
 	compareVer = compareVer + '.'
-	var bStr = parseFloat(basicVer)
-	var cStr = parseFloat(compareVer)
-	var bStrNext = parseFloat(basicVer.replace(bStr + '.', '')) || 0
-	var cStrNext = parseFloat(compareVer.replace(cStr + '.', '')) || 0
+	const bStr = parseFloat(basicVer)
+	const cStr = parseFloat(compareVer)
+	const bStrNext = parseFloat(basicVer.replace(bStr + '.', '')) || 0
+	const cStrNext = parseFloat(compareVer.replace(cStr + '.', '')) || 0
 	if (cStr > bStr) {
 		return false
 	} else if (cStr < bStr) {

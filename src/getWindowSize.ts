@@ -9,7 +9,7 @@ export interface WindowSizeObj {
  * @returns 返回宽高
  */
 function getWindowSize(): WindowSizeObj {
-	var s: WindowSizeObj = { width: 0, height: 0 }
+	const s: WindowSizeObj = { width: 0, height: 0 }
 	if (window.innerWidth) {
 		s.width = window.innerWidth
 		s.height = window.innerHeight

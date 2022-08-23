@@ -16,7 +16,7 @@ function getFileType(url: string): string {
 	if (typeof url != 'string' || url == '') {
 		return ''
 	}
-	var type = /\.[^\.]+$/.exec(url) // [".docx", index: 31, input: "http://192.168.2.243:7005/doc/2.docx"]
+	const type = /\.[^\.]+$/.exec(url) // [".docx", index: 31, input: "http://192.168.2.243:7005/doc/2.docx"]
 	return type ? type[0].toLowerCase() : ''
 }
 

@@ -17,10 +17,10 @@ function searchTreeObject(
 	tree: object | any[],
 	expression: any,
 	keySet: SearchkeySet,
-	number: number = 0
+	number = 0
 ) {
-	let retNode: any[] = [],
-		isLimit = number > 0
+	const retNode: any[] = []
+	const isLimit = number > 0
 	if (!keySet || typeof keySet !== 'object') {
 		keySet = { childName: 'child', keyName: 'name' }
 	}
@@ -44,8 +44,8 @@ function searchTreeObject(
 			}
 			let result = true
 			if (typeof expression === 'object') {
-				let keys = Object.keys(expression)
-				for (let key of keys) {
+				const keys = Object.keys(expression)
+				for (const key of keys) {
 					if (expression[key] !== tree[i][key]) {
 						result = false
 						break
@@ -60,7 +60,7 @@ function searchTreeObject(
 				// 限制查询个数
 				if (number > 0) {
 					if (result) {
-						let treeNode = { ...tree[i] }
+						const treeNode = { ...tree[i] }
 						delete treeNode[keySet.childName]
 						retNode.push(treeNode)
 						number--
@@ -70,7 +70,7 @@ function searchTreeObject(
 				}
 			} else {
 				if (result) {
-					let treeNode = { ...tree[i] }
+					const treeNode = { ...tree[i] }
 					delete treeNode[keySet.childName]
 					retNode.push(treeNode)
 				}

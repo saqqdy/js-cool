@@ -6,9 +6,9 @@ import getCookie from './getCookie'
  * @param name - cookie名称
  */
 function delCookie(name: string) {
-	var e = new Date()
+	const e = new Date()
 	e.setTime(e.getTime() - 1)
-	var cval = getCookie(name)
+	const cval = getCookie(name)
 	if (cval !== null) {
 		document.cookie =
 			name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/'

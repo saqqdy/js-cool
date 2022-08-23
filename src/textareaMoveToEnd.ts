@@ -5,9 +5,9 @@
  */
 function textareaMoveToEnd(obj: HTMLTextAreaElement) {
 	obj.focus()
-	var len = obj.value.length
+	const len = obj.value.length
 	if ((document as any).selection) {
-		var sel = (obj as any).createTextRange()
+		const sel = (obj as any).createTextRange()
 		sel.moveStart('character', len)
 		sel.collapse()
 		sel.select()

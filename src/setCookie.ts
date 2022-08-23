@@ -10,11 +10,11 @@
 function setCookie(
 	name: string,
 	value: any,
-	seconds: number = 86400,
-	path: string = '/',
-	samesite: boolean = true
+	seconds = 86400,
+	path = '/',
+	samesite = true
 ) {
-	var exp: Date = new Date()
+	const exp: Date = new Date()
 	exp.setTime(exp.getTime() + seconds * 1000)
 	document.cookie =
 		name +

@@ -9,8 +9,8 @@ function imgAdapt(imgurl: string, size: string) {
 	if (!imgurl) {
 		return false
 	}
-	var imgPre = ''
-	var urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp|.webx)$', 'i')
+	let imgPre = '',
+		urlReg = new RegExp('(.jpg|.png|.gif|.jpeg|.bmp|.webx)$', 'i')
 	// var preReg = new RegExp('([.small|.original].jpg|.png|.gif|.jpeg|.bmp|.webx)$', 'i') // 匹配.small.jpg .original.jpg
 	switch (size) {
 		case 's':
@@ -30,7 +30,7 @@ function imgAdapt(imgurl: string, size: string) {
 			break
 	}
 	//	return this.replace(preReg,"").replace(urlReg,"$1" + imgPre + "$1");
-	//return this.replace(urlReg,"$1" + imgPre + "$1");
+	// return this.replace(urlReg,"$1" + imgPre + "$1");
 }
 
 export default imgAdapt

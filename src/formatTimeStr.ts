@@ -8,12 +8,12 @@ import formatTime from './formatTime'
  * @returns 返回字符串
  */
 function formatTimeStr(time: string | number, fmt: string): string {
-	var now = new Date().getTime()
-	var format = fmt != '' && fmt != null ? fmt : 'MM-dd'
+	const now = new Date().getTime()
+	const format = fmt != '' && fmt != null ? fmt : 'MM-dd'
 	if (typeof time === 'string') time = parseInt(time, 10)
 	if (!time || time < 1) return ''
-	var t = now - time
-	var newTimeStr = ''
+	let t = now - time,
+		newTimeStr = ''
 	if (t < 60 * 2) {
 		newTimeStr = '刚刚'
 	} else if (t < 60 * 60) {

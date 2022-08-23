@@ -5,7 +5,7 @@
  * @returns 类型
  */
 function getType(target: any): string {
-	let type = {
+	const type = {
 		'[object Array]': 'array',
 		'[object Boolean]': 'boolean',
 		'[object Date]': 'date',

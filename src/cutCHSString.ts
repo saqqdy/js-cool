@@ -36,20 +36,16 @@
  * @param hasDot -
  * @returns 返回截取后的字符串
  */
-function cutCHSString(
-	str: string,
-	len: number = str.length,
-	hasDot: boolean = false
-) {
+function cutCHSString(str: string, len: number = str.length, hasDot = false) {
 	if (str == '' || !str) {
 		return ''
 	} else {
-		var newLength = 0
-		var newStr = ''
-		var chineseRegex = /[^\x00-\xff]/g
-		var singleChar = ''
-		var strLength = str.replace(chineseRegex, '**').length
-		for (var i = 0; i < strLength; i++) {
+		let newLength = 0,
+			newStr = '',
+			chineseRegex = /[^\x00-\xFF]/g,
+			singleChar = '',
+			strLength = str.replace(chineseRegex, '**').length
+		for (let i = 0; i < strLength; i++) {
 			singleChar = str.charAt(i).toString()
 			if (singleChar.match(chineseRegex) != null) {
 				newLength += 2

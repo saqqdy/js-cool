@@ -1,8 +1,8 @@
 {
 	"name": "js-cool",
+	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
 	"version": "2.4.0",
 	"packageManager": "pnpm@7.7.0",
-	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
 	"main": "lib/index.js",
 	"module": "lib/index.esm.js",
 	"browser": {
@@ -85,10 +85,6 @@
 		"core-js": ">=3.0.0",
 		"tslib": ">=2.0.0"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/saqqdy/js-cool.git"
-	},
 	"keywords": [
 		"js-cool",
 		"es6",
@@ -98,6 +94,12 @@
 		"js tools",
 		"saqqdy"
 	],
+	"license": "MIT",
+	"author": "saqqdy<https://github.com/saqqdy>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saqqdy/js-cool.git"
+	},
 	"pnpm": {
 		"peerDependencyRules": {
 			"ignoreMissing": [
@@ -109,8 +111,6 @@
 			}
 		}
 	},
-	"author": "saqqdy<https://github.com/saqqdy>",
-	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/saqqdy/js-cool/issues"
 	},

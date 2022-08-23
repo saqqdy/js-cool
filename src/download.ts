@@ -9,11 +9,11 @@
  * @param filename - 文件名
  * @param type - 下载类型 'href','open','download','request'
  */
-function download(url: string, filename: string, type: string = 'download') {
+function download(url: string, filename: string, type = 'download') {
 	// @ts-ignore
-	let name = /[^\/]+$/.exec(url)[0],
-		// @ts-ignore
-		fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
+	const name = /[^\/]+$/.exec(url)[0]
+	// @ts-ignore
+	const fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
 	if (type === 'open') {
 		window.open(url)
 	} else if (type === 'href') {
@@ -33,7 +33,7 @@ function download(url: string, filename: string, type: string = 'download') {
  * @param filename - 文件名
  */
 function openFile(url: string, filename: string, fileType: string) {
-	let dom = document.createElement('a')
+	const dom = document.createElement('a')
 	// if (['pdf', 'txt'].includes(fileType)) console.log('is pdf')
 	dom.style.display = 'none'
 	dom.download = filename
@@ -51,7 +51,7 @@ function openFile(url: string, filename: string, fileType: string) {
  * @param filename - 文件名
  */
 function downloadUrlFile(url: string, filename: string) {
-	let xhr = window.XMLHttpRequest
+	const xhr = window.XMLHttpRequest
 		? new XMLHttpRequest()
 		: // @ts-ignore
 		  new ActiveXObject('Microsoft.XMLHTTP')
@@ -75,7 +75,7 @@ function downloadUrlFile(url: string, filename: string) {
 function saveFile(data: any, filename: string) {
 	const urlObject = window.URL || window.webkitURL || window
 	const blob = new Blob([data])
-	let link: any = document.createElementNS(
+	const link: any = document.createElementNS(
 		'http://www.w3.org/1999/xhtml',
 		'a'
 	)

@@ -14,11 +14,7 @@
  * @param delimiter - 分隔符，默认','
  * @returns CSV数据
  */
-const JSONToCSV = (
-	arr: any[],
-	columns: any[],
-	delimiter: string = ','
-): string =>
+const JSONToCSV = (arr: any[], columns: any[], delimiter = ','): string =>
 	[
 		columns.join(delimiter),
 		...arr.map(obj =>

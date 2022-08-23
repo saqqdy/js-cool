@@ -1,15 +1,15 @@
-const fs = require('fs')
-const path = require('path')
 import resolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 // import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
+const path = require('path')
+const fs = require('fs')
 
 const config = require('./config')
 
-let fileList = []
+const fileList = []
 const readDir = entry => {
 	const dirInfo = fs.readdirSync(entry)
 	dirInfo.forEach(item => {

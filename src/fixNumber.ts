@@ -6,7 +6,7 @@
  * @returns 返回新数字
  */
 function fixNumber(number: string | number, n = 2) {
-	let reg = new RegExp('^(.*\\..{' + n + '}).*$')
+	const reg = new RegExp('^(.*\\..{' + n + '}).*$')
 	number = '' + number
 	if (!/^(\-|\+)?\d+(\.\d+)?$/.test(number)) {
 		console.warn('请传入数字')
