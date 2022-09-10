@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
--   [`AnyObject`](AnyObject.md)
+-   [`AnyObject`](../modules.md#anyobject)
 
     ↳ **`AnyFunction`**
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[typings/common.d.ts:6](https://github.com/saqqdy/js-cool/blob/2d8a9ac/typings/common.d.ts#L6)
+[typings/common.d.ts:4](https://github.com/saqqdy/js-cool/blob/ff4a54d/typings/common.d.ts#L4)

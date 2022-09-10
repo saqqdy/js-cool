@@ -22,14 +22,14 @@ const readDir = entry => {
 		}
 	})
 }
-const getInfo = url => {
+function getInfo(url) {
 	fileList.push(url)
 }
 readDir('./src')
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
-const production = !process.env.ROLLUP_WATCH
+// const production = !process.env.ROLLUP_WATCH
 
 export default [
 	{
@@ -41,7 +41,7 @@ export default [
 				banner: config.banner
 			},
 			{
-				file: 'lib/index.esm.js',
+				file: 'es/index.mjs',
 				format: 'es',
 				banner: config.banner
 			}
@@ -76,12 +76,23 @@ export default [
 		input: fileList,
 		output: [
 			{
-				// file: 'lib/[name].js',
+				entryFileNames: '[name].js',
 				dir: 'lib',
 				preserveModules: true,
 				preserveModulesRoot: 'src',
 				exports: 'auto',
 				format: 'cjs',
+				// format: 'iife', // immediately-invoked function expression — suitable for <script> tags
+				sourcemap: false,
+				banner: config.banner
+			},
+			{
+				entryFileNames: '[name].mjs',
+				dir: 'es',
+				preserveModules: true,
+				preserveModulesRoot: 'src',
+				exports: 'auto',
+				format: 'es',
 				// format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 				sourcemap: false,
 				banner: config.banner
@@ -103,69 +114,6 @@ export default [
 				// exclude: [/\/core-js\//],
 				// runtimeHelpers: true,
 				sourceMap: true
-			})
-		],
-		external(id) {
-			return ['core-js'].some(k => new RegExp('^' + k).test(id))
-		}
-	},
-	// es module----------------------------------------------------
-	{
-		input: 'src/index.ts',
-		output: [
-			{
-				file: 'es/index.js',
-				format: 'es',
-				banner: config.banner
-			}
-		],
-		plugins: [
-			resolve({ extensions: config.extensions }),
-			commonjs(),
-			typescript({
-				tsconfigOverride: {
-					compilerOptions: {
-						declaration: false,
-						target: 'es6'
-					},
-					include: ['src/**/*'],
-					exclude: ['node_modules', '__tests__', 'core-js']
-				},
-				abortOnError: false
-			})
-		],
-		external(id) {
-			// return ['core-js', 'tslib'].some(k => new RegExp('^' + k).test(id))
-			return ['core-js'].some(k => new RegExp('^' + k).test(id))
-		}
-	},
-	{
-		input: fileList,
-		output: [
-			{
-				// file: 'lib/[name].js',
-				dir: 'es',
-				preserveModules: true,
-				preserveModulesRoot: 'src',
-				exports: 'auto',
-				format: 'es',
-				// format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-				sourcemap: false,
-				banner: config.banner
-			}
-		],
-		plugins: [
-			resolve({ extensions: config.extensions }),
-			commonjs(),
-			typescript({
-				tsconfigOverride: {
-					compilerOptions: {
-						target: 'es6'
-					},
-					include: ['src/**/*'],
-					exclude: ['node_modules', '__tests__', 'core-js']
-				},
-				abortOnError: false
 			})
 		],
 		external(id) {

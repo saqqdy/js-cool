@@ -89,13 +89,13 @@
 ### Interfaces
 
 -   [AnyFunction](interfaces/AnyFunction.md)
--   [AnyObject](interfaces/AnyObject.md)
 -   [DirParamType](interfaces/DirParamType.md)
 -   [SearchkeySet](interfaces/SearchkeySet.md)
 -   [WindowSizeObj](interfaces/WindowSizeObj.md)
 
 ### Type Aliases
 
+-   [AnyObject](modules.md#anyobject)
 -   [ArrayOneMore](modules.md#arrayonemore)
 
 ### Variables
@@ -569,6 +569,16 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 ## Type Aliases
 
+### AnyObject
+
+Ƭ **AnyObject**: `Record`<`string`, `any`\>
+
+#### Defined in
+
+[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/ff4a54d/typings/common.d.ts#L1)
+
+---
+
 ### ArrayOneMore
 
 Ƭ **ArrayOneMore**<`T`\>: { `0`: `T` } & `T`[]
@@ -581,7 +591,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:9](https://github.com/saqqdy/js-cool/blob/2d8a9ac/typings/common.d.ts#L9)
+[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/ff4a54d/typings/common.d.ts#L7)
 
 ## Variables
 
@@ -602,7 +612,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `any`                          | (`arr`: `any`[], `fn`: [`AnyFunction`](interfaces/AnyFunction.md)) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                    |
 | `arrayToCSV`                   | (`arr`: `any`[], `delimiter`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `camel2Dash`                   | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `cleanData`                    | (`data`: `any`, `map`: `any`[] \| [`AnyObject`](interfaces/AnyObject.md), `nullFix?`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                              |
+| `cleanData`                    | (`data`: `any`, `map`: `any`[] \| [`AnyObject`](modules.md#anyobject), `nullFix?`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                                 |
 | `clearAttr`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `clearBr`                      | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `clearHtml`                    | (`string`: `string`) => `string`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -682,7 +692,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `pattern.textarea`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `pattern.url`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `pattern.username`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `removeEvent`                  | (`element`: [`AnyObject`](interfaces/AnyObject.md), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                                             |
+| `removeEvent`                  | (`element`: [`AnyObject`](modules.md#anyobject), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                                                |
 | `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: [`SearchkeySet`](interfaces/SearchkeySet.md), `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                                          |
 | `setCache`                     | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `setCookie`                    | (`name`: `string`, `value`: `any`, `seconds`: `number`, `path`: `string`, `samesite`: `boolean`) => `void`                                                                                                                                                                                                                                                                                                                                                         |
@@ -701,7 +711,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[src/index.ts:202](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/index.ts#L202)
+[src/index.ts:202](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/index.ts#L202)
 
 ---
 
@@ -736,7 +746,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/pattern.ts#L6)
 
 ## Functions
 
@@ -780,7 +790,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/CSVToArray.ts#L21)
 
 ---
 
@@ -825,7 +835,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -857,7 +867,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/RGBToHex.ts#L10)
 
 ---
 
@@ -871,7 +881,7 @@ addEvent()事件委托，支持多次委托
 
 | Name      | Type                                       | Description           |
 | :-------- | :----------------------------------------- | :-------------------- |
-| `element` | [`AnyObject`](interfaces/AnyObject.md)     | js dom 对象           |
+| `element` | [`AnyObject`](modules.md#anyobject)        | js dom 对象           |
 | `type`    | `string`                                   | 事件类型。不需要加 on |
 | `handler` | [`AnyFunction`](interfaces/AnyFunction.md) | 回调方法              |
 
@@ -881,7 +891,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/addEvent.ts#L10)
 
 ---
 
@@ -918,7 +928,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/all.ts#L17)
 
 ---
 
@@ -955,7 +965,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/any.ts#L17)
 
 ---
 
@@ -1010,7 +1020,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1035,7 +1045,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/client.ts#L8)
 
 ---
 
@@ -1062,7 +1072,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/extend.ts#L42)
+[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/extend.ts#L42)
 
 ---
 
@@ -1080,7 +1090,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1104,4 +1114,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/2d8a9ac/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/uuid.ts#L10)
