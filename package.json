@@ -9,7 +9,7 @@
 		"dist/index.js": "dist/index.min.js"
 	},
 	"unpkg": "lib/index.js",
-	"typings": "lib/index.d.ts",
+	"typings": "es/index.d.ts",
 	"exports": {
 		".": {
 			"require": "./lib/index.js",
