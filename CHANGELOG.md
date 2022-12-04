@@ -2,12 +2,12 @@
 
 ## 2022.12.04 v2.6.0 更新日志
 
-1. 新增`loadSource` `mountCss` `mountImg` `mountJs` `mountStyle` 5个方法
+1. 新增`loadSource` `mountCss` `mountImg` `mountJs` `mountStyle` 5 个方法
 2. 升级依赖包
 
 ## 2022.09.10 v2.5.0 更新日志
 
-1. 调整exports导出方式，重点支持node esm模式
+1. 调整 exports 导出方式，重点支持 node esm 模式
 2. 优化构建脚本
 3. 升级依赖包
 

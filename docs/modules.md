@@ -1,121 +1,126 @@
-[index.md - v2.4.0](README.md) / Exports
+[index.md - v2.6.0](README.md) / Exports
 
-# index.md - v2.4.0
+# index.md - v2.6.0
 
 ## Table of contents
 
 ### References
 
--   [CSVToJSON](modules.md#csvtojson)
--   [camel2Dash](modules.md#camel2dash)
--   [cleanData](modules.md#cleandata)
--   [clearAttr](modules.md#clearattr)
--   [clearBr](modules.md#clearbr)
--   [clearHtml](modules.md#clearhtml)
--   [clearHtmlExpSN](modules.md#clearhtmlexpsn)
--   [clearHtmlN](modules.md#clearhtmln)
--   [clearHtmlNS](modules.md#clearhtmlns)
--   [clearHtmlTag](modules.md#clearhtmltag)
--   [complement](modules.md#complement)
--   [contains](modules.md#contains)
--   [cutCHSString](modules.md#cutchsstring)
--   [dash2Camel](modules.md#dash2camel)
--   [deWxJumpLink](modules.md#dewxjumplink)
--   [deWxJumpLinkOld](modules.md#dewxjumplinkold)
--   [debounce](modules.md#debounce)
--   [decodeBase64](modules.md#decodebase64)
--   [decodeUtf8](modules.md#decodeutf8)
--   [delCache](modules.md#delcache)
--   [delCookie](modules.md#delcookie)
--   [delSession](modules.md#delsession)
--   [delay](modules.md#delay)
--   [download](modules.md#download)
--   [enWxJumpLink](modules.md#enwxjumplink)
--   [enWxJumpLinkOld](modules.md#enwxjumplinkold)
--   [encodeBase64](modules.md#encodebase64)
--   [encodeUtf8](modules.md#encodeutf8)
--   [fillIPv6](modules.md#fillipv6)
--   [fixNumber](modules.md#fixnumber)
--   [formatTime](modules.md#formattime)
--   [formatTimeStr](modules.md#formattimestr)
--   [getAppVersion](modules.md#getappversion)
--   [getCHSLength](modules.md#getchslength)
--   [getCache](modules.md#getcache)
--   [getCookie](modules.md#getcookie)
--   [getDirParam](modules.md#getdirparam)
--   [getFileType](modules.md#getfiletype)
--   [getIsAppVersionLastest](modules.md#getisappversionlastest)
--   [getNumber](modules.md#getnumber)
--   [getOsVersion](modules.md#getosversion)
--   [getParameter](modules.md#getparameter)
--   [getProperty](modules.md#getproperty)
--   [getRandomNum](modules.md#getrandomnum)
--   [getRandomStr](modules.md#getrandomstr)
--   [getRandomStrWidthSpecialChar](modules.md#getrandomstrwidthspecialchar)
--   [getSession](modules.md#getsession)
--   [getType](modules.md#gettype)
--   [getUrlParam](modules.md#geturlparam)
--   [getWindowSize](modules.md#getwindowsize)
--   [imgAdapt](modules.md#imgadapt)
--   [imgChoose](modules.md#imgchoose)
--   [intersect](modules.md#intersect)
--   [isArray](modules.md#isarray)
--   [isDigitals](modules.md#isdigitals)
--   [isExitsFunction](modules.md#isexitsfunction)
--   [isExitsVariable](modules.md#isexitsvariable)
--   [minus](modules.md#minus)
--   [nextIndex](modules.md#nextindex)
--   [openUrl](modules.md#openurl)
--   [removeEvent](modules.md#removeevent)
--   [searchTreeObject](modules.md#searchtreeobject)
--   [setCache](modules.md#setcache)
--   [setCookie](modules.md#setcookie)
--   [setSession](modules.md#setsession)
--   [splitThousand](modules.md#splitthousand)
--   [stopBubble](modules.md#stopbubble)
--   [stopDefault](modules.md#stopdefault)
--   [textareaInsertText](modules.md#textareainserttext)
--   [textareaMoveToEnd](modules.md#textareamovetoend)
--   [throttle](modules.md#throttle)
--   [trim](modules.md#trim)
--   [union](modules.md#union)
--   [unique](modules.md#unique)
--   [upperFirst](modules.md#upperfirst)
+- [CSVToJSON](modules.md#csvtojson)
+- [camel2Dash](modules.md#camel2dash)
+- [cleanData](modules.md#cleandata)
+- [clearAttr](modules.md#clearattr)
+- [clearBr](modules.md#clearbr)
+- [clearHtml](modules.md#clearhtml)
+- [clearHtmlExpSN](modules.md#clearhtmlexpsn)
+- [clearHtmlN](modules.md#clearhtmln)
+- [clearHtmlNS](modules.md#clearhtmlns)
+- [clearHtmlTag](modules.md#clearhtmltag)
+- [complement](modules.md#complement)
+- [contains](modules.md#contains)
+- [cutCHSString](modules.md#cutchsstring)
+- [dash2Camel](modules.md#dash2camel)
+- [deWxJumpLink](modules.md#dewxjumplink)
+- [deWxJumpLinkOld](modules.md#dewxjumplinkold)
+- [debounce](modules.md#debounce)
+- [decodeBase64](modules.md#decodebase64)
+- [decodeUtf8](modules.md#decodeutf8)
+- [delCache](modules.md#delcache)
+- [delCookie](modules.md#delcookie)
+- [delSession](modules.md#delsession)
+- [delay](modules.md#delay)
+- [download](modules.md#download)
+- [enWxJumpLink](modules.md#enwxjumplink)
+- [enWxJumpLinkOld](modules.md#enwxjumplinkold)
+- [encodeBase64](modules.md#encodebase64)
+- [encodeUtf8](modules.md#encodeutf8)
+- [fillIPv6](modules.md#fillipv6)
+- [fixNumber](modules.md#fixnumber)
+- [formatTime](modules.md#formattime)
+- [formatTimeStr](modules.md#formattimestr)
+- [getAppVersion](modules.md#getappversion)
+- [getCHSLength](modules.md#getchslength)
+- [getCache](modules.md#getcache)
+- [getCookie](modules.md#getcookie)
+- [getDirParam](modules.md#getdirparam)
+- [getFileType](modules.md#getfiletype)
+- [getIsAppVersionLastest](modules.md#getisappversionlastest)
+- [getNumber](modules.md#getnumber)
+- [getOsVersion](modules.md#getosversion)
+- [getParameter](modules.md#getparameter)
+- [getProperty](modules.md#getproperty)
+- [getRandomNum](modules.md#getrandomnum)
+- [getRandomStr](modules.md#getrandomstr)
+- [getRandomStrWidthSpecialChar](modules.md#getrandomstrwidthspecialchar)
+- [getSession](modules.md#getsession)
+- [getType](modules.md#gettype)
+- [getUrlParam](modules.md#geturlparam)
+- [getWindowSize](modules.md#getwindowsize)
+- [imgAdapt](modules.md#imgadapt)
+- [imgChoose](modules.md#imgchoose)
+- [intersect](modules.md#intersect)
+- [isArray](modules.md#isarray)
+- [isDigitals](modules.md#isdigitals)
+- [isExitsFunction](modules.md#isexitsfunction)
+- [isExitsVariable](modules.md#isexitsvariable)
+- [loadSource](modules.md#loadsource)
+- [minus](modules.md#minus)
+- [mountCss](modules.md#mountcss)
+- [mountImg](modules.md#mountimg)
+- [mountJs](modules.md#mountjs)
+- [mountStyle](modules.md#mountstyle)
+- [nextIndex](modules.md#nextindex)
+- [openUrl](modules.md#openurl)
+- [removeEvent](modules.md#removeevent)
+- [searchTreeObject](modules.md#searchtreeobject)
+- [setCache](modules.md#setcache)
+- [setCookie](modules.md#setcookie)
+- [setSession](modules.md#setsession)
+- [splitThousand](modules.md#splitthousand)
+- [stopBubble](modules.md#stopbubble)
+- [stopDefault](modules.md#stopdefault)
+- [textareaInsertText](modules.md#textareainserttext)
+- [textareaMoveToEnd](modules.md#textareamovetoend)
+- [throttle](modules.md#throttle)
+- [trim](modules.md#trim)
+- [union](modules.md#union)
+- [unique](modules.md#unique)
+- [upperFirst](modules.md#upperfirst)
 
 ### Namespaces
 
--   [addEvent](modules/addEvent.md)
+- [addEvent](modules/addEvent.md)
 
 ### Interfaces
 
--   [AnyFunction](interfaces/AnyFunction.md)
--   [DirParamType](interfaces/DirParamType.md)
--   [SearchkeySet](interfaces/SearchkeySet.md)
--   [WindowSizeObj](interfaces/WindowSizeObj.md)
+- [AnyFunction](interfaces/AnyFunction.md)
+- [DirParamType](interfaces/DirParamType.md)
+- [SearchkeySet](interfaces/SearchkeySet.md)
+- [WindowSizeObj](interfaces/WindowSizeObj.md)
 
 ### Type Aliases
 
--   [AnyObject](modules.md#anyobject)
--   [ArrayOneMore](modules.md#arrayonemore)
+- [AnyObject](modules.md#anyobject)
+- [ArrayOneMore](modules.md#arrayonemore)
 
 ### Variables
 
--   [default](modules.md#default)
--   [pattern](modules.md#pattern)
+- [default](modules.md#default)
+- [pattern](modules.md#pattern)
 
 ### Functions
 
--   [CSVToArray](modules.md#csvtoarray)
--   [JSONToCSV](modules.md#jsontocsv)
--   [RGBToHex](modules.md#rgbtohex)
--   [addEvent](modules.md#addevent)
--   [all](modules.md#all)
--   [any](modules.md#any)
--   [arrayToCSV](modules.md#arraytocsv)
--   [client](modules.md#client)
--   [extend](modules.md#extend)
--   [getScrollPosition](modules.md#getscrollposition)
--   [uuid](modules.md#uuid)
+- [CSVToArray](modules.md#csvtoarray)
+- [JSONToCSV](modules.md#jsontocsv)
+- [RGBToHex](modules.md#rgbtohex)
+- [addEvent](modules.md#addevent)
+- [all](modules.md#all)
+- [any](modules.md#any)
+- [arrayToCSV](modules.md#arraytocsv)
+- [client](modules.md#client)
+- [extend](modules.md#extend)
+- [getScrollPosition](modules.md#getscrollposition)
+- [uuid](modules.md#uuid)
 
 ## References
 
@@ -461,7 +466,37 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 ---
 
+### loadSource
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
 ### minus
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### mountCss
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### mountImg
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### mountJs
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
+### mountStyle
 
 Renames and re-exports [\_\_type](modules.md#__type)
 
@@ -575,7 +610,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/ff4a54d/typings/common.d.ts#L1)
+[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L1)
 
 ---
 
@@ -591,7 +626,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/ff4a54d/typings/common.d.ts#L7)
+[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L7)
 
 ## Variables
 
@@ -670,7 +705,12 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `isDigitals`                   | (`str`: `any`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `isExitsFunction`              | (`funcName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `isExitsVariable`              | (`variableName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `loadSource`                   | (`url`: `string`, `type`: `string`, `force`: `boolean`) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                                                       |
 | `minus`                        | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `mountCss`                     | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `mountImg`                     | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                                                                         |
+| `mountJs`                      | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `mountStyle`                   | (`css`: `string`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `nextIndex`                    | (`min`: `number`, `max`: `number`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `openUrl`                      | (`url`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `pattern`                      | { `any`: `RegExp` ; `array`: `RegExp` ; `arrjson`: `RegExp` ; `chinese`: `RegExp` ; `email`: `RegExp` ; `float`: `RegExp` ; `isjson`: `RegExp` ; `json`: `RegExp` ; `mobile`: `RegExp` ; `number`: `RegExp` ; `pass`: `RegExp` ; `postcode`: `RegExp` ; `qq`: `RegExp` ; `string`: `RegExp` ; `tel`: `RegExp` ; `textarea`: `RegExp` ; `url`: `RegExp` ; `username`: `RegExp` }                                                                                    |
@@ -711,7 +751,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[src/index.ts:202](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/index.ts#L202)
+[src/index.ts:212](https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L212)
 
 ---
 
@@ -746,7 +786,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L6)
 
 ## Functions
 
@@ -790,7 +830,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/dbf430c/src/CSVToArray.ts#L21)
 
 ---
 
@@ -803,20 +843,13 @@ array
 **`Example`**
 
 ```js
-JSONToCSV(
-    [{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }],
-    ['a', 'b']
-) // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']) // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
 ```
 
 **`Example`**
 
 ```js
-JSONToCSV(
-    [{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }],
-    ['a', 'b'],
-    ';'
-) // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';') // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
 ```
 
 #### Parameters
@@ -835,7 +868,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -867,7 +900,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/RGBToHex.ts#L10)
 
 ---
 
@@ -891,7 +924,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L10)
 
 ---
 
@@ -928,7 +961,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/all.ts#L17)
 
 ---
 
@@ -965,7 +998,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/any.ts#L17)
 
 ---
 
@@ -979,8 +1012,8 @@ any([0, 0, 1, 0]) // true
 
 ```js
 arrayToCSV([
-    ['a', 'b'],
-    ['c', 'd']
+  ['a', 'b'],
+  ['c', 'd']
 ]) // '"a","b"\n"c","d"'
 ```
 
@@ -988,11 +1021,11 @@ arrayToCSV([
 
 ```js
 arrayToCSV(
-    [
-        ['a', 'b'],
-        ['c', 'd']
-    ],
-    ';'
+  [
+    ['a', 'b'],
+    ['c', 'd']
+  ],
+  ';'
 ) // '"a";"b"\n"c";"d"'
 ```
 
@@ -1000,8 +1033,8 @@ arrayToCSV(
 
 ```js
 arrayToCSV([
-    ['a', '"b" great'],
-    ['c', 3.1415]
+  ['a', '"b" great'],
+  ['c', 3.1415]
 ]) // '"a","""b"" great"\n"c",3.1415'
 ```
 
@@ -1020,7 +1053,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/dbf430c/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1045,7 +1078,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L8)
 
 ---
 
@@ -1072,7 +1105,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/extend.ts#L42)
+[src/extend.ts:34](https://github.com/saqqdy/js-cool/blob/dbf430c/src/extend.ts#L34)
 
 ---
 
@@ -1090,7 +1123,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/dbf430c/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1114,4 +1147,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/uuid.ts#L10)

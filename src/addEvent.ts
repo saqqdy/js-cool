@@ -47,12 +47,7 @@ function handleEvent(event: any): boolean {
 	// 抓获事件对象(IE使用全局事件对象)
 	event =
 		event ||
-		fixEvent(
-			(
-				(that.ownerDocument || that.document || that).parentWindow ||
-				window
-			).event
-		)
+		fixEvent(((that.ownerDocument || that.document || that).parentWindow || window).event)
 	// 取得事件处理函数的哈希表的引用
 	// @ts-ignore
 	const handlers = (this as any).events[event.type]

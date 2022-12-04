@@ -12,11 +12,7 @@ import unique from './unique'
  * @returns array
  */
 function union<T = unknown>(...args: T[][]): T[] {
-	return unique(
-		args.reduce((pre, cur) =>
-			pre.concat(cur.filter(item => !contains(pre, item)))
-		)
-	)
+	return unique(args.reduce((pre, cur) => pre.concat(cur.filter(item => !contains(pre, item)))))
 }
 
 export default union

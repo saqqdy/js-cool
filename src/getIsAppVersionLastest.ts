@@ -20,10 +20,7 @@ function getIsAppVersionLastest(
 	userAgent?: string
 ): boolean | null {
 	userAgent = userAgent || navigator.appVersion
-	let basicVer =
-		appName.indexOf('.') > 0
-			? appName
-			: getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+	let basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
 	if (basicVer === null) {
 		return null
 	} // 不是指定客户端

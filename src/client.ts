@@ -12,11 +12,9 @@ const client = (name = '', userAgent = navigator.appVersion) => {
 	} else {
 		return {
 			IE: userAgentL.includes('msie') && !userAgentL.includes('opera'),
-			GECKO:
-				userAgentL.includes('gecko') && !userAgentL.includes('khtml'), // 火狐内核
+			GECKO: userAgentL.includes('gecko') && !userAgentL.includes('khtml'), // 火狐内核
 			WEBKIT: userAgentL.includes('applewebkit'), // 苹果、谷歌内核
-			OPERA:
-				userAgentL.includes('opera') && userAgentL.includes('presto'), // opera内核
+			OPERA: userAgentL.includes('opera') && userAgentL.includes('presto'), // opera内核
 			TRIDENT: userAgentL.includes('trident'), // IE内核
 			MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/), // 是否为移动终端
 			// MOBILEDEVICE: !!userAgentL.match(/iphone|android|phone|mobile|wap|netfront|x11|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i), // 是否为移动终端

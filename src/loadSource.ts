@@ -23,8 +23,7 @@ async function loadSource(
 		type = match[1]
 	}
 	type && (type = type.toLowerCase())
-	if (!['js', 'img', 'css', 'style'].includes(type))
-		throw new Error(`${type}类型暂不支持`)
+	if (!['js', 'img', 'css', 'style'].includes(type)) throw new Error(`${type}类型暂不支持`)
 	const func: Record<'js' | 'img' | 'css' | 'style' | string, Function> = {
 		js: (src: string) => mountJs(src, force),
 		img: (src: string) => mountImg(src, force),

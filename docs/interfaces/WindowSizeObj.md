@@ -1,4 +1,4 @@
-[index.md - v2.4.0](../README.md) / [Exports](../modules.md) / WindowSizeObj
+[index.md - v2.6.0](../README.md) / [Exports](../modules.md) / WindowSizeObj
 
 # Interface: WindowSizeObj
 
@@ -6,8 +6,8 @@
 
 ### Properties
 
--   [height](WindowSizeObj.md#height)
--   [width](WindowSizeObj.md#width)
+- [height](WindowSizeObj.md#height)
+- [width](WindowSizeObj.md#width)
 
 ## Properties
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/getWindowSize.ts:3](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/getWindowSize.ts#L3)
+[src/getWindowSize.ts:3](https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/getWindowSize.ts:2](https://github.com/saqqdy/js-cool/blob/ff4a54d/src/getWindowSize.ts#L2)
+[src/getWindowSize.ts:2](https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L2)

@@ -13,19 +13,13 @@ export interface SearchkeySet {
  * @param number - 选填 查找个数，不传则查询全部
  * @returns 返回查询到的数组
  */
-function searchTreeObject(
-	tree: object | any[],
-	expression: any,
-	keySet: SearchkeySet,
-	number = 0
-) {
+function searchTreeObject(tree: object | any[], expression: any, keySet: SearchkeySet, number = 0) {
 	const retNode: any[] = []
 	const isLimit = number > 0
 	if (!keySet || typeof keySet !== 'object') {
 		keySet = { childName: 'child', keyName: 'name' }
 	}
-	if (Object.prototype.toString.call(tree) === '[object Object]')
-		tree = [tree]
+	if (Object.prototype.toString.call(tree) === '[object Object]') tree = [tree]
 	/**
 	 * 递归查找
 	 *
@@ -36,10 +30,7 @@ function searchTreeObject(
 	 */
 	function deepSearch(tree: any, expression: any) {
 		for (let i = 0; i < tree.length; i++) {
-			if (
-				tree[i][keySet.childName] &&
-				tree[i][keySet.childName].length > 0
-			) {
+			if (tree[i][keySet.childName] && tree[i][keySet.childName].length > 0) {
 				deepSearch(tree[i][keySet.childName], expression)
 			}
 			let result = true

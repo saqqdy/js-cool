@@ -10,8 +10,7 @@ function delCookie(name: string) {
 	e.setTime(e.getTime() - 1)
 	const cval = getCookie(name)
 	if (cval !== null) {
-		document.cookie =
-			name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/'
+		document.cookie = name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/'
 	}
 }
 

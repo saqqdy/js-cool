@@ -27,10 +27,7 @@ const getScrollPosition = (): string | void => {
 	// if(bodyScrollTop === 0 && docScrollTop === 0){
 	//   return 'top';
 	// }
-	if (
-		innerH + Math.floor(scrollT) === scrollH ||
-		innerH + Math.ceil(scrollT) === scrollH
-	) {
+	if (innerH + Math.floor(scrollT) === scrollH || innerH + Math.ceil(scrollT) === scrollH) {
 		return 'bottom'
 	}
 }

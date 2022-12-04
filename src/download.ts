@@ -75,10 +75,7 @@ function downloadUrlFile(url: string, filename: string) {
 function saveFile(data: any, filename: string) {
 	const urlObject = window.URL || window.webkitURL || window
 	const blob = new Blob([data])
-	const link: any = document.createElementNS(
-		'http://www.w3.org/1999/xhtml',
-		'a'
-	)
+	const link: any = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
 	link.href = urlObject.createObjectURL(blob)
 	link.download = filename
 	link.click()

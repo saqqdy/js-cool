@@ -7,13 +7,7 @@
  * @param path - 路径，默认'/'
  * @param samesite - SameSite，默认true
  */
-function setCookie(
-	name: string,
-	value: any,
-	seconds = 86400,
-	path = '/',
-	samesite = true
-) {
+function setCookie(name: string, value: any, seconds = 86400, path = '/', samesite = true) {
 	const exp: Date = new Date()
 	exp.setTime(exp.getTime() + seconds * 1000)
 	document.cookie =
@@ -24,9 +18,7 @@ function setCookie(
 		exp.toUTCString() +
 		';path=' +
 		path +
-		(samesite && location.protocol === 'https:'
-			? ';SameSite=None;Secure'
-			: '')
+		(samesite && location.protocol === 'https:' ? ';SameSite=None;Secure' : '')
 }
 
 export default setCookie

@@ -1,6 +1,5 @@
 import encodeUtf8 from './encodeUtf8'
-const _keyStr =
-	'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 /**
  * 字符串、数字转base64

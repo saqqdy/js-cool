@@ -27,9 +27,7 @@ function getOsVersion(
 	}
 	let reg = eval('/' + name + '\\s[\\d\\_]+/ig'),
 		// var isApp = userAgent.includes(name)
-		ver = (userAgent.match(reg) + '')
-			.replace(/\s/gi, '/')
-			.replace(/_/gi, '.')
+		ver = (userAgent.match(reg) + '').replace(/\s/gi, '/').replace(/_/gi, '.')
 	if (index > -1) {
 		ver = ver.replace(/OS\//gi, osName + '/')
 	}
