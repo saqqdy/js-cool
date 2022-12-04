@@ -108,6 +108,11 @@ import contains from './contains' // 数组是否包含指定元素
 import unique from './unique' // 数组去重
 import fillIPv6 from './fillIPv6' // ipv6地址补全
 import getProperty from './getProperty' // 根据路径字符串获取数组、对象属性值
+import loadSource from './loadSource' // 动态加载资源，支持js、图片、css链接、css样式字符串
+import mountCss from './mountCss' // 动态加载css链接资源
+import mountImg from './mountImg' // 动态加载图片资源
+import mountJs from './mountJs' // 动态加载js链接资源
+import mountStyle from './mountStyle' // 动态加载css样式
 
 export {
 	client,
@@ -196,7 +201,12 @@ export {
 	contains,
 	unique,
 	fillIPv6,
-	getProperty
+	getProperty,
+	loadSource,
+	mountCss,
+	mountImg,
+	mountJs,
+	mountStyle
 }
 
 export default {
@@ -286,5 +296,10 @@ export default {
 	contains,
 	unique,
 	fillIPv6,
-	getProperty
+	getProperty,
+	loadSource,
+	mountCss,
+	mountImg,
+	mountJs,
+	mountStyle
 }
