@@ -10,9 +10,9 @@
  * @param type - 下载类型 'href','open','download','request'
  */
 function download(url: string, filename: string, type = 'download') {
-	// @ts-ignore
+	// @ts-expect-error
 	const name = /[^\/]+$/.exec(url)[0]
-	// @ts-ignore
+	// @ts-expect-error
 	const fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
 	if (type === 'open') {
 		window.open(url)
@@ -53,7 +53,7 @@ function openFile(url: string, filename: string, fileType: string) {
 function downloadUrlFile(url: string, filename: string) {
 	const xhr = window.XMLHttpRequest
 		? new XMLHttpRequest()
-		: // @ts-ignore
+		: // @ts-expect-error
 		  new ActiveXObject('Microsoft.XMLHTTP')
 	xhr.open('GET', url, true)
 	xhr.responseType = 'blob'

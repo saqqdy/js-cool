@@ -210,7 +210,7 @@ download(url, filename) // 下载文件
     unique, // 数组去重
     fillIPv6, // ipv6地址补全
     getProperty // 根据路径字符串获取数组、对象属性值
-    loadSource, // 动态加载资源，支持js、图片、css链接、css样式字符串
+  loadSource, // 动态加载资源，支持js、图片、css链接、css样式字符串
     mountCss, // 动态加载css链接资源
     mountImg, // 动态加载图片资源
     mountJs, // 动态加载js链接资源

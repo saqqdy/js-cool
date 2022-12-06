@@ -42,20 +42,20 @@ addEvent.guid = 1
  */
 function handleEvent(event: any): boolean {
 	let returnValue = true,
-		// @ts-ignore
+		// @ts-expect-error
 		that: any = this
 	// 抓获事件对象(IE使用全局事件对象)
 	event =
 		event ||
 		fixEvent(((that.ownerDocument || that.document || that).parentWindow || window).event)
 	// 取得事件处理函数的哈希表的引用
-	// @ts-ignore
+	// @ts-expect-error
 	const handlers = (this as any).events[event.type]
 	// 执行每一个处理函数
 	for (const i in handlers) {
-		// @ts-ignore
+		// @ts-expect-error
 		;(this as any).$$handleEvent = handlers[i]
-		// @ts-ignore
+		// @ts-expect-error
 		if ((this as any).$$handleEvent(event) === false) {
 			returnValue = false
 		}

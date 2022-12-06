@@ -2,3 +2,5 @@
 /lib
 /dist
 /temp
+
+pnpm-lock.yaml

@@ -18,17 +18,17 @@
  * @returns 返回对应的值
  */
 function getProperty(target: any, prop: string | { (): string }): any {
-    if (!target) throw new Error('请传入target')
-    if (!prop) return target
-    if (prop instanceof Function) prop = prop()
-    const arr = prop.split('.')
-    for (let p of arr) {
-        let index = -1
-        p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''))
-        if (p) target = target[p]
-        if (index !== -1 && target) target = target[index]
-    }
-    return target
+	if (!target) throw new Error('请传入target')
+	if (!prop) return target
+	if (prop instanceof Function) prop = prop()
+	const arr = prop.split('.')
+	for (let p of arr) {
+		let index = -1
+		p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''))
+		if (p) target = target[p]
+		if (index !== -1 && target) target = target[index]
+	}
+	return target
 }
 
 export default getProperty

@@ -22,7 +22,7 @@ function throttle(fn: AnyFunction, delay: number, immediate: boolean, debounce: 
 		}
 	return function () {
 		curr = +new Date()
-		// @ts-ignore
+		// @ts-expect-error
 		;(context = this as any),
 			(args = arguments),
 			(diff = curr - (debounce ? last_call : last_exec) - delay)
