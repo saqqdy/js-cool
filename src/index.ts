@@ -1,7 +1,7 @@
 export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
 // export type { CustomObject, CustomEvent } from "./addEvent";
 export type { WindowSizeObj } from './getWindowSize'
-export type { SearchkeySet } from './searchTreeObject'
+export type { SearchKeySet } from './searchTreeObject'
 export type { DirParamType } from './getDirParam'
 
 // 全局参数
@@ -108,6 +108,7 @@ import contains from './contains' // 数组是否包含指定元素
 import unique from './unique' // 数组去重
 import fillIPv6 from './fillIPv6' // ipv6地址补全
 import getProperty from './getProperty' // 根据路径字符串获取数组、对象属性值
+import setProperty from './setProperty' // 根据路径字符串设置数组、对象属性值
 import loadSource from './loadSource' // 动态加载资源，支持js、图片、css链接、css样式字符串
 import mountCss from './mountCss' // 动态加载css链接资源
 import mountImg from './mountImg' // 动态加载图片资源
@@ -202,6 +203,7 @@ export {
 	unique,
 	fillIPv6,
 	getProperty,
+	setProperty,
 	loadSource,
 	mountCss,
 	mountImg,
@@ -297,6 +299,7 @@ export default {
 	unique,
 	fillIPv6,
 	getProperty,
+	setProperty,
 	loadSource,
 	mountCss,
 	mountImg,

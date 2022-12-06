@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2022.12.04 v2.7.0 更新日志
+
+1. 新增`setProperty`方法
+2. 修复setProperty bug
+
 ## 2022.12.04 v2.6.0 更新日志
 
 1. 新增`loadSource` `mountCss` `mountImg` `mountJs` `mountStyle` 5 个方法

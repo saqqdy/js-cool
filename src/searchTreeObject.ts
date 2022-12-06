@@ -1,4 +1,4 @@
-export interface SearchkeySet {
+export interface SearchKeySet {
 	childName: string
 	keyName: string
 	[prop: string]: any
@@ -13,7 +13,7 @@ export interface SearchkeySet {
  * @param number - 选填 查找个数，不传则查询全部
  * @returns 返回查询到的数组
  */
-function searchTreeObject(tree: object | any[], expression: any, keySet: SearchkeySet, number = 0) {
+function searchTreeObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
 	const retNode: any[] = []
 	const isLimit = number > 0
 	if (!keySet || typeof keySet !== 'object') {
