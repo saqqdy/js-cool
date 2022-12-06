@@ -1,6 +1,6 @@
-[index.md - v2.6.0](README.md) / Exports
+[index.md - v2.7.0](README.md) / Exports
 
-# index.md - v2.6.0
+# index.md - v2.7.0
 
 ## Table of contents
 
@@ -75,6 +75,7 @@
 - [searchTreeObject](modules.md#searchtreeobject)
 - [setCache](modules.md#setcache)
 - [setCookie](modules.md#setcookie)
+- [setProperty](modules.md#setproperty)
 - [setSession](modules.md#setsession)
 - [splitThousand](modules.md#splitthousand)
 - [stopBubble](modules.md#stopbubble)
@@ -95,7 +96,7 @@
 
 - [AnyFunction](interfaces/AnyFunction.md)
 - [DirParamType](interfaces/DirParamType.md)
-- [SearchkeySet](interfaces/SearchkeySet.md)
+- [SearchKeySet](interfaces/SearchKeySet.md)
 - [WindowSizeObj](interfaces/WindowSizeObj.md)
 
 ### Type Aliases
@@ -538,6 +539,12 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 ---
 
+### setProperty
+
+Renames and re-exports [\_\_type](modules.md#__type)
+
+---
+
 ### setSession
 
 Renames and re-exports [\_\_type](modules.md#__type)
@@ -610,7 +617,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L1)
+[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L1)
 
 ---
 
@@ -626,7 +633,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L7)
+[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L7)
 
 ## Variables
 
@@ -733,9 +740,10 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `pattern.url`                  | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `pattern.username`             | `RegExp`                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `removeEvent`                  | (`element`: [`AnyObject`](modules.md#anyobject), `type`: `string`, `handler`: [`AnyFunction`](interfaces/AnyFunction.md)) => `void`                                                                                                                                                                                                                                                                                                                                |
-| `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: [`SearchkeySet`](interfaces/SearchkeySet.md), `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                                          |
+| `searchTreeObject`             | (`tree`: `object` \| `any`[], `expression`: `any`, `keySet`: [`SearchKeySet`](interfaces/SearchKeySet.md), `number`: `number`) => `any`[]                                                                                                                                                                                                                                                                                                                          |
 | `setCache`                     | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `setCookie`                    | (`name`: `string`, `value`: `any`, `seconds`: `number`, `path`: `string`, `samesite`: `boolean`) => `void`                                                                                                                                                                                                                                                                                                                                                         |
+| `setProperty`                  | (`target`: `any`, `prop`: `string` \| () => `string`, `value`: `any`) => `any`                                                                                                                                                                                                                                                                                                                                                                                     |
 | `setSession`                   | (`name`: `string`, `value`: `any`, `seconds`: `number`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `splitThousand`                | (`val`: `string` \| `number`) => `string` \| `0`                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `stopBubble`                   | (`e`: `Event`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -751,7 +759,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[src/index.ts:212](https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L212)
+[src/index.ts:214](https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L214)
 
 ---
 
@@ -786,7 +794,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L6)
 
 ## Functions
 
@@ -830,7 +838,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/dbf430c/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/29f261c/src/CSVToArray.ts#L21)
 
 ---
 
@@ -868,7 +876,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -900,7 +908,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/RGBToHex.ts#L10)
 
 ---
 
@@ -924,7 +932,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L10)
 
 ---
 
@@ -961,7 +969,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/all.ts#L17)
 
 ---
 
@@ -998,7 +1006,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/dbf430c/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/any.ts#L17)
 
 ---
 
@@ -1053,7 +1061,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/dbf430c/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/29f261c/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1078,7 +1086,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L8)
 
 ---
 
@@ -1105,7 +1113,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:34](https://github.com/saqqdy/js-cool/blob/dbf430c/src/extend.ts#L34)
+[src/extend.ts:34](https://github.com/saqqdy/js-cool/blob/29f261c/src/extend.ts#L34)
 
 ---
 
@@ -1123,7 +1131,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/dbf430c/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/29f261c/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1147,4 +1155,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/dbf430c/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/uuid.ts#L10)

@@ -1,6 +1,6 @@
-[index.md - v2.6.0](../README.md) / [Exports](../modules.md) / SearchkeySet
+[index.md - v2.7.0](../README.md) / [Exports](../modules.md) / SearchKeySet
 
-# Interface: SearchkeySet
+# Interface: SearchKeySet
 
 ## Indexable
 
@@ -10,8 +10,8 @@
 
 ### Properties
 
-- [childName](SearchkeySet.md#childname)
-- [keyName](SearchkeySet.md#keyname)
+- [childName](SearchKeySet.md#childname)
+- [keyName](SearchKeySet.md#keyname)
 
 ## Properties
 
@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L2)
+[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L2)
 
 ---
 
@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L3)
+[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L3)

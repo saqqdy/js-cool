@@ -1,13 +1,13 @@
 {
 	"id": 0,
-	"name": "index.md - v2.6.0",
+	"name": "index.md - v2.7.0",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "index.md",
 	"children": [
 		{
-			"id": 631,
+			"id": 639,
 			"name": "CSVToJSON",
 			"kind": 8388608,
 			"kindString": "Reference",
@@ -15,208 +15,16 @@
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 194,
+					"line": 195,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L194"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L195"
 				}
 			],
 			"target": 393
 		},
 		{
-			"id": 543,
+			"id": 551,
 			"name": "camel2Dash",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 131,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L131"
-				}
-			],
-			"target": 89
-		},
-		{
-			"id": 607,
-			"name": "cleanData",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 184,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L184"
-				}
-			],
-			"target": 342
-		},
-		{
-			"id": 533,
-			"name": "clearAttr",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 121,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L121"
-				}
-			],
-			"target": 48
-		},
-		{
-			"id": 534,
-			"name": "clearBr",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 122,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L122"
-				}
-			],
-			"target": 52
-		},
-		{
-			"id": 535,
-			"name": "clearHtml",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 123,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L123"
-				}
-			],
-			"target": 56
-		},
-		{
-			"id": 536,
-			"name": "clearHtmlExpSN",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 124,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L124"
-				}
-			],
-			"target": 60
-		},
-		{
-			"id": 537,
-			"name": "clearHtmlN",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 125,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L125"
-				}
-			],
-			"target": 64
-		},
-		{
-			"id": 538,
-			"name": "clearHtmlNS",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 126,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L126"
-				}
-			],
-			"target": 68
-		},
-		{
-			"id": 539,
-			"name": "clearHtmlTag",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 127,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L127"
-				}
-			],
-			"target": 72
-		},
-		{
-			"id": 645,
-			"name": "complement",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 200,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L200"
-				}
-			],
-			"target": 425
-		},
-		{
-			"id": 646,
-			"name": "contains",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 201,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L201"
-				}
-			],
-			"target": 430
-		},
-		{
-			"id": 550,
-			"name": "cutCHSString",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 138,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L138"
-				}
-			],
-			"target": 119
-		},
-		{
-			"id": 544,
-			"name": "dash2Camel",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
@@ -225,158 +33,14 @@
 					"fileName": "src/index.ts",
 					"line": 132,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L132"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L132"
 				}
 			],
-			"target": 93
+			"target": 89
 		},
 		{
-			"id": 581,
-			"name": "deWxJumpLink",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 169,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L169"
-				}
-			],
-			"target": 261
-		},
-		{
-			"id": 582,
-			"name": "deWxJumpLinkOld",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 170,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L170"
-				}
-			],
-			"target": 265
-		},
-		{
-			"id": 583,
-			"name": "debounce",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 171,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L171"
-				}
-			],
-			"target": 269
-		},
-		{
-			"id": 577,
-			"name": "decodeBase64",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 165,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L165"
-				}
-			],
-			"target": 245
-		},
-		{
-			"id": 578,
-			"name": "decodeUtf8",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 166,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L166"
-				}
-			],
-			"target": 249
-		},
-		{
-			"id": 573,
-			"name": "delCache",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 161,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L161"
-				}
-			],
-			"target": 229
-		},
-		{
-			"id": 572,
-			"name": "delCookie",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 160,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L160"
-				}
-			],
-			"target": 225
-		},
-		{
-			"id": 574,
-			"name": "delSession",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 162,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L162"
-				}
-			],
-			"target": 233
-		},
-		{
-			"id": 599,
-			"name": "delay",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 180,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L180"
-				}
-			],
-			"target": 314
-		},
-		{
-			"id": 608,
-			"name": "download",
+			"id": 615,
+			"name": "cleanData",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
@@ -385,254 +49,110 @@
 					"fileName": "src/index.ts",
 					"line": 185,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L185"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L185"
 				}
 			],
-			"target": 348
+			"target": 342
 		},
 		{
-			"id": 579,
-			"name": "enWxJumpLink",
+			"id": 541,
+			"name": "clearAttr",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 167,
+					"line": 122,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L167"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L122"
 				}
 			],
-			"target": 253
+			"target": 48
 		},
 		{
-			"id": 580,
-			"name": "enWxJumpLinkOld",
+			"id": 542,
+			"name": "clearBr",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 168,
+					"line": 123,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L168"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L123"
 				}
 			],
-			"target": 257
+			"target": 52
 		},
 		{
-			"id": 575,
-			"name": "encodeBase64",
+			"id": 543,
+			"name": "clearHtml",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 163,
+					"line": 124,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L163"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L124"
 				}
 			],
-			"target": 237
+			"target": 56
 		},
 		{
-			"id": 576,
-			"name": "encodeUtf8",
+			"id": 544,
+			"name": "clearHtmlExpSN",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 164,
+					"line": 125,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L164"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L125"
 				}
 			],
-			"target": 241
+			"target": 60
 		},
 		{
-			"id": 648,
-			"name": "fillIPv6",
+			"id": 545,
+			"name": "clearHtmlN",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 203,
+					"line": 126,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L203"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L126"
 				}
 			],
-			"target": 440
+			"target": 64
 		},
 		{
-			"id": 598,
-			"name": "fixNumber",
+			"id": 546,
+			"name": "clearHtmlNS",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 179,
+					"line": 127,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L179"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L127"
 				}
 			],
-			"target": 309
+			"target": 68
 		},
 		{
-			"id": 564,
-			"name": "formatTime",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 152,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L152"
-				}
-			],
-			"target": 183
-		},
-		{
-			"id": 565,
-			"name": "formatTimeStr",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 153,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L153"
-				}
-			],
-			"target": 188
-		},
-		{
-			"id": 557,
-			"name": "getAppVersion",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 145,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L145"
-				}
-			],
-			"target": 149
-		},
-		{
-			"id": 549,
-			"name": "getCHSLength",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 137,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L137"
-				}
-			],
-			"target": 115
-		},
-		{
-			"id": 570,
-			"name": "getCache",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 158,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L158"
-				}
-			],
-			"target": 217
-		},
-		{
-			"id": 569,
-			"name": "getCookie",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 157,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L157"
-				}
-			],
-			"target": 213
-		},
-		{
-			"id": 560,
-			"name": "getDirParam",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 148,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L148"
-				}
-			],
-			"target": 167
-		},
-		{
-			"id": 562,
-			"name": "getFileType",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 150,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L150"
-				}
-			],
-			"target": 175
-		},
-		{
-			"id": 559,
-			"name": "getIsAppVersionLastest",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 147,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L147"
-				}
-			],
-			"target": 161
-		},
-		{
-			"id": 540,
-			"name": "getNumber",
+			"id": 547,
+			"name": "clearHtmlTag",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
@@ -641,622 +161,30 @@
 					"fileName": "src/index.ts",
 					"line": 128,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L128"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L128"
 				}
 			],
-			"target": 76
-		},
-		{
-			"id": 558,
-			"name": "getOsVersion",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 146,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L146"
-				}
-			],
-			"target": 155
-		},
-		{
-			"id": 561,
-			"name": "getParameter",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 149,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L149"
-				}
-			],
-			"target": 171
-		},
-		{
-			"id": 649,
-			"name": "getProperty",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 204,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L204"
-				}
-			],
-			"target": 444
-		},
-		{
-			"id": 546,
-			"name": "getRandomNum",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 134,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L134"
-				}
-			],
-			"target": 101
-		},
-		{
-			"id": 547,
-			"name": "getRandomStr",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 135,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L135"
-				}
-			],
-			"target": 106
-		},
-		{
-			"id": 548,
-			"name": "getRandomStrWidthSpecialChar",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 136,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L136"
-				}
-			],
-			"target": 111
-		},
-		{
-			"id": 571,
-			"name": "getSession",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 159,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L159"
-				}
-			],
-			"target": 221
-		},
-		{
-			"id": 605,
-			"name": "getType",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 182,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L182"
-				}
-			],
-			"target": 334
-		},
-		{
-			"id": 563,
-			"name": "getUrlParam",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 151,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L151"
-				}
-			],
-			"target": 179
-		},
-		{
-			"id": 556,
-			"name": "getWindowSize",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 144,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L144"
-				}
-			],
-			"target": 146
-		},
-		{
-			"id": 541,
-			"name": "imgAdapt",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 129,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L129"
-				}
-			],
-			"target": 80
-		},
-		{
-			"id": 542,
-			"name": "imgChoose",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 130,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L130"
-				}
-			],
-			"target": 85
-		},
-		{
-			"id": 642,
-			"name": "intersect",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 197,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L197"
-				}
-			],
-			"target": 410
-		},
-		{
-			"id": 606,
-			"name": "isArray",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 183,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L183"
-				}
-			],
-			"target": 338
-		},
-		{
-			"id": 553,
-			"name": "isDigitals",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 141,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L141"
-				}
-			],
-			"target": 134
-		},
-		{
-			"id": 554,
-			"name": "isExitsFunction",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 142,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L142"
-				}
-			],
-			"target": 138
-		},
-		{
-			"id": 555,
-			"name": "isExitsVariable",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 143,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L143"
-				}
-			],
-			"target": 142
-		},
-		{
-			"id": 650,
-			"name": "loadSource",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 205,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L205"
-				}
-			],
-			"target": 451
-		},
-		{
-			"id": 644,
-			"name": "minus",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 199,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L199"
-				}
-			],
-			"target": 420
-		},
-		{
-			"id": 651,
-			"name": "mountCss",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 206,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L206"
-				}
-			],
-			"target": 457
-		},
-		{
-			"id": 652,
-			"name": "mountImg",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 207,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L207"
-				}
-			],
-			"target": 462
+			"target": 72
 		},
 		{
 			"id": 653,
-			"name": "mountJs",
+			"name": "complement",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 208,
+					"line": 201,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L208"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L201"
 				}
 			],
-			"target": 467
+			"target": 425
 		},
 		{
 			"id": 654,
-			"name": "mountStyle",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 209,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L209"
-				}
-			],
-			"target": 472
-		},
-		{
-			"id": 597,
-			"name": "nextIndex",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 178,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L178"
-				}
-			],
-			"target": 304
-		},
-		{
-			"id": 610,
-			"name": "openUrl",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 187,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L187"
-				}
-			],
-			"target": 361
-		},
-		{
-			"id": 594,
-			"name": "removeEvent",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 176,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L176"
-				}
-			],
-			"target": 295
-		},
-		{
-			"id": 609,
-			"name": "searchTreeObject",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 186,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L186"
-				}
-			],
-			"target": 354
-		},
-		{
-			"id": 567,
-			"name": "setCache",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 155,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L155"
-				}
-			],
-			"target": 201
-		},
-		{
-			"id": 566,
-			"name": "setCookie",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 154,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L154"
-				}
-			],
-			"target": 193
-		},
-		{
-			"id": 568,
-			"name": "setSession",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 156,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L156"
-				}
-			],
-			"target": 207
-		},
-		{
-			"id": 611,
-			"name": "splitThousand",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 188,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L188"
-				}
-			],
-			"target": 365
-		},
-		{
-			"id": 585,
-			"name": "stopBubble",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 173,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L173"
-				}
-			],
-			"target": 286
-		},
-		{
-			"id": 586,
-			"name": "stopDefault",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 174,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L174"
-				}
-			],
-			"target": 290
-		},
-		{
-			"id": 551,
-			"name": "textareaInsertText",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 139,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L139"
-				}
-			],
-			"target": 125
-		},
-		{
-			"id": 552,
-			"name": "textareaMoveToEnd",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 140,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L140"
-				}
-			],
-			"target": 130
-		},
-		{
-			"id": 584,
-			"name": "throttle",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 172,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L172"
-				}
-			],
-			"target": 277
-		},
-		{
-			"id": 532,
-			"name": "trim",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 120,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L120"
-				}
-			],
-			"target": 43
-		},
-		{
-			"id": 643,
-			"name": "union",
-			"kind": 8388608,
-			"kindString": "Reference",
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "src/index.ts",
-					"line": 198,
-					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L198"
-				}
-			],
-			"target": 415
-		},
-		{
-			"id": 647,
-			"name": "unique",
+			"name": "contains",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
@@ -1265,14 +193,30 @@
 					"fileName": "src/index.ts",
 					"line": 202,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L202"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L202"
 				}
 			],
-			"target": 435
+			"target": 430
 		},
 		{
-			"id": 545,
-			"name": "upperFirst",
+			"id": 558,
+			"name": "cutCHSString",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 139,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L139"
+				}
+			],
+			"target": 119
+		},
+		{
+			"id": 552,
+			"name": "dash2Camel",
 			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
@@ -1281,20 +225,1092 @@
 					"fileName": "src/index.ts",
 					"line": 133,
 					"character": 1,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L133"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L133"
+				}
+			],
+			"target": 93
+		},
+		{
+			"id": 589,
+			"name": "deWxJumpLink",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 170,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L170"
+				}
+			],
+			"target": 261
+		},
+		{
+			"id": 590,
+			"name": "deWxJumpLinkOld",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 171,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L171"
+				}
+			],
+			"target": 265
+		},
+		{
+			"id": 591,
+			"name": "debounce",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 172,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L172"
+				}
+			],
+			"target": 269
+		},
+		{
+			"id": 585,
+			"name": "decodeBase64",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 166,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L166"
+				}
+			],
+			"target": 245
+		},
+		{
+			"id": 586,
+			"name": "decodeUtf8",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 167,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L167"
+				}
+			],
+			"target": 249
+		},
+		{
+			"id": 581,
+			"name": "delCache",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 162,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L162"
+				}
+			],
+			"target": 229
+		},
+		{
+			"id": 580,
+			"name": "delCookie",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 161,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L161"
+				}
+			],
+			"target": 225
+		},
+		{
+			"id": 582,
+			"name": "delSession",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 163,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L163"
+				}
+			],
+			"target": 233
+		},
+		{
+			"id": 607,
+			"name": "delay",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 181,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L181"
+				}
+			],
+			"target": 314
+		},
+		{
+			"id": 616,
+			"name": "download",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 186,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L186"
+				}
+			],
+			"target": 348
+		},
+		{
+			"id": 587,
+			"name": "enWxJumpLink",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 168,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L168"
+				}
+			],
+			"target": 253
+		},
+		{
+			"id": 588,
+			"name": "enWxJumpLinkOld",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 169,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L169"
+				}
+			],
+			"target": 257
+		},
+		{
+			"id": 583,
+			"name": "encodeBase64",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 164,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L164"
+				}
+			],
+			"target": 237
+		},
+		{
+			"id": 584,
+			"name": "encodeUtf8",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 165,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L165"
+				}
+			],
+			"target": 241
+		},
+		{
+			"id": 656,
+			"name": "fillIPv6",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 204,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L204"
+				}
+			],
+			"target": 440
+		},
+		{
+			"id": 606,
+			"name": "fixNumber",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 180,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L180"
+				}
+			],
+			"target": 309
+		},
+		{
+			"id": 572,
+			"name": "formatTime",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 153,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L153"
+				}
+			],
+			"target": 183
+		},
+		{
+			"id": 573,
+			"name": "formatTimeStr",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 154,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L154"
+				}
+			],
+			"target": 188
+		},
+		{
+			"id": 565,
+			"name": "getAppVersion",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 146,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L146"
+				}
+			],
+			"target": 149
+		},
+		{
+			"id": 557,
+			"name": "getCHSLength",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 138,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L138"
+				}
+			],
+			"target": 115
+		},
+		{
+			"id": 578,
+			"name": "getCache",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 159,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L159"
+				}
+			],
+			"target": 217
+		},
+		{
+			"id": 577,
+			"name": "getCookie",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 158,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L158"
+				}
+			],
+			"target": 213
+		},
+		{
+			"id": 568,
+			"name": "getDirParam",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 149,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L149"
+				}
+			],
+			"target": 167
+		},
+		{
+			"id": 570,
+			"name": "getFileType",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 151,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L151"
+				}
+			],
+			"target": 175
+		},
+		{
+			"id": 567,
+			"name": "getIsAppVersionLastest",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 148,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L148"
+				}
+			],
+			"target": 161
+		},
+		{
+			"id": 548,
+			"name": "getNumber",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 129,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L129"
+				}
+			],
+			"target": 76
+		},
+		{
+			"id": 566,
+			"name": "getOsVersion",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 147,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L147"
+				}
+			],
+			"target": 155
+		},
+		{
+			"id": 569,
+			"name": "getParameter",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 150,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L150"
+				}
+			],
+			"target": 171
+		},
+		{
+			"id": 657,
+			"name": "getProperty",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 205,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L205"
+				}
+			],
+			"target": 444
+		},
+		{
+			"id": 554,
+			"name": "getRandomNum",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 135,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L135"
+				}
+			],
+			"target": 101
+		},
+		{
+			"id": 555,
+			"name": "getRandomStr",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 136,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L136"
+				}
+			],
+			"target": 106
+		},
+		{
+			"id": 556,
+			"name": "getRandomStrWidthSpecialChar",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 137,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L137"
+				}
+			],
+			"target": 111
+		},
+		{
+			"id": 579,
+			"name": "getSession",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 160,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L160"
+				}
+			],
+			"target": 221
+		},
+		{
+			"id": 613,
+			"name": "getType",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 183,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L183"
+				}
+			],
+			"target": 334
+		},
+		{
+			"id": 571,
+			"name": "getUrlParam",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 152,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L152"
+				}
+			],
+			"target": 179
+		},
+		{
+			"id": 564,
+			"name": "getWindowSize",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 145,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L145"
+				}
+			],
+			"target": 146
+		},
+		{
+			"id": 549,
+			"name": "imgAdapt",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 130,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L130"
+				}
+			],
+			"target": 80
+		},
+		{
+			"id": 550,
+			"name": "imgChoose",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 131,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L131"
+				}
+			],
+			"target": 85
+		},
+		{
+			"id": 650,
+			"name": "intersect",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 198,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L198"
+				}
+			],
+			"target": 410
+		},
+		{
+			"id": 614,
+			"name": "isArray",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 184,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L184"
+				}
+			],
+			"target": 338
+		},
+		{
+			"id": 561,
+			"name": "isDigitals",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 142,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L142"
+				}
+			],
+			"target": 134
+		},
+		{
+			"id": 562,
+			"name": "isExitsFunction",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 143,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L143"
+				}
+			],
+			"target": 138
+		},
+		{
+			"id": 563,
+			"name": "isExitsVariable",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 144,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L144"
+				}
+			],
+			"target": 142
+		},
+		{
+			"id": 659,
+			"name": "loadSource",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 207,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L207"
+				}
+			],
+			"target": 459
+		},
+		{
+			"id": 652,
+			"name": "minus",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 200,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L200"
+				}
+			],
+			"target": 420
+		},
+		{
+			"id": 660,
+			"name": "mountCss",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 208,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L208"
+				}
+			],
+			"target": 465
+		},
+		{
+			"id": 661,
+			"name": "mountImg",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 209,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L209"
+				}
+			],
+			"target": 470
+		},
+		{
+			"id": 662,
+			"name": "mountJs",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 210,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L210"
+				}
+			],
+			"target": 475
+		},
+		{
+			"id": 663,
+			"name": "mountStyle",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 211,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L211"
+				}
+			],
+			"target": 480
+		},
+		{
+			"id": 605,
+			"name": "nextIndex",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 179,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L179"
+				}
+			],
+			"target": 304
+		},
+		{
+			"id": 618,
+			"name": "openUrl",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 188,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L188"
+				}
+			],
+			"target": 361
+		},
+		{
+			"id": 602,
+			"name": "removeEvent",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 177,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L177"
+				}
+			],
+			"target": 295
+		},
+		{
+			"id": 617,
+			"name": "searchTreeObject",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 187,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L187"
+				}
+			],
+			"target": 354
+		},
+		{
+			"id": 575,
+			"name": "setCache",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 156,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L156"
+				}
+			],
+			"target": 201
+		},
+		{
+			"id": 574,
+			"name": "setCookie",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 155,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L155"
+				}
+			],
+			"target": 193
+		},
+		{
+			"id": 658,
+			"name": "setProperty",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 206,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L206"
+				}
+			],
+			"target": 451
+		},
+		{
+			"id": 576,
+			"name": "setSession",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 157,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L157"
+				}
+			],
+			"target": 207
+		},
+		{
+			"id": 619,
+			"name": "splitThousand",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 189,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L189"
+				}
+			],
+			"target": 365
+		},
+		{
+			"id": 593,
+			"name": "stopBubble",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 174,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L174"
+				}
+			],
+			"target": 286
+		},
+		{
+			"id": 594,
+			"name": "stopDefault",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 175,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L175"
+				}
+			],
+			"target": 290
+		},
+		{
+			"id": 559,
+			"name": "textareaInsertText",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 140,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L140"
+				}
+			],
+			"target": 125
+		},
+		{
+			"id": 560,
+			"name": "textareaMoveToEnd",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 141,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L141"
+				}
+			],
+			"target": 130
+		},
+		{
+			"id": 592,
+			"name": "throttle",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 173,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L173"
+				}
+			],
+			"target": 277
+		},
+		{
+			"id": 540,
+			"name": "trim",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 121,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L121"
+				}
+			],
+			"target": 43
+		},
+		{
+			"id": 651,
+			"name": "union",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 199,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L199"
+				}
+			],
+			"target": 415
+		},
+		{
+			"id": 655,
+			"name": "unique",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 203,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L203"
+				}
+			],
+			"target": 435
+		},
+		{
+			"id": 553,
+			"name": "upperFirst",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 134,
+					"character": 1,
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L134"
 				}
 			],
 			"target": 97
 		},
 		{
-			"id": 592,
+			"id": 600,
 			"name": "addEvent",
 			"kind": 4,
 			"kindString": "Namespace",
 			"flags": {},
 			"children": [
 				{
-					"id": 593,
+					"id": 601,
 					"name": "guid",
 					"kind": 32,
 					"kindString": "Variable",
@@ -1304,7 +1320,7 @@
 							"fileName": "src/addEvent.ts",
 							"line": 34,
 							"character": 9,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L34"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L34"
 						}
 					],
 					"type": {
@@ -1316,7 +1332,7 @@
 			"groups": [
 				{
 					"title": "Variables",
-					"children": [593]
+					"children": [601]
 				}
 			],
 			"sources": [
@@ -1324,18 +1340,18 @@
 					"fileName": "src/addEvent.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L10"
 				},
 				{
 					"fileName": "src/addEvent.ts",
 					"line": 34,
 					"character": 0,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L34"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L34"
 				}
 			]
 		},
 		{
-			"id": 476,
+			"id": 484,
 			"name": "AnyFunction",
 			"kind": 256,
 			"kindString": "Interface",
@@ -1345,19 +1361,19 @@
 					"fileName": "typings/common.d.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L3"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L3"
 				}
 			],
 			"signatures": [
 				{
-					"id": 477,
+					"id": 485,
 					"name": "AnyFunction",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 478,
+							"id": 486,
 							"name": "args",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1382,20 +1398,20 @@
 			"extendedTypes": [
 				{
 					"type": "reference",
-					"id": 475,
+					"id": 483,
 					"name": "AnyObject"
 				}
 			]
 		},
 		{
-			"id": 491,
+			"id": 499,
 			"name": "DirParamType",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 493,
+					"id": 501,
 					"name": "host",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1407,7 +1423,7 @@
 							"fileName": "src/getDirParam.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getDirParam.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getDirParam.ts#L3"
 						}
 					],
 					"type": {
@@ -1416,7 +1432,7 @@
 					}
 				},
 				{
-					"id": 492,
+					"id": 500,
 					"name": "path",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1428,7 +1444,7 @@
 							"fileName": "src/getDirParam.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getDirParam.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getDirParam.ts#L2"
 						}
 					],
 					"type": {
@@ -1443,7 +1459,7 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [493, 492]
+					"children": [501, 500]
 				}
 			],
 			"sources": [
@@ -1451,19 +1467,19 @@
 					"fileName": "src/getDirParam.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getDirParam.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getDirParam.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 486,
-			"name": "SearchkeySet",
+			"id": 494,
+			"name": "SearchKeySet",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 487,
+					"id": 495,
 					"name": "childName",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1473,7 +1489,7 @@
 							"fileName": "src/searchTreeObject.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L2"
 						}
 					],
 					"type": {
@@ -1482,7 +1498,7 @@
 					}
 				},
 				{
-					"id": 488,
+					"id": 496,
 					"name": "keyName",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1492,7 +1508,7 @@
 							"fileName": "src/searchTreeObject.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L3"
 						}
 					],
 					"type": {
@@ -1504,7 +1520,7 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [487, 488]
+					"children": [495, 496]
 				}
 			],
 			"sources": [
@@ -1512,18 +1528,18 @@
 					"fileName": "src/searchTreeObject.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L1"
 				}
 			],
 			"indexSignature": {
-				"id": 489,
+				"id": 497,
 				"name": "__index",
 				"kind": 8192,
 				"kindString": "Index signature",
 				"flags": {},
 				"parameters": [
 					{
-						"id": 490,
+						"id": 498,
 						"name": "prop",
 						"kind": 32768,
 						"flags": {},
@@ -1540,14 +1556,14 @@
 			}
 		},
 		{
-			"id": 483,
+			"id": 491,
 			"name": "WindowSizeObj",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 485,
+					"id": 493,
 					"name": "height",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1557,7 +1573,7 @@
 							"fileName": "src/getWindowSize.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getWindowSize.ts#L3"
 						}
 					],
 					"type": {
@@ -1566,7 +1582,7 @@
 					}
 				},
 				{
-					"id": 484,
+					"id": 492,
 					"name": "width",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1576,7 +1592,7 @@
 							"fileName": "src/getWindowSize.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getWindowSize.ts#L2"
 						}
 					],
 					"type": {
@@ -1588,7 +1604,7 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [485, 484]
+					"children": [493, 492]
 				}
 			],
 			"sources": [
@@ -1596,12 +1612,12 @@
 					"fileName": "src/getWindowSize.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getWindowSize.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 475,
+			"id": 483,
 			"name": "AnyObject",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -1611,7 +1627,7 @@
 					"fileName": "typings/common.d.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L1"
 				}
 			],
 			"type": {
@@ -1633,13 +1649,13 @@
 			"extendedBy": [
 				{
 					"type": "reference",
-					"id": 476,
+					"id": 484,
 					"name": "AnyFunction"
 				}
 			]
 		},
 		{
-			"id": 479,
+			"id": 487,
 			"name": "ArrayOneMore",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -1649,12 +1665,12 @@
 					"fileName": "typings/common.d.ts",
 					"line": 7,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L7"
 				}
 			],
 			"typeParameters": [
 				{
-					"id": 482,
+					"id": 490,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -1667,14 +1683,14 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 480,
+							"id": 488,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 481,
+									"id": 489,
 									"name": "0",
 									"kind": 1024,
 									"kindString": "Property",
@@ -1684,12 +1700,12 @@
 											"fileName": "typings/common.d.ts",
 											"line": 8,
 											"character": 1,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L8"
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 482,
+										"id": 490,
 										"name": "T"
 									}
 								}
@@ -1697,7 +1713,7 @@
 							"groups": [
 								{
 									"title": "Properties",
-									"children": [481]
+									"children": [489]
 								}
 							],
 							"sources": [
@@ -1705,7 +1721,7 @@
 									"fileName": "typings/common.d.ts",
 									"line": 7,
 									"character": 30,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/typings/common.d.ts#L7"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L7"
 								}
 							]
 						}
@@ -1714,7 +1730,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 482,
+							"id": 490,
 							"name": "T"
 						}
 					}
@@ -1730,9 +1746,9 @@
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 212,
+					"line": 214,
 					"character": 0,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L212"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L214"
 				}
 			],
 			"type": {
@@ -1753,9 +1769,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 288,
+									"line": 290,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L288"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L290"
 								}
 							],
 							"type": {
@@ -1771,7 +1787,7 @@
 											"fileName": "src/CSVToArray.ts",
 											"line": 21,
 											"character": 19,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/CSVToArray.ts#L21"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/CSVToArray.ts#L21"
 										}
 									],
 									"signatures": [
@@ -1912,9 +1928,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 289,
+									"line": 291,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L289"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L291"
 								}
 							],
 							"type": {
@@ -1930,7 +1946,7 @@
 											"fileName": "src/CSVToJSON.ts",
 											"line": 16,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/CSVToJSON.ts#L16"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/CSVToJSON.ts#L16"
 										}
 									],
 									"signatures": [
@@ -2039,9 +2055,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 290,
+									"line": 292,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L290"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L292"
 								}
 							],
 							"type": {
@@ -2057,7 +2073,7 @@
 											"fileName": "src/JSONToCSV.ts",
 											"line": 17,
 											"character": 18,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/JSONToCSV.ts#L17"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/JSONToCSV.ts#L17"
 										}
 									],
 									"signatures": [
@@ -2180,9 +2196,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 291,
+									"line": 293,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L291"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L293"
 								}
 							],
 							"type": {
@@ -2198,7 +2214,7 @@
 											"fileName": "src/RGBToHex.ts",
 											"line": 10,
 											"character": 17,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/RGBToHex.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/RGBToHex.ts#L10"
 										}
 									],
 									"signatures": [
@@ -2313,16 +2329,16 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 270,
+									"line": 272,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L270"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L272"
 								}
 							],
 							"type": {
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"id": 587,
+									"id": 595,
 									"name": "addEvent"
 								}
 							}
@@ -2336,9 +2352,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 284,
+									"line": 286,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L284"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L286"
 								}
 							],
 							"type": {
@@ -2354,7 +2370,7 @@
 											"fileName": "src/all.ts",
 											"line": 17,
 											"character": 12,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/all.ts#L17"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/all.ts#L17"
 										}
 									],
 									"signatures": [
@@ -2440,7 +2456,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 476,
+														"id": 484,
 														"name": "AnyFunction"
 													}
 												}
@@ -2463,9 +2479,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 285,
+									"line": 287,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L285"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L287"
 								}
 							],
 							"type": {
@@ -2481,7 +2497,7 @@
 											"fileName": "src/any.ts",
 											"line": 17,
 											"character": 12,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/any.ts#L17"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/any.ts#L17"
 										}
 									],
 									"signatures": [
@@ -2567,7 +2583,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 476,
+														"id": 484,
 														"name": "AnyFunction"
 													}
 												}
@@ -2590,9 +2606,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 287,
+									"line": 289,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L287"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L289"
 								}
 							],
 							"type": {
@@ -2608,7 +2624,7 @@
 											"fileName": "src/arrayToCSV.ts",
 											"line": 20,
 											"character": 19,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/arrayToCSV.ts#L20"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/arrayToCSV.ts#L20"
 										}
 									],
 									"signatures": [
@@ -2718,9 +2734,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 226,
+									"line": 228,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L226"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L228"
 								}
 							],
 							"type": {
@@ -2736,7 +2752,7 @@
 											"fileName": "src/camel2Dash.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/camel2Dash.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/camel2Dash.ts#L7"
 										}
 									],
 									"signatures": [
@@ -2804,9 +2820,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 279,
+									"line": 281,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L279"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L281"
 								}
 							],
 							"type": {
@@ -2822,7 +2838,7 @@
 											"fileName": "src/cleanData.ts",
 											"line": 16,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/cleanData.ts#L16"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/cleanData.ts#L16"
 										}
 									],
 									"signatures": [
@@ -2897,7 +2913,7 @@
 															},
 															{
 																"type": "reference",
-																"id": 475,
+																"id": 483,
 																"name": "AnyObject"
 															}
 														]
@@ -2935,9 +2951,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 216,
+									"line": 218,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L216"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L218"
 								}
 							],
 							"type": {
@@ -2953,7 +2969,7 @@
 											"fileName": "src/clearAttr.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearAttr.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearAttr.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3021,9 +3037,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 217,
+									"line": 219,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L217"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L219"
 								}
 							],
 							"type": {
@@ -3039,7 +3055,7 @@
 											"fileName": "src/clearBr.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearBr.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearBr.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3107,9 +3123,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 218,
+									"line": 220,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L218"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L220"
 								}
 							],
 							"type": {
@@ -3125,7 +3141,7 @@
 											"fileName": "src/clearHtml.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearHtml.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearHtml.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3193,9 +3209,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 219,
+									"line": 221,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L219"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L221"
 								}
 							],
 							"type": {
@@ -3211,7 +3227,7 @@
 											"fileName": "src/clearHtmlExpSN.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearHtmlExpSN.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearHtmlExpSN.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3279,9 +3295,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 220,
+									"line": 222,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L220"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L222"
 								}
 							],
 							"type": {
@@ -3297,7 +3313,7 @@
 											"fileName": "src/clearHtmlN.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearHtmlN.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearHtmlN.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3365,9 +3381,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 221,
+									"line": 223,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L221"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L223"
 								}
 							],
 							"type": {
@@ -3383,7 +3399,7 @@
 											"fileName": "src/clearHtmlNS.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearHtmlNS.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearHtmlNS.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3451,9 +3467,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 222,
+									"line": 224,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L222"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L224"
 								}
 							],
 							"type": {
@@ -3469,7 +3485,7 @@
 											"fileName": "src/clearHtmlTag.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/clearHtmlTag.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/clearHtmlTag.ts#L7"
 										}
 									],
 									"signatures": [
@@ -3537,9 +3553,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 213,
+									"line": 215,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L213"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L215"
 								}
 							],
 							"type": {
@@ -3555,7 +3571,7 @@
 											"fileName": "src/client.ts",
 											"line": 8,
 											"character": 15,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L8"
 										}
 									],
 									"signatures": [
@@ -3657,7 +3673,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 22,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L22"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L22"
 																		}
 																	],
 																	"type": {
@@ -3677,7 +3693,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 15,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L15"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L15"
 																		}
 																	],
 																	"type": {
@@ -3697,7 +3713,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 14,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L14"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L14"
 																		}
 																	],
 																	"type": {
@@ -3717,7 +3733,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 21,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L21"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L21"
 																		}
 																	],
 																	"type": {
@@ -3737,7 +3753,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 24,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L24"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L24"
 																		}
 																	],
 																	"type": {
@@ -3757,7 +3773,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 23,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L23"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L23"
 																		}
 																	],
 																	"type": {
@@ -3777,7 +3793,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 19,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L19"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L19"
 																		}
 																	],
 																	"type": {
@@ -3797,7 +3813,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 17,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L17"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L17"
 																		}
 																	],
 																	"type": {
@@ -3817,7 +3833,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 28,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L28"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L28"
 																		}
 																	],
 																	"type": {
@@ -3848,7 +3864,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 26,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L26"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L26"
 																		}
 																	],
 																	"type": {
@@ -3868,7 +3884,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 18,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L18"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L18"
 																		}
 																	],
 																	"type": {
@@ -3888,7 +3904,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 16,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L16"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L16"
 																		}
 																	],
 																	"type": {
@@ -3908,7 +3924,7 @@
 																			"fileName": "src/client.ts",
 																			"line": 27,
 																			"character": 3,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L27"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L27"
 																		}
 																	],
 																	"type": {
@@ -3932,7 +3948,7 @@
 																	"fileName": "src/client.ts",
 																	"line": 13,
 																	"character": 9,
-																	"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L13"
+																	"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L13"
 																}
 															]
 														}
@@ -3953,9 +3969,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 295,
+									"line": 297,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L295"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L297"
 								}
 							],
 							"type": {
@@ -3971,7 +3987,7 @@
 											"fileName": "src/complement.ts",
 											"line": 15,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/complement.ts#L15"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/complement.ts#L15"
 										}
 									],
 									"signatures": [
@@ -4074,9 +4090,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 296,
+									"line": 298,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L296"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L298"
 								}
 							],
 							"type": {
@@ -4092,7 +4108,7 @@
 											"fileName": "src/contains.ts",
 											"line": 13,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/contains.ts#L13"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/contains.ts#L13"
 										}
 									],
 									"signatures": [
@@ -4191,9 +4207,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 233,
+									"line": 235,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L233"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L235"
 								}
 							],
 							"type": {
@@ -4209,7 +4225,7 @@
 											"fileName": "src/cutCHSString.ts",
 											"line": 39,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/cutCHSString.ts#L39"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/cutCHSString.ts#L39"
 										}
 									],
 									"signatures": [
@@ -4301,9 +4317,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 227,
+									"line": 229,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L227"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L229"
 								}
 							],
 							"type": {
@@ -4319,7 +4335,7 @@
 											"fileName": "src/dash2Camel.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/dash2Camel.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/dash2Camel.ts#L7"
 										}
 									],
 									"signatures": [
@@ -4387,9 +4403,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 264,
+									"line": 266,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L264"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L266"
 								}
 							],
 							"type": {
@@ -4405,7 +4421,7 @@
 											"fileName": "src/deWxJumpLink.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/deWxJumpLink.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/deWxJumpLink.ts#L8"
 										}
 									],
 									"signatures": [
@@ -4473,9 +4489,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 265,
+									"line": 267,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L265"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L267"
 								}
 							],
 							"type": {
@@ -4491,7 +4507,7 @@
 											"fileName": "src/deWxJumpLinkOld.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/deWxJumpLinkOld.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/deWxJumpLinkOld.ts#L7"
 										}
 									],
 									"signatures": [
@@ -4559,9 +4575,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 266,
+									"line": 268,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L266"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L268"
 								}
 							],
 							"type": {
@@ -4577,7 +4593,7 @@
 											"fileName": "src/debounce.ts",
 											"line": 12,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/debounce.ts#L12"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/debounce.ts#L12"
 										}
 									],
 									"signatures": [
@@ -4623,7 +4639,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 476,
+														"id": 484,
 														"name": "AnyFunction"
 													}
 												},
@@ -4679,7 +4695,7 @@
 															"fileName": "src/throttle.ts",
 															"line": 23,
 															"character": 8,
-															"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/throttle.ts#L23"
+															"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/throttle.ts#L23"
 														}
 													],
 													"signatures": [
@@ -4711,9 +4727,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 260,
+									"line": 262,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L260"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L262"
 								}
 							],
 							"type": {
@@ -4729,7 +4745,7 @@
 											"fileName": "src/decodeBase64.ts",
 											"line": 10,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/decodeBase64.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/decodeBase64.ts#L10"
 										}
 									],
 									"signatures": [
@@ -4797,9 +4813,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 261,
+									"line": 263,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L261"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L263"
 								}
 							],
 							"type": {
@@ -4815,7 +4831,7 @@
 											"fileName": "src/decodeUtf8.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/decodeUtf8.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/decodeUtf8.ts#L7"
 										}
 									],
 									"signatures": [
@@ -4875,9 +4891,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 256,
+									"line": 258,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L256"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L258"
 								}
 							],
 							"type": {
@@ -4893,7 +4909,7 @@
 											"fileName": "src/delCache.ts",
 											"line": 6,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delCache.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delCache.ts#L6"
 										}
 									],
 									"signatures": [
@@ -4950,9 +4966,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 255,
+									"line": 257,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L255"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L257"
 								}
 							],
 							"type": {
@@ -4968,7 +4984,7 @@
 											"fileName": "src/delCookie.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delCookie.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delCookie.ts#L8"
 										}
 									],
 									"signatures": [
@@ -5025,9 +5041,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 257,
+									"line": 259,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L257"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L259"
 								}
 							],
 							"type": {
@@ -5043,7 +5059,7 @@
 											"fileName": "src/delSession.ts",
 											"line": 6,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delSession.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delSession.ts#L6"
 										}
 									],
 									"signatures": [
@@ -5100,9 +5116,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 275,
+									"line": 277,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L275"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L277"
 								}
 							],
 							"type": {
@@ -5118,7 +5134,7 @@
 											"fileName": "src/delay.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delay.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delay.ts#L8"
 										}
 									],
 									"signatures": [
@@ -5167,7 +5183,7 @@
 																	"fileName": "src/delay.ts",
 																	"line": 10,
 																	"character": 2,
-																	"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delay.ts#L10"
+																	"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delay.ts#L10"
 																}
 															],
 															"type": {
@@ -5187,7 +5203,7 @@
 																	"fileName": "src/delay.ts",
 																	"line": 43,
 																	"character": 2,
-																	"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delay.ts#L43"
+																	"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delay.ts#L43"
 																}
 															],
 															"signatures": [
@@ -5228,7 +5244,7 @@
 																	"fileName": "src/delay.ts",
 																	"line": 11,
 																	"character": 2,
-																	"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delay.ts#L11"
+																	"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delay.ts#L11"
 																}
 															],
 															"signatures": [
@@ -5258,7 +5274,7 @@
 																			"flags": {},
 																			"type": {
 																				"type": "reference",
-																				"id": 476,
+																				"id": 484,
 																				"name": "AnyFunction"
 																			}
 																		},
@@ -5308,7 +5324,7 @@
 															"fileName": "src/delay.ts",
 															"line": 9,
 															"character": 8,
-															"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/delay.ts#L9"
+															"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/delay.ts#L9"
 														}
 													]
 												}
@@ -5327,9 +5343,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 280,
+									"line": 282,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L280"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L282"
 								}
 							],
 							"type": {
@@ -5345,7 +5361,7 @@
 											"fileName": "src/download.ts",
 											"line": 12,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/download.ts#L12"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/download.ts#L12"
 										}
 									],
 									"signatures": [
@@ -5441,9 +5457,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 262,
+									"line": 264,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L262"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L264"
 								}
 							],
 							"type": {
@@ -5459,7 +5475,7 @@
 											"fileName": "src/enWxJumpLink.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/enWxJumpLink.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/enWxJumpLink.ts#L8"
 										}
 									],
 									"signatures": [
@@ -5527,9 +5543,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 263,
+									"line": 265,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L263"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L265"
 								}
 							],
 							"type": {
@@ -5545,7 +5561,7 @@
 											"fileName": "src/enWxJumpLinkOld.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/enWxJumpLinkOld.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/enWxJumpLinkOld.ts#L7"
 										}
 									],
 									"signatures": [
@@ -5613,9 +5629,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 258,
+									"line": 260,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L258"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L260"
 								}
 							],
 							"type": {
@@ -5631,7 +5647,7 @@
 											"fileName": "src/encodeBase64.ts",
 											"line": 10,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/encodeBase64.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/encodeBase64.ts#L10"
 										}
 									],
 									"signatures": [
@@ -5699,9 +5715,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 259,
+									"line": 261,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L259"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L261"
 								}
 							],
 							"type": {
@@ -5717,7 +5733,7 @@
 											"fileName": "src/encodeUtf8.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/encodeUtf8.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/encodeUtf8.ts#L7"
 										}
 									],
 									"signatures": [
@@ -5777,9 +5793,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 276,
+									"line": 278,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L276"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L278"
 								}
 							],
 							"type": {
@@ -5795,7 +5811,7 @@
 											"fileName": "src/extend.ts",
 											"line": 34,
 											"character": 8,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/extend.ts#L34"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/extend.ts#L34"
 										}
 									],
 									"signatures": [
@@ -5862,7 +5878,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 479,
+														"id": 487,
 														"typeArguments": [
 															{
 																"type": "intrinsic",
@@ -5892,9 +5908,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 298,
+									"line": 300,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L298"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L300"
 								}
 							],
 							"type": {
@@ -5910,7 +5926,7 @@
 											"fileName": "src/fillIPv6.ts",
 											"line": 11,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/fillIPv6.ts#L11"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/fillIPv6.ts#L11"
 										}
 									],
 									"signatures": [
@@ -5979,9 +5995,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 274,
+									"line": 276,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L274"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L276"
 								}
 							],
 							"type": {
@@ -5997,7 +6013,7 @@
 											"fileName": "src/fixNumber.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/fixNumber.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/fixNumber.ts#L8"
 										}
 									],
 									"signatures": [
@@ -6103,9 +6119,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 247,
+									"line": 249,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L247"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L249"
 								}
 							],
 							"type": {
@@ -6121,7 +6137,7 @@
 											"fileName": "src/formatTime.ts",
 											"line": 12,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/formatTime.ts#L12"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/formatTime.ts#L12"
 										}
 									],
 									"signatures": [
@@ -6233,9 +6249,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 248,
+									"line": 250,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L248"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L250"
 								}
 							],
 							"type": {
@@ -6251,7 +6267,7 @@
 											"fileName": "src/formatTimeStr.ts",
 											"line": 10,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/formatTimeStr.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/formatTimeStr.ts#L10"
 										}
 									],
 									"signatures": [
@@ -6347,9 +6363,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 240,
+									"line": 242,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L240"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L242"
 								}
 							],
 							"type": {
@@ -6365,7 +6381,7 @@
 											"fileName": "src/getAppVersion.ts",
 											"line": 9,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getAppVersion.ts#L9"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getAppVersion.ts#L9"
 										}
 									],
 									"signatures": [
@@ -6480,9 +6496,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 232,
+									"line": 234,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L232"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L234"
 								}
 							],
 							"type": {
@@ -6498,7 +6514,7 @@
 											"fileName": "src/getCHSLength.ts",
 											"line": 23,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getCHSLength.ts#L23"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getCHSLength.ts#L23"
 										}
 									],
 									"signatures": [
@@ -6566,9 +6582,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 253,
+									"line": 255,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L253"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L255"
 								}
 							],
 							"type": {
@@ -6584,7 +6600,7 @@
 											"fileName": "src/getCache.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getCache.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getCache.ts#L7"
 										}
 									],
 									"signatures": [
@@ -6652,9 +6668,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 252,
+									"line": 254,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L252"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L254"
 								}
 							],
 							"type": {
@@ -6670,7 +6686,7 @@
 											"fileName": "src/getCookie.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getCookie.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getCookie.ts#L7"
 										}
 									],
 									"signatures": [
@@ -6738,9 +6754,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 243,
+									"line": 245,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L243"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L245"
 								}
 							],
 							"type": {
@@ -6756,7 +6772,7 @@
 											"fileName": "src/getDirParam.ts",
 											"line": 12,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getDirParam.ts#L12"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getDirParam.ts#L12"
 										}
 									],
 									"signatures": [
@@ -6808,7 +6824,7 @@
 											],
 											"type": {
 												"type": "reference",
-												"id": 491,
+												"id": 499,
 												"name": "DirParamType"
 											}
 										}
@@ -6825,9 +6841,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 245,
+									"line": 247,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L245"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L247"
 								}
 							],
 							"type": {
@@ -6843,7 +6859,7 @@
 											"fileName": "src/getFileType.ts",
 											"line": 15,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getFileType.ts#L15"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getFileType.ts#L15"
 										}
 									],
 									"signatures": [
@@ -6929,9 +6945,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 242,
+									"line": 244,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L242"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L244"
 								}
 							],
 							"type": {
@@ -6947,7 +6963,7 @@
 											"fileName": "src/getIsAppVersionLastest.ts",
 											"line": 17,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getIsAppVersionLastest.ts#L17"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getIsAppVersionLastest.ts#L17"
 										}
 									],
 									"signatures": [
@@ -7073,9 +7089,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 223,
+									"line": 225,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L223"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L225"
 								}
 							],
 							"type": {
@@ -7091,7 +7107,7 @@
 											"fileName": "src/getNumber.ts",
 											"line": 12,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getNumber.ts#L12"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getNumber.ts#L12"
 										}
 									],
 									"signatures": [
@@ -7168,9 +7184,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 241,
+									"line": 243,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L241"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L243"
 								}
 							],
 							"type": {
@@ -7186,7 +7202,7 @@
 											"fileName": "src/getOsVersion.ts",
 											"line": 16,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getOsVersion.ts#L16"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getOsVersion.ts#L16"
 										}
 									],
 									"signatures": [
@@ -7318,9 +7334,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 244,
+									"line": 246,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L244"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L246"
 								}
 							],
 							"type": {
@@ -7336,7 +7352,7 @@
 											"fileName": "src/getParameter.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getParameter.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getParameter.ts#L7"
 										}
 									],
 									"signatures": [
@@ -7413,9 +7429,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 299,
+									"line": 301,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L299"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L301"
 								}
 							],
 							"type": {
@@ -7429,9 +7445,9 @@
 									"sources": [
 										{
 											"fileName": "src/getProperty.ts",
-											"line": 21,
+											"line": 20,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getProperty.ts#L21"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getProperty.ts#L20"
 										}
 									],
 									"signatures": [
@@ -7521,9 +7537,9 @@
 																	"sources": [
 																		{
 																			"fileName": "src/getProperty.ts",
-																			"line": 21,
+																			"line": 20,
 																			"character": 49,
-																			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getProperty.ts#L21"
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getProperty.ts#L20"
 																		}
 																	],
 																	"signatures": [
@@ -7563,9 +7579,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 229,
+									"line": 231,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L229"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L231"
 								}
 							],
 							"type": {
@@ -7581,7 +7597,7 @@
 											"fileName": "src/getRandomNum.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getRandomNum.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getRandomNum.ts#L8"
 										}
 									],
 									"signatures": [
@@ -7670,9 +7686,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 230,
+									"line": 232,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L230"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L232"
 								}
 							],
 							"type": {
@@ -7688,7 +7704,7 @@
 											"fileName": "src/getRandomStr.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getRandomStr.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getRandomStr.ts#L8"
 										}
 									],
 									"signatures": [
@@ -7777,9 +7793,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 231,
+									"line": 233,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L231"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L233"
 								}
 							],
 							"type": {
@@ -7795,7 +7811,7 @@
 											"fileName": "src/getRandomStrWidthSpecialChar.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getRandomStrWidthSpecialChar.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getRandomStrWidthSpecialChar.ts#L7"
 										}
 									],
 									"signatures": [
@@ -7864,9 +7880,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 272,
+									"line": 274,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L272"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L274"
 								}
 							],
 							"type": {
@@ -7882,7 +7898,7 @@
 											"fileName": "src/getScrollPosition.ts",
 											"line": 6,
 											"character": 26,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getScrollPosition.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getScrollPosition.ts#L6"
 										}
 									],
 									"signatures": [
@@ -7938,9 +7954,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 254,
+									"line": 256,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L254"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L256"
 								}
 							],
 							"type": {
@@ -7956,7 +7972,7 @@
 											"fileName": "src/getSession.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getSession.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getSession.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8024,9 +8040,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 277,
+									"line": 279,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L277"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L279"
 								}
 							],
 							"type": {
@@ -8042,7 +8058,7 @@
 											"fileName": "src/getType.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getType.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getType.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8110,9 +8126,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 246,
+									"line": 248,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L246"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L248"
 								}
 							],
 							"type": {
@@ -8128,7 +8144,7 @@
 											"fileName": "src/getUrlParam.ts",
 											"line": 51,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getUrlParam.ts#L51"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getUrlParam.ts#L51"
 										}
 									],
 									"signatures": [
@@ -8196,9 +8212,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 239,
+									"line": 241,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L239"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L241"
 								}
 							],
 							"type": {
@@ -8214,7 +8230,7 @@
 											"fileName": "src/getWindowSize.ts",
 											"line": 11,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getWindowSize.ts#L11"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getWindowSize.ts#L11"
 										}
 									],
 									"signatures": [
@@ -8245,7 +8261,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 483,
+												"id": 491,
 												"name": "WindowSizeObj"
 											}
 										}
@@ -8262,9 +8278,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 224,
+									"line": 226,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L224"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L226"
 								}
 							],
 							"type": {
@@ -8280,7 +8296,7 @@
 											"fileName": "src/imgAdapt.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/imgAdapt.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/imgAdapt.ts#L8"
 										}
 									],
 									"signatures": [
@@ -8376,9 +8392,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 225,
+									"line": 227,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L225"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L227"
 								}
 							],
 							"type": {
@@ -8394,7 +8410,7 @@
 											"fileName": "src/imgChoose.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/imgChoose.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/imgChoose.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8466,9 +8482,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 292,
+									"line": 294,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L292"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L294"
 								}
 							],
 							"type": {
@@ -8484,7 +8500,7 @@
 											"fileName": "src/intersect.ts",
 											"line": 13,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/intersect.ts#L13"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/intersect.ts#L13"
 										}
 									],
 									"signatures": [
@@ -8587,9 +8603,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 278,
+									"line": 280,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L278"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L280"
 								}
 							],
 							"type": {
@@ -8605,7 +8621,7 @@
 											"fileName": "src/isArray.ts",
 											"line": 6,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/isArray.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/isArray.ts#L6"
 										}
 									],
 									"signatures": [
@@ -8662,9 +8678,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 236,
+									"line": 238,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L236"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L238"
 								}
 							],
 							"type": {
@@ -8680,7 +8696,7 @@
 											"fileName": "src/isDigitals.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/isDigitals.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/isDigitals.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8748,9 +8764,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 237,
+									"line": 239,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L237"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L239"
 								}
 							],
 							"type": {
@@ -8766,7 +8782,7 @@
 											"fileName": "src/isExitsFunction.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/isExitsFunction.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/isExitsFunction.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8834,9 +8850,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 238,
+									"line": 240,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L238"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L240"
 								}
 							],
 							"type": {
@@ -8852,7 +8868,7 @@
 											"fileName": "src/isExitsVariable.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/isExitsVariable.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/isExitsVariable.ts#L7"
 										}
 									],
 									"signatures": [
@@ -8912,7 +8928,7 @@
 							}
 						},
 						{
-							"id": 450,
+							"id": 458,
 							"name": "loadSource",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8920,15 +8936,15 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 300,
+									"line": 303,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L300"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L303"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 451,
+									"id": 459,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -8938,12 +8954,12 @@
 											"fileName": "src/loadSource.ts",
 											"line": 14,
 											"character": 15,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/loadSource.ts#L14"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/loadSource.ts#L14"
 										}
 									],
 									"signatures": [
 										{
-											"id": 452,
+											"id": 460,
 											"name": "__type",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -8969,7 +8985,7 @@
 											},
 											"parameters": [
 												{
-													"id": 453,
+													"id": 461,
 													"name": "url",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -8988,7 +9004,7 @@
 													}
 												},
 												{
-													"id": 454,
+													"id": 462,
 													"name": "type",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9007,7 +9023,7 @@
 													}
 												},
 												{
-													"id": 455,
+													"id": 463,
 													"name": "force",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9062,9 +9078,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 294,
+									"line": 296,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L294"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L296"
 								}
 							],
 							"type": {
@@ -9080,7 +9096,7 @@
 											"fileName": "src/minus.ts",
 											"line": 14,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/minus.ts#L14"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/minus.ts#L14"
 										}
 									],
 									"signatures": [
@@ -9175,7 +9191,7 @@
 							}
 						},
 						{
-							"id": 456,
+							"id": 464,
 							"name": "mountCss",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9183,15 +9199,15 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 301,
+									"line": 304,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L301"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L304"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 457,
+									"id": 465,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -9201,12 +9217,12 @@
 											"fileName": "src/mountCss.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/mountCss.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/mountCss.ts#L8"
 										}
 									],
 									"signatures": [
 										{
-											"id": 458,
+											"id": 466,
 											"name": "__type",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9232,7 +9248,7 @@
 											},
 											"parameters": [
 												{
-													"id": 459,
+													"id": 467,
 													"name": "src",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9251,7 +9267,7 @@
 													}
 												},
 												{
-													"id": 460,
+													"id": 468,
 													"name": "force",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9289,7 +9305,7 @@
 							}
 						},
 						{
-							"id": 461,
+							"id": 469,
 							"name": "mountImg",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9297,15 +9313,15 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 302,
+									"line": 305,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L302"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L305"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 462,
+									"id": 470,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -9315,12 +9331,12 @@
 											"fileName": "src/mountImg.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/mountImg.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/mountImg.ts#L8"
 										}
 									],
 									"signatures": [
 										{
-											"id": 463,
+											"id": 471,
 											"name": "__type",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9346,7 +9362,7 @@
 											},
 											"parameters": [
 												{
-													"id": 464,
+													"id": 472,
 													"name": "src",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9365,7 +9381,7 @@
 													}
 												},
 												{
-													"id": 465,
+													"id": 473,
 													"name": "force",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9412,7 +9428,7 @@
 							}
 						},
 						{
-							"id": 466,
+							"id": 474,
 							"name": "mountJs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9420,15 +9436,15 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 303,
+									"line": 306,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L303"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L306"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 467,
+									"id": 475,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -9438,12 +9454,12 @@
 											"fileName": "src/mountJs.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/mountJs.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/mountJs.ts#L8"
 										}
 									],
 									"signatures": [
 										{
-											"id": 468,
+											"id": 476,
 											"name": "__type",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9469,7 +9485,7 @@
 											},
 											"parameters": [
 												{
-													"id": 469,
+													"id": 477,
 													"name": "src",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9488,7 +9504,7 @@
 													}
 												},
 												{
-													"id": 470,
+													"id": 478,
 													"name": "force",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9526,7 +9542,7 @@
 							}
 						},
 						{
-							"id": 471,
+							"id": 479,
 							"name": "mountStyle",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9534,15 +9550,15 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 304,
+									"line": 307,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L304"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L307"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 472,
+									"id": 480,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -9552,12 +9568,12 @@
 											"fileName": "src/mountStyle.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/mountStyle.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/mountStyle.ts#L7"
 										}
 									],
 									"signatures": [
 										{
-											"id": 473,
+											"id": 481,
 											"name": "__type",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9583,7 +9599,7 @@
 											},
 											"parameters": [
 												{
-													"id": 474,
+													"id": 482,
 													"name": "css",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -9620,9 +9636,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 273,
+									"line": 275,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L273"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L275"
 								}
 							],
 							"type": {
@@ -9638,7 +9654,7 @@
 											"fileName": "src/nextIndex.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/nextIndex.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/nextIndex.ts#L8"
 										}
 									],
 									"signatures": [
@@ -9727,9 +9743,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 282,
+									"line": 284,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L282"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L284"
 								}
 							],
 							"type": {
@@ -9745,7 +9761,7 @@
 											"fileName": "src/openUrl.ts",
 											"line": 6,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/openUrl.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/openUrl.ts#L6"
 										}
 									],
 									"signatures": [
@@ -9802,9 +9818,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 214,
+									"line": 216,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L214"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L216"
 								}
 							],
 							"type": {
@@ -9827,7 +9843,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 7,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L7"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L7"
 												}
 											],
 											"type": {
@@ -9849,7 +9865,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 24,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L24"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L24"
 												}
 											],
 											"type": {
@@ -9871,7 +9887,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 23,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L23"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L23"
 												}
 											],
 											"type": {
@@ -9893,7 +9909,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 18,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L18"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L18"
 												}
 											],
 											"type": {
@@ -9915,7 +9931,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 14,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L14"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L14"
 												}
 											],
 											"type": {
@@ -9937,7 +9953,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 13,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L13"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L13"
 												}
 											],
 											"type": {
@@ -9959,7 +9975,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 25,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L25"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L25"
 												}
 											],
 											"type": {
@@ -9981,7 +9997,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 22,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L22"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L22"
 												}
 											],
 											"type": {
@@ -10003,7 +10019,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 17,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L17"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L17"
 												}
 											],
 											"type": {
@@ -10025,7 +10041,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 8,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L8"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L8"
 												}
 											],
 											"type": {
@@ -10047,7 +10063,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 21,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L21"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L21"
 												}
 											],
 											"type": {
@@ -10069,7 +10085,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 10,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L10"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L10"
 												}
 											],
 											"type": {
@@ -10091,7 +10107,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 20,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L20"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L20"
 												}
 											],
 											"type": {
@@ -10113,7 +10129,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 9,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L9"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L9"
 												}
 											],
 											"type": {
@@ -10135,7 +10151,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 19,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L19"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L19"
 												}
 											],
 											"type": {
@@ -10157,7 +10173,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 26,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L26"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L26"
 												}
 											],
 											"type": {
@@ -10179,7 +10195,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 11,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L11"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L11"
 												}
 											],
 											"type": {
@@ -10201,7 +10217,7 @@
 													"fileName": "src/pattern.ts",
 													"line": 12,
 													"character": 1,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L12"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L12"
 												}
 											],
 											"type": {
@@ -10227,7 +10243,7 @@
 											"fileName": "src/pattern.ts",
 											"line": 6,
 											"character": 16,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L6"
 										}
 									]
 								}
@@ -10242,9 +10258,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 271,
+									"line": 273,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L271"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L273"
 								}
 							],
 							"type": {
@@ -10260,7 +10276,7 @@
 											"fileName": "src/removeEvent.ts",
 											"line": 10,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/removeEvent.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/removeEvent.ts#L10"
 										}
 									],
 									"signatures": [
@@ -10295,7 +10311,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 475,
+														"id": 483,
 														"name": "AnyObject"
 													}
 												},
@@ -10334,7 +10350,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 476,
+														"id": 484,
 														"name": "AnyFunction"
 													}
 												}
@@ -10357,9 +10373,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 281,
+									"line": 283,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L281"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L283"
 								}
 							],
 							"type": {
@@ -10375,7 +10391,7 @@
 											"fileName": "src/searchTreeObject.ts",
 											"line": 16,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/searchTreeObject.ts#L16"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/searchTreeObject.ts#L16"
 										}
 									],
 									"signatures": [
@@ -10471,8 +10487,8 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 486,
-														"name": "SearchkeySet"
+														"id": 494,
+														"name": "SearchKeySet"
 													}
 												},
 												{
@@ -10517,9 +10533,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 250,
+									"line": 252,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L250"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L252"
 								}
 							],
 							"type": {
@@ -10535,7 +10551,7 @@
 											"fileName": "src/setCache.ts",
 											"line": 14,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/setCache.ts#L14"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/setCache.ts#L14"
 										}
 									],
 									"signatures": [
@@ -10641,9 +10657,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 249,
+									"line": 251,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L249"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L251"
 								}
 							],
 							"type": {
@@ -10659,7 +10675,7 @@
 											"fileName": "src/setCookie.ts",
 											"line": 10,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/setCookie.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/setCookie.ts#L10"
 										}
 									],
 									"signatures": [
@@ -10787,6 +10803,167 @@
 							}
 						},
 						{
+							"id": 450,
+							"name": "setProperty",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/index.ts",
+									"line": 302,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L302"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 451,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "src/setProperty.ts",
+											"line": 20,
+											"character": 9,
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/setProperty.ts#L20"
+										}
+									],
+									"signatures": [
+										{
+											"id": 452,
+											"name": "__type",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "根据路径字符串设置数组、对象属性值"
+													}
+												],
+												"blockTags": [
+													{
+														"tag": "@example",
+														"content": [
+															{
+																"kind": "code",
+																"text": "```js\nconst target = {\n     a: 1,\n     b: [{\n         c: 2\n     }]\n}\nsetProperty(target, 'a') // 1\nsetProperty(target, 'b[0].c') // 2\nsetProperty(target, () => 'a') // 1\n```"
+															}
+														]
+													},
+													{
+														"tag": "@returns",
+														"content": [
+															{
+																"kind": "text",
+																"text": "返回对应的值"
+															}
+														]
+													}
+												]
+											},
+											"parameters": [
+												{
+													"id": 453,
+													"name": "target",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "目标数组、对象"
+															}
+														]
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												},
+												{
+													"id": 454,
+													"name": "prop",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "设置目标，可传function，'a' | 'a[1].c'"
+															}
+														]
+													},
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "reflection",
+																"declaration": {
+																	"id": 455,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"sources": [
+																		{
+																			"fileName": "src/setProperty.ts",
+																			"line": 20,
+																			"character": 49,
+																			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/setProperty.ts#L20"
+																		}
+																	],
+																	"signatures": [
+																		{
+																			"id": 456,
+																			"name": "__type",
+																			"kind": 4096,
+																			"kindString": "Call signature",
+																			"flags": {},
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			}
+																		}
+																	]
+																}
+															}
+														]
+													}
+												},
+												{
+													"id": 457,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
 							"id": 206,
 							"name": "setSession",
 							"kind": 1024,
@@ -10795,9 +10972,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 251,
+									"line": 253,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L251"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L253"
 								}
 							],
 							"type": {
@@ -10813,7 +10990,7 @@
 											"fileName": "src/setSession.ts",
 											"line": 13,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/setSession.ts#L13"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/setSession.ts#L13"
 										}
 									],
 									"signatures": [
@@ -10908,9 +11085,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 283,
+									"line": 285,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L283"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L285"
 								}
 							],
 							"type": {
@@ -10926,7 +11103,7 @@
 											"fileName": "src/splitThousand.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/splitThousand.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/splitThousand.ts#L7"
 										}
 									],
 									"signatures": [
@@ -11004,9 +11181,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 268,
+									"line": 270,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L268"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L270"
 								}
 							],
 							"type": {
@@ -11022,7 +11199,7 @@
 											"fileName": "src/stopBubble.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/stopBubble.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/stopBubble.ts#L7"
 										}
 									],
 									"signatures": [
@@ -11092,9 +11269,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 269,
+									"line": 271,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L269"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L271"
 								}
 							],
 							"type": {
@@ -11110,7 +11287,7 @@
 											"fileName": "src/stopDefault.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/stopDefault.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/stopDefault.ts#L7"
 										}
 									],
 									"signatures": [
@@ -11180,9 +11357,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 234,
+									"line": 236,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L234"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L236"
 								}
 							],
 							"type": {
@@ -11198,7 +11375,7 @@
 											"fileName": "src/textareaInsertText.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/textareaInsertText.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/textareaInsertText.ts#L7"
 										}
 									],
 									"signatures": [
@@ -11268,9 +11445,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 235,
+									"line": 237,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L235"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L237"
 								}
 							],
 							"type": {
@@ -11286,7 +11463,7 @@
 											"fileName": "src/textareaMoveToEnd.ts",
 											"line": 6,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/textareaMoveToEnd.ts#L6"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/textareaMoveToEnd.ts#L6"
 										}
 									],
 									"signatures": [
@@ -11345,9 +11522,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 267,
+									"line": 269,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L267"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L269"
 								}
 							],
 							"type": {
@@ -11363,7 +11540,7 @@
 											"fileName": "src/throttle.ts",
 											"line": 11,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/throttle.ts#L11"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/throttle.ts#L11"
 										}
 									],
 									"signatures": [
@@ -11409,7 +11586,7 @@
 													},
 													"type": {
 														"type": "reference",
-														"id": 476,
+														"id": 484,
 														"name": "AnyFunction"
 													}
 												},
@@ -11476,7 +11653,7 @@
 															"fileName": "src/throttle.ts",
 															"line": 23,
 															"character": 8,
-															"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/throttle.ts#L23"
+															"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/throttle.ts#L23"
 														}
 													],
 													"signatures": [
@@ -11508,9 +11685,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 215,
+									"line": 217,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L215"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L217"
 								}
 							],
 							"type": {
@@ -11526,7 +11703,7 @@
 											"fileName": "src/trim.ts",
 											"line": 8,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/trim.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/trim.ts#L8"
 										}
 									],
 									"signatures": [
@@ -11623,9 +11800,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 293,
+									"line": 295,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L293"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L295"
 								}
 							],
 							"type": {
@@ -11641,7 +11818,7 @@
 											"fileName": "src/union.ts",
 											"line": 14,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/union.ts#L14"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/union.ts#L14"
 										}
 									],
 									"signatures": [
@@ -11744,9 +11921,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 297,
+									"line": 299,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L297"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L299"
 								}
 							],
 							"type": {
@@ -11762,7 +11939,7 @@
 											"fileName": "src/unique.ts",
 											"line": 11,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/unique.ts#L11"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/unique.ts#L11"
 										}
 									],
 									"signatures": [
@@ -11852,9 +12029,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 228,
+									"line": 230,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L228"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L230"
 								}
 							],
 							"type": {
@@ -11870,7 +12047,7 @@
 											"fileName": "src/upperFirst.ts",
 											"line": 7,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/upperFirst.ts#L7"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/upperFirst.ts#L7"
 										}
 									],
 									"signatures": [
@@ -11938,9 +12115,9 @@
 							"sources": [
 								{
 									"fileName": "src/index.ts",
-									"line": 286,
+									"line": 288,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L286"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L288"
 								}
 							],
 							"type": {
@@ -11956,7 +12133,7 @@
 											"fileName": "src/uuid.ts",
 											"line": 10,
 											"character": 13,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/uuid.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/uuid.ts#L10"
 										}
 									],
 									"signatures": [
@@ -12012,25 +12189,25 @@
 								67, 71, 3, 424, 429, 118, 92, 260, 264, 268, 244, 248, 228, 224,
 								232, 313, 347, 252, 256, 236, 240, 327, 439, 308, 182, 187, 148,
 								114, 216, 212, 166, 174, 160, 75, 154, 170, 443, 100, 105, 110, 300,
-								220, 333, 178, 145, 79, 84, 409, 337, 133, 137, 141, 450, 419, 456,
-								461, 466, 471, 303, 360, 22, 294, 353, 200, 192, 206, 364, 285, 289,
-								124, 129, 276, 42, 414, 434, 96, 378
+								220, 333, 178, 145, 79, 84, 409, 337, 133, 137, 141, 458, 419, 464,
+								469, 474, 479, 303, 360, 22, 294, 353, 200, 192, 450, 206, 364, 285,
+								289, 124, 129, 276, 42, 414, 434, 96, 378
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/index.ts",
-							"line": 212,
+							"line": 214,
 							"character": 15,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L212"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L214"
 						}
 					]
 				}
 			}
 		},
 		{
-			"id": 512,
+			"id": 520,
 			"name": "pattern",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12061,20 +12238,20 @@
 					"fileName": "src/pattern.ts",
 					"line": 6,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L6"
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 513,
+					"id": 521,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"children": [
 						{
-							"id": 514,
+							"id": 522,
 							"name": "any",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12084,7 +12261,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 7,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L7"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L7"
 								}
 							],
 							"type": {
@@ -12096,7 +12273,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 529,
+							"id": 537,
 							"name": "array",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12106,7 +12283,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 24,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L24"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L24"
 								}
 							],
 							"type": {
@@ -12118,7 +12295,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 528,
+							"id": 536,
 							"name": "arrjson",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12128,271 +12305,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 23,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L23"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 523,
-							"name": "chinese",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 18,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L18"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 521,
-							"name": "email",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 14,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L14"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 520,
-							"name": "float",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 13,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L13"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 530,
-							"name": "isjson",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 25,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L25"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 527,
-							"name": "json",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 22,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L22"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 522,
-							"name": "mobile",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 17,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L17"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 515,
-							"name": "number",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 8,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L8"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 526,
-							"name": "pass",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 21,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L21"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 517,
-							"name": "postcode",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 10,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L10"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 525,
-							"name": "qq",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 20,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L20"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 516,
-							"name": "string",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 9,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L9"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "RegExp",
-								"qualifiedName": "RegExp",
-								"package": "typescript"
-							},
-							"defaultValue": "..."
-						},
-						{
-							"id": 524,
-							"name": "tel",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/pattern.ts",
-									"line": 19,
-									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L19"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L23"
 								}
 							],
 							"type": {
@@ -12405,6 +12318,270 @@
 						},
 						{
 							"id": 531,
+							"name": "chinese",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 18,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L18"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 529,
+							"name": "email",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 14,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L14"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 528,
+							"name": "float",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 13,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L13"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 538,
+							"name": "isjson",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 25,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L25"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 535,
+							"name": "json",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 22,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L22"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 530,
+							"name": "mobile",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 17,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L17"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 523,
+							"name": "number",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 8,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L8"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 534,
+							"name": "pass",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 21,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L21"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 525,
+							"name": "postcode",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 10,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L10"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 533,
+							"name": "qq",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 20,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L20"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 524,
+							"name": "string",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 9,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L9"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 532,
+							"name": "tel",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/pattern.ts",
+									"line": 19,
+									"character": 1,
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L19"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RegExp",
+								"qualifiedName": "RegExp",
+								"package": "typescript"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 539,
 							"name": "textarea",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12414,7 +12591,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 26,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L26"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L26"
 								}
 							],
 							"type": {
@@ -12426,7 +12603,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 518,
+							"id": 526,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12436,7 +12613,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 11,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L11"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L11"
 								}
 							],
 							"type": {
@@ -12448,7 +12625,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 519,
+							"id": 527,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12458,7 +12635,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 12,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L12"
+									"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L12"
 								}
 							],
 							"type": {
@@ -12474,8 +12651,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								514, 529, 528, 523, 521, 520, 530, 527, 522, 515, 526, 517, 525,
-								516, 524, 531, 518, 519
+								522, 537, 536, 531, 529, 528, 538, 535, 530, 523, 534, 525, 533,
+								524, 532, 539, 526, 527
 							]
 						}
 					],
@@ -12484,7 +12661,7 @@
 							"fileName": "src/pattern.ts",
 							"line": 6,
 							"character": 16,
-							"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/pattern.ts#L6"
+							"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L6"
 						}
 					]
 				}
@@ -12492,7 +12669,7 @@
 			"defaultValue": "..."
 		},
 		{
-			"id": 626,
+			"id": 634,
 			"name": "CSVToArray",
 			"kind": 64,
 			"kindString": "Function",
@@ -12502,12 +12679,12 @@
 					"fileName": "src/CSVToArray.ts",
 					"line": 21,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/CSVToArray.ts#L21"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/CSVToArray.ts#L21"
 				}
 			],
 			"signatures": [
 				{
-					"id": 627,
+					"id": 635,
 					"name": "CSVToArray",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -12560,7 +12737,7 @@
 					},
 					"parameters": [
 						{
-							"id": 628,
+							"id": 636,
 							"name": "data",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12579,7 +12756,7 @@
 							}
 						},
 						{
-							"id": 629,
+							"id": 637,
 							"name": "delimiter",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12599,7 +12776,7 @@
 							"defaultValue": "','"
 						},
 						{
-							"id": 630,
+							"id": 638,
 							"name": "omitFirstRow",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12633,7 +12810,7 @@
 			]
 		},
 		{
-			"id": 632,
+			"id": 640,
 			"name": "JSONToCSV",
 			"kind": 64,
 			"kindString": "Function",
@@ -12643,12 +12820,12 @@
 					"fileName": "src/JSONToCSV.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/JSONToCSV.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/JSONToCSV.ts#L17"
 				}
 			],
 			"signatures": [
 				{
-					"id": 633,
+					"id": 641,
 					"name": "JSONToCSV",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -12692,7 +12869,7 @@
 					},
 					"parameters": [
 						{
-							"id": 634,
+							"id": 642,
 							"name": "arr",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12706,7 +12883,7 @@
 							}
 						},
 						{
-							"id": 635,
+							"id": 643,
 							"name": "columns",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12728,7 +12905,7 @@
 							}
 						},
 						{
-							"id": 636,
+							"id": 644,
 							"name": "delimiter",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12756,7 +12933,7 @@
 			]
 		},
 		{
-			"id": 637,
+			"id": 645,
 			"name": "RGBToHex",
 			"kind": 64,
 			"kindString": "Function",
@@ -12766,12 +12943,12 @@
 					"fileName": "src/RGBToHex.ts",
 					"line": 10,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/RGBToHex.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/RGBToHex.ts#L10"
 				}
 			],
 			"signatures": [
 				{
-					"id": 638,
+					"id": 646,
 					"name": "RGBToHex",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -12806,7 +12983,7 @@
 					},
 					"parameters": [
 						{
-							"id": 639,
+							"id": 647,
 							"name": "r",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12825,7 +13002,7 @@
 							}
 						},
 						{
-							"id": 640,
+							"id": 648,
 							"name": "g",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12844,7 +13021,7 @@
 							}
 						},
 						{
-							"id": 641,
+							"id": 649,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12871,7 +13048,7 @@
 			]
 		},
 		{
-			"id": 587,
+			"id": 595,
 			"name": "addEvent",
 			"kind": 64,
 			"kindString": "Function",
@@ -12881,18 +13058,18 @@
 					"fileName": "src/addEvent.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L10"
 				},
 				{
 					"fileName": "src/addEvent.ts",
 					"line": 34,
 					"character": 0,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/addEvent.ts#L34"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L34"
 				}
 			],
 			"signatures": [
 				{
-					"id": 588,
+					"id": 596,
 					"name": "addEvent",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -12907,7 +13084,7 @@
 					},
 					"parameters": [
 						{
-							"id": 589,
+							"id": 597,
 							"name": "element",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12922,12 +13099,12 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 475,
+								"id": 483,
 								"name": "AnyObject"
 							}
 						},
 						{
-							"id": 590,
+							"id": 598,
 							"name": "type",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12946,7 +13123,7 @@
 							}
 						},
 						{
-							"id": 591,
+							"id": 599,
 							"name": "handler",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12961,7 +13138,7 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 476,
+								"id": 484,
 								"name": "AnyFunction"
 							}
 						}
@@ -12974,7 +13151,7 @@
 			]
 		},
 		{
-			"id": 612,
+			"id": 620,
 			"name": "all",
 			"kind": 64,
 			"kindString": "Function",
@@ -12984,12 +13161,12 @@
 					"fileName": "src/all.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/all.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/all.ts#L17"
 				}
 			],
 			"signatures": [
 				{
-					"id": 613,
+					"id": 621,
 					"name": "all",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13033,7 +13210,7 @@
 					},
 					"parameters": [
 						{
-							"id": 614,
+							"id": 622,
 							"name": "arr",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13055,7 +13232,7 @@
 							}
 						},
 						{
-							"id": 615,
+							"id": 623,
 							"name": "fn",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13070,7 +13247,7 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 476,
+								"id": 484,
 								"name": "AnyFunction"
 							}
 						}
@@ -13083,7 +13260,7 @@
 			]
 		},
 		{
-			"id": 616,
+			"id": 624,
 			"name": "any",
 			"kind": 64,
 			"kindString": "Function",
@@ -13093,12 +13270,12 @@
 					"fileName": "src/any.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/any.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/any.ts#L17"
 				}
 			],
 			"signatures": [
 				{
-					"id": 617,
+					"id": 625,
 					"name": "any",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13142,7 +13319,7 @@
 					},
 					"parameters": [
 						{
-							"id": 618,
+							"id": 626,
 							"name": "arr",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13164,7 +13341,7 @@
 							}
 						},
 						{
-							"id": 619,
+							"id": 627,
 							"name": "fn",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13179,7 +13356,7 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 476,
+								"id": 484,
 								"name": "AnyFunction"
 							}
 						}
@@ -13192,7 +13369,7 @@
 			]
 		},
 		{
-			"id": 622,
+			"id": 630,
 			"name": "arrayToCSV",
 			"kind": 64,
 			"kindString": "Function",
@@ -13202,12 +13379,12 @@
 					"fileName": "src/arrayToCSV.ts",
 					"line": 20,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/arrayToCSV.ts#L20"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/arrayToCSV.ts#L20"
 				}
 			],
 			"signatures": [
 				{
-					"id": 623,
+					"id": 631,
 					"name": "arrayToCSV",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13260,7 +13437,7 @@
 					},
 					"parameters": [
 						{
-							"id": 624,
+							"id": 632,
 							"name": "arr",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13274,7 +13451,7 @@
 							}
 						},
 						{
-							"id": 625,
+							"id": 633,
 							"name": "delimiter",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13302,7 +13479,7 @@
 			]
 		},
 		{
-			"id": 494,
+			"id": 502,
 			"name": "client",
 			"kind": 64,
 			"kindString": "Function",
@@ -13312,12 +13489,12 @@
 					"fileName": "src/client.ts",
 					"line": 8,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L8"
 				}
 			],
 			"signatures": [
 				{
-					"id": 495,
+					"id": 503,
 					"name": "client",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13347,7 +13524,7 @@
 					},
 					"parameters": [
 						{
-							"id": 496,
+							"id": 504,
 							"name": "name",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13367,7 +13544,7 @@
 							"defaultValue": "''"
 						},
 						{
-							"id": 497,
+							"id": 505,
 							"name": "userAgent",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13397,14 +13574,14 @@
 							{
 								"type": "reflection",
 								"declaration": {
-									"id": 498,
+									"id": 506,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 506,
+											"id": 514,
 											"name": "ANDROID",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13414,7 +13591,7 @@
 													"fileName": "src/client.ts",
 													"line": 22,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L22"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L22"
 												}
 											],
 											"type": {
@@ -13424,7 +13601,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 500,
+											"id": 508,
 											"name": "GECKO",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13434,67 +13611,7 @@
 													"fileName": "src/client.ts",
 													"line": 15,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L15"
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											"defaultValue": "..."
-										},
-										{
-											"id": 499,
-											"name": "IE",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "src/client.ts",
-													"line": 14,
-													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L14"
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											"defaultValue": "..."
-										},
-										{
-											"id": 505,
-											"name": "IOS",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "src/client.ts",
-													"line": 21,
-													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L21"
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											"defaultValue": "!!userAgent.match(/\\(i[^;]+;( U;)? CPU.+Mac OS X/)"
-										},
-										{
-											"id": 508,
-											"name": "IPAD",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "src/client.ts",
-													"line": 24,
-													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L24"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L15"
 												}
 											],
 											"type": {
@@ -13505,6 +13622,66 @@
 										},
 										{
 											"id": 507,
+											"name": "IE",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "src/client.ts",
+													"line": 14,
+													"character": 3,
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L14"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 513,
+											"name": "IOS",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "src/client.ts",
+													"line": 21,
+													"character": 3,
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L21"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "!!userAgent.match(/\\(i[^;]+;( U;)? CPU.+Mac OS X/)"
+										},
+										{
+											"id": 516,
+											"name": "IPAD",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "src/client.ts",
+													"line": 24,
+													"character": 3,
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L24"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 515,
 											"name": "IPHONE",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13514,7 +13691,7 @@
 													"fileName": "src/client.ts",
 													"line": 23,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L23"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L23"
 												}
 											],
 											"type": {
@@ -13524,7 +13701,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 504,
+											"id": 512,
 											"name": "MOBILE",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13534,7 +13711,7 @@
 													"fileName": "src/client.ts",
 													"line": 19,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L19"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L19"
 												}
 											],
 											"type": {
@@ -13544,7 +13721,7 @@
 											"defaultValue": "!!userAgent.match(/AppleWebKit.*Mobile.*/)"
 										},
 										{
-											"id": 502,
+											"id": 510,
 											"name": "OPERA",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13554,7 +13731,7 @@
 													"fileName": "src/client.ts",
 													"line": 17,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L17"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L17"
 												}
 											],
 											"type": {
@@ -13564,7 +13741,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 511,
+											"id": 519,
 											"name": "QQ",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13574,7 +13751,7 @@
 													"fileName": "src/client.ts",
 													"line": 28,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L28"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L28"
 												}
 											],
 											"type": {
@@ -13595,7 +13772,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 509,
+											"id": 517,
 											"name": "QQBROWSER",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13605,7 +13782,7 @@
 													"fileName": "src/client.ts",
 													"line": 26,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L26"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L26"
 												}
 											],
 											"type": {
@@ -13615,7 +13792,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 503,
+											"id": 511,
 											"name": "TRIDENT",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13625,7 +13802,7 @@
 													"fileName": "src/client.ts",
 													"line": 18,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L18"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L18"
 												}
 											],
 											"type": {
@@ -13635,7 +13812,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 501,
+											"id": 509,
 											"name": "WEBKIT",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13645,7 +13822,7 @@
 													"fileName": "src/client.ts",
 													"line": 16,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L16"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L16"
 												}
 											],
 											"type": {
@@ -13655,7 +13832,7 @@
 											"defaultValue": "..."
 										},
 										{
-											"id": 510,
+											"id": 518,
 											"name": "WEIXIN",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13665,7 +13842,7 @@
 													"fileName": "src/client.ts",
 													"line": 27,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L27"
+													"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L27"
 												}
 											],
 											"type": {
@@ -13679,8 +13856,8 @@
 										{
 											"title": "Properties",
 											"children": [
-												506, 500, 499, 505, 508, 507, 504, 502, 511, 509,
-												503, 501, 510
+												514, 508, 507, 513, 516, 515, 512, 510, 519, 517,
+												511, 509, 518
 											]
 										}
 									],
@@ -13689,7 +13866,7 @@
 											"fileName": "src/client.ts",
 											"line": 13,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/client.ts#L13"
+											"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L13"
 										}
 									]
 								}
@@ -13700,7 +13877,7 @@
 			]
 		},
 		{
-			"id": 600,
+			"id": 608,
 			"name": "extend",
 			"kind": 64,
 			"kindString": "Function",
@@ -13710,19 +13887,19 @@
 					"fileName": "src/extend.ts",
 					"line": 18,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/extend.ts#L18"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/extend.ts#L18"
 				}
 			],
 			"signatures": [
 				{
-					"id": 601,
+					"id": 609,
 					"name": "extend",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 602,
+							"id": 610,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13747,7 +13924,7 @@
 					],
 					"parameters": [
 						{
-							"id": 603,
+							"id": 611,
 							"name": "target",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13768,7 +13945,7 @@
 							}
 						},
 						{
-							"id": 604,
+							"id": 612,
 							"name": "args",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13777,7 +13954,7 @@
 							},
 							"type": {
 								"type": "reference",
-								"id": 479,
+								"id": 487,
 								"typeArguments": [
 									{
 										"type": "intrinsic",
@@ -13797,7 +13974,7 @@
 			]
 		},
 		{
-			"id": 595,
+			"id": 603,
 			"name": "getScrollPosition",
 			"kind": 64,
 			"kindString": "Function",
@@ -13807,12 +13984,12 @@
 					"fileName": "src/getScrollPosition.ts",
 					"line": 6,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/getScrollPosition.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/getScrollPosition.ts#L6"
 				}
 			],
 			"signatures": [
 				{
-					"id": 596,
+					"id": 604,
 					"name": "getScrollPosition",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13853,7 +14030,7 @@
 			]
 		},
 		{
-			"id": 620,
+			"id": 628,
 			"name": "uuid",
 			"kind": 64,
 			"kindString": "Function",
@@ -13863,12 +14040,12 @@
 					"fileName": "src/uuid.ts",
 					"line": 10,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/uuid.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/uuid.ts#L10"
 				}
 			],
 			"signatures": [
 				{
-					"id": 621,
+					"id": 629,
 					"name": "uuid",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13913,32 +14090,32 @@
 		{
 			"title": "References",
 			"children": [
-				631, 543, 607, 533, 534, 535, 536, 537, 538, 539, 645, 646, 550, 544, 581, 582, 583,
-				577, 578, 573, 572, 574, 599, 608, 579, 580, 575, 576, 648, 598, 564, 565, 557, 549,
-				570, 569, 560, 562, 559, 540, 558, 561, 649, 546, 547, 548, 571, 605, 563, 556, 541,
-				542, 642, 606, 553, 554, 555, 650, 644, 651, 652, 653, 654, 597, 610, 594, 609, 567,
-				566, 568, 611, 585, 586, 551, 552, 584, 532, 643, 647, 545
+				639, 551, 615, 541, 542, 543, 544, 545, 546, 547, 653, 654, 558, 552, 589, 590, 591,
+				585, 586, 581, 580, 582, 607, 616, 587, 588, 583, 584, 656, 606, 572, 573, 565, 557,
+				578, 577, 568, 570, 567, 548, 566, 569, 657, 554, 555, 556, 579, 613, 571, 564, 549,
+				550, 650, 614, 561, 562, 563, 659, 652, 660, 661, 662, 663, 605, 618, 602, 617, 575,
+				574, 658, 576, 619, 593, 594, 559, 560, 592, 540, 651, 655, 553
 			]
 		},
 		{
 			"title": "Namespaces",
-			"children": [592]
+			"children": [600]
 		},
 		{
 			"title": "Interfaces",
-			"children": [476, 491, 486, 483]
+			"children": [484, 499, 494, 491]
 		},
 		{
 			"title": "Type Aliases",
-			"children": [475, 479]
+			"children": [483, 487]
 		},
 		{
 			"title": "Variables",
-			"children": [1, 512]
+			"children": [1, 520]
 		},
 		{
 			"title": "Functions",
-			"children": [626, 632, 637, 587, 612, 616, 622, 494, 600, 595, 620]
+			"children": [634, 640, 645, 595, 620, 624, 630, 502, 608, 603, 628]
 		}
 	],
 	"sources": [
@@ -13946,7 +14123,7 @@
 			"fileName": "src/index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/saqqdy/js-cool/blob/dbf430c/src/index.ts#L1"
+			"url": "https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L1"
 		}
 	]
 }
