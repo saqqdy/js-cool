@@ -9,11 +9,22 @@ function getType(target: any): string {
 		'[object Array]': 'array',
 		'[object Boolean]': 'boolean',
 		'[object Date]': 'date',
-		'[object Function]': 'function',
+		'[object Promise]': 'promise',
+		'[object Function]': 'function', // Function | Class
+		'[object AsyncFunction]': 'function',
+		'[object GeneratorFunction]': 'function', // Generator
+		'[object Math]': 'math', // Math
+		'[object Window]': 'window', // Window
+		'[object Navigator]': 'navigator', // Navigator
+		'[object global]': 'global', // global
+		'[object HTMLDocument]': 'document', // document
+		'[object Symbol]': 'symbol',
 		'[object Number]': 'number',
-		'[object Object]': 'object',
+		'[object Object]': 'object', // Object | Proxy
 		'[object RegExp]': 'regexp',
-		'[object String]': 'string'
+		'[object String]': 'string',
+		'[object Undefined]': 'undefined',
+		'[object Null]': 'null'
 	} as any
 
 	if (target === null) return target + ''
