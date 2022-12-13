@@ -27,12 +27,13 @@ async function loadSource(
 	option: SourceFileType | Options
 ): Promise<boolean | string> {
 	if (!url) throw new Error('url不能为空')
-	if (!option) {
+	if (!option) option = {} as Options
+	if (typeof option === 'string') {
+		option = { type: option }
+	} else if (!option.type) {
 		const match = /\.(\w+)$/.exec(url)
 		if (!match || !match[1]) throw new Error('url不合法')
-		option = { type: match[1] }
-	} else if (typeof option === 'string') {
-		option = { type: option }
+		option.type = match[1]
 	}
 	option.force ??= false
 	option.type && (option.type = option.type.toLowerCase())
