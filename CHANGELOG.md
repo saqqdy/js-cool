@@ -2,7 +2,7 @@
 
 ## 2022.12.13 v2.8.0 更新日志
 
-1. `loadSource` `mountCss` `mountImg` `mountJs` `mountStyle`新增支持传入自定义属性，调整入参形式，并完善 ts 类型
+1. `loadSource` `mountCss` `mountImg` `mountJs` `mountStyle`新增支持传入自定义属性，调整入参形式，并完善 ts 类型，修复IE兼容问题
 2. 依赖包升级
 
 ## 2022.12.07 v2.7.1 更新日志
