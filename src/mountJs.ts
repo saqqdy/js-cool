@@ -14,6 +14,11 @@ export type ScriptAttributes = Pick<
 	| 'type'
 >
 
+export interface HTMLScriptElementEX extends HTMLScriptElement {
+	onreadystatechange?: any
+	readyState?: 'loaded' | 'complete'
+}
+
 export interface JsOptions {
 	attrs?: ScriptAttributes
 	props?: ScriptAttributes
@@ -38,7 +43,7 @@ function mountJs(src: string, option: JsOptions): Promise<boolean> {
 			resolve(true)
 			return
 		}
-		const dom = document.createElement('script')
+		const dom: HTMLScriptElementEX = document.createElement('script')
 		let attr: keyof ScriptAttributes, prop: keyof ScriptAttributes
 		if (attrs) {
 			for (attr in attrs) {
@@ -52,8 +57,11 @@ function mountJs(src: string, option: JsOptions): Promise<boolean> {
 		}
 		dom.src = src
 		document.body.appendChild(dom)
-		dom.onload = dom.onratechange = () => {
-			resolve(true)
+		dom.onload = dom.onreadystatechange = function () {
+			if (!dom.readyState || ['loaded', 'complete'].includes(dom.readyState)) {
+				dom.onload = dom.onreadystatechange = null
+				resolve(true)
+			}
 		}
 		dom.onerror = reject
 	})

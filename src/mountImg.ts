@@ -21,6 +21,11 @@ export type ImageAttributes = Pick<
 	| 'width'
 >
 
+export interface HTMLImageElementEX extends HTMLImageElement {
+	onreadystatechange?: any
+	readyState?: 'loaded' | 'complete'
+}
+
 export interface ImgOptions {
 	attrs?: ImageAttributes
 	props?: ImageAttributes
@@ -45,7 +50,7 @@ function mountImg(src: string, option: ImgOptions): Promise<boolean | string> {
 			resolve(true)
 			return
 		}
-		const dom = document.createElement('img')
+		const dom: HTMLImageElementEX = document.createElement('img')
 		let attr: keyof ImageAttributes, prop: keyof ImageAttributes
 		if (attrs) {
 			for (attr in attrs) {
@@ -59,8 +64,11 @@ function mountImg(src: string, option: ImgOptions): Promise<boolean | string> {
 		}
 		dom.src = src
 		document.body.appendChild(dom)
-		dom.onload = dom.onratechange = () => {
-			resolve(src)
+		dom.onload = dom.onreadystatechange = function () {
+			if (!dom.readyState || ['loaded', 'complete'].includes(dom.readyState)) {
+				dom.onload = dom.onreadystatechange = null
+				resolve(true)
+			}
 		}
 		dom.onerror = reject
 	})

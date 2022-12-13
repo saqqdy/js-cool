@@ -17,6 +17,11 @@ export type LinkAttributes = Pick<
 	| 'type'
 >
 
+export interface HTMLLinkElementEX extends HTMLLinkElement {
+	onreadystatechange?: any
+	readyState?: 'loaded' | 'complete'
+}
+
 export interface CssOptions {
 	attrs?: LinkAttributes
 	props?: LinkAttributes
@@ -41,7 +46,7 @@ function mountCss(src: string, option: CssOptions): Promise<boolean> {
 			resolve(true)
 			return
 		}
-		const dom = document.createElement('link')
+		const dom: HTMLLinkElementEX = document.createElement('link')
 		let attr: keyof LinkAttributes, prop: keyof LinkAttributes
 		if (attrs) {
 			for (attr in attrs) {
@@ -57,8 +62,11 @@ function mountCss(src: string, option: CssOptions): Promise<boolean> {
 		dom.type = 'text/css'
 		dom.href = src
 		document.getElementsByTagName('head')[0].appendChild(dom)
-		dom.onload = dom.onratechange = () => {
-			resolve(true)
+		dom.onload = dom.onreadystatechange = function () {
+			if (!dom.readyState || ['loaded', 'complete'].includes(dom.readyState)) {
+				dom.onload = dom.onreadystatechange = null
+				resolve(true)
+			}
 		}
 		dom.onerror = reject
 	})
