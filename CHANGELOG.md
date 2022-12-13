@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2022.12.13 v2.8.0 更新日志
+
+1. `loadSource` `mountCss` `mountImg` `mountJs` `mountStyle`新增支持传入自定义属性，调整入参形式，并完善ts类型
+2. 依赖包升级
+
 ## 2022.12.07 v2.7.1 更新日志
 
 1. 扩展`getType`方法支持的类型
@@ -7,7 +12,7 @@
 ## 2022.12.04 v2.7.0 更新日志
 
 1. 新增`setProperty`方法
-2. 修复setProperty bug
+2. 修复getProperty bug
 
 ## 2022.12.04 v2.6.0 更新日志
 
