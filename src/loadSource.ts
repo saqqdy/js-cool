@@ -4,7 +4,7 @@ import mountJs, { type JsOptions, type ScriptAttributes } from './mountJs'
 import mountStyle, { type StyleAttributes, type StyleOptions } from './mountStyle'
 
 export type SourceFileType = 'js' | 'img' | 'css' | 'style' | string
-export interface Options {
+export interface SourceOptions {
 	type: SourceFileType
 	attrs?: LinkAttributes | StyleAttributes | ScriptAttributes | ImageAttributes
 	props?: LinkAttributes | StyleAttributes | ScriptAttributes | ImageAttributes
@@ -20,10 +20,10 @@ export interface Options {
  */
 async function loadSource(
 	url: string,
-	option: SourceFileType | Options
+	option: SourceFileType | SourceOptions
 ): Promise<boolean | string> {
 	if (!url) throw new Error('url不能为空')
-	if (!option) option = {} as Options
+	if (!option) option = {} as SourceOptions
 	if (typeof option === 'string') {
 		option = { type: option }
 	} else if (!option.type) {

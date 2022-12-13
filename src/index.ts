@@ -3,6 +3,11 @@ export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
 export type { WindowSizeObj } from './getWindowSize'
 export type { SearchKeySet } from './searchTreeObject'
 export type { DirParamType } from './getDirParam'
+export type { SourceFileType, SourceOptions } from './loadSource'
+export type { CssOptions, LinkAttributes } from './mountCss'
+export type { ImgOptions, ImageAttributes } from './mountImg'
+export type { JsOptions, ScriptAttributes } from './mountJs'
+export type { StyleOptions, StyleAttributes } from './mountStyle'
 
 // 全局参数
 import client from './client' // client方法返回一个浏览器判断结果对象
