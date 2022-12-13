@@ -15,11 +15,7 @@ export interface Options {
  * 动态加载资源，支持js、图片、css链接、css样式字符串
  *
  * @param url - 资源链接，传入styleString时，type必传
- * @param option - 参数
- * @param option.attrs - 标签属性
- * @param option.props - 标签属性
- * @param option.type - 资源类型，可不传：js/css/img/style
- * @param option.force - 是否强制加载（一般已加载一次不用重复加载）,默认：false
+ * @param option - 参数: { attrs, props, force }
  * @returns - true|false|imgUrl
  */
 async function loadSource(

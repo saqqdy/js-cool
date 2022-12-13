@@ -29,10 +29,7 @@ export interface JsOptions {
  * 动态加载js链接资源
  *
  * @param src - 资源地址
- * @param option - 参数
- * @param option.attrs - 标签属性
- * @param option.props - 标签属性
- * @param option.force - 是否强制加载（一般已加载一次不用重复加载）,默认：false
+ * @param option - 参数: { attrs, props, force }
  * @returns - result
  */
 function mountJs(src: string, option: JsOptions): Promise<boolean> {
