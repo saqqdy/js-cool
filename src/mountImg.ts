@@ -36,7 +36,7 @@ export interface ImgOptions {
  * 动态加载图片资源
  *
  * @param src - 资源地址
- * @param option - 参数: { attrs, props, force }
+ * @param option - 参数: "{ attrs, props, force }"
  * @returns - result
  */
 function mountImg(src: string, option: ImgOptions): Promise<boolean | string> {

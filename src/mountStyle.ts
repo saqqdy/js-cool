@@ -9,7 +9,7 @@ export interface StyleOptions {
  * 动态加载css样式
  *
  * @param src - css string
- * @param option - 参数: { attrs, props }
+ * @param option - 参数: "{ attrs, props }"
  * @returns - result
  */
 function mountStyle(css: string, option: StyleOptions): Promise<boolean> {
