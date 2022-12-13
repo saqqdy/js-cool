@@ -29,7 +29,7 @@ export interface JsOptions {
  * 动态加载js链接资源
  *
  * @param src - 资源地址
- * @param option - 参数: "{ attrs, props, force }"
+ * @param option - 参数: attrs, props, force
  * @returns - result
  */
 function mountJs(src: string, option: JsOptions): Promise<boolean> {
