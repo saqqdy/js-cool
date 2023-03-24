@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.0.0-beta.1",
+	"version": "3.0.0-beta.2",
 	"packageManager": "pnpm@7.30.0",
 	"main": "./lib/index.cjs",
 	"module": "./es/index.mjs",
@@ -12,9 +12,9 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"require": "./lib/index.cjs",
-			"import": "./es/index.mjs",
-			"types": "./dist/index.d.ts"
+			"import": "./es/index.mjs"
 		},
 		"./es": "./es/index.mjs",
 		"./lib": "./lib/index.cjs",
@@ -96,8 +96,17 @@
 		"typescript": "^5.0.2"
 	},
 	"peerDependencies": {
-		"core-js": ">=3.0.0",
-		"tslib": ">=2.0.0"
+		"core-js": ">=3.0.0"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"webpack"
+			],
+			"allowedVersions": {
+				"eslint": "^8.0.0"
+			}
+		}
 	},
 	"keywords": [
 		"js-cool",
@@ -110,23 +119,12 @@
 	],
 	"license": "MIT",
 	"author": "saqqdy<https://github.com/saqqdy>",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/saqqdy/js-cool.git"
-	},
-	"pnpm": {
-		"peerDependencyRules": {
-			"ignoreMissing": [
-				"tslib",
-				"webpack"
-			],
-			"allowedVersions": {
-				"eslint": "^8.0.0"
-			}
-		}
-	},
+	"homepage": "https://github.com/saqqdy/js-cool#readme",
 	"bugs": {
 		"url": "https://github.com/saqqdy/js-cool/issues"
 	},
-	"homepage": "https://github.com/saqqdy/js-cool#readme"
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saqqdy/js-cool.git"
+	}
 }

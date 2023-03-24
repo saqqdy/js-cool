@@ -90,8 +90,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 						preserveModules: true,
 						preserveModulesRoot: 'src',
 						exports: 'named',
-						format: 'cjs',
-						banner
+						format: 'cjs'
 					},
 					{
 						entryFileNames: '[name].mjs',
@@ -99,8 +98,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 						preserveModules: true,
 						preserveModulesRoot: 'src',
 						exports: 'auto',
-						format: 'es',
-						banner
+						format: 'es'
 					}
 				],
 				external: externalCjsEsm,
@@ -115,14 +113,12 @@ export default (process.env.BABEL_ENV !== 'es5'
 			{
 				file: distDir(pkg.main),
 				exports: 'auto',
-				format: 'cjs',
-				banner
+				format: 'cjs'
 			},
 			{
 				file: distDir(pkg.module),
 				exports: 'auto',
-				format: 'es',
-				banner
+				format: 'es'
 			}
 		],
 		external: externalCjsEsm,
@@ -135,7 +131,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 			{
 				file: distDir('dist/index.iife.js'),
 				format: 'iife',
-				name: 'public',
+				name: 'JsCool',
 				extend: true,
 				globals: iifeGlobals,
 				banner
@@ -143,7 +139,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 			{
 				file: distDir(pkg.unpkg),
 				format: 'iife',
-				name: 'public',
+				name: 'JsCool',
 				extend: true,
 				globals: iifeGlobals,
 				banner,

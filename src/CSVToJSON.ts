@@ -21,6 +21,7 @@ function CSVToJSON(data: string, delimiter = ',') {
 		.map((v: string) => {
 			const values = v.split(delimiter)
 			return titles.reduce(
+				// eslint-disable-next-line no-sequences
 				(obj: any, title, index) => ((obj[title] = values[index]), obj),
 				{}
 			)

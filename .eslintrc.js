@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['@eslint-sets/simple-ts'],
+	extends: '@eslint-sets/ts',
 	rules: {
 		semi: [2, 'never'],
 		camelcase: 0

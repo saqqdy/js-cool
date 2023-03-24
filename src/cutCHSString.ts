@@ -1,34 +1,4 @@
 /**
- * js截取字符串，中英文都能用
- * @private
- * @param str：需要截取的字符串
- * @param len: 需要截取的长度
- */
-// function cutStrLen(str, len) {
-//   var str_length = 0
-//   //var a = 0;
-//   var str_len = str.length
-//   var str_cut = new String()
-//   for (var i = 0; i < str_len; i++) {
-//     a = str.charAt(i)
-//     str_length++
-//     if (escape(a).length > 4) {
-//       //中文字符的长度经编码之后大于4
-//       str_length++
-//     }
-//     str_cut = str_cut.concat(a)
-//     if (str_length >= len) {
-//       str_cut = str_cut.concat('...')
-//       return str_cut
-//     }
-//   }
-//   //如果给定字符串小于指定长度，则返回源字符串；
-//   if (str_length < len) {
-//     return str
-//   }
-// }
-
-/**
  * 截取字符串，中文算2个字节
  *
  * @param str - 要截取的字符串
@@ -37,32 +7,30 @@
  * @returns 返回截取后的字符串
  */
 function cutCHSString(str: string, len: number = str.length, hasDot = false) {
-	if (str == '' || !str) {
-		return ''
-	} else {
-		let newLength = 0,
-			newStr = '',
-			chineseRegex = /[^\x00-\xFF]/g,
-			singleChar = '',
-			strLength = str.replace(chineseRegex, '**').length
-		for (let i = 0; i < strLength; i++) {
-			singleChar = str.charAt(i).toString()
-			if (singleChar.match(chineseRegex) != null) {
-				newLength += 2
-			} else {
-				newLength++
-			}
-			if (newLength > len) {
-				break
-			}
-			newStr += singleChar
+	if (!str) return ''
+	let newLength = 0,
+		newStr = '',
+		singleChar = ''
+	// eslint-disable-next-line no-control-regex
+	const chineseRegex = /[^\x00-\xFF]/g
+	const strLength = str.replace(chineseRegex, '**').length
+	for (let i = 0; i < strLength; i++) {
+		singleChar = str.charAt(i).toString()
+		if (singleChar.match(chineseRegex) != null) {
+			newLength += 2
+		} else {
+			newLength++
 		}
-
-		if (hasDot && strLength > len) {
-			newStr += '...'
+		if (newLength > len) {
+			break
 		}
-		return newStr
+		newStr += singleChar
 	}
+
+	if (hasDot && strLength > len) {
+		newStr += '...'
+	}
+	return newStr
 }
 
 export default cutCHSString
