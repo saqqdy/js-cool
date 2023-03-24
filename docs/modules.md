@@ -1,6 +1,6 @@
-[index.md - v2.7.0](README.md) / Exports
+[index.md - v3.0.0-beta.1](README.md) / Exports
 
-# index.md - v2.7.0
+# index.md - v3.0.0-beta.1
 
 ## Table of contents
 
@@ -95,14 +95,24 @@
 ### Interfaces
 
 - [AnyFunction](interfaces/AnyFunction.md)
+- [CssOptions](interfaces/CssOptions.md)
 - [DirParamType](interfaces/DirParamType.md)
+- [ImgOptions](interfaces/ImgOptions.md)
+- [JsOptions](interfaces/JsOptions.md)
 - [SearchKeySet](interfaces/SearchKeySet.md)
+- [SourceOptions](interfaces/SourceOptions.md)
+- [StyleOptions](interfaces/StyleOptions.md)
 - [WindowSizeObj](interfaces/WindowSizeObj.md)
 
 ### Type Aliases
 
 - [AnyObject](modules.md#anyobject)
 - [ArrayOneMore](modules.md#arrayonemore)
+- [ImageAttributes](modules.md#imageattributes)
+- [LinkAttributes](modules.md#linkattributes)
+- [ScriptAttributes](modules.md#scriptattributes)
+- [SourceFileType](modules.md#sourcefiletype)
+- [StyleAttributes](modules.md#styleattributes)
 
 ### Variables
 
@@ -617,7 +627,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L1)
+[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/39ac1fd/typings/common.d.ts#L1)
 
 ---
 
@@ -633,7 +643,57 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/29f261c/typings/common.d.ts#L7)
+[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/39ac1fd/typings/common.d.ts#L7)
+
+---
+
+### ImageAttributes
+
+Ƭ **ImageAttributes**: `Pick`<`HTMLImageElement`, `"align"` \| `"alt"` \| `"border"` \| `"crossOrigin"` \| `"decoding"` \| `"height"` \| `"hspace"` \| `"isMap"` \| `"loading"` \| `"longDesc"` \| `"lowsrc"` \| `"name"` \| `"referrerPolicy"` \| `"sizes"` \| `"src"` \| `"srcset"` \| `"useMap"` \| `"vspace"` \| `"width"`\>
+
+#### Defined in
+
+[src/mountImg.ts:1](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/mountImg.ts#L1)
+
+---
+
+### LinkAttributes
+
+Ƭ **LinkAttributes**: `Pick`<`HTMLLinkElement`, `"as"` \| `"charset"` \| `"crossOrigin"` \| `"disabled"` \| `"href"` \| `"hreflang"` \| `"imageSizes"` \| `"imageSrcset"` \| `"integrity"` \| `"media"` \| `"referrerPolicy"` \| `"rel"` \| `"rev"` \| `"target"` \| `"type"`\>
+
+#### Defined in
+
+[src/mountCss.ts:1](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/mountCss.ts#L1)
+
+---
+
+### ScriptAttributes
+
+Ƭ **ScriptAttributes**: `Pick`<`HTMLScriptElement`, `"async"` \| `"charset"` \| `"crossOrigin"` \| `"defer"` \| `"event"` \| `"htmlFor"` \| `"integrity"` \| `"noModule"` \| `"referrerPolicy"` \| `"src"` \| `"text"` \| `"type"`\>
+
+#### Defined in
+
+[src/mountJs.ts:1](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/mountJs.ts#L1)
+
+---
+
+### SourceFileType
+
+Ƭ **SourceFileType**: `"js"` \| `"img"` \| `"css"` \| `"style"` \| `string`
+
+#### Defined in
+
+[src/loadSource.ts:6](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/loadSource.ts#L6)
+
+---
+
+### StyleAttributes
+
+Ƭ **StyleAttributes**: `Pick`<`HTMLStyleElement`, `"disabled"` \| `"media"` \| `"type"`\>
+
+#### Defined in
+
+[src/mountStyle.ts:1](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/mountStyle.ts#L1)
 
 ## Variables
 
@@ -712,12 +772,12 @@ Renames and re-exports [\_\_type](modules.md#__type)
 | `isDigitals`                   | (`str`: `any`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `isExitsFunction`              | (`funcName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `isExitsVariable`              | (`variableName`: `string`) => `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `loadSource`                   | (`url`: `string`, `type`: `string`, `force`: `boolean`) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                                                       |
+| `loadSource`                   | (`url`: `string`, `option`: `string` \| [`SourceOptions`](interfaces/SourceOptions.md)) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                       |
 | `minus`                        | <T\>(...`args`: `T`[][]) => `T`[]                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `mountCss`                     | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `mountImg`                     | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                                                                         |
-| `mountJs`                      | (`src`: `string`, `force`: `boolean`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `mountStyle`                   | (`css`: `string`) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `mountCss`                     | (`src`: `string`, `option`: [`CssOptions`](interfaces/CssOptions.md)) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                     |
+| `mountImg`                     | (`src`: `string`, `option`: [`ImgOptions`](interfaces/ImgOptions.md)) => `Promise`<`boolean` \| `string`\>                                                                                                                                                                                                                                                                                                                                                         |
+| `mountJs`                      | (`src`: `string`, `option`: [`JsOptions`](interfaces/JsOptions.md)) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                       |
+| `mountStyle`                   | (`css`: `string`, `option`: [`StyleOptions`](interfaces/StyleOptions.md)) => `Promise`<`boolean`\>                                                                                                                                                                                                                                                                                                                                                                 |
 | `nextIndex`                    | (`min`: `number`, `max`: `number`) => `number`                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `openUrl`                      | (`url`: `string`) => `void`                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `pattern`                      | { `any`: `RegExp` ; `array`: `RegExp` ; `arrjson`: `RegExp` ; `chinese`: `RegExp` ; `email`: `RegExp` ; `float`: `RegExp` ; `isjson`: `RegExp` ; `json`: `RegExp` ; `mobile`: `RegExp` ; `number`: `RegExp` ; `pass`: `RegExp` ; `postcode`: `RegExp` ; `qq`: `RegExp` ; `string`: `RegExp` ; `tel`: `RegExp` ; `textarea`: `RegExp` ; `url`: `RegExp` ; `username`: `RegExp` }                                                                                    |
@@ -759,7 +819,7 @@ Renames and re-exports [\_\_type](modules.md#__type)
 
 #### Defined in
 
-[src/index.ts:214](https://github.com/saqqdy/js-cool/blob/29f261c/src/index.ts#L214)
+[src/index.ts:219](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/index.ts#L219)
 
 ---
 
@@ -794,7 +854,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/29f261c/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/pattern.ts#L6)
 
 ## Functions
 
@@ -838,7 +898,7 @@ array
 
 #### Defined in
 
-[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/29f261c/src/CSVToArray.ts#L21)
+[src/CSVToArray.ts:21](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/CSVToArray.ts#L21)
 
 ---
 
@@ -876,7 +936,7 @@ CSV 数据
 
 #### Defined in
 
-[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/JSONToCSV.ts#L17)
+[src/JSONToCSV.ts:17](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/JSONToCSV.ts#L17)
 
 ---
 
@@ -908,7 +968,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/RGBToHex.ts#L10)
 
 ---
 
@@ -932,7 +992,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/addEvent.ts#L10)
+[src/addEvent.ts:10](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/addEvent.ts#L10)
 
 ---
 
@@ -969,7 +1029,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/all.ts#L17)
 
 ---
 
@@ -1006,7 +1066,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/29f261c/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/any.ts#L17)
 
 ---
 
@@ -1061,7 +1121,7 @@ CSV 数据
 
 #### Defined in
 
-[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/29f261c/src/arrayToCSV.ts#L20)
+[src/arrayToCSV.ts:20](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/arrayToCSV.ts#L20)
 
 ---
 
@@ -1086,13 +1146,13 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/29f261c/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/client.ts#L8)
 
 ---
 
 ### extend
 
-▸ **extend**<`T`\>(`target`, ...`args`): `T`
+▸ **extend**<`T`\>(`target`, `...args`): `T`
 
 #### Type parameters
 
@@ -1113,7 +1173,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/extend.ts:34](https://github.com/saqqdy/js-cool/blob/29f261c/src/extend.ts#L34)
+[src/extend.ts:34](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/extend.ts#L34)
 
 ---
 
@@ -1131,7 +1191,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/29f261c/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1155,4 +1215,4 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/29f261c/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/39ac1fd/src/uuid.ts#L10)

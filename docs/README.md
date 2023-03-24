@@ -1,4 +1,4 @@
-index.md - v2.7.0 / [Exports](modules.md)
+index.md - v3.0.0-beta.1 / [Exports](modules.md)
 
 <div style="text-align: center;" align="center">
 
