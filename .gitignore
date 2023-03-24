@@ -15,10 +15,10 @@ selenium-debug.log
 *_bak
 *.bak.js
 temp
+stats.html
 
 # Editor directories and files
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj

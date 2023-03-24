@@ -1,0 +1,18 @@
+{
+	"cSpell.words": [
+		"esbuild",
+		"esno",
+		"filesize",
+		"iife",
+		"jscool",
+		"saqqdy",
+		"tscjs",
+		"tsnd",
+		"typedoc",
+		"unpub",
+		"unpublish",
+		"vuepress"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"npm.packageManager": "pnpm"
+}

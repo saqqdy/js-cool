@@ -2,3 +2,10 @@
 /lib
 /dist
 /temp
+
+*.bak
+*_bak
+*.bak.js
+
+pnpm-lock.yaml
+stats.html

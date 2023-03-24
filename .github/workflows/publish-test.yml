@@ -2,7 +2,7 @@ name: npm-publish-test
 
 on:
   push:
-    branches: [dev]
+    branches: [master]
 
 jobs:
   publish-gpr:
