@@ -59,8 +59,7 @@
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
-		"core-js": "^3.29.1",
-		"tslib": "^2.5.0"
+		"core-js": "^3.29.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.3",
@@ -85,23 +84,16 @@
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.8.6",
 		"prettier-config-common": "^1.4.0",
-		"progress-bar-webpack-plugin": "^2.1.0",
 		"reinstaller": "^2.3.0",
 		"rm-all": "^1.0.0",
 		"rollup": "^3.20.1",
 		"rollup-plugin-cleanup": "^3.2.1",
 		"rollup-plugin-filesize": "^10.0.0",
-		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-visualizer": "^5.9.0",
-		"terser-webpack-plugin": "^5.3.7",
 		"tsnd": "^1.1.0",
 		"typedoc": "^0.23.28",
 		"typedoc-plugin-markdown": "^3.14.0",
-		"typescript": "^5.0.2",
-		"webpack": "^5.76.3",
-		"webpack-cli": "^5.0.1",
-		"webpack-merge": "^5.8.0",
-		"webpack-node-externals": "^3.0.0"
+		"typescript": "^5.0.2"
 	},
 	"peerDependencies": {
 		"core-js": ">=3.0.0",
