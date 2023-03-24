@@ -1,8 +1,8 @@
-name: npm-publish
+name: npm-publish-test
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [dev]
 
 jobs:
   publish-gpr:
@@ -46,7 +46,7 @@ jobs:
       - name: Gen .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
 
-      - run: pnpm pub
+      - run: pnpm pub --test
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
