@@ -52,7 +52,7 @@
 		"sync": "tscjs scripts/sync",
 		"workflow:publish-test": "zx scripts/workflow.mjs",
 		"clean": "rm-all dist es lib",
-		"dist": "run-s eslint prettier build",
+		"dist": "run-s build",
 		"test-unit": "jest --filter ./scripts/filter-unit.js",
 		"eslint": "eslint --fix .",
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\"",
