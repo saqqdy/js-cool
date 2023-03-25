@@ -2,7 +2,7 @@
 
 ## 2023.04.01 v3.0.0
 
-1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld`
+1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag`
 
 ## 2022.12.13 v2.8.0
 

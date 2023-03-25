@@ -125,10 +125,6 @@ const functionList = {
   clearAttr, // 去除HTML标签所有属性
   clearBr, // 去除换行
   clearHtml, // 去除HTML标签
-  clearHtmlExpSN, // 去除HTML标签保留空格、换行
-  clearHtmlN, // 去除HTML标签及换行
-  clearHtmlNS, // 去除HTML标签及空格、换行
-  clearHtmlTag, // 去除HTML标签及标签里面的文字
   getNumber, // 获取字符串中的数字
   camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式
   dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串

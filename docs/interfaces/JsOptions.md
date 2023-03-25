@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.2](../README.md) / [Exports](../modules.md) / JsOptions
+[index.md - v3.0.0-beta.3](../README.md) / [Exports](../modules.md) / JsOptions
 
 # Interface: JsOptions
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/mountJs.ts:23](https://github.com/saqqdy/js-cool/blob/e760bb1/src/mountJs.ts#L23)
+[src/mountJs.ts:23](https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L23)
 
 ---
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/mountJs.ts:25](https://github.com/saqqdy/js-cool/blob/e760bb1/src/mountJs.ts#L25)
+[src/mountJs.ts:25](https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L25)
 
 ---
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[src/mountJs.ts:24](https://github.com/saqqdy/js-cool/blob/e760bb1/src/mountJs.ts#L24)
+[src/mountJs.ts:24](https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L24)
