@@ -24,7 +24,7 @@
 							"fileName": "src/addEvent.ts",
 							"line": 34,
 							"character": 9,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/addEvent.ts#L34"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/addEvent.ts#L34"
 						}
 					],
 					"type": {
@@ -36,7 +36,9 @@
 			"groups": [
 				{
 					"title": "Variables",
-					"children": [209]
+					"children": [
+						209
+					]
 				}
 			],
 			"sources": [
@@ -44,13 +46,13 @@
 					"fileName": "src/addEvent.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/addEvent.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/addEvent.ts#L10"
 				},
 				{
 					"fileName": "src/addEvent.ts",
 					"line": 34,
 					"character": 0,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/addEvent.ts#L34"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/addEvent.ts#L34"
 				}
 			]
 		},
@@ -65,7 +67,7 @@
 					"fileName": "typings/common.d.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/typings/common.d.ts#L3"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/typings/common.d.ts#L3"
 				}
 			],
 			"signatures": [
@@ -127,7 +129,7 @@
 							"fileName": "src/mountCss.ts",
 							"line": 26,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L26"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L26"
 						}
 					],
 					"type": {
@@ -149,7 +151,7 @@
 							"fileName": "src/mountCss.ts",
 							"line": 28,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L28"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L28"
 						}
 					],
 					"type": {
@@ -170,7 +172,7 @@
 							"fileName": "src/mountCss.ts",
 							"line": 27,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L27"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L27"
 						}
 					],
 					"type": {
@@ -183,7 +185,11 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [1296, 1298, 1297]
+					"children": [
+						1296,
+						1298,
+						1297
+					]
 				}
 			],
 			"sources": [
@@ -191,7 +197,7 @@
 					"fileName": "src/mountCss.ts",
 					"line": 25,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L25"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L25"
 				}
 			]
 		},
@@ -215,7 +221,7 @@
 							"fileName": "src/getDirParam.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getDirParam.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getDirParam.ts#L3"
 						}
 					],
 					"type": {
@@ -236,7 +242,7 @@
 							"fileName": "src/getDirParam.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getDirParam.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getDirParam.ts#L2"
 						}
 					],
 					"type": {
@@ -251,7 +257,10 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [132, 131]
+					"children": [
+						132,
+						131
+					]
 				}
 			],
 			"sources": [
@@ -259,7 +268,7 @@
 					"fileName": "src/getDirParam.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getDirParam.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getDirParam.ts#L1"
 				}
 			]
 		},
@@ -10944,7 +10953,7 @@
 							"fileName": "src/mountImg.ts",
 							"line": 25,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L25"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L25"
 						}
 					],
 					"type": {
@@ -14427,7 +14436,7 @@
 							"fileName": "src/mountImg.ts",
 							"line": 26,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L26"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L26"
 						}
 					],
 					"type": {
@@ -22018,38 +22027,331 @@
 				{
 					"title": "Properties",
 					"children": [
-						1639, 1641, 1645, 1648, 1646, 1654, 1653, 1650, 1652, 1655, 1651, 1647,
-						1638, 1643, 1642, 1649, 1644, 1640, 1362, 1363, 1307, 1308, 1659, 1660,
-						1661, 1662, 1663, 1664, 1665, 1666, 1667, 1668, 1669, 1670, 1671, 1672,
-						1673, 1674, 1675, 1676, 1677, 1678, 1679, 1680, 1681, 1682, 1683, 1684,
-						1685, 1686, 1687, 1688, 1689, 1690, 1691, 1692, 1693, 1694, 1695, 1763,
-						1384, 1364, 2235, 1576, 1309, 1718, 1577, 1719, 1385, 1386, 1387, 1388,
-						1389, 1390, 1310, 1765, 1311, 1312, 2236, 1313, 1365, 1366, 1766, 1578,
-						1720, 1314, 1367, 1315, 1391, 1368, 1715, 1369, 1767, 1579, 1768, 1316,
-						1370, 1580, 1721, 1317, 1392, 1318, 1319, 1320, 1393, 1321, 1322, 1716,
-						1581, 1582, 1583, 1584, 2237, 1371, 1372, 1373, 1374, 1375, 1769, 1774,
-						1779, 1784, 1789, 1794, 1799, 1804, 1809, 1814, 1819, 1824, 1829, 1834,
-						1839, 1844, 1849, 1854, 1859, 1864, 1869, 1874, 1879, 1884, 1889, 1894,
-						1899, 1904, 1909, 1914, 1915, 1920, 1394, 1399, 1925, 1930, 1935, 1940,
-						1945, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000,
-						2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060,
-						2065, 2070, 2075, 2080, 1305, 2085, 2090, 2095, 2100, 2105, 2110, 2115,
-						2120, 2125, 2130, 2135, 2140, 2145, 2150, 2155, 2160, 2165, 2170, 2175,
-						2180, 2185, 2190, 2195, 2200, 2205, 2210, 2215, 2220, 2225, 2230, 1404,
-						1376, 1405, 1585, 1586, 1406, 1407, 1717, 1587, 1306, 1323, 1696, 1408,
-						1409, 1410, 1411, 1412, 1324, 1413, 1377, 1325, 1326, 1764, 2238, 1414,
-						1588, 1378, 1379, 1327, 1328, 1329, 1330, 1331
+						1639,
+						1641,
+						1645,
+						1648,
+						1646,
+						1654,
+						1653,
+						1650,
+						1652,
+						1655,
+						1651,
+						1647,
+						1638,
+						1643,
+						1642,
+						1649,
+						1644,
+						1640,
+						1362,
+						1363,
+						1307,
+						1308,
+						1659,
+						1660,
+						1661,
+						1662,
+						1663,
+						1664,
+						1665,
+						1666,
+						1667,
+						1668,
+						1669,
+						1670,
+						1671,
+						1672,
+						1673,
+						1674,
+						1675,
+						1676,
+						1677,
+						1678,
+						1679,
+						1680,
+						1681,
+						1682,
+						1683,
+						1684,
+						1685,
+						1686,
+						1687,
+						1688,
+						1689,
+						1690,
+						1691,
+						1692,
+						1693,
+						1694,
+						1695,
+						1763,
+						1384,
+						1364,
+						2235,
+						1576,
+						1309,
+						1718,
+						1577,
+						1719,
+						1385,
+						1386,
+						1387,
+						1388,
+						1389,
+						1390,
+						1310,
+						1765,
+						1311,
+						1312,
+						2236,
+						1313,
+						1365,
+						1366,
+						1766,
+						1578,
+						1720,
+						1314,
+						1367,
+						1315,
+						1391,
+						1368,
+						1715,
+						1369,
+						1767,
+						1579,
+						1768,
+						1316,
+						1370,
+						1580,
+						1721,
+						1317,
+						1392,
+						1318,
+						1319,
+						1320,
+						1393,
+						1321,
+						1322,
+						1716,
+						1581,
+						1582,
+						1583,
+						1584,
+						2237,
+						1371,
+						1372,
+						1373,
+						1374,
+						1375,
+						1769,
+						1774,
+						1779,
+						1784,
+						1789,
+						1794,
+						1799,
+						1804,
+						1809,
+						1814,
+						1819,
+						1824,
+						1829,
+						1834,
+						1839,
+						1844,
+						1849,
+						1854,
+						1859,
+						1864,
+						1869,
+						1874,
+						1879,
+						1884,
+						1889,
+						1894,
+						1899,
+						1904,
+						1909,
+						1914,
+						1915,
+						1920,
+						1394,
+						1399,
+						1925,
+						1930,
+						1935,
+						1940,
+						1945,
+						1950,
+						1955,
+						1960,
+						1965,
+						1970,
+						1975,
+						1980,
+						1985,
+						1990,
+						1995,
+						2000,
+						2005,
+						2010,
+						2015,
+						2020,
+						2025,
+						2030,
+						2035,
+						2040,
+						2045,
+						2050,
+						2055,
+						2060,
+						2065,
+						2070,
+						2075,
+						2080,
+						1305,
+						2085,
+						2090,
+						2095,
+						2100,
+						2105,
+						2110,
+						2115,
+						2120,
+						2125,
+						2130,
+						2135,
+						2140,
+						2145,
+						2150,
+						2155,
+						2160,
+						2165,
+						2170,
+						2175,
+						2180,
+						2185,
+						2190,
+						2195,
+						2200,
+						2205,
+						2210,
+						2215,
+						2220,
+						2225,
+						2230,
+						1404,
+						1376,
+						1405,
+						1585,
+						1586,
+						1406,
+						1407,
+						1717,
+						1587,
+						1306,
+						1323,
+						1696,
+						1408,
+						1409,
+						1410,
+						1411,
+						1412,
+						1324,
+						1413,
+						1377,
+						1325,
+						1326,
+						1764,
+						2238,
+						1414,
+						1588,
+						1378,
+						1379,
+						1327,
+						1328,
+						1329,
+						1330,
+						1331
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						1334, 1704, 1697, 1722, 1589, 1380, 1415, 1707, 2239, 1418, 1382, 1593,
-						1421, 1596, 1599, 1332, 1656, 2241, 1701, 1434, 1437, 1441, 1443, 1446,
-						1450, 1452, 1454, 1457, 1472, 1602, 1485, 1488, 1492, 1605, 1494, 1497,
-						1501, 1505, 1607, 1612, 1615, 1618, 1621, 1624, 1509, 1627, 1725, 1728,
-						1744, 1512, 1710, 1515, 1518, 1522, 1629, 1348, 1633, 1760, 1712, 1525,
-						1528, 1530, 1536, 1542, 1545, 1551, 1555, 1560, 1563, 1566, 1569, 1573
+						1334,
+						1704,
+						1697,
+						1722,
+						1589,
+						1380,
+						1415,
+						1707,
+						2239,
+						1418,
+						1382,
+						1593,
+						1421,
+						1596,
+						1599,
+						1332,
+						1656,
+						2241,
+						1701,
+						1434,
+						1437,
+						1441,
+						1443,
+						1446,
+						1450,
+						1452,
+						1454,
+						1457,
+						1472,
+						1602,
+						1485,
+						1488,
+						1492,
+						1605,
+						1494,
+						1497,
+						1501,
+						1505,
+						1607,
+						1612,
+						1615,
+						1618,
+						1621,
+						1624,
+						1509,
+						1627,
+						1725,
+						1728,
+						1744,
+						1512,
+						1710,
+						1515,
+						1518,
+						1522,
+						1629,
+						1348,
+						1633,
+						1760,
+						1712,
+						1525,
+						1528,
+						1530,
+						1536,
+						1542,
+						1545,
+						1551,
+						1555,
+						1560,
+						1563,
+						1566,
+						1569,
+						1573
 					]
 				}
 			],
@@ -22058,7 +22360,7 @@
 					"fileName": "src/mountImg.ts",
 					"line": 24,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L24"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L24"
 				}
 			],
 			"extendedTypes": [
@@ -32484,7 +32786,7 @@
 							"fileName": "src/mountCss.ts",
 							"line": 21,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L21"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L21"
 						}
 					],
 					"type": {
@@ -35967,7 +36269,7 @@
 							"fileName": "src/mountCss.ts",
 							"line": 22,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L22"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L22"
 						}
 					],
 					"type": {
@@ -43509,33 +43811,323 @@
 				{
 					"title": "Properties",
 					"children": [
-						689, 691, 695, 698, 696, 704, 703, 700, 702, 705, 701, 697, 688, 693, 692,
-						699, 694, 690, 412, 413, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718,
-						719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733,
-						734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 367, 813, 434,
-						414, 1285, 626, 368, 768, 627, 769, 435, 436, 437, 438, 439, 440, 815, 369,
-						1286, 415, 370, 416, 816, 628, 770, 417, 371, 372, 441, 373, 374, 418, 765,
-						419, 817, 375, 629, 818, 420, 630, 771, 442, 376, 443, 766, 631, 632, 633,
-						634, 1287, 421, 422, 423, 424, 425, 819, 824, 829, 834, 839, 844, 849, 854,
-						859, 864, 869, 874, 879, 884, 889, 894, 899, 904, 909, 914, 919, 924, 929,
-						934, 939, 944, 949, 954, 959, 964, 965, 970, 444, 449, 975, 980, 985, 990,
-						995, 1000, 1005, 1010, 1015, 1020, 1025, 1030, 1035, 1040, 1045, 1050, 1055,
-						1060, 1065, 1070, 1075, 1080, 1085, 1090, 1095, 1100, 1105, 1110, 1115,
-						1120, 1125, 1130, 365, 1135, 1140, 1145, 1150, 1155, 1160, 1165, 1170, 1175,
-						1180, 1185, 1190, 1195, 1200, 1205, 1210, 1215, 1220, 1225, 1230, 1235,
-						1240, 1245, 1250, 1255, 1260, 1265, 1270, 1275, 1280, 454, 426, 455, 635,
-						636, 456, 457, 767, 637, 366, 377, 378, 379, 380, 746, 458, 459, 460, 461,
-						462, 1294, 381, 463, 427, 814, 1288, 464, 382, 638, 428, 429, 383
+						689,
+						691,
+						695,
+						698,
+						696,
+						704,
+						703,
+						700,
+						702,
+						705,
+						701,
+						697,
+						688,
+						693,
+						692,
+						699,
+						694,
+						690,
+						412,
+						413,
+						709,
+						710,
+						711,
+						712,
+						713,
+						714,
+						715,
+						716,
+						717,
+						718,
+						719,
+						720,
+						721,
+						722,
+						723,
+						724,
+						725,
+						726,
+						727,
+						728,
+						729,
+						730,
+						731,
+						732,
+						733,
+						734,
+						735,
+						736,
+						737,
+						738,
+						739,
+						740,
+						741,
+						742,
+						743,
+						744,
+						745,
+						367,
+						813,
+						434,
+						414,
+						1285,
+						626,
+						368,
+						768,
+						627,
+						769,
+						435,
+						436,
+						437,
+						438,
+						439,
+						440,
+						815,
+						369,
+						1286,
+						415,
+						370,
+						416,
+						816,
+						628,
+						770,
+						417,
+						371,
+						372,
+						441,
+						373,
+						374,
+						418,
+						765,
+						419,
+						817,
+						375,
+						629,
+						818,
+						420,
+						630,
+						771,
+						442,
+						376,
+						443,
+						766,
+						631,
+						632,
+						633,
+						634,
+						1287,
+						421,
+						422,
+						423,
+						424,
+						425,
+						819,
+						824,
+						829,
+						834,
+						839,
+						844,
+						849,
+						854,
+						859,
+						864,
+						869,
+						874,
+						879,
+						884,
+						889,
+						894,
+						899,
+						904,
+						909,
+						914,
+						919,
+						924,
+						929,
+						934,
+						939,
+						944,
+						949,
+						954,
+						959,
+						964,
+						965,
+						970,
+						444,
+						449,
+						975,
+						980,
+						985,
+						990,
+						995,
+						1000,
+						1005,
+						1010,
+						1015,
+						1020,
+						1025,
+						1030,
+						1035,
+						1040,
+						1045,
+						1050,
+						1055,
+						1060,
+						1065,
+						1070,
+						1075,
+						1080,
+						1085,
+						1090,
+						1095,
+						1100,
+						1105,
+						1110,
+						1115,
+						1120,
+						1125,
+						1130,
+						365,
+						1135,
+						1140,
+						1145,
+						1150,
+						1155,
+						1160,
+						1165,
+						1170,
+						1175,
+						1180,
+						1185,
+						1190,
+						1195,
+						1200,
+						1205,
+						1210,
+						1215,
+						1220,
+						1225,
+						1230,
+						1235,
+						1240,
+						1245,
+						1250,
+						1255,
+						1260,
+						1265,
+						1270,
+						1275,
+						1280,
+						454,
+						426,
+						455,
+						635,
+						636,
+						456,
+						457,
+						767,
+						637,
+						366,
+						377,
+						378,
+						379,
+						380,
+						746,
+						458,
+						459,
+						460,
+						461,
+						462,
+						1294,
+						381,
+						463,
+						427,
+						814,
+						1288,
+						464,
+						382,
+						638,
+						428,
+						429,
+						383
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						384, 754, 747, 772, 639, 430, 465, 757, 1289, 468, 432, 643, 471, 646, 649,
-						706, 1291, 751, 484, 487, 491, 493, 496, 500, 502, 504, 507, 522, 652, 535,
-						538, 542, 655, 544, 547, 551, 555, 657, 662, 665, 668, 671, 674, 559, 677,
-						775, 778, 794, 562, 760, 565, 568, 572, 679, 398, 683, 810, 762, 575, 578,
-						580, 586, 592, 595, 601, 605, 610, 613, 616, 619, 623
+						384,
+						754,
+						747,
+						772,
+						639,
+						430,
+						465,
+						757,
+						1289,
+						468,
+						432,
+						643,
+						471,
+						646,
+						649,
+						706,
+						1291,
+						751,
+						484,
+						487,
+						491,
+						493,
+						496,
+						500,
+						502,
+						504,
+						507,
+						522,
+						652,
+						535,
+						538,
+						542,
+						655,
+						544,
+						547,
+						551,
+						555,
+						657,
+						662,
+						665,
+						668,
+						671,
+						674,
+						559,
+						677,
+						775,
+						778,
+						794,
+						562,
+						760,
+						565,
+						568,
+						572,
+						679,
+						398,
+						683,
+						810,
+						762,
+						575,
+						578,
+						580,
+						586,
+						592,
+						595,
+						601,
+						605,
+						610,
+						613,
+						616,
+						619,
+						623
 					]
 				}
 			],
@@ -43544,7 +44136,7 @@
 					"fileName": "src/mountCss.ts",
 					"line": 20,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L20"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L20"
 				}
 			],
 			"extendedTypes": [
@@ -53934,7 +54526,7 @@
 							"fileName": "src/mountJs.ts",
 							"line": 18,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L18"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L18"
 						}
 					],
 					"type": {
@@ -57417,7 +58009,7 @@
 							"fileName": "src/mountJs.ts",
 							"line": 19,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L19"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L19"
 						}
 					],
 					"type": {
@@ -64825,37 +65417,317 @@
 				{
 					"title": "Properties",
 					"children": [
-						2573, 2575, 2579, 2582, 2580, 2588, 2587, 2584, 2586, 2589, 2585, 2581,
-						2572, 2577, 2576, 2583, 2578, 2574, 2296, 2297, 2593, 2594, 2595, 2596,
-						2597, 2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2606, 2607, 2608,
-						2609, 2610, 2611, 2612, 2613, 2614, 2615, 2616, 2617, 2618, 2619, 2620,
-						2621, 2622, 2623, 2624, 2625, 2626, 2627, 2628, 2629, 2697, 2256, 2318,
-						2298, 3169, 2510, 2257, 2652, 2511, 2653, 2319, 2320, 2321, 2322, 2323,
-						2324, 2699, 2258, 3170, 2259, 2299, 2300, 2700, 2260, 2512, 2654, 2301,
-						2261, 2325, 2302, 2649, 2303, 2701, 2262, 2513, 2702, 2304, 2514, 2655,
-						2326, 2327, 2650, 2515, 2263, 2516, 2517, 2518, 3171, 2305, 2306, 2307,
-						2308, 2309, 2703, 2708, 2713, 2718, 2723, 2728, 2733, 2738, 2743, 2748,
-						2753, 2758, 2763, 2768, 2773, 2778, 2783, 2788, 2793, 2798, 2803, 2808,
-						2813, 2818, 2823, 2828, 2833, 2838, 2843, 2848, 2849, 2854, 2328, 2333,
-						2859, 2864, 2869, 2874, 2879, 2884, 2889, 2894, 2899, 2904, 2909, 2914,
-						2919, 2924, 2929, 2934, 2939, 2944, 2949, 2954, 2959, 2964, 2969, 2974,
-						2979, 2984, 2989, 2994, 2999, 3004, 3009, 3014, 2254, 3019, 3024, 3029,
-						3034, 3039, 3044, 3049, 3054, 3059, 3064, 3069, 3074, 3079, 3084, 3089,
-						3094, 3099, 3104, 3109, 3114, 3119, 3124, 3129, 3134, 3139, 3144, 3149,
-						3154, 3159, 3164, 2338, 2310, 2339, 2519, 2520, 2340, 2341, 2651, 2521,
-						2255, 2264, 2630, 2342, 2343, 2344, 2345, 2346, 2347, 2311, 2265, 2698,
-						3172, 2348, 2266, 2522, 2312, 2313, 2267
+						2573,
+						2575,
+						2579,
+						2582,
+						2580,
+						2588,
+						2587,
+						2584,
+						2586,
+						2589,
+						2585,
+						2581,
+						2572,
+						2577,
+						2576,
+						2583,
+						2578,
+						2574,
+						2296,
+						2297,
+						2593,
+						2594,
+						2595,
+						2596,
+						2597,
+						2598,
+						2599,
+						2600,
+						2601,
+						2602,
+						2603,
+						2604,
+						2605,
+						2606,
+						2607,
+						2608,
+						2609,
+						2610,
+						2611,
+						2612,
+						2613,
+						2614,
+						2615,
+						2616,
+						2617,
+						2618,
+						2619,
+						2620,
+						2621,
+						2622,
+						2623,
+						2624,
+						2625,
+						2626,
+						2627,
+						2628,
+						2629,
+						2697,
+						2256,
+						2318,
+						2298,
+						3169,
+						2510,
+						2257,
+						2652,
+						2511,
+						2653,
+						2319,
+						2320,
+						2321,
+						2322,
+						2323,
+						2324,
+						2699,
+						2258,
+						3170,
+						2259,
+						2299,
+						2300,
+						2700,
+						2260,
+						2512,
+						2654,
+						2301,
+						2261,
+						2325,
+						2302,
+						2649,
+						2303,
+						2701,
+						2262,
+						2513,
+						2702,
+						2304,
+						2514,
+						2655,
+						2326,
+						2327,
+						2650,
+						2515,
+						2263,
+						2516,
+						2517,
+						2518,
+						3171,
+						2305,
+						2306,
+						2307,
+						2308,
+						2309,
+						2703,
+						2708,
+						2713,
+						2718,
+						2723,
+						2728,
+						2733,
+						2738,
+						2743,
+						2748,
+						2753,
+						2758,
+						2763,
+						2768,
+						2773,
+						2778,
+						2783,
+						2788,
+						2793,
+						2798,
+						2803,
+						2808,
+						2813,
+						2818,
+						2823,
+						2828,
+						2833,
+						2838,
+						2843,
+						2848,
+						2849,
+						2854,
+						2328,
+						2333,
+						2859,
+						2864,
+						2869,
+						2874,
+						2879,
+						2884,
+						2889,
+						2894,
+						2899,
+						2904,
+						2909,
+						2914,
+						2919,
+						2924,
+						2929,
+						2934,
+						2939,
+						2944,
+						2949,
+						2954,
+						2959,
+						2964,
+						2969,
+						2974,
+						2979,
+						2984,
+						2989,
+						2994,
+						2999,
+						3004,
+						3009,
+						3014,
+						2254,
+						3019,
+						3024,
+						3029,
+						3034,
+						3039,
+						3044,
+						3049,
+						3054,
+						3059,
+						3064,
+						3069,
+						3074,
+						3079,
+						3084,
+						3089,
+						3094,
+						3099,
+						3104,
+						3109,
+						3114,
+						3119,
+						3124,
+						3129,
+						3134,
+						3139,
+						3144,
+						3149,
+						3154,
+						3159,
+						3164,
+						2338,
+						2310,
+						2339,
+						2519,
+						2520,
+						2340,
+						2341,
+						2651,
+						2521,
+						2255,
+						2264,
+						2630,
+						2342,
+						2343,
+						2344,
+						2345,
+						2346,
+						2347,
+						2311,
+						2265,
+						2698,
+						3172,
+						2348,
+						2266,
+						2522,
+						2312,
+						2313,
+						2267
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						2268, 2638, 2631, 2656, 2523, 2314, 2349, 2641, 3173, 2352, 2316, 2527,
-						2355, 2530, 2533, 2590, 3175, 2635, 2368, 2371, 2375, 2377, 2380, 2384,
-						2386, 2388, 2391, 2406, 2536, 2419, 2422, 2426, 2539, 2428, 2431, 2435,
-						2439, 2541, 2546, 2549, 2552, 2555, 2558, 2443, 2561, 2659, 2662, 2678,
-						2446, 2644, 2449, 2452, 2456, 2563, 2282, 2567, 2694, 2646, 2459, 2462,
-						2464, 2470, 2476, 2479, 2485, 2489, 2494, 2497, 2500, 2503, 2507
+						2268,
+						2638,
+						2631,
+						2656,
+						2523,
+						2314,
+						2349,
+						2641,
+						3173,
+						2352,
+						2316,
+						2527,
+						2355,
+						2530,
+						2533,
+						2590,
+						3175,
+						2635,
+						2368,
+						2371,
+						2375,
+						2377,
+						2380,
+						2384,
+						2386,
+						2388,
+						2391,
+						2406,
+						2536,
+						2419,
+						2422,
+						2426,
+						2539,
+						2428,
+						2431,
+						2435,
+						2439,
+						2541,
+						2546,
+						2549,
+						2552,
+						2555,
+						2558,
+						2443,
+						2561,
+						2659,
+						2662,
+						2678,
+						2446,
+						2644,
+						2449,
+						2452,
+						2456,
+						2563,
+						2282,
+						2567,
+						2694,
+						2646,
+						2459,
+						2462,
+						2464,
+						2470,
+						2476,
+						2479,
+						2485,
+						2489,
+						2494,
+						2497,
+						2500,
+						2503,
+						2507
 					]
 				}
 			],
@@ -64864,7 +65736,7 @@
 					"fileName": "src/mountJs.ts",
 					"line": 17,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L17"
 				}
 			],
 			"extendedTypes": [
@@ -64896,7 +65768,7 @@
 							"fileName": "src/mountImg.ts",
 							"line": 30,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L30"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L30"
 						}
 					],
 					"type": {
@@ -64918,7 +65790,7 @@
 							"fileName": "src/mountImg.ts",
 							"line": 32,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L32"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L32"
 						}
 					],
 					"type": {
@@ -64939,7 +65811,7 @@
 							"fileName": "src/mountImg.ts",
 							"line": 31,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L31"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L31"
 						}
 					],
 					"type": {
@@ -64952,7 +65824,11 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [2245, 2247, 2246]
+					"children": [
+						2245,
+						2247,
+						2246
+					]
 				}
 			],
 			"sources": [
@@ -64960,7 +65836,7 @@
 					"fileName": "src/mountImg.ts",
 					"line": 29,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L29"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L29"
 				}
 			]
 		},
@@ -64984,7 +65860,7 @@
 							"fileName": "src/mountJs.ts",
 							"line": 23,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L23"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L23"
 						}
 					],
 					"type": {
@@ -65006,7 +65882,7 @@
 							"fileName": "src/mountJs.ts",
 							"line": 25,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L25"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L25"
 						}
 					],
 					"type": {
@@ -65027,7 +65903,7 @@
 							"fileName": "src/mountJs.ts",
 							"line": 24,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L24"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L24"
 						}
 					],
 					"type": {
@@ -65040,7 +65916,11 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [3179, 3181, 3180]
+					"children": [
+						3179,
+						3181,
+						3180
+					]
 				}
 			],
 			"sources": [
@@ -65048,7 +65928,7 @@
 					"fileName": "src/mountJs.ts",
 					"line": 22,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L22"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L22"
 				}
 			]
 		},
@@ -65070,7 +65950,7 @@
 							"fileName": "src/searchTreeObject.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/searchTreeObject.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/searchTreeObject.ts#L2"
 						}
 					],
 					"type": {
@@ -65089,7 +65969,7 @@
 							"fileName": "src/searchTreeObject.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/searchTreeObject.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/searchTreeObject.ts#L3"
 						}
 					],
 					"type": {
@@ -65101,7 +65981,10 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [266, 267]
+					"children": [
+						266,
+						267
+					]
 				}
 			],
 			"sources": [
@@ -65109,7 +65992,7 @@
 					"fileName": "src/searchTreeObject.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/searchTreeObject.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/searchTreeObject.ts#L1"
 				}
 			],
 			"indexSignature": {
@@ -65156,7 +66039,7 @@
 							"fileName": "src/loadSource.ts",
 							"line": 9,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L9"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L9"
 						}
 					],
 					"type": {
@@ -65198,7 +66081,7 @@
 							"fileName": "src/loadSource.ts",
 							"line": 11,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L11"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L11"
 						}
 					],
 					"type": {
@@ -65219,7 +66102,7 @@
 							"fileName": "src/loadSource.ts",
 							"line": 10,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L10"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L10"
 						}
 					],
 					"type": {
@@ -65259,7 +66142,7 @@
 							"fileName": "src/loadSource.ts",
 							"line": 8,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L8"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L8"
 						}
 					],
 					"type": {
@@ -65271,7 +66154,12 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [356, 358, 357, 355]
+					"children": [
+						356,
+						358,
+						357,
+						355
+					]
 				}
 			],
 			"sources": [
@@ -65279,7 +66167,7 @@
 					"fileName": "src/loadSource.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L7"
 				}
 			]
 		},
@@ -65303,7 +66191,7 @@
 							"fileName": "src/mountStyle.ts",
 							"line": 4,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountStyle.ts#L4"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountStyle.ts#L4"
 						}
 					],
 					"type": {
@@ -65325,7 +66213,7 @@
 							"fileName": "src/mountStyle.ts",
 							"line": 5,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountStyle.ts#L5"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountStyle.ts#L5"
 						}
 					],
 					"type": {
@@ -65338,7 +66226,10 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [3188, 3189]
+					"children": [
+						3188,
+						3189
+					]
 				}
 			],
 			"sources": [
@@ -65346,7 +66237,7 @@
 					"fileName": "src/mountStyle.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountStyle.ts#L3"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountStyle.ts#L3"
 				}
 			]
 		},
@@ -65368,7 +66259,7 @@
 							"fileName": "src/getWindowSize.ts",
 							"line": 3,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getWindowSize.ts#L3"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getWindowSize.ts#L3"
 						}
 					],
 					"type": {
@@ -65387,7 +66278,7 @@
 							"fileName": "src/getWindowSize.ts",
 							"line": 2,
 							"character": 1,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getWindowSize.ts#L2"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getWindowSize.ts#L2"
 						}
 					],
 					"type": {
@@ -65399,7 +66290,10 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [111, 110]
+					"children": [
+						111,
+						110
+					]
 				}
 			],
 			"sources": [
@@ -65407,7 +66301,7 @@
 					"fileName": "src/getWindowSize.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getWindowSize.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getWindowSize.ts#L1"
 				}
 			]
 		},
@@ -65422,7 +66316,7 @@
 					"fileName": "typings/common.d.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/typings/common.d.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/typings/common.d.ts#L1"
 				}
 			],
 			"type": {
@@ -65460,7 +66354,7 @@
 					"fileName": "typings/common.d.ts",
 					"line": 7,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/typings/common.d.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/typings/common.d.ts#L7"
 				}
 			],
 			"typeParameters": [
@@ -65495,7 +66389,7 @@
 											"fileName": "typings/common.d.ts",
 											"line": 8,
 											"character": 1,
-											"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/typings/common.d.ts#L8"
+											"url": "https://github.com/saqqdy/js-cool/blob/722f24e/typings/common.d.ts#L8"
 										}
 									],
 									"type": {
@@ -65508,7 +66402,9 @@
 							"groups": [
 								{
 									"title": "Properties",
-									"children": [7]
+									"children": [
+										7
+									]
 								}
 							],
 							"sources": [
@@ -65516,7 +66412,7 @@
 									"fileName": "typings/common.d.ts",
 									"line": 7,
 									"character": 30,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/typings/common.d.ts#L7"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/typings/common.d.ts#L7"
 								}
 							]
 						}
@@ -65543,7 +66439,7 @@
 					"fileName": "src/mountImg.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L1"
 				}
 			],
 			"type": {
@@ -65653,7 +66549,7 @@
 					"fileName": "src/mountCss.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L1"
 				}
 			],
 			"type": {
@@ -65747,7 +66643,7 @@
 					"fileName": "src/mountJs.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L1"
 				}
 			],
 			"type": {
@@ -65829,7 +66725,7 @@
 					"fileName": "src/loadSource.ts",
 					"line": 6,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L6"
 				}
 			],
 			"type": {
@@ -65869,7 +66765,7 @@
 					"fileName": "src/mountStyle.ts",
 					"line": 1,
 					"character": 12,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountStyle.ts#L1"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountStyle.ts#L1"
 				}
 			],
 			"type": {
@@ -65936,7 +66832,7 @@
 					"fileName": "src/pattern.ts",
 					"line": 6,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L6"
 				}
 			],
 			"type": {
@@ -65959,7 +66855,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 7,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L7"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L7"
 								}
 							],
 							"type": {
@@ -65981,7 +66877,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 24,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L24"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L24"
 								}
 							],
 							"type": {
@@ -66003,7 +66899,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 23,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L23"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L23"
 								}
 							],
 							"type": {
@@ -66025,7 +66921,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 18,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L18"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L18"
 								}
 							],
 							"type": {
@@ -66047,7 +66943,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 14,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L14"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L14"
 								}
 							],
 							"type": {
@@ -66069,7 +66965,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 13,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L13"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L13"
 								}
 							],
 							"type": {
@@ -66091,7 +66987,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 25,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L25"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L25"
 								}
 							],
 							"type": {
@@ -66113,7 +67009,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 22,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L22"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L22"
 								}
 							],
 							"type": {
@@ -66135,7 +67031,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 17,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L17"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L17"
 								}
 							],
 							"type": {
@@ -66157,7 +67053,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 8,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L8"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L8"
 								}
 							],
 							"type": {
@@ -66179,7 +67075,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 21,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L21"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L21"
 								}
 							],
 							"type": {
@@ -66201,7 +67097,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 10,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L10"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L10"
 								}
 							],
 							"type": {
@@ -66223,7 +67119,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 20,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L20"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L20"
 								}
 							],
 							"type": {
@@ -66245,7 +67141,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 9,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L9"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L9"
 								}
 							],
 							"type": {
@@ -66267,7 +67163,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 19,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L19"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L19"
 								}
 							],
 							"type": {
@@ -66289,7 +67185,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 26,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L26"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L26"
 								}
 							],
 							"type": {
@@ -66311,7 +67207,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 11,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L11"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L11"
 								}
 							],
 							"type": {
@@ -66333,7 +67229,7 @@
 									"fileName": "src/pattern.ts",
 									"line": 12,
 									"character": 1,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L12"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L12"
 								}
 							],
 							"type": {
@@ -66349,7 +67245,23 @@
 						{
 							"title": "Properties",
 							"children": [
-								29, 44, 43, 38, 36, 35, 45, 42, 37, 30, 41, 32, 40, 31, 39, 46, 33,
+								29,
+								44,
+								43,
+								38,
+								36,
+								35,
+								45,
+								42,
+								37,
+								30,
+								41,
+								32,
+								40,
+								31,
+								39,
+								46,
+								33,
 								34
 							]
 						}
@@ -66359,7 +67271,7 @@
 							"fileName": "src/pattern.ts",
 							"line": 6,
 							"character": 16,
-							"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/pattern.ts#L6"
+							"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/pattern.ts#L6"
 						}
 					]
 				}
@@ -66377,7 +67289,7 @@
 					"fileName": "src/CSVToArray.ts",
 					"line": 21,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/CSVToArray.ts#L21"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/CSVToArray.ts#L21"
 				}
 			],
 			"signatures": [
@@ -66518,7 +67430,7 @@
 					"fileName": "src/CSVToJSON.ts",
 					"line": 16,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/CSVToJSON.ts#L16"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/CSVToJSON.ts#L16"
 				}
 			],
 			"signatures": [
@@ -66627,7 +67539,7 @@
 					"fileName": "src/JSONToCSV.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/JSONToCSV.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/JSONToCSV.ts#L17"
 				}
 			],
 			"signatures": [
@@ -66750,7 +67662,7 @@
 					"fileName": "src/RGBToHex.ts",
 					"line": 10,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/RGBToHex.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/RGBToHex.ts#L10"
 				}
 			],
 			"signatures": [
@@ -66865,13 +67777,13 @@
 					"fileName": "src/addEvent.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/addEvent.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/addEvent.ts#L10"
 				},
 				{
 					"fileName": "src/addEvent.ts",
 					"line": 34,
 					"character": 0,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/addEvent.ts#L34"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/addEvent.ts#L34"
 				}
 			],
 			"signatures": [
@@ -66968,7 +67880,7 @@
 					"fileName": "src/all.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/all.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/all.ts#L17"
 				}
 			],
 			"signatures": [
@@ -67077,7 +67989,7 @@
 					"fileName": "src/any.ts",
 					"line": 17,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/any.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/any.ts#L17"
 				}
 			],
 			"signatures": [
@@ -67186,7 +68098,7 @@
 					"fileName": "src/arrayToCSV.ts",
 					"line": 20,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/arrayToCSV.ts#L20"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/arrayToCSV.ts#L20"
 				}
 			],
 			"signatures": [
@@ -67296,7 +68208,7 @@
 					"fileName": "src/camel2Dash.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/camel2Dash.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/camel2Dash.ts#L7"
 				}
 			],
 			"signatures": [
@@ -67364,7 +68276,7 @@
 					"fileName": "src/cleanData.ts",
 					"line": 16,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/cleanData.ts#L16"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/cleanData.ts#L16"
 				}
 			],
 			"signatures": [
@@ -67477,7 +68389,7 @@
 					"fileName": "src/clearAttr.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/clearAttr.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/clearAttr.ts#L7"
 				}
 			],
 			"signatures": [
@@ -67545,7 +68457,7 @@
 					"fileName": "src/clearBr.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/clearBr.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/clearBr.ts#L7"
 				}
 			],
 			"signatures": [
@@ -67613,7 +68525,7 @@
 					"fileName": "src/clearHtml.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/clearHtml.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/clearHtml.ts#L7"
 				}
 			],
 			"signatures": [
@@ -67681,7 +68593,7 @@
 					"fileName": "src/client.ts",
 					"line": 8,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L8"
 				}
 			],
 			"signatures": [
@@ -67783,7 +68695,7 @@
 													"fileName": "src/client.ts",
 													"line": 22,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L22"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L22"
 												}
 											],
 											"type": {
@@ -67803,7 +68715,7 @@
 													"fileName": "src/client.ts",
 													"line": 15,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L15"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L15"
 												}
 											],
 											"type": {
@@ -67823,7 +68735,7 @@
 													"fileName": "src/client.ts",
 													"line": 14,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L14"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L14"
 												}
 											],
 											"type": {
@@ -67843,7 +68755,7 @@
 													"fileName": "src/client.ts",
 													"line": 21,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L21"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L21"
 												}
 											],
 											"type": {
@@ -67863,7 +68775,7 @@
 													"fileName": "src/client.ts",
 													"line": 24,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L24"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L24"
 												}
 											],
 											"type": {
@@ -67883,7 +68795,7 @@
 													"fileName": "src/client.ts",
 													"line": 23,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L23"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L23"
 												}
 											],
 											"type": {
@@ -67903,7 +68815,7 @@
 													"fileName": "src/client.ts",
 													"line": 19,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L19"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L19"
 												}
 											],
 											"type": {
@@ -67923,7 +68835,7 @@
 													"fileName": "src/client.ts",
 													"line": 17,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L17"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L17"
 												}
 											],
 											"type": {
@@ -67943,7 +68855,7 @@
 													"fileName": "src/client.ts",
 													"line": 28,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L28"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L28"
 												}
 											],
 											"type": {
@@ -67974,7 +68886,7 @@
 													"fileName": "src/client.ts",
 													"line": 26,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L26"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L26"
 												}
 											],
 											"type": {
@@ -67994,7 +68906,7 @@
 													"fileName": "src/client.ts",
 													"line": 18,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L18"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L18"
 												}
 											],
 											"type": {
@@ -68014,7 +68926,7 @@
 													"fileName": "src/client.ts",
 													"line": 16,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L16"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L16"
 												}
 											],
 											"type": {
@@ -68034,7 +68946,7 @@
 													"fileName": "src/client.ts",
 													"line": 27,
 													"character": 3,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L27"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L27"
 												}
 											],
 											"type": {
@@ -68048,7 +68960,19 @@
 										{
 											"title": "Properties",
 											"children": [
-												21, 15, 14, 20, 23, 22, 19, 17, 26, 24, 18, 16, 25
+												21,
+												15,
+												14,
+												20,
+												23,
+												22,
+												19,
+												17,
+												26,
+												24,
+												18,
+												16,
+												25
 											]
 										}
 									],
@@ -68057,7 +68981,7 @@
 											"fileName": "src/client.ts",
 											"line": 13,
 											"character": 9,
-											"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/client.ts#L13"
+											"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/client.ts#L13"
 										}
 									]
 								}
@@ -68078,7 +69002,7 @@
 					"fileName": "src/complement.ts",
 					"line": 15,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/complement.ts#L15"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/complement.ts#L15"
 				}
 			],
 			"signatures": [
@@ -68181,7 +69105,7 @@
 					"fileName": "src/contains.ts",
 					"line": 13,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/contains.ts#L13"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/contains.ts#L13"
 				}
 			],
 			"signatures": [
@@ -68280,7 +69204,7 @@
 					"fileName": "src/cutCHSString.ts",
 					"line": 9,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/cutCHSString.ts#L9"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/cutCHSString.ts#L9"
 				}
 			],
 			"signatures": [
@@ -68372,7 +69296,7 @@
 					"fileName": "src/dash2Camel.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/dash2Camel.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/dash2Camel.ts#L7"
 				}
 			],
 			"signatures": [
@@ -68440,7 +69364,7 @@
 					"fileName": "src/decodeBase64.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/decodeBase64.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/decodeBase64.ts#L10"
 				}
 			],
 			"signatures": [
@@ -68508,7 +69432,7 @@
 					"fileName": "src/decodeUtf8.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/decodeUtf8.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/decodeUtf8.ts#L7"
 				}
 			],
 			"signatures": [
@@ -68568,7 +69492,7 @@
 					"fileName": "src/delCache.ts",
 					"line": 6,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delCache.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delCache.ts#L6"
 				}
 			],
 			"signatures": [
@@ -68625,7 +69549,7 @@
 					"fileName": "src/delCookie.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delCookie.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delCookie.ts#L8"
 				}
 			],
 			"signatures": [
@@ -68682,7 +69606,7 @@
 					"fileName": "src/delSession.ts",
 					"line": 6,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delSession.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delSession.ts#L6"
 				}
 			],
 			"signatures": [
@@ -68739,7 +69663,7 @@
 					"fileName": "src/delay.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delay.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delay.ts#L8"
 				}
 			],
 			"signatures": [
@@ -68788,7 +69712,7 @@
 											"fileName": "src/delay.ts",
 											"line": 10,
 											"character": 2,
-											"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delay.ts#L10"
+											"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delay.ts#L10"
 										}
 									],
 									"type": {
@@ -68808,7 +69732,7 @@
 											"fileName": "src/delay.ts",
 											"line": 43,
 											"character": 2,
-											"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delay.ts#L43"
+											"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delay.ts#L43"
 										}
 									],
 									"signatures": [
@@ -68849,7 +69773,7 @@
 											"fileName": "src/delay.ts",
 											"line": 11,
 											"character": 2,
-											"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delay.ts#L11"
+											"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delay.ts#L11"
 										}
 									],
 									"signatures": [
@@ -68917,11 +69841,16 @@
 							"groups": [
 								{
 									"title": "Properties",
-									"children": [233]
+									"children": [
+										233
+									]
 								},
 								{
 									"title": "Methods",
-									"children": [240, 234]
+									"children": [
+										240,
+										234
+									]
 								}
 							],
 							"sources": [
@@ -68929,7 +69858,7 @@
 									"fileName": "src/delay.ts",
 									"line": 9,
 									"character": 8,
-									"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/delay.ts#L9"
+									"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/delay.ts#L9"
 								}
 							]
 						}
@@ -68948,7 +69877,7 @@
 					"fileName": "src/download.ts",
 					"line": 12,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/download.ts#L12"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/download.ts#L12"
 				}
 			],
 			"signatures": [
@@ -69044,7 +69973,7 @@
 					"fileName": "src/encodeBase64.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/encodeBase64.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/encodeBase64.ts#L10"
 				}
 			],
 			"signatures": [
@@ -69112,7 +70041,7 @@
 					"fileName": "src/encodeUtf8.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/encodeUtf8.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/encodeUtf8.ts#L7"
 				}
 			],
 			"signatures": [
@@ -69172,7 +70101,7 @@
 					"fileName": "src/extend.ts",
 					"line": 18,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/extend.ts#L18"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/extend.ts#L18"
 				}
 			],
 			"signatures": [
@@ -69269,7 +70198,7 @@
 					"fileName": "src/fillIPv6.ts",
 					"line": 11,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/fillIPv6.ts#L11"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/fillIPv6.ts#L11"
 				}
 			],
 			"signatures": [
@@ -69338,7 +70267,7 @@
 					"fileName": "src/fixNumber.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/fixNumber.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/fixNumber.ts#L8"
 				}
 			],
 			"signatures": [
@@ -69444,7 +70373,7 @@
 					"fileName": "src/formatTime.ts",
 					"line": 12,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/formatTime.ts#L12"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/formatTime.ts#L12"
 				}
 			],
 			"signatures": [
@@ -69556,7 +70485,7 @@
 					"fileName": "src/formatTimeStr.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/formatTimeStr.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/formatTimeStr.ts#L10"
 				}
 			],
 			"signatures": [
@@ -69652,7 +70581,7 @@
 					"fileName": "src/getAppVersion.ts",
 					"line": 9,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getAppVersion.ts#L9"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getAppVersion.ts#L9"
 				}
 			],
 			"signatures": [
@@ -69767,7 +70696,7 @@
 					"fileName": "src/getCHSLength.ts",
 					"line": 23,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getCHSLength.ts#L23"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getCHSLength.ts#L23"
 				}
 			],
 			"signatures": [
@@ -69835,7 +70764,7 @@
 					"fileName": "src/getCache.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getCache.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getCache.ts#L7"
 				}
 			],
 			"signatures": [
@@ -69903,7 +70832,7 @@
 					"fileName": "src/getCookie.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getCookie.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getCookie.ts#L7"
 				}
 			],
 			"signatures": [
@@ -69971,7 +70900,7 @@
 					"fileName": "src/getDirParam.ts",
 					"line": 12,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getDirParam.ts#L12"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getDirParam.ts#L12"
 				}
 			],
 			"signatures": [
@@ -70040,7 +70969,7 @@
 					"fileName": "src/getFileType.ts",
 					"line": 15,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getFileType.ts#L15"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getFileType.ts#L15"
 				}
 			],
 			"signatures": [
@@ -70126,7 +71055,7 @@
 					"fileName": "src/getIsAppVersionLastest.ts",
 					"line": 17,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getIsAppVersionLastest.ts#L17"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getIsAppVersionLastest.ts#L17"
 				}
 			],
 			"signatures": [
@@ -70252,7 +71181,7 @@
 					"fileName": "src/getNumber.ts",
 					"line": 12,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getNumber.ts#L12"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getNumber.ts#L12"
 				}
 			],
 			"signatures": [
@@ -70329,7 +71258,7 @@
 					"fileName": "src/getOsVersion.ts",
 					"line": 16,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getOsVersion.ts#L16"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getOsVersion.ts#L16"
 				}
 			],
 			"signatures": [
@@ -70461,7 +71390,7 @@
 					"fileName": "src/getParameter.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getParameter.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getParameter.ts#L7"
 				}
 			],
 			"signatures": [
@@ -70538,7 +71467,7 @@
 					"fileName": "src/getProperty.ts",
 					"line": 20,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getProperty.ts#L20"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getProperty.ts#L20"
 				}
 			],
 			"signatures": [
@@ -70630,7 +71559,7 @@
 													"fileName": "src/getProperty.ts",
 													"line": 20,
 													"character": 49,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getProperty.ts#L20"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getProperty.ts#L20"
 												}
 											],
 											"signatures": [
@@ -70670,7 +71599,7 @@
 					"fileName": "src/getRandomNum.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getRandomNum.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getRandomNum.ts#L8"
 				}
 			],
 			"signatures": [
@@ -70759,7 +71688,7 @@
 					"fileName": "src/getRandomStr.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getRandomStr.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getRandomStr.ts#L8"
 				}
 			],
 			"signatures": [
@@ -70848,7 +71777,7 @@
 					"fileName": "src/getRandomStrWidthSpecialChar.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getRandomStrWidthSpecialChar.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getRandomStrWidthSpecialChar.ts#L7"
 				}
 			],
 			"signatures": [
@@ -70917,7 +71846,7 @@
 					"fileName": "src/getScrollPosition.ts",
 					"line": 6,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getScrollPosition.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getScrollPosition.ts#L6"
 				}
 			],
 			"signatures": [
@@ -70973,7 +71902,7 @@
 					"fileName": "src/getSession.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getSession.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getSession.ts#L7"
 				}
 			],
 			"signatures": [
@@ -71041,7 +71970,7 @@
 					"fileName": "src/getType.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getType.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getType.ts#L7"
 				}
 			],
 			"signatures": [
@@ -71109,7 +72038,7 @@
 					"fileName": "src/getUrlParam.ts",
 					"line": 51,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getUrlParam.ts#L51"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getUrlParam.ts#L51"
 				}
 			],
 			"signatures": [
@@ -71177,7 +72106,7 @@
 					"fileName": "src/getWindowSize.ts",
 					"line": 11,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/getWindowSize.ts#L11"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/getWindowSize.ts#L11"
 				}
 			],
 			"signatures": [
@@ -71225,7 +72154,7 @@
 					"fileName": "src/intersect.ts",
 					"line": 13,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/intersect.ts#L13"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/intersect.ts#L13"
 				}
 			],
 			"signatures": [
@@ -71328,7 +72257,7 @@
 					"fileName": "src/isArray.ts",
 					"line": 6,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/isArray.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/isArray.ts#L6"
 				}
 			],
 			"signatures": [
@@ -71385,7 +72314,7 @@
 					"fileName": "src/isDigitals.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/isDigitals.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/isDigitals.ts#L7"
 				}
 			],
 			"signatures": [
@@ -71453,7 +72382,7 @@
 					"fileName": "src/isExitsFunction.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/isExitsFunction.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/isExitsFunction.ts#L7"
 				}
 			],
 			"signatures": [
@@ -71521,7 +72450,7 @@
 					"fileName": "src/isExitsVariable.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/isExitsVariable.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/isExitsVariable.ts#L7"
 				}
 			],
 			"signatures": [
@@ -71589,7 +72518,7 @@
 					"fileName": "src/loadSource.ts",
 					"line": 21,
 					"character": 15,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/loadSource.ts#L21"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/loadSource.ts#L21"
 				}
 			],
 			"signatures": [
@@ -71703,7 +72632,7 @@
 					"fileName": "src/minus.ts",
 					"line": 14,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/minus.ts#L14"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/minus.ts#L14"
 				}
 			],
 			"signatures": [
@@ -71806,7 +72735,7 @@
 					"fileName": "src/mountCss.ts",
 					"line": 38,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountCss.ts#L38"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L38"
 				}
 			],
 			"signatures": [
@@ -71902,7 +72831,7 @@
 					"fileName": "src/mountImg.ts",
 					"line": 42,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountImg.ts#L42"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L42"
 				}
 			],
 			"signatures": [
@@ -72007,7 +72936,7 @@
 					"fileName": "src/mountJs.ts",
 					"line": 35,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountJs.ts#L35"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountJs.ts#L35"
 				}
 			],
 			"signatures": [
@@ -72103,7 +73032,7 @@
 					"fileName": "src/mountStyle.ts",
 					"line": 15,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/mountStyle.ts#L15"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/mountStyle.ts#L15"
 				}
 			],
 			"signatures": [
@@ -72191,7 +73120,7 @@
 					"fileName": "src/nextIndex.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/nextIndex.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/nextIndex.ts#L8"
 				}
 			],
 			"signatures": [
@@ -72280,7 +73209,7 @@
 					"fileName": "src/openUrl.ts",
 					"line": 6,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/openUrl.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/openUrl.ts#L6"
 				}
 			],
 			"signatures": [
@@ -72337,7 +73266,7 @@
 					"fileName": "src/removeEvent.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/removeEvent.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/removeEvent.ts#L10"
 				}
 			],
 			"signatures": [
@@ -72434,7 +73363,7 @@
 					"fileName": "src/searchTreeObject.ts",
 					"line": 16,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/searchTreeObject.ts#L16"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/searchTreeObject.ts#L16"
 				}
 			],
 			"signatures": [
@@ -72576,7 +73505,7 @@
 					"fileName": "src/setCache.ts",
 					"line": 14,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/setCache.ts#L14"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/setCache.ts#L14"
 				}
 			],
 			"signatures": [
@@ -72682,7 +73611,7 @@
 					"fileName": "src/setCookie.ts",
 					"line": 10,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/setCookie.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/setCookie.ts#L10"
 				}
 			],
 			"signatures": [
@@ -72818,7 +73747,7 @@
 					"fileName": "src/setProperty.ts",
 					"line": 20,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/setProperty.ts#L20"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/setProperty.ts#L20"
 				}
 			],
 			"signatures": [
@@ -72910,7 +73839,7 @@
 													"fileName": "src/setProperty.ts",
 													"line": 20,
 													"character": 49,
-													"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/setProperty.ts#L20"
+													"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/setProperty.ts#L20"
 												}
 											],
 											"signatures": [
@@ -72961,7 +73890,7 @@
 					"fileName": "src/setSession.ts",
 					"line": 13,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/setSession.ts#L13"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/setSession.ts#L13"
 				}
 			],
 			"signatures": [
@@ -73056,7 +73985,7 @@
 					"fileName": "src/splitThousand.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/splitThousand.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/splitThousand.ts#L7"
 				}
 			],
 			"signatures": [
@@ -73133,7 +74062,7 @@
 					"fileName": "src/stopBubble.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/stopBubble.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/stopBubble.ts#L7"
 				}
 			],
 			"signatures": [
@@ -73203,7 +74132,7 @@
 					"fileName": "src/stopDefault.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/stopDefault.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/stopDefault.ts#L7"
 				}
 			],
 			"signatures": [
@@ -73273,7 +74202,7 @@
 					"fileName": "src/textareaInsertText.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/textareaInsertText.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/textareaInsertText.ts#L7"
 				}
 			],
 			"signatures": [
@@ -73351,7 +74280,7 @@
 					"fileName": "src/textareaMoveToEnd.ts",
 					"line": 6,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/textareaMoveToEnd.ts#L6"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/textareaMoveToEnd.ts#L6"
 				}
 			],
 			"signatures": [
@@ -73410,7 +74339,7 @@
 					"fileName": "src/trim.ts",
 					"line": 8,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/trim.ts#L8"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/trim.ts#L8"
 				}
 			],
 			"signatures": [
@@ -73507,7 +74436,7 @@
 					"fileName": "src/union.ts",
 					"line": 14,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/union.ts#L14"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/union.ts#L14"
 				}
 			],
 			"signatures": [
@@ -73610,7 +74539,7 @@
 					"fileName": "src/unique.ts",
 					"line": 11,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/unique.ts#L11"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/unique.ts#L11"
 				}
 			],
 			"signatures": [
@@ -73700,7 +74629,7 @@
 					"fileName": "src/upperFirst.ts",
 					"line": 7,
 					"character": 9,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/upperFirst.ts#L7"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/upperFirst.ts#L7"
 				}
 			],
 			"signatures": [
@@ -73768,7 +74697,7 @@
 					"fileName": "src/uuid.ts",
 					"line": 10,
 					"character": 6,
-					"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/uuid.ts#L10"
+					"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/uuid.ts#L10"
 				}
 			],
 			"signatures": [
@@ -73817,28 +74746,128 @@
 	"groups": [
 		{
 			"title": "Namespaces",
-			"children": [208]
+			"children": [
+				208
+			]
 		},
 		{
 			"title": "Interfaces",
-			"children": [2, 1295, 130, 1304, 364, 2253, 2244, 3178, 265, 354, 3187, 109]
+			"children": [
+				2,
+				1295,
+				130,
+				1304,
+				364,
+				2253,
+				2244,
+				3178,
+				265,
+				354,
+				3187,
+				109
+			]
 		},
 		{
 			"title": "Type Aliases",
-			"children": [1, 5, 1303, 363, 2252, 353, 3186]
+			"children": [
+				1,
+				5,
+				1303,
+				363,
+				2252,
+				353,
+				3186
+			]
 		},
 		{
 			"title": "Variables",
-			"children": [27]
+			"children": [
+				27
+			]
 		},
 		{
 			"title": "Functions",
 			"children": [
-				290, 295, 299, 304, 203, 276, 280, 286, 63, 249, 51, 54, 57, 9, 321, 325, 86, 66,
-				191, 194, 179, 176, 182, 230, 254, 185, 188, 225, 333, 221, 142, 146, 112, 83, 170,
-				167, 127, 136, 122, 60, 117, 133, 336, 72, 76, 80, 215, 173, 243, 139, 107, 309,
-				246, 98, 101, 104, 349, 317, 359, 1299, 2248, 3182, 217, 270, 210, 259, 157, 150,
-				342, 162, 273, 197, 200, 91, 95, 47, 313, 329, 69, 284
+				290,
+				295,
+				299,
+				304,
+				203,
+				276,
+				280,
+				286,
+				63,
+				249,
+				51,
+				54,
+				57,
+				9,
+				321,
+				325,
+				86,
+				66,
+				191,
+				194,
+				179,
+				176,
+				182,
+				230,
+				254,
+				185,
+				188,
+				225,
+				333,
+				221,
+				142,
+				146,
+				112,
+				83,
+				170,
+				167,
+				127,
+				136,
+				122,
+				60,
+				117,
+				133,
+				336,
+				72,
+				76,
+				80,
+				215,
+				173,
+				243,
+				139,
+				107,
+				309,
+				246,
+				98,
+				101,
+				104,
+				349,
+				317,
+				359,
+				1299,
+				2248,
+				3182,
+				217,
+				270,
+				210,
+				259,
+				157,
+				150,
+				342,
+				162,
+				273,
+				197,
+				200,
+				91,
+				95,
+				47,
+				313,
+				329,
+				69,
+				284
 			]
 		}
 	],
@@ -73847,7 +74876,7 @@
 			"fileName": "src/index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/saqqdy/js-cool/blob/fa1bfe9/src/index.ts#L1"
+			"url": "https://github.com/saqqdy/js-cool/blob/722f24e/src/index.ts#L1"
 		}
 	]
 }
