@@ -32,7 +32,7 @@ const iifeGlobals = {
 const moduleList = glob
 	.sync('*', {
 		cwd: resolve(__dirname, '..', 'src'),
-		ignore: ['__tests__', '*_bak', 'tsconfig.json'],
+		ignore: ['__tests__', '*_bak', 'tsconfig.*', '*.bak'],
 		deep: 1,
 		onlyFiles: true
 	})
@@ -94,7 +94,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 					},
 					{
 						entryFileNames: '[name].mjs',
-						dir: 'es',
+						dir: 'lib',
 						preserveModules: true,
 						preserveModulesRoot: 'src',
 						exports: 'auto',
@@ -126,12 +126,12 @@ export default (process.env.BABEL_ENV !== 'es5'
 	},
 	{
 		// input: 'src/index.ts',
-		input: distDir('es/index.mjs'),
+		input: distDir('dist/index.mjs'),
 		output: [
 			{
 				file: distDir('dist/index.iife.js'),
 				format: 'iife',
-				name: 'JsCool',
+				name: 'jsCool',
 				extend: true,
 				globals: iifeGlobals,
 				banner
@@ -139,7 +139,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 			{
 				file: distDir(pkg.unpkg),
 				format: 'iife',
-				name: 'JsCool',
+				name: 'jsCool',
 				extend: true,
 				globals: iifeGlobals,
 				banner,

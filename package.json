@@ -1,10 +1,10 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.0.0-beta.4",
+	"version": "3.0.0-beta.5",
 	"packageManager": "pnpm@7.30.0",
-	"main": "./lib/index.cjs",
-	"module": "./es/index.mjs",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
 	"browser": {
 		"dist/index.js": "dist/index.min.js"
 	},
@@ -13,26 +13,31 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./lib/index.cjs",
-			"import": "./es/index.mjs"
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
 		},
-		"./es": "./es/index.mjs",
-		"./lib": "./lib/index.cjs",
-		"./es/*": "./es/*.mjs",
-		"./lib/*": "./lib/*.cjs",
-		"./*": {
+		"./lib": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		},
+		"./lib/*": {
+			"types": "./lib/*.d.ts",
 			"require": "./lib/*.cjs",
-			"import": "./es/*.mjs"
+			"import": "./lib/*.mjs"
+		},
+		"./*": {
+			"types": "./lib/*.d.ts",
+			"require": "./lib/*.cjs",
+			"import": "./lib/*.mjs"
 		}
 	},
 	"directories": {
-		"es": "es",
 		"lib": "lib",
 		"dist": "dist",
 		"src": "src"
 	},
 	"files": [
-		"es",
 		"lib",
 		"dist",
 		"typings"
@@ -44,9 +49,10 @@
 		"build:umd": "cross-env BABEL_ENV=es5 webpack --config webpack.config.js",
 		"build:bundle": "rollup -c build/rollup.config.ts --configPlugin @rollup/plugin-typescript",
 		"build:es5": "cross-env BABEL_ENV=es5 pnpm build:bundle",
-		"build:types": "tsc --emitDeclarationOnly --outDir temp -p src",
+		"build:types": "tsc -p src/tsconfig.declaration.json",
+		"build:types1": "tsc --emitDeclarationOnly --outDir lib -p src",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
-		"roll-types": "api-extractor run && rm-all temp",
+		"roll-types": "api-extractor run",
 		"watch": "pnpm build:bundle -w",
 		"pub": "tscjs scripts/publish",
 		"unpub": "tscjs scripts/unpublish",

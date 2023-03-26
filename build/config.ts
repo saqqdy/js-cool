@@ -56,7 +56,7 @@ export const extensions = [
 
 export const alias = {
 	'@': resolve(__dirname, '..', 'src'),
-	'load-yml': resolve(__dirname, '..')
+	'js-cool': resolve(__dirname, '..')
 }
 
 export const jsexclude = /node_modules/
