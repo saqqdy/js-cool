@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.3](../README.md) / [Exports](../modules.md) / ImgOptions
+[index.md - v3.0.0-beta.4](../README.md) / [Exports](../modules.md) / ImgOptions
 
 # Interface: ImgOptions
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/mountImg.ts:30](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L30)
+[src/mountImg.ts:30](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountImg.ts#L30)
 
 ---
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/mountImg.ts:32](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L32)
+[src/mountImg.ts:32](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountImg.ts#L32)
 
 ---
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[src/mountImg.ts:31](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountImg.ts#L31)
+[src/mountImg.ts:31](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountImg.ts#L31)

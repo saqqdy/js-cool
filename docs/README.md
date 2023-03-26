@@ -1,4 +1,4 @@
-index.md - v3.0.0-beta.3 / [Exports](modules.md)
+index.md - v3.0.0-beta.4 / [Exports](modules.md)
 
 <div style="text-align: center;" align="center">
 
@@ -188,10 +188,7 @@ const functionList = {
   all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
   any, // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
   uuid, // 浏览器端生成uuid，采用v4方法
-  arrayToCSV, // 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
-  CSVToArray, // 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
-  CSVToJSON, // 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
-  JSONtoCSV, // 将一个对象数组转换为只包含指定列的逗号分隔值（CSV）字符串。
+  csv, // csv与json、array相互转换
   RGBToHex, // 将RGB组件的值转换为颜色代码。
   intersect, // 多个数组求交集
   union, // 求多个数组的并集

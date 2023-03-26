@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.0.0-beta.3",
+	"version": "3.0.0-beta.4",
 	"packageManager": "pnpm@7.30.0",
 	"main": "./lib/index.cjs",
 	"module": "./es/index.mjs",
@@ -18,11 +18,12 @@
 		},
 		"./es": "./es/index.mjs",
 		"./lib": "./lib/index.cjs",
-		"./es/*.mjs": "./es/*.mjs",
 		"./es/*": "./es/*.mjs",
-		"./lib/*.js": "./lib/*.cjs",
 		"./lib/*": "./lib/*.cjs",
-		"./*": "./*"
+		"./*": {
+			"require": "./lib/*.cjs",
+			"import": "./es/*.mjs"
+		}
 	},
 	"directories": {
 		"es": "es",

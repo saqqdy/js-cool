@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.3](../README.md) / [Exports](../modules.md) / CssOptions
+[index.md - v3.0.0-beta.4](../README.md) / [Exports](../modules.md) / CssOptions
 
 # Interface: CssOptions
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/mountCss.ts:26](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L26)
+[src/mountCss.ts:26](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountCss.ts#L26)
 
 ---
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/mountCss.ts:28](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L28)
+[src/mountCss.ts:28](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountCss.ts#L28)
 
 ---
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[src/mountCss.ts:27](https://github.com/saqqdy/js-cool/blob/722f24e/src/mountCss.ts#L27)
+[src/mountCss.ts:27](https://github.com/saqqdy/js-cool/blob/981d0bb/src/mountCss.ts#L27)

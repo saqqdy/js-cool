@@ -3,6 +3,9 @@
 ## 2023.04.01 v3.0.0
 
 1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag`
+2. move `arrayToCSV` `CSVToArray` `CSVToJSON` `JSONToCSV` to `csv`
+3. 支持 `const addEvent = require('js-cool/addEvent')` 这种引入方式
+4. 构建产物区分 esnext 和 es5，默认输出 esnext
 
 ## 2022.12.13 v2.8.0
 
