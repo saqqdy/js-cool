@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.5](../README.md) / [Exports](../modules.md) / HTMLImageElementEX
+[index.md - v3.0.0-beta.6](../README.md) / [Exports](../modules.md) / HTMLImageElementEX
 
 # Interface: HTMLImageElementEX
 
@@ -3228,7 +3228,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:605
 
 #### Defined in
 
-[src/mountImg.ts:25](https://github.com/saqqdy/js-cool/blob/641f5bd/src/mountImg.ts#L25)
+[src/mountImg.ts:25](https://github.com/saqqdy/js-cool/blob/affa229/src/mountImg.ts#L25)
 
 ---
 
@@ -3870,7 +3870,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:102
 
 #### Defined in
 
-[src/mountImg.ts:26](https://github.com/saqqdy/js-cool/blob/641f5bd/src/mountImg.ts#L26)
+[src/mountImg.ts:26](https://github.com/saqqdy/js-cool/blob/affa229/src/mountImg.ts#L26)
 
 ---
 

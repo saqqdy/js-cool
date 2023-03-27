@@ -1,3 +1,5 @@
+import _eval from './_eval'
+
 /**
  * 是否存在指定函数
  *
@@ -5,12 +7,7 @@
  * @returns 返回true/false
  */
 function isExitsFunction(funcName: string): boolean {
-	try {
-		if (typeof eval(funcName) === 'function') {
-			return true
-		}
-	} catch {}
-	return false
+	return typeof _eval(funcName) === 'function'
 }
 
 export default isExitsFunction

@@ -81,6 +81,7 @@
 		"@rollup/plugin-node-resolve": "^15.0.1",
 		"@rollup/plugin-terser": "^0.4.0",
 		"@rollup/plugin-typescript": "^11.0.0",
+		"@types/activex-excel": "^14.0.6",
 		"@types/babel__core": "^7.20.0",
 		"@types/node": "^18.15.6",
 		"babel-loader": "^9.1.2",

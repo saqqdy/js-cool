@@ -19,9 +19,9 @@ export function delCache(name: string) {
  * @returns 返回数据，存的如果是对象，取出的也是对象
  */
 export function getCache(name: string): any {
-	let str = localStorage.getItem(name),
-		exp = new Date(),
-		o
+	const str = localStorage.getItem(name)
+	const exp = new Date()
+	let o
 	if (str) {
 		try {
 			o = JSON.parse(str)

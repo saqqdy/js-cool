@@ -27,10 +27,10 @@ function decodeBase64(input: string) {
 		chr2 = ((enc2 & 15) << 4) | (enc3 >> 2)
 		chr3 = ((enc3 & 3) << 6) | enc4
 		output = output + String.fromCharCode(chr1)
-		if (enc3 != 64) {
+		if (enc3 !== 64) {
 			output = output + String.fromCharCode(chr2)
 		}
-		if (enc4 != 64) {
+		if (enc4 !== 64) {
 			output = output + String.fromCharCode(chr3)
 		}
 	}

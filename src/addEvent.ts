@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { AnyFunction, AnyObject } from '../typings/common'
 
 /**
@@ -41,9 +43,9 @@ addEvent.guid = 1
  * @returns returnValue
  */
 function handleEvent(event: any): boolean {
-	let returnValue = true,
-		// @ts-expect-error
-		that: any = this
+	let returnValue = true
+	// @ts-expect-error
+	const that: any = this
 	// 抓获事件对象(IE使用全局事件对象)
 	event =
 		event ||

@@ -6,6 +6,7 @@
  */
 function dash2Camel(string: string) {
 	return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {
+		// eslint-disable-next-line prefer-rest-params
 		return arguments[1].toLocaleUpperCase()
 	})
 }

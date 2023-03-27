@@ -1,4 +1,4 @@
-index.md - v3.0.0-beta.5 / [Exports](modules.md)
+index.md - v3.0.0-beta.6 / [Exports](modules.md)
 
 <div style="text-align: center;" align="center">
 
@@ -141,27 +141,17 @@ const functionList = {
   isDigitals, // 是否为由数字组成的字符串
   isExitsFunction, // 是否存在指定函数
   isExitsVariable, // 是否存在指定变量
-  getWindowSize, // getWindowSize获取窗口大小
+  windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号
   getOsVersion, // 获取手机系统版本
   getIsAppVersionLastest, // 版本号大小对比
   getDirParam, // 获取目录形式URL参数
   getParameter, // 获取单个URL参数
-  getFileType, // 文件后缀名
   getUrlParam, // 获取URL参数
-  // 日期格式化
-  formatTime, // 日期格式化插件
-  formatTimeStr, // 格式化时间成：刚刚、几分钟前
   // 缓存、cookie、session
-  setCookie, // setCookie写入cookie的方法
-  setCache, // 写localStorage
-  setSession, // 写sessionStorage
-  getCookie, // 读取cookies
-  getCache, // 读取localStorage
-  getSession, // 读取sessionStorage
-  delCookie, // 删除cookie
-  delCache, // 删除localStorage
-  delSession, // 删除sessionStorage
+  cache, // 读取、写入、删除localStorage
+  session, // 读取、写入、删除sessionStorage
+  cookie, // 读取、写入、删除cookie
   // 编码与解码
   encodeBase64, // 字符串、数字转base64
   encodeUtf8, // 编码Utf8
@@ -184,7 +174,7 @@ const functionList = {
   download, // 文件下载
   searchTreeObject, // 对象查找
   openUrl, // 新标签页打开链接（浏览器不能解析的文件跳转下载）
-  splitThousand, // 千分位分割方法
+  toThousands, // 千分位分割方法
   all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
   any, // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
   uuid, // 浏览器端生成uuid，采用v4方法

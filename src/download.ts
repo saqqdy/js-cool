@@ -10,10 +10,8 @@
  * @param type - 下载类型 'href','open','download','request'
  */
 function download(url: string, filename: string, type = 'download') {
-	// @ts-expect-error
-	const name = /[^\/]+$/.exec(url)[0]
-	// @ts-expect-error
-	const fileType = /[^\.]+$/.exec(name)[0].toLowerCase()
+	const name = /[^\/]+$/.exec(url)?.[0] || ''
+	const fileType = /[^\.]+$/.exec(name)?.[0].toLowerCase()
 	if (type === 'open') {
 		window.open(url)
 	} else if (type === 'href') {
@@ -21,7 +19,7 @@ function download(url: string, filename: string, type = 'download') {
 	} else if (type === 'request') {
 		downloadUrlFile(url, filename || name)
 	} else {
-		openFile(url, filename || name, fileType)
+		openFile(url, filename || name, fileType!)
 	}
 }
 
@@ -53,8 +51,7 @@ function openFile(url: string, filename: string, fileType: string) {
 function downloadUrlFile(url: string, filename: string) {
 	const xhr = window.XMLHttpRequest
 		? new XMLHttpRequest()
-		: // @ts-expect-error
-		  new ActiveXObject('Microsoft.XMLHTTP')
+		: new ActiveXObject('Microsoft.XMLHTTP')
 	xhr.open('GET', url, true)
 	xhr.responseType = 'blob'
 	xhr.onload = () => {

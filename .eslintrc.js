@@ -3,5 +3,8 @@ module.exports = {
 	rules: {
 		semi: [2, 'never'],
 		camelcase: 0
+	},
+	globals: {
+		ActiveXObject: 'readonly'
 	}
 }

@@ -5,9 +5,9 @@
  * @returns 随机串
  */
 function getRandomStrWidthSpecialChar(len = 32): string {
-	let chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.', // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
-		maxPos = chars.length,
-		str = ''
+	const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+	const maxPos = chars.length
+	let str = ''
 	for (let i = 0; i < len; i++) {
 		str += chars.charAt(Math.floor(Math.random() * maxPos))
 	}

@@ -6,12 +6,12 @@
  * @returns 随机串
  */
 function getRandomStr(len = 32, widthSpecialChar = false): string {
-	let chars = !widthSpecialChar
-			? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
-			: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.', // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
-		// var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-		maxPos = chars.length,
-		str = ''
+	const chars = !widthSpecialChar
+		? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+		: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+	// var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+	const maxPos = chars.length
+	let str = ''
 	for (let i = 0; i < len; i++) {
 		str += chars.charAt(Math.floor(Math.random() * maxPos))
 	}

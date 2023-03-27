@@ -19,9 +19,8 @@ export function delCookie(name: string) {
  * @returns 返回cookie字符串
  */
 export function getCookie(name: string): any {
-	let arr,
-		reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
-	arr = document.cookie.match(reg)
+	const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+	const arr = document.cookie.match(reg)
 	if (arr) {
 		return decodeURIComponent(arr[2])
 	} else {

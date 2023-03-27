@@ -24,6 +24,7 @@ function getProperty(target: any, prop: string | { (): string }): any {
 	const arr = prop.split('.')
 	for (let p of arr) {
 		let index = -1
+		// eslint-disable-next-line no-sequences
 		p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''))
 		if (p) target = target[p]
 		if (index !== -1 && target) target = target[index]

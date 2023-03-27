@@ -4,15 +4,13 @@
  * @returns 返回位置
  */
 const getScrollPosition = (): string | void => {
-	let innerH =
-			window.innerHeight ||
-			document.documentElement.clientHeight ||
-			document.body.clientHeight,
-		docScrollTop = document.documentElement.scrollTop,
-		bodyScrollTop = document.body.scrollTop,
-		docScrollHeight = document.documentElement.scrollHeight,
-		bodyScrollHeight = document.body.scrollHeight,
-		scrollT = 0,
+	const innerH =
+		window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+	const docScrollTop = document.documentElement.scrollTop
+	const bodyScrollTop = document.body.scrollTop
+	const docScrollHeight = document.documentElement.scrollHeight
+	const bodyScrollHeight = document.body.scrollHeight
+	let scrollT = 0,
 		scrollH = 0
 	if (docScrollTop === 0) {
 		scrollT = bodyScrollTop

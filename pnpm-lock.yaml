@@ -13,6 +13,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^15.0.1
   '@rollup/plugin-terser': ^0.4.0
   '@rollup/plugin-typescript': ^11.0.0
+  '@types/activex-excel': ^14.0.6
   '@types/babel__core': ^7.20.0
   '@types/node': ^18.15.6
   babel-loader: ^9.1.2
@@ -52,6 +53,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.20.1
   '@rollup/plugin-terser': 0.4.0_rollup@3.20.1
   '@rollup/plugin-typescript': 11.0.0_36lvh7uyik5cyyok7ph4zotgne
+  '@types/activex-excel': 14.0.6
   '@types/babel__core': 7.20.0
   '@types/node': 18.15.6
   babel-loader: 9.1.2_@babel+core@7.21.3
@@ -1863,6 +1865,66 @@ packages:
       minimatch: 7.4.3
     dev: true
 
+  /@types/activex-adodb/6.1.8:
+    resolution: {integrity: sha512-/4jPRllMrr92mtN6CHnjAo2eI1eNBmxFdlmQVn2g1LLphSzwIc0OZ8bYvmXDYuDRBcSY/PDlJphPsRzZM3iVug==}
+    dependencies:
+      '@types/activex-interop': 0.0.3
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-dao/16.0.3:
+    resolution: {integrity: sha512-QnA7b0sqsdv2yGF9JYAtMpbylqyadbq453Uywdqf1UxPRexFR5cLczt0zY1Tib5gS5c3b3/kTZN3eWWgKDvfKw==}
+    dependencies:
+      '@types/activex-interop': 0.0.3
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-excel/14.0.6:
+    resolution: {integrity: sha512-cKwoiC3Ee7DHux5FXGeQlfS7oNoCZSMpHX4/g9y8i8ZsUVEn0wQydrfT/dakCI0CUCe6RJFMNQUCR31So2hdfg==}
+    dependencies:
+      '@types/activex-adodb': 6.1.8
+      '@types/activex-dao': 16.0.3
+      '@types/activex-office': 16.0.3
+      '@types/activex-stdole': 2.0.5
+      '@types/activex-vbide': 14.0.3
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-interop/0.0.3:
+    resolution: {integrity: sha512-RmOaiOBqyym0g2HcCRoqr2w9fK8QwL7x8b/855N4saqGfplZ1Rxiktn9t9I6ogwomSGGnMceB8ShX5vQ63Zriw==}
+    dev: true
+
+  /@types/activex-office/16.0.3:
+    resolution: {integrity: sha512-gKFgY6k2COnxLiJ/pctK6pUKtFLOuGZ36+BBGb/gRxgyHDyA235TbLhYj8v9rnBZfRb9tVMHQk6qQGu6uLz3gA==}
+    dependencies:
+      '@types/activex-outlook': 14.0.5
+      '@types/activex-stdole': 2.0.5
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-outlook/14.0.5:
+    resolution: {integrity: sha512-COs6Ob/zsfojLIhV7WZjMyPJZBsIp98VJ3SS8RohZWkpDSdBI9TOsXPEQNnpRv8PerqMtMqljBzP/E4Mur9JYQ==}
+    dependencies:
+      '@types/activex-interop': 0.0.3
+      '@types/activex-office': 16.0.3
+      '@types/activex-stdole': 2.0.5
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-stdole/2.0.5:
+    resolution: {integrity: sha512-QpHiujdEIDKfEH4oCa0fRu6C0V7AE8Ho+yJz5k7Guhwu/AiykolRgstqE7Ch7Bnl5ssG6aS1TaR2yBbXuYzOfw==}
+    dependencies:
+      '@types/activex-interop': 0.0.3
+      activex-helpers: 1.0.3
+    dev: true
+
+  /@types/activex-vbide/14.0.3:
+    resolution: {integrity: sha512-jjTf1RRMIqivYVu48TcYZ01YsniQEx7FbfPNjHnhqAjT+36RBY5Pw+GhnAZWctik2a7RmgT6co/+YPcbcVuRMw==}
+    dependencies:
+      '@types/activex-office': 16.0.3
+      activex-helpers: 1.0.3
+    dev: true
+
   /@types/argparse/1.0.38:
     resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==}
     dev: true
@@ -2109,6 +2171,10 @@ packages:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /activex-helpers/1.0.3:
+    resolution: {integrity: sha512-8xRCG4h5CJIcgV26EXWVfeaNxmtIV6+mhInKKF9SSP5xGKdFlUykIF5881SbDPD5d7UBo34CbMdyk9SGbMFC/w==}
     dev: true
 
   /agent-base/6.0.2:

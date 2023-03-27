@@ -48,7 +48,7 @@ export const CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) 
 		.split('\n')
 		.map(v => v.split(delimiter))
 
-		/**
+/**
  * 将一个逗号分隔的值(CSV)字符串转换为一个2D对象数组。字符串的第一行作为标题行。
  *
  * @example
