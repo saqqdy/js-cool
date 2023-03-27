@@ -25,29 +25,18 @@ export { default as textareaMoveToEnd } from './textareaMoveToEnd' // textarea�
 export { default as isDigitals } from './isDigitals' // 是否为由数字组成的字符串
 export { default as isExitsFunction } from './isExitsFunction' // 是否存在指定函数
 export { default as isExitsVariable } from './isExitsVariable' // 是否存在指定变量
-export { default as getWindowSize, type WindowSizeObj } from './getWindowSize' // getWindowSize获取窗口大小
+export { default as windowSize, type WindowSizeObj } from './windowSize' // windowSize获取窗口大小
 export { default as getAppVersion } from './getAppVersion' // 获取APP版本号
 export { default as getOsVersion } from './getOsVersion' // 获取手机系统版本
 export { default as getIsAppVersionLastest } from './getIsAppVersionLastest' // 版本号大小对比
 export { default as getDirParam, type DirParamType } from './getDirParam' // 获取目录形式URL参数
 export { default as getParameter } from './getParameter' // 获取单个URL参数
-export { default as getFileType } from './getFileType' // 文件后缀名
 export { default as getUrlParam } from './getUrlParam' // 获取URL参数
 
-// 日期格式化
-export { default as formatTime } from './formatTime' // 日期格式化插件
-export { default as formatTimeStr } from './formatTimeStr' // 格式化时间成：刚刚、几分钟前
-
 // 缓存、cookie、session
-export { default as setCookie } from './setCookie' // setCookie写入cookie的方法
-export { default as setCache } from './setCache' // 写localStorage
-export { default as setSession } from './setSession' // 写sessionStorage
-export { default as getCookie } from './getCookie' // 读取cookies
-export { default as getCache } from './getCache' // 读取localStorage
-export { default as getSession } from './getSession' // 读取sessionStorage
-export { default as delCookie } from './delCookie' // 删除cookie
-export { default as delCache } from './delCache' // 删除localStorage
-export { default as delSession } from './delSession' // 删除sessionStorage
+export * from './cache' // 读取、写入、删除localStorage
+export * from './session' // 读取、写入、删除sessionStorage
+export * from './cookie' // 读取、写入、删除cookie
 
 // 编码与解码
 export { default as encodeBase64 } from './encodeBase64' // 字符串、数字转base64
@@ -73,7 +62,7 @@ export { default as cleanData } from './cleanData' // 清洗数据
 export { default as download } from './download' // 文件下载
 export { default as searchTreeObject, type SearchKeySet } from './searchTreeObject' // 对象查找
 export { default as openUrl } from './openUrl' // 新标签页打开链接（浏览器不能解析的文件跳转下载）
-export { default as splitThousand } from './splitThousand' // 千分位分割方法
+export { default as toThousands } from './toThousands' // 千分位分割方法
 export { default as all } from './all' // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
 export { default as any } from './any' // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
 export { default as uuid } from './uuid' // 浏览器端生成uuid，采用v4方法

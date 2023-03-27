@@ -4,11 +4,11 @@ export interface WindowSizeObj {
 }
 
 /**
- * getWindowSize获取窗口大小
+ * windowSize获取窗口大小
  *
  * @returns 返回宽高
  */
-function getWindowSize(): WindowSizeObj {
+function windowSize(): WindowSizeObj {
 	const s: WindowSizeObj = { width: 0, height: 0 }
 	if (window.innerWidth) {
 		s.width = window.innerWidth
@@ -25,4 +25,4 @@ function getWindowSize(): WindowSizeObj {
 	return s
 }
 
-export default getWindowSize
+export default windowSize

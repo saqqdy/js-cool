@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[typings/common.d.ts:4](https://github.com/saqqdy/js-cool/blob/fd01ad1/typings/common.d.ts#L4)
+[typings/common.d.ts:4](https://github.com/saqqdy/js-cool/blob/641f5bd/typings/common.d.ts#L4)

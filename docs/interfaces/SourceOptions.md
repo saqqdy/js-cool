@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:9](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/loadSource.ts#L9)
+[src/loadSource.ts:9](https://github.com/saqqdy/js-cool/blob/641f5bd/src/loadSource.ts#L9)
 
 ---
 
@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:11](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/loadSource.ts#L11)
+[src/loadSource.ts:11](https://github.com/saqqdy/js-cool/blob/641f5bd/src/loadSource.ts#L11)
 
 ---
 
@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:10](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/loadSource.ts#L10)
+[src/loadSource.ts:10](https://github.com/saqqdy/js-cool/blob/641f5bd/src/loadSource.ts#L10)
 
 ---
 
@@ -49,4 +49,4 @@
 
 #### Defined in
 
-[src/loadSource.ts:8](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/loadSource.ts#L8)
+[src/loadSource.ts:8](https://github.com/saqqdy/js-cool/blob/641f5bd/src/loadSource.ts#L8)

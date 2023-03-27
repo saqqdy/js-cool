@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/searchTreeObject.ts#L2)
+[src/searchTreeObject.ts:2](https://github.com/saqqdy/js-cool/blob/641f5bd/src/searchTreeObject.ts#L2)
 
 ---
 
@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/fd01ad1/src/searchTreeObject.ts#L3)
+[src/searchTreeObject.ts:3](https://github.com/saqqdy/js-cool/blob/641f5bd/src/searchTreeObject.ts#L3)

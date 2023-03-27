@@ -2,10 +2,15 @@
 
 ## 2023.04.01 v3.0.0
 
-1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag`
+1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag` `formatTime` `formatTimeStr` `getFileType`
 2. move `arrayToCSV` `CSVToArray` `CSVToJSON` `JSONToCSV` to `csv`
-3. 支持 `const addEvent = require('js-cool/addEvent')` 这种引入方式
-4. 构建产物区分 esnext 和 es5，默认输出 esnext
+3. move `setCache` `getCache` `delCache` to `cache`
+4. move `setSession` `getSession` `delSession` to `session`
+5. move `setCookie` `getCookie` `delCookie` to `cookie`
+6. 支持 `const addEvent = require('js-cool/addEvent')` 这种引入方式
+7. 构建产物区分 esnext 和 es5，默认输出 esnext
+8. `splitThousand` => `toThousands`
+9. `getWindowSize` => `windowSize`
 
 ## 2022.12.13 v2.8.0
 
