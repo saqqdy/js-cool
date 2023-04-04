@@ -77,7 +77,7 @@ function externalCjsEsm(id: string) {
 }
 
 const distDir = (path: string) =>
-	process.env.BABEL_ENV === 'es5' ? path.replace('index', 'index.es5') : path
+	process.env.BABEL_ENV === 'es5' ? path.replace('index', 'es5/index') : path
 
 export default (process.env.BABEL_ENV !== 'es5'
 	? ([
