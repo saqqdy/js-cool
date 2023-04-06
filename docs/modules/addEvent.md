@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[src/addEvent.ts:36](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/addEvent.ts#L36)
+[src/addEvent.ts:36](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/addEvent.ts#L36)

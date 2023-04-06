@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/cache.ts:3](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cache.ts#L3)
+[src/cache.ts:3](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/cache.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/cache.ts:2](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cache.ts#L2)
+[src/cache.ts:2](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/cache.ts#L2)

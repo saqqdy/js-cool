@@ -3110,7 +3110,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:605
 
 #### Defined in
 
-[src/mountCss.ts:21](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountCss.ts#L21)
+[src/mountCss.ts:21](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountCss.ts#L21)
 
 ---
 
@@ -3752,7 +3752,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:102
 
 #### Defined in
 
-[src/mountCss.ts:22](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountCss.ts#L22)
+[src/mountCss.ts:22](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountCss.ts#L22)
 
 ---
 
