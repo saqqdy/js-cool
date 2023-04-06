@@ -7,10 +7,12 @@
 3. move `setCache` `getCache` `delCache` to `cache`
 4. move `setSession` `getSession` `delSession` to `session`
 5. move `setCookie` `getCookie` `delCookie` to `cookie`
-6. 支持 `const addEvent = require('js-cool/addEvent')` 这种引入方式
-7. 构建产物区分 esnext 和 es5，默认输出 esnext
-8. `splitThousand` => `toThousands`
-9. `getWindowSize` => `windowSize`
+6. add `isPlainObject` function
+7. 支持 `const addEvent = require('js-cool/addEvent')` 这种引入方式
+8. 构建产物区分 esnext 和 es5，默认输出 esnext
+9. `splitThousand` => `toThousands`
+10. `getWindowSize` => `windowSize`
+11. new `extend` & `extendObject` function
 
 ## 2022.12.13 v2.8.0
 

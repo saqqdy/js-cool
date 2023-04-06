@@ -54,10 +54,11 @@ export { default as getScrollPosition } from './getScrollPosition' // 获取滑�
 // 工具类
 export { default as nextIndex } from './nextIndex' // 返回下一个zIndex值
 export { default as fixNumber } from './fixNumber' // 截取小数点后几位，不足的不补0
-export { default as extend } from './extend' // 深拷贝
+export { default as extend, ExtendArrayData, ExtendObjectData, ExtendData } from './extend' // 深拷贝
 export { default as delay } from './delay' // 防抖节流
 export { default as getType } from './getType' // 获取目标类型
 export { default as isArray } from './isArray' // 判断是否数组
+export { default as isPlainObject } from './isPlainObject' // 判断是否PlainObject
 export { default as cleanData } from './cleanData' // 清洗数据
 export { default as download } from './download' // 文件下载
 export { default as searchTreeObject, type SearchKeySet } from './searchTreeObject' // 对象查找

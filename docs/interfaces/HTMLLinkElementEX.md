@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.6](../README.md) / [Exports](../modules.md) / HTMLLinkElementEX
+[index.md - v3.0.0-beta.7](../README.md) / [Exports](../modules.md) / HTMLLinkElementEX
 
 # Interface: HTMLLinkElementEX
 
@@ -3110,7 +3110,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:605
 
 #### Defined in
 
-[src/mountCss.ts:21](https://github.com/saqqdy/js-cool/blob/affa229/src/mountCss.ts#L21)
+[src/mountCss.ts:21](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountCss.ts#L21)
 
 ---
 
@@ -3752,7 +3752,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:102
 
 #### Defined in
 
-[src/mountCss.ts:22](https://github.com/saqqdy/js-cool/blob/affa229/src/mountCss.ts#L22)
+[src/mountCss.ts:22](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountCss.ts#L22)
 
 ---
 

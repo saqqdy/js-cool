@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.0.0-beta.6",
+	"version": "3.0.0-beta.7",
 	"packageManager": "pnpm@7.30.0",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -50,7 +50,6 @@
 		"build:bundle": "rollup -c build/rollup.config.ts --configPlugin @rollup/plugin-typescript",
 		"build:es5": "cross-env BABEL_ENV=es5 pnpm build:bundle",
 		"build:types": "tsc -p src/tsconfig.declaration.json",
-		"build:types1": "tsc --emitDeclarationOnly --outDir lib -p src",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
 		"roll-types": "api-extractor run",
 		"watch": "pnpm build:bundle -w",
