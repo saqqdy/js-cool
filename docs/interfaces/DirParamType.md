@@ -1,4 +1,4 @@
-[index.md - v3.0.0-beta.7](../README.md) / [Exports](../modules.md) / DirParamType
+[index.md - v3.0.0](../README.md) / [Exports](../modules.md) / DirParamType
 
 # Interface: DirParamType
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/getDirParam.ts:3](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getDirParam.ts#L3)
+[src/getDirParam.ts:3](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getDirParam.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/getDirParam.ts:2](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getDirParam.ts#L2)
+[src/getDirParam.ts:2](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getDirParam.ts#L2)

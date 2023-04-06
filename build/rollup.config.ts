@@ -103,27 +103,45 @@ export default (process.env.BABEL_ENV !== 'es5'
 				],
 				external: externalCjsEsm,
 				...options
-			}
-	  ] as RollupOptions[])
-	: ([] as RollupOptions[])
-).concat([
-	{
-		input: 'src/index.ts',
-		output: [
-			{
-				file: distDir(pkg.main),
-				exports: 'auto',
-				format: 'cjs'
 			},
 			{
-				file: distDir(pkg.module),
-				exports: 'auto',
-				format: 'es'
+				input: 'src/index.ts',
+				output: [
+					{
+						file: pkg.main,
+						exports: 'auto',
+						format: 'cjs'
+					},
+					{
+						file: pkg.module,
+						exports: 'auto',
+						format: 'es'
+					}
+				],
+				external: externalCjsEsm,
+				...options
 			}
-		],
-		external: externalCjsEsm,
-		...options
-	},
+	  ] as RollupOptions[])
+	: ([
+			{
+				input: pkg.module,
+				output: [
+					{
+						file: distDir(pkg.main),
+						exports: 'auto',
+						format: 'cjs'
+					},
+					{
+						file: distDir(pkg.module),
+						exports: 'auto',
+						format: 'es'
+					}
+				],
+				external: externalCjsEsm,
+				...options
+			}
+	  ] as RollupOptions[])
+).concat([
 	{
 		// input: 'src/index.ts',
 		input: distDir('dist/index.mjs'),
@@ -152,20 +170,6 @@ export default (process.env.BABEL_ENV !== 'es5'
 				sourceMap: false,
 				exclude: ['core-js']
 			}),
-			// babel({
-			// 	babelHelpers: 'runtime',
-			// 	// skipPreflightCheck: true,
-			// 	extensions,
-			// 	exclude: ['node_modules', 'core-js']
-			// }),
-			// typescript({
-			// 	compilerOptions: {
-			// 		outDir: undefined,
-			// 		declaration: false,
-			// 		declarationDir: undefined,
-			// 		target: 'es5'
-			// 	}
-			// }),
 			cleanup({
 				comments: 'all'
 			}),

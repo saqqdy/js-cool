@@ -1,6 +1,6 @@
-[index.md - v3.0.0-beta.7](README.md) / Exports
+[index.md - v3.0.0](README.md) / Exports
 
-# index.md - v3.0.0-beta.7
+# index.md - v3.0.0
 
 ## Table of contents
 
@@ -55,7 +55,6 @@
 - [camel2Dash](modules.md#camel2dash)
 - [cleanData](modules.md#cleandata)
 - [clearAttr](modules.md#clearattr)
-- [clearBr](modules.md#clearbr)
 - [clearHtml](modules.md#clearhtml)
 - [client](modules.md#client)
 - [complement](modules.md#complement)
@@ -131,7 +130,7 @@
 
 #### Defined in
 
-[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/44d48c9/typings/common.d.ts#L1)
+[typings/common.d.ts:1](https://github.com/saqqdy/js-cool/blob/f13ad6f/typings/common.d.ts#L1)
 
 ---
 
@@ -147,7 +146,7 @@
 
 #### Defined in
 
-[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/typings/common.d.ts#L7)
+[typings/common.d.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/typings/common.d.ts#L7)
 
 ---
 
@@ -157,7 +156,7 @@
 
 #### Defined in
 
-[src/extend.ts:5](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L5)
+[src/extend.ts:5](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L5)
 
 ---
 
@@ -167,7 +166,7 @@
 
 #### Defined in
 
-[src/extend.ts:9](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L9)
+[src/extend.ts:9](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L9)
 
 ---
 
@@ -177,7 +176,7 @@
 
 #### Defined in
 
-[src/extend.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L7)
+[src/extend.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L7)
 
 ---
 
@@ -187,7 +186,7 @@
 
 #### Defined in
 
-[src/mountImg.ts:1](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountImg.ts#L1)
+[src/mountImg.ts:1](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountImg.ts#L1)
 
 ---
 
@@ -197,7 +196,7 @@
 
 #### Defined in
 
-[src/mountCss.ts:1](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountCss.ts#L1)
+[src/mountCss.ts:1](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountCss.ts#L1)
 
 ---
 
@@ -207,7 +206,7 @@
 
 #### Defined in
 
-[src/mountJs.ts:1](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountJs.ts#L1)
+[src/mountJs.ts:1](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountJs.ts#L1)
 
 ---
 
@@ -217,7 +216,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/loadSource.ts#L6)
+[src/loadSource.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/loadSource.ts#L6)
 
 ---
 
@@ -227,7 +226,7 @@
 
 #### Defined in
 
-[src/mountStyle.ts:1](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountStyle.ts#L1)
+[src/mountStyle.ts:1](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountStyle.ts#L1)
 
 ## Variables
 
@@ -262,7 +261,7 @@ pattern 返回一些常用的正则：any, arrjson, chinese, email, float, isjso
 
 #### Defined in
 
-[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/pattern.ts#L6)
+[src/pattern.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/pattern.ts#L6)
 
 ## Functions
 
@@ -306,7 +305,7 @@ array
 
 #### Defined in
 
-[src/csv.ts:45](https://github.com/saqqdy/js-cool/blob/44d48c9/src/csv.ts#L45)
+[src/csv.ts:45](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/csv.ts#L45)
 
 ---
 
@@ -343,7 +342,7 @@ json
 
 #### Defined in
 
-[src/csv.ts:66](https://github.com/saqqdy/js-cool/blob/44d48c9/src/csv.ts#L66)
+[src/csv.ts:66](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/csv.ts#L66)
 
 ---
 
@@ -381,7 +380,7 @@ CSV 数据
 
 #### Defined in
 
-[src/csv.ts:97](https://github.com/saqqdy/js-cool/blob/44d48c9/src/csv.ts#L97)
+[src/csv.ts:97](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/csv.ts#L97)
 
 ---
 
@@ -413,7 +412,7 @@ hex 值
 
 #### Defined in
 
-[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/RGBToHex.ts#L10)
+[src/RGBToHex.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/RGBToHex.ts#L10)
 
 ---
 
@@ -437,7 +436,7 @@ addEvent()事件委托，支持多次委托
 
 #### Defined in
 
-[src/addEvent.ts:12](https://github.com/saqqdy/js-cool/blob/44d48c9/src/addEvent.ts#L12)
+[src/addEvent.ts:12](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/addEvent.ts#L12)
 
 ---
 
@@ -474,7 +473,7 @@ all([1, 2, 3]) // true
 
 #### Defined in
 
-[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/44d48c9/src/all.ts#L17)
+[src/all.ts:17](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/all.ts#L17)
 
 ---
 
@@ -511,7 +510,7 @@ any([0, 0, 1, 0]) // true
 
 #### Defined in
 
-[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/44d48c9/src/any.ts#L17)
+[src/any.ts:17](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/any.ts#L17)
 
 ---
 
@@ -566,7 +565,7 @@ CSV 数据
 
 #### Defined in
 
-[src/csv.ts:20](https://github.com/saqqdy/js-cool/blob/44d48c9/src/csv.ts#L20)
+[src/csv.ts:20](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/csv.ts#L20)
 
 ---
 
@@ -590,7 +589,7 @@ CSV 数据
 
 #### Defined in
 
-[src/camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/camel2Dash.ts#L7)
+[src/camel2Dash.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/camel2Dash.ts#L7)
 
 ---
 
@@ -616,7 +615,7 @@ CSV 数据
 
 #### Defined in
 
-[src/cleanData.ts:16](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cleanData.ts#L16)
+[src/cleanData.ts:16](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cleanData.ts#L16)
 
 ---
 
@@ -640,31 +639,7 @@ newString
 
 #### Defined in
 
-[src/clearAttr.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/clearAttr.ts#L7)
-
----
-
-### clearBr
-
-▸ **clearBr**(`string`): `string`
-
-去除换行
-
-#### Parameters
-
-| Name     | Type     | Description          |
-| :------- | :------- | :------------------- |
-| `string` | `string` | 带 html 标签的字符串 |
-
-#### Returns
-
-`string`
-
-newString
-
-#### Defined in
-
-[src/clearBr.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/clearBr.ts#L7)
+[src/clearAttr.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/clearAttr.ts#L7)
 
 ---
 
@@ -688,7 +663,7 @@ newString
 
 #### Defined in
 
-[src/clearHtml.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/clearHtml.ts#L7)
+[src/clearHtml.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/clearHtml.ts#L7)
 
 ---
 
@@ -713,7 +688,7 @@ client 方法返回一个浏览器判断结果：`{ ANDROID: true, GECKO: true, 
 
 #### Defined in
 
-[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/client.ts#L8)
+[src/client.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/client.ts#L8)
 
 ---
 
@@ -749,7 +724,7 @@ array
 
 #### Defined in
 
-[src/complement.ts:15](https://github.com/saqqdy/js-cool/blob/44d48c9/src/complement.ts#L15)
+[src/complement.ts:15](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/complement.ts#L15)
 
 ---
 
@@ -781,7 +756,7 @@ boolean
 
 #### Defined in
 
-[src/contains.ts:13](https://github.com/saqqdy/js-cool/blob/44d48c9/src/contains.ts#L13)
+[src/contains.ts:13](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/contains.ts#L13)
 
 ---
 
@@ -807,7 +782,7 @@ boolean
 
 #### Defined in
 
-[src/cutCHSString.ts:9](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cutCHSString.ts#L9)
+[src/cutCHSString.ts:9](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cutCHSString.ts#L9)
 
 ---
 
@@ -831,7 +806,7 @@ boolean
 
 #### Defined in
 
-[src/dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/dash2Camel.ts#L7)
+[src/dash2Camel.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/dash2Camel.ts#L7)
 
 ---
 
@@ -855,7 +830,7 @@ base64 解码
 
 #### Defined in
 
-[src/decodeBase64.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/decodeBase64.ts#L10)
+[src/decodeBase64.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/decodeBase64.ts#L10)
 
 ---
 
@@ -879,7 +854,7 @@ base64 解码
 
 #### Defined in
 
-[src/decodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/decodeUtf8.ts#L7)
+[src/decodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/decodeUtf8.ts#L7)
 
 ---
 
@@ -901,7 +876,7 @@ base64 解码
 
 #### Defined in
 
-[src/cache.ts:11](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cache.ts#L11)
+[src/cache.ts:11](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cache.ts#L11)
 
 ---
 
@@ -923,7 +898,7 @@ base64 解码
 
 #### Defined in
 
-[src/cookie.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cookie.ts#L6)
+[src/cookie.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cookie.ts#L6)
 
 ---
 
@@ -945,7 +920,7 @@ base64 解码
 
 #### Defined in
 
-[src/session.ts:11](https://github.com/saqqdy/js-cool/blob/44d48c9/src/session.ts#L11)
+[src/session.ts:11](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/session.ts#L11)
 
 ---
 
@@ -969,7 +944,7 @@ class
 
 #### Defined in
 
-[src/delay.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/delay.ts#L8)
+[src/delay.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/delay.ts#L8)
 
 ---
 
@@ -998,7 +973,7 @@ class
 
 #### Defined in
 
-[src/download.ts:12](https://github.com/saqqdy/js-cool/blob/44d48c9/src/download.ts#L12)
+[src/download.ts:12](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/download.ts#L12)
 
 ---
 
@@ -1022,7 +997,7 @@ class
 
 #### Defined in
 
-[src/encodeBase64.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/encodeBase64.ts#L10)
+[src/encodeBase64.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/encodeBase64.ts#L10)
 
 ---
 
@@ -1046,7 +1021,7 @@ class
 
 #### Defined in
 
-[src/encodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/encodeUtf8.ts#L7)
+[src/encodeUtf8.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/encodeUtf8.ts#L7)
 
 ---
 
@@ -1069,7 +1044,7 @@ extend greedy
 
 #### Defined in
 
-[src/extend.ts:40](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L40)
+[src/extend.ts:40](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L40)
 
 ▸ **extend**(`target`, `...args`): [`ExtendObjectData`](modules.md#extendobjectdata)
 
@@ -1086,7 +1061,7 @@ extend greedy
 
 #### Defined in
 
-[src/extend.ts:41](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L41)
+[src/extend.ts:41](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L41)
 
 ▸ **extend**(`target`, `...args`): [`ExtendArrayData`](modules.md#extendarraydata)
 
@@ -1103,7 +1078,7 @@ extend greedy
 
 #### Defined in
 
-[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L42)
+[src/extend.ts:42](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L42)
 
 ▸ **extend**(`target`, `...args`): [`ExtendArrayData`](modules.md#extendarraydata)
 
@@ -1120,7 +1095,7 @@ extend greedy
 
 #### Defined in
 
-[src/extend.ts:43](https://github.com/saqqdy/js-cool/blob/44d48c9/src/extend.ts#L43)
+[src/extend.ts:43](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/extend.ts#L43)
 
 ---
 
@@ -1151,7 +1126,7 @@ string
 
 #### Defined in
 
-[src/fillIPv6.ts:11](https://github.com/saqqdy/js-cool/blob/44d48c9/src/fillIPv6.ts#L11)
+[src/fillIPv6.ts:11](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/fillIPv6.ts#L11)
 
 ---
 
@@ -1176,7 +1151,7 @@ string
 
 #### Defined in
 
-[src/fixNumber.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/fixNumber.ts#L8)
+[src/fixNumber.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/fixNumber.ts#L8)
 
 ---
 
@@ -1202,7 +1177,7 @@ null/true/false
 
 #### Defined in
 
-[src/getAppVersion.ts:9](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getAppVersion.ts#L9)
+[src/getAppVersion.ts:9](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getAppVersion.ts#L9)
 
 ---
 
@@ -1226,7 +1201,7 @@ null/true/false
 
 #### Defined in
 
-[src/getCHSLength.ts:23](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getCHSLength.ts#L23)
+[src/getCHSLength.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getCHSLength.ts#L7)
 
 ---
 
@@ -1250,7 +1225,7 @@ null/true/false
 
 #### Defined in
 
-[src/cache.ts:21](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cache.ts#L21)
+[src/cache.ts:21](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cache.ts#L21)
 
 ---
 
@@ -1274,7 +1249,7 @@ null/true/false
 
 #### Defined in
 
-[src/cookie.ts:21](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cookie.ts#L21)
+[src/cookie.ts:21](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cookie.ts#L21)
 
 ---
 
@@ -1298,7 +1273,7 @@ null/true/false
 
 #### Defined in
 
-[src/getDirParam.ts:12](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getDirParam.ts#L12)
+[src/getDirParam.ts:12](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getDirParam.ts#L12)
 
 ---
 
@@ -1332,7 +1307,7 @@ null/true/false
 
 #### Defined in
 
-[src/getIsAppVersionLastest.ts:17](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getIsAppVersionLastest.ts#L17)
+[src/getIsAppVersionLastest.ts:17](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getIsAppVersionLastest.ts#L17)
 
 ---
 
@@ -1363,7 +1338,7 @@ getNumber('234test.88') // '234.88';
 
 #### Defined in
 
-[src/getNumber.ts:12](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getNumber.ts#L12)
+[src/getNumber.ts:12](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getNumber.ts#L12)
 
 ---
 
@@ -1396,7 +1371,7 @@ null/true/false
 
 #### Defined in
 
-[src/getOsVersion.ts:16](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getOsVersion.ts#L16)
+[src/getOsVersion.ts:16](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getOsVersion.ts#L16)
 
 ---
 
@@ -1420,7 +1395,7 @@ null/true/false
 
 #### Defined in
 
-[src/getParameter.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getParameter.ts#L7)
+[src/getParameter.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getParameter.ts#L7)
 
 ---
 
@@ -1461,7 +1436,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getProperty.ts:20](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getProperty.ts#L20)
+[src/getProperty.ts:20](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getProperty.ts#L20)
 
 ---
 
@@ -1486,7 +1461,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getRandomNum.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getRandomNum.ts#L8)
+[src/getRandomNum.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getRandomNum.ts#L8)
 
 ---
 
@@ -1511,7 +1486,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getRandomStr.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getRandomStr.ts#L8)
+[src/getRandomStr.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getRandomStr.ts#L8)
 
 ---
 
@@ -1535,7 +1510,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getRandomStrWidthSpecialChar.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getRandomStrWidthSpecialChar.ts#L7)
+[src/getRandomStrWidthSpecialChar.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getRandomStrWidthSpecialChar.ts#L7)
 
 ---
 
@@ -1553,7 +1528,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getScrollPosition.ts#L6)
+[src/getScrollPosition.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getScrollPosition.ts#L6)
 
 ---
 
@@ -1577,7 +1552,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/session.ts:21](https://github.com/saqqdy/js-cool/blob/44d48c9/src/session.ts#L21)
+[src/session.ts:21](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/session.ts#L21)
 
 ---
 
@@ -1601,7 +1576,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getType.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getType.ts#L7)
+[src/getType.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getType.ts#L7)
 
 ---
 
@@ -1625,7 +1600,7 @@ getProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/getUrlParam.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/getUrlParam.ts#L7)
+[src/getUrlParam.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/getUrlParam.ts#L7)
 
 ---
 
@@ -1661,7 +1636,7 @@ array
 
 #### Defined in
 
-[src/intersect.ts:13](https://github.com/saqqdy/js-cool/blob/44d48c9/src/intersect.ts#L13)
+[src/intersect.ts:13](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/intersect.ts#L13)
 
 ---
 
@@ -1683,7 +1658,7 @@ arr is any[]
 
 #### Defined in
 
-[src/isArray.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/isArray.ts#L6)
+[src/isArray.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/isArray.ts#L6)
 
 ---
 
@@ -1707,7 +1682,7 @@ arr is any[]
 
 #### Defined in
 
-[src/isDigitals.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/isDigitals.ts#L7)
+[src/isDigitals.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/isDigitals.ts#L7)
 
 ---
 
@@ -1731,7 +1706,7 @@ arr is any[]
 
 #### Defined in
 
-[src/isExitsFunction.ts:9](https://github.com/saqqdy/js-cool/blob/44d48c9/src/isExitsFunction.ts#L9)
+[src/isExitsFunction.ts:9](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/isExitsFunction.ts#L9)
 
 ---
 
@@ -1755,7 +1730,7 @@ arr is any[]
 
 #### Defined in
 
-[src/isExitsVariable.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/isExitsVariable.ts#L7)
+[src/isExitsVariable.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/isExitsVariable.ts#L7)
 
 ---
 
@@ -1777,7 +1752,7 @@ arr is any[]
 
 #### Defined in
 
-[src/isPlainObject.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/isPlainObject.ts#L10)
+[src/isPlainObject.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/isPlainObject.ts#L10)
 
 ---
 
@@ -1802,7 +1777,7 @@ arr is any[]
 
 #### Defined in
 
-[src/loadSource.ts:21](https://github.com/saqqdy/js-cool/blob/44d48c9/src/loadSource.ts#L21)
+[src/loadSource.ts:21](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/loadSource.ts#L21)
 
 ---
 
@@ -1838,7 +1813,7 @@ array
 
 #### Defined in
 
-[src/minus.ts:14](https://github.com/saqqdy/js-cool/blob/44d48c9/src/minus.ts#L14)
+[src/minus.ts:14](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/minus.ts#L14)
 
 ---
 
@@ -1863,7 +1838,7 @@ array
 
 #### Defined in
 
-[src/mountCss.ts:38](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountCss.ts#L38)
+[src/mountCss.ts:38](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountCss.ts#L38)
 
 ---
 
@@ -1888,7 +1863,7 @@ array
 
 #### Defined in
 
-[src/mountImg.ts:42](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountImg.ts#L42)
+[src/mountImg.ts:42](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountImg.ts#L42)
 
 ---
 
@@ -1913,7 +1888,7 @@ array
 
 #### Defined in
 
-[src/mountJs.ts:35](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountJs.ts#L35)
+[src/mountJs.ts:35](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountJs.ts#L35)
 
 ---
 
@@ -1938,7 +1913,7 @@ array
 
 #### Defined in
 
-[src/mountStyle.ts:15](https://github.com/saqqdy/js-cool/blob/44d48c9/src/mountStyle.ts#L15)
+[src/mountStyle.ts:15](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/mountStyle.ts#L15)
 
 ---
 
@@ -1963,7 +1938,7 @@ array
 
 #### Defined in
 
-[src/nextIndex.ts:8](https://github.com/saqqdy/js-cool/blob/44d48c9/src/nextIndex.ts#L8)
+[src/nextIndex.ts:8](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/nextIndex.ts#L8)
 
 ---
 
@@ -1985,7 +1960,7 @@ array
 
 #### Defined in
 
-[src/openUrl.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/openUrl.ts#L6)
+[src/openUrl.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/openUrl.ts#L6)
 
 ---
 
@@ -2009,7 +1984,7 @@ removeEvent 移除由 addEvent 创建的事件委托
 
 #### Defined in
 
-[src/removeEvent.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/removeEvent.ts#L10)
+[src/removeEvent.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/removeEvent.ts#L10)
 
 ---
 
@@ -2036,7 +2011,7 @@ tree 对象深度查找
 
 #### Defined in
 
-[src/searchTreeObject.ts:16](https://github.com/saqqdy/js-cool/blob/44d48c9/src/searchTreeObject.ts#L16)
+[src/searchTreeObject.ts:16](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/searchTreeObject.ts#L16)
 
 ---
 
@@ -2062,7 +2037,7 @@ tree 对象深度查找
 
 #### Defined in
 
-[src/cache.ts:50](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cache.ts#L50)
+[src/cache.ts:50](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cache.ts#L50)
 
 ---
 
@@ -2088,7 +2063,7 @@ setCookie 写入 cookie 的方法
 
 #### Defined in
 
-[src/cookie.ts:40](https://github.com/saqqdy/js-cool/blob/44d48c9/src/cookie.ts#L40)
+[src/cookie.ts:40](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/cookie.ts#L40)
 
 ---
 
@@ -2130,7 +2105,7 @@ setProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/setProperty.ts:20](https://github.com/saqqdy/js-cool/blob/44d48c9/src/setProperty.ts#L20)
+[src/setProperty.ts:20](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/setProperty.ts#L20)
 
 ---
 
@@ -2154,7 +2129,7 @@ setProperty(target, () => 'a') // 1
 
 #### Defined in
 
-[src/session.ts:48](https://github.com/saqqdy/js-cool/blob/44d48c9/src/session.ts#L48)
+[src/session.ts:48](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/session.ts#L48)
 
 ---
 
@@ -2178,7 +2153,7 @@ bool false
 
 #### Defined in
 
-[src/stopBubble.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/stopBubble.ts#L7)
+[src/stopBubble.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/stopBubble.ts#L7)
 
 ---
 
@@ -2202,7 +2177,7 @@ bool false
 
 #### Defined in
 
-[src/stopDefault.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/stopDefault.ts#L7)
+[src/stopDefault.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/stopDefault.ts#L7)
 
 ---
 
@@ -2225,7 +2200,7 @@ textarea 或 input 对象在指定的光标位置插入文字
 
 #### Defined in
 
-[src/textareaInsertText.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/textareaInsertText.ts#L7)
+[src/textareaInsertText.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/textareaInsertText.ts#L7)
 
 ---
 
@@ -2247,7 +2222,7 @@ textarea 或 input 对象将光标定位到文字尾部
 
 #### Defined in
 
-[src/textareaMoveToEnd.ts:6](https://github.com/saqqdy/js-cool/blob/44d48c9/src/textareaMoveToEnd.ts#L6)
+[src/textareaMoveToEnd.ts:6](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/textareaMoveToEnd.ts#L6)
 
 ---
 
@@ -2271,7 +2246,7 @@ result - 分割后的字符串
 
 #### Defined in
 
-[src/toThousands.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/toThousands.ts#L7)
+[src/toThousands.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/toThousands.ts#L7)
 
 ---
 
@@ -2295,7 +2270,7 @@ result - 分割后的字符串
 
 #### Defined in
 
-[src/trim.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/trim.ts#L7)
+[src/trim.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/trim.ts#L7)
 
 ---
 
@@ -2331,7 +2306,7 @@ array
 
 #### Defined in
 
-[src/union.ts:14](https://github.com/saqqdy/js-cool/blob/44d48c9/src/union.ts#L14)
+[src/union.ts:14](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/union.ts#L14)
 
 ---
 
@@ -2367,7 +2342,7 @@ array
 
 #### Defined in
 
-[src/unique.ts:11](https://github.com/saqqdy/js-cool/blob/44d48c9/src/unique.ts#L11)
+[src/unique.ts:11](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/unique.ts#L11)
 
 ---
 
@@ -2391,7 +2366,7 @@ array
 
 #### Defined in
 
-[src/upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/44d48c9/src/upperFirst.ts#L7)
+[src/upperFirst.ts:7](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/upperFirst.ts#L7)
 
 ---
 
@@ -2415,7 +2390,7 @@ uuid
 
 #### Defined in
 
-[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/44d48c9/src/uuid.ts#L10)
+[src/uuid.ts:10](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/uuid.ts#L10)
 
 ---
 
@@ -2433,4 +2408,4 @@ windowSize 获取窗口大小
 
 #### Defined in
 
-[src/windowSize.ts:11](https://github.com/saqqdy/js-cool/blob/44d48c9/src/windowSize.ts#L11)
+[src/windowSize.ts:11](https://github.com/saqqdy/js-cool/blob/f13ad6f/src/windowSize.ts#L11)

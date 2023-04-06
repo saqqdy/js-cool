@@ -123,7 +123,6 @@ const functionList = {
   // String扩展、数组方法
   trim, // 根据传参来去除空格
   clearAttr, // 去除HTML标签所有属性
-  clearBr, // 去除换行
   clearHtml, // 去除HTML标签
   getNumber, // 获取字符串中的数字
   camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式

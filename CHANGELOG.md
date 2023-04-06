@@ -2,7 +2,7 @@
 
 ## 2023.04.01 v3.0.0
 
-1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag` `formatTime` `formatTimeStr` `getFileType`
+1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag` `formatTime` `formatTimeStr` `getFileType` `clearBr`
 2. move `arrayToCSV` `CSVToArray` `CSVToJSON` `JSONToCSV` to `csv`
 3. move `setCache` `getCache` `delCache` to `cache`
 4. move `setSession` `getSession` `delSession` to `session`

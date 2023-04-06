@@ -7,7 +7,6 @@ export { default as pattern } from './pattern' // pattern返回一些常用的�
 // String扩展、数组方法
 export { default as trim } from './trim' // 根据传参来去除空格
 export { default as clearAttr } from './clearAttr' // 去除HTML标签所有属性
-export { default as clearBr } from './clearBr' // 去除换行
 export { default as clearHtml } from './clearHtml' // 去除HTML标签
 export { default as getNumber } from './getNumber' // 获取字符串中的数字
 export { default as camel2Dash } from './camel2Dash' // 将驼峰字符串转成-间隔且全小写的Dash模式
