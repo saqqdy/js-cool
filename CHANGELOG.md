@@ -12,7 +12,7 @@
 8. 构建产物区分 esnext 和 es5，默认输出 esnext
 9. `splitThousand` => `toThousands`
 10. `getWindowSize` => `windowSize`
-11. new `extend` & `extendObject` function
+11. new `extend` function
 
 ## 2022.12.13 v2.8.0
 
