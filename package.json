@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.0.0",
+	"version": "3.1.0-beta.1",
 	"packageManager": "pnpm@7.30.0",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -51,7 +51,7 @@
 		"build:es5": "cross-env BABEL_ENV=es5 pnpm build:bundle",
 		"build:types": "tsc -p src/tsconfig.declaration.json",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
-		"roll-types": "api-extractor run",
+		"roll-types": "api-extractor run && cp dist/index.d.ts dist/es5",
 		"watch": "pnpm build:bundle -w",
 		"pub": "tscjs scripts/publish",
 		"unpub": "tscjs scripts/unpublish",
@@ -65,7 +65,8 @@
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
-		"core-js": "^3.29.1"
+		"core-js": "^3.29.1",
+		"tslib": "^2.5.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.3",
@@ -104,7 +105,10 @@
 		"zx": "^7.2.1"
 	},
 	"peerDependencies": {
-		"core-js": ">=3.0.0"
+		"core-js": ">= 3"
+	},
+	"engines": {
+		"node": ">=12.20"
 	},
 	"pnpm": {
 		"peerDependencyRules": {

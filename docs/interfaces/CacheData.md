@@ -1,4 +1,4 @@
-[index.md - v3.0.0](../README.md) / [Exports](../modules.md) / CacheData
+[index.md - v3.1.0-beta.1](../README.md) / [Exports](../modules.md) / CacheData
 
 # Interface: CacheData
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/cache.ts:3](https://github.com/saqqdy/js-cool/blob/8a05d78/src/cache.ts#L3)
+[src/cache.ts:3](https://github.com/saqqdy/js-cool/blob/e92afe0/src/cache.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/cache.ts:2](https://github.com/saqqdy/js-cool/blob/8a05d78/src/cache.ts#L2)
+[src/cache.ts:2](https://github.com/saqqdy/js-cool/blob/e92afe0/src/cache.ts#L2)

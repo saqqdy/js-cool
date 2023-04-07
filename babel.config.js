@@ -7,7 +7,7 @@ module.exports = {
 				modules: 'auto',
 				useBuiltIns: 'usage',
 				targets: {
-					// node: '12.20',
+					node: '12.20',
 					browsers: [
 						'> 1%',
 						'last 2 versions',
@@ -31,6 +31,7 @@ module.exports = {
 						modules: 'auto',
 						useBuiltIns: 'usage',
 						targets: {
+							node: '10.24',
 							browsers: [
 								'> 1%',
 								'last 2 versions',

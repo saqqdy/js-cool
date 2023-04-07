@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2023.04.07 v3.1.0
+
+1. 优化构建输出，把 `tslib` 从包中移出
+
 ## 2023.04.06 v3.0.0
 
 1. 移除 `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` `clearHtmlN` `clearHtmlNS` `clearHtmlTag` `formatTime` `formatTimeStr` `getFileType` `clearBr`

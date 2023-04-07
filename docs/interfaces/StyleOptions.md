@@ -1,4 +1,4 @@
-[index.md - v3.0.0](../README.md) / [Exports](../modules.md) / StyleOptions
+[index.md - v3.1.0-beta.1](../README.md) / [Exports](../modules.md) / StyleOptions
 
 # Interface: StyleOptions
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/mountStyle.ts:4](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountStyle.ts#L4)
+[src/mountStyle.ts:4](https://github.com/saqqdy/js-cool/blob/e92afe0/src/mountStyle.ts#L4)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/mountStyle.ts:5](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountStyle.ts#L5)
+[src/mountStyle.ts:5](https://github.com/saqqdy/js-cool/blob/e92afe0/src/mountStyle.ts#L5)

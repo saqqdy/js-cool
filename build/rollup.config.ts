@@ -1,4 +1,4 @@
-import { dirname, resolve } from 'node:path'
+import { dirname, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { RollupOptions } from 'rollup'
 import glob from 'fast-glob'
@@ -73,7 +73,9 @@ const options: RollupOptions = {
 }
 
 function externalCjsEsm(id: string) {
-	return ['core-js', '@babel/runtime'].concat(externals).some(k => new RegExp('^' + k).test(id))
+	return ['tslib', 'core-js', '@babel/runtime']
+		.concat(externals)
+		.some(k => id === k || new RegExp('^' + k + sep).test(id))
 }
 
 const distDir = (path: string) =>
@@ -144,7 +146,7 @@ export default (process.env.BABEL_ENV !== 'es5'
 ).concat([
 	{
 		// input: 'src/index.ts',
-		input: distDir('dist/index.mjs'),
+		input: distDir(pkg.module),
 		output: [
 			{
 				file: distDir('dist/index.iife.js'),
