@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/mountStyle.ts:4](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountStyle.ts#L4)
+[src/mountStyle.ts:4](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountStyle.ts#L4)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/mountStyle.ts:5](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountStyle.ts#L5)
+[src/mountStyle.ts:5](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountStyle.ts#L5)

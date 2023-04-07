@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/mountImg.ts:30](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountImg.ts#L30)
+[src/mountImg.ts:30](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountImg.ts#L30)
 
 ---
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/mountImg.ts:32](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountImg.ts#L32)
+[src/mountImg.ts:32](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountImg.ts#L32)
 
 ---
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[src/mountImg.ts:31](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/mountImg.ts#L31)
+[src/mountImg.ts:31](https://github.com/saqqdy/js-cool/blob/8a05d78/src/mountImg.ts#L31)

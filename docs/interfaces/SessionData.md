@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/session.ts:3](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/session.ts#L3)
+[src/session.ts:3](https://github.com/saqqdy/js-cool/blob/8a05d78/src/session.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/session.ts:2](https://github.com/saqqdy/js-cool/blob/48fe0bb/src/session.ts#L2)
+[src/session.ts:2](https://github.com/saqqdy/js-cool/blob/8a05d78/src/session.ts#L2)
