@@ -1,4 +1,4 @@
-[index.md - v3.1.0-beta.1](../README.md) / [Exports](../modules.md) / SourceOptions
+[index.md - v3.1.0](../README.md) / [Exports](../modules.md) / SourceOptions
 
 # Interface: SourceOptions
 
@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:9](https://github.com/saqqdy/js-cool/blob/e92afe0/src/loadSource.ts#L9)
+[src/loadSource.ts:9](https://github.com/saqqdy/js-cool/blob/a69dc09/src/loadSource.ts#L9)
 
 ---
 
@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:11](https://github.com/saqqdy/js-cool/blob/e92afe0/src/loadSource.ts#L11)
+[src/loadSource.ts:11](https://github.com/saqqdy/js-cool/blob/a69dc09/src/loadSource.ts#L11)
 
 ---
 
@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[src/loadSource.ts:10](https://github.com/saqqdy/js-cool/blob/e92afe0/src/loadSource.ts#L10)
+[src/loadSource.ts:10](https://github.com/saqqdy/js-cool/blob/a69dc09/src/loadSource.ts#L10)
 
 ---
 
@@ -49,4 +49,4 @@
 
 #### Defined in
 
-[src/loadSource.ts:8](https://github.com/saqqdy/js-cool/blob/e92afe0/src/loadSource.ts#L8)
+[src/loadSource.ts:8](https://github.com/saqqdy/js-cool/blob/a69dc09/src/loadSource.ts#L8)

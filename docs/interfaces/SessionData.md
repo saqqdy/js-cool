@@ -1,4 +1,4 @@
-[index.md - v3.1.0-beta.1](../README.md) / [Exports](../modules.md) / SessionData
+[index.md - v3.1.0](../README.md) / [Exports](../modules.md) / SessionData
 
 # Interface: SessionData
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/session.ts:3](https://github.com/saqqdy/js-cool/blob/e92afe0/src/session.ts#L3)
+[src/session.ts:3](https://github.com/saqqdy/js-cool/blob/a69dc09/src/session.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/session.ts:2](https://github.com/saqqdy/js-cool/blob/e92afe0/src/session.ts#L2)
+[src/session.ts:2](https://github.com/saqqdy/js-cool/blob/a69dc09/src/session.ts#L2)

@@ -1,4 +1,4 @@
-[index.md - v3.1.0-beta.1](../README.md) / [Exports](../modules.md) / HTMLScriptElementEX
+[index.md - v3.1.0](../README.md) / [Exports](../modules.md) / HTMLScriptElementEX
 
 # Interface: HTMLScriptElementEX
 
@@ -3080,7 +3080,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:605
 
 #### Defined in
 
-[src/mountJs.ts:18](https://github.com/saqqdy/js-cool/blob/e92afe0/src/mountJs.ts#L18)
+[src/mountJs.ts:18](https://github.com/saqqdy/js-cool/blob/a69dc09/src/mountJs.ts#L18)
 
 ---
 
@@ -3722,7 +3722,7 @@ node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib/lib.dom.d.ts:102
 
 #### Defined in
 
-[src/mountJs.ts:19](https://github.com/saqqdy/js-cool/blob/e92afe0/src/mountJs.ts#L19)
+[src/mountJs.ts:19](https://github.com/saqqdy/js-cool/blob/a69dc09/src/mountJs.ts#L19)
 
 ---
 
