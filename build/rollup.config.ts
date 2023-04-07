@@ -105,45 +105,27 @@ export default (process.env.BABEL_ENV !== 'es5'
 				],
 				external: externalCjsEsm,
 				...options
+			}
+	  ] as RollupOptions[])
+	: ([] as RollupOptions[])
+).concat([
+	{
+		input: 'src/index.ts',
+		output: [
+			{
+				file: distDir(pkg.main),
+				exports: 'auto',
+				format: 'cjs'
 			},
 			{
-				input: 'src/index.ts',
-				output: [
-					{
-						file: pkg.main,
-						exports: 'auto',
-						format: 'cjs'
-					},
-					{
-						file: pkg.module,
-						exports: 'auto',
-						format: 'es'
-					}
-				],
-				external: externalCjsEsm,
-				...options
+				file: distDir(pkg.module),
+				exports: 'auto',
+				format: 'es'
 			}
-	  ] as RollupOptions[])
-	: ([
-			{
-				input: pkg.module,
-				output: [
-					{
-						file: distDir(pkg.main),
-						exports: 'auto',
-						format: 'cjs'
-					},
-					{
-						file: distDir(pkg.module),
-						exports: 'auto',
-						format: 'es'
-					}
-				],
-				external: externalCjsEsm,
-				...options
-			}
-	  ] as RollupOptions[])
-).concat([
+		],
+		external: externalCjsEsm,
+		...options
+	},
 	{
 		// input: 'src/index.ts',
 		input: distDir(pkg.module),

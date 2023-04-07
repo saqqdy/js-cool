@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/windowSize.ts:3](https://github.com/saqqdy/js-cool/blob/a69dc09/src/windowSize.ts#L3)
+[src/windowSize.ts:3](https://github.com/saqqdy/js-cool/blob/246bac0/src/windowSize.ts#L3)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/windowSize.ts:2](https://github.com/saqqdy/js-cool/blob/a69dc09/src/windowSize.ts#L2)
+[src/windowSize.ts:2](https://github.com/saqqdy/js-cool/blob/246bac0/src/windowSize.ts#L2)
