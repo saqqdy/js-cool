@@ -83,7 +83,7 @@
 		"@rollup/plugin-typescript": "^11.0.0",
 		"@types/activex-excel": "^14.0.6",
 		"@types/babel__core": "^7.20.0",
-		"@types/node": "^18.15.6",
+		"@types/node": "^20.0.0",
 		"babel-loader": "^9.1.2",
 		"cross-env": "^7.0.3",
 		"eslint": "^8.36.0",
