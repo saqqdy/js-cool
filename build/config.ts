@@ -22,18 +22,6 @@ export const banner =
 	' * Released under the MIT License.\n' +
 	' */'
 
-export const bannerText =
-	pkg.name +
-	' v' +
-	pkg.version +
-	'\n' +
-	pkg.description +
-	'\n' +
-	'(c) 2021-' +
-	new Date().getFullYear() +
-	' saqqdy \n' +
-	'Released under the MIT License.'
-
 export const externals = {}
 
 export const version = pkg.version
@@ -58,8 +46,6 @@ export const alias = {
 	'@': resolve(__dirname, '..', 'src'),
 	'js-cool': resolve(__dirname, '..')
 }
-
-export const jsexclude = /node_modules/
 
 export function generateExternal(
 	{ name, input, isFull = false }: { name: string; input: string; isFull?: boolean },
@@ -89,8 +75,3 @@ export const reporter = (opt: any, outputOptions: any, info: any) =>
 	)}: bundle size ${chalk.yellow(info.bundleSize)} -> minified ${chalk.green(
 		(info.minSize && `${info.minSize}`) || ''
 	)}`
-
-export const excludeFiles = (files: string[]) => {
-	const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist']
-	return files.filter(path => !excludes.some(exclude => path.includes(exclude)))
-}

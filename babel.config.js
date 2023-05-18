@@ -3,47 +3,23 @@ module.exports = {
 		[
 			'@babel/env',
 			{
-				loose: true,
-				modules: 'auto',
-				useBuiltIns: 'usage',
+				// loose: true,
+				// modules: 'auto',
+				// corejs: 3
+				// useBuiltIns: 'usage',
 				targets: {
-					// node: '12.20',
+					node: '12.20',
 					browsers: [
 						'> 1%',
 						'last 2 versions',
-						'not ie < 12',
-						'not ie_mob < 12',
+						'not ie < 11',
+						'not ie_mob < 11',
 						'not op_mini all'
 					]
 				},
-				corejs: 3
+				exclude: ['transform-regenerator']
 			}
 		],
 		'@babel/typescript'
-	],
-	env: {
-		es5: {
-			presets: [
-				[
-					'@babel/env',
-					{
-						loose: true,
-						modules: 'auto',
-						useBuiltIns: 'usage',
-						targets: {
-							browsers: [
-								'> 1%',
-								'last 2 versions',
-								'not ie < 11',
-								'not ie_mob < 11',
-								'not op_mini all'
-							]
-						},
-						corejs: 3
-					}
-				],
-				'@babel/typescript'
-			]
-		}
-	}
+	]
 }
