@@ -33,9 +33,15 @@ export { default as getParameter } from './getParameter' // 获取单个URL参�
 export { default as getUrlParam } from './getUrlParam' // 获取URL参数
 
 // 缓存、cookie、session
-export * from './cache' // 读取、写入、删除localStorage
-export * from './session' // 读取、写入、删除sessionStorage
-export * from './cookie' // 读取、写入、删除cookie
+export { default as getCache } from './getCache' // 读取localStorage
+export { default as setCache } from './setCache' // 写入localStorage
+export { default as delCache } from './delCache' // 删除localStorage
+export { default as getSession } from './getSession' // 读取sessionStorage
+export { default as setSession } from './setSession' // 写入sessionStorage
+export { default as delSession } from './delSession' // 删除sessionStorage
+export { default as getCookie } from './getCookie' // 读取cookie
+export { default as setCookie } from './setCookie' // 写入cookie
+export { default as delCookie } from './delCookie' // 删除cookie
 
 // 编码与解码
 export { default as encodeBase64 } from './encodeBase64' // 字符串、数字转base64
@@ -66,7 +72,10 @@ export { default as toThousands } from './toThousands' // 千分位分割方法
 export { default as all } from './all' // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
 export { default as any } from './any' // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
 export { default as uuid } from './uuid' // 浏览器端生成uuid，采用v4方法
-export * from './csv' // csv与json、array相互转换
+export { default as CSVToArray } from './CSVToArray' // csv与json、array相互转换
+export { default as arrayToCSV } from './arrayToCSV' // csv与json、array相互转换
+export { default as CSVToJSON } from './CSVToJSON' // csv与json、array相互转换
+export { default as JSONToCSV } from './JSONToCSV' // csv与json、array相互转换
 export { default as RGBToHex } from './RGBToHex' // 将RGB组件的值转换为颜色代码。
 export { default as intersect } from './intersect' // 多个数组求交集
 export { default as union } from './union' // 多个数组求交集

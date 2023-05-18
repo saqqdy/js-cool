@@ -2,6 +2,7 @@
 /lib
 /dist
 /temp
+/docs
 
 *.bak
 *_bak

@@ -26,7 +26,7 @@
 
 <div style="text-align: center; margin-bottom: 20px;" align="center">
 
-### **[使用文档](./docs/modules.md)**&nbsp; &nbsp; &nbsp; &nbsp;[更新日志](./CHANGELOG.md)
+### **[Documentation](https://www.saqqdy.com/js-cool)** • **[Change Log](./CHANGELOG.md)**
 
 </div>
 
@@ -56,61 +56,20 @@ getOsVersion() // 返回系统版本
 // ...
 ```
 
-### 按需引入
-
-```js
-// 在你的.vue或者main.js里面写上import
-import download from 'js-cool/lib/download'
-// 使用
-download(url, filename) // 下载文件
-// ...
-```
-
 ### 使用文件引入的方式
 
 1. 通过 require 引入
 
    ```js
    // 在你的main.js文件里面加上下面这一行
-   require('js-cool')
+   const { getOsVersion } = require('js-cool')
    ```
 
 2. html 静态页直接使用
 
    ```html
    <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-   <script src="https://unpkg.com/js-cool@2.3.2/lib/index.umd.js"></script>
-   ```
-
-### 使用按需打包
-
-1. 安装依赖
-
-   ```shell
-   # 使用npm
-   npm install -D babel-plugin-import
-   # 使用yarn
-   yarn add -D babel-plugin-import
-   ```
-
-2. babel 设置
-
-   ```js
-   // babel.config.js
-   module.exports = {
-     plugins: [
-       [
-         'import',
-         {
-           libraryName: 'js-cool',
-           style: false,
-           libraryDirectory: 'lib',
-           camel2DashComponentName: false
-         },
-         'js-cool'
-       ]
-     ]
-   }
+   <script src="https://unpkg.com/js-cool@4.0.0/dist/js-cool.global.prod.js"></script>
    ```
 
 ## 所有方法汇总
@@ -146,9 +105,15 @@ const functionList = {
   getParameter, // 获取单个URL参数
   getUrlParam, // 获取URL参数
   // 缓存、cookie、session
-  cache, // 读取、写入、删除localStorage
-  session, // 读取、写入、删除sessionStorage
-  cookie, // 读取、写入、删除cookie
+  getCache, // 读取localStorage
+  setCache, // 写入localStorage
+  delCache, // 删除localStorage
+  getSession, // 读取sessionStorage
+  setSession, // 写入sessionStorage
+  delSession, // 删除sessionStorage
+  getCookie, // 读取cookie
+  setCookie, // 写入cookie
+  delCookie, // 删除cookie
   // 编码与解码
   encodeBase64, // 字符串、数字转base64
   encodeUtf8, // 编码Utf8
@@ -175,7 +140,10 @@ const functionList = {
   all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
   any, // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
   uuid, // 浏览器端生成uuid，采用v4方法
-  csv, // csv与json、array相互转换
+  CSVToArray, // csv与json、array相互转换
+  arrayToCSV, // csv与json、array相互转换
+  CSVToJSON, // csv与json、array相互转换
+  JSONToCSV, // csv与json、array相互转换
   RGBToHex, // 将RGB组件的值转换为颜色代码。
   intersect, // 多个数组求交集
   union, // 求多个数组的并集

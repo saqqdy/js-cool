@@ -1,164 +1,154 @@
-import { dirname, resolve, sep } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import type { RollupOptions } from 'rollup'
-import glob from 'fast-glob'
+import type { InternalModuleFormat, OutputOptions, Plugin, RollupOptions } from 'rollup'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import terser from '@rollup/plugin-terser'
-import cleanup from 'rollup-plugin-cleanup'
 import typescript from '@rollup/plugin-typescript'
-import alias, { type ResolverObject } from '@rollup/plugin-alias'
 import filesize from 'rollup-plugin-filesize'
 import { visualizer } from 'rollup-plugin-visualizer'
+import replace from '@rollup/plugin-replace'
 import pkg from '../package.json' assert { type: 'json' }
 import { banner, extensions, reporter } from './config'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const externals = [...Object.keys(pkg.dependencies || {})]
-const nodeResolver = nodeResolve({
-	// Use the `package.json` "browser" field
-	browser: false,
-	extensions,
-	preferBuiltins: true,
-	exportConditions: ['node'],
-	moduleDirectories: ['node_modules']
-})
-const iifeGlobals = {
-	'core-js': 'coreJs'
+export interface Config {
+	input: string
+	file: string
+	format: InternalModuleFormat
+	browser?: boolean
+	minify?: boolean
+	transpile?: boolean
+	env: 'development' | 'production'
+	plugins?: Plugin[]
 }
 
-const moduleList = glob
-	.sync('*', {
-		cwd: resolve(__dirname, '..', 'src'),
-		ignore: ['__tests__', '*_bak', 'tsconfig.*', '*.bak'],
-		deep: 1,
-		onlyFiles: true
-	})
-	.map(name => resolve('src', name))
-
-const options: RollupOptions = {
-	plugins: [
-		alias({
-			customResolver: nodeResolver as ResolverObject,
-			entries: [
-				// {
-				//     find: /^#lib(.+)$/,
-				//     replacement: resolve(__dirname, '..', 'src', '$1.mjs')
-				// }
-			]
-		}),
-		nodeResolver,
-		commonjs({
-			sourceMap: false,
-			exclude: ['core-js']
-		}),
-		babel({
-			babelHelpers: 'bundled',
-			extensions,
-			exclude: ['node_modules']
-		}),
-		typescript({
-			compilerOptions: {
-				outDir: undefined,
-				declaration: false,
-				declarationDir: undefined,
-				target: 'es5'
-			}
-		}),
-		filesize({ reporter }),
-		visualizer()
-	]
+export interface Output extends OutputOptions {
+	plugins: Plugin[]
 }
 
-function externalCjsEsm(id: string) {
-	return ['tslib', 'core-js', '@babel/runtime']
-		.concat(externals)
-		.some(k => id === k || new RegExp('^' + k + sep).test(id))
+export interface Options extends RollupOptions {
+	external: string[]
+	plugins: Plugin[]
+	output: Output
 }
 
-const distDir = (path: string) =>
-	process.env.BABEL_ENV === 'es5' ? path.replace('index', 'es5/index') : path
-
-export default (process.env.BABEL_ENV !== 'es5'
-	? ([
-			{
-				input: moduleList,
-				output: [
-					{
-						entryFileNames: '[name].cjs',
-						dir: 'lib',
-						preserveModules: true,
-						preserveModulesRoot: 'src',
-						exports: 'named',
-						format: 'cjs'
-					},
-					{
-						entryFileNames: '[name].mjs',
-						dir: 'lib',
-						preserveModules: true,
-						preserveModulesRoot: 'src',
-						exports: 'auto',
-						format: 'es'
-					}
-				],
-				external: externalCjsEsm,
-				...options
-			}
-	  ] as RollupOptions[])
-	: ([] as RollupOptions[])
-).concat([
+const configs: Config[] = [
 	{
 		input: 'src/index.ts',
-		output: [
-			{
-				file: distDir(pkg.main),
-				exports: 'auto',
-				format: 'cjs'
-			},
-			{
-				file: distDir(pkg.module),
-				exports: 'auto',
-				format: 'es'
-			}
-		],
-		external: externalCjsEsm,
-		...options
+		file: 'dist/js-cool.esm-browser.js',
+		format: 'es',
+		browser: true,
+		env: 'development'
 	},
 	{
-		// input: 'src/index.ts',
-		input: distDir(pkg.module),
-		output: [
-			{
-				file: distDir('dist/index.iife.js'),
-				format: 'iife',
-				name: 'jsCool',
-				extend: true,
-				globals: iifeGlobals,
-				banner
-			},
-			{
-				file: distDir(pkg.unpkg),
-				format: 'iife',
-				name: 'jsCool',
-				extend: true,
-				globals: iifeGlobals,
-				banner,
-				plugins: [terser()]
-			}
-		],
-		plugins: [
-			nodeResolver,
-			commonjs({
-				sourceMap: false,
-				exclude: ['core-js']
-			}),
-			cleanup({
-				comments: 'all'
-			}),
-			filesize({ reporter }),
-			visualizer()
-		]
+		input: 'src/index.ts',
+		file: 'dist/js-cool.esm-browser.prod.js',
+		format: 'es',
+		browser: true,
+		env: 'production'
+	},
+	{
+		input: 'src/index.ts',
+		file: 'dist/js-cool.esm-bundler.js',
+		format: 'es',
+		env: 'development'
+	},
+	{
+		input: 'src/index.default.ts',
+		file: 'dist/js-cool.global.js',
+		format: 'iife',
+		env: 'development'
+	},
+	{
+		input: 'src/index.default.ts',
+		file: 'dist/js-cool.global.prod.js',
+		format: 'iife',
+		minify: true,
+		env: 'production'
+	},
+	{
+		input: 'src/index.default.ts',
+		file: 'dist/js-cool.cjs.js',
+		format: 'cjs',
+		env: 'development'
 	}
-])
+]
+
+function createEntries() {
+	return configs.map(createEntry)
+}
+
+function createEntry(config: Config) {
+	const isGlobalBuild = config.format === 'iife'
+	const isTypeScript = config.input.endsWith('.ts')
+	const isTranspiled =
+		config.file.endsWith('bundler.js') ||
+		config.file.endsWith('browser.js') ||
+		config.file.endsWith('prod.js')
+
+	const _config: Options = {
+		external: [],
+		input: config.input,
+		plugins: [],
+		output: {
+			file: config.file,
+			format: config.format,
+			exports: 'auto',
+			extend: true,
+			plugins: [],
+			globals: {}
+		},
+		onwarn: (msg: any, warn) => {
+			if (!/Circular/.test(msg)) {
+				warn(msg)
+			}
+		}
+	}
+
+	if (isGlobalBuild || config.browser) _config.output.banner = banner
+
+	if (isGlobalBuild) {
+		_config.output.name = _config.output.name || 'jsCool'
+	}
+
+	if (!isGlobalBuild) {
+		_config.external.push('core-js')
+	}
+
+	_config.plugins.push(
+		replace({
+			preventAssignment: true,
+			__VERSION__: pkg.version
+		}),
+		nodeResolve(),
+		commonjs()
+	)
+
+	if (config.transpile !== false) {
+		!isTranspiled &&
+			_config.plugins.push(
+				babel({
+					babelHelpers: 'bundled',
+					extensions,
+					exclude: [/node_modules[\\/]core-js/]
+				})
+			)
+		isTypeScript &&
+			_config.plugins.push(
+				typescript({
+					compilerOptions: {
+						declaration: false
+					}
+				})
+			)
+	}
+
+	if (config.minify) {
+		_config.plugins.push(terser({ module: config.format === 'es' }))
+	}
+
+	_config.plugins.push(filesize({ reporter }), visualizer())
+
+	return _config
+}
+
+export default createEntries()

@@ -1,36 +1,22 @@
 {
 	"name": "js-cool",
 	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "3.1.0",
-	"packageManager": "pnpm@7.30.0",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
-	"browser": {
-		"dist/index.js": "dist/index.min.js"
-	},
-	"unpkg": "./dist/index.min.js",
-	"types": "./dist/index.d.ts",
+	"version": "4.0.0",
+	"packageManager": "pnpm@8.5.1",
+	"main": "dist/js-cool.cjs.js",
+	"module": "dist/js-cool.esm-bundler.js",
+	"browser": "dist/js-cool.esm-browser.js",
+	"unpkg": "dist/js-cool.global.js",
+	"jsdelivr": "dist/js-cool.global.js",
+	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs"
+			"module": "./dist/js-cool.esm-bundler.js",
+			"require": "./dist/js-cool.cjs.js",
+			"import": "./dist/js-cool.mjs"
 		},
-		"./lib": {
-			"types": "./dist/index.d.ts",
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs"
-		},
-		"./lib/*": {
-			"types": "./lib/*.d.ts",
-			"require": "./lib/*.cjs",
-			"import": "./lib/*.mjs"
-		},
-		"./*": {
-			"types": "./lib/*.d.ts",
-			"require": "./lib/*.cjs",
-			"import": "./lib/*.mjs"
-		}
+		"./*": "./*"
 	},
 	"directories": {
 		"lib": "lib",
@@ -45,13 +31,12 @@
 	"scripts": {
 		"gen:version": "tscjs scripts/version",
 		"tag:version": "tscjs scripts/tag",
-		"build": "run-s clean build:{bundle,es5,types,docs} roll-types",
-		"build:umd": "cross-env BABEL_ENV=es5 webpack --config webpack.config.js",
+		"build": "run-s clean build:{bundle,types} roll-types",
 		"build:bundle": "rollup -c build/rollup.config.ts --configPlugin @rollup/plugin-typescript",
-		"build:es5": "cross-env BABEL_ENV=es5 pnpm build:bundle",
 		"build:types": "tsc -p src/tsconfig.declaration.json",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
-		"roll-types": "api-extractor run && cp dist/index.d.ts dist/es5",
+		"deploy": "sh scripts/deploy.sh",
+		"roll-types": "api-extractor run && rm-all temp",
 		"watch": "pnpm build:bundle -w",
 		"pub": "tscjs scripts/publish",
 		"unpub": "tscjs scripts/unpublish",
@@ -64,45 +49,44 @@
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\"",
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
-	"dependencies": {
-		"core-js": "^3.29.1",
-		"tslib": "^2.5.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"@babel/core": "^7.21.3",
-		"@babel/plugin-transform-runtime": "^7.21.0",
-		"@babel/preset-env": "^7.20.2",
-		"@babel/preset-typescript": "^7.21.0",
-		"@eslint-sets/eslint-config-ts": "^5.0.0",
-		"@microsoft/api-extractor": "^7.34.4",
-		"@rollup/plugin-alias": "^4.0.3",
+		"@babel/core": "^7.21.8",
+		"@babel/plugin-transform-runtime": "^7.21.4",
+		"@babel/preset-env": "^7.21.5",
+		"@babel/preset-typescript": "^7.21.5",
+		"@eslint-sets/eslint-config-ts": "^5.2.0",
+		"@microsoft/api-extractor": "^7.34.9",
+		"@rollup/plugin-alias": "^5.0.0",
 		"@rollup/plugin-babel": "^6.0.3",
-		"@rollup/plugin-commonjs": "^24.0.1",
-		"@rollup/plugin-node-resolve": "^15.0.1",
-		"@rollup/plugin-terser": "^0.4.0",
-		"@rollup/plugin-typescript": "^11.0.0",
+		"@rollup/plugin-commonjs": "^25.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.2",
+		"@rollup/plugin-replace": "^5.0.2",
+		"@rollup/plugin-terser": "^0.4.3",
+		"@rollup/plugin-typescript": "^11.1.1",
 		"@types/activex-excel": "^14.0.6",
 		"@types/babel__core": "^7.20.0",
-		"@types/node": "^18.15.6",
+		"@types/node": "^20.2.0",
 		"babel-loader": "^9.1.2",
+		"core-js": "^3.30.2",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.36.0",
+		"eslint": "^8.40.0",
 		"fast-glob": "^3.2.12",
 		"load-yml": "^1.3.0",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.8.6",
+		"prettier": "^2.8.8",
 		"prettier-config-common": "^1.4.0",
-		"reinstaller": "^2.3.0",
+		"reinstaller": "^3.0.0",
 		"rm-all": "^1.0.0",
-		"rollup": "^3.20.1",
+		"rollup": "^3.22.0",
 		"rollup-plugin-cleanup": "^3.2.1",
 		"rollup-plugin-filesize": "^10.0.0",
 		"rollup-plugin-visualizer": "^5.9.0",
 		"tsnd": "^1.1.0",
-		"typedoc": "^0.23.28",
-		"typedoc-plugin-markdown": "^3.14.0",
-		"typescript": "^5.0.2",
-		"zx": "^7.2.1"
+		"typedoc": "^0.24.7",
+		"typedoc-plugin-markdown": "^3.15.3",
+		"typescript": "^5.0.4",
+		"zx": "^7.2.2"
 	},
 	"peerDependencies": {
 		"core-js": ">= 3"
