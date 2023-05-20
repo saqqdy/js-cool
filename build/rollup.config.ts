@@ -44,6 +44,7 @@ const configs: Config[] = [
 		file: 'dist/js-cool.esm-browser.prod.js',
 		format: 'es',
 		browser: true,
+		minify: true,
 		env: 'production'
 	},
 	{
