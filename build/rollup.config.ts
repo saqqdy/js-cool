@@ -112,7 +112,14 @@ function createEntry(config: Config) {
 	}
 
 	if (!isGlobalBuild) {
-		_config.external.push('core-js')
+		_config.external.push(
+			'core-js',
+			'mount-css',
+			'mount-script',
+			'mount-image',
+			'mount-style',
+			'load-source'
+		)
 	}
 
 	_config.plugins.push(

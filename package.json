@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
-	"description": "这是一个纯原生ES6开发的Javascript常用方法库",
-	"version": "4.0.0",
+	"description": "This is a pure native js front-end common method library",
+	"version": "4.1.0",
 	"packageManager": "pnpm@8.5.1",
 	"main": "dist/js-cool.cjs.js",
 	"module": "dist/js-cool.esm-bundler.js",
@@ -49,7 +49,13 @@
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\"",
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"load-source": "^1.0.0",
+		"mount-css": "^1.0.0",
+		"mount-image": "^1.0.0",
+		"mount-script": "^1.0.0",
+		"mount-style": "^1.0.0"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.21.8",
 		"@babel/plugin-transform-runtime": "^7.21.4",

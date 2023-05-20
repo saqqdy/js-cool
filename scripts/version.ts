@@ -33,10 +33,10 @@ if (argv.length) {
 			shell: process.platform === 'win32'
 		})
 	} else {
-		console.info('请输入有效的版本类型')
+		console.info('Please enter a valid version')
 		process.exit(1)
 	}
 } else {
-	console.info('请输入版本类型')
+	console.info('Please enter the version')
 	process.exit(1)
 }

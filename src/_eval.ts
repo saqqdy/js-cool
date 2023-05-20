@@ -1,5 +1,5 @@
 /**
- * eval替代方法
+ * eval alternative method
  *
  * return - Function | undefined
  */

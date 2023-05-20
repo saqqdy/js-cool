@@ -1,4 +1,8 @@
-// export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
+import loadSource from 'load-source' // 动态加载资源，支持js、图片、css链接、css样式字符串
+import mountCss from 'mount-css' // 动态加载css链接资源
+import mountImg from 'mount-image' // 动态加载图片资源
+import mountJs from 'mount-script' // 动态加载js链接资源
+import mountStyle from 'mount-style' // 动态加载css样式
 
 // 全局参数
 import client from './client' // client方法返回一个浏览器判断结果对象
@@ -87,14 +91,13 @@ import fillIPv6 from './fillIPv6' // ipv6地址补全
 import getProperty from './getProperty' // 根据路径字符串获取数组、对象属性值
 import setProperty from './setProperty' // 根据路径字符串设置数组、对象属性值
 
-import loadSource from './loadSource' // 动态加载资源，支持js、图片、css链接、css样式字符串
-import mountCss from './mountCss' // 动态加载css链接资源
-import mountImg from './mountImg' // 动态加载图片资源
-import mountJs from './mountJs' // 动态加载js链接资源
-import mountStyle from './mountStyle' // 动态加载css样式
-
 export default {
 	version: '__VERSION__',
+	loadSource,
+	mountCss,
+	mountImg,
+	mountJs,
+	mountStyle,
 	RGBToHex,
 	addEvent,
 	all,
@@ -150,12 +153,7 @@ export default {
 	isExitsFunction,
 	isExitsVariable,
 	isPlainObject,
-	loadSource,
 	minus,
-	mountCss,
-	mountImg,
-	mountJs,
-	mountStyle,
 	nextIndex,
 	openUrl,
 	pattern,

@@ -2,15 +2,7 @@
 
 # js-cool
 
-</div>
-
-<div style="text-align: center;" align="center">
-
-这是一个纯原生 ES6 开发的 Javascript 常用方法库
-
-</div>
-
-<div style="text-align: center;" align="center">
+This is a pure native js front-end common method library
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -28,146 +20,149 @@
 
 ### **[Documentation](https://www.saqqdy.com/js-cool)** • **[Change Log](./CHANGELOG.md)**
 
+**Read this in other languages: English | [简体中文](./README-zh_CN.md)**
+
 </div>
 
-## 安装
+## Installation
 
-```shell
-# 通过npm安装
+```bash
+## Install via npm
 npm install --save js-cool
 
-# 或者通过yarn安装
+# Or install via yarn
 yarn add js-cool
 
-# 或者通过pnpm安装
+# or install via pnpm
 pnpm install js-cool
 ```
 
-## 使用
+## Use
 
-### 通过 import 引入模块的方式
+### Introducing modules via import
 
 ```js
-// 在你的.vue或者main.js里面写上import
+// Write import inside your .vue or main.js
 import { getOsVersion, trim } from 'js-cool'
-// 使用
-trim(somestring, type) // 返回清理空格后的字符串
-getOsVersion() // 返回系统版本
+// Use
+trim(somestring, type) // return the string after cleaning up the spaces
+getOsVersion() // return the system version
 // ...
 ```
 
-### 使用文件引入的方式
+### Ways to introduce using files
 
-1. 通过 require 引入
+1. Introduce via require
 
    ```js
-   // 在你的main.js文件里面加上下面这一行
+   // Add the following line to your main.js file
    const { getOsVersion } = require('js-cool')
    ```
 
-2. html 静态页直接使用
+2. html Static pages are used directly
 
    ```html
-   <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
+   <! -- Add script tags to your html code, using CDN links to bring in -->
    <script src="https://unpkg.com/js-cool@4.0.0/dist/js-cool.global.prod.js"></script>
    ```
 
-## 所有方法汇总
+## Summary of all methods
 
 ```js
 const functionList = {
-  // 全局参数
-  client, // client方法返回一个浏览器判断结果对象
-  pattern, // pattern返回一些常用的正则
-  // String扩展、数组方法
-  trim, // 根据传参来去除空格
-  clearAttr, // 去除HTML标签所有属性
-  clearHtml, // 去除HTML标签
-  getNumber, // 获取字符串中的数字
-  camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式
-  dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串
-  getRandomNum, // 获取随机整数
-  getRandomStr, // 获取随机字符串
-  getRandomStrWidthSpecialChar, // 获取随机字符串带特殊符号
-  getCHSLength, // 获取字符串长度，中文算2个字符
-  cutCHSString, // 截取字符串，中文算2个字节
-  textareaInsertText, // textarea或input对象在指定的光标位置插入文字
-  textareaMoveToEnd, // textarea或input对象将光标定位到文字尾部
-  // 获取一下状态
-  isDigitals, // 是否为由数字组成的字符串
-  isExitsFunction, // 是否存在指定函数
-  isExitsVariable, // 是否存在指定变量
-  windowSize, // windowSize获取窗口大小
-  getAppVersion, // 获取APP版本号
-  getOsVersion, // 获取手机系统版本
-  getIsAppVersionLastest, // 版本号大小对比
-  getDirParam, // 获取目录形式URL参数
-  getParameter, // 获取单个URL参数
-  getUrlParam, // 获取URL参数
-  // 缓存、cookie、session
-  getCache, // 读取localStorage
-  setCache, // 写入localStorage
-  delCache, // 删除localStorage
-  getSession, // 读取sessionStorage
-  setSession, // 写入sessionStorage
-  delSession, // 删除sessionStorage
-  getCookie, // 读取cookie
-  setCookie, // 写入cookie
-  delCookie, // 删除cookie
-  // 编码与解码
-  encodeBase64, // 字符串、数字转base64
-  encodeUtf8, // 编码Utf8
-  decodeBase64, // base64解码
-  decodeUtf8, // 解码Utf8
-  // 事件委托、其他事件方法
-  stopBubble, // 阻止冒泡
-  stopDefault, // 阻止默认事件
-  addEvent, // 事件委托，支持多次委托
-  removeEvent, // removeEvent移除由addEvent创建的事件委托
-  getScrollPosition, // 获取滑动到顶部和底部 返回'top' 'bottom'，建议使用限流
-  // 工具类
-  nextIndex, // 返回下一个zIndex值
-  fixNumber, // 截取小数点后几位，不足的不补0
-  extend, // 深拷贝
-  delay, // 防抖节流
-  getType, // 获取目标类型
-  isArray, // 判断是否数组
-  cleanData, // 清洗数据
-  download, // 文件下载
-  searchTreeObject, // 对象查找
-  openUrl, // 新标签页打开链接（浏览器不能解析的文件跳转下载）
-  toThousands, // 千分位分割方法
-  all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
-  any, // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
-  uuid, // 浏览器端生成uuid，采用v4方法
-  CSVToArray, // csv与json、array相互转换
-  arrayToCSV, // csv与json、array相互转换
-  CSVToJSON, // csv与json、array相互转换
-  JSONToCSV, // csv与json、array相互转换
-  RGBToHex, // 将RGB组件的值转换为颜色代码。
-  intersect, // 多个数组求交集
-  union, // 求多个数组的并集
-  minus, // 求多个数组的差集，属于A但不属于B/C/D...的元素
-  complement, // 多个数组求补集
-  contains, // 数组是否包含指定元素
-  unique, // 数组去重
-  fillIPv6, // ipv6地址补全
-  getProperty, // 根据路径字符串获取数组、对象属性值
-  setProperty, // 根据路径字符串设置数组、对象属性值
-  loadSource, // 动态加载资源，支持js、图片、css链接、css样式字符串
-  mountCss, // 动态加载css链接资源
-  mountImg, // 动态加载图片资源
-  mountJs, // 动态加载js链接资源
-  mountStyle // 动态加载css样式
+  // global parameters
+  client, // the client method returns a browser result object
+  pattern, // pattern returns some common rules
+  // String extensions, array methods
+  trim, // removes spaces based on the passed parameters
+  clearAttr, // remove all attributes of HTML tags
+  clearHtml, // remove HTML tags
+  getNumber, // Get the number in the string
+  camel2Dash, // convert a humped string to -spaced and all lowercase dash mode
+  dash2Camel, // convert -spaced all-lowercase dash pattern to camel string
+  getRandomNum, // Get a random integer
+  getRandomStr, // get a random string
+  getRandomStrWidthSpecialChar, // get a random string with special symbols
+  getCHSLength, // get the length of the string, Chinese counts as 2 characters
+  cutCHSString, // get the string, Chinese count as 2 bytes
+  textareaInsertText, // textarea or input object to insert text at the specified cursor position
+  textareaMoveToEnd, // textarea or input object to position the cursor to the end of the text
+  // Get a status
+  isDigitals, // whether it is a string composed of numbers
+  isExitsFunction, // if the specified function exists
+  isExitsVariable, // if the specified variable exists
+  windowSize, // windowSize to get the window size
+  getAppVersion, // Get the app version number
+  getOsVersion, // get the system version of the phone
+  getIsAppVersionLastest, // compare the version number size
+  getDirParam, // get the URL parameter in the form of a directory
+  getParameter, // Get a single URL parameter
+  getUrlParam, // Get URL parameters
+  // cache, cookie, session
+  getCache, // read localStorage
+  setCache, // write to localStorage
+  delCache, // delete localStorage
+  getSession, // read sessionStorage
+  setSession, // write to sessionStorage
+  delSession, // delete sessionStorage
+  getCookie, // read cookie
+  setCookie, // write a cookie
+  delCookie, // delete a cookie
+  // Encode and decode
+  encodeBase64, // convert strings, numbers to base64
+  encodeUtf8, // encode Utf8
+  decodeBase64, // base64 decode
+  decodeUtf8, // decode Utf8
+  // event delegate, other event methods
+  stopBubble, // stop bubbling
+  stopDefault, // stop default events
+  addEvent, // event delegate, support multiple delegates
+  removeEvent, // removeEvent removes the event delegate created by addEvent
+  getScrollPosition, // get scroll to top and bottom return 'top' 'bottom', recommend using flow limit
+  // tool class
+  nextIndex, // return the next zIndex value
+  fixNumber, // truncate a few decimal places, not 0 for shortage
+  extend, // deep copy
+  delay, // anti-dither throttling
+  getType, // get the target type
+  isArray, // Determine if it is an array
+  cleanData, // clean data
+  download, // file download
+  searchTreeObject, // find object
+  openUrl, // open link in a new tab (file jump download if browser can't parse)
+  toThousands, // Thousands division method
+  all, // return true if the provided predicate function returns true for all elements in a set, otherwise return false.
+  any, // Returns true if the provided predicate function returns true for at least one element of a set, false otherwise.
+  uuid, // generate uuid on browser side, use v4 method
+  CSVToArray, // csv to json, array conversion
+  arrayToCSV, // convert csv to json, array
+  CSVToJSON, // csv to json, array conversion
+  JSONToCSV, // csv to json, array conversion
+  RGBToHex, // Convert RGB component values to color codes.
+  intersect, // find intersection of multiple arrays
+  union, // find the union of multiple arrays
+  minus, // find the difference of multiple arrays, which belong to A but not B/C/D... elements of
+  complement, // find the complement of multiple arrays
+  contains, // whether the array contains the specified element
+  unique, // array de-duplication
+  fillIPv6, // ipv6 address completion
+  getProperty, // Get array, object property values based on path string
+  setProperty, // set array, object property values based on path string
+  loadSource, // load resources dynamically, support js, images, css links, css style strings
+  mountCss, // dynamically load css link resources
+  mountImg, // load image resource dynamically
+  mountJs, // load js link resources dynamically
+  mountStyle // load css styles dynamically
 }
 ```
 
-## 参与贡献
+## Support & Issues
 
-1. fork 本仓库
-2. 新建 feature_xxx 分支
-3. 提交代码
-4. 新建 pull request
+Please open an issue [here](https://github.com/saqqdy/js-cool/issues).
+
+## License
+
+[MIT](LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/js-cool
