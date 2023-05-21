@@ -3,6 +3,7 @@ import mountCss from 'mount-css' // 动态加载css链接资源
 import mountImg from 'mount-image' // 动态加载图片资源
 import mountJs from 'mount-script' // 动态加载js链接资源
 import mountStyle from 'mount-style' // 动态加载css样式
+import { download } from 'use-downloads' // 文件下载
 
 // 全局参数
 import client from './client' // client方法返回一个浏览器判断结果对象
@@ -69,7 +70,6 @@ import getType from './getType' // 获取目标类型
 import isArray from './isArray' // 判断是否数组
 import isPlainObject from './isPlainObject' // 判断是否PlainObject
 import cleanData from './cleanData' // 清洗数据
-import download from './download' // 文件下载
 import searchTreeObject from './searchTreeObject' // 对象查找
 import openUrl from './openUrl' // 新标签页打开链接（浏览器不能解析的文件跳转下载）
 import toThousands from './toThousands' // 千分位分割方法
@@ -98,6 +98,7 @@ export default {
 	mountImg,
 	mountJs,
 	mountStyle,
+	download,
 	RGBToHex,
 	addEvent,
 	all,
@@ -127,7 +128,6 @@ export default {
 	decodeBase64,
 	decodeUtf8,
 	delay,
-	download,
 	encodeBase64,
 	encodeUtf8,
 	extend,

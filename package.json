@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "This is a pure native js front-end common method library",
-	"version": "4.1.0",
+	"version": "4.2.0",
 	"packageManager": "pnpm@8.5.1",
 	"main": "dist/js-cool.cjs.js",
 	"module": "dist/js-cool.esm-bundler.js",
@@ -54,7 +54,8 @@
 		"mount-css": "^1.0.0",
 		"mount-image": "^1.0.0",
 		"mount-script": "^1.0.0",
-		"mount-style": "^1.0.0"
+		"mount-style": "^1.0.0",
+		"use-downloads": "^1.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.8",

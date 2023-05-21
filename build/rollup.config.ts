@@ -118,7 +118,8 @@ function createEntry(config: Config) {
 			'mount-script',
 			'mount-image',
 			'mount-style',
-			'load-source'
+			'load-source',
+			'use-downloads'
 		)
 	}
 

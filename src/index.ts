@@ -5,6 +5,7 @@ export { default as mountCss } from 'mount-css' // 动态加载css链接资源
 export { default as mountImg } from 'mount-image' // 动态加载图片资源
 export { default as mountJs } from 'mount-script' // 动态加载js链接资源
 export { default as mountStyle } from 'mount-style' // 动态加载css样式
+export { download } from 'use-downloads' // 文件下载
 
 // 全局参数
 export { default as client } from './client' // client方法返回一个浏览器判断结果对象
@@ -71,7 +72,6 @@ export { default as getType } from './getType' // 获取目标类型
 export { default as isArray } from './isArray' // 判断是否数组
 export { default as isPlainObject } from './isPlainObject' // 判断是否PlainObject
 export { default as cleanData } from './cleanData' // 清洗数据
-export { default as download } from './download' // 文件下载
 export { default as searchTreeObject, type SearchKeySet } from './searchTreeObject' // 对象查找
 export { default as openUrl } from './openUrl' // 新标签页打开链接（浏览器不能解析的文件跳转下载）
 export { default as toThousands } from './toThousands' // 千分位分割方法
@@ -92,24 +92,3 @@ export { default as unique } from './unique' // 数组去重
 export { default as fillIPv6 } from './fillIPv6' // ipv6地址补全
 export { default as getProperty } from './getProperty' // 根据路径字符串获取数组、对象属性值
 export { default as setProperty } from './setProperty' // 根据路径字符串设置数组、对象属性值
-
-// export { default as loadSource, type SourceFileType, type SourceOptions } from './loadSource' // 动态加载资源，支持js、图片、css链接、css样式字符串
-// export {
-// 	default as mountCss,
-// 	type LinkAttributes,
-// 	type HTMLLinkElementEX,
-// 	type CssOptions
-// } from './mountCss' // 动态加载css链接资源
-// export {
-// 	default as mountImg,
-// 	type ImageAttributes,
-// 	type HTMLImageElementEX,
-// 	type ImgOptions
-// } from './mountImg' // 动态加载图片资源
-// export {
-// 	default as mountJs,
-// 	type ScriptAttributes,
-// 	type HTMLScriptElementEX,
-// 	type JsOptions
-// } from './mountJs' // 动态加载js链接资源
-// export { default as mountStyle, type StyleAttributes, type StyleOptions } from './mountStyle' // 动态加载css样式
