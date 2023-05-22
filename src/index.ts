@@ -92,3 +92,6 @@ export { default as unique } from './unique' // 数组去重
 export { default as fillIPv6 } from './fillIPv6' // ipv6地址补全
 export { default as getProperty } from './getProperty' // 根据路径字符串获取数组、对象属性值
 export { default as setProperty } from './setProperty' // 根据路径字符串设置数组、对象属性值
+
+export { default } from './index.default'
+export const version = '__VERSION__' as string
