@@ -1,24 +1,30 @@
 lockfileVersion: '6.0'
 
+overrides:
+  mount-css: 1.1.0
+  mount-image: 1.1.0
+  mount-script: 1.1.0
+  mount-style: 1.1.1
+
 dependencies:
   load-source:
-    specifier: ^1.0.0
-    version: 1.0.0(core-js@3.30.2)
+    specifier: ^1.1.0
+    version: 1.1.0(core-js@3.30.2)
   mount-css:
-    specifier: ^1.0.0
-    version: 1.0.0(core-js@3.30.2)
+    specifier: 1.1.0
+    version: 1.1.0(core-js@3.30.2)
   mount-image:
-    specifier: ^1.0.0
-    version: 1.0.0(core-js@3.30.2)
+    specifier: 1.1.0
+    version: 1.1.0(core-js@3.30.2)
   mount-script:
-    specifier: ^1.0.0
-    version: 1.0.0(core-js@3.30.2)
+    specifier: 1.1.0
+    version: 1.1.0(core-js@3.30.2)
   mount-style:
-    specifier: ^1.0.0
-    version: 1.0.0(core-js@3.30.2)
+    specifier: 1.1.1
+    version: 1.1.1(core-js@3.30.2)
   use-downloads:
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.1.0
+    version: 1.1.0
 
 devDependencies:
   '@babel/core':
@@ -1405,7 +1411,7 @@ packages:
   /@eslint-sets/eslint-config-basic@5.2.0(@babel/core@7.21.8)(@typescript-eslint/parser@5.59.6)(eslint@8.41.0)(prettier@2.8.8)(typescript@5.0.4):
     resolution: {integrity: sha512-iIVWKZ9T5lpEGkJTa/VcDt5/zymoaMqmvPD/nz1evW0Gjji0ojpCJgdQwJ7fVYSEhRayHo+TtF/heo3ErKucTg==}
     peerDependencies:
-      eslint: '>=7.4.0 || >= 8.0.0 || ^8.0.0'
+      eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
       typescript: '*'
     peerDependenciesMeta:
@@ -4587,17 +4593,17 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /load-source@1.0.0(core-js@3.30.2):
-    resolution: {integrity: sha512-+beTMZM7UF0tiL532bit98ehiaJJLBkpr37piRRkUiWJsdIEvInNf/Wy+vBtQefA4PNZlWZ7oTzXbH++80DUHg==}
+  /load-source@1.1.0(core-js@3.30.2):
+    resolution: {integrity: sha512-4MbUvNW2aa7qG0cIG7jKoVyxKFO5Vwy17sBw+ZuiX/LeIxRwLomzAxZD0jxrADzKBYIDxXMLBW+TbuHcwZd7+g==}
     engines: {node: '>=12.20'}
     peerDependencies:
       core-js: '>= 3'
     dependencies:
       core-js: 3.30.2
-      mount-css: 1.0.0(core-js@3.30.2)
-      mount-image: 1.0.0(core-js@3.30.2)
-      mount-script: 1.0.0(core-js@3.30.2)
-      mount-style: 1.0.0(core-js@3.30.2)
+      mount-css: 1.1.0(core-js@3.30.2)
+      mount-image: 1.1.0(core-js@3.30.2)
+      mount-script: 1.1.0(core-js@3.30.2)
+      mount-style: 1.1.1(core-js@3.30.2)
     dev: false
 
   /load-yml@1.3.0(core-js@3.30.2):
@@ -4930,8 +4936,8 @@ packages:
       workspace-root: 2.5.1
     dev: true
 
-  /mount-css@1.0.0(core-js@3.30.2):
-    resolution: {integrity: sha512-CyGaRpOUibuZWKSeB1mtPBg1Uze+FDn0z4EviEXfkd3DDbDlXFvQAzLhW4OMHZzwgwxm84cm5Rgw/7/6FOl1Sw==}
+  /mount-css@1.1.0(core-js@3.30.2):
+    resolution: {integrity: sha512-6a/MYXfINtVVZArt2TuKbqC143iUJjMN6vGkHyHsQR5aTtNhtx72UuXYXj1Iqy0fsu5l1NbGgTLIOFzmedSSfg==}
     engines: {node: '>=12.20'}
     peerDependencies:
       core-js: '>= 3'
@@ -4939,8 +4945,8 @@ packages:
       core-js: 3.30.2
     dev: false
 
-  /mount-image@1.0.0(core-js@3.30.2):
-    resolution: {integrity: sha512-P0e7bubiAWb9Vn2ECFF1HMlPERKmA+JmI57toTsau6TaEs547/Ihp7VdDRigmbjCfEVtaRpc/4Bg4J27jOgUxQ==}
+  /mount-image@1.1.0(core-js@3.30.2):
+    resolution: {integrity: sha512-AWIKIVcDZpg1EppoB1hL/lx2IG+4E+jkeSgfK+0qoMxrgzIobivSFNjuCvCbDY1YWGsSbVUHjGUBk8cmx/GNcw==}
     engines: {node: '>=12.20'}
     peerDependencies:
       core-js: '>= 3'
@@ -4948,8 +4954,8 @@ packages:
       core-js: 3.30.2
     dev: false
 
-  /mount-script@1.0.0(core-js@3.30.2):
-    resolution: {integrity: sha512-VzYm1/IOtj9nIclRX2xjcAQHzsaMz5bJI10mZ/RDRzvQkHIcj9U+S4idzwFVJD5ttQkoff+f/SF6fMVcysNvZQ==}
+  /mount-script@1.1.0(core-js@3.30.2):
+    resolution: {integrity: sha512-lzDlGJCuVtWF2NTlo8Xs7eGstXZlg+nHA4xzS3kCvwUiJFaoVHlQftdYY2VQkqjpFRu0nSmPIeX1buwWY86W1Q==}
     engines: {node: '>=12.20'}
     peerDependencies:
       core-js: '>= 3'
@@ -4957,8 +4963,8 @@ packages:
       core-js: 3.30.2
     dev: false
 
-  /mount-style@1.0.0(core-js@3.30.2):
-    resolution: {integrity: sha512-mNsV86HZtsdyQN8NMqFmAOSMr89x/DiccJIVLgaxpV7TssAc+4rEVDMYs8e4fo3lIVV78DldGUFXCbUuSNbIMA==}
+  /mount-style@1.1.1(core-js@3.30.2):
+    resolution: {integrity: sha512-ScIt3z430+sXxGHP/VcLfSMoVIludBX/ipj6L5dyGir5GJWVtxqN4NahSEsrE7vLq8fwbYIxcVK5PKKyE+InMg==}
     engines: {node: '>=12.20'}
     peerDependencies:
       core-js: '>= 3'
@@ -6367,8 +6373,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-downloads@1.0.0:
-    resolution: {integrity: sha512-aU1SB6yJ856TZ641QPtBtcf5iHvHSSC7XmeHhkBtbYbOlbjE+JhHi3LvTdlWH04fDxc44bFR0J+PY+2GICO6EA==}
+  /use-downloads@1.1.0:
+    resolution: {integrity: sha512-weHMgbGSBV2ND/xJ5fD9SrKO7bdNym+ZstdEuG+lWHypfi93cCQQKTjvs/Pf7eM/DnlKSZpKb8xktck/52btZg==}
     engines: {node: '>=12.20'}
     dev: false
 

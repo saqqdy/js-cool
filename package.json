@@ -1,20 +1,20 @@
 {
 	"name": "js-cool",
 	"description": "This is a pure native js front-end common method library",
-	"version": "4.3.0",
+	"version": "4.4.0",
 	"packageManager": "pnpm@8.5.1",
-	"main": "dist/js-cool.cjs.js",
-	"module": "dist/js-cool.esm-bundler.js",
-	"browser": "dist/js-cool.esm-browser.js",
-	"unpkg": "dist/js-cool.global.js",
-	"jsdelivr": "dist/js-cool.global.js",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm-bundler.js",
+	"browser": "dist/index.esm-browser.js",
+	"unpkg": "dist/index.global.js",
+	"jsdelivr": "dist/index.global.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"module": "./dist/js-cool.esm-bundler.js",
-			"require": "./dist/js-cool.cjs.js",
-			"import": "./dist/js-cool.mjs"
+			"module": "./dist/index.esm-bundler.js",
+			"require": "./dist/index.cjs.js",
+			"import": "./dist/index.mjs"
 		},
 		"./*": "./*"
 	},
@@ -32,8 +32,8 @@
 		"gen:version": "tscjs scripts/version",
 		"tag:version": "tscjs scripts/tag",
 		"build": "run-s clean build:{bundle,types}",
-		"build:bundle": "rollup -c build/rollup.config.ts --configPlugin @rollup/plugin-typescript",
-		"build:types": "tsc -p src/tsconfig.declaration.json && pnpm roll-types",
+		"build:bundle": "tscjs scripts/build",
+		"build:types": "tsc -p src/tsconfig.json && pnpm roll-types",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
 		"deploy": "sh scripts/deploy.sh",
 		"roll-types": "api-extractor run && rm-all temp",
@@ -50,12 +50,12 @@
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
-		"load-source": "^1.0.0",
-		"mount-css": "^1.0.0",
-		"mount-image": "^1.0.0",
-		"mount-script": "^1.0.0",
-		"mount-style": "^1.0.0",
-		"use-downloads": "^1.0.0"
+		"load-source": "^1.1.0",
+		"mount-css": "^1.1.0",
+		"mount-image": "^1.1.0",
+		"mount-script": "^1.1.0",
+		"mount-style": "^1.1.1",
+		"use-downloads": "^1.1.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.8",
@@ -100,6 +100,12 @@
 	},
 	"engines": {
 		"node": ">=12.20"
+	},
+	"resolutions": {
+		"mount-css": "1.1.0",
+		"mount-image": "1.1.0",
+		"mount-script": "1.1.0",
+		"mount-style": "1.1.1"
 	},
 	"pnpm": {
 		"peerDependencyRules": {

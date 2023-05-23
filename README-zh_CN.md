@@ -63,7 +63,7 @@ getOsVersion() // 返回系统版本
 
    ```html
    <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-   <script src="https://unpkg.com/js-cool@4.0.0/dist/js-cool.global.prod.js"></script>
+   <script src="https://unpkg.com/js-cool@4.0.0/dist/index.global.prod.js"></script>
    ```
 
 ## 所有方法汇总
@@ -172,8 +172,8 @@ const functionList = {
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square
 [download-url]: https://npmjs.org/package/js-cool
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/dist/js-cool.global.prod.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/dist/js-cool.global.prod.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
 [sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_js-cool

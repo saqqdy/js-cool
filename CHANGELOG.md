@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.05.23 v4.4.0
+
+1. fix outputs
+2. fix exports
+
 ## 2023.05.22 v4.3.0
 
 1. fix export default

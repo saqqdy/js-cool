@@ -34,14 +34,14 @@ export interface Options extends RollupOptions {
 const configs: Config[] = [
 	{
 		input: 'src/index.ts',
-		file: 'dist/js-cool.esm-browser.js',
+		file: 'dist/index.esm-browser.js',
 		format: 'es',
 		browser: true,
 		env: 'development'
 	},
 	{
 		input: 'src/index.ts',
-		file: 'dist/js-cool.esm-browser.prod.js',
+		file: 'dist/index.esm-browser.prod.js',
 		format: 'es',
 		browser: true,
 		minify: true,
@@ -49,26 +49,26 @@ const configs: Config[] = [
 	},
 	{
 		input: 'src/index.ts',
-		file: 'dist/js-cool.esm-bundler.js',
+		file: 'dist/index.esm-bundler.js',
 		format: 'es',
 		env: 'development'
 	},
 	{
 		input: 'src/index.default.ts',
-		file: 'dist/js-cool.global.js',
+		file: 'dist/index.global.js',
 		format: 'iife',
 		env: 'development'
 	},
 	{
 		input: 'src/index.default.ts',
-		file: 'dist/js-cool.global.prod.js',
+		file: 'dist/index.global.prod.js',
 		format: 'iife',
 		minify: true,
 		env: 'production'
 	},
 	{
 		input: 'src/index.default.ts',
-		file: 'dist/js-cool.cjs.js',
+		file: 'dist/index.cjs.js',
 		format: 'cjs',
 		env: 'development'
 	}
@@ -81,10 +81,6 @@ function createEntries() {
 function createEntry(config: Config) {
 	const isGlobalBuild = config.format === 'iife'
 	const isTypeScript = config.input.endsWith('.ts')
-	const isTranspiled =
-		config.file.endsWith('bundler.js') ||
-		config.file.endsWith('browser.js') ||
-		config.file.endsWith('prod.js')
 
 	const _config: Options = {
 		external: [],
@@ -133,14 +129,13 @@ function createEntry(config: Config) {
 	)
 
 	if (config.transpile !== false) {
-		!isTranspiled &&
-			_config.plugins.push(
-				babel({
-					babelHelpers: 'bundled',
-					extensions,
-					exclude: [/node_modules[\\/]core-js/]
-				})
-			)
+		_config.plugins.push(
+			babel({
+				babelHelpers: 'bundled',
+				extensions,
+				exclude: [/node_modules[\\/]core-js/]
+			})
+		)
 		isTypeScript &&
 			_config.plugins.push(
 				typescript({
