@@ -63,7 +63,7 @@ getOsVersion() // 返回系统版本
 
    ```html
    <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-   <script src="https://unpkg.com/js-cool@4.0.0/dist/index.global.prod.js"></script>
+   <script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
    ```
 
 ## 所有方法汇总

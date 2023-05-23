@@ -63,7 +63,7 @@ getOsVersion() // return the system version
 
    ```html
    <! -- Add script tags to your html code, using CDN links to bring in -->
-   <script src="https://unpkg.com/js-cool@4.0.0/dist/index.global.prod.js"></script>
+   <script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
    ```
 
 ## Summary of all methods
