@@ -1,4 +1,4 @@
-import jsCool from './js-cool.cjs.js'
+import jsCool from './index.cjs.js'
 
 const {
 	version,
