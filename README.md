@@ -2,7 +2,7 @@
 
 # js-cool
 
-This is a pure native js front-end common method library
+This is a collection of js utils
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]

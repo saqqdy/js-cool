@@ -1,6 +1,6 @@
 {
 	"name": "js-cool",
-	"description": "This is a pure native js front-end common method library",
+	"description": "This is a collection of js utils",
 	"version": "4.4.1",
 	"packageManager": "pnpm@8.5.1",
 	"main": "dist/index.cjs.js",

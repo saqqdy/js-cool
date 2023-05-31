@@ -2,7 +2,7 @@
 
 # js-cool
 
-这是一个纯原生 ES6 开发的 Javascript 常用方法库
+这是一个 Javascript 常用方法库
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
