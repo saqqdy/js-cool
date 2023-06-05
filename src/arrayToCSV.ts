@@ -1,23 +1,23 @@
 /**
- * 将一个二维数组转换为一个逗号分隔的值（CSV）字符串。
+ * Converts a two-dimensional array to a comma-separated string of values (CSV).
  *
  * @example
  * ```js
- * arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
+ * arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a", "b" \n "c", "d"'
  * ```
  * @example
  * ```js
- * arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
+ * arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a"; "b"\n "c"; "d"'
  * ```
  * @example
  * ```js
- * arrayToCSV([['a', '"b" great'], ['c', 3.1415]]); // '"a","""b"" great"\n"c",3.1415'
+ * arrayToCSV([['a', '"b" great'], ['c', 3.1415]]); // '"a", """b"" great"\n "c",3.1415'
  * ```
- * @param data - json数据
- * @param delimiter - 分隔符，默认','
- * @returns CSV数据
+ * @param data - json data
+ * @param delimiter - delimiter, default ','
+ * @returns CSV data
  */
-export const arrayToCSV = (arr: any[], delimiter = ',') =>
+const arrayToCSV = (arr: any[], delimiter = ',') =>
 	arr
 		.map(v => v.map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter))
 		.join('\n')

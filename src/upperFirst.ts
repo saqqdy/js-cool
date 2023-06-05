@@ -1,8 +1,8 @@
 /**
- * 首字母大写
+ * First letter capitalized
  *
- * @param string - 需要转换的字符串
- * @returns 返回转换后的字符串
+ * @param string - the string to be converted
+ * @returns returns the converted string
  */
 function upperFirst(string: string): string {
 	return string.slice(0, 1).toLocaleUpperCase() + string.slice(1)

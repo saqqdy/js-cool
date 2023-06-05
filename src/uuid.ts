@@ -1,5 +1,5 @@
 /**
- * 浏览器端生成uuid，采用v4方法
+ * Browser-side generation of uuid, using v4 method
  *
  * @example
  * ```js

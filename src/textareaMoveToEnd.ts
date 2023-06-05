@@ -1,7 +1,7 @@
 /**
- * textarea或input对象将光标定位到文字尾部
+ * textarea or input object to position the cursor at the end of the text
  *
- * @param obj - dom对象
+ * @param obj - dom object
  */
 function textareaMoveToEnd(obj: HTMLTextAreaElement) {
 	obj.focus()

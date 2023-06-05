@@ -1,8 +1,8 @@
 /**
- * 是否存在指定变量
+ * The presence or absence of the specified variable
  *
- * @param variableName - 传入变量名称
- * @returns 返回true/false
+ * @param variableName - variable name
+ * @returns returns true/false
  */
 function isExitsVariable(variableName: string): boolean {
 	try {

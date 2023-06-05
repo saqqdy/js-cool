@@ -1,7 +1,7 @@
 /**
- * 去除HTML标签所有属性
+ * Remove all attributes of HTML tags
  *
- * @param string - 传入字符串
+ * @param string - pass in the string
  * @returns newString
  */
 function clearAttr(string: string) {

@@ -1,11 +1,11 @@
 import getCookie from './getCookie'
 
 /**
- * 删除cookie
+ * Delete cookie
  *
- * @param name - cookie名称
+ * @param name - cookie name
  */
-export function delCookie(name: string) {
+function delCookie(name: string) {
 	const e = new Date()
 	e.setTime(e.getTime() - 1)
 	const cval = getCookie(name)

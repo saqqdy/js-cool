@@ -2,10 +2,10 @@ import decodeUtf8 from './decodeUtf8'
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 /**
- * base64解码
+ * base64 decoding
  *
- * @param input - 需要解码的字符串
- * @returns 解码后的字符串
+ * @param input - the string to be decoded
+ * @returns decoded string
  */
 function decodeBase64(input: string) {
 	let output = '',

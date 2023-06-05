@@ -1,17 +1,17 @@
 import type { AnyFunction, AnyObject } from '../typings/common'
 
 /**
- * removeEvent移除由addEvent创建的事件委托
+ * removeEvent removes the event delegate created by addEvent
  *
- * @param element - js dom对象
- * @param type - 事件类型。不需要加on
- * @param handler - 回调方法
+ * @param element - js dom object
+ * @param type - The type of the event. No need to add on
+ * @param handler - Callback method.
  */
 function removeEvent(element: AnyObject, type: string, handler: AnyFunction) {
 	if (element.removeEventListener) {
 		element.removeEventListener(type, handler, false)
 	} else {
-		// 从哈希表中删除事件处理函数
+		// Removing event handler functions from a hash table
 		if (element.events && element.events[type]) {
 			delete element.events[type][handler.$$guid]
 		}

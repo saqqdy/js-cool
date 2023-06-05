@@ -1,5 +1,11 @@
 # Change logs
 
+## 2023.06.05 v4.5.0
+
+1. add `inBrowser`
+2. some translate work
+3. upgrade all packages
+
 ## 2023.05.31 v4.4.1
 
 1. fix esm module

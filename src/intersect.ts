@@ -1,13 +1,13 @@
 import contains from './contains'
 
 /**
- * 求多个数组的交集
+ * Find the intersection of multiple arrays
  *
  * @example
  * ```js
  * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
  * ```
- * @param args - 参数
+ * @param args - arguments
  * @returns array
  */
 function intersect<T = unknown>(...args: T[][]): T[] {

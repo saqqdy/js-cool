@@ -1,7 +1,7 @@
 /**
- * pattern返回一些常用的正则：any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
+ * pattern returns some common regulars: any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
  *
- * @returns 返回对象
+ * @returns return object
  */
 const pattern = {
 	any: /[\w\W]+/,

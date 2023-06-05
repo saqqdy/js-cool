@@ -1,8 +1,8 @@
 /**
- * 编码Utf8
+ * Encoding Utf8
  *
- * @param input - 需要编码的字符串
- * @returns 返回UTF-8编码
+ * @param input - the string to be encoded
+ * @returns returns the UTF-8 encoding
  */
 function encodeUtf8(string: string) {
 	string = string.replace(/\r\n/g, '\n')

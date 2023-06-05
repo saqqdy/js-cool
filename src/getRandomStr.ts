@@ -1,14 +1,14 @@
 /**
- * 获取随机字符串
+ * Get a random string
  *
- * @param len - 需要获取随机字符串的长度
- * @param widthSpecialChar - 可选，是否需要生成带特殊字符的串
- * @returns 随机串
+ * @param len - the length of the random string that needs to be obtained
+ * @param widthSpecialChar - optional, if you need to generate a string with special characters
+ * @returns random string
  */
 function getRandomStr(len = 32, widthSpecialChar = false): string {
 	const chars = !widthSpecialChar
 		? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
-		: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+		: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // Confusing characters are removed by default: oOLl,9gq,Vv,Uu,I1
 	// var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
 	const maxPos = chars.length
 	let str = ''

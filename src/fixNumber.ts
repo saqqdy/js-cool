@@ -1,15 +1,15 @@
 /**
- * 截取小数点后几位，不足的不补0
+ * Intercept the decimal places, do not fill in the missing 0
  *
- * @param number - 要处理的数字，必填
- * @param n - 要保留的小数点位数，默认保留2位
- * @returns 返回新数字
+ * @param number - the number of digits to be processed, required
+ * @param n - the number of decimal places to keep, default is 2
+ * @returns returns the new number
  */
 function fixNumber(number: string | number, n = 2) {
 	const reg = new RegExp('^(.*\\..{' + n + '}).*$')
 	number = '' + number
 	if (!/^(\-|\+)?\d+(\.\d+)?$/.test(number)) {
-		console.warn('请传入数字')
+		console.warn('Please pass in the number')
 		return number
 	}
 	return parseFloat(number.replace(reg, '$1'))

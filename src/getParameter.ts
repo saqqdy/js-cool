@@ -1,8 +1,8 @@
 /**
- * 获取单个URL参数
+ * Get a single URL parameter
  *
- * @param name - 参数名称
- * @returns 返回参数值
+ * @param name - name
+ * @returns return parameter value
  */
 function getParameter(name: string): string | null {
 	const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')

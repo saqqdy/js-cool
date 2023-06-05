@@ -1,9 +1,9 @@
 /**
- * 返回下一个zIndex值
+ * Return the next zIndex value
  *
- * @param min - 可选，最小值
- * @param max - 可选，最大值
- * @returns 数字
+ * @param min - optional, minimum value
+ * @param max - optional, maximum value
+ * @returns number
  */
 function nextIndex(min = 5000, max = 10000): number {
 	const doms = [min]

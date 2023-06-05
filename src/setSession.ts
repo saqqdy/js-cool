@@ -4,13 +4,13 @@ export interface SessionData {
 }
 
 /**
- * 写sessionStorage
+ * Write sessionStorage
  *
- * @param name - 名称
- * @param value - 设置要存储的值，可以是对象或字符串
- * @param seconds - 有效时间
+ * @param name - name
+ * @param value - Set the value to be stored, either as an object or as a string
+ * @param seconds - the valid time
  */
-export function setSession(name: string, value: any, seconds: number): void {
+function setSession(name: string, value: any, seconds: number): void {
 	const e = new Date()
 	const expires = seconds ? e.getTime() + seconds * 1000 : ''
 	const obj = {} as SessionData

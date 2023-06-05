@@ -1,10 +1,10 @@
 import _eval from './_eval'
 
 /**
- * 是否存在指定函数
+ * The presence or absence of the specified function
  *
- * @param funcName - 传入函数名
- * @returns 返回true/false
+ * @param funcName - incoming function name
+ * @returns returns true/false
  */
 function isExitsFunction(funcName: string): boolean {
 	return typeof _eval(funcName) === 'function'

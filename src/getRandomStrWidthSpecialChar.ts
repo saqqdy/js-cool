@@ -1,11 +1,11 @@
 /**
- * 获取随机字符串带特殊符号
+ * Get random string with special symbols
  *
- * @param len - 需要获取随机字符串的长度
- * @returns 随机串
+ * @param len - the length of the random string to get
+ * @returns random string
  */
 function getRandomStrWidthSpecialChar(len = 32): string {
-	const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // 默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1
+	const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // Confusing characters are removed by default: oOLl,9gq,Vv,Uu,I1
 	const maxPos = chars.length
 	let str = ''
 	for (let i = 0; i < len; i++) {

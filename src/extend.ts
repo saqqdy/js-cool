@@ -9,11 +9,11 @@ export type ExtendObjectData = Record<string, any>
 export type ExtendData = ExtendArrayData | ExtendObjectData
 
 /**
- * extend main function
+ * Extend the main function
  *
- * @param target - 目标
- * @param source - 源
- * @param deep - 是否深拷贝
+ * @param target - target
+ * @param source - source
+ * @param deep - whether deep copy
  */
 function extendObject(target: ExtendObjectData, source: ExtendObjectData, deep: boolean): void
 function extendObject(target: ExtendArrayData, source: ExtendArrayData, deep: boolean): void

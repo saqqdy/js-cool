@@ -1,5 +1,5 @@
 /**
- * 判断是否数组
+ * ia array
  *
  * @param arr -
  */

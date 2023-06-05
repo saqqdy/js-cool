@@ -1,8 +1,8 @@
 /**
- * 是否为由数字组成的字符串
+ * Whether or not it is a string consisting of numbers
  *
- * @param str - 待检测的字符串
- * @returns 返回true/false
+ * @param str - the string to be tested
+ * @returns returns true/false
  */
 function isDigitals(str: any): boolean {
 	return /^[0-9]*$/.test(str)

@@ -1,7 +1,7 @@
 /**
- * 去除HTML标签
+ * Removing HTML tags
  *
- * @param string - 带html标签的字符串
+ * @param string - string with html tags
  * @returns newString
  */
 function clearHtml(string: string) {

@@ -1,5 +1,5 @@
 /**
- * 根据路径字符串设置数组、对象属性值
+ * Set array, object property values based on path strings
  *
  * @example
  * ```js
@@ -13,13 +13,13 @@
  * setProperty(target, 'b[0].c') // 2
  * setProperty(target, () => 'a') // 1
  * ```
- * @param target - 目标数组、对象
- * @param prop - 设置目标，可传function，'a' | 'a[1].c'
- * @returns 返回对应的值
+ * @param target - target array, object
+ * @param prop - set target, can pass function, 'a' | 'a[1].c'
+ * @returns returns the corresponding value
  */
 function setProperty(target: any, prop: string | { (): string }, value: any): any {
-	if (!target) throw new Error('请传入target')
-	if (!prop) throw new Error('请传入prop')
+	if (!target) throw new Error('target is required')
+	if (!prop) throw new Error('prop is required')
 	if (prop instanceof Function) prop = prop()
 	const arr = prop.split('.')
 	let _target = target

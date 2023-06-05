@@ -1,7 +1,7 @@
 /**
- * 新标签页打开链接（浏览器不能解析的文件跳转下载）
+ * Open link in new tab (file jump download if browser can't parse)
  *
- * @param url - 链接
+ * @param url - link
  */
 function openUrl(url: string) {
 	const dom = document.createElement('a')

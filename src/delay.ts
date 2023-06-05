@@ -1,7 +1,7 @@
 import type { AnyFunction } from '../typings/common'
 
 /**
- * 防抖节流
+ * debounce & throttle
  *
  * @returns class
  */
@@ -9,11 +9,10 @@ function delay() {
 	return {
 		map: {} as any,
 		register(id: string, fn: AnyFunction, time: number, boo: boolean) {
-			// 注册
 			if (boo) {
-				// 防抖，一定时间内只触发第一次
+				// debounce, only the first trigger for a certain period of time
 				if (!this.map[id]) {
-					// 不存在的先执行fn
+					// Non-existent first execution fn
 					fn()
 				}
 				this.map[id] = {
@@ -26,9 +25,9 @@ function delay() {
 					}, time)
 				}
 			} else {
-				// 节流，一定时间内延迟执行
+				// Throttling, delayed execution for a certain period of time
 				if (this.map[id]) {
-					// 已存在的先销毁
+					// Existing ones are destroyed first
 					this.destroy(id)
 				}
 				this.map[id] = {
@@ -41,7 +40,6 @@ function delay() {
 			}
 		},
 		destroy(id: string) {
-			// 销毁
 			if (!this.map[id]) {
 				return
 			}

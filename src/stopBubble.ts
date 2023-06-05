@@ -1,7 +1,7 @@
 /**
- * 阻止冒泡
+ * Block bubbling
  *
- * @param e - dom的event对象
+ * @param e - dom's event object
  * @returns bool false
  */
 function stopBubble(e: Event) {

@@ -1,6 +1,6 @@
 import contains from './contains'
 /**
- * 数组去重
+ * Array de-duplication
  *
  * @example
  * ```js

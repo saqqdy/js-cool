@@ -1,14 +1,14 @@
 /**
- * 获取URL参数
+ * Get URL parameters
  *
- * @param url - 传入url参数
- * @returns 返回参数列表
+ * @param url - pass in url parameters
+ * @returns returns a list of parameters
  */
 function getUrlParam(url: string): object {
 	url =
 		url !== '' && typeof url !== 'undefined'
 			? url.substr(url.indexOf('?')).split('#')[0]
-			: location.search // 获取url中"?"符后的字串
+			: location.search // Get the string in the url after the "?" string after the character
 	const search = url.substring(url.lastIndexOf('?') + 1)
 	const obj: any = {}
 	const reg = /([^?&=]+)=([^?&=]*)/g

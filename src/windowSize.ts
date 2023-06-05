@@ -4,9 +4,9 @@ export interface WindowSizeObj {
 }
 
 /**
- * windowSize获取窗口大小
+ * windowSize to get the window size
  *
- * @returns 返回宽高
+ * @returns returns the width and height
  */
 function windowSize(): WindowSizeObj {
 	const s: WindowSizeObj = { width: 0, height: 0 }
@@ -17,7 +17,7 @@ function windowSize(): WindowSizeObj {
 		s.width = document.body.clientWidth
 		s.height = document.body.clientHeight
 	}
-	// 通过深入Document内部对body进行检测，获取窗口大小
+	// Get the window size by going inside the Document to detect the body
 	if (document.documentElement && document.documentElement.clientWidth) {
 		s.width = document.documentElement.clientWidth
 		s.height = document.documentElement.clientHeight

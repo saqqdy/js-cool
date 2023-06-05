@@ -1,10 +1,10 @@
 /**
- * 截取字符串，中文算2个字节
+ * Intercept string, Chinese counts as 2 bytes
  *
- * @param str - 要截取的字符串
+ * @param str - the string to be intercepted
  * @param len -
  * @param hasDot -
- * @returns 返回截取后的字符串
+ * @returns returns the intercepted string
  */
 function cutCHSString(str: string, len: number = str.length, hasDot = false) {
 	if (!str) return ''

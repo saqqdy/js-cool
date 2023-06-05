@@ -2,10 +2,10 @@ import encodeUtf8 from './encodeUtf8'
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 /**
- * 字符串、数字转base64
+ * String, number to base64
  *
- * @param input - 需要编码的字符串
- * @returns 返回BASE64编码
+ * @param input - the string to be encoded
+ * @returns returns the BASE64 encoding
  */
 function encodeBase64(input: string) {
 	let output = '',

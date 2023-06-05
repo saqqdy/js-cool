@@ -1,5 +1,5 @@
 /**
- * 读取完整IPv6
+ * Read full IPv6
  *
  * @example
  * ```js

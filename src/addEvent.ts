@@ -3,32 +3,32 @@
 import type { AnyFunction, AnyObject } from '../typings/common'
 
 /**
- * addEvent()事件委托，支持多次委托
+ * addEvent() event delegate, supports multiple delegates
  *
- * @param element - js dom对象
- * @param type - 事件类型。不需要加on
- * @param handler - 回调方法
+ * @param element - js dom object
+ * @param type - The event type. No need to add on
+ * @param handler - callback method
  */
 function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
 	if (element.addEventListener) {
 		element.addEventListener(type, handler, false)
 	} else {
-		// 为每一个事件处理函数分派一个唯一的ID
+		// Assign a unique ID to each event handler
 		if (!handler.$$guid) handler.$$guid = addEvent.guid++
-		// 为元素的事件类型创建一个哈希表
+		// Create a hash table for the event type of the element
 		if (!element.events) element.events = {}
-		// 为每一个"元素/事件"对创建一个事件处理程序的哈希表
+		// Create a hash table of event handlers for each "element/event" pair
 		let handlers = element.events[type]
 		if (!handlers) {
 			handlers = element.events[type] = {}
-			// 存储存在的事件处理函数(如果有)
+			// Store the event handler functions that exist (if any)
 			if (element['on' + type]) {
 				handlers[0] = element['on' + type]
 			}
 		}
-		// 将事件处理函数存入哈希表
+		// Store event handling functions in a hash table
 		handlers[handler.$$guid] = handler
-		// 指派一个全局的事件处理函数来做所有的工作
+		// Assign a global event handler to do all the work
 		element['on' + type] = handleEvent
 	}
 }
@@ -36,24 +36,24 @@ function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
 addEvent.guid = 1
 
 /**
- * handleEvent()执行事件
+ * handleEvent() to execute the event
  *
  * @private
- * @param event - 事件类型
+ * @param event - event type
  * @returns returnValue
  */
 function handleEvent(event: any): boolean {
 	let returnValue = true
 	// @ts-expect-error
 	const that: any = this
-	// 抓获事件对象(IE使用全局事件对象)
+	// Capturing event objects (IE uses global event objects)
 	event =
 		event ||
 		fixEvent(((that.ownerDocument || that.document || that).parentWindow || window).event)
-	// 取得事件处理函数的哈希表的引用
+	// Get a reference to the hash table of the event handling function
 	// @ts-expect-error
 	const handlers = (this as any).events[event.type]
-	// 执行每一个处理函数
+	// Execute each handler function
 	for (const i in handlers) {
 		// @ts-expect-error
 		;(this as any).$$handleEvent = handlers[i]
@@ -66,14 +66,14 @@ function handleEvent(event: any): boolean {
 }
 
 /**
- * 为IE的事件对象添加一些“缺失的”函数
+ * Add some "missing" functions to IE's event objects
  *
  * @private
- * @param event - 事件类型
- * @returns event 返回补齐了缺失方法的的event
+ * @param event - event type
+ * @returns event returns the event that completes the missing method
  */
 function fixEvent(event: any): any {
-	// 添加标准的W3C方法
+	// Adding standard W3C methods
 	event.preventDefault = fixEvent.preventDefault
 	event.stopPropagation = fixEvent.stopPropagation
 	return event

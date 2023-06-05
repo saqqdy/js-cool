@@ -1,9 +1,9 @@
 /**
- * 获取随机整数
+ * Get a random integer
  *
- * @param min - 随机数的最小值
- * @param max - 随机数的最大值
- * @returns 返回数字
+ * @param min - the minimum value of the random number
+ * @param max - the maximum value of the random number
+ * @returns returns the number
  */
 function getRandomNum(min = 1, max = 10): number {
 	const Range = max - min

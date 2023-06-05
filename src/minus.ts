@@ -2,13 +2,13 @@ import contains from './contains'
 import unique from './unique'
 
 /**
- * 求多个数组的差集，属于A但不属于B/C/D...的元素
+ * Find the set of differences of multiple arrays that belong to A but not to B/C/D... of the elements of
  *
  * @example
  * ```js
  * minus([1, 2], [2, '33'], [2, 4]) // [1]
  * ```
- * @param args - 参数
+ * @param args - arguments
  * @returns array
  */
 function minus<T = unknown>(...args: T[][]): T[] {

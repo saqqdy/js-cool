@@ -1,8 +1,8 @@
 /**
- * 数字千分位分割
+ * Digital thousandths division
  *
- * @param num - 数字
- * @returns result - 分割后的字符串
+ * @param num - the number
+ * @returns result - the split string
  */
 function toThousands(num: string | number): string {
 	if (!num) return +num === 0 ? '0' : ''

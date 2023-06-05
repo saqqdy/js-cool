@@ -1,8 +1,8 @@
 /**
- * 将-间隔且全小写的Dash模式转成驼峰字符串
+ * Converts -spaced and all lowercase Dash patterns to humped strings
  *
- * @param string - 需要转换的字符串
- * @returns 返回转换后的字符串
+ * @param string - the string to be converted
+ * @returns returns the converted string
  */
 function dash2Camel(string: string) {
 	return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {

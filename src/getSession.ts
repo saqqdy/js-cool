@@ -1,10 +1,10 @@
 /**
- * 读取sessionStorage
+ * Read sessionStorage
  *
- * @param name - 名称
- * @returns 返回sessionStorage
+ * @param name - name
+ * @returns return sessionStorage
  */
-export function getSession(name: string): any {
+function getSession(name: string): any {
 	const str = sessionStorage.getItem(name)
 	const exp = new Date()
 	if (str) {

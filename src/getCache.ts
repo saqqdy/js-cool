@@ -1,10 +1,10 @@
 /**
- * 获取缓存，存入的如果是Object，取出的也是Object，不需要再转换
+ * Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
  *
- * @param name - 缓存名称
- * @returns 返回数据，存的如果是对象，取出的也是对象
+ * @param name - cache name
+ * @returns returns data, if it's an object, it's also an object
  */
-export function getCache(name: string): any {
+function getCache(name: string): any {
 	const str = localStorage.getItem(name)
 	const exp = new Date()
 	let o

@@ -1,5 +1,5 @@
 /**
- * 根据路径字符串获取数组、对象属性值
+ * Get array, object property values based on path string
  *
  * @example
  * ```js
@@ -13,12 +13,12 @@
  * getProperty(target, 'b[0].c') // 2
  * getProperty(target, () => 'a') // 1
  * ```
- * @param target - 目标数组、对象
- * @param prop - 查询目标，可传function
- * @returns 返回对应的值
+ * @param target - target array, object
+ * @param prop - query target, can pass function
+ * @returns result
  */
 function getProperty(target: any, prop: string | { (): string }): any {
-	if (!target) throw new Error('请传入target')
+	if (!target) throw new Error('target is required')
 	if (!prop) return target
 	if (prop instanceof Function) prop = prop()
 	const arr = prop.split('.')

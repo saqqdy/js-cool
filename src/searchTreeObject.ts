@@ -5,13 +5,13 @@ export interface SearchKeySet {
 }
 
 /**
- * tree对象深度查找
+ * tree object depth lookup
  *
- * @param tree - 树形对象
- * @param expression - 必填 查询方式
- * @param keySet - 选填 默认的子类名称、查询name
- * @param number - 选填 查找个数，不传则查询全部
- * @returns 返回查询到的数组
+ * @param tree - tree object
+ * @param expression - required Query method
+ * @param keySet - optional Default subclass name, query name
+ * @param number - optional Number of lookups, if not passed, query all
+ * @returns returns the queried array
  */
 function searchTreeObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
 	const retNode: any[] = []
@@ -21,11 +21,11 @@ function searchTreeObject(tree: object | any[], expression: any, keySet: SearchK
 	}
 	if (Object.prototype.toString.call(tree) === '[object Object]') tree = [tree]
 	/**
-	 * 递归查找
+	 * Recursive lookup
 	 *
 	 * @private
-	 * @param tree - 对象
-	 * @param expression - 表达式
+	 * @param tree - object
+	 * @param expression - expression
 	 * @returns Nodes
 	 */
 	function deepSearch(tree: any, expression: any) {
@@ -48,7 +48,7 @@ function searchTreeObject(tree: object | any[], expression: any, keySet: SearchK
 				result = tree[i][keySet.keyName] === expression
 			}
 			if (isLimit) {
-				// 限制查询个数
+				// Limit the number of queries
 				if (number > 0) {
 					if (result) {
 						const treeNode = { ...tree[i] }

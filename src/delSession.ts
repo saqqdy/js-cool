@@ -1,9 +1,9 @@
 /**
- * 删除sessionStorage
+ * Delete sessionStorage
  *
- * @param name - 名称
+ * @param name - name
  */
-export function delSession(name: string) {
+function delSession(name: string) {
 	sessionStorage.removeItem(name)
 }
 

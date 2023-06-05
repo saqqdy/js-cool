@@ -91,6 +91,7 @@ const functionList = {
   isDigitals, // 是否为由数字组成的字符串
   isExitsFunction, // 是否存在指定函数
   isExitsVariable, // 是否存在指定变量
+  inBrowser, // 判断是否在浏览器端运行
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号
   getOsVersion, // 获取手机系统版本

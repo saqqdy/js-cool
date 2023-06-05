@@ -1,13 +1,13 @@
 /**
- * setCookie写入cookie的方法
+ * setCookie method for writing cookies
  *
- * @param name - cookie名称
- * @param value - 设置要存储的值，可以是对象或字符串
- * @param seconds - cookie有效时间默认1天
- * @param path - 路径，默认'/'
- * @param samesite - SameSite，默认true
+ * @param name - cookie name
+ * @param value - Set the value to be stored, either as an object or as a string
+ * @param seconds - cookie validity default 1 day
+ * @param path - path, default '/'
+ * @param samesite - SameSite, default true
  */
-export function setCookie(name: string, value: any, seconds = 86400, path = '/', samesite = true) {
+function setCookie(name: string, value: any, seconds = 86400, path = '/', samesite = true) {
 	const exp: Date = new Date()
 	exp.setTime(exp.getTime() + seconds * 1000)
 	document.cookie =

@@ -1,8 +1,8 @@
 /**
- * 获取文本长度，中文算2个字节
+ * Get the length of the text, Chinese counts as 2 bytes
  *
- * @param str - 字符串
- * @returns 返回长度
+ * @param str - string
+ * @returns return length
  */
 function getCHSLength(str: string): number {
 	// eslint-disable-next-line no-control-regex

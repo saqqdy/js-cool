@@ -1,8 +1,8 @@
 /**
- * 移除字符串首尾空格
+ * Remove leading and trailing spaces from strings
  *
- * @param string - 传入字符串
- * @returns 返回新字符串
+ * @param string - pass in the string
+ * @returns returns the new string
  */
 function trim(string: string): string {
 	return string.replace(/(^\s+)|(\s+$)/g, '')

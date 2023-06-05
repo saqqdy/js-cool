@@ -1,8 +1,8 @@
 /**
- * 获取目标类型
+ * Get the target type
  *
- * @param target - 目标
- * @returns 类型
+ * @param target - target
+ * @returns type
  */
 function getType(target: any): string {
 	const type = {

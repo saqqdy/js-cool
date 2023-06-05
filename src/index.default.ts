@@ -1,10 +1,10 @@
 import { download } from 'use-downloads'
 
-// 全局参数
+// Global Parameters
 import client from './client'
 import pattern from './pattern'
 
-// String扩展、数组方法
+// String extensions, array methods
 import trim from './trim'
 import clearAttr from './clearAttr'
 import clearHtml from './clearHtml'
@@ -20,10 +20,11 @@ import cutCHSString from './cutCHSString'
 import textareaInsertText from './textareaInsertText'
 import textareaMoveToEnd from './textareaMoveToEnd'
 
-// 获取一下状态
+// Get the status of
 import isDigitals from './isDigitals'
 import isExitsFunction from './isExitsFunction'
 import isExitsVariable from './isExitsVariable'
+import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import getOsVersion from './getOsVersion'
@@ -32,7 +33,7 @@ import getDirParam from './getDirParam'
 import getParameter from './getParameter'
 import getUrlParam from './getUrlParam'
 
-// 缓存、cookie、session
+// Cache, cookie, session
 import getCache from './getCache'
 import setCache from './setCache'
 import delCache from './delCache'
@@ -43,20 +44,20 @@ import getCookie from './getCookie'
 import setCookie from './setCookie'
 import delCookie from './delCookie'
 
-// 编码与解码
+// Encoding and decoding
 import encodeBase64 from './encodeBase64'
 import encodeUtf8 from './encodeUtf8'
 import decodeBase64 from './decodeBase64'
 import decodeUtf8 from './decodeUtf8'
 
-// 事件委托、其他事件方法
+// Event delegates, other event methods
 import stopBubble from './stopBubble'
 import stopDefault from './stopDefault'
 import addEvent from './addEvent'
 import removeEvent from './removeEvent'
 import getScrollPosition from './getScrollPosition'
 
-// 工具类
+// tools
 import nextIndex from './nextIndex'
 import fixNumber from './fixNumber'
 import extend from './extend'
@@ -101,9 +102,9 @@ export default {
 	getSession,
 	setSession,
 	delSession,
-	getCookie, // 读取cookie
-	setCookie, // 写入cookie
-	delCookie, // 删除cookie
+	getCookie,
+	setCookie,
+	delCookie,
 	camel2Dash,
 	cleanData,
 	clearAttr,
@@ -145,6 +146,7 @@ export default {
 	isExitsFunction,
 	isExitsVariable,
 	isPlainObject,
+	inBrowser,
 	minus,
 	nextIndex,
 	openUrl,

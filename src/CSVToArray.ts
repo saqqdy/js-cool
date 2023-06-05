@@ -1,24 +1,24 @@
 /**
- * 将一个逗号分隔的值（CSV）字符串转换为一个2D数组。
+ * Converts a comma-separated string of values (CSV) to a 2D array.
  *
  * @example
  * ```js
- * CSVToArray('a,b\\nc,d'); // `[['a','b'],['c','d']]`;
+ * CSVToArray('a,b\\nc,d'); // `[['a','b'],['c','d']]`.
  * ```
  * @example
  * ```js
- * CSVToArray('a;b\\nc;d', ';'); // `[['a','b'],['c','d']]`;
+ * CSVToArray('a;b\\\nc;d', ';'); // `[['a','b'],['c','d']]`.
  * ```
  * @example
  * ```js
- * CSVToArray('col1,col2\\na,b\\nc,d', ',', true); // `[['a','b'],['c','d']]`;
+ * CSVToArray('col1,col2\\\na,b\\\nc,d', ',', true); // `[['a','b'],['c','d']]`.
  * ```
- * @param data - csv数据
- * @param delimiter - 分隔符，默认','
- * @param omitFirstRow - 第一行是表头数据，默认false
+ * @param data - csv data
+ * @param delimiter - separator, default ','
+ * @param omitFirstRow - the first row is the table header data, default false
  * @returns array
  */
-export const CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) =>
+const CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) =>
 	data
 		.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
 		.split('\n')

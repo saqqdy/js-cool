@@ -1,7 +1,7 @@
 import getAppVersion from './getAppVersion'
 
 /**
- * 版本号大小对比
+ * Version number size comparison
  *
  * @example
  * ```js
@@ -9,9 +9,9 @@ import getAppVersion from './getAppVersion'
  * getIsAppVersionLastest('Chrome', '90.0.4515.159'); // true;
  * getIsAppVersionLastest('Chrome', '94.10.4515.159', navigator.appVersion); // false;
  * ```
- * @param appName - app名称
- * @param compareVer - 必传 需要对比的版本号
- * @param userAgent - ua，可不传，默认取navigator.appVersion
+ * @param appName - app name
+ * @param compareVer - required, Version number to be compared
+ * @param userAgent - ua, not required, default=navigator.appVersion
  * @return null/true/false
  */
 function getIsAppVersionLastest(
@@ -20,13 +20,13 @@ function getIsAppVersionLastest(
 	userAgent?: string
 ): boolean | null {
 	userAgent = userAgent || navigator.appVersion
-	let basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent) // 兼容getIsAppVersionLastest("1.2.2","1.2.3")直接传入版本号的对比
+	let basicVer = appName.indexOf('.') > 0 ? appName : getAppVersion(appName, false, userAgent) // Compatible with getIsAppVersionLastest("1.2.2", "1.2.3") Directly pass in the version number for comparison
 	if (basicVer === null) {
 		return null
-	} // 不是指定客户端
+	} // Not a designated client
 	if (basicVer === false) {
 		return false
-	} // 是指定客户端但是版本号未知
+	} // is the specified client but the version number is unknown
 	basicVer = basicVer + '.'
 	compareVer = compareVer + '.'
 	const bStr = parseFloat(basicVer)

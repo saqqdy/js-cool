@@ -1,8 +1,8 @@
 /**
- * 将驼峰字符串转成-间隔且全小写的Dash模式
+ * Converts humped strings to -spaced and all lowercase Dash pattern
  *
- * @param string - 需要转换的字符串
- * @returns 返回转换后的字符串
+ * @param string - the string to be converted
+ * @returns returns the converted string
  */
 function camel2Dash(string: string) {
 	return string

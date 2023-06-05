@@ -1,9 +1,9 @@
 /**
- * 删除localStorage
+ * Delete localStorage
  *
- * @param name - 名称
+ * @param name - name
  */
-export function delCache(name: string) {
+function delCache(name: string) {
 	localStorage.removeItem(name)
 }
 

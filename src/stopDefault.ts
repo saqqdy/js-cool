@@ -1,7 +1,7 @@
 /**
- * 阻止默认事件
+ * Block default events
  *
- * @param e - dom的event对象
+ * @param e - dom's event object
  * @returns bool false
  */
 function stopDefault(e: Event) {

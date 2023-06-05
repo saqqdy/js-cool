@@ -3,7 +3,7 @@ function isWindow(obj: any) {
 }
 
 /**
- * 判断是否PlainObject
+ * is PlainObject
  *
  * @param arr -
  */

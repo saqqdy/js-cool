@@ -1,8 +1,8 @@
 /**
- * textarea或input对象在指定的光标位置插入文字
+ * textarea or input object inserts text at the specified cursor position
  *
- * @param node -  dom对象
- * @param data - 要插入的文字
+ * @param node - dom object
+ * @param data - the text to be inserted
  */
 function textareaInsertText(node: HTMLTextAreaElement, data: string) {
 	if ((document as any).selection) {

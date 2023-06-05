@@ -2,16 +2,16 @@ import type { AnyObject } from '../typings/common'
 import isArray from './isArray'
 
 /**
- * 数据清洗方法
+ * Data cleaning methods
  *
- * @param data - 要清洗的对象，必传
- * @param  map - 需要的数据队列，可传数组或者对象
+ * @param data - the object to be cleaned, must be passed
+ * @param map - the data queue to be cleaned, can be passed as array or object
  * @param map -
  * @param nullFix -
  * @param map -
  * @param nullFix -
- * @param nullFix - 选填，没有对应属性时返回的值，默认不返回该属性
- * @returns 返回清洗后的对象
+ * @param nullFix - optional, the value returned if there is no corresponding property, the default does not return the property
+ * @returns returns the cleaned object
  */
 function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
 	const result: any = {}

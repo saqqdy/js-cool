@@ -1,9 +1,9 @@
 /**
- * 获取APP版本号
+ * Get the APP version number
  *
- * @param appName - app名称
- * @param withApp - 是否需要带上名称
- * @param userAgent - ua，可不传，默认取navigator.appVersion
+ * @param appName - app name
+ * @param withApp - whether to bring the name
+ * @param userAgent - ua, may not be passed, default is navigator.appVersion
  * @return null/true/false
  */
 function getAppVersion(
@@ -18,17 +18,17 @@ function getAppVersion(
 	// withApp = typeof(withApp) != "undefined" ? withApp : false;
 	if (ver) {
 		if (withApp) {
-			// 需要带上app名称，完整输出
+			// Need to bring the app name, complete output
 			return ver ? ver[0] : ''
 		} else {
 			return ver ? ver[1] : ''
 		}
 	} else {
 		if (isApp) {
-			// 是指定客户端但是版本号未知
+			// is the specified client but the version number is unknown
 			return false
 		} else {
-			// 不是指定客户端
+			// Not a designated client
 			return null
 		}
 	}

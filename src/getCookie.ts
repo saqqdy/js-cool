@@ -1,10 +1,10 @@
 /**
- * 读取cookies
+ * Read cookies
  *
- * @param name - cookie名称
- * @returns 返回cookie字符串
+ * @param name - cookie name
+ * @returns returns the cookie string
  */
-export function getCookie(name: string): any {
+function getCookie(name: string): any {
 	const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
 	const arr = document.cookie.match(reg)
 	if (arr) {

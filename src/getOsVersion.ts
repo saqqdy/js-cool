@@ -1,16 +1,16 @@
 import getAppVersion from './getAppVersion'
 
 /**
- * 获取手机系统版本
+ * Get the phone system version
  *
  * @example
  * ```
  * getAppVersion('iPhone') // '13.2.3'
  * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
  * ```
- * @param osName - 系统类型字符串Android、iPod、iWatch或iPhone
- * @param withOS - 是否需要带上名称
- * @param userAgent - ua，可不传，默认取navigator.appVersion
+ * @param osName - system type string Android, iPod, iWatch or iPhone
+ * @param withOS - whether to bring the name
+ * @param userAgent - ua, may not be passed, default takes navigator.appVersion
  * @return null/true/false
  */
 function getOsVersion(
