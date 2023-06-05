@@ -2,7 +2,7 @@
 
 # js-cool
 
-This is a collection of js utils
+Collection of common JavaScript / TypeScript utilities
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]

@@ -1,6 +1,6 @@
 {
 	"name": "js-cool",
-	"description": "This is a collection of js utils",
+	"description": "Collection of common JavaScript / TypeScript utilities",
 	"version": "4.5.0",
 	"packageManager": "pnpm@8.6.0",
 	"main": "dist/index.cjs.js",
