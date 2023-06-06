@@ -85,8 +85,6 @@ const functionList = {
   getRandomStrWidthSpecialChar, // 获取随机字符串带特殊符号
   getCHSLength, // 获取字符串长度，中文算2个字符
   cutCHSString, // 截取字符串，中文算2个字节
-  textareaInsertText, // textarea或input对象在指定的光标位置插入文字
-  textareaMoveToEnd, // textarea或input对象将光标定位到文字尾部
   // 获取一下状态
   isDigitals, // 是否为由数字组成的字符串
   isExitsFunction, // 是否存在指定函数

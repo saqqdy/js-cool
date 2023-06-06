@@ -24,8 +24,6 @@ export { default as getRandomStr } from './getRandomStr'
 export { default as getRandomStrWidthSpecialChar } from './getRandomStrWidthSpecialChar'
 export { default as getCHSLength } from './getCHSLength'
 export { default as cutCHSString } from './cutCHSString'
-export { default as textareaInsertText } from './textareaInsertText'
-export { default as textareaMoveToEnd } from './textareaMoveToEnd'
 
 // Get the status of
 export { default as isDigitals } from './isDigitals'

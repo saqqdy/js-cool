@@ -17,8 +17,6 @@ import getRandomStr from './getRandomStr'
 import getRandomStrWidthSpecialChar from './getRandomStrWidthSpecialChar'
 import getCHSLength from './getCHSLength'
 import cutCHSString from './cutCHSString'
-import textareaInsertText from './textareaInsertText'
-import textareaMoveToEnd from './textareaMoveToEnd'
 
 // Get the status of
 import isDigitals from './isDigitals'
@@ -156,8 +154,6 @@ export default {
 	setProperty,
 	stopBubble,
 	stopDefault,
-	textareaInsertText,
-	textareaMoveToEnd,
 	toThousands,
 	trim,
 	union,

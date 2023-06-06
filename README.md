@@ -85,8 +85,6 @@ const functionList = {
   getRandomStrWidthSpecialChar, // get a random string with special symbols
   getCHSLength, // get the length of the string, Chinese counts as 2 characters
   cutCHSString, // get the string, Chinese count as 2 bytes
-  textareaInsertText, // textarea or input object to insert text at the specified cursor position
-  textareaMoveToEnd, // textarea or input object to position the cursor to the end of the text
   // Get a status
   isDigitals, // whether it is a string composed of numbers
   isExitsFunction, // if the specified function exists
