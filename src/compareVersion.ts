@@ -3,9 +3,9 @@
  *
  * @example
  * ```js
- * compareVersion('1.11.0', '1.9.9') // => 1 // 1表示 1.11.0比1.9.9要新
- * compareVersion('1.11.0', '1.11.0') // => 0 // 0表示1.11.0和1.11.0是同一个版本
- * compareVersion('1.11.0', '1.99.0') // => -1 // -1表示1.11.0比 1.99.0要老
+ * compareVersion('1.11.0', '1.9.9') // => 1 // 1=Version 1.11.0 is newer than 1.9.9
+ * compareVersion('1.11.0', '1.11.0') // => 0 // 0=Versions 1.11.0 and 1.11.0 are the same
+ * compareVersion('1.11.0', '1.99.0') // => -1 // -1=Version 1.11.0 is older than 1.99.0
  * ```
  * @param input - input version
  * @param compare - compare version
