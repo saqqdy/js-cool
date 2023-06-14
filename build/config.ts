@@ -47,26 +47,6 @@ export const alias = {
 	'js-cool': resolve(__dirname, '..')
 }
 
-export function generateExternal(
-	{ name, input, isFull = false }: { name: string; input: string; isFull?: boolean },
-	externals: string[] = []
-) {
-	const { dependencies = {}, devDependencies = {}, peerDependencies = {} } = pkg
-	return (id: string) => {
-		const pkgs: string[] = Object.keys(peerDependencies)
-		if (!isFull) {
-			pkgs.push(...Object.keys(dependencies), ...Object.keys(devDependencies))
-		}
-		return [...new Set(pkgs)].some(
-			pkg =>
-				id === pkg ||
-				id.startsWith(`${pkg}/`) ||
-				(id !== input && id.includes(`packages/${name}`)) ||
-				externals.includes(id)
-		)
-	}
-}
-
 export const reporter = (opt: any, outputOptions: any, info: any) =>
 	`${chalk.cyan(
 		chalk.bold(
