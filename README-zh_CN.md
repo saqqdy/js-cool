@@ -93,7 +93,8 @@ const functionList = {
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号
   getOsVersion, // 获取手机系统版本
-  getIsAppVersionLastest, // 版本号大小对比
+  getIsAppVersionLastest, // 版本号大小对比(旧方法，下个大版本移除)
+  compareVersion, // 版本号大小对比
   getDirParam, // 获取目录形式URL参数
   getParameter, // 获取单个URL参数
   getUrlParam, // 获取URL参数

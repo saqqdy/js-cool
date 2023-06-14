@@ -1,12 +1,17 @@
 # Change logs
 
+## 2023.06.14 v4.7.0
+
+1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)
+2. upgrade all packages
+
 ## 2023.06.06 v4.6.0
 
 1. drop `textareaInsertText` & `textareaMoveToEnd`, If you still need to use it, we using [grace-textarea](https://github.com/saqqdy/grace-textarea)
 
 ## 2023.06.05 v4.5.0
 
-1. add `inBrowser`
+1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool/functions/inBrowser.html)
 2. some translate work
 3. upgrade all packages
 

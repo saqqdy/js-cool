@@ -93,7 +93,8 @@ const functionList = {
   windowSize, // windowSize to get the window size
   getAppVersion, // Get the app version number
   getOsVersion, // get the system version of the phone
-  getIsAppVersionLastest, // compare the version number size
+  getIsAppVersionLastest, // compare the version number size(old function, will dorp in next major version)
+  compareVersion, // compare the version number size
   getDirParam, // get the URL parameter in the form of a directory
   getParameter, // Get a single URL parameter
   getUrlParam, // Get URL parameters

@@ -27,6 +27,7 @@ import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import getOsVersion from './getOsVersion'
 import getIsAppVersionLastest from './getIsAppVersionLastest'
+import compareVersion from './compareVersion'
 import getDirParam from './getDirParam'
 import getParameter from './getParameter'
 import getUrlParam from './getUrlParam'
@@ -128,6 +129,7 @@ export default {
 	getCHSLength,
 	getDirParam,
 	getIsAppVersionLastest,
+	compareVersion,
 	getNumber,
 	getOsVersion,
 	getParameter,
