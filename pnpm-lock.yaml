@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -22,7 +22,7 @@ dependencies:
     version: 1.2.0
   use-downloads:
     specifier: ^1.1.0
-    version: 1.1.0
+    version: 1.4.0
 
 devDependencies:
   '@babel/core':
@@ -6407,9 +6407,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-downloads@1.1.0:
-    resolution: {integrity: sha512-weHMgbGSBV2ND/xJ5fD9SrKO7bdNym+ZstdEuG+lWHypfi93cCQQKTjvs/Pf7eM/DnlKSZpKb8xktck/52btZg==}
-    engines: {node: '>=12.20'}
+  /use-downloads@1.4.0:
+    resolution: {integrity: sha512-h2t2c7cKx7YCQcM7Am68EW5Wh24fjR6astbTCj3HA4ZYlsjPdybBfSS1ZP7Bw+taFAhMFCL+7zfVJMeTNrWlcQ==}
     dev: false
 
   /util-deprecate@1.0.2:
