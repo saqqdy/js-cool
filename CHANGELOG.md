@@ -1,5 +1,16 @@
 # Change logs
 
+## 2023.06.28 v5.0.0
+
+1. add `isWindow`
+2. add `isObject` `isArray`
+3. remove `getRandomStrWidthSpecialChar`
+4. remove `getIsAppVersionLastest`, use `compareVersion` instead
+5. `searchTreeObject` rename to `searchObject`
+6. `getRandomNum` rename to `randomNumber`
+7. `getRandomStr` rename to `randomString`
+8. upgrade all packages
+
 ## 2023.06.14 v4.7.0
 
 1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)

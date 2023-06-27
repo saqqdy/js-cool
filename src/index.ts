@@ -28,6 +28,8 @@ export { default as cutCHSString } from './cutCHSString'
 export { default as isDigitals } from './isDigitals'
 export { default as isExitsFunction } from './isExitsFunction'
 export { default as isExitsVariable } from './isExitsVariable'
+export { default as isWindow } from './isWindow'
+export { default as isObject } from './isObject'
 export { default as inBrowser } from './inBrowser'
 export { default as windowSize, type WindowSizeObj } from './windowSize'
 export { default as getAppVersion } from './getAppVersion'
@@ -68,7 +70,13 @@ export { default as extend, ExtendArrayData, ExtendObjectData, ExtendData } from
 export { default as delay } from './delay'
 export { default as getType } from './getType'
 export { default as isArray } from './isArray'
-export { default as isPlainObject } from './isPlainObject'
+export {
+	default as isPlainObject,
+	Primitive,
+	PlainObject,
+	JSONValue,
+	JSONArray
+} from './isPlainObject'
 export { default as cleanData } from './cleanData'
 export { default as searchObject, type SearchKeySet } from './searchObject'
 export { default as openUrl } from './openUrl'

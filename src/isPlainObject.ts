@@ -1,17 +1,29 @@
-function isWindow(obj: any) {
-	return obj !== null && obj === obj.window
+import isWindow from './isWindow'
+
+export type Primitive = bigint | boolean | null | number | string | symbol | undefined
+
+// export type PlainObject = Record<string, Primitive>
+
+export type JSONValue = Primitive | PlainObject | JSONArray
+
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+export interface PlainObject {
+	[key: string]: JSONValue
 }
 
+export interface JSONArray extends Array<JSONValue> {}
+
 /**
- * is PlainObject
+ * Determine if target is an plain object
  *
- * @param arr -
+ * @param target - any target
+ * @returns - target is plain Object
  */
-function isPlainObject(obj: unknown) {
+function isPlainObject(target: unknown): target is PlainObject {
 	return (
-		Object.prototype.toString.call(obj) === '[object Object]' &&
-		!isWindow(obj) &&
-		Object.getPrototypeOf(obj) === Object.prototype
+		Object.prototype.toString.call(target) === '[object Object]' &&
+		!isWindow(target) &&
+		Object.getPrototypeOf(target) === Object.prototype
 	)
 }
 

@@ -88,6 +88,8 @@ const functionList = {
   isDigitals, // whether it is a string composed of numbers
   isExitsFunction, // if the specified function exists
   isExitsVariable, // if the specified variable exists
+  isWindow, // Determine if window object
+  isObject, // Determine if the type is an object
   inBrowser, // Determine if it is running on the browser side
   windowSize, // windowSize to get the window size
   getAppVersion, // Get the app version number

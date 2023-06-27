@@ -21,6 +21,8 @@ import cutCHSString from './cutCHSString'
 import isDigitals from './isDigitals'
 import isExitsFunction from './isExitsFunction'
 import isExitsVariable from './isExitsVariable'
+import isWindow from './isWindow'
+import isObject from './isObject'
 import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
@@ -141,6 +143,8 @@ export default {
 	isDigitals,
 	isExitsFunction,
 	isExitsVariable,
+	isWindow,
+	isObject,
 	isPlainObject,
 	inBrowser,
 	minus,
