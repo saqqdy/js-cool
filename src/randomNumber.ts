@@ -5,10 +5,10 @@
  * @param max - the maximum value of the random number
  * @returns returns the number
  */
-function getRandomNum(min = 1, max = 10): number {
+function randomNumber(min = 1, max = 10): number {
 	const Range = max - min
 	const Rand = Math.random()
 	return min + Math.round(Rand * Range)
 }
 
-export default getRandomNum
+export default randomNumber

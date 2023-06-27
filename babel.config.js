@@ -3,10 +3,6 @@ module.exports = {
 		[
 			'@babel/env',
 			{
-				// loose: true,
-				// modules: 'auto',
-				// corejs: 3
-				// useBuiltIns: 'usage',
 				targets: {
 					node: '12.20',
 					browsers: [

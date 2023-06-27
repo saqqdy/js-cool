@@ -12,9 +12,8 @@ import getNumber from './getNumber'
 import camel2Dash from './camel2Dash'
 import dash2Camel from './dash2Camel'
 import upperFirst from './upperFirst'
-import getRandomNum from './getRandomNum'
-import getRandomStr from './getRandomStr'
-import getRandomStrWidthSpecialChar from './getRandomStrWidthSpecialChar'
+import randomNumber from './randomNumber'
+import randomString from './randomString'
 import getCHSLength from './getCHSLength'
 import cutCHSString from './cutCHSString'
 
@@ -26,7 +25,6 @@ import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import getOsVersion from './getOsVersion'
-import getIsAppVersionLastest from './getIsAppVersionLastest'
 import compareVersion from './compareVersion'
 import getDirParam from './getDirParam'
 import getParameter from './getParameter'
@@ -65,7 +63,7 @@ import getType from './getType'
 import isArray from './isArray'
 import isPlainObject from './isPlainObject'
 import cleanData from './cleanData'
-import searchTreeObject from './searchTreeObject'
+import searchObject from './searchObject'
 import openUrl from './openUrl'
 import toThousands from './toThousands'
 import all from './all'
@@ -128,15 +126,13 @@ export default {
 	getAppVersion,
 	getCHSLength,
 	getDirParam,
-	getIsAppVersionLastest,
 	compareVersion,
 	getNumber,
 	getOsVersion,
 	getParameter,
 	getProperty,
-	getRandomNum,
-	getRandomStr,
-	getRandomStrWidthSpecialChar,
+	randomNumber,
+	randomString,
 	getScrollPosition,
 	getType,
 	getUrlParam,
@@ -152,7 +148,7 @@ export default {
 	openUrl,
 	pattern,
 	removeEvent,
-	searchTreeObject,
+	searchObject,
 	setProperty,
 	stopBubble,
 	stopDefault,

@@ -80,9 +80,8 @@ const functionList = {
   getNumber, // Get the number in the string
   camel2Dash, // convert a humped string to -spaced and all lowercase dash mode
   dash2Camel, // convert -spaced all-lowercase dash pattern to camel string
-  getRandomNum, // Get a random integer
-  getRandomStr, // get a random string
-  getRandomStrWidthSpecialChar, // get a random string with special symbols
+  randomNumber, // Get a random integer
+  randomString, // get a random string
   getCHSLength, // get the length of the string, Chinese counts as 2 characters
   cutCHSString, // get the string, Chinese count as 2 bytes
   // Get a status
@@ -93,7 +92,6 @@ const functionList = {
   windowSize, // windowSize to get the window size
   getAppVersion, // Get the app version number
   getOsVersion, // get the system version of the phone
-  getIsAppVersionLastest, // compare the version number size(old function, will dorp in next major version)
   compareVersion, // compare the version number size
   getDirParam, // get the URL parameter in the form of a directory
   getParameter, // Get a single URL parameter
@@ -128,7 +126,7 @@ const functionList = {
   isArray, // Determine if it is an array
   cleanData, // clean data
   download, // file download
-  searchTreeObject, // find object
+  searchObject, // find object
   openUrl, // open link in a new tab (file jump download if browser can't parse)
   toThousands, // Thousands division method
   all, // return true if the provided predicate function returns true for all elements in a set, otherwise return false.

@@ -13,7 +13,7 @@ export interface SearchKeySet {
  * @param number - optional Number of lookups, if not passed, query all
  * @returns returns the queried array
  */
-function searchTreeObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
+function searchObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
 	const retNode: any[] = []
 	const isLimit = number > 0
 	if (!keySet || typeof keySet !== 'object') {
@@ -72,4 +72,4 @@ function searchTreeObject(tree: object | any[], expression: any, keySet: SearchK
 	return retNode
 }
 
-export default searchTreeObject
+export default searchObject

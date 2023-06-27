@@ -80,9 +80,8 @@ const functionList = {
   getNumber, // 获取字符串中的数字
   camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式
   dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串
-  getRandomNum, // 获取随机整数
-  getRandomStr, // 获取随机字符串
-  getRandomStrWidthSpecialChar, // 获取随机字符串带特殊符号
+  randomNumber, // 获取随机整数
+  randomString, // 获取随机字符串
   getCHSLength, // 获取字符串长度，中文算2个字符
   cutCHSString, // 截取字符串，中文算2个字节
   // 获取一下状态
@@ -93,7 +92,6 @@ const functionList = {
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号
   getOsVersion, // 获取手机系统版本
-  getIsAppVersionLastest, // 版本号大小对比(旧方法，下个大版本移除)
   compareVersion, // 版本号大小对比
   getDirParam, // 获取目录形式URL参数
   getParameter, // 获取单个URL参数
@@ -128,7 +126,7 @@ const functionList = {
   isArray, // 判断是否数组
   cleanData, // 清洗数据
   download, // 文件下载
-  searchTreeObject, // 对象查找
+  searchObject, // 对象查找
   openUrl, // 新标签页打开链接（浏览器不能解析的文件跳转下载）
   toThousands, // 千分位分割方法
   all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。

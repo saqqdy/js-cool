@@ -5,7 +5,7 @@
  * @param widthSpecialChar - optional, if you need to generate a string with special characters
  * @returns random string
  */
-function getRandomStr(len = 32, widthSpecialChar = false): string {
+function randomString(len = 32, widthSpecialChar = false): string {
 	const chars = !widthSpecialChar
 		? 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
 		: 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678~!@#$^&*_+=-.' // Confusing characters are removed by default: oOLl,9gq,Vv,Uu,I1
@@ -18,4 +18,4 @@ function getRandomStr(len = 32, widthSpecialChar = false): string {
 	return str
 }
 
-export default getRandomStr
+export default randomString
