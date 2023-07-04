@@ -6,7 +6,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
-[![build status][travis-image]][travis-url]
+![typescript][typescript-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
@@ -130,6 +130,7 @@ const functionList = {
   download, // 文件下载
   searchObject, // 对象查找
   openUrl, // 新标签页打开链接（浏览器不能解析的文件跳转下载）
+  copy, // 复制到剪贴板
   toThousands, // 千分位分割方法
   all, // 如果所提供的谓词函数对一个集合中的所有元素都返回true，则返回true，否则返回false。
   any, // 如果所提供的谓词函数对一个集合中的至少一个元素返回true，则返回true，否则返回false。
@@ -162,12 +163,13 @@ const functionList = {
 
 ## License
 
+[MIT](LICENSE)
+
 [npm-image]: https://img.shields.io/npm/v/js-cool.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/js-cool
 [codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
 [codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
-[travis-image]: https://travis-ci.com/saqqdy/js-cool.svg?branch=master
-[travis-url]: https://travis-ci.com/saqqdy/js-cool
+[typescript-url]: https://badgen.net/badge/icon/typescript?icon=typescript&label
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
 [download-image]: https://img.shields.io/npm/dm/js-cool.svg?style=flat-square

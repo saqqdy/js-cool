@@ -7,8 +7,7 @@ import typescript from '@rollup/plugin-typescript'
 import filesize from 'rollup-plugin-filesize'
 import { visualizer } from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
-import pkg from '../package.json' assert { type: 'json' }
-import { banner, extensions, reporter } from './config'
+import { banner, extensions, reporter, version } from './config'
 
 export interface Config {
 	input: string
@@ -110,6 +109,7 @@ function createEntry(config: Config) {
 	if (!isGlobalBuild) {
 		_config.external.push(
 			'core-js',
+			'tslib',
 			'mount-css',
 			'mount-script',
 			'mount-image',
@@ -122,7 +122,7 @@ function createEntry(config: Config) {
 	_config.plugins.push(
 		replace({
 			preventAssignment: true,
-			__VERSION__: pkg.version
+			__VERSION__: version
 		}),
 		nodeResolve(),
 		commonjs()

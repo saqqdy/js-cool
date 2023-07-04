@@ -67,6 +67,7 @@ import isPlainObject from './isPlainObject'
 import cleanData from './cleanData'
 import searchObject from './searchObject'
 import openUrl from './openUrl'
+import copy from './copy'
 import toThousands from './toThousands'
 import all from './all'
 import any from './any'
@@ -150,6 +151,7 @@ export default {
 	minus,
 	nextIndex,
 	openUrl,
+	copy,
 	pattern,
 	removeEvent,
 	searchObject,

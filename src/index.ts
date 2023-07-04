@@ -80,6 +80,7 @@ export {
 export { default as cleanData } from './cleanData'
 export { default as searchObject, type SearchKeySet } from './searchObject'
 export { default as openUrl } from './openUrl'
+export { default as copy } from './copy'
 export { default as toThousands } from './toThousands'
 export { default as all } from './all'
 export { default as any } from './any'
