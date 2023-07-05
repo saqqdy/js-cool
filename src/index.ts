@@ -35,9 +35,12 @@ export { default as windowSize, type WindowSizeObj } from './windowSize'
 export { default as getAppVersion } from './getAppVersion'
 export { default as getOsVersion } from './getOsVersion'
 export { default as compareVersion } from './compareVersion'
+export { default as parseUrlParam } from './parseUrlParam'
 export { default as getDirParam, type DirParamType } from './getDirParam'
-export { default as getParameter } from './getParameter'
+export { default as getQueryParam } from './getQueryParam'
+export { default as getQueryParams } from './getQueryParams'
 export { default as getUrlParam } from './getUrlParam'
+export { default as getUrlParams } from './getUrlParams'
 
 // Cache, cookie, session
 export { default as getCache } from './getCache'

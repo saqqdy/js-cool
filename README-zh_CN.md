@@ -95,9 +95,12 @@ const functionList = {
   getAppVersion, // 获取APP版本号
   getOsVersion, // 获取手机系统版本
   compareVersion, // 版本号大小对比
+  parseUrlParam, // 解析url参数（key1=value1&key2=value2）
   getDirParam, // 获取目录形式URL参数
-  getParameter, // 获取单个URL参数
-  getUrlParam, // 获取URL参数
+  getQueryParam, // 获取query参数（#后面）
+  getQueryParams, // 获取所有query参数（#后面）
+  getUrlParam, // 获取单个URL参数
+  getUrlParams, // 获取所有URL参数
   // 缓存、cookie、session
   getCache, // 读取localStorage
   setCache, // 写入localStorage

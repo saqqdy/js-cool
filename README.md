@@ -95,9 +95,12 @@ const functionList = {
   getAppVersion, // Get the app version number
   getOsVersion, // get the system version of the phone
   compareVersion, // compare the version number size
+  parseUrlParam, // parse url params (key1=value1&key2=value2)
   getDirParam, // get the URL parameter in the form of a directory
-  getParameter, // Get a single URL parameter
-  getUrlParam, // Get URL parameters
+  getQueryParam, // Get a single query parameter (behind "#")
+  getQueryParams, // Get all query parameters (behind "#")
+  getUrlParam, // Get a single URL parameter
+  getUrlParams, // Get all URL parameters
   // cache, cookie, session
   getCache, // read localStorage
   setCache, // write to localStorage

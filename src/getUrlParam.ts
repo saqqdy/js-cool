@@ -1,24 +1,34 @@
+import parseUrlParam from './parseUrlParam'
+import inBrowser from './inBrowser'
+
 /**
- * Get URL parameters
+ * Get a single URL parameter (from the "location.search", before "#")
  *
- * @param url - pass in url parameters
- * @returns returns a list of parameters
+ * @example
+ * ```js
+ * getQueryParam('key1'); // key1 => xxx
+ * getQueryParam('key1', 'https://test.com?key1=100#/home?key1=200'); // key1 => 100
+ * ```
+ * @param key - key name
+ * @param url - pass in the url string
+ * @returns returns result
  */
-function getUrlParam(url: string): object {
-	url =
-		url !== '' && typeof url !== 'undefined'
-			? url.substr(url.indexOf('?')).split('#')[0]
-			: location.search // Get the string in the url after the "?" string after the character
-	const search = url.substring(url.lastIndexOf('?') + 1)
-	const obj: any = {}
-	const reg = /([^?&=]+)=([^?&=]*)/g
-	search.replace(reg, function (rs, $1, $2) {
-		const name = decodeURIComponent($1)
-		const val = String(decodeURIComponent($2))
-		obj[name] = val
-		return rs
-	})
-	return obj
+function getUrlParam(key: string): string | undefined
+function getUrlParam(key: string, url: string): string | undefined
+function getUrlParam(key: string, url?: string): string | undefined {
+	if (!key) {
+		console.info('key is required')
+		return undefined
+	} else if (!url) {
+		if (!inBrowser) {
+			console.info('url is required')
+			return undefined
+		}
+		url = location.search
+	} else {
+		url = url.slice(url.indexOf('?')).split('#')[0]
+	}
+	return parseUrlParam(url)[key] as string | undefined
 }
 
 export default getUrlParam

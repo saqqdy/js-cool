@@ -28,9 +28,12 @@ import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import getOsVersion from './getOsVersion'
 import compareVersion from './compareVersion'
+import parseUrlParam from './parseUrlParam'
 import getDirParam from './getDirParam'
-import getParameter from './getParameter'
+import getQueryParam from './getQueryParam'
+import getQueryParams from './getQueryParams'
 import getUrlParam from './getUrlParam'
+import getUrlParams from './getUrlParams'
 
 // Cache, cookie, session
 import getCache from './getCache'
@@ -132,13 +135,16 @@ export default {
 	compareVersion,
 	getNumber,
 	getOsVersion,
-	getParameter,
+	getQueryParam,
+	getQueryParams,
 	getProperty,
 	randomNumber,
 	randomString,
 	getScrollPosition,
 	getType,
+	parseUrlParam,
 	getUrlParam,
+	getUrlParams,
 	intersect,
 	isArray,
 	isDigitals,

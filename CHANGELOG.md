@@ -2,15 +2,17 @@
 
 ## 2023.06.28 v5.0.0
 
-1. add `copy` function
-2. add `isWindow` function
-3. add `isObject` `isArray` function
-4. remove `getRandomStrWidthSpecialChar`
-5. remove `getIsAppVersionLastest`, use `compareVersion` instead
-6. `searchTreeObject` rename to `searchObject`
-7. `getRandomNum` rename to `randomNumber`
-8. `getRandomStr` rename to `randomString`
-9. upgrade all packages
+1. add `copy` `getQueryParam` `getQueryParams` `getUrlParams` function
+2. change the params of `getUrlParam`
+3. add `isWindow` function
+4. add `isObject` `isArray` function
+5. remove `getRandomStrWidthSpecialChar`
+6. remove `getParameter`
+7. remove `getIsAppVersionLastest`, use `compareVersion` instead
+8. `searchTreeObject` rename to `searchObject`
+9. `getRandomNum` rename to `randomNumber`
+10. `getRandomStr` rename to `randomString`
+11. upgrade all packages
 
 ## 2023.06.14 v4.7.0
 
