@@ -1,6 +1,6 @@
 # Change logs
 
-## 2023.06.28 v5.0.0
+## 2023.07.05 v5.0.0
 
 1. add `copy` `getQueryParam` `getQueryParams` `getUrlParams` function
 2. change the params of `getUrlParam`
