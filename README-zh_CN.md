@@ -162,6 +162,8 @@ const functionList = {
 }
 ```
 
+## API说明
+
 ## 问题和支持
 
 请提交一个 issue [here](https://github.com/saqqdy/js-cool/issues).
