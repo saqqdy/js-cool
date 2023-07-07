@@ -164,12 +164,12 @@ const functionList = {
 
 ## API Reference
 
-### global parameters
+### Global Parameters
 
 client, // the client method returns a browser result object
 pattern, // pattern returns some common rules
 
-### String extensions, array methods
+### Extras for String & Array & Object & Function
 
 trim, // removes spaces based on the passed parameters
 clearAttr, // remove all attributes of HTML tags
@@ -182,7 +182,7 @@ randomString, // get a random string
 getCHSLength, // get the length of the string, Chinese counts as 2 characters
 cutCHSString, // get the string, Chinese count as 2 bytes
 
-### Get a status
+### Determine
 
 isDigitals, // whether it is a string composed of numbers
 isExitsFunction, // if the specified function exists
@@ -281,11 +281,124 @@ getQueryParams, // Get all query parameters (behind "#")
 getUrlParam, // Get a single URL parameter
 getUrlParams, // Get all URL parameters
 
-### cache, cookie, session
+### localStorage & sessionStorage & Cookie
 
-getCache, // read localStorage
-setCache, // write to localStorage
-delCache, // delete localStorage
+#### getCache
+
+Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description    | Type     | Optional | Required | Default |
+| ---------- | -------------- | -------- | -------- | -------- | ------- |
+| name       | cache key name | `string` | -        | true     | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+import { setCache, getCache } from 'js-cool'
+
+const data1 = 100
+const data2 = { a: 10 }
+const data3 = null
+
+setCache('data1', data1)
+setCache('data2', data2)
+setCache('data3', data3)
+
+getCache('data1') // 100
+getCache('data2') // {a:10}
+getCache('data3') // null
+
+getCache('data4') // null
+```
+
+- Types:
+
+```ts
+declare function getCache(name: string): any
+```
+
+#### setCache
+
+Set the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                                    | Type     | Optional | Required | Default |
+| ---------- | ---------------------------------------------- | -------- | -------- | -------- | ------- |
+| name       | cache key name                                 | `string` | -        | true     | -       |
+| value      | cache data, can be passed directly into Object | `any`    | -        | true     | -       |
+| seconds    | cache time (seconds)                           | `number` | -        | false    | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+import { setCache, getCache } from 'js-cool'
+
+const data1 = 100
+const data2 = { a: 10 }
+const data3 = null
+
+setCache('data1', data1)
+setCache('data2', data2, 10)
+
+getCache('data1') // 100
+getCache('data2') // {a:10}
+
+setTimeout(() => {
+  getCache('data2') // null
+}, 15000)
+```
+
+- Types:
+
+```ts
+declare function setCache(name: string, value: any, seconds: number): void
+```
+
+#### delCache
+
+Delete localStorage
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description    | Type     | Optional | Required | Default |
+| ---------- | -------------- | -------- | -------- | -------- | ------- |
+| name       | cache key name | `string` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+import { setCache, getCache, delCache } from 'js-cool'
+
+const data1 = 100
+
+setCache('data1', data1)
+
+delCache('data1')
+
+getCache('data1') // null
+```
+
+- Types:
+
+```ts
+declare function delCache(name: string): void
+```
+
 getSession, // read sessionStorage
 setSession, // write to sessionStorage
 delSession, // delete sessionStorage
@@ -293,14 +406,14 @@ getCookie, // read cookie
 setCookie, // write a cookie
 delCookie, // delete a cookie
 
-### Encode and decode
+### Base64 & UTF8
 
 encodeBase64, // convert strings, numbers to base64
 encodeUtf8, // encode Utf8
 decodeBase64, // base64 decode
 decodeUtf8, // decode Utf8
 
-### event delegate, other event methods
+### Events
 
 stopBubble, // stop bubbling
 stopDefault, // stop default events
@@ -308,7 +421,7 @@ addEvent, // event delegate, support multiple delegates
 removeEvent, // removeEvent removes the event delegate created by addEvent
 getScrollPosition, // get scroll to top and bottom return 'top' 'bottom', recommend using flow limit
 
-### tool class
+### Utilities
 
 nextIndex, // return the next zIndex value
 fixNumber, // truncate a few decimal places, not 0 for shortage
