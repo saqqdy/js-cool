@@ -26,7 +26,9 @@ import isObject from './isObject'
 import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
+import appVersion from './appVersion'
 import getOsVersion from './getOsVersion'
+import osVersion from './osVersion'
 import compareVersion from './compareVersion'
 import parseUrlParam from './parseUrlParam'
 import getDirParam from './getDirParam'
@@ -130,11 +132,13 @@ export default {
 	fillIPv6,
 	fixNumber,
 	getAppVersion,
+	appVersion,
 	getCHSLength,
 	getDirParam,
 	compareVersion,
 	getNumber,
 	getOsVersion,
+	osVersion,
 	getQueryParam,
 	getQueryParams,
 	getProperty,

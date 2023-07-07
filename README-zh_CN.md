@@ -43,10 +43,10 @@ pnpm install js-cool
 
 ```js
 // 在你的.vue或者main.js里面写上import
-import { getOsVersion, trim } from 'js-cool'
+import { osVersion, trim } from 'js-cool'
 // 使用
 trim(somestring, type) // 返回清理空格后的字符串
-getOsVersion() // 返回系统版本
+osVersion() // 返回系统版本
 // ...
 ```
 
@@ -56,7 +56,7 @@ getOsVersion() // 返回系统版本
 
    ```js
    // 在你的main.js文件里面加上下面这一行
-   const { getOsVersion } = require('js-cool')
+   const { osVersion } = require('js-cool')
    ```
 
 2. html 静态页直接使用
@@ -92,8 +92,10 @@ const functionList = {
   isObject, // 是否object类型
   inBrowser, // 判断是否在浏览器端运行
   windowSize, // windowSize获取窗口大小
-  getAppVersion, // 获取APP版本号
-  getOsVersion, // 获取手机系统版本
+  getAppVersion, // 获取APP版本号(deprecated)
+  appVersion, // 获取APP版本号
+  getOsVersion, // 获取系统版本(deprecated)
+  osVersion, // 获取系统名称和版本
   compareVersion, // 版本号大小对比
   parseUrlParam, // 解析url参数（key1=value1&key2=value2）
   getDirParam, // 获取目录形式URL参数

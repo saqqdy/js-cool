@@ -1,13 +1,13 @@
 {
 	"name": "js-cool",
 	"description": "Collection of common JavaScript / TypeScript utilities",
-	"version": "5.0.0",
+	"version": "5.1.0",
 	"packageManager": "pnpm@8.6.3",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm-bundler.js",
 	"browser": "dist/index.esm-browser.js",
-	"unpkg": "dist/index.global.js",
-	"jsdelivr": "dist/index.global.js",
+	"unpkg": "dist/index.global.prod.js",
+	"jsdelivr": "dist/index.global.prod.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {

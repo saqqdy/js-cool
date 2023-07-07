@@ -1,6 +1,7 @@
 /**
  * Get the APP version number
  *
+ * @deprecated please use 'appVersion' instead
  * @param appName - app name
  * @param withApp - whether to bring the name
  * @param userAgent - ua, may not be passed, default is navigator.appVersion

@@ -8,6 +8,7 @@ import getAppVersion from './getAppVersion'
  * getAppVersion('iPhone') // '13.2.3'
  * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
  * ```
+ * @deprecated please use 'osVersion' instead
  * @param osName - system type string Android, iPod, iWatch or iPhone
  * @param withOS - whether to bring the name
  * @param userAgent - ua, may not be passed, default takes navigator.appVersion

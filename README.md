@@ -43,10 +43,10 @@ pnpm install js-cool
 
 ```js
 // Write import inside your .vue or main.js
-import { getOsVersion, trim } from 'js-cool'
+import { osVersion, trim } from 'js-cool'
 // Use
 trim(somestring, type) // return the string after cleaning up the spaces
-getOsVersion() // return the system version
+osVersion() // return the system version
 // ...
 ```
 
@@ -56,7 +56,7 @@ getOsVersion() // return the system version
 
    ```js
    // Add the following line to your main.js file
-   const { getOsVersion } = require('js-cool')
+   const { osVersion } = require('js-cool')
    ```
 
 2. html Static pages are used directly
@@ -92,8 +92,10 @@ const functionList = {
   isObject, // Determine if the type is an object
   inBrowser, // Determine if it is running on the browser side
   windowSize, // windowSize to get the window size
-  getAppVersion, // Get the app version number
-  getOsVersion, // get the system version of the phone
+  getAppVersion, // Get the app version number(deprecated)
+  appVersion, // Get the app version number
+  getOsVersion, // get the system name and version(deprecated)
+  osVersion, // get the system version
   compareVersion, // compare the version number size
   parseUrlParam, // parse url params (key1=value1&key2=value2)
   getDirParam, // get the URL parameter in the form of a directory
