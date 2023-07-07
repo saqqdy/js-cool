@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.07.07 v5.1.0
+
+1. add `appVersion` `osVersion`
+2. deprecated `getOsVersion` `getAppVersion`
+
 ## 2023.07.05 v5.0.0
 
 1. add `copy` `getQueryParam` `getQueryParams` `getUrlParams` function
