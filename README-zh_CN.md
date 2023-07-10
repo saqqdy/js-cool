@@ -43,9 +43,8 @@ pnpm install js-cool
 
 ```js
 // 在你的.vue或者main.js里面写上import
-import { osVersion, trim } from 'js-cool'
+import { osVersion } from 'js-cool'
 // 使用
-trim(somestring, type) // 返回清理空格后的字符串
 osVersion() // 返回系统版本
 // ...
 ```

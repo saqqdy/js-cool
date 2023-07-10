@@ -30,9 +30,6 @@ Collection of common JavaScript / TypeScript utilities
 ## Install via npm
 npm install --save js-cool
 
-# Or install via yarn
-yarn add js-cool
-
 # or install via pnpm
 pnpm install js-cool
 ```
@@ -74,7 +71,7 @@ const functionList = {
   client, // the client method returns a browser result object
   pattern, // pattern returns some common rules
   // String extensions, array methods
-  trim, // removes spaces based on the passed parameters
+  trim, // removes spaces based on the passed parameters(deprecated)
   clearAttr, // remove all attributes of HTML tags
   clearHtml, // remove HTML tags
   getNumber, // Get the number in the string
@@ -171,7 +168,7 @@ pattern, // pattern returns some common rules
 
 ### Extras for String & Array & Object & Function
 
-trim, // removes spaces based on the passed parameters
+trim, // removes spaces based on the passed parameters(deprecated)
 clearAttr, // remove all attributes of HTML tags
 clearHtml, // remove HTML tags
 getNumber, // Get the number in the string
@@ -300,7 +297,7 @@ Get the cache, if the deposited is Object, the retrieved is also Object, no need
 - Example:
 
 ```ts
-import { setCache, getCache } from 'js-cool'
+import { getCache, setCache } from 'js-cool'
 
 const data1 = 100
 const data2 = { a: 10 }
@@ -342,7 +339,7 @@ Set the cache, if the deposited is Object, the retrieved is also Object, no need
 - Example:
 
 ```ts
-import { setCache, getCache } from 'js-cool'
+import { getCache, setCache } from 'js-cool'
 
 const data1 = 100
 const data2 = { a: 10 }
@@ -362,7 +359,7 @@ setTimeout(() => {
 - Types:
 
 ```ts
-declare function setCache(name: string, value: any, seconds: number): void
+declare function setCache(name: string, value: any, seconds?: number): void
 ```
 
 #### delCache
@@ -382,15 +379,7 @@ Delete localStorage
 - Example:
 
 ```ts
-import { setCache, getCache, delCache } from 'js-cool'
-
-const data1 = 100
-
-setCache('data1', data1)
-
-delCache('data1')
-
-getCache('data1') // null
+delCache('data')
 ```
 
 - Types:
@@ -399,19 +388,320 @@ getCache('data1') // null
 declare function delCache(name: string): void
 ```
 
-getSession, // read sessionStorage
-setSession, // write to sessionStorage
-delSession, // delete sessionStorage
-getCookie, // read cookie
-setCookie, // write a cookie
-delCookie, // delete a cookie
+#### getSession
+
+Get the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description      | Type     | Optional | Required | Default |
+| ---------- | ---------------- | -------- | -------- | -------- | ------- |
+| name       | session key name | `string` | -        | true     | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+import { getSession, setSession } from 'js-cool'
+
+const data1 = 100
+const data2 = { a: 10 }
+const data3 = null
+
+setSession('data1', data1)
+setSession('data2', data2)
+setSession('data3', data3)
+
+getSession('data1') // 100
+getSession('data2') // {a:10}
+getSession('data3') // null
+
+getSession('data4') // null
+```
+
+- Types:
+
+```ts
+declare function getSession(name: string): any
+```
+
+#### setSession
+
+Set the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                                      | Type     | Optional | Required | Default |
+| ---------- | ------------------------------------------------ | -------- | -------- | -------- | ------- |
+| name       | session key name                                 | `string` | -        | true     | -       |
+| value      | session data, can be passed directly into Object | `any`    | -        | true     | -       |
+| seconds    | session time (seconds)                           | `number` | -        | false    | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+import { getSession, setSession } from 'js-cool'
+
+const data1 = 100
+const data2 = { a: 10 }
+const data3 = null
+
+setSession('data1', data1)
+setSession('data2', data2, 10)
+
+getSession('data1') // 100
+getSession('data2') // {a:10}
+
+setTimeout(() => {
+  getSession('data2') // null
+}, 15000)
+```
+
+- Types:
+
+```ts
+declare function setSession(name: string, value: any, seconds?: number): void
+```
+
+#### delSession
+
+Delete sessionStorage
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description      | Type     | Optional | Required | Default |
+| ---------- | ---------------- | -------- | -------- | -------- | ------- |
+| name       | session key name | `string` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+delSession('data')
+```
+
+- Types:
+
+```ts
+declare function delSession(name: string): void
+```
+
+#### getCookie
+
+Get cookie by name
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description     | Type     | Optional | Required | Default |
+| ---------- | --------------- | -------- | -------- | -------- | ------- |
+| name       | cookie key name | `string` | -        | true     | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+getCookie('data1') // 100
+```
+
+- Types:
+
+```ts
+declare function getCookie(name: string): string
+```
+
+#### setCookie
+
+Set cookie
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                                     | Type     | Optional               | Required | Default |
+| ---------- | ----------------------------------------------- | -------- | ---------------------- | -------- | ------- |
+| name       | cookie key name                                 | `string` | -                      | true     | -       |
+| value      | cookie data, can be passed directly into Object | `any`    | -                      | true     | -       |
+| seconds    | cookie time (seconds)                           | `number` | -                      | false    | -       |
+| path       | cookie path                                     | `string` | -                      | false    | `/`     |
+| samesite   | SameSite type                                   | `string` | `Strict`/`Lax` /`None` | false    | `None`  |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+import { getCookie, setCookie } from 'js-cool'
+
+const data1 = 100
+const data2 = 200
+
+setCookie('data1', data1)
+setCookie('data2', data2, 10)
+
+getCookie('data1') // 100
+getCookie('data2') // 200
+
+setTimeout(() => {
+  getCookie('data2') // null
+}, 15000)
+```
+
+- Types:
+
+```ts
+declare function setCookie(
+  name: string,
+  value: any,
+  seconds?: number,
+  path?: string,
+  samesite?: boolean
+): void
+```
+
+#### delCookie
+
+Delete cookie
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description     | Type     | Optional | Required | Default |
+| ---------- | --------------- | -------- | -------- | -------- | ------- |
+| name       | cookie key name | `string` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+delCookie('data')
+```
+
+- Types:
+
+```ts
+declare function delCookie(name: string): void
+```
 
 ### Base64 & UTF8
 
-encodeBase64, // convert strings, numbers to base64
-encodeUtf8, // encode Utf8
-decodeBase64, // base64 decode
-decodeUtf8, // decode Utf8
+#### encodeBase64
+
+convert strings, numbers to base64
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description              | Type              | Optional | Required | Default |
+| ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
+| input      | the string to be encoded | `string`/`number` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+encodeBase64('data')
+```
+
+- Types:
+
+```ts
+declare function encodeBase64(name: string): string
+```
+
+#### decodeBase64
+
+base64 decoding
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description              | Type              | Optional | Required | Default |
+| ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
+| input      | the string to be decoded | `string`/`number` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+decodeBase64('data')
+```
+
+- Types:
+
+```ts
+declare function decodeBase64(name: string): string
+```
+
+#### encodeUtf8
+
+convert strings, numbers to utf8
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description              | Type              | Optional | Required | Default |
+| ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
+| input      | the string to be encoded | `string`/`number` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+encodeUtf8('data')
+```
+
+- Types:
+
+```ts
+declare function encodeUtf8(name: string): string
+```
+
+#### decodeUtf8
+
+utf8 decoding
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description              | Type              | Optional | Required | Default |
+| ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
+| input      | the string to be decoded | `string`/`number` | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+decodeUtf8('data')
+```
+
+- Types:
+
+```ts
+declare function decodeUtf8(name: string): string
+```
 
 ### Events
 
