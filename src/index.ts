@@ -104,6 +104,7 @@ export { default as unique } from './unique'
 export { default as fillIPv6 } from './fillIPv6'
 export { default as getProperty } from './getProperty'
 export { default as setProperty } from './setProperty'
+export { default as awaitTo } from './awaitTo'
 
 export { default } from './index.default'
 export const version = '__VERSION__' as string

@@ -155,7 +155,8 @@ const functionList = {
   mountCss, // dynamically load css link resources
   mountImg, // load image resource dynamically
   mountJs, // load js link resources dynamically
-  mountStyle // load css styles dynamically
+  mountStyle, // load css styles dynamically
+  awaitTo // Async await wrapper for easy error handling
 }
 ```
 
@@ -746,7 +747,8 @@ loadSource, // load resources dynamically, support js, images, css links, css st
 mountCss, // dynamically load css link resources
 mountImg, // load image resource dynamically
 mountJs, // load js link resources dynamically
-mountStyle // load css styles dynamically
+mountStyle, // load css styles dynamically
+awaitTo, // Async await wrapper for easy error handling
 
 ## Support & Issues
 

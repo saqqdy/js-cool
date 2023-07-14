@@ -2,8 +2,10 @@
 
 ## 2023.07.10 v5.2.0
 
-1. deprecated `trim`
-2. docs work
+1. new `awaitTo` function
+2. Refactored `client` method
+3. deprecated `trim`
+4. docs work
 
 ## 2023.07.07 v5.1.0
 

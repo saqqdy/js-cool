@@ -91,6 +91,7 @@ import unique from './unique'
 import fillIPv6 from './fillIPv6'
 import getProperty from './getProperty'
 import setProperty from './setProperty'
+import awaitTo from './awaitTo'
 
 import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 
@@ -160,6 +161,7 @@ export default {
 	inBrowser,
 	minus,
 	nextIndex,
+	awaitTo,
 	openUrl,
 	copy,
 	pattern,

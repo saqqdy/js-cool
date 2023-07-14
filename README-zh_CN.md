@@ -157,11 +157,12 @@ const functionList = {
   mountCss, // 动态加载css链接资源
   mountImg, // 动态加载图片资源
   mountJs, // 动态加载js链接资源
-  mountStyle // 动态加载css样式
+  mountStyle, // 动态加载css样式
+  awaitTo // 替代try catch处理promise错误
 }
 ```
 
-## API说明
+## API 说明
 
 ## 问题和支持
 
