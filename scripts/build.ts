@@ -1,6 +1,8 @@
 import { spawn } from 'child_process'
 import { cp } from '@node-kit/extra.fs'
 
+const [, , ...args] = process.argv
+
 async function run() {
 	await Promise.all([build(), copy()])
 }
@@ -8,7 +10,9 @@ async function run() {
 async function build() {
 	await spawn(
 		'rollup',
-		['-c', 'build/rollup.config.ts', '--configPlugin', '@rollup/plugin-typescript'],
+		['-c', 'build/rollup.config.ts', '--configPlugin', '@rollup/plugin-typescript'].concat(
+			args.includes('-w') ? ['-w'] : []
+		),
 		{ stdio: 'inherit' }
 	)
 }

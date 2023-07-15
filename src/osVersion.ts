@@ -54,14 +54,18 @@ function osVersion(ua?: string): OsVersion | null {
 			let version = (match[1] || '').replace(/_/g, '.')
 			if (key === 'Windows') {
 				const WINDOWS_VERSION_MAP = {
-					'6.4': '10',
+					'10': '10 || 11',
 					'6.3': '8.1',
 					'6.2': '8',
 					'6.1': '7',
 					'6.0': 'Vista',
-					'5.2': 'XP',
+					'5.2': 'XP 64-Bit',
 					'5.1': 'XP',
-					'5.0': '2000'
+					'5.0': '2000',
+					'4.0': 'NT 4.0',
+					'3.5.1': 'NT 3.5.1',
+					'3.5': 'NT 3.5',
+					'3.1': 'NT 3.1'
 				}
 				version =
 					WINDOWS_VERSION_MAP[version as keyof typeof WINDOWS_VERSION_MAP] || version

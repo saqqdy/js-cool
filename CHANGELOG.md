@@ -4,8 +4,9 @@
 
 1. new `awaitTo` function
 2. Refactored `client` method
-3. deprecated `trim`
-4. docs work
+3. fix bugs for `osVersion`
+4. deprecated `trim`
+5. docs work
 
 ## 2023.07.07 v5.1.0
 

@@ -1,54 +1,5 @@
-/**
- * The client method returns a browser judgment result: `{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE. true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
- *
- * @param name - optional, e.g. pass in MicroMessenger to return whether it is the built-in browser of Weixin
- * @param userAgent - optional, pass in a custom ua, default takes the browser's navigator.appVersion
- * @returns returns the common ua match table, if name is passed, then returns whether the terminal matches true/false
- */
-// const client = (name = '', userAgent = navigator.appVersion) => {
-// 	const userAgentL = userAgent.toLowerCase()
-// 	if (name) {
-// 		return userAgent.includes(name)
-// 	} else {
-// 		return {
-// 			IE: userAgentL.includes('msie') && !userAgentL.includes('opera'),
-// 			GECKO: userAgentL.includes('gecko') && !userAgentL.includes('khtml'), // firefox
-// 			WEBKIT: userAgentL.includes('applewebkit'), // safari/chrome
-// 			OPERA: userAgentL.includes('opera') && userAgentL.includes('presto'), // opera
-// 			TRIDENT: userAgentL.includes('trident'), // IE
-// 			MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/),
-// 			// MOBILEDEVICE: !!userAgentL.match(/iphone|android|phone|mobile|wap|netfront|x11|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i),
-// 			IOS: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // ios
-// 			ANDROID: userAgent.includes('Android') || userAgent.includes('Adr'), // android or uc browser
-// 			IPHONE: userAgent.includes('iPhone'), // iPhone or QQ HD browser
-// 			IPAD: userAgent.includes('iPad'), // iPad
-// 			// WEBAPP: !userAgent.indexOf('Safari') > -1, // webapp
-// 			QQBROWSER: userAgent.includes('QQBrowser'), // QQ browser
-// 			WEIXIN: userAgent.includes('MicroMessenger'), // weixin
-// 			QQ: userAgent.match(/\sQQ/i) // QQ
-// 		}
-// 	}
-// }
-
-// interface ClientInfo1 {
-// 	options: Record<string, unknown>
-// }
-
-// interface StringConstructable {
-// 	new (options: Record<string, unknown>): ClientInfo1
-// }
-
-// class MadeFromString implements ClientInfo1 {
-// 	constructor(public options: Record<string, unknown>) {
-// 		console.log('ctor invoked')
-// 	}
-// }
-
-// function makeObj(Naa: StringConstructable) {
-// 	return new Naa({ name: 'hello!' })
-// }
-
-// console.log(makeObj(MadeFromString).options)
+import { osLangSync } from 'os-lang'
+import inBrowser from './inBrowser'
 
 export const INFO_MAP = {
 	engine: ['WebKit', 'Trident', 'Gecko', 'Presto'],
@@ -116,59 +67,47 @@ export const INFO_MAP = {
 		'Chrome OS',
 		'WebOS'
 	],
-	device: ['Mobile', 'Tablet', 'iPad']
+	device: ['Mobile', 'Tablet', 'iPad', 'PC']
 } as const
 
-export type InfoType = keyof typeof INFO_MAP
+const INFO_TYPES: InfoTypes[] = [
+	'engine',
+	'browser',
+	'os',
+	'device',
+	'language',
+	'network',
+	'orientation'
+]
+
+export interface ClientOptions {
+	userAgent: string
+	root: Window & typeof globalThis
+	navigator: Navigator
+}
+
+export type InfoKey = keyof typeof INFO_MAP
+export type InfoTypes = InfoKey | 'language' | 'network' | 'orientation'
+// export type InfoTypes = Partial<(typeof INFO_TYPES)[number]>
 export type InfoEngineKeys = (typeof INFO_MAP)['engine'][number]
 export type InfoBrowserKeys = (typeof INFO_MAP)['browser'][number]
 export type InfoOsKeys = (typeof INFO_MAP)['os'][number]
 export type InfoDeviceKeys = (typeof INFO_MAP)['device'][number]
 export type InfoKeys = InfoEngineKeys | InfoBrowserKeys | InfoOsKeys | InfoDeviceKeys
 
-export interface Client {
-	// options: Record<string, unknown>
-	// info: (options: Record<string, unknown>) => Record<string, unknown>
+class Client {
 	matchMap: Record<InfoKeys, boolean>
-	// getDeviceType: () => (typeof INFO_MAP)['device'][number]
-	// engine: Record<string, unknown>
-	// browser: Record<string, unknown>
-	// os: Record<string, unknown>
-	// device: Record<string, unknown>
-}
+	root
+	navigator
+	constructor(options: ClientOptions) {
+		const { userAgent: ua, root, navigator } = Object.assign({ userAgent: '' }, options || {})
+		this.root = root
+		this.navigator = navigator
 
-export interface ClientInfoConstructor {
-	prototype: Client & {
-		get: (name: string) => Record<string, unknown>
-		getInfoByType: (type: InfoType) => (typeof INFO_MAP)['device'][number]
-	}
-	new (options?: Record<string, unknown>): Client
-}
+		const Mobile = ua.includes('Mobi') || ua.includes('iPh') || ua.includes('480')
+		const Tablet = ua.includes('Tablet') || ua.includes('Nexus 7')
+		const iPad = ua.includes('iPad')
 
-// class ClientInfoClass1 implements Client {
-// 	constructor(public options: Record<string, unknown>) {
-// 		console.log('ctor invoked')
-// 	}
-// }
-
-// function makeObj(Naa: ClientInfoConstructor) {
-// 	return new Naa({ name: 'hello!' })
-// }
-
-// console.log(makeObj(ClientInfoClass1).options)
-
-const client = (function () {
-	// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
-	// @ts-ignore
-	const root = typeof self !== 'undefined' ? self : this
-	const win = root || {}
-	const navigator: Navigator = typeof root?.navigator !== 'undefined' ? root.navigator : {}
-	const ua = navigator.userAgent || ''
-
-	// const matchMap =
-
-	const ClientInfo = function (this: Client, options?: Record<string, unknown>) {
-		console.log(options)
 		this.matchMap = {
 			// kernel
 			Trident: ua.includes('Trident') || ua.includes('NET CLR'),
@@ -242,42 +181,80 @@ const client = (function () {
 			'Chrome OS': ua.includes('CrOS'),
 			WebOS: ua.includes('hpwOS'),
 			// device
-			Mobile: ua.includes('Mobi') || ua.includes('iPh') || ua.includes('480'),
-			Tablet: ua.includes('Tablet') || ua.includes('Nexus 7'),
-			iPad: ua.includes('iPad')
+			Mobile,
+			Tablet,
+			iPad,
+			PC: !!ua && !Mobile && !Tablet && !iPad
 		}
-		// this.getDeviceType = () => {
-		// 	return 'iPad'
-		// }
-	} as unknown as ClientInfoConstructor
+	}
 
-	ClientInfo.prototype.get = function <T extends string = 'deviceType'>(names: T) {
+	public get(names?: InfoTypes | InfoTypes[]) {
+		if (!names) names = INFO_TYPES
+		if (typeof names === 'string') names = ([] as InfoTypes[]).concat(names)
+
 		const info = {
-			deviceType: this.getInfoByType('device') // 设备类型
-			// OS: this.getOS(), // 操作系统
-			// OSVersion: this.getOSVersion(), // 操作系统版本
-			// screenHeight: _window.screen.height, // 屏幕高
-			// screenWidth: _window.screen.width, // 屏幕宽
-			// language: this.getLanguage(), // 当前使用的语言-国家
-			// netWork: this.getNetwork(), // 联网类型
-			// orientation: this.getOrientationStatu(), // 横竖屏
-			// browserInfo: this.getBrowserInfo() // 浏览器信息
+			device: this.getInfoByType('device'),
+			os: this.getInfoByType('os'),
+			browser: this.getInfoByType('browser'),
+			engine: this.getInfoByType('engine' as InfoKey),
+			//
+			language: this.getLanguage(),
+			network: this.getNetwork(),
+			orientation: this.getOrientationStatus()
 		}
-		return {}
+		const result = {} as Partial<typeof info>
+
+		let key: keyof typeof info
+		for (key in info) {
+			if (names.includes(key)) result[key] = info[key]
+		}
+
+		return result
 	}
 
-	ClientInfo.prototype.getInfoByType = function (type: InfoType) {
+	public getInfoByType(infoKey: InfoKey) {
 		let key: InfoKeys
-		for (key of INFO_MAP[type]) {
-			if (this.matchMap[INFO_MAP[type][key]]) return key
+		for (key of INFO_MAP[infoKey]) {
+			if (this.matchMap[key]) return key
 		}
 	}
 
-	// const clientInfo = new ClientInfo({ test: true })
+	public getOrientationStatus() {
+		if (!inBrowser) return
+		const orientation = window.matchMedia('(orientation: portrait)')
+		return orientation.matches ? 'vertical' : 'horizontal'
+	}
 
-	// console.log(clientInfo)
+	public getNetwork() {
+		// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		return this.navigator?.connection?.effectiveType
+	}
 
-	return new ClientInfo()
+	public getLanguage() {
+		if (inBrowser) {
+			// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+			// @ts-ignore
+			const language = this.navigator.browserLanguage || this.navigator.language || ''
+			const arr = language.split('-')
+			if (arr[1]) {
+				arr[1] = arr[1].toUpperCase()
+			}
+			return arr.join('_')
+		}
+		return osLangSync()
+	}
+}
+
+export default (function () {
+	// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	const root = ((typeof self !== 'undefined' ? self : this) || {}) as Window & typeof globalThis
+	const navigator: Navigator =
+		typeof root.navigator !== 'undefined' ? root.navigator : ({} as Navigator)
+	const userAgent = navigator.userAgent || ''
+	// 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+	// 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+
+	return new Client({ userAgent, root, navigator })
 })()
-
-export default client

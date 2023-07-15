@@ -30,48 +30,65 @@ export interface Options extends RollupOptions {
 	output: Output
 }
 
-const configs: Config[] = [
-	{
-		input: 'src/index.ts',
-		file: 'dist/index.esm-browser.js',
-		format: 'es',
-		browser: true,
-		env: 'development'
-	},
-	{
-		input: 'src/index.ts',
-		file: 'dist/index.esm-browser.prod.js',
-		format: 'es',
-		browser: true,
-		minify: true,
-		env: 'production'
-	},
-	{
-		input: 'src/index.ts',
-		file: 'dist/index.esm-bundler.js',
-		format: 'es',
-		env: 'development'
-	},
-	{
-		input: 'src/index.default.ts',
-		file: 'dist/index.global.js',
-		format: 'iife',
-		env: 'development'
-	},
-	{
-		input: 'src/index.default.ts',
-		file: 'dist/index.global.prod.js',
-		format: 'iife',
-		minify: true,
-		env: 'production'
-	},
-	{
-		input: 'src/index.default.ts',
-		file: 'dist/index.cjs.js',
-		format: 'cjs',
-		env: 'development'
-	}
-]
+const IS_WATCH = process.env.ROLLUP_WATCH
+
+const configs: Config[] = IS_WATCH
+	? [
+			{
+				input: 'src/index.ts',
+				file: 'dist/index.esm-bundler.js',
+				format: 'es',
+				env: 'development'
+			},
+			{
+				input: 'src/index.ts',
+				file: 'dist/index.cjs.js',
+				format: 'cjs',
+				env: 'development'
+			}
+	  ]
+	: [
+			{
+				input: 'src/index.ts',
+				file: 'dist/index.esm-browser.js',
+				format: 'es',
+				browser: true,
+				env: 'development'
+			},
+			{
+				input: 'src/index.ts',
+				file: 'dist/index.esm-browser.prod.js',
+				format: 'es',
+				browser: true,
+				minify: true,
+				env: 'production'
+			},
+			{
+				input: 'src/index.ts',
+				file: 'dist/index.esm-bundler.js',
+				format: 'es',
+				env: 'development'
+			},
+			{
+				input: 'src/index.default.ts',
+				file: 'dist/index.global.js',
+				format: 'iife',
+				env: 'development'
+			},
+			{
+				input: 'src/index.default.ts',
+				file: 'dist/index.global.prod.js',
+				format: 'iife',
+				minify: true,
+				env: 'production'
+			},
+			{
+				input: 'src/index.default.ts',
+				file: 'dist/index.cjs.js',
+				format: 'cjs',
+				env: 'development'
+			}
+	  ]
 
 function createEntries() {
 	return configs.map(createEntry)
@@ -115,7 +132,8 @@ function createEntry(config: Config) {
 			'mount-image',
 			'mount-style',
 			'load-source',
-			'use-downloads'
+			'use-downloads',
+			'os-lang'
 		)
 	}
 

@@ -20,6 +20,9 @@ dependencies:
   mount-style:
     specifier: ^1.2.0
     version: 1.2.0
+  os-lang:
+    specifier: ^3.1.1
+    version: 3.1.1
   tslib:
     specifier: ^2.6.0
     version: 2.6.0
@@ -1474,7 +1477,7 @@ packages:
   /@eslint-sets/eslint-config-basic@5.6.0(@babel/core@7.22.6)(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(prettier@2.8.8)(typescript@5.1.6):
     resolution: {integrity: sha512-X5O9c8RSvnLB5Lgo1jkAXPQ+JefCtE9vcMZqLu/kcd6JlmOl582nGdM7dRy6G5hN6DsfX9FuSXdwDsiJkQR0aA==}
     peerDependencies:
-      eslint: '>=7.4.0 || >= 8.0.0 || ^8.0.0'
+      eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
       typescript: '*'
     peerDependenciesMeta:
@@ -1678,6 +1681,11 @@ packages:
     resolution: {integrity: sha512-3Yc1fUTs69MG/uZbJlLSI3JISMn2UV2rg+1D/vROUqZyh3l6iYHCs7GMp+M40ZD7yOdDbYjJcU1oTJhrc+dGKg==}
     hasBin: true
     dev: true
+
+  /@node-kit/extra.cp@3.1.1:
+    resolution: {integrity: sha512-YyOp/OPHRW/Uv0TyJWXoHI3O/s8pAgX4IIizYvQi4oJjPNt95RvuIbBZ4q2YcSYOtHpLn1eoTJ3q7+wBmV0U+A==}
+    hasBin: true
+    dev: false
 
   /@node-kit/extra.fs@2.5.1:
     resolution: {integrity: sha512-cj0gMQ+yE4jNmCrtz1TEXYMX+zNOJEGxGy1YzG2IBek0ndKszIYRxyLbIz3URh1MSTMGT+f9Zxy3iARB8vVP9g==}
@@ -4300,6 +4308,11 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /invert-kv@3.0.1:
+    resolution: {integrity: sha512-CYdFeFexxhv/Bcny+Q0BfOV+ltRlJcd4BBZBYFX/O0u4npJrgZtIcjokegtiSMAvlMTJ+Koq0GBCc//3bueQxw==}
+    engines: {node: '>=8'}
+    dev: false
+
   /ip@2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: true
@@ -4619,6 +4632,13 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /lcid@4.0.1:
+    resolution: {integrity: sha512-qI4sQt7g19ZWtaodPKBUvym/pen9/lZzqyl2qeItTFPwJptXllVhe3KI+mV9xmBa4cnZoik8m1obToxqFbVIZQ==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      invert-kv: 3.0.1
+    dev: false
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -5251,6 +5271,14 @@ packages:
       strip-ansi: 7.0.1
       wcwidth: 1.0.1
     dev: true
+
+  /os-lang@3.1.1:
+    resolution: {integrity: sha512-+1Ij2yQHWVbMwbXVrG7Y6rs3t/IZmOPO9m1vNNy/nX0DbuXm+ZVusLQLy8mf953pXVbAXO4KynuisuH0crHfCA==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.cp': 3.1.1
+      lcid: 4.0.1
+    dev: false
 
   /p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
