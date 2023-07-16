@@ -2,7 +2,7 @@
  * Async await wrapper for easy error handling
  *
  * @param promise - Promise
- * @return - Promise<[E, undefined] | [null, T]>
+ * @return - [Error, undefined] | [null, data]
  */
 export function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]> {
 	return promise

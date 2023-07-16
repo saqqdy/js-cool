@@ -1,7 +1,7 @@
 /**
  * Remove leading and trailing spaces from strings
  *
- * @deprecated
+ * @deprecated will be removed in the next major release.
  * @param string - pass in the string
  * @returns returns the new string
  */

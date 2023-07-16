@@ -9,6 +9,18 @@ export { download } from 'use-downloads'
 
 // Global Parameters
 export { default as client } from './client'
+export type {
+	InfoKey,
+	InfoKeys,
+	InfoTypes,
+	InfoEngineKeys,
+	InfoBrowserKeys,
+	InfoOsKeys,
+	InfoDeviceKeys,
+	Client,
+	INFO_MAP,
+	ClientOptions
+} from './client'
 export { default as pattern } from './pattern'
 
 // String extensions, array methods
@@ -21,6 +33,7 @@ export { default as dash2Camel } from './dash2Camel'
 export { default as upperFirst } from './upperFirst'
 export { default as randomNumber } from './randomNumber'
 export { default as randomString } from './randomString'
+export { default as fingerprint } from './fingerprint'
 export { default as getCHSLength } from './getCHSLength'
 export { default as cutCHSString } from './cutCHSString'
 

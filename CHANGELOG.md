@@ -2,7 +2,7 @@
 
 ## 2023.07.10 v5.2.0
 
-1. new `awaitTo` function
+1. new `awaitTo` `fingerprint` function
 2. Refactored `client` method
 3. fix bugs for `osVersion`
 4. deprecated `trim`

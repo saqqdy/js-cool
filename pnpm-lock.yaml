@@ -58,6 +58,9 @@ devDependencies:
   '@rollup/plugin-commonjs':
     specifier: ^25.0.2
     version: 25.0.2(rollup@3.26.0)
+  '@rollup/plugin-json':
+    specifier: ^6.0.0
+    version: 6.0.0(rollup@3.26.0)
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
     version: 15.1.0(rollup@3.26.0)
@@ -121,6 +124,9 @@ devDependencies:
   rollup-plugin-filesize:
     specifier: ^10.0.0
     version: 10.0.0
+  rollup-plugin-polyfill-node:
+    specifier: ^0.12.0
+    version: 0.12.0(rollup@3.26.0)
   rollup-plugin-visualizer:
     specifier: ^5.9.2
     version: 5.9.2(rollup@3.26.0)
@@ -1908,6 +1914,34 @@ packages:
       glob: 8.0.3
       is-reference: 1.2.1
       magic-string: 0.27.0
+      rollup: 3.26.0
+    dev: true
+
+  /@rollup/plugin-inject@5.0.3(rollup@3.26.0):
+    resolution: {integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.26.0)
+      estree-walker: 2.0.2
+      magic-string: 0.27.0
+      rollup: 3.26.0
+    dev: true
+
+  /@rollup/plugin-json@6.0.0(rollup@3.26.0):
+    resolution: {integrity: sha512-i/4C5Jrdr1XUarRhVu27EEwjt4GObltD7c+MkCIpO2QIbojw8MUs+CCTqOphQi3Qtg1FLmYt+l+6YeoIf51J7w==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.26.0)
       rollup: 3.26.0
     dev: true
 
@@ -5770,6 +5804,15 @@ packages:
     transitivePeerDependencies:
       - bluebird
       - supports-color
+    dev: true
+
+  /rollup-plugin-polyfill-node@0.12.0(rollup@3.26.0):
+    resolution: {integrity: sha512-PWEVfDxLEKt8JX1nZ0NkUAgXpkZMTb85rO/Ru9AQ69wYW8VUCfDgP4CGRXXWYni5wDF0vIeR1UoF3Jmw/Lt3Ug==}
+    peerDependencies:
+      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
+    dependencies:
+      '@rollup/plugin-inject': 5.0.3(rollup@3.26.0)
+      rollup: 3.26.0
     dev: true
 
   /rollup-plugin-visualizer@5.9.2(rollup@3.26.0):

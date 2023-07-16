@@ -5,6 +5,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import filesize from 'rollup-plugin-filesize'
+import json from '@rollup/plugin-json'
+// import polyfill from 'rollup-plugin-polyfill-node'
 import { visualizer } from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
 import { banner, extensions, reporter, version } from './config'
@@ -143,7 +145,8 @@ function createEntry(config: Config) {
 			__VERSION__: version
 		}),
 		nodeResolve(),
-		commonjs()
+		commonjs(),
+		json()
 	)
 
 	if (config.transpile !== false) {

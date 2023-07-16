@@ -1,4 +1,4 @@
-import { osLangSync } from 'os-lang'
+// import { osLangSync } from 'os-lang'
 import inBrowser from './inBrowser'
 
 export const INFO_MAP = {
@@ -95,7 +95,7 @@ export type InfoOsKeys = (typeof INFO_MAP)['os'][number]
 export type InfoDeviceKeys = (typeof INFO_MAP)['device'][number]
 export type InfoKeys = InfoEngineKeys | InfoBrowserKeys | InfoOsKeys | InfoDeviceKeys
 
-class Client {
+export class Client {
 	matchMap: Record<InfoKeys, boolean>
 	root
 	navigator
@@ -232,17 +232,15 @@ class Client {
 	}
 
 	public getLanguage() {
-		if (inBrowser) {
-			// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			const language = this.navigator.browserLanguage || this.navigator.language || ''
-			const arr = language.split('-')
-			if (arr[1]) {
-				arr[1] = arr[1].toUpperCase()
-			}
-			return arr.join('_')
+		if (!inBrowser) return // osLangSync()
+		// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		const language = this.navigator.browserLanguage || this.navigator.language || ''
+		const arr = language.split('-')
+		if (arr[1]) {
+			arr[1] = arr[1].toUpperCase()
 		}
-		return osLangSync()
+		return arr.join('_')
 	}
 }
 

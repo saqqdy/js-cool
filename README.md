@@ -79,6 +79,7 @@ const functionList = {
   dash2Camel, // convert -spaced all-lowercase dash pattern to camel string
   randomNumber, // Get a random integer
   randomString, // get a random string
+  fingerprint, // Generating Browser Fingerprints
   getCHSLength, // get the length of the string, Chinese counts as 2 characters
   cutCHSString, // get the string, Chinese count as 2 bytes
   // Get a status
@@ -164,7 +165,51 @@ const functionList = {
 
 ### Global Parameters
 
-client, // the client method returns a browser result object
+#### client
+
+the client method returns a browser result object
+
+- Since: `5.2.0`
+
+- Arguments: `none`
+
+- Returns: `object`
+
+- Example:
+
+```ts
+import { client } from 'js-cool'
+
+client.get(['device', 'browser', 'engine', 'os']) // { device: 'xxx', browser: 'xxx', os: 'xxx', engine: 'xxx' }
+client.get('device') // { device: 'xxx' }
+```
+
+- Types:
+
+```ts
+declare class Client {
+  matchMap: Record<InfoKeys, boolean>
+  root: Window & typeof globalThis
+  navigator: Navigator
+  constructor(options: ClientOptions)
+
+  get(names?: InfoTypes | InfoTypes[]): Partial<{
+    device: InfoKeys | undefined
+    os: InfoKeys | undefined
+    browser: InfoKeys | undefined
+    engine: InfoKeys | undefined
+    language: any
+    network: any
+    orientation: string | undefined
+  }>
+
+  getInfoByType(infoKey: InfoKey): InfoKeys | undefined
+  getOrientationStatus(): 'vertical' | 'horizontal' | undefined
+  getNetwork(): any
+  getLanguage(): any
+}
+```
+
 pattern, // pattern returns some common rules
 
 ### Extras for String & Array & Object & Function
@@ -177,6 +222,33 @@ camel2Dash, // convert a humped string to -spaced and all lowercase dash mode
 dash2Camel, // convert -spaced all-lowercase dash pattern to camel string
 randomNumber, // Get a random integer
 randomString, // get a random string
+
+#### fingerprint
+
+Generating Browser Fingerprints
+
+- Since: `5.2.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default       |
+| ---------- | ----------- | -------- | -------- | -------- | ------------- |
+| domain     | key string  | `string` | -        | false    | location.host |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+fingerprint('www.saqqdy.com') // wc7sWJJA8
+```
+
+- Types:
+
+```ts
+declare function fingerprint(domain?: string): string | null
+```
+
 getCHSLength, // get the length of the string, Chinese counts as 2 characters
 cutCHSString, // get the string, Chinese count as 2 bytes
 
