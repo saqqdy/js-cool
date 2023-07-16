@@ -191,14 +191,20 @@ export class Client {
 		const mimeMatch = function (option: string, value: string) {
 			const mimeTypes = navigator.mimeTypes || {}
 			for (const key in mimeTypes) {
+				// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+				// @ts-ignore
 				if (mimeTypes[key][option] === value) return true
 			}
 			return false
 		}
 
 		let IS_360 = false
+		// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+		// @ts-ignore
 		if (root.chrome) {
 			const ver = +ua.replace(/^.*Chrome\/([\d]+).*$/, '$1')
+			// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+			// @ts-ignore
 			if (ver > 36 && root.showModalDialog) {
 				IS_360 = true
 			} else if (ver > 45) {
@@ -209,6 +215,8 @@ export class Client {
 		if (IS_360) {
 			if (
 				mimeMatch('type', 'application/gameplugin') ||
+				// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+				// @ts-ignore
 				(navigator && typeof navigator.connection.saveData === 'undefined')
 			) {
 				this.matchMap['360SE'] = true
