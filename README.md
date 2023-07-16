@@ -376,7 +376,7 @@ declare interface BrowserVersion {
 declare function browserVersion(ua?: string): BrowserVersion | null
 ```
 
-, // 
+, //
 compareVersion, // compare the version number size
 parseUrlParam, // parse url params (key1=value1&key2=value2)
 getDirParam, // get the URL parameter in the form of a directory
