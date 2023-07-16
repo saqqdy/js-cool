@@ -35,7 +35,8 @@ function osVersion(ua?: string): OsVersion | null {
 		ua = navigator.userAgent
 	}
 	ua = ua.toLowerCase()
-	const regMap = {
+
+	const OS_REG_MAP = {
 		Windows: /windows nt\s+([\w.]+)/,
 		MacOS: /mac os x\s+([\w_]+)/,
 		Android: /android\s+([\d.]+)/,
@@ -45,15 +46,15 @@ function osVersion(ua?: string): OsVersion | null {
 		WebOS: /hpwOS\/([\d.]+);/
 	} as const
 
-	let key: keyof typeof regMap
+	let key: keyof typeof OS_REG_MAP
 
-	for (key in regMap) {
-		const match = ua.match(regMap[key])
+	for (key in OS_REG_MAP) {
+		const match = ua.match(OS_REG_MAP[key])
 		if (!match) continue
 		else {
 			let version = (match[1] || '').replace(/_/g, '.')
 			if (key === 'Windows') {
-				const WINDOWS_VERSION_MAP = {
+				const VERSION_MAP = {
 					'10': '10 || 11',
 					'6.3': '8.1',
 					'6.2': '8',
@@ -67,8 +68,7 @@ function osVersion(ua?: string): OsVersion | null {
 					'3.5': 'NT 3.5',
 					'3.1': 'NT 3.1'
 				}
-				version =
-					WINDOWS_VERSION_MAP[version as keyof typeof WINDOWS_VERSION_MAP] || version
+				version = VERSION_MAP[version as keyof typeof VERSION_MAP] || version
 			}
 			return {
 				name: key,

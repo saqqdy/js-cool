@@ -30,6 +30,7 @@ import getAppVersion from './getAppVersion'
 import appVersion from './appVersion'
 import getOsVersion from './getOsVersion'
 import osVersion from './osVersion'
+import browserVersion from './browserVersion'
 import compareVersion from './compareVersion'
 import parseUrlParam from './parseUrlParam'
 import getDirParam from './getDirParam'
@@ -141,6 +142,7 @@ export default {
 	getNumber,
 	getOsVersion,
 	osVersion,
+	browserVersion,
 	getQueryParam,
 	getQueryParams,
 	getProperty,

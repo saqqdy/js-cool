@@ -96,6 +96,7 @@ const functionList = {
   appVersion, // 获取APP版本号
   getOsVersion, // 获取系统版本(deprecated)
   osVersion, // 获取系统名称和版本
+  browserVersion, // 获取浏览器版本
   compareVersion, // 版本号大小对比
   parseUrlParam, // 解析url参数（key1=value1&key2=value2）
   getDirParam, // 获取目录形式URL参数

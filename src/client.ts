@@ -104,9 +104,10 @@ export class Client {
 		this.root = root
 		this.navigator = navigator
 
-		const Mobile = ua.includes('Mobi') || ua.includes('iPh') || ua.includes('480')
-		const Tablet = ua.includes('Tablet') || ua.includes('Nexus 7')
+		const Opera = ua.includes('Opera') || ua.includes('OPR')
 		const iPad = ua.includes('iPad')
+		const Mobile = !iPad && (ua.includes('Mobi') || ua.includes('iPh') || ua.includes('480'))
+		const Tablet = ua.includes('Tablet') || ua.includes('Nexus 7')
 
 		this.matchMap = {
 			// kernel
@@ -122,7 +123,7 @@ export class Client {
 			Firefox: ua.includes('Firefox') || ua.includes('FxiOS'),
 			'Firefox Focus': ua.includes('Focus'),
 			Chromium: ua.includes('Chromium'),
-			Opera: ua.includes('Opera') || ua.includes('OPR'),
+			Opera,
 			Vivaldi: ua.includes('Vivaldi'),
 			Yandex: ua.includes('YaBrowser'),
 			Arora: ua.includes('Arora'),
@@ -141,7 +142,7 @@ export class Client {
 			UC: ua.includes('UC') || ua.includes(' UBrowser'),
 			QQBrowser: ua.includes('QQBrowser'),
 			QQ: ua.includes('QQ/'),
-			Baidu: ua.includes('Baidu') || ua.includes('BIDUBrowser'),
+			Baidu: !Opera && (ua.includes('Baidu') || ua.includes('BIDUBrowser')),
 			Maxthon: ua.includes('Maxthon'),
 			Sogou: ua.includes('MetaSr') || ua.includes('Sogou'),
 			LBBROWSER: ua.includes('LBBROWSER') || ua.includes('LieBaoFast'),
@@ -185,6 +186,41 @@ export class Client {
 			Tablet,
 			iPad,
 			PC: !!ua && !Mobile && !Tablet && !iPad
+		}
+
+		const mimeMatch = function (option: string, value: string) {
+			const mimeTypes = navigator.mimeTypes || {}
+			for (const key in mimeTypes) {
+				if (mimeTypes[key][option] === value) return true
+			}
+			return false
+		}
+
+		let IS_360 = false
+		if (root.chrome) {
+			const ver = +ua.replace(/^.*Chrome\/([\d]+).*$/, '$1')
+			if (ver > 36 && root.showModalDialog) {
+				IS_360 = true
+			} else if (ver > 45) {
+				IS_360 = mimeMatch('type', 'application/vnd.chromium.remoting-viewer')
+			}
+		}
+
+		if (IS_360) {
+			if (
+				mimeMatch('type', 'application/gameplugin') ||
+				(navigator && typeof navigator.connection.saveData === 'undefined')
+			) {
+				this.matchMap['360SE'] = true
+			} else {
+				this.matchMap['360EE'] = true
+			}
+		}
+
+		if (this.matchMap.IE || this.matchMap.Edge) {
+			const _top = window.screenTop - window.screenY
+			if (_top === 102) this.matchMap['360EE'] = true
+			else if (_top === 104) this.matchMap['360SE'] = true
 		}
 	}
 

@@ -94,6 +94,7 @@ const functionList = {
   appVersion, // Get the app version number
   getOsVersion, // get the system name and version(deprecated)
   osVersion, // get the system version
+  browserVersion, // Get the browser name and version
   compareVersion, // compare the version number size
   parseUrlParam, // parse url params (key1=value1&key2=value2)
   getDirParam, // get the URL parameter in the form of a directory
@@ -343,6 +344,39 @@ declare interface OsVersion {
 declare function osVersion(ua?: string): OsVersion | null
 ```
 
+#### browserVersion
+
+Get the browser name and version
+
+- Since: `5.2.0`
+
+- Arguments:
+
+| Parameters | Description                                 | Type     | Optional | Required | Default             |
+| ---------- | ------------------------------------------- | -------- | -------- | -------- | ------------------- |
+| ua         | ua or any ua like string, may not be passed | `string` | -        | false    | navigator.userAgent |
+
+- Returns: `BrowserVersion | null`
+
+- Example:
+
+```ts
+// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap…KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+browserVersion() // \{ name: 'Chrome', version: '114.0.0.0' \}
+```
+
+- Types:
+
+```ts
+declare interface BrowserVersion {
+  name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS'
+  version: string
+}
+
+declare function browserVersion(ua?: string): BrowserVersion | null
+```
+
+, // 
 compareVersion, // compare the version number size
 parseUrlParam, // parse url params (key1=value1&key2=value2)
 getDirParam, // get the URL parameter in the form of a directory
