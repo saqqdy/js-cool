@@ -1,6 +1,6 @@
 # Change logs
 
-## 2023.07.10 v5.2.0
+## 2023.07.17 v5.2.0
 
 1. new `awaitTo` `fingerprint` `browserVersion` function
 2. fix bugs of `osVersion`
