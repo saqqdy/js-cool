@@ -835,26 +835,722 @@ toThousands, // Thousands division method
 all, // return true if the provided predicate function returns true for all elements in a set, otherwise return false.
 any, // Returns true if the provided predicate function returns true for at least one element of a set, false otherwise.
 uuid, // generate uuid on browser side, use v4 method
-CSVToArray, // csv to json, array conversion
-arrayToCSV, // convert csv to json, array
-CSVToJSON, // csv to json, array conversion
-JSONToCSV, // csv to json, array conversion
-RGBToHex, // Convert RGB component values to color codes.
-intersect, // find intersection of multiple arrays
-union, // find the union of multiple arrays
-minus, // find the difference of multiple arrays, which belong to A but not B/C/D... elements of
-complement, // find the complement of multiple arrays
-contains, // whether the array contains the specified element
-unique, // array de-duplication
-fillIPv6, // ipv6 address completion
-getProperty, // Get array, object property values based on path string
-setProperty, // set array, object property values based on path string
-loadSource, // load resources dynamically, support js, images, css links, css style strings
-mountCss, // dynamically load css link resources
-mountImg, // load image resource dynamically
-mountJs, // load js link resources dynamically
-mountStyle, // load css styles dynamically
-awaitTo, // Async await wrapper for easy error handling
+
+#### CSVToArray
+
+Converts a comma-separated string of values (CSV) to a 2D array.
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters   | Description                            | Type      | Optional | Required | Default |
+| ------------ | -------------------------------------- | --------- | -------- | -------- | ------- |
+| data         | csv data                               | `string`  | -        | true     | -       |
+| delimiter    | delimiter                              | `string`  | -        | false    | ','     |
+| omitFirstRow | the first row is the table header data | `boolean` | -        | false    | `false` |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+CSVToArray('a,b\\nc,d') // `[['a','b'],['c','d']]`
+CSVToArray('a;b\\\nc;d', ';') // `[['a','b'],['c','d']]`
+CSVToArray('col1,col2\\\na,b\\\nc,d', ',', true) // `[['a','b'],['c','d']]`
+```
+
+- Types:
+
+```ts
+declare const CSVToArray: (data: string, delimiter?: string, omitFirstRow?: boolean) => string[][]
+```
+
+#### arrayToCSV
+
+Converts a two-dimensional array to a comma-separated string of values (CSV).
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| arr        | json data   | `array`  | -        | true     | -       |
+| delimiter  | delimiter   | `string` | -        | false    | ','     |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+arrayToCSV([
+  ['a', 'b'],
+  ['c', 'd']
+]) // '"a", "b" \n "c", "d"'
+arrayToCSV(
+  [
+    ['a', 'b'],
+    ['c', 'd']
+  ],
+  ';'
+) // '"a"; "b"\n "c"; "d"'
+arrayToCSV([
+  ['a', '"b" great'],
+  ['c', 3.1415]
+]) // '"a", """b"" great"\n "c",3.1415'
+```
+
+- Types:
+
+```ts
+declare function arrayToCSV(data: string, delimiter?: string): any[]
+```
+
+#### CSVToJSON
+
+Converts a comma-separated string of values (CSV) to an array of 2D objects. The first line of the string is used as the header line.
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| data       | csv data    | `string` | -        | true     | -       |
+| delimiter  | delimiter   | `string` | -        | false    | ','     |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+CSVToJSON('col1,col2\\na,b\\\nc,d') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
+CSVToJSON('col1;col2\\\na;b\\\nc;d', ';') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
+```
+
+- Types:
+
+```ts
+declare function CSVToJSON(data: string, delimiter?: string): any[]
+```
+
+#### JSONToCSV
+
+Converts an array of objects to a comma-separated value (CSV) string containing only the specified columns.
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description           | Type     | Optional | Required | Default |
+| ---------- | --------------------- | -------- | -------- | -------- | ------- |
+| arr        | json data             | `array`  | -        | true     | -       |
+| columns    | the specified columns | `array`  | -        | true     | -       |
+| delimiter  | delimiter             | `string` | -        | false    | ','     |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']) // 'a,b\n "1", "2"\n "3", "4"\n "6",""\n"", "7"'
+JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';') // 'a;b\n "1"; "2"\n "3"; "4"\n "6";""\n""; "7"'
+```
+
+- Types:
+
+```ts
+declare const JSONToCSV: (arr: any[], columns: any[], delimiter?: string) => string
+```
+
+#### RGBToHex
+
+Converts RGB component values to color codes.
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description          | Type     | Optional | Required | Default |
+| ---------- | -------------------- | -------- | -------- | -------- | ------- |
+| r          | the 1st value of RGB | `number` | -        | true     | -       |
+| g          | RGB's 2nd value      | `number` | -        | true     | -       |
+| b          | RGB's 3nd value      | `number` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+RGBToHex(255, 165, 1) // 'ffa501'
+```
+
+- Types:
+
+```ts
+declare const RGBToHex: (r: number, g: number, b: number) => string
+```
+
+#### intersect
+
+Find the intersection of multiple arrays
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description   | Type    | Optional | Required | Default |
+| ---------- | ------------- | ------- | -------- | -------- | ------- |
+| ...arr     | array targets | `array` | -        | true     | -       |
+
+- Returns: `array`
+
+- Example:
+
+```ts
+intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
+```
+
+- Types:
+
+```ts
+declare function intersect<T = unknown>(...args: T[][]): T[]
+```
+
+#### union
+
+Find the concatenation of multiple arrays
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description   | Type    | Optional | Required | Default |
+| ---------- | ------------- | ------- | -------- | -------- | ------- |
+| ...arr     | array targets | `array` | -        | true     | -       |
+
+- Returns: `array`
+
+- Example:
+
+```ts
+union([1, 2], [2, '33']) // [1, 2, '33']
+```
+
+- Types:
+
+```ts
+declare function union<T = unknown>(...args: T[][]): T[]
+```
+
+#### minus
+
+Find the set of differences of multiple arrays that belong to A but not to B/C/D... of the elements of
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description   | Type    | Optional | Required | Default |
+| ---------- | ------------- | ------- | -------- | -------- | ------- |
+| ...arr     | array targets | `array` | -        | true     | -       |
+
+- Returns: `array`
+
+- Example:
+
+```ts
+minus([1, 2], [2, '33'], [2, 4]) // [1]
+```
+
+- Types:
+
+```ts
+declare function minus<T = unknown>(...args: T[][]): T[]
+```
+
+#### complement
+
+Find the complement of multiple arrays
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description   | Type    | Optional | Required | Default |
+| ---------- | ------------- | ------- | -------- | -------- | ------- |
+| ...arr     | array targets | `array` | -        | true     | -       |
+
+- Returns: `array`
+
+- Example:
+
+```ts
+complement([1, 2], [2, '33'], [2]) // [1, '33']
+```
+
+- Types:
+
+```ts
+declare function complement<T = unknown>(...args: T[][]): T[]
+```
+
+#### contains
+
+Whether the array contains the specified element
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description      | Type    | Optional | Required | Default |
+| ---------- | ---------------- | ------- | -------- | -------- | ------- |
+| arr        | array target     | `array` | -        | true     | -       |
+| item       | any array member | `any`   | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+contains([1, 2], 2) // true
+contains([1, 2], 3) // false
+```
+
+- Types:
+
+```ts
+declare function contains(arr: any[], item: any): boolean
+```
+
+#### unique
+
+Array de-duplication
+
+- Since: `2.2.1`
+
+- Arguments:
+
+| Parameters | Description  | Type    | Optional | Required | Default |
+| ---------- | ------------ | ------- | -------- | -------- | ------- |
+| arr        | array target | `array` | -        | true     | -       |
+
+- Returns: `array`
+
+- Example:
+
+```ts
+unique([1, 2, 2, '33']) // [1, 2, '33']
+```
+
+- Types:
+
+```ts
+declare function unique<T = unknown>(arr: T[]): T[]
+```
+
+#### fillIPv6
+
+ipv6 address completion
+
+- Since: `2.2.2`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| ip         | ip address  | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+fillIPv6('2409:8005:800::2') // '2409:8005:0800:0000:0000:0000:0000:0002'
+fillIPv6('2409:8005:800::1c') // '2409:8005:0800:0000:0000:0000:0000:001c'
+```
+
+- Types:
+
+```ts
+declare function fillIPv6(ip: string): string
+```
+
+#### getProperty
+
+Get array, object property values based on path string
+
+- Since: `2.2.4`
+
+- Arguments:
+
+| Parameters | Description                     | Type                | Optional | Required | Default |
+| ---------- | ------------------------------- | ------------------- | -------- | -------- | ------- |
+| target     | target array, object            | `array`/`object`    | -        | true     | -       |
+| prop       | query target, can pass function | `string`/`function` | -        | true     | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+const target = {
+  a: 1,
+  b: [
+    {
+      c: 2
+    }
+  ]
+}
+getProperty(target, 'a') // 1
+getProperty(target, 'b[0].c') // 2
+getProperty(target, () => 'a') // 1
+```
+
+- Types:
+
+```ts
+declare function getProperty(
+  target: any,
+  prop:
+    | string
+    | {
+        (): string
+      }
+): any
+```
+
+#### setProperty
+
+Set array, object property values based on path string
+
+- Since: `2.7.0`
+
+- Arguments:
+
+| Parameters | Description                                      | Type                | Optional | Required | Default |
+| ---------- | ------------------------------------------------ | ------------------- | -------- | -------- | ------- |
+| target     | target array, object                             | `array`/`object`    | -        | true     | -       |
+| prop       | set target, can pass function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | true     | -       |
+| value      | value                                            | `any`               | -        | true     | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+const target = {
+  a: 1,
+  b: [
+    {
+      c: 2
+    }
+  ]
+}
+setProperty(target, 'a') // 1
+setProperty(target, 'b[0].c') // 2
+setProperty(target, () => 'a') // 1
+```
+
+- Types:
+
+```ts
+declare function setProperty(
+  target: any,
+  prop:
+    | string
+    | {
+        (): string
+      },
+  value: any
+): any
+```
+
+#### loadSource
+
+load resources dynamically, support js, images, css links, css style strings
+
+- Since: `2.8.0`
+
+- Arguments:
+
+| Parameters | Description                                                           | Type            | Optional | Required | Default |
+| ---------- | --------------------------------------------------------------------- | --------------- | -------- | -------- | ------- |
+| url        | link to the resource, type must be passed when passing in styleString | `string`        | -        | true     | -       |
+| options    | parameters: attrs, props, force                                       | `SourceOptions` | -        | false    | -       |
+
+- Returns: `boolean | imageUrl`
+
+- Example:
+
+```ts
+loadSource('/source/url', options)
+```
+
+- Types:
+
+```ts
+import { ImageAttributes } from 'mount-image'
+import { LinkAttributes } from 'mount-css'
+import { ScriptAttributes } from 'mount-script'
+import { StyleAttributes } from 'mount-style'
+
+declare function loadSource(
+  url: string,
+  option: SourceFileType | SourceOptions
+): Promise<boolean | string>
+
+declare type SourceFileType = 'js' | 'img' | 'css' | 'style' | string
+
+declare interface SourceOptions {
+  type: SourceFileType
+  attrs?: LinkAttributes | StyleAttributes | ScriptAttributes | ImageAttributes
+  props?: LinkAttributes | StyleAttributes | ScriptAttributes | ImageAttributes
+  force?: boolean
+}
+```
+
+#### mountCss
+
+dynamically load css link resources
+
+- Since: `2.8.0`
+
+- Arguments:
+
+| Parameters | Description                     | Type         | Optional | Required | Default |
+| ---------- | ------------------------------- | ------------ | -------- | -------- | ------- |
+| url        | resource url                    | `string`     | -        | true     | -       |
+| options    | parameters: attrs, props, force | `CssOptions` | -        | false    | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+mountCss('/source/url', options)
+```
+
+- Types:
+
+```ts
+declare interface CssOptions {
+  attrs?: LinkAttributes
+  props?: LinkAttributes
+  force?: boolean
+}
+
+declare interface HTMLLinkElementEX extends HTMLLinkElement {
+  onreadystatechange?: any
+  readyState?: 'loaded' | 'complete'
+}
+
+declare type LinkAttributes = Pick<
+  HTMLLinkElement,
+  | 'as'
+  | 'charset'
+  | 'crossOrigin'
+  | 'disabled'
+  | 'href'
+  | 'hreflang'
+  | 'imageSizes'
+  | 'imageSrcset'
+  | 'integrity'
+  | 'media'
+  | 'referrerPolicy'
+  | 'rel'
+  | 'rev'
+  | 'target'
+  | 'type'
+>
+
+declare function mountCss(src: string, option?: CssOptions): Promise<boolean>
+```
+
+#### mountImg
+
+load image resource dynamically
+
+- Since: `2.8.0`
+
+- Arguments:
+
+| Parameters | Description                     | Type         | Optional | Required | Default |
+| ---------- | ------------------------------- | ------------ | -------- | -------- | ------- |
+| url        | resource url                    | `string`     | -        | true     | -       |
+| options    | parameters: attrs, props, force | `ImgOptions` | -        | false    | -       |
+
+- Returns: `boolean | imageUrl`
+
+- Example:
+
+```ts
+mountImg('/source/url', options)
+```
+
+- Types:
+
+```ts
+declare interface HTMLImageElementEX extends HTMLImageElement {
+  onreadystatechange?: any
+  readyState?: 'loaded' | 'complete'
+}
+
+declare type ImageAttributes = Pick<
+  HTMLImageElement,
+  | 'align'
+  | 'alt'
+  | 'border'
+  | 'crossOrigin'
+  | 'decoding'
+  | 'height'
+  | 'hspace'
+  | 'isMap'
+  | 'loading'
+  | 'longDesc'
+  | 'lowsrc'
+  | 'name'
+  | 'referrerPolicy'
+  | 'sizes'
+  | 'src'
+  | 'srcset'
+  | 'useMap'
+  | 'vspace'
+  | 'width'
+>
+
+declare interface ImgOptions {
+  attrs?: ImageAttributes
+  props?: ImageAttributes
+  force?: boolean
+}
+
+declare function mountImage(src: string, option?: ImgOptions): Promise<boolean | string>
+```
+
+#### mountJs
+
+load js link resources dynamically
+
+- Since: `2.8.0`
+
+- Arguments:
+
+| Parameters | Description                     | Type        | Optional | Required | Default |
+| ---------- | ------------------------------- | ----------- | -------- | -------- | ------- |
+| url        | resource url                    | `string`    | -        | true     | -       |
+| options    | parameters: attrs, props, force | `JsOptions` | -        | false    | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+mountJs('/source/url', options)
+```
+
+- Types:
+
+```ts
+declare interface HTMLScriptElementEX extends HTMLScriptElement {
+  onreadystatechange?: any
+  readyState?: 'loaded' | 'complete'
+}
+
+declare interface JsOptions {
+  attrs?: ScriptAttributes
+  props?: ScriptAttributes
+  force?: boolean
+}
+
+declare function mountJs(src: string, option?: JsOptions): Promise<boolean>
+
+declare type ScriptAttributes = Pick<
+  HTMLScriptElement,
+  | 'async'
+  | 'charset'
+  | 'crossOrigin'
+  | 'defer'
+  | 'event'
+  | 'htmlFor'
+  | 'integrity'
+  | 'noModule'
+  | 'referrerPolicy'
+  | 'src'
+  | 'text'
+  | 'type'
+>
+```
+
+#### mountStyle
+
+load css styles dynamically
+
+- Since: `2.8.0`
+
+- Arguments:
+
+| Parameters | Description                     | Type           | Optional | Required | Default |
+| ---------- | ------------------------------- | -------------- | -------- | -------- | ------- |
+| url        | resource url                    | `string`       | -        | true     | -       |
+| options    | parameters: attrs, props, force | `StyleOptions` | -        | false    | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+mountStyle('/source/url', options)
+```
+
+- Types:
+
+```ts
+declare function mountStyle(css: string, option?: StyleOptions): Promise<boolean>
+
+declare type StyleAttributes = Pick<HTMLStyleElement, 'disabled' | 'media' | 'type'>
+
+declare interface StyleOptions {
+  attrs?: StyleAttributes
+  props?: StyleAttributes
+}
+```
+
+#### awaitTo
+
+Async await wrapper for easy error handling
+
+- Since: `5.2.0`
+
+- Arguments:
+
+| Parameters | Description      | Type      | Optional | Required | Default |
+| ---------- | ---------------- | --------- | -------- | -------- | ------- |
+| promise    | promise function | `Promise` | -        | true     | -       |
+
+- Returns: `[Error, undefined]` or `[null, data]`
+
+- Example:
+
+```ts
+import { awaitTo as to } from 'js-cool'
+
+const [err, data] = await to(
+  axios({
+    /* ... */
+  })
+)
+if (err) {
+  // handle request error
+}
+```
+
+- Types:
+
+```ts
+declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
+```
 
 ## Support & Issues
 
