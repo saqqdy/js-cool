@@ -9,18 +9,18 @@ export { download } from 'use-downloads'
 
 // Global Parameters
 export { default as client } from './client'
-export type {
-	InfoKey,
-	InfoKeys,
-	InfoTypes,
-	InfoEngineKeys,
-	InfoBrowserKeys,
-	InfoOsKeys,
-	InfoDeviceKeys,
-	Client,
-	INFO_MAP,
-	ClientOptions
-} from './client'
+// export type {
+// 	InfoKey,
+// 	InfoKeys,
+// 	InfoTypes,
+// 	InfoEngineKeys,
+// 	InfoBrowserKeys,
+// 	InfoOsKeys,
+// 	InfoDeviceKeys,
+// 	Client,
+// 	INFO_MAP,
+// 	ClientOptions
+// } from './client'
 export { default as pattern } from './pattern'
 
 // String extensions, array methods
