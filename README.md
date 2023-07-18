@@ -6,6 +6,7 @@ Collection of common JavaScript / TypeScript utilities
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
+[![tree shaking][tree-shaking-image]][tree-shaking-url]
 ![typescript][typescript-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
@@ -2856,6 +2857,8 @@ Please open an issue [here](https://github.com/saqqdy/js-cool/issues).
 [npm-url]: https://npmjs.org/package/js-cool
 [codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
 [codacy-url]: https://www.codacy.com/gh/saqqdy/js-cool/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/js-cool&utm_campaign=Badge_Grade
+[tree-shaking-image]: https://badgen.net/bundlephobia/tree-shaking/js-cool
+[tree-shaking-url]: https://bundlephobia.com/package/js-cool
 [typescript-url]: https://badgen.net/badge/icon/typescript?icon=typescript&label
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/js-cool?branch=master
