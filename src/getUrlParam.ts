@@ -6,8 +6,8 @@ import inBrowser from './inBrowser'
  *
  * @example
  * ```js
- * getQueryParam('key1'); // key1 => xxx
- * getQueryParam('key1', 'https://test.com?key1=100#/home?key1=200'); // key1 => 100
+ * getUrlParam('key1'); // key1 => xxx
+ * getUrlParam('key1', 'https://test.com?key1=100#/home?key1=200'); // key1 => 100
  * ```
  * @param key - key name
  * @param url - pass in the url string

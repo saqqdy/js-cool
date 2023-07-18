@@ -3,10 +3,10 @@ import inBrowser from './inBrowser'
 /**
  * copy to clipboard
  *
- * @param target - any target
+ * @param value - any target
  * @returns - target is Object
  */
-function copy(value: string) {
+function copy(value: any) {
 	if (!inBrowser) return
 	const textarea = document.createElement('textarea')
 	textarea.style.position = 'absolute'

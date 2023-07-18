@@ -4,7 +4,7 @@
  * @param str - the string to be tested
  * @returns returns true/false
  */
-function isDigitals(str: any): boolean {
+function isDigitals(str: string): boolean {
 	return /^[0-9]*$/.test(str)
 }
 

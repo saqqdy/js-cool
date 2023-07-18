@@ -3,7 +3,7 @@
  *
  * @returns return position
  */
-const getScrollPosition = (): string | void => {
+function getScrollPosition() {
 	const innerH =
 		window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 	const docScrollTop = document.documentElement.scrollTop

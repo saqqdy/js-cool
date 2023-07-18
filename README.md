@@ -24,44 +24,145 @@ Collection of common JavaScript / TypeScript utilities
 
 </div>
 
+- [js-cool](#js-cool)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Es6 module](#es6-module)
+    - [Node.js require](#nodejsrequire)
+    - [Using unpkg CDN](#using-unpkg-cdn)
+  - [API Reference](#api-reference)
+    - [Global Parameters](#global-parameters)
+      - [client](#client)
+      - [pattern](#pattern)
+    - [Extras for String & Array & Object & Function](#extras-for-string--array--object--function)
+      - [trim](#trim)
+      - [clearAttr](#clearattr)
+      - [clearHtml](#clearhtml)
+      - [getNumber](#getnumber)
+      - [camel2Dash](#camel2dash)
+      - [dash2Camel](#dash2camel)
+      - [randomNumber](#randomnumber)
+      - [randomString](#randomstring)
+      - [fingerprint](#fingerprint)
+      - [getCHSLength](#getchslength)
+      - [cutCHSString](#cutchsstring)
+    - [Determine](#determine)
+      - [isDigitals](#isdigitals)
+      - [isExitsFunction](#isexitsfunction)
+      - [isExitsVariable](#isexitsvariable)
+      - [isWindow](#iswindow)
+      - [isObject](#isobject)
+      - [isArray](#isarray)
+      - [inBrowser](#inbrowser)
+      - [windowSize](#windowsize)
+      - [getAppVersion](#getappversion)
+      - [appVersion](#appversion)
+      - [getOsVersion](#getosversion)
+      - [osVersion](#osversion)
+      - [browserVersion](#browserversion)
+      - [compareVersion](#compareversion)
+      - [parseUrlParam](#parseurlparam)
+      - [spliceUrlParam](#spliceurlparam)
+      - [getDirParam](#getdirparam)
+      - [getQueryParam](#getqueryparam)
+      - [getQueryParams](#getqueryparams)
+      - [getUrlParam](#geturlparam)
+      - [getUrlParams](#geturlparams)
+    - [localStorage & sessionStorage & Cookie](#localstorage--sessionstorage--cookie)
+      - [getCache](#getcache)
+      - [setCache](#setcache)
+      - [delCache](#delcache)
+      - [getSession](#getsession)
+      - [setSession](#setsession)
+      - [delSession](#delsession)
+      - [getCookie](#getcookie)
+      - [setCookie](#setcookie)
+      - [delCookie](#delcookie)
+    - [Base64 & UTF8](#base64--utf8)
+      - [encodeBase64](#encodebase64)
+      - [encodeUtf8](#encodeutf8)
+      - [decodeBase64](#decodebase64)
+      - [decodeUtf8](#decodeutf8)
+    - [Events](#events)
+      - [stopBubble](#stopbubble)
+      - [stopDefault](#stopdefault)
+      - [addEvent](#addevent)
+      - [removeEvent](#removeevent)
+      - [getScrollPosition](#getscrollposition)
+    - [Utilities](#utilities)
+      - [nextIndex](#nextindex)
+      - [fixNumber](#fixnumber)
+      - [extend](#extend)
+      - [delay](#delay)
+      - [getType](#gettype)
+      - [cleanData](#cleandata)
+      - [download](#download)
+      - [searchObject](#searchobject)
+      - [openUrl](#openurl)
+      - [copy](#copy)
+      - [toThousands](#tothousands)
+      - [all](#all)
+      - [any](#any)
+      - [uuid](#uuid)
+      - [CSVToArray](#csvtoarray)
+      - [arrayToCSV](#arraytocsv)
+      - [CSVToJSON](#csvtojson)
+      - [JSONToCSV](#jsontocsv)
+      - [RGBToHex](#rgbtohex)
+      - [intersect](#intersect)
+      - [union](#union)
+      - [minus](#minus)
+      - [complement](#complement)
+      - [contains](#contains)
+      - [unique](#unique)
+      - [fillIPv6](#fillipv6)
+      - [getProperty](#getproperty)
+      - [setProperty](#setproperty)
+      - [loadSource](#loadsource)
+      - [mountCss](#mountcss)
+      - [mountImg](#mountimg)
+      - [mountJs](#mountjs)
+      - [mountStyle](#mountstyle)
+      - [awaitTo](#awaitto)
+  - [Support & Issues](#support--issues)
+  - [License](#license)
+
 ## Installation
 
 ```bash
-## Install via npm
-npm install --save js-cool
-
-# or install via pnpm
+# use pnpm
 pnpm install js-cool
+
+## use npm
+npm install --save js-cool
 ```
 
-## Use
+## Usage
 
-### Introducing modules via import
+### Es6 module
 
 ```js
-// Write import inside your .vue or main.js
-import { osVersion, trim } from 'js-cool'
-// Use
-trim(somestring, type) // return the string after cleaning up the spaces
-osVersion() // return the system version
-// ...
+import { osVersion } from 'js-cool'
+
+osVersion()
 ```
 
-### Ways to introduce using files
+### Node.js require
 
-1. Introduce via require
+```js
+const { osVersion } = require('js-cool')
 
-   ```js
-   // Add the following line to your main.js file
-   const { osVersion } = require('js-cool')
-   ```
+osVersion()
+```
 
-2. html Static pages are used directly
+### Using unpkg CDN
 
-   ```html
-   <! -- Add script tags to your html code, using CDN links to bring in -->
-   <script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
-   ```
+```html
+<script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
+<script>
+  jsCool.browserVersion()
+</script>
+```
 
 ## Summary of all methods
 
@@ -88,6 +189,7 @@ const functionList = {
   isExitsVariable, // if the specified variable exists
   isWindow, // Determine if window object
   isObject, // Determine if the type is an object
+  isArray, // Determine if it is an array
   inBrowser, // Determine if it is running on the browser side
   windowSize, // windowSize to get the window size
   getAppVersion, // Get the app version number(deprecated)
@@ -97,6 +199,7 @@ const functionList = {
   browserVersion, // Get the browser name and version
   compareVersion, // compare the version number size
   parseUrlParam, // parse url params (key1=value1&key2=value2)
+  spliceUrlParam, // Splice URL parameters (single layer only)
   getDirParam, // get the URL parameter in the form of a directory
   getQueryParam, // Get a single query parameter (behind "#")
   getQueryParams, // Get all query parameters (behind "#")
@@ -129,7 +232,6 @@ const functionList = {
   extend, // deep copy
   delay, // anti-dither throttling
   getType, // get the target type
-  isArray, // Determine if it is an array
   cleanData, // clean data
   download, // file download
   searchObject, // find object
@@ -215,14 +317,197 @@ pattern, // pattern returns some common rules
 
 ### Extras for String & Array & Object & Function
 
-trim, // removes spaces based on the passed parameters(deprecated)
-clearAttr, // remove all attributes of HTML tags
-clearHtml, // remove HTML tags
-getNumber, // Get the number in the string
-camel2Dash, // convert a humped string to -spaced and all lowercase dash mode
-dash2Camel, // convert -spaced all-lowercase dash pattern to camel string
-randomNumber, // Get a random integer
-randomString, // get a random string
+#### clearAttr
+
+Remove all attributes of HTML tags
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description           | Type     | Optional | Required | Default |
+| ---------- | --------------------- | -------- | -------- | -------- | ------- |
+| string     | string with html tags | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+clearAttr('<div id="testID">test</div>')
+// '<div>test</div>'
+```
+
+- Types:
+
+```ts
+declare function clearAttr(string: string): string
+```
+
+#### clearHtml
+
+Remove HTML tags
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description           | Type     | Optional | Required | Default |
+| ---------- | --------------------- | -------- | -------- | -------- | ------- |
+| string     | string with html tags | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+clearHtml('<div>test<br />string</div>')
+// 'teststring'
+```
+
+- Types:
+
+```ts
+declare function clearHtml(string: string): string
+```
+
+#### getNumber
+
+Get the number in the string
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                    | Type     | Optional | Required | Default |
+| ---------- | ------------------------------ | -------- | -------- | -------- | ------- |
+| string     | pass in a string with a number | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+getNumber('Chrome123.33')
+// '123.33'
+
+getNumber('234test.88')
+// '234.88'
+```
+
+- Types:
+
+```ts
+declare function getNumber(string: string): string
+```
+
+#### camel2Dash
+
+Converts humped strings to -spaced and all lowercase Dash pattern
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                | Type     | Optional | Required | Default |
+| ---------- | -------------------------- | -------- | -------- | -------- | ------- |
+| string     | the string to be converted | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+camel2Dash('jsCool') // js-cool
+```
+
+- Types:
+
+```ts
+declare function camel2Dash(string: string): string
+```
+
+#### dash2Camel
+
+Converts -spaced and all lowercase Dash patterns to humped strings
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                | Type     | Optional | Required | Default |
+| ---------- | -------------------------- | -------- | -------- | -------- | ------- |
+| string     | the string to be converted | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+dash2Camel('js-cool') // jsCool
+```
+
+- Types:
+
+```ts
+declare function dash2Camel(string: string): string
+```
+
+#### randomNumber
+
+Get a random number
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description                            | Type     | Optional | Required | Default |
+| ---------- | -------------------------------------- | -------- | -------- | -------- | ------- |
+| min        | the minimum value of the random number | `number` | -        | false    | 1       |
+| max        | the maximum value of the random number | `number` | -        | false    | 10      |
+
+- Returns: `number`
+
+- Example:
+
+```ts
+randomNumber() // 8
+randomNumber(0.1, 0.9) // 0.8
+```
+
+- Types:
+
+```ts
+declare function randomNumber(min?: number, max?: number): number
+```
+
+#### randomString
+
+Get a random string
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters       | Description                                               | Type     | Optional | Required | Default |
+| ---------------- | --------------------------------------------------------- | -------- | -------- | -------- | ------- |
+| len              | the length of the random string that needs to be obtained | `string` | -        | false    | 32      |
+| widthSpecialChar | generate a string with special characters                 | `string` | -        | false    | `false` |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+randomString(8) // wc7sW66A
+randomString(8, true) // lc7sji6A
+```
+
+- Types:
+
+```ts
+declare function randomString(len?: number, widthSpecialChar?: boolean): string
+```
 
 #### fingerprint
 
@@ -250,19 +535,312 @@ fingerprint('www.saqqdy.com') // wc7sWJJA8
 declare function fingerprint(domain?: string): string | null
 ```
 
-getCHSLength, // get the length of the string, Chinese counts as 2 characters
-cutCHSString, // get the string, Chinese count as 2 bytes
+#### getCHSLength
+
+Get the length of the string, Chinese counts as 2 characters
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description  | Type     | Optional | Required | Default |
+| ---------- | ------------ | -------- | -------- | -------- | ------- |
+| str        | input string | `string` | -        | true     | -       |
+
+- Returns: `number`
+
+- Example:
+
+```ts
+getCHSLength('测试') // 2
+```
+
+- Types:
+
+```ts
+declare function getCHSLength(str: string): number
+```
+
+#### cutCHSString
+
+Intercept string, Chinese counts as 2 bytes
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                  | Type      | Optional | Required | Default |
+| ---------- | ---------------------------- | --------- | -------- | -------- | ------- |
+| str        | the string to be intercepted | `string`  | -        | true     | -       |
+| len        | length                       | `number`  | -        | false    | -       |
+| hasDot     | output with dot              | `boolean` | -        | false    | `false` |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+cutCHSString('测试', 1) // 测
+cutCHSString('测试', 1, true) // 测...
+```
+
+- Types:
+
+```ts
+declare function cutCHSString(str: string, len?: number, hasDot?: boolean): string
+```
 
 ### Determine
 
-isDigitals, // whether it is a string composed of numbers
-isExitsFunction, // if the specified function exists
-isExitsVariable, // if the specified variable exists
-isWindow, // Determine if window object
-isObject, // Determine if the type is an object
-inBrowser, // Determine if it is running on the browser side
-windowSize, // windowSize to get the window size
-getAppVersion, // Get the app version number(deprecated)
+#### isDigitals
+
+Determine if a string is a number
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description             | Type     | Optional | Required | Default |
+| ---------- | ----------------------- | -------- | -------- | -------- | ------- |
+| str        | the string to be tested | `string` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isDigitals('2.11') // true
+isDigitals('2.3x') // false
+```
+
+- Types:
+
+```ts
+declare function isDigitals(str: string): boolean
+```
+
+#### isExitsFunction
+
+Determine if a function is defined
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| funcName   | function name | `string` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isExitsFunction('test') // false
+isExitsFunction('console.log') // true
+```
+
+- Types:
+
+```ts
+declare function isExitsFunction(funcName: string): boolean
+```
+
+#### isExitsVariable
+
+Determine if a variable is defined
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters   | Description   | Type     | Optional | Required | Default |
+| ------------ | ------------- | -------- | -------- | -------- | ------- |
+| variableName | variable name | `string` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isExitsVariable('test') // false
+isExitsVariable('window') // true
+```
+
+- Types:
+
+```ts
+declare function isExitsVariable(variableName: string): boolean
+```
+
+#### isWindow
+
+Determine if window object
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isWindow({}) // false
+isWindow(window) // true
+```
+
+- Types:
+
+```ts
+declare function isWindow(target: any): target is Window
+```
+
+#### isObject
+
+Determine if target is an object
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isObject({}) // true
+```
+
+- Types:
+
+```ts
+declare function isObject(target: any): target is Object
+```
+
+#### isArray
+
+Determine if it is an array
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isArray([]) // true
+```
+
+- Types:
+
+```ts
+declare function isArray(arr: any): arr is any[]
+```
+
+#### inBrowser
+
+Determine if it is running on the browser side
+
+- Since: `4.5.0`
+
+- Arguments: `none`
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+function test() {
+  if (!inBrowser) return null
+  // ...
+}
+```
+
+- Types:
+
+```ts
+declare const inBrowser: boolean
+```
+
+#### windowSize
+
+Get the window size
+
+- Since: `1.0.1`
+
+- Arguments: `none`
+
+- Returns: `{ width, height }`
+
+- Example:
+
+```ts
+windowSize()
+// { width: 1280, height: 800 }
+```
+
+- Types:
+
+```ts
+declare interface WindowSizeObj {
+  width: number
+  height: number
+}
+
+declare function windowSize(): WindowSizeObj
+```
+
+#### getAppVersion
+
+Get the APP version number
+
+> deprecated please use 'appVersion' instead
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                                 | Type      | Optional | Required | Default               |
+| ---------- | ------------------------------------------- | --------- | -------- | -------- | --------------------- |
+| appName    | app name                                    | `string`  | -        | true     | -                     |
+| withApp    | whether to bring the name                   | `boolean` | -        | false    | -                     |
+| userAgent  | ua or any ua like string, may not be passed | `string`  | -        | false    | `navigator.userAgent` |
+
+- Returns: `string | boolean | null`
+
+- Example:
+
+```ts
+// navigator.userAgent => '5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 AppName/1.0.0-beta.8'
+
+getAppVersion('Chrome') // 114.0.0.0
+getAppVersion('Safari', true) // Safari/537.36
+```
+
+- Types:
+
+```ts
+declare function getAppVersion(
+  appName: string,
+  withApp?: boolean,
+  userAgent?: string
+): string | boolean | null
+```
 
 #### appVersion
 
@@ -300,7 +878,43 @@ declare function appVersion(appName: string, ua: boolean): string | null
 declare function appVersion(appName: string, ua: string, ignoreCase: boolean): string | null
 ```
 
-getOsVersion, // get the system name and version(deprecated)
+#### getOsVersion
+
+Get the phone system version
+
+> deprecated: please use 'osVersion' instead
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                                        | Type     | Optional | Required | Default               |
+| ---------- | -------------------------------------------------- | -------- | -------- | -------- | --------------------- |
+| osName     | system type string Android, iPod, iWatch or iPhone | `string` | -        | true     | -                     |
+| withOS     | whether to bring the name                          | `string` | -        | false    | -                     |
+| userAgent  | ua or any ua like string, may not be passed        | `string` | -        | false    | `navigator.userAgent` |
+
+- Returns: `string | boolean | null`
+
+- Example:
+
+```ts
+getOsVersion('iPhone')
+// '13.2.3'
+
+getOsVersion('iPhone', true)
+// 'iPhone/13.2.3'
+```
+
+- Types:
+
+```ts
+declare function getOsVersion(
+  osName: string,
+  withOS?: boolean,
+  userAgent?: string
+): string | boolean | null
+```
 
 #### osVersion
 
@@ -376,14 +990,270 @@ declare interface BrowserVersion {
 declare function browserVersion(ua?: string): BrowserVersion | null
 ```
 
-, //
-compareVersion, // compare the version number size
-parseUrlParam, // parse url params (key1=value1&key2=value2)
-getDirParam, // get the URL parameter in the form of a directory
-getQueryParam, // Get a single query parameter (behind "#")
-getQueryParams, // Get all query parameters (behind "#")
-getUrlParam, // Get a single URL parameter
-getUrlParams, // Get all URL parameters
+#### compareVersion
+
+Version number size comparison
+
+- Since: `4.7.0`
+
+- Arguments:
+
+| Parameters | Description     | Type     | Optional | Required | Default |
+| ---------- | --------------- | -------- | -------- | -------- | ------- |
+| input      | input version   | `string` | -        | true     | -       |
+| compare    | compare version | `string` | -        | true     | -       |
+
+- Returns: `0 | 1 | -1`
+
+- Example:
+
+```ts
+compareVersion('1.11.0', '1.9.9')
+// => 1 // 1=Version 1.11.0 is newer than 1.9.9
+
+compareVersion('1.11.0', '1.11.0')
+// => 0 // 0=Versions 1.11.0 and 1.11.0 are the same
+
+compareVersion('1.11.0', '1.99.0')
+// => -1 // -1=Version 1.11.0 is older than 1.99.0
+```
+
+- Types:
+
+```ts
+declare function compareVersion(input: string, compare: string): 0 | 1 | -1
+```
+
+#### parseUrlParam
+
+parse url params. (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description                                         | Type      | Optional       | Required | Default |
+| ---------- | --------------------------------------------------- | --------- | -------------- | -------- | ------- |
+| url        | url string (like: ?key1=value1&key2=value2)         | `string`  | -              | true     | -       |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false` |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+parseUrlParam(
+  '?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test'
+)
+// \{"key1":"100","key2":"true","key3":"null","key4":"undefined","key5":"NaN","key6":"10.888","key7":"Infinity","key8":"test"\}
+
+parseUrlParam(
+  '?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test',
+  true
+)
+// \{"key1":100,"key2":true,"key3":null,"key5":NaN,"key6":10.888,"key7":Infinity,"key8":"test"\}
+```
+
+- Types:
+
+```ts
+declare function parseUrlParam(url: string, covert?: boolean): Record<string, unknown>
+```
+
+#### spliceUrlParam
+
+Splice URL parameters (single layer only)
+
+- Since: `5.3.0`
+
+- Arguments:
+
+| Parameters        | Description                                                    | Type      | Optional       | Required | Default |
+| ----------------- | -------------------------------------------------------------- | --------- | -------------- | -------- | ------- |
+| params            | json object                                                    | `object`  | -              | true     | -       |
+| covert            | Convert a null value type (null/undefined/) to an empty string | `boolean` | `true`/`false` | false    | `false` |
+| withQuestionsMark | Splicing a question mark                                       | `boolean` | `true`/`false` | false    | `true`  |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined","key4":"测试"}') // ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined"}', true) // ?key1=100&key2=true&key3=&key4=
+spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined"}', true, false) // key1=100&key2=true&key3=&key4=
+```
+
+- Types:
+
+```ts
+declare function spliceUrlParam(
+  params: Record<string, unknown>,
+  covert?: boolean,
+  withQuestionsMark?: boolean
+): string | null
+```
+
+#### getDirParam
+
+Get the URL parameter in the form of a directory
+
+> It will be refactored and renamed getDirParams in the next major release.
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | http url    | `object` | -        | true     | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+//
+```
+
+- Types:
+
+```ts
+declare interface DirParamType {
+  path?: string[]
+  host?: string
+}
+
+declare function getDirParam(url: string): DirParamType
+```
+
+#### getQueryParam
+
+Get a single query parameter (behind "#")
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description            | Type     | Optional | Required | Default         |
+| ---------- | ---------------------- | -------- | -------- | -------- | --------------- |
+| key        | key name               | `string` | -        | true     | -               |
+| url        | pass in the url string | `string` | -        | false    | `location.href` |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+getQueryParam('key1')
+// key1 => xxx
+
+getQueryParam('key1', 'https://test.com?key1=100#/home?key1=200')
+// key1 => 200
+```
+
+- Types:
+
+```ts
+declare function getQueryParam(key: string): string | undefined
+
+declare function getQueryParam(key: string, url: string): string | undefined
+```
+
+#### getQueryParam
+
+Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description                                         | Type      | Optional       | Required | Default         |
+| ---------- | --------------------------------------------------- | --------- | -------------- | -------- | --------------- |
+| url        | pass in the url string                              | `string`  | -              | false    | `location.href` |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false`         |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+getQueryParams('https://test.com?key1=100#/home?key1=200')
+// \{"key1":"200"\}
+
+getQueryParams('https://test.com?key1=100#/home?key1=200', true)
+// \{"key1":200\}
+```
+
+- Types:
+
+```ts
+declare function getQueryParams(url?: string, covert?: boolean): Record<string, unknown> | null
+```
+
+#### getUrlParam
+
+Get a single URL parameter (from the "location.search", before "#")
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description            | Type     | Optional | Required | Default         |
+| ---------- | ---------------------- | -------- | -------- | -------- | --------------- |
+| key        | key name               | `string` | -        | true     | -               |
+| url        | pass in the url string | `string` | -        | false    | `location.href` |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+getUrlParam('key1')
+// key1 => xxx
+
+getUrlParam('key1', 'https://test.com?key1=100#/home?key1=200')
+// key1 => 100
+```
+
+- Types:
+
+```ts
+declare function getUrlParam(key: string): string | undefined
+
+declare function getUrlParam(key: string, url: string): string | undefined
+```
+
+#### getUrlParams
+
+Get all URL parameters (from the "location.search", before "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description                                         | Type      | Optional       | Required | Default         |
+| ---------- | --------------------------------------------------- | --------- | -------------- | -------- | --------------- |
+| url        | pass in the url string                              | `string`  | -              | false    | `location.href` |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false`         |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+getUrlParams('https://test.com?key1=100#/home?key1=200')
+// \{"key1":"100"\}
+
+getUrlParams('https://test.com?key1=100#/home?key1=200', true)
+// \{"key1":100\}
+```
+
+- Types:
+
+```ts
+declare function getUrlParams(url?: string, covert?: boolean): Record<string, unknown> | null
+```
 
 ### localStorage & sessionStorage & Cookie
 
@@ -812,29 +1682,551 @@ declare function decodeUtf8(name: string): string
 
 ### Events
 
-stopBubble, // stop bubbling
-stopDefault, // stop default events
-addEvent, // event delegate, support multiple delegates
-removeEvent, // removeEvent removes the event delegate created by addEvent
-getScrollPosition, // get scroll to top and bottom return 'top' 'bottom', recommend using flow limit
+#### stopBubble
+
+stop bubbling
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description        | Type    | Optional | Required | Default |
+| ---------- | ------------------ | ------- | -------- | -------- | ------- |
+| e          | dom's event object | `Event` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+stopBubble(event)
+```
+
+- Types:
+
+```ts
+declare function stopBubble(e: Event): boolean
+```
+
+#### stopDefault
+
+stop default events
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description        | Type    | Optional | Required | Default |
+| ---------- | ------------------ | ------- | -------- | -------- | ------- |
+| e          | dom's event object | `Event` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+stopDefault(event)
+```
+
+- Types:
+
+```ts
+declare function stopDefault(e: Event): boolean
+```
+
+#### addEvent
+
+event delegate, support multiple delegates
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                              | Type          | Optional | Required | Default |
+| ---------- | ---------------------------------------- | ------------- | -------- | -------- | ------- |
+| element    | js dom object                            | `HTMLElement` | -        | true     | -       |
+| type       | The type of the event. No need to add on | `string`      | -        | true     | -       |
+| handler    | Callback method                          | `function`    | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+addEvent(document, 'click', functionName)
+```
+
+- Types:
+
+```ts
+declare function addEvent(element: AnyObject, type: string, handler: AnyFunction): void
+```
+
+#### removeEvent
+
+removeEvent removes the event delegate created by addEvent
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                              | Type          | Optional | Required | Default |
+| ---------- | ---------------------------------------- | ------------- | -------- | -------- | ------- |
+| element    | js dom object                            | `HTMLElement` | -        | true     | -       |
+| type       | The type of the event. No need to add on | `string`      | -        | true     | -       |
+| handler    | Callback method                          | `function`    | -        | true     | -       |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+removeEvent(document, 'click', functionName)
+```
+
+- Types:
+
+```ts
+declare function removeEvent(element: AnyObject, type: string, handler: AnyFunction): void
+```
+
+#### getScrollPosition
+
+Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
+
+- Since: `1.0.2`
+
+- Arguments: `none`
+
+- Returns: 'top' | 'bottom' | undefined
+
+- Example:
+
+```ts
+getScrollPosition() // ‘bottom’
+```
+
+- Types:
+
+```ts
+declare function getScrollPosition(): string | void
+```
 
 ### Utilities
 
-nextIndex, // return the next zIndex value
-fixNumber, // truncate a few decimal places, not 0 for shortage
-extend, // deep copy
-delay, // anti-dither throttling
-getType, // get the target type
-isArray, // Determine if it is an array
-cleanData, // clean data
-download, // file download
-searchObject, // find object
-openUrl, // open link in a new tab (file jump download if browser can't parse)
-copy, // copy to the clipboard
-toThousands, // Thousands division method
-all, // return true if the provided predicate function returns true for all elements in a set, otherwise return false.
-any, // Returns true if the provided predicate function returns true for at least one element of a set, false otherwise.
-uuid, // generate uuid on browser side, use v4 method
+#### nextIndex
+
+return the next zIndex value
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| min        | minimum value | `number` | -        | false    | `5000`  |
+| max        | maximum value | `number` | -        | false    | `10000` |
+
+- Returns: `string | number`
+
+- Example:
+
+```ts
+nextIndex() // 5001
+```
+
+- Types:
+
+```ts
+declare function nextIndex(min?: number, max?: number): number
+```
+
+#### fixNumber
+
+truncate a few decimal places, not 0 for shortage
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                          | Type              | Optional | Required | Default |
+| ---------- | ------------------------------------ | ----------------- | -------- | -------- | ------- |
+| number     | the number of digits to be processed | `number`/`string` | -        | true     | -       |
+| n          | the number of decimal places to keep | `number`          | -        | false    | `2`     |
+
+- Returns: `string | number`
+
+- Example:
+
+```ts
+fixNumber('100.888') // 100.88
+fixNumber('100.8', 2) // 100.8
+fixNumber('100.8888', 3) // 100.888
+```
+
+- Types:
+
+```ts
+declare function fixNumber(number: string | number, n?: number): string | number
+```
+
+#### extend
+
+deep copy
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                | Type                                 | Optional | Required | Default |
+| ---------- | -------------------------- | ------------------------------------ | -------- | -------- | ------- |
+| target     | boolean or array or object | `boolean`/`ArrayOneMore<ExtendData>` | -        | true     | -       |
+| ...args    | array or object            | `ArrayOneMore<ExtendData>`           | -        | true     | -       |
+
+- Returns: `array | object`
+
+- Example:
+
+```ts
+extend(true, {}, {})
+```
+
+- Types:
+
+```ts
+declare function extend(
+  target: ExtendObjectData,
+  ...args: ArrayOneMore<ExtendObjectData>
+): ExtendObjectData
+
+declare function extend(target: boolean, ...args: ArrayOneMore<ExtendObjectData>): ExtendObjectData
+
+declare function extend(
+  target: ExtendArrayData,
+  ...args: ArrayOneMore<ExtendArrayData>
+): ExtendArrayData
+
+declare function extend(target: boolean, ...args: ArrayOneMore<ExtendArrayData>): ExtendArrayData
+
+declare type ExtendArrayData = any[]
+
+declare type ExtendData = ExtendArrayData | ExtendObjectData
+
+declare type ExtendObjectData = Record<string, any>
+```
+
+#### delay
+
+anti-dither throttling
+
+- Since: `1.0.2`
+
+- Arguments: `none`
+
+- Returns: `void`
+
+- Example:
+
+```ts
+const delay = new Delay()
+
+delay.register('key', () => {
+  //
+})
+```
+
+- Types:
+
+```ts
+declare function delay(): {
+  map: any
+  register(id: string, fn: AnyFunction, time: number, boo: boolean): void
+  destroy(id: string): void
+}
+```
+
+#### getType
+
+Get the target type
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+getType({}) // object
+getType([]) // array
+getType(new Promise()) // promise
+getType(new Date()) // date
+getType(async () => {}) // function
+getType(navigator) // navigator
+getType(global) // global
+getType(window) // window
+getType(Symbol('')) // symbol
+```
+
+- Types:
+
+```ts
+declare function getType(target: any): string
+```
+
+#### cleanData
+
+Data cleaning methods
+
+- Since: `1.0.2`
+
+- Arguments:
+
+| Parameters | Description                                                                                        | Type             | Optional | Required | Default |
+| ---------- | -------------------------------------------------------------------------------------------------- | ---------------- | -------- | -------- | ------- |
+| data       | the object to be cleaned                                                                           | `object`         | -        | true     | -       |
+| map        | the data queue to be cleaned, can be passed as array or object                                     | `array`/`object` | -        | true     | -       |
+| nullFix    | the value returned if there is no corresponding property, the default does not return the property | `any`            | -        | false    | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+//
+```
+
+- Types:
+
+```ts
+declare function cleanData(data: any, map: any[] | AnyObject, nullFix?: any): any
+```
+
+#### download
+
+Several ways of file downloading:
+
+1. For file formats that some browsers do not recognize. Enter the file URL in the address bar, window.location.href = URL, window.open(URL);
+2. using a tag download attribute (or js create a tag);
+3. browser-recognizable pdf, txt files, back-end compatible with handling attachment;
+4. add token in the header for authenticated download, use XmlHttpRequest to want to backend to launch the request
+
+- Since: `1.0.5`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional                           | Required | Default    |
+| ---------- | ------------- | -------- | ---------------------------------- | -------- | ---------- |
+| url        | url link      | `string` | -                                  | true     | -          |
+| filename   | file name     | `string` | -                                  | true     | -          |
+| type       | download type | `string` | `href`/`open`/`download`/`request` | false    | `download` |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+download('https://unpkg.com/browse/js-cool@5.2.0/dist/index.global.prod.js')
+```
+
+- Types:
+
+```ts
+declare function download(url: string, filename: string, type?: string): void
+```
+
+#### searchObject
+
+tree object depth lookup
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description                                          | Type             | Optional | Required | Default |
+| ---------- | ---------------------------------------------------- | ---------------- | -------- | -------- | ------- |
+| tree       | tree object                                          | `array`/`object` | -        | true     | -       |
+| expression | required Query method                                | `any`            | -        | true     | -       |
+| keySet     | optional Default subclass name, query name           | `SearchKeySet`   | -        | true     | -       |
+| number     | optional Number of lookups, if not passed, query all | `number`         | -        | false    | -       |
+
+- Returns: `any`
+
+- Example:
+
+```ts
+//
+```
+
+- Types:
+
+```ts
+declare function searchObject(
+  tree: object | any[],
+  expression: any,
+  keySet: SearchKeySet,
+  number?: number
+): any[]
+```
+
+#### openUrl
+
+Open link in new tab (file jump download if browser can't parse)
+
+- Since: `1.0.6`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | http url    | `string` | -        | true     | -       |
+
+- Returns: `boolean | undefined`
+
+- Example:
+
+```ts
+openUrl('https://www.saqqdy.com/js-cool')
+```
+
+- Types:
+
+```ts
+declare function openUrl(url: string): void
+```
+
+#### copy
+
+copy to clipboard
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| value      | any value   | `any` | -        | true     | -       |
+
+- Returns: `boolean | undefined`
+
+- Example:
+
+```ts
+copy('10000')
+```
+
+- Types:
+
+```ts
+declare function copy(value: string): boolean | undefined
+```
+
+#### toThousands
+
+Digital thousandths division
+
+- Since: `3.0.0`
+
+- Arguments:
+
+| Parameters | Description | Type              | Optional | Required | Default |
+| ---------- | ----------- | ----------------- | -------- | -------- | ------- |
+| num        | the number  | `string`/`number` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+toThousands(10000) // '10,000'
+```
+
+- Types:
+
+```ts
+declare function toThousands(num: string | number): string
+```
+
+#### all
+
+return true if the provided predicate function returns true for all elements in a set, otherwise return false
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description         | Type       | Optional | Required | Default |
+| ---------- | ------------------- | ---------- | -------- | -------- | ------- |
+| arr        | the target array    | `array`    | -        | true     | -       |
+| fn         | the judgment method | `function` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+all([4, 2, 3], x => x > 1) // true
+```
+
+- Types:
+
+```ts
+declare const all: (arr: any[], fn: AnyFunction) => boolean
+```
+
+#### any
+
+Returns true if the provided predicate function returns true for at least one element of a set, false otherwise
+
+- Since: `1.0.9`
+
+- Arguments:
+
+| Parameters | Description         | Type       | Optional | Required | Default |
+| ---------- | ------------------- | ---------- | -------- | -------- | ------- |
+| arr        | the target array    | `array`    | -        | true     | -       |
+| fn         | the judgment method | `function` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+any([0, 1, 2, 0], x => x >= 2) // true
+```
+
+- Types:
+
+```ts
+declare const any: (arr: any[], fn: AnyFunction) => boolean
+```
+
+#### uuid
+
+generate uuid on browser side, use v4 method
+
+- Since: `1.0.9`
+
+- Arguments: `none`
+
+- Returns: `string`
+
+- Example:
+
+```ts
+uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
+```
+
+- Types:
+
+```ts
+declare const uuid: () => string
+```
 
 #### CSVToArray
 

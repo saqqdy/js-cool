@@ -5,8 +5,8 @@ import getAppVersion from './getAppVersion'
  *
  * @example
  * ```
- * getAppVersion('iPhone') // '13.2.3'
- * getAppVersion('iPhone', true) // 'iPhone/13.2.3'
+ * getOsVersion('iPhone') // '13.2.3'
+ * getOsVersion('iPhone', true) // 'iPhone/13.2.3'
  * ```
  * @deprecated please use 'osVersion' instead
  * @param osName - system type string Android, iPod, iWatch or iPhone

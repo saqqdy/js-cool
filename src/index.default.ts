@@ -24,6 +24,7 @@ import isExitsFunction from './isExitsFunction'
 import isExitsVariable from './isExitsVariable'
 import isWindow from './isWindow'
 import isObject from './isObject'
+import isArray from './isArray'
 import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
@@ -33,6 +34,7 @@ import osVersion from './osVersion'
 import browserVersion from './browserVersion'
 import compareVersion from './compareVersion'
 import parseUrlParam from './parseUrlParam'
+import spliceUrlParam from './spliceUrlParam'
 import getDirParam from './getDirParam'
 import getQueryParam from './getQueryParam'
 import getQueryParams from './getQueryParams'
@@ -69,7 +71,6 @@ import fixNumber from './fixNumber'
 import extend from './extend'
 import delay from './delay'
 import getType from './getType'
-import isArray from './isArray'
 import isPlainObject from './isPlainObject'
 import cleanData from './cleanData'
 import searchObject from './searchObject'
@@ -152,15 +153,16 @@ export default {
 	getScrollPosition,
 	getType,
 	parseUrlParam,
+	spliceUrlParam,
 	getUrlParam,
 	getUrlParams,
 	intersect,
-	isArray,
 	isDigitals,
 	isExitsFunction,
 	isExitsVariable,
 	isWindow,
 	isObject,
+	isArray,
 	isPlainObject,
 	inBrowser,
 	minus,

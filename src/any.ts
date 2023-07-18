@@ -6,10 +6,6 @@ import type { AnyFunction } from '../typings/common'
  * ```js
  * any([0, 1, 2, 0], x => x >= 2); // true
  * ```
- * @example
- * ```js
- * any([0, 0, 1, 0]); // true
- * ```
  * @param arr - the target array
  * @param fn - the judgment method
  * @returns returns the result of the judgment

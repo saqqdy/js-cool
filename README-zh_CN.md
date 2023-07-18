@@ -90,6 +90,7 @@ const functionList = {
   isExitsVariable, // 是否存在指定变量
   isWindow, // 是否window对象
   isObject, // 是否object类型
+  isArray, // 判断是否数组
   inBrowser, // 判断是否在浏览器端运行
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号(deprecated)
@@ -99,6 +100,7 @@ const functionList = {
   browserVersion, // 获取浏览器版本
   compareVersion, // 版本号大小对比
   parseUrlParam, // 解析url参数（key1=value1&key2=value2）
+  spliceUrlParam, // 拼接URL参数（仅支持单层）
   getDirParam, // 获取目录形式URL参数
   getQueryParam, // 获取query参数（#后面）
   getQueryParams, // 获取所有query参数（#后面）
@@ -131,7 +133,6 @@ const functionList = {
   extend, // 深拷贝
   delay, // 防抖节流
   getType, // 获取目标类型
-  isArray, // 判断是否数组
   cleanData, // 清洗数据
   download, // 文件下载
   searchObject, // 对象查找
