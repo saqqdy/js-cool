@@ -29,7 +29,7 @@ Collection of common JavaScript / TypeScript utilities
   - [Installation](#installation)
   - [Usage](#usage)
     - [Es6 module](#es6-module)
-    - [Node.js require](#nodejsrequire)
+    - [Node.js require](#nodejs-require)
     - [Using unpkg CDN](#using-unpkg-cdn)
   - [API Reference](#api-reference)
     - [Global Parameters](#global-parameters)
