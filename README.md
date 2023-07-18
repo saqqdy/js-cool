@@ -139,7 +139,7 @@ npm install --save js-cool
 
 ## Usage
 
-### Es6 module
+### ES6 module
 
 ```js
 import { osVersion } from 'js-cool'

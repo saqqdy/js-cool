@@ -27,43 +27,39 @@
 ## 安装
 
 ```bash
-# 通过npm安装
-npm install --save js-cool
-
-# 或者通过yarn安装
-yarn add js-cool
-
-# 或者通过pnpm安装
+# 使用pnpm安装
 pnpm install js-cool
+
+# 使用npm安装
+npm install --save js-cool
 ```
 
 ## 使用
 
-### 通过 import 引入模块的方式
+### ES6 模块方式引入
 
 ```js
-// 在你的.vue或者main.js里面写上import
 import { osVersion } from 'js-cool'
-// 使用
-osVersion() // 返回系统版本
-// ...
+
+osVersion()
 ```
 
-### 使用文件引入的方式
+### Node.js require
 
-1. 通过 require 引入
+```js
+const { osVersion } = require('js-cool')
 
-   ```js
-   // 在你的main.js文件里面加上下面这一行
-   const { osVersion } = require('js-cool')
-   ```
+osVersion()
+```
 
-2. html 静态页直接使用
+2. 使用 CDN 引入
 
-   ```html
-   <!-- 在你的html代码上加上script标签，使用CDN链接引入 -->
-   <script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
-   ```
+```html
+<script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
+<script>
+  jsCool.browserVersion()
+</script>
+```
 
 ## 所有方法汇总
 
@@ -164,8 +160,6 @@ const functionList = {
   awaitTo // 替代try catch处理promise错误
 }
 ```
-
-## API 说明
 
 ## 问题和支持
 
