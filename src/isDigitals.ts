@@ -1,6 +1,7 @@
 /**
  * Whether or not it is a string consisting of numbers
  *
+ * @deprecated will be removed in the next major release.
  * @param str - the string to be tested
  * @returns returns true/false
  */

@@ -1,5 +1,12 @@
 # Change logs
 
+## 2023.07.18 v5.3.0
+
+1. new `spliceUrlParam` function
+2. deprecated `isDigitals`
+3. fix types & bugs
+4. docs work
+
 ## 2023.07.17 v5.2.0
 
 1. new `awaitTo` `fingerprint` `browserVersion` function
