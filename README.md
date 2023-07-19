@@ -214,7 +214,46 @@ declare class Client {
 }
 ```
 
-pattern, // pattern returns some common rules
+#### pattern
+
+pattern returns some common rules
+
+- Since: `1.0.1`
+
+- Arguments: `none`
+
+- Returns: `none`
+
+- Example:
+
+```ts
+pattern.number.test('333') // true
+```
+
+- Types:
+
+```ts
+declare const pattern: {
+  any: RegExp
+  number: RegExp
+  string: RegExp
+  postcode: RegExp
+  url: RegExp
+  username: RegExp
+  float: RegExp
+  email: RegExp
+  mobile: RegExp
+  chinese: RegExp
+  tel: RegExp
+  qq: RegExp
+  pass: RegExp
+  json: RegExp
+  arrjson: RegExp
+  array: RegExp
+  isjson: RegExp
+  textarea: RegExp
+}
+```
 
 ### Extras for String & Array & Object & Function
 
@@ -980,9 +1019,9 @@ Splice URL parameters (single layer only)
 - Example:
 
 ```ts
-spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined","key4":"测试"}') // ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
-spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined"}', true) // ?key1=100&key2=true&key3=&key4=
-spliceUrlParam('{"key1":"100","key2":"true","key3":"null","key4":"undefined"}', true, false) // key1=100&key2=true&key3=&key4=
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key4: '测试' }) // ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true) // ?key1=100&key2=true&key3=&key4=
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true, false) // key1=100&key2=true&key3=&key4=
 ```
 
 - Types:
