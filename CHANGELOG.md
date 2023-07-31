@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.07.31 v5.3.1
+
+1. fix appVersion bug
+
 ## 2023.07.18 v5.3.0
 
 1. new `spliceUrlParam` function
