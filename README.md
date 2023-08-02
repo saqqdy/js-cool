@@ -1100,7 +1100,7 @@ declare function getQueryParam(key: string): string | undefined
 declare function getQueryParam(key: string, url: string): string | undefined
 ```
 
-#### getQueryParam
+#### getQueryParams
 
 Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
 
@@ -1122,6 +1122,9 @@ getQueryParams('https://test.com?key1=100#/home?key1=200')
 // \{"key1":"200"\}
 
 getQueryParams('https://test.com?key1=100#/home?key1=200', true)
+// \{"key1":200\}
+
+getQueryParams(true)
 // \{"key1":200\}
 ```
 
@@ -1186,6 +1189,9 @@ getUrlParams('https://test.com?key1=100#/home?key1=200')
 // \{"key1":"100"\}
 
 getUrlParams('https://test.com?key1=100#/home?key1=200', true)
+// \{"key1":100\}
+
+getUrlParams(true)
 // \{"key1":100\}
 ```
 

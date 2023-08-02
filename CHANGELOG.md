@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.08.02 v5.3.2
+
+1. Optimize usage of `getQueryParams` `getUrlParams`
+2. upgrade all packages
+
 ## 2023.07.31 v5.3.1
 
 1. fix appVersion bug
