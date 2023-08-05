@@ -44,6 +44,7 @@ Collection of common JavaScript / TypeScript utilities
       - [dash2Camel](#dash2camel)
       - [randomNumber](#randomnumber)
       - [randomString](#randomstring)
+      - [shuffle](#shuffle)
       - [fingerprint](#fingerprint)
       - [getCHSLength](#getchslength)
       - [cutCHSString](#cutchsstring)
@@ -447,6 +448,38 @@ randomString(8, true) // lc7sji6A
 
 ```ts
 declare function randomString(len?: number, widthSpecialChar?: boolean): string
+```
+
+#### shuffle
+
+shuffling algorithm, Reordering arrays or strings
+
+- Since: `5.4.0`
+
+- Arguments:
+
+| Parameters | Description       | Type             | Optional | Required | Default |
+| ---------- | ----------------- | ---------------- | -------- | -------- | ------- |
+| value      | arrays or strings | `array` `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+const str = 'abcde'
+const arr = [1, 2, 3]
+
+shuffle(str)
+// cdbse
+shuffle(arr)
+// [3,1,2]
+```
+
+- Types:
+
+```ts
+declare function shuffle<T extends unknown[] = unknown[]>(value: T | string): T | string
 ```
 
 #### fingerprint

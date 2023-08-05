@@ -14,6 +14,7 @@ import dash2Camel from './dash2Camel'
 import upperFirst from './upperFirst'
 import randomNumber from './randomNumber'
 import randomString from './randomString'
+import shuffle from './shuffle'
 import fingerprint from './fingerprint'
 import getCHSLength from './getCHSLength'
 import cutCHSString from './cutCHSString'
@@ -149,6 +150,7 @@ export default {
 	getProperty,
 	randomNumber,
 	randomString,
+	shuffle,
 	fingerprint,
 	getScrollPosition,
 	getType,

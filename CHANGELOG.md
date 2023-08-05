@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.08.05 v5.4.0
+
+1. new `shuffle` function, Reordering arrays or strings
+2. Enhancing the randomString function
+
 ## 2023.08.02 v5.3.2
 
 1. Optimize usage of `getQueryParams` `getUrlParams`

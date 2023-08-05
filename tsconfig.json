@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "es5",
 		"moduleResolution": "node",
-		"lib": ["es5", "es6", "dom", "dom.iterable", "esnext"],
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"noLib": false,
 		"sourceMap": false,
 		"resolveJsonModule": true,

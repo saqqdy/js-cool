@@ -78,6 +78,7 @@ const functionList = {
   dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串
   randomNumber, // 获取随机整数
   randomString, // 获取随机字符串
+  shuffle, // 打乱字符串或数组的顺序
   fingerprint, // 生成浏览器指纹
   getCHSLength, // 获取字符串长度，中文算2个字符
   cutCHSString, // 截取字符串，中文算2个字节
