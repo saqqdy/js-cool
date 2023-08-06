@@ -462,7 +462,7 @@ declare function randomNumbers(n?: number, sum?: number): number[]
 
 Get a random string
 
-> v5.4.0 `widthSpecialChar` changed to `options`, still compatible with old usage, widthSpecialChar=true equivalent to { special: true }
+> v5.4.0 `widthSpecialChar` changed to `options`, still compatible with old usage, widthSpecialChar=true equivalent to { charTypes: ['uppercase', 'lowercase', 'number', 'special'] }
 
 - Since: `5.0.0`
 
@@ -577,8 +577,12 @@ const arr = [1, 2, 3]
 
 shuffle(str)
 // cdbse
+
 shuffle(arr)
-// [3,1,2]
+// [3, 1, 2]
+
+shuffle(arr, 2)
+// [3, 2]
 ```
 
 - Types:

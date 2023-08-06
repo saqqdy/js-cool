@@ -8,8 +8,12 @@
  *
  * shuffle(str)
  * // cdbse
+ *
  * shuffle(arr)
- * // [3,1,2]
+ * // [3, 1, 2]
+ *
+ * shuffle(arr, 2)
+ * // [3, 2]
  * ```
  * @param value - arrays or strings
  * @param size - new array or string length
