@@ -13,6 +13,7 @@ import camel2Dash from './camel2Dash'
 import dash2Camel from './dash2Camel'
 import upperFirst from './upperFirst'
 import randomNumber from './randomNumber'
+import randomNumbers from './randomNumbers'
 import randomString from './randomString'
 import shuffle from './shuffle'
 import fingerprint from './fingerprint'
@@ -149,6 +150,7 @@ export default {
 	getQueryParams,
 	getProperty,
 	randomNumber,
+	randomNumbers,
 	randomString,
 	shuffle,
 	fingerprint,

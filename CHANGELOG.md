@@ -2,8 +2,8 @@
 
 ## 2023.08.05 v5.4.0
 
-1. new `shuffle` function, Reordering arrays or strings
-2. Enhancing the randomString function
+1. new `shuffle` `randomNumbers` function, see: [shuffle](https://github.com/saqqdy/js-cool#shuffle), [randomNumbers](https://github.com/saqqdy/js-cool#randomnumbers)
+2. band new randomString function, see: [randomString](https://github.com/saqqdy/js-cool#randomstring)
 
 ## 2023.08.02 v5.3.2
 

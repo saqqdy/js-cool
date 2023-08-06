@@ -32,7 +32,12 @@ export { default as camel2Dash } from './camel2Dash'
 export { default as dash2Camel } from './dash2Camel'
 export { default as upperFirst } from './upperFirst'
 export { default as randomNumber } from './randomNumber'
-export { default as randomString } from './randomString'
+export { default as randomNumbers } from './randomNumbers'
+export {
+	default as randomString,
+	type RandomStringOptions,
+	type RandomStringCharType
+} from './randomString'
 export { default as shuffle } from './shuffle'
 export { default as fingerprint } from './fingerprint'
 export { default as getCHSLength } from './getCHSLength'
