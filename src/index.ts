@@ -32,6 +32,7 @@ export { default as getNumber } from './getNumber'
 export { default as camel2Dash } from './camel2Dash'
 export { default as dash2Camel } from './dash2Camel'
 export { default as upperFirst } from './upperFirst'
+export { default as randomColor } from './randomColor'
 export { default as randomNumber } from './randomNumber'
 export { default as randomNumbers } from './randomNumbers'
 export {
@@ -49,6 +50,14 @@ export { default as isDigitals } from './isDigitals'
 export { default as isExitsFunction } from './isExitsFunction'
 export { default as isExitsVariable } from './isExitsVariable'
 export { default as isWindow } from './isWindow'
+export {
+	default as isPlainObject,
+	Primitive,
+	PlainObject,
+	JSONValue,
+	JSONArray
+} from './isPlainObject'
+export { default as isDarkMode } from './isDarkMode'
 export { default as isObject } from './isObject'
 export { default as isArray } from './isArray'
 export { default as inBrowser } from './inBrowser'
@@ -97,13 +106,6 @@ export { default as fixNumber } from './fixNumber'
 export { default as extend, ExtendArrayData, ExtendObjectData, ExtendData } from './extend'
 export { default as delay } from './delay'
 export { default as getType } from './getType'
-export {
-	default as isPlainObject,
-	Primitive,
-	PlainObject,
-	JSONValue,
-	JSONArray
-} from './isPlainObject'
 export { default as cleanData } from './cleanData'
 export { default as searchObject, type SearchKeySet } from './searchObject'
 export { default as openUrl } from './openUrl'
@@ -127,6 +129,7 @@ export { default as fillIPv6 } from './fillIPv6'
 export { default as getProperty } from './getProperty'
 export { default as setProperty } from './setProperty'
 export { default as preloader } from './preloader'
+export { default as waiting } from './waiting'
 export { default as awaitTo } from './awaitTo'
 
 export { default } from './index.default'

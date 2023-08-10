@@ -77,6 +77,7 @@ const functionList = {
   getNumber, // 获取字符串中的数字
   camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式
   dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串
+  randomColor, // 生成随机16进制颜色
   randomNumber, // 获取随机整数
   randomNumbers, // 获取总和固定的n个随机整数
   randomString, // 获取随机字符串
@@ -89,6 +90,8 @@ const functionList = {
   isExitsFunction, // 是否存在指定函数
   isExitsVariable, // 是否存在指定变量
   isWindow, // 是否window对象
+  isPlainObject, // 是否plainObject
+  isDarkMode, // 是否暗色模式
   isObject, // 是否object类型
   isArray, // 判断是否数组
   inBrowser, // 判断是否在浏览器端运行
@@ -162,6 +165,7 @@ const functionList = {
   mountJs, // 动态加载js链接资源
   mountStyle, // 动态加载css样式
   preloader, // 图片预加载
+  waiting, // 等待一段时间
   awaitTo // 替代try catch处理promise错误
 }
 ```

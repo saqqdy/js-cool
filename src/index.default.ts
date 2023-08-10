@@ -13,6 +13,7 @@ import getNumber from './getNumber'
 import camel2Dash from './camel2Dash'
 import dash2Camel from './dash2Camel'
 import upperFirst from './upperFirst'
+import randomColor from './randomColor'
 import randomNumber from './randomNumber'
 import randomNumbers from './randomNumbers'
 import randomString from './randomString'
@@ -75,6 +76,7 @@ import extend from './extend'
 import delay from './delay'
 import getType from './getType'
 import isPlainObject from './isPlainObject'
+import isDarkMode from './isDarkMode'
 import cleanData from './cleanData'
 import searchObject from './searchObject'
 import openUrl from './openUrl'
@@ -98,6 +100,7 @@ import fillIPv6 from './fillIPv6'
 import getProperty from './getProperty'
 import setProperty from './setProperty'
 import preloader from './preloader'
+import waiting from './waiting'
 import awaitTo from './awaitTo'
 
 import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
@@ -152,6 +155,7 @@ export default {
 	getQueryParam,
 	getQueryParams,
 	getProperty,
+	randomColor,
 	randomNumber,
 	randomNumbers,
 	randomString,
@@ -171,9 +175,11 @@ export default {
 	isObject,
 	isArray,
 	isPlainObject,
+	isDarkMode,
 	inBrowser,
 	minus,
 	nextIndex,
+	waiting,
 	awaitTo,
 	openUrl,
 	copy,

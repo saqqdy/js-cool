@@ -43,6 +43,7 @@ Collection of common JavaScript / TypeScript utilities
       - [getNumber](#getnumber)
       - [camel2Dash](#camel2dash)
       - [dash2Camel](#dash2camel)
+      - [randomColor](#randomcolor)
       - [randomNumber](#randomnumber)
       - [randomNumbers](#randomnumbers)
       - [randomString](#randomstring)
@@ -55,6 +56,8 @@ Collection of common JavaScript / TypeScript utilities
       - [isExitsFunction](#isexitsfunction)
       - [isExitsVariable](#isexitsvariable)
       - [isWindow](#iswindow)
+      - [isPlainObject](#isplainobject)
+      - [isDarkMode](#isdarkmode)
       - [isObject](#isobject)
       - [isArray](#isarray)
       - [inBrowser](#inbrowser)
@@ -128,6 +131,7 @@ Collection of common JavaScript / TypeScript utilities
       - [mountJs](#mountjs)
       - [mountStyle](#mountstyle)
       - [preloader](#preloader)
+      - [waiting](#waiting)
       - [awaitTo](#awaitto)
   - [Support & Issues](#support--issues)
   - [License](#license)
@@ -422,6 +426,28 @@ dash2Camel('js-cool') // jsCool
 
 ```ts
 declare function dash2Camel(string: string): string
+```
+
+#### randomColor
+
+Generate random hexadecimal colors
+
+- Since: `5.5.0`
+
+- Arguments: none
+
+- Returns: `string`
+
+- Example:
+
+```ts
+randomColor() // #ff6600
+```
+
+- Types:
+
+```ts
+declare function randomColor(): string
 ```
 
 #### randomNumber
@@ -811,6 +837,66 @@ isWindow(window) // true
 
 ```ts
 declare function isWindow(target: any): target is Window
+```
+
+#### isPlainObject
+
+Determine if target is an plain object
+
+- Since: `5.0.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isPlainObject({}) // true
+isPlainObject(window) // false
+```
+
+- Types:
+
+```ts
+type Primitive = bigint | boolean | null | number | string | symbol | undefined
+
+type JSONValue = Primitive | PlainObject | JSONArray
+
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+interface PlainObject {
+  [key: string]: JSONValue
+}
+
+interface JSONArray extends Array<JSONValue> {}
+
+declare function isPlainObject(target: unknown): target is PlainObject
+```
+
+#### isDarkMode
+
+Determine if dark color mode
+
+- Since: `5.5.0`
+
+- Arguments: none
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isDarkMode() // false
+```
+
+- Types:
+
+```ts
+declare function isDarkMode(): boolean
 ```
 
 #### isObject
@@ -3056,6 +3142,32 @@ preloader(['path/of/image'])
 declare function preloader(images: string): HTMLImageElement
 
 declare function preloader(images: string[]): Record<string, HTMLImageElement>
+```
+
+#### waiting
+
+waiting for a while
+
+- Since: `5.5.0`
+
+- Arguments:
+
+| Parameters   | Description                 | Type     | Optional | Required | Default |
+| ------------ | --------------------------- | -------- | -------- | -------- | ------- |
+| milliseconds | waiting time (milliseconds) | `number` | -        | true     | -       |
+
+- Returns: `Promise<void>`
+
+- Example:
+
+```ts
+waiting(2000)
+```
+
+- Types:
+
+```ts
+declare function waiting(milliseconds: number): Promise<void>
 ```
 
 #### awaitTo
