@@ -73,6 +73,7 @@ const functionList = {
   trim, // 根据传参来去除空格
   clearAttr, // 去除HTML标签所有属性
   clearHtml, // 去除HTML标签
+  escape, // 转义HTML特殊字符
   getNumber, // 获取字符串中的数字
   camel2Dash, // 将驼峰字符串转成-间隔且全小写的Dash模式
   dash2Camel, // 将-间隔且全小写的Dash模式转成驼峰字符串

@@ -39,6 +39,7 @@ Collection of common JavaScript / TypeScript utilities
       - [trim](#trim)
       - [clearAttr](#clearattr)
       - [clearHtml](#clearhtml)
+      - [escape](#escape)
       - [getNumber](#getnumber)
       - [camel2Dash](#camel2dash)
       - [dash2Camel](#dash2camel)
@@ -312,6 +313,33 @@ clearHtml('<div>test<br />string</div>')
 
 ```ts
 declare function clearHtml(string: string): string
+```
+
+#### escape
+
+Escaping HTML Special Characters
+
+- Since: `5.5.0`
+
+- Arguments:
+
+| Parameters | Description           | Type     | Optional | Required | Default |
+| ---------- | --------------------- | -------- | -------- | -------- | ------- |
+| string     | string with html tags | `string` | -        | true     | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+escape('<div>test<br />string</div>')
+// '&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;'
+```
+
+- Types:
+
+```ts
+declare function escape(string: string): string
 ```
 
 #### getNumber

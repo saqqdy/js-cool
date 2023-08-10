@@ -8,6 +8,7 @@ import pattern from './pattern'
 import trim from './trim'
 import clearAttr from './clearAttr'
 import clearHtml from './clearHtml'
+import escape from './escape'
 import getNumber from './getNumber'
 import camel2Dash from './camel2Dash'
 import dash2Camel from './dash2Camel'
@@ -121,6 +122,7 @@ export default {
 	cleanData,
 	clearAttr,
 	clearHtml,
+	escape,
 	client,
 	complement,
 	contains,
