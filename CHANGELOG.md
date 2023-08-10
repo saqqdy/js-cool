@@ -2,7 +2,7 @@
 
 ## 2023.08.10 v5.5.0
 
-1. new `preloader` `escape` `unescape` `randomColor` `isDarkMode` `waiting` function
+1. new `preloader` `escape` `unescape` `randomColor` `isDarkMode` `waiting` function, see: [preloader](https://github.com/saqqdy/js-cool#preloader), [escape](https://github.com/saqqdy/js-cool#escape), [unescape](https://github.com/saqqdy/js-cool#unescape), [randomColor](https://github.com/saqqdy/js-cool#randomcolor), [isDarkMode](https://github.com/saqqdy/js-cool#isdarkmode), [waiting](https://github.com/saqqdy/js-cool#waiting)
 
 ## 2023.08.05 v5.4.0
 
