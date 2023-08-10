@@ -3025,7 +3025,9 @@ preloader(['path/of/image'])
 - Types:
 
 ```ts
-declare function preloader(images: string | string[]): void
+declare function preloader(images: string): HTMLImageElement
+
+declare function preloader(images: string[]): Record<string, HTMLImageElement>
 ```
 
 #### awaitTo

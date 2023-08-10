@@ -3,9 +3,9 @@
  *
  * @param images - images url
  */
-export function preloader(
-	images: string | string[]
-): HTMLImageElement | Record<string, HTMLImageElement> {
+function preloader(images: string): HTMLImageElement
+function preloader(images: string[]): Record<string, HTMLImageElement>
+function preloader(images: string | string[]): HTMLImageElement | Record<string, HTMLImageElement> {
 	let isString = false
 	if (!images) throw new Error('"images" is required')
 	else if (typeof images === 'string') {
