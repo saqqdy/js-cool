@@ -4,7 +4,7 @@
  * @param string - string
  * @returns - newString
  */
-function escapeRestore(string: string) {
+function unescape(string: string) {
 	const map = {
 		'&amp;': '&',
 		'&lt;': '<',
@@ -15,4 +15,4 @@ function escapeRestore(string: string) {
 	return string.replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, m => map[m as keyof typeof map])
 }
 
-export default escapeRestore
+export default unescape

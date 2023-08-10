@@ -40,7 +40,7 @@ Collection of common JavaScript / TypeScript utilities
       - [clearAttr](#clearattr)
       - [clearHtml](#clearhtml)
       - [escape](#escape)
-      - [escapeRestore](#escaperestore)
+      - [unescape](#unescape)
       - [getNumber](#getnumber)
       - [camel2Dash](#camel2dash)
       - [dash2Camel](#dash2camel)
@@ -347,7 +347,7 @@ escape('<div>test<br />string</div>')
 declare function escape(string: string): string
 ```
 
-#### escapeRestore
+#### unescape
 
 Restore HTML Special Characters
 
@@ -364,14 +364,14 @@ Restore HTML Special Characters
 - Example:
 
 ```ts
-escapeRestore('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')
+unescape('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')
 // '<div>test<br />string</div>'
 ```
 
 - Types:
 
 ```ts
-declare function escapeRestore(string: string): string
+declare function unescape(string: string): string
 ```
 
 #### getNumber
