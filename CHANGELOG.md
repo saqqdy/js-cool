@@ -2,7 +2,7 @@
 
 ## 2023.08.10 v5.5.0
 
-1. new `preloader` `escape` `randomColor` `isDarkMode` `waiting` function
+1. new `preloader` `escape` `escapeRestore` `randomColor` `isDarkMode` `waiting` function
 
 ## 2023.08.05 v5.4.0
 

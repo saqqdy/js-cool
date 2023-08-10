@@ -9,6 +9,7 @@ import trim from './trim'
 import clearAttr from './clearAttr'
 import clearHtml from './clearHtml'
 import escape from './escape'
+import escapeRestore from './escapeRestore'
 import getNumber from './getNumber'
 import camel2Dash from './camel2Dash'
 import dash2Camel from './dash2Camel'
@@ -126,6 +127,7 @@ export default {
 	clearAttr,
 	clearHtml,
 	escape,
+	escapeRestore,
 	client,
 	complement,
 	contains,
