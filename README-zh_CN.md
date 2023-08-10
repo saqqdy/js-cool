@@ -160,6 +160,7 @@ const functionList = {
   mountImg, // 动态加载图片资源
   mountJs, // 动态加载js链接资源
   mountStyle, // 动态加载css样式
+  preloader, // 图片预加载
   awaitTo // 替代try catch处理promise错误
 }
 ```

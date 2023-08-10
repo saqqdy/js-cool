@@ -126,6 +126,7 @@ Collection of common JavaScript / TypeScript utilities
       - [mountImg](#mountimg)
       - [mountJs](#mountjs)
       - [mountStyle](#mountstyle)
+      - [preloader](#preloader)
       - [awaitTo](#awaitto)
   - [Support & Issues](#support--issues)
   - [License](#license)
@@ -2997,6 +2998,34 @@ declare interface StyleOptions {
   attrs?: StyleAttributes
   props?: StyleAttributes
 }
+```
+
+#### preloader
+
+Image preloading
+
+- Since: `5.5.0`
+
+- Arguments:
+
+| Parameters | Description | Type             | Optional | Required | Default |
+| ---------- | ----------- | ---------------- | -------- | -------- | ------- |
+| images     | images url  | `string` `array` | -        | true     | -       |
+
+- Returns: void
+
+- Example:
+
+```ts
+preloader('path/of/image')
+
+preloader(['path/of/image'])
+```
+
+- Types:
+
+```ts
+declare function preloader(images: string | string[]): void
 ```
 
 #### awaitTo

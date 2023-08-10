@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.08.10 v5.5.0
+
+1. new `preloader` function
+
 ## 2023.08.05 v5.4.0
 
 1. new `shuffle` `randomNumbers` function, see: [shuffle](https://github.com/saqqdy/js-cool#shuffle), [randomNumbers](https://github.com/saqqdy/js-cool#randomnumbers)

@@ -3,7 +3,7 @@
  *
  * @param min - the minimum value of the random number
  * @param max - the maximum value of the random number
- * @returns returns the number
+ * @returns - number
  */
 function randomNumber(min = 1, max = 10): number {
 	const Range = max - min

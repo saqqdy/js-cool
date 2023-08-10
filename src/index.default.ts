@@ -96,6 +96,7 @@ import unique from './unique'
 import fillIPv6 from './fillIPv6'
 import getProperty from './getProperty'
 import setProperty from './setProperty'
+import preloader from './preloader'
 import awaitTo from './awaitTo'
 
 import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
@@ -191,5 +192,6 @@ export default {
 	mountCss,
 	mountImg,
 	mountJs,
-	mountStyle
+	mountStyle,
+	preloader
 }
