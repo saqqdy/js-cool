@@ -54,6 +54,7 @@ import getSession from './getSession'
 import setSession from './setSession'
 import delSession from './delSession'
 import getCookie from './getCookie'
+import getCookies from './getCookies'
 import setCookie from './setCookie'
 import delCookie from './delCookie'
 
@@ -120,6 +121,7 @@ export default {
 	setSession,
 	delSession,
 	getCookie,
+	getCookies,
 	setCookie,
 	delCookie,
 	camel2Dash,

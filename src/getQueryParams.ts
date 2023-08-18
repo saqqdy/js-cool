@@ -6,13 +6,18 @@ import inBrowser from './inBrowser'
  *
  * @example
  * ```js
- * getQueryParams('https://test.com?key1=100#/home?key1=200'); // \{"key1":"200"\}
- * getQueryParams('https://test.com?key1=100#/home?key1=200', true); // \{"key1":200\}
- * getQueryParams(true); // \{"key1":200\}
+ * getQueryParams('https://test.com?key1=100#/home?key1=200')
+ * // \{"key1":"200"\}
+ *
+ * getQueryParams('https://test.com?key1=100#/home?key1=200', true)
+ * // \{"key1":200\}
+ *
+ * getQueryParams(true)
+ * // \{"key1":200\}
  * ```
  * @param url - pass in the url string
  * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
- * @returns returns result
+ * @returns - result
  */
 function getQueryParams(url: string): Record<string, string>
 function getQueryParams(url: boolean): Record<string, unknown>

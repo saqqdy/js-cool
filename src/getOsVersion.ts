@@ -5,14 +5,17 @@ import getAppVersion from './getAppVersion'
  *
  * @example
  * ```
- * getOsVersion('iPhone') // '13.2.3'
- * getOsVersion('iPhone', true) // 'iPhone/13.2.3'
+ * getOsVersion('iPhone')
+ * // '13.2.3'
+ *
+ * getOsVersion('iPhone', true)
+ * // 'iPhone/13.2.3'
  * ```
  * @deprecated please use 'osVersion' instead
  * @param osName - system type string Android, iPod, iWatch or iPhone
  * @param withOS - whether to bring the name
  * @param userAgent - ua, may not be passed, default takes navigator.appVersion
- * @return null/true/false
+ * @return - null/true/false
  */
 function getOsVersion(
 	osName: string,

@@ -6,7 +6,11 @@ export interface WindowSizeObj {
 /**
  * windowSize to get the window size
  *
- * @returns returns the width and height
+ * @example
+ * ```js
+ * windowSize() // { width: 1280, height: 800 }
+ * ```
+ * @returns - the width and height
  */
 function windowSize(): WindowSizeObj {
 	const s: WindowSizeObj = { width: 0, height: 0 }

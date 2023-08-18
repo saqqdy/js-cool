@@ -1,5 +1,14 @@
 # Change logs
 
+## 2023.08.18 v5.6.0
+
+1. new `getCookies` function, see: [getCookies](https://github.com/saqqdy/js-cool#getcookies)
+2. some improvements for getType/getSession/getCache/fixNumber
+3. fix bugs: toThousands/parseUrlParam
+4. new pattern.number/nextIndex
+5. deprecated getScrollPosition
+6. fix types
+
 ## 2023.08.10 v5.5.0
 
 1. new `preloader` `escape` `unescape` `randomColor` `isDarkMode` `waiting` function, see: [preloader](https://github.com/saqqdy/js-cool#preloader), [escape](https://github.com/saqqdy/js-cool#escape), [unescape](https://github.com/saqqdy/js-cool#unescape), [randomColor](https://github.com/saqqdy/js-cool#randomcolor), [isDarkMode](https://github.com/saqqdy/js-cool#isdarkmode), [waiting](https://github.com/saqqdy/js-cool#waiting)

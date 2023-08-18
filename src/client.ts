@@ -4,7 +4,7 @@
  * @deprecated Will be refactored for the next major release
  * @param name - optional, e.g. pass in MicroMessenger to return whether it is the built-in browser of Weixin
  * @param userAgent - optional, pass in a custom ua, default takes the browser's navigator.userAgent
- * @returns returns the common ua match table, if name is passed, then returns whether the terminal matches true/false
+ * @returns - the common ua match table, if name is passed, then returns whether the terminal matches true/false
  */
 const client = (name = '', userAgent = navigator.userAgent) => {
 	const userAgentL = userAgent.toLowerCase()

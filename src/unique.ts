@@ -1,4 +1,5 @@
 import contains from './contains'
+
 /**
  * Array de-duplication
  *
@@ -6,7 +7,8 @@ import contains from './contains'
  * ```js
  * unique([1, 2, 2, '33']) // [1, 2, '33']
  * ```
- * @returns array
+ * @param arr - array data
+ * @returns - new array
  */
 function unique<T = unknown>(arr: T[]): T[] {
 	const newArray: T[] = []

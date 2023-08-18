@@ -5,7 +5,7 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
  * String, number to base64
  *
  * @param input - the string to be encoded
- * @returns returns the BASE64 encoding
+ * @returns - the BASE64 encoding
  */
 function encodeBase64(input: string) {
 	let output = '',

@@ -84,6 +84,7 @@ Collection of common JavaScript / TypeScript utilities
       - [setSession](#setsession)
       - [delSession](#delsession)
       - [getCookie](#getcookie)
+      - [getCookies](#getcookies)
       - [setCookie](#setcookie)
       - [delCookie](#delcookie)
     - [Base64 & UTF8](#base64--utf8)
@@ -796,7 +797,7 @@ Determine if a function is defined
 
 | Parameters | Description   | Type     | Optional | Required | Default |
 | ---------- | ------------- | -------- | -------- | -------- | ------- |
-| funcName   | function name | `string` | -        | true     | -       |
+| name       | function name | `string` | -        | true     | -       |
 
 - Returns: `boolean`
 
@@ -810,7 +811,7 @@ isExitsFunction('console.log') // true
 - Types:
 
 ```ts
-declare function isExitsFunction(funcName: string): boolean
+declare function isExitsFunction(name: string): boolean
 ```
 
 #### isExitsVariable
@@ -821,9 +822,9 @@ Determine if a variable is defined
 
 - Arguments:
 
-| Parameters   | Description   | Type     | Optional | Required | Default |
-| ------------ | ------------- | -------- | -------- | -------- | ------- |
-| variableName | variable name | `string` | -        | true     | -       |
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| name       | variable name | `string` | -        | true     | -       |
 
 - Returns: `boolean`
 
@@ -837,7 +838,7 @@ isExitsVariable('window') // true
 - Types:
 
 ```ts
-declare function isExitsVariable(variableName: string): boolean
+declare function isExitsVariable(name: string): boolean
 ```
 
 #### isWindow
@@ -864,7 +865,7 @@ isWindow(window) // true
 - Types:
 
 ```ts
-declare function isWindow(target: any): target is Window
+declare function isWindow<T = any>(target: T): target is Window
 ```
 
 #### isPlainObject
@@ -950,7 +951,7 @@ isObject({}) // true
 - Types:
 
 ```ts
-declare function isObject(target: any): target is Object
+declare function isObject<T = any>(target: T): target is Object
 ```
 
 #### isArray
@@ -976,7 +977,7 @@ isArray([]) // true
 - Types:
 
 ```ts
-declare function isArray(arr: any): arr is any[]
+declare function isArray<T = any>(target: T): target is any[]
 ```
 
 #### inBrowser
@@ -1569,7 +1570,7 @@ setTimeout(() => {
 - Types:
 
 ```ts
-declare function setCache(name: string, value: any, seconds?: number): void
+declare function setCache<T = unknown>(name: string, value: T, seconds?: number | string): void
 ```
 
 #### delCache
@@ -1615,8 +1616,6 @@ Get the session, if the deposited is Object, the retrieved is also Object, no ne
 - Example:
 
 ```ts
-import { getSession, setSession } from 'js-cool'
-
 const data1 = 100
 const data2 = { a: 10 }
 const data3 = null
@@ -1677,7 +1676,7 @@ setTimeout(() => {
 - Types:
 
 ```ts
-declare function setSession(name: string, value: any, seconds?: number): void
+declare function setSession<T = unknown>(name: string, value: T, seconds?: number | string): void
 ```
 
 #### delSession
@@ -1732,6 +1731,29 @@ getCookie('data1') // 100
 declare function getCookie(name: string): string
 ```
 
+#### getCookies
+
+Get all cookies
+
+- Since: `5.6.0`
+
+- Arguments: 'none'
+
+- Returns: `object`
+
+- Example:
+
+```ts
+getCookies()
+// { token: 'xxx', name: 'saqqdy' }
+```
+
+- Types:
+
+```ts
+declare function getCookies(): Record<string, string>
+```
+
 #### setCookie
 
 Set cookie
@@ -1772,10 +1794,10 @@ setTimeout(() => {
 - Types:
 
 ```ts
-declare function setCookie(
+declare function setCookie<T extends string | number | boolean>(
   name: string,
-  value: any,
-  seconds?: number,
+  value: T,
+  seconds: string | number,
   path?: string,
   samesite?: boolean
 ): void
@@ -2051,21 +2073,27 @@ declare function getScrollPosition(): string | void
 
 return the next zIndex value
 
+> change mix defaults to 0
+
 - Since: `1.0.2`
 
 - Arguments:
 
 | Parameters | Description   | Type     | Optional | Required | Default |
 | ---------- | ------------- | -------- | -------- | -------- | ------- |
-| min        | minimum value | `number` | -        | false    | `5000`  |
-| max        | maximum value | `number` | -        | false    | `10000` |
+| min        | minimum value | `number` | -        | false    | `0`     |
+| max        | maximum value | `number` | -        | false    | -       |
 
-- Returns: `string | number`
+- Returns: `number`
 
 - Example:
 
 ```ts
-nextIndex() // 5001
+nextIndex() // 1
+
+nextIndex(1000) // 1001
+
+nextIndex(10, 100) // 100
 ```
 
 - Types:
@@ -2092,15 +2120,20 @@ truncate a few decimal places, not 0 for shortage
 - Example:
 
 ```ts
-fixNumber('100.888') // 100.88
-fixNumber('100.8', 2) // 100.8
-fixNumber('100.8888', 3) // 100.888
+fixNumber('100.888')
+// 100.88
+
+fixNumber('100.8', 2)
+// 100.8
+
+fixNumber('100.8888', 3)
+// 100.888
 ```
 
 - Types:
 
 ```ts
-declare function fixNumber(number: string | number, n?: number): string | number
+declare function fixNumber(number: string | number, n?: number): number
 ```
 
 #### extend
@@ -2209,7 +2242,28 @@ getType(Symbol('')) // symbol
 - Types:
 
 ```ts
-declare function getType(target: any): string
+declare function getType<T = any>(
+  target: T
+):
+  | 'string'
+  | 'number'
+  | 'bigint'
+  | 'boolean'
+  | 'symbol'
+  | 'undefined'
+  | 'object'
+  | 'function'
+  | 'window'
+  | 'error'
+  | 'promise'
+  | 'math'
+  | 'document'
+  | 'navigator'
+  | 'global'
+  | 'array'
+  | 'date'
+  | 'regexp'
+  | 'null'
 ```
 
 #### cleanData
@@ -2403,13 +2457,14 @@ return true if the provided predicate function returns true for all elements in 
 - Example:
 
 ```ts
-all([4, 2, 3], x => x > 1) // true
+all([4, 2, 3], x => x > 1)
+// true
 ```
 
 - Types:
 
 ```ts
-declare const all: (arr: any[], fn: AnyFunction) => boolean
+declare const all: <T = unknown>(arr: T[], fn: AnyFunction) => boolean
 ```
 
 #### any
@@ -2430,13 +2485,14 @@ Returns true if the provided predicate function returns true for at least one el
 - Example:
 
 ```ts
-any([0, 1, 2, 0], x => x >= 2) // true
+any([0, 1, 2, 0], x => x >= 2)
+// true
 ```
 
 - Types:
 
 ```ts
-declare const any: (arr: any[], fn: AnyFunction) => boolean
+declare const any: <T = unknown>(arr: T[], fn: AnyFunction) => boolean
 ```
 
 #### uuid
@@ -2512,24 +2568,29 @@ Converts a two-dimensional array to a comma-separated string of values (CSV).
 arrayToCSV([
   ['a', 'b'],
   ['c', 'd']
-]) // '"a", "b" \n "c", "d"'
+])
+// '"a", "b" \n "c", "d"'
+
 arrayToCSV(
   [
     ['a', 'b'],
     ['c', 'd']
   ],
   ';'
-) // '"a"; "b"\n "c"; "d"'
+)
+// '"a"; "b"\n "c"; "d"'
+
 arrayToCSV([
   ['a', '"b" great'],
   ['c', 3.1415]
-]) // '"a", """b"" great"\n "c",3.1415'
+])
+// '"a", """b"" great"\n "c",3.1415'
 ```
 
 - Types:
 
 ```ts
-declare function arrayToCSV(data: string, delimiter?: string): any[]
+declare function arrayToCSV<T extends unknown[][]>(data: T, delimiter?: string): string
 ```
 
 #### CSVToJSON
@@ -2550,8 +2611,11 @@ Converts a comma-separated string of values (CSV) to an array of 2D objects. The
 - Example:
 
 ```ts
-CSVToJSON('col1,col2\\na,b\\\nc,d') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
-CSVToJSON('col1;col2\\\na;b\\\nc;d', ';') // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
+CSVToJSON('col1,col2\\na,b\\\nc,d')
+// `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
+
+CSVToJSON('col1;col2\\\na;b\\\nc;d', ';')
+// `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`
 ```
 
 - Types:

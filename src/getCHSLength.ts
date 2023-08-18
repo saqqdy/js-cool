@@ -1,8 +1,13 @@
 /**
  * Get the length of the text, Chinese counts as 2 bytes
  *
+ * @example
+ * ```js
+ * getCHSLength('测试')
+ * // 2
+ * ```
  * @param str - string
- * @returns return length
+ * @returns - length
  */
 function getCHSLength(str: string): number {
 	// eslint-disable-next-line no-control-regex

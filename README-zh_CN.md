@@ -118,6 +118,7 @@ const functionList = {
   setSession, // 写入sessionStorage
   delSession, // 删除sessionStorage
   getCookie, // 读取cookie
+  getCookies, // 读取所有cookie
   setCookie, // 写入cookie
   delCookie, // 删除cookie
   // 编码与解码

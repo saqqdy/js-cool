@@ -1,6 +1,11 @@
 /**
  * Escaping HTML Special Characters
  *
+ * @example
+ * ```js
+ * escape('<div>test<br />string</div>')
+ * // '&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;'
+ * ```
  * @param string - string with html tags
  * @returns - newString
  */

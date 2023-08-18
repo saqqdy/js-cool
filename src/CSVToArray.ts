@@ -3,15 +3,14 @@
  *
  * @example
  * ```js
- * CSVToArray('a,b\\nc,d'); // `[['a','b'],['c','d']]`.
- * ```
- * @example
- * ```js
- * CSVToArray('a;b\\\nc;d', ';'); // `[['a','b'],['c','d']]`.
- * ```
- * @example
- * ```js
- * CSVToArray('col1,col2\\\na,b\\\nc,d', ',', true); // `[['a','b'],['c','d']]`.
+ * CSVToArray('a,b\\nc,d')
+ * // `[['a','b'],['c','d']]`.
+ *
+ * CSVToArray('a;b\\\nc;d', ';')
+ * // `[['a','b'],['c','d']]`.
+ *
+ * CSVToArray('col1,col2\\\na,b\\\nc,d', ',', true)
+ * // `[['a','b'],['c','d']]`.
  * ```
  * @param data - csv data
  * @param delimiter - separator, default ','

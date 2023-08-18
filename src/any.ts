@@ -4,12 +4,13 @@ import type { AnyFunction } from '../typings/common'
  *
  * @example
  * ```js
- * any([0, 1, 2, 0], x => x >= 2); // true
+ * any([0, 1, 2, 0], x => x >= 2)
+ * // true
  * ```
  * @param arr - the target array
  * @param fn - the judgment method
- * @returns returns the result of the judgment
+ * @returns - the result of the judgment
  */
-const any = (arr: any[], fn: AnyFunction) => arr.some(fn)
+const any = <T = unknown>(arr: T[], fn: AnyFunction) => arr.some(fn)
 
 export default any

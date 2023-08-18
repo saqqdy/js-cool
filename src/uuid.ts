@@ -3,9 +3,9 @@
  *
  * @example
  * ```js
- * uuid(); // '4222fcfe-5721-4632-bede-6043885be57d'
+ * uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
  * ```
- * @returns uuid
+ * @returns - uuid
  */
 const uuid = (): string =>
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

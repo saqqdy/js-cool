@@ -9,7 +9,7 @@ import unique from './unique'
  * minus([1, 2], [2, '33'], [2, 4]) // [1]
  * ```
  * @param args - arguments
- * @returns array
+ * @returns - new array
  */
 function minus<T = unknown>(...args: T[][]): T[] {
 	return args.reduce((pre, cur, index) => {

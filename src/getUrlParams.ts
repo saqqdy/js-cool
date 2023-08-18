@@ -6,13 +6,18 @@ import inBrowser from './inBrowser'
  *
  * @example
  * ```js
- * getUrlParams('https://test.com?key1=100#/home?key1=200'); // \{"key1":"100"\}
- * getUrlParams('https://test.com?key1=100#/home?key1=200', true); // \{"key1":100\}
- * getUrlParams(true); // \{"key1":100\}
+ * getUrlParams('https://test.com?key1=100#/home?key1=200')
+ * // \{"key1":"100"\}
+ *
+ * getUrlParams('https://test.com?key1=100#/home?key1=200', true)
+ * // \{"key1":100\}
+ *
+ * getUrlParams(true)
+ * // \{"key1":100\}
  * ```
  * @param url - pass in the url string
  * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
- * @returns returns result
+ * @returns - result
  */
 function getUrlParams(url: string): Record<string, string>
 function getUrlParams(url: boolean): Record<string, unknown>

@@ -2,7 +2,7 @@
  * Encoding Utf8
  *
  * @param input - the string to be encoded
- * @returns returns the UTF-8 encoding
+ * @returns - the UTF-8 encoding
  */
 function encodeUtf8(string: string) {
 	string = string.replace(/\r\n/g, '\n')

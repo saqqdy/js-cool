@@ -85,6 +85,7 @@ export { default as getSession } from './getSession'
 export { default as setSession } from './setSession'
 export { default as delSession } from './delSession'
 export { default as getCookie } from './getCookie'
+export { default as getCookies } from './getCookies'
 export { default as setCookie } from './setCookie'
 export { default as delCookie } from './delCookie'
 

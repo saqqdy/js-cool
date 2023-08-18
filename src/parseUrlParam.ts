@@ -1,3 +1,5 @@
+import pattern from './pattern'
+
 /**
  * parse url params
  *
@@ -5,6 +7,7 @@
  * ```js
  * parseUrlParam('?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test')
  * // \{"key1":"100","key2":"true","key3":"null","key4":"undefined","key5":"NaN","key6":"10.888","key7":"Infinity","key8":"test"\}
+ *
  * parseUrlParam('?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test', true)
  * // \{"key1":100,"key2":true,"key3":null,"key5":NaN,"key6":10.888,"key7":Infinity,"key8":"test"\}
  * ```
@@ -37,7 +40,7 @@ function parseUrlParam(url: string, covert = false) {
 		result[key] = $2
 		if (covert) {
 			if ($2 in VALUE_MAP) result[key] = VALUE_MAP[$2 as keyof typeof VALUE_MAP]
-			else if (/^-?\d+(\.\d+)?$/.test($2)) result[key] = Number($2)
+			else if (pattern.number.test($2)) result[key] = Number($2)
 		}
 		return rs
 	})

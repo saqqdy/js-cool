@@ -11,7 +11,7 @@ export interface SearchKeySet {
  * @param expression - required Query method
  * @param keySet - optional Default subclass name, query name
  * @param number - optional Number of lookups, if not passed, query all
- * @returns returns the queried array
+ * @returns - the queried array
  */
 function searchObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
 	const retNode: any[] = []

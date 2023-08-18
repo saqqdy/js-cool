@@ -16,6 +16,11 @@ export interface JSONArray extends Array<JSONValue> {}
 /**
  * Determine if target is an plain object
  *
+ * @example
+ * ```js
+ * isPlainObject({}) // true
+ * isPlainObject(window) // false
+ * ```
  * @param target - any target
  * @returns - target is plain Object
  */

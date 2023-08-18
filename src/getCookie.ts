@@ -1,8 +1,13 @@
 /**
- * Read cookies
+ * Read cookie by name
  *
+ * @example
+ * ```js
+ * getCookie('data1')
+ * // 100
+ * ```
  * @param name - cookie name
- * @returns returns the cookie string
+ * @returns - the cookie string
  */
 function getCookie(name: string): any {
 	const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')

@@ -2,7 +2,7 @@
  * Converts -spaced and all lowercase Dash patterns to humped strings
  *
  * @param string - the string to be converted
- * @returns returns the converted string
+ * @returns - the converted string
  */
 function dash2Camel(string: string) {
 	return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {

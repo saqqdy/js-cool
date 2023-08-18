@@ -2,7 +2,7 @@
  * Block default events
  *
  * @param e - dom's event object
- * @returns bool false
+ * @returns - false
  */
 function stopDefault(e: Event) {
 	if (e && e.preventDefault) {

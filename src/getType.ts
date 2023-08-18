@@ -4,8 +4,28 @@
  * @param target - target
  * @returns type
  */
-function getType(target: any): string {
-	const type = {
+function getType<T = any>(target: T) {
+	const type: Record<
+		string,
+		| 'array'
+		| 'boolean'
+		| 'date'
+		| 'promise'
+		| 'function'
+		| 'math'
+		| 'window'
+		| 'navigator'
+		| 'global'
+		| 'document'
+		| 'symbol'
+		| 'number'
+		| 'object'
+		| 'regexp'
+		| 'string'
+		| 'undefined'
+		| 'null'
+		| 'error'
+	> = {
 		'[object Array]': 'array',
 		'[object Boolean]': 'boolean',
 		'[object Date]': 'date',
@@ -24,13 +44,14 @@ function getType(target: any): string {
 		'[object RegExp]': 'regexp',
 		'[object String]': 'string',
 		'[object Undefined]': 'undefined',
-		'[object Null]': 'null'
-	} as any
+		'[object Null]': 'null',
+		'[object Error]': 'error'
+	}
 
-	if (target === null) return target + ''
-	return typeof target === 'object' || typeof target === 'function'
-		? type[Object.prototype.toString.call(target)] || 'object'
-		: typeof target
+	if (target === null) return 'null'
+	else if (typeof target === 'object' || typeof target === 'function')
+		return type[Object.prototype.toString.call(target) as keyof typeof type] || 'object'
+	return typeof target
 }
 
 export default getType

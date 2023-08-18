@@ -4,6 +4,17 @@ import shuffle from './shuffle'
 /**
  * Generate n random integers that sum to a fixed sum
  *
+ * @example
+ * ```js
+ * randomNumbers()
+ * // [8]
+ *
+ * randomNumbers(4, 5)
+ * // [1, 1, 2, 1]
+ *
+ * randomNumbers(4, 5, false)
+ * // [0, 1, 2, 2]
+ * ```
  * @param n - Number of generated integers, default: 1
  * @param sum - Sum of generated integers, default: 100
  * @param max - Generate integers that are not zero, default: true

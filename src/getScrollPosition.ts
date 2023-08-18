@@ -1,7 +1,8 @@
 /**
  * Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
  *
- * @returns return position
+ * @deprecated will be removed in the next major release.
+ * @returns - position
  */
 function getScrollPosition() {
 	const innerH =

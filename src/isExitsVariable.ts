@@ -1,12 +1,17 @@
 /**
  * The presence or absence of the specified variable
  *
- * @param variableName - variable name
- * @returns returns true/false
+ * @example
+ * ```js
+ * isExitsVariable('test') // false
+ * isExitsVariable('window') // true
+ * ```
+ * @param name - variable name
+ * @returns - true/false
  */
-function isExitsVariable(variableName: string): boolean {
+function isExitsVariable(name: string): boolean {
 	try {
-		if (typeof variableName === 'undefined') {
+		if (typeof name === 'undefined') {
 			return false
 		} else {
 			return true

@@ -2,7 +2,7 @@
  * Converts humped strings to -spaced and all lowercase Dash pattern
  *
  * @param string - the string to be converted
- * @returns returns the converted string
+ * @returns - the converted string
  */
 function camel2Dash(string: string) {
 	return string

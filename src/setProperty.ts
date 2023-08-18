@@ -9,13 +9,16 @@
  *          c: 2
  *      }]
  * }
+ *
  * setProperty(target, 'a') // 1
+ *
  * setProperty(target, 'b[0].c') // 2
+ *
  * setProperty(target, () => 'a') // 1
  * ```
  * @param target - target array, object
  * @param prop - set target, can pass function, 'a' | 'a[1].c'
- * @returns returns the corresponding value
+ * @returns - the corresponding value
  */
 function setProperty(target: any, prop: string | { (): string }, value: any): any {
 	if (!target) throw new Error('target is required')

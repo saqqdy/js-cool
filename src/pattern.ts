@@ -2,11 +2,11 @@
  * pattern returns some common regulars: any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
  *
  * @deprecated It will be refactored and renamed patterns in the next major release.
- * @returns return object
+ * @returns - object
  */
 const pattern = {
 	any: /[\w\W]+/,
-	number: /^\d+$/,
+	number: /^(\-|\+)?(0|[1-9]\d*)(\.\d+)?$/,
 	string: /^[\u4E00-\u9FA5\uF900-\uFA2D\w\.\s]+$/,
 	postcode: /^[0-9]{6}$/,
 	url: /^(\w+:\/\/)?\w+(\.\w+)+.*$/,

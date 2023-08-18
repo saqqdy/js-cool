@@ -1,26 +1,40 @@
 /**
  * Read sessionStorage
  *
+ * @example
+ * ```js
+ * const data1 = 100
+ * const data2 = { a: 10 }
+ * const data3 = null
+ *
+ * setSession('data1', data1)
+ * setSession('data2', data2)
+ * setSession('data3', data3)
+ *
+ * getSession('data1') // 100
+ * getSession('data2') // {a:10}
+ * getSession('data3') // null
+ *
+ * getSession('data4') // null
+ * ```
  * @param name - name
- * @returns return sessionStorage
+ * @returns - sessionStorage
  */
 function getSession(name: string): any {
-	const str = sessionStorage.getItem(name)
-	const exp = new Date()
-	if (str) {
-		const obj = JSON.parse(str)
-		if (!obj.hasOwnProperty('value') || !obj.hasOwnProperty('expires')) {
+	const data = sessionStorage.getItem(name)
+
+	if (!data) return null
+
+	try {
+		const exp = new Date()
+		const obj = JSON.parse(data)
+		if ('value' in obj || 'expires' in obj) {
+			if (!obj.expires || obj.expires > exp.getTime()) return obj.value
+			sessionStorage.removeItem(name)
 			return null
-		} else {
-			if (!obj.expires || obj.expires > exp.getTime()) {
-				return obj.value
-			} else {
-				sessionStorage.removeItem(name)
-				return null
-			}
 		}
-	} else {
-		return null
+	} catch {
+		return data
 	}
 }
 

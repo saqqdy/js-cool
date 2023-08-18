@@ -3,7 +3,7 @@
  *
  * @deprecated will be removed in the next major release.
  * @param str - the string to be tested
- * @returns returns true/false
+ * @returns - true/false
  */
 function isDigitals(str: string): boolean {
 	return /^[0-9]*$/.test(str)

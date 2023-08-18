@@ -8,7 +8,7 @@ export interface DirParamType {
  *
  * @deprecated It will be refactored and renamed getDirParams in the next major release.
  * @param url - pass in the url address
- * @returns return parameter object
+ * @returns - parameter object
  */
 function getDirParam(url: string): DirParamType {
 	let urlStr =

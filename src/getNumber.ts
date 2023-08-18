@@ -3,11 +3,14 @@
  *
  * @example
  * ```js
- * getNumber('Chrome123.33'); // '123.33'.
- * getNumber('234test.88'); // '234.88'.
+ * getNumber('Chrome123.33')
+ * // '123.33'.
+ *
+ * getNumber('234test.88')
+ * // '234.88'.
  * ```
  * @param string - pass in a string with a number
- * @returns returns a pure numeric string
+ * @returns - a pure numeric string
  */
 function getNumber(string: string): string {
 	return string.replace(/[^0-9.]/gi, '')

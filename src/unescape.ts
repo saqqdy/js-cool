@@ -1,6 +1,11 @@
 /**
  * Restore HTML Special Characters
  *
+ * @example
+ * ```js
+ * unescape('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')
+ * // '<div>test<br />string</div>'
+ * ```
  * @param string - string
  * @returns - newString
  */
