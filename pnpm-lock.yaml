@@ -63,7 +63,7 @@ devDependencies:
     version: 6.0.0(rollup@3.28.0)
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
-    version: 15.1.0(rollup@3.28.0)
+    version: 15.2.0(rollup@3.28.0)
   '@rollup/plugin-replace':
     specifier: ^5.0.2
     version: 5.0.2(rollup@3.28.0)
@@ -319,7 +319,7 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
-      resolve: 1.22.2
+      resolve: 1.22.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2015,8 +2015,8 @@ packages:
       rollup: 3.28.0
     dev: true
 
-  /@rollup/plugin-node-resolve@15.1.0(rollup@3.28.0):
-    resolution: {integrity: sha512-xeZHCgsiZ9pzYVgAo9580eCGqwh/XCEUM9q6iQfGNocjgkufHAqC3exA+45URvhiYV8sBF9RlBai650eNs7AsA==}
+  /@rollup/plugin-node-resolve@15.2.0(rollup@3.28.0):
+    resolution: {integrity: sha512-mKur03xNGT8O9ODO6FtT43ITGqHWZbKPdVJHZb+iV9QYcdlhUUB0wgknvA4KCUmC5oHJF6O2W1EgmyOQyVUI4Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.78.0||^3.0.0
@@ -2029,7 +2029,7 @@ packages:
       deepmerge: 4.2.2
       is-builtin-module: 3.2.1
       is-module: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.4
       rollup: 3.28.0
     dev: true
 
@@ -2110,7 +2110,7 @@ packages:
       fs-extra: 7.0.1
       import-lazy: 4.0.0
       jju: 1.4.0
-      resolve: 1.22.2
+      resolve: 1.22.4
       semver: 7.5.4
       z-schema: 5.0.3
     dev: true
@@ -2118,7 +2118,7 @@ packages:
   /@rushstack/rig-package@0.4.1:
     resolution: {integrity: sha512-AGRwpqlXNSp9LhUSz4HKI9xCluqQDt/obsQFdv/NYIekF3pTTPzc+HbQsIsjVjYnJ3DcmxOREVMhvrMEjpiq6g==}
     dependencies:
-      resolve: 1.22.2
+      resolve: 1.22.4
       strip-json-comments: 3.1.1
     dev: true
 
@@ -3592,7 +3592,7 @@ packages:
     resolution: {integrity: sha512-gozW2blMLJCeFpBwugLTGyvVjNoeo1knonXAcatC6bjPBZitotxdWf7Gimr25N4c0AAOo4eOUfaG82IJPDpqCA==}
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       resolve: 1.22.4
     transitivePeerDependencies:
       - supports-color
@@ -3676,7 +3676,7 @@ packages:
       eslint-import-resolver-node: 0.3.7
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.3.0)(eslint-import-resolver-node@0.3.7)(eslint@8.46.0)
       has: 1.0.3
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.fromentries: 2.0.6
@@ -3726,9 +3726,9 @@ packages:
       eslint: 8.46.0
       eslint-plugin-es-x: 7.1.0(eslint@8.46.0)
       ignore: 5.2.4
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       minimatch: 3.1.2
-      resolve: 1.22.2
+      resolve: 1.22.4
       semver: 7.5.4
     dev: true
 
@@ -4604,12 +4604,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-core-module@2.12.1:
-    resolution: {integrity: sha512-Q4ZuBAe2FUsKtyQJoQHlvP8OvBERxO3jEmy1I7hcRXcJBGGHFh/aJBswbXuS9sgrDH2QUO8ilkwNPHvHMd8clg==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module@2.13.0:
     resolution: {integrity: sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==}
     dependencies:
@@ -5369,7 +5363,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.2
+      resolve: 1.22.4
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
@@ -5379,7 +5373,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       hosted-git-info: 6.1.1
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       semver: 7.5.4
       validate-npm-package-license: 3.0.4
     dev: true
@@ -6044,7 +6038,7 @@ packages:
   /resolve@1.19.0:
     resolution: {integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==}
     dependencies:
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       path-parse: 1.0.7
     dev: true
 
@@ -6052,7 +6046,7 @@ packages:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
