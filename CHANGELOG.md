@@ -1,5 +1,12 @@
 # Change logs
 
+## 2023.08.22 v5.7.0
+
+1. new `isIterable` function, see: [isIterable](https://github.com/saqqdy/js-cool#isiterable)
+2. Extend awaitTo to support passing in multiple promises, see: [awaitTo](https://github.com/saqqdy/js-cool#awaitto)
+3. fix types
+4. upgrade all packages
+
 ## 2023.08.18 v5.6.0
 
 1. new `getCookies` function, see: [getCookies](https://github.com/saqqdy/js-cool#getcookies)

@@ -95,6 +95,7 @@ const functionList = {
   isDarkMode, // 是否暗色模式
   isObject, // 是否object类型
   isArray, // 判断是否数组
+  isIterable, // 判断是否可迭代对象
   inBrowser, // 判断是否在浏览器端运行
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号(deprecated)

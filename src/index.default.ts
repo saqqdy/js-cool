@@ -30,6 +30,7 @@ import isExitsVariable from './isExitsVariable'
 import isWindow from './isWindow'
 import isObject from './isObject'
 import isArray from './isArray'
+import isIterable from './isIterable'
 import inBrowser from './inBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
@@ -178,6 +179,7 @@ export default {
 	isWindow,
 	isObject,
 	isArray,
+	isIterable,
 	isPlainObject,
 	isDarkMode,
 	inBrowser,

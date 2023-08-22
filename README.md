@@ -61,6 +61,7 @@ Collection of common JavaScript / TypeScript utilities
       - [isDarkMode](#isdarkmode)
       - [isObject](#isobject)
       - [isArray](#isarray)
+      - [isIterable](#isiterable)
       - [inBrowser](#inbrowser)
       - [windowSize](#windowsize)
       - [getAppVersion](#getappversion)
@@ -977,7 +978,33 @@ isArray([]) // true
 - Types:
 
 ```ts
-declare function isArray<T = any>(target: T): target is any[]
+declare function isIterable(target: any): target is any[]
+```
+
+#### isIterable
+
+Determine if it is iterable
+
+- Since: `5.7.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | true     | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isIterable([]) // true
+```
+
+- Types:
+
+```ts
+declare function isIterable<T = any>(target: T | Iterable<T>): target is Iterable<T>
 ```
 
 #### inBrowser
@@ -3266,29 +3293,34 @@ declare function waiting(milliseconds: number): Promise<void>
 
 Async await wrapper for easy error handling
 
+> v5.7.0 Extend awaitTo to support passing in multiple promises
+
 - Since: `5.2.0`
 
 - Arguments:
 
-| Parameters | Description      | Type      | Optional | Required | Default |
-| ---------- | ---------------- | --------- | -------- | -------- | ------- |
-| promise    | promise function | `Promise` | -        | true     | -       |
+| Parameters  | Description         | Type                  | Optional | Required | Default |
+| ----------- | ------------------- | --------------------- | -------- | -------- | ------- |
+| promise     | promise function    | `Promise` `Promise[]` | -        | true     | -       |
+| ...promises | Promise rest params | `Promise[]`           | -        | false    | -       |
 
-- Returns: `[Error, undefined]` or `[null, data]`
+- Returns: `[Error, undefined]` or `[null, data | data[]]`
 
 - Example:
 
 ```ts
 import { awaitTo as to } from 'js-cool'
 
-const [err, data] = await to(
-  axios({
-    /* ... */
-  })
-)
+// 1. simple use
+const [err, data] = await to(new Promise())
 if (err) {
   // handle request error
 }
+
+// 2. Pass in multiple promises
+const [err, data] = await to(promise1, promise2)
+// or
+const [err, data] = await to([promise1, promise2])
 ```
 
 - Types:

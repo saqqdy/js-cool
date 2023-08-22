@@ -1,4 +1,10 @@
-export type { AnyObject, AnyFunction, ArrayOneMore } from '../typings/common'
+export type {
+	AnyObject,
+	AnyFunction,
+	ArrayOne,
+	ArrayOneMore,
+	ArrayTwoMore
+} from '../typings/common'
 
 export { default as loadSource } from 'load-source'
 export { default as mountCss } from 'mount-css'
@@ -61,6 +67,7 @@ export {
 export { default as isDarkMode } from './isDarkMode'
 export { default as isObject } from './isObject'
 export { default as isArray } from './isArray'
+export { default as isIterable } from './isIterable'
 export { default as inBrowser } from './inBrowser'
 export { default as windowSize, type WindowSizeObj } from './windowSize'
 export { default as getAppVersion } from './getAppVersion'
