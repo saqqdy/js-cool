@@ -22,7 +22,7 @@ dependencies:
     version: 1.2.0
   os-lang:
     specifier: ^3.1.1
-    version: 3.1.1
+    version: 3.2.0
   tslib:
     specifier: ^2.6.2
     version: 2.6.2
@@ -1642,8 +1642,8 @@ packages:
       eslint-scope: 5.1.1
     dev: true
 
-  /@node-kit/extra.cp@3.1.1:
-    resolution: {integrity: sha512-YyOp/OPHRW/Uv0TyJWXoHI3O/s8pAgX4IIizYvQi4oJjPNt95RvuIbBZ4q2YcSYOtHpLn1eoTJ3q7+wBmV0U+A==}
+  /@node-kit/extra.cp@3.2.0:
+    resolution: {integrity: sha512-8n27oOF0clO0VsqkhSo0PXTOG9YGYS25f8zsf9JKsMaT9IkZjPNCzgcNDQkIOE/e3r1u7c5j6ab6siWOON0keQ==}
     hasBin: true
     dev: false
 
@@ -5477,11 +5477,11 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
-  /os-lang@3.1.1:
-    resolution: {integrity: sha512-+1Ij2yQHWVbMwbXVrG7Y6rs3t/IZmOPO9m1vNNy/nX0DbuXm+ZVusLQLy8mf953pXVbAXO4KynuisuH0crHfCA==}
+  /os-lang@3.2.0:
+    resolution: {integrity: sha512-/hMEpk0p6gE4BaK9ZufPktHYsws4Kft8nBwiWEdIJryigq6bZ4PkuKkWypvjFdAZRtHm20pZTSoZgBjKtT/HTw==}
     hasBin: true
     dependencies:
-      '@node-kit/extra.cp': 3.1.1
+      '@node-kit/extra.cp': 3.2.0
       lcid: 4.0.1
     dev: false
 
