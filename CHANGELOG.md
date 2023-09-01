@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.09.01 v5.7.1
+
+1. revert nextIndex function
+
 ## 2023.08.22 v5.7.0
 
 1. new `isIterable` function, see: [isIterable](https://github.com/saqqdy/js-cool#isiterable)
