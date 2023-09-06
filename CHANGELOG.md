@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.09.06 v5.7.2
+
+1. fix regexp bug of appVersion
+
 ## 2023.09.01 v5.7.1
 
 1. revert nextIndex function

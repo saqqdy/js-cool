@@ -35,7 +35,7 @@ function appVersion(appName: string, ua?: string | boolean, ignoreCase?: boolean
 	}
 	if (typeof ignoreCase !== 'boolean') ignoreCase = true
 
-	const reg = new RegExp(`${appName}\/(\\d+(?:.\\d)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
+	const reg = new RegExp(`${appName}\/(\\d+(?:.\\d+)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
 	const match = ua.match(reg)
 
 	return match ? match[1] : null
