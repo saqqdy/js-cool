@@ -3,9 +3,32 @@
  *
  * @example
  * ```js
- * compareVersion('1.11.0', '1.9.9') // => 1 // 1=Version 1.11.0 is newer than 1.9.9
- * compareVersion('1.11.0', '1.11.0') // => 0 // 0=Versions 1.11.0 and 1.11.0 are the same
- * compareVersion('1.11.0', '1.99.0') // => -1 // -1=Version 1.11.0 is older than 1.99.0
+ * compareVersion('1.11.0', '1.9.9')
+ * // => 1: 1=Version 1.11.0 is newer than 1.9.9
+ *
+ * compareVersion('1.11.0', '1.11.0')
+ * // => 0: 0=Versions 1.11.0 and 1.11.0 are the same
+ *
+ * compareVersion('1.11.0', '1.99.0')
+ * // => -1: -1=Version 1.11.0 is older than 1.99.0
+ *
+ * compareVersion('1.0.0.0.0.10', '1.0')
+ * // => -1
+ *
+ * compareVersion('1.11.0', '1.11.0-beta.1')
+ * // => -1
+ *
+ * compareVersion('1.11.0-beta.1', '1.11.0')
+ * // => -1
+ *
+ * compareVersion('1.11.0-beta.10', '1.11.0-beta.10')
+ * // => 0
+ *
+ * compareVersion('1.11.0-alpha.10', '1.11.0-beta.1')
+ * // => 0
+ *
+ * compareVersion('1.11.0-alpha.1', '1.11.0-beta.10')
+ * // => 0
  * ```
  * @param input - input version
  * @param compare - compare version
@@ -14,11 +37,8 @@
 function compareVersion(input: string, compare: string) {
 	const [inputVer, inputSubVer = ''] = input.split('-')
 	const [compareVer, compareSubVer = ''] = compare.split('-')
-	console.info(inputSubVer, compareSubVer)
 	const v1 = inputVer.split('.')
-	// const [v1SubType = '', v1SubVer = ''] = inputSubVer.split('.')
 	const v2 = compareVer.split('.')
-	// const [v2SubType = '', v2SubVer = ''] = compareSubVer.split('.')
 	const len = Math.max(v1.length, v2.length)
 
 	while (v1.length < len) {
@@ -35,6 +55,17 @@ function compareVersion(input: string, compare: string) {
 		if (num1 > num2) return 1
 		else if (num1 < num2) return -1
 	}
+
+	if (!inputSubVer && !compareSubVer) return 0
+	else if (!compareSubVer) return -1
+	else if (!inputSubVer) return 1
+
+	const [v1SubType] = inputSubVer.split('.')
+	const [v2SubType] = compareSubVer.split('.')
+	const v1SubVer = inputSubVer.slice(v1SubType.length + 1)
+	const v2SubVer = compareSubVer.slice(v2SubType.length + 1)
+
+	if (v1SubVer && v2SubVer && v1SubType === v2SubType) return compareVersion(v1SubVer, v2SubVer)
 	return 0
 }
 
