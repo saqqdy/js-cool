@@ -1298,6 +1298,9 @@ compareVersion('1.11.0-tag.10', '1.11.0-alpha.1')
 
 compareVersion('1.11.0-tag.10', '1.11.0-tag.1')
 // => 1
+
+compareVersion('1.11.0-release.10', '1.11.0-tag.1')
+// => 1
 ```
 
 - Types:
