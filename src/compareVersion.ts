@@ -1,5 +1,5 @@
 /**
- * Version number size comparison, tag version: rc > beta > alpha > other
+ * Version number size comparison, tag version: rc \> beta \> alpha \> other
  *
  * @example
  * ```js
