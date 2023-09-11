@@ -1277,6 +1277,7 @@ compareVersion('1.11.0', '1.99.0')
 compareVersion('1.0.0.0.0.10', '1.0')
 // => -1
 
+// compare tag version
 compareVersion('1.11.0', '1.11.0-beta.1')
 // => -1
 
@@ -1287,10 +1288,16 @@ compareVersion('1.11.0-beta.10', '1.11.0-beta.10')
 // => 0
 
 compareVersion('1.11.0-alpha.10', '1.11.0-beta.1')
-// => 0
+// => -1
 
-compareVersion('1.11.0-alpha.1', '1.11.0-beta.10')
-// => 0
+compareVersion('1.11.0-alpha.10', '1.11.0-rc.1')
+// => -1
+
+compareVersion('1.11.0-tag.10', '1.11.0-alpha.1')
+// => -1
+
+compareVersion('1.11.0-tag.10', '1.11.0-tag.1')
+// => 1
 ```
 
 - Types:

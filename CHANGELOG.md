@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.09.11 v5.8.0
+
+1. `compareVersion` support tag version [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)
+
 ## 2023.09.06 v5.7.2
 
 1. fix regexp bug of appVersion
