@@ -1,5 +1,5 @@
 /**
- * Version number size comparison
+ * Version number size comparison, tag version: rc > beta > alpha > other
  *
  * @example
  * ```js
@@ -15,6 +15,7 @@
  * compareVersion('1.0.0.0.0.10', '1.0')
  * // => -1
  *
+ * // compare tag version: rc > beta > alpha > other
  * compareVersion('1.11.0', '1.11.0-beta.1')
  * // => -1
  *

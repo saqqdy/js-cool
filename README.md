@@ -1249,7 +1249,7 @@ declare function browserVersion(ua?: string): BrowserVersion | null
 
 > v5.8.0 support compare tag version
 
-Version number size comparison
+Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
 
 - Since: `4.7.0`
 
@@ -1277,7 +1277,7 @@ compareVersion('1.11.0', '1.99.0')
 compareVersion('1.0.0.0.0.10', '1.0')
 // => -1
 
-// compare tag version
+// compare tag version: rc > beta > alpha > other
 compareVersion('1.11.0', '1.11.0-beta.1')
 // => -1
 
