@@ -1,8 +1,12 @@
 # Change logs
 
+## 2023.09.16 v5.8.1
+
+1. `waiting` support throw on timeout [API Docs](https://www.saqqdy.com/js-cool#waiting)
+
 ## 2023.09.11 v5.8.0
 
-1. `compareVersion` support tag version [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)
+1. `compareVersion` support tag version [API Docs](https://www.saqqdy.com/js-cool#compareversion)
 
 ## 2023.09.06 v5.7.2
 
@@ -81,7 +85,7 @@
 
 ## 2023.06.14 v4.7.0
 
-1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)
+1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool#compareversion)
 2. upgrade all packages
 
 ## 2023.06.06 v4.6.0
@@ -90,7 +94,7 @@
 
 ## 2023.06.05 v4.5.0
 
-1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool/functions/inBrowser.html)
+1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool#inbrowser)
 2. some translate work
 3. upgrade all packages
 

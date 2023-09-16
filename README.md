@@ -3295,15 +3295,18 @@ declare function preloader(images: string[]): Record<string, HTMLImageElement>
 
 #### waiting
 
+> v5.8.1 Support throw on timeout
+
 waiting for a while
 
 - Since: `5.5.0`
 
 - Arguments:
 
-| Parameters   | Description                 | Type     | Optional | Required | Default |
-| ------------ | --------------------------- | -------- | -------- | -------- | ------- |
-| milliseconds | waiting time (milliseconds) | `number` | -        | `true`   | -       |
+| Parameters     | Description                 | Type      | Optional | Required | Default |
+| -------------- | --------------------------- | --------- | -------- | -------- | ------- |
+| milliseconds   | waiting time (milliseconds) | `number`  | -        | `true`   | -       |
+| throwOnTimeout | throw on timeout            | `boolean` | -        | `false`  | `false` |
 
 - Returns: `Promise<void>`
 
@@ -3311,12 +3314,15 @@ waiting for a while
 
 ```ts
 waiting(2000)
+
+await waiting(2000, true)
+// reject
 ```
 
 - Types:
 
 ```ts
-declare function waiting(milliseconds: number): Promise<void>
+declare function waiting(milliseconds: number, throwOnTimeout?: boolean): Promise<void>
 ```
 
 #### awaitTo
