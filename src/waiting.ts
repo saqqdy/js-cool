@@ -4,7 +4,7 @@
  * @param milliseconds - waiting time (milliseconds)
  * @param throwOnTimeout - throw on timeout
  */
-const waiting = (milliseconds: number, throwOnTimeout = false) =>
+const waiting = (milliseconds: number, throwOnTimeout = false): Promise<void> =>
 	new Promise((resolve, reject) => setTimeout(throwOnTimeout ? reject : resolve, milliseconds))
 
 export default waiting
