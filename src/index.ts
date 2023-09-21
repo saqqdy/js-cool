@@ -1,10 +1,4 @@
-export type {
-	AnyObject,
-	AnyFunction,
-	ArrayOne,
-	ArrayOneMore,
-	ArrayTwoMore
-} from '../typings/common'
+export type * from './types'
 
 export { default as loadSource } from 'load-source'
 export { default as mountCss } from 'mount-css'
@@ -112,6 +106,7 @@ export { default as getScrollPosition } from './getScrollPosition'
 // tools
 export { default as nextIndex } from './nextIndex'
 export { default as fixNumber } from './fixNumber'
+export { default as mapTemplate } from './mapTemplate'
 export { default as extend, ExtendArrayData, ExtendObjectData, ExtendData } from './extend'
 export { default as delay } from './delay'
 export { default as getType } from './getType'

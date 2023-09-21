@@ -136,6 +136,7 @@ const functionList = {
   // 工具类
   nextIndex, // 返回下一个zIndex值
   fixNumber, // 截取小数点后几位，不足的不补0
+  mapTemplate, // 替换模板字符串的特定数据
   extend, // 深拷贝
   delay, // 防抖节流
   getType, // 获取目标类型

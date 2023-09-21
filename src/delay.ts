@@ -1,4 +1,4 @@
-import type { AnyFunction } from '../typings/common'
+import type { AnyFunction } from './types'
 
 /**
  * debounce & throttle

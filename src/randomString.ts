@@ -1,4 +1,4 @@
-import type { ArrayOneMore } from '../typings/common'
+import type { ArrayOneMore } from './types'
 import randomNumbers from './randomNumbers'
 import shuffle from './shuffle'
 

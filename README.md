@@ -102,6 +102,7 @@ Collection of common JavaScript / TypeScript utilities
     - [Utilities](#utilities)
       - [nextIndex](#nextindex)
       - [fixNumber](#fixnumber)
+      - [mapTemplate](#maptemplate)
       - [extend](#extend)
       - [delay](#delay)
       - [getType](#gettype)
@@ -2191,6 +2192,51 @@ fixNumber('100.8888', 3)
 
 ```ts
 declare function fixNumber(number: string | number, n?: number): number
+```
+
+#### mapTemplate
+
+Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
+
+- Since: `5.9.0`
+
+- Arguments:
+
+| Parameters | Description                   | Type                  | Optional | Required | Default |
+| ---------- | ----------------------------- | --------------------- | -------- | -------- | ------- |
+| tmp        | Template string               | `string`              | -        | `true`   | -       |
+| data       | Template data of map function | `Function`\| `Object` | -        | `true`   | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+const tmp = "My name is ${name}, I'm ${age} years old."
+mapTemplate(tmp, {
+  name: 'saqqdy',
+  age: 18
+})
+// My name is saqqdy, I'm 18 years old.
+
+mapTemplate(tmp, key => ({ name: 'saqqdy', age: 28 })[key])
+// My name is saqqdy, I'm 28 years old.
+
+const tmp1 = "My name is {{name}}, I'm {{age}} years old."
+mapTemplate(tmp1, {
+  name: 'saqqdy',s
+  age: 18
+})
+// My name is saqqdy, I'm 18 years old.
+```
+
+- Types:
+
+```ts
+declare function mapTemplate(
+  tmp: string,
+  data: ((value: string) => unknown) | Record<string, unknown>
+): string
 ```
 
 #### extend

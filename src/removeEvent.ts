@@ -1,4 +1,4 @@
-import type { AnyFunction, AnyObject } from '../typings/common'
+import type { AnyFunction, AnyObject } from './types'
 
 /**
  * removeEvent removes the event delegate created by addEvent

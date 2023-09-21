@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.09.20 v5.9.0
+
+1. new `mapTemplate` function, see: [mapTemplate](https://github.com/saqqdy/js-cool#maptemplate)
+
 ## 2023.09.16 v5.8.1
 
 1. `waiting` support throw on timeout [API Docs](https://www.saqqdy.com/js-cool#waiting)

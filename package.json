@@ -19,14 +19,11 @@
 		"./*": "./*"
 	},
 	"directories": {
-		"lib": "lib",
 		"dist": "dist",
 		"src": "src"
 	},
 	"files": [
-		"lib",
-		"dist",
-		"typings"
+		"dist"
 	],
 	"scripts": {
 		"gen:version": "tscjs scripts/version",

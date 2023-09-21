@@ -75,6 +75,7 @@ import getScrollPosition from './getScrollPosition'
 // tools
 import nextIndex from './nextIndex'
 import fixNumber from './fixNumber'
+import mapTemplate from './mapTemplate'
 import extend from './extend'
 import delay from './delay'
 import getType from './getType'
@@ -148,6 +149,7 @@ export default {
 	extend,
 	fillIPv6,
 	fixNumber,
+	mapTemplate,
 	getAppVersion,
 	appVersion,
 	getCHSLength,

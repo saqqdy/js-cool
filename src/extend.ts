@@ -1,4 +1,4 @@
-import type { ArrayOneMore } from '../typings/common'
+import type { ArrayOneMore } from './types'
 import isArray from './isArray'
 import isPlainObject from './isPlainObject'
 

@@ -1,4 +1,4 @@
-import type { AnyFunction } from '../typings/common'
+import type { AnyFunction } from './types'
 /**
  * Returns true if the provided predicate function returns true for at least one element of a set, otherwise it returns false.
  *

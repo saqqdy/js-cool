@@ -1,4 +1,4 @@
-import type { AnyObject } from '../typings/common'
+import type { AnyObject } from './types'
 import isArray from './isArray'
 
 /**
