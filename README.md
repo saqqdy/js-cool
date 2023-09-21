@@ -2224,7 +2224,7 @@ mapTemplate(tmp, key => ({ name: 'saqqdy', age: 28 })[key])
 
 const tmp1 = "My name is {{name}}, I'm {{age}} years old."
 mapTemplate(tmp1, {
-  name: 'saqqdy',s
+  name: 'saqqdy',
   age: 18
 })
 // My name is saqqdy, I'm 18 years old.
