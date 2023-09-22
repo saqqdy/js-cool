@@ -75,7 +75,7 @@ import getScrollPosition from './getScrollPosition'
 // tools
 import nextIndex from './nextIndex'
 import nextVersion from './nextVersion'
-import promisify from './promisify'
+import promiseFactory from './promiseFactory'
 import fixNumber from './fixNumber'
 import mapTemplate from './mapTemplate'
 import extend from './extend'
@@ -190,7 +190,7 @@ export default {
 	minus,
 	nextIndex,
 	nextVersion,
-	promisify,
+	promiseFactory,
 	waiting,
 	awaitTo,
 	openUrl,

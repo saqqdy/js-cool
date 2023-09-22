@@ -102,7 +102,7 @@ Collection of common JavaScript / TypeScript utilities
     - [Utilities](#utilities)
       - [nextIndex](#nextindex)
       - [nextVersion](#nextversion)
-      - [promisify](#promisify)
+      - [promiseFactory](#promisefactory)
       - [fixNumber](#fixnumber)
       - [mapTemplate](#maptemplate)
       - [extend](#extend)
@@ -2198,7 +2198,7 @@ declare function nextVersion(
 ): string
 ```
 
-#### promisify
+#### promiseFactory
 
 Convert an object to a promise like api
 
@@ -2206,29 +2206,47 @@ Convert an object to a promise like api
 
 - Arguments:
 
-| Parameters | Description     | Type      | Optional | Required | Default |
-| ---------- | --------------- | --------- | -------- | -------- | ------- |
-| target     | target object   | `object`  | -        | `true`   | -       |
-| waiter     | waiter function | `Promise` | -        | `false`  | -       |
+| Parameters | Description       | Type       | Optional | Required | Default |
+| ---------- | ----------------- | ---------- | -------- | -------- | ------- |
+| original   | original object   | `object`   | -        | `true`   | -       |
+| resolver   | resolver function | `Function` | -        | `true`   | -       |
 
-- Returns: `PromiseLike`
+- Returns: `T & PromiseLike<T>`
 
 - Example:
 
 ```ts
-function promise() {
-  const waiter = () => {}
+import { promiseFactory, waiting } from 'js-cool'
 
-  return promisify({}, waiter)
+function promise() {
+  const stats = {
+    value: 100
+  }
+
+  const resolver = () =>
+    new Promise(resolve =>
+      waiting(2000).then(() => {
+        stats.value = 200
+        resolve(stats)
+      })
+    )
+
+  return promiseFactory(stats, resolver)
 }
 
+const res = promise()
+// res => 100
 const res = await promise()
+// res => 200
 ```
 
 - Types:
 
 ```ts
-declare function promisify(target: object, waiter?: () => any): PromiseLike
+declare function promiseFactory<T extends object>(
+  original: T,
+  resolver: () => Promise<any>
+): T & PromiseLike<T>
 ```
 
 #### fixNumber
