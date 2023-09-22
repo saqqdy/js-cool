@@ -135,6 +135,8 @@ const functionList = {
   getScrollPosition, // 获取滑动到顶部和底部 返回'top' 'bottom'，建议使用限流
   // 工具类
   nextIndex, // 返回下一个zIndex值
+  nextVersion, // 返回下一个版本号
+  promisify, // 将一个对象转换为promise like api
   fixNumber, // 截取小数点后几位，不足的不补0
   mapTemplate, // 替换模板字符串的特定数据
   extend, // 深拷贝

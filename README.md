@@ -101,6 +101,8 @@ Collection of common JavaScript / TypeScript utilities
       - [getScrollPosition](#getscrollposition)
     - [Utilities](#utilities)
       - [nextIndex](#nextindex)
+      - [nextVersion](#nextversion)
+      - [promisify](#promisify)
       - [fixNumber](#fixnumber)
       - [mapTemplate](#maptemplate)
       - [extend](#extend)
@@ -2158,6 +2160,75 @@ nextIndex(10, 100) // 100
 
 ```ts
 declare function nextIndex(min?: number, max?: number): number
+```
+
+#### nextVersion
+
+return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
+
+- Since: `5.10.0`
+
+- Arguments:
+
+| Parameters | Description          | Type                                                                                    | Optional | Required | Default |
+| ---------- | -------------------- | --------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| version    | version(like: 1.0.0) | `string`                                                                                | -        | `true`   | -       |
+| type       | version type         | `major` \| `minor` \| `patch` \| `premajor` \| `preminor` \| `prepatch` \| `prerelease` | -        | `false`  | `patch` |
+| preid      | prerelease id        | `string`                                                                                | -        | `false`  | ''      |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+nextVersion('1.2.33') // 1.2.34
+
+nextVersion('1.2.33', 'major') // 2.0.0
+
+nextVersion('1.2.33', 'premajor', 'alpha') // 2.0.0-alpha.1
+```
+
+- Types:
+
+```ts
+declare function nextVersion(
+  version: string,
+  type?: 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease',
+  preid?: string
+): string
+```
+
+#### promisify
+
+Convert an object to a promise like api
+
+- Since: `5.10.0`
+
+- Arguments:
+
+| Parameters | Description     | Type      | Optional | Required | Default |
+| ---------- | --------------- | --------- | -------- | -------- | ------- |
+| target     | target object   | `object`  | -        | `true`   | -       |
+| waiter     | waiter function | `Promise` | -        | `false`  | -       |
+
+- Returns: `PromiseLike`
+
+- Example:
+
+```ts
+function promise() {
+  const waiter = () => {}
+
+  return promisify({}, waiter)
+}
+
+const res = await promise()
+```
+
+- Types:
+
+```ts
+declare function promisify(target: object, waiter?: () => any): PromiseLike
 ```
 
 #### fixNumber

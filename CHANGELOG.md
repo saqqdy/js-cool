@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.09.23 v5.10.0
+
+1. new `nextVersion` function, see: [nextVersion](https://github.com/saqqdy/js-cool#nextversion)
+1. new `promisify` function, see: [promisify](https://github.com/saqqdy/js-cool#promisify)
+
 ## 2023.09.20 v5.9.0
 
 1. new `mapTemplate` function, see: [mapTemplate](https://github.com/saqqdy/js-cool#maptemplate)
