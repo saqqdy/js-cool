@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.10.09 v5.11.0
+
+1. new `getFileType` function, see: [getFileType](https://github.com/saqqdy/js-cool#getfiletype)
+2. upgrade all packages
+
 ## 2023.09.23 v5.10.0
 
 1. new `nextVersion` function, see: [nextVersion](https://github.com/saqqdy/js-cool#nextversion)

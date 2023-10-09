@@ -81,6 +81,7 @@ import mapTemplate from './mapTemplate'
 import extend from './extend'
 import delay from './delay'
 import getType from './getType'
+import getFileType from './getFileType'
 import isPlainObject from './isPlainObject'
 import isDarkMode from './isDarkMode'
 import cleanData from './cleanData'
@@ -172,6 +173,7 @@ export default {
 	fingerprint,
 	getScrollPosition,
 	getType,
+	getFileType,
 	parseUrlParam,
 	spliceUrlParam,
 	getUrlParam,

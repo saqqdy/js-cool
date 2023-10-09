@@ -108,6 +108,7 @@ Collection of common JavaScript / TypeScript utilities
       - [extend](#extend)
       - [delay](#delay)
       - [getType](#gettype)
+      - [getFileType](#getfiletype)
       - [cleanData](#cleandata)
       - [download](#download)
       - [searchObject](#searchobject)
@@ -2456,6 +2457,42 @@ declare function getType<T = any>(
   | 'date'
   | 'regexp'
   | 'null'
+```
+
+#### getFileType
+
+Determine file type based on link suffix
+
+- Since: `5.11.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | file url    | `string` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+getFileType('/name.png')
+// { "suffix": "png", "type": "image" }
+
+getFileType('/name.PDF')
+// { "suffix": "pdf", "type": "pdf" }
+
+getFileType('/name.xyz')
+// { "suffix": "xyz", "type": "other" }
+```
+
+- Types:
+
+```ts
+declare function getFileType(url: string): {
+  suffix: string
+  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
+}
 ```
 
 #### cleanData
