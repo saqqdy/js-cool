@@ -5,7 +5,6 @@ import isArray from './isArray'
 const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 	// Identical objects are equal. `0 === -0`, but they aren't identical.
 	// See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
-	// @ts-expect-error: fix in next version
 	if (a === b) return a !== 0 || 1 / a === 1 / b
 	// A strict comparison is necessary because `null == undefined`.
 	if (a == null || b == null) return a === b
