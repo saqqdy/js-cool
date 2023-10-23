@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.10.09 v5.12.0
+
+1. new `isEqual` function, see: [isEqual](https://github.com/saqqdy/js-cool#isequal)
+2. upgrade all packages
+
 ## 2023.10.09 v5.11.0
 
 1. new `getFileType` function, see: [getFileType](https://github.com/saqqdy/js-cool#getfiletype)

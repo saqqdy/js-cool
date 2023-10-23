@@ -27,6 +27,7 @@ import cutCHSString from './cutCHSString'
 import isDigitals from './isDigitals'
 import isExitsFunction from './isExitsFunction'
 import isExitsVariable from './isExitsVariable'
+import isEqual from './isEqual'
 import isWindow from './isWindow'
 import isObject from './isObject'
 import isArray from './isArray'
@@ -182,6 +183,7 @@ export default {
 	isDigitals,
 	isExitsFunction,
 	isExitsVariable,
+	isEqual,
 	isWindow,
 	isObject,
 	isArray,

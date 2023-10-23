@@ -56,6 +56,7 @@ Collection of common JavaScript / TypeScript utilities
       - [isDigitals](#isdigitals)
       - [isExitsFunction](#isexitsfunction)
       - [isExitsVariable](#isexitsvariable)
+      - [isEqual](#isequal)
       - [isWindow](#iswindow)
       - [isPlainObject](#isplainobject)
       - [isDarkMode](#isdarkmode)
@@ -844,6 +845,40 @@ isExitsVariable('window') // true
 
 ```ts
 declare function isExitsVariable(name: string): boolean
+```
+
+#### isEqual
+
+Determine if 2 objects are equal
+
+- Since: `5.12.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| a          | source      | `any` | -        | `true`   | -       |
+| b          | compare     | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isEqual({ a: 22, b: {} }, { b: {}, a: 22 })
+// true
+
+isEqual([1, 2], [2, 1])
+// false
+
+isEqual(NaN, NaN)
+// true
+```
+
+- Types:
+
+```ts
+declare function isEqual<T, P>(a: T, b: P): boolean
 ```
 
 #### isWindow

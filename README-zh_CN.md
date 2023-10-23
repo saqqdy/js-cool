@@ -90,6 +90,7 @@ const functionList = {
   isDigitals, // 是否为由数字组成的字符串
   isExitsFunction, // 是否存在指定函数
   isExitsVariable, // 是否存在指定变量
+  isEqual, // 比较2个对象是否相等
   isWindow, // 是否window对象
   isPlainObject, // 是否plainObject
   isDarkMode, // 是否暗色模式

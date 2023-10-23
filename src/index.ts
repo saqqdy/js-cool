@@ -49,6 +49,7 @@ export { default as cutCHSString } from './cutCHSString'
 // Get the status of
 export { default as isDigitals } from './isDigitals'
 export { default as isExitsFunction } from './isExitsFunction'
+export { default as isEqual } from './isEqual'
 export { default as isExitsVariable } from './isExitsVariable'
 export { default as isWindow } from './isWindow'
 export {
