@@ -141,6 +141,18 @@ Collection of common JavaScript / TypeScript utilities
       - [preloader](#preloader)
       - [waiting](#waiting)
       - [awaitTo](#awaitto)
+    - [Blob arrayBuffer base64 file blobUrl](#blob-arraybuffer-base64-file-bloburl)
+      - [arrayBufferToBase64](#arraybuffertobase64)
+      - [arrayBufferToBlob](#arraybuffertoblob)
+      - [base64ToArrayBuffer](#base64toarraybuffer)
+      - [base64ToBlob](#base64toblob)
+      - [base64ToFile](#base64tofile)
+      - [blobToArrayBuffer](#blobtoarraybuffer)
+      - [blobToBase64](#blobtobase64)
+      - [blobToUrl](#blobtourl)
+      - [fileToBase64](#filetobase64)
+      - [svgToBlob](#svgtoblob)
+      - [urlToBlob](#urltoblob)
   - [Support & Issues](#support--issues)
   - [License](#license)
 
@@ -3570,6 +3582,305 @@ const [err, data] = await to([promise1, promise2])
 
 ```ts
 declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
+```
+
+### Blob arrayBuffer base64 file blobUrl
+
+#### arrayBufferToBase64
+
+arrayBuffer转Base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+arrayBufferToBase64()
+// result
+```
+
+- Types:
+
+```ts
+declare function arrayBufferToBase64<T>(source: T): any
+```
+
+#### arrayBufferToBlob
+
+arrayBuffer转Blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+arrayBufferToBlob()
+// result
+```
+
+- Types:
+
+```ts
+declare function arrayBufferToBlob<T>(source: T): any
+```
+
+#### base64ToArrayBuffer
+
+base64转ArrayBuffer
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+base64ToArrayBuffer()
+// result
+```
+
+- Types:
+
+```ts
+declare function base64ToArrayBuffer<T>(source: T): any
+```
+
+#### base64ToBlob
+
+base64转Blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+base64ToBlob()
+// result
+```
+
+- Types:
+
+```ts
+declare function base64ToBlob<T>(source: T): any
+```
+
+#### base64ToFile
+
+base64转File
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+base64ToFile()
+// result
+```
+
+- Types:
+
+```ts
+declare function base64ToFile<T>(source: T): any
+```
+
+#### blobToArrayBuffer
+
+blob转ArrayBuffer
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+blobToArrayBuffer()
+// result
+```
+
+- Types:
+
+```ts
+declare function blobToArrayBuffer<T>(source: T): any
+```
+
+#### blobToBase64
+
+blob转Base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+blobToBase64()
+// result
+```
+
+- Types:
+
+```ts
+declare function blobToBase64<T>(source: T): any
+```
+
+#### blobToUrl
+
+blob转Url
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+blobToUrl()
+// result
+```
+
+- Types:
+
+```ts
+declare function blobToUrl<T>(source: T): any
+```
+
+#### fileToBase64
+
+file转Base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+fileToBase64()
+// result
+```
+
+- Types:
+
+```ts
+declare function fileToBase64<T>(source: T): any
+```
+
+#### svgToBlob
+
+svg转Blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+svgToBlob()
+// result
+```
+
+- Types:
+
+```ts
+declare function svgToBlob<T>(source: T): any
+```
+
+#### urlToBlob
+
+url转Blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| source     | source data | `String` | -        | `false`  | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+urlToBlob()
+// result
+```
+
+- Types:
+
+```ts
+declare function urlToBlob<T>(source: T): any
 ```
 
 ## Support & Issues

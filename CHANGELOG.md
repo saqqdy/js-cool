@@ -1,5 +1,19 @@
 # Change logs
 
+## 2023.10.27 v5.13.0
+
+1. new `arrayBufferToBase64` function, see: [arrayBufferToBase64](https://github.com/saqqdy/js-cool#arraybuffertobase64)
+2. new `arrayBufferToBlob` function, see: [arrayBufferToBlob](https://github.com/saqqdy/js-cool#arraybuffertoblob)
+3. new `base64ToArrayBuffer` function, see: [base64ToArrayBuffer](https://github.com/saqqdy/js-cool#base64toarraybuffer)
+4. new `base64ToBlob` function, see: [base64ToBlob](https://github.com/saqqdy/js-cool#base64toblob)
+5. new `base64ToFile` function, see: [base64ToFile](https://github.com/saqqdy/js-cool#base64tofile)
+6. new `blobToArrayBuffer` function, see: [blobToArrayBuffer](https://github.com/saqqdy/js-cool#blobtoarraybuffer)
+7. new `blobToBase64` function, see: [blobToBase64](https://github.com/saqqdy/js-cool#blobtobase64)
+8. new `blobToUrl` function, see: [blobToUrl](https://github.com/saqqdy/js-cool#blobtourl)
+9. new `fileToBase64` function, see: [fileToBase64](https://github.com/saqqdy/js-cool#filetobase64)
+10. new `svgToBlob` function, see: [svgToBlob](https://github.com/saqqdy/js-cool#svgtoblob)
+11. new `urlToBlob` function, see: [urlToBlob](https://github.com/saqqdy/js-cool#urltoblob)
+
 ## 2023.10.09 v5.12.0
 
 1. new `isEqual` function, see: [isEqual](https://github.com/saqqdy/js-cool#isequal)

@@ -111,6 +111,19 @@ import preloader from './preloader'
 import waiting from './waiting'
 import awaitTo from './awaitTo'
 
+// Blob arrayBuffer base64 file blobUrl
+import arrayBufferToBase64 from './arrayBufferToBase64'
+import arrayBufferToBlob from './arrayBufferToBlob'
+import base64ToArrayBuffer from './base64ToArrayBuffer'
+import base64ToBlob from './base64ToBlob'
+import base64ToFile from './base64ToFile'
+import blobToArrayBuffer from './blobToArrayBuffer'
+import blobToBase64 from './blobToBase64'
+import blobToUrl from './blobToUrl'
+import fileToBase64 from './fileToBase64'
+import svgToBlob from './svgToBlob'
+import urlToBlob from './urlToBlob'
+
 import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 
 export default {
@@ -197,6 +210,17 @@ export default {
 	promiseFactory,
 	waiting,
 	awaitTo,
+	arrayBufferToBase64,
+	arrayBufferToBlob,
+	base64ToArrayBuffer,
+	base64ToBlob,
+	base64ToFile,
+	blobToArrayBuffer,
+	blobToBase64,
+	blobToUrl,
+	fileToBase64,
+	svgToBlob,
+	urlToBlob,
 	openUrl,
 	copy,
 	pattern,

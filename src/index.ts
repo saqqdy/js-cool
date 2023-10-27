@@ -140,5 +140,18 @@ export { default as preloader } from './preloader'
 export { default as waiting } from './waiting'
 export { default as awaitTo } from './awaitTo'
 
+// Blob arrayBuffer base64 file blobUrl
+export { default as arrayBufferToBase64 } from './arrayBufferToBase64'
+export { default as arrayBufferToBlob } from './arrayBufferToBlob'
+export { default as base64ToArrayBuffer } from './base64ToArrayBuffer'
+export { default as base64ToBlob } from './base64ToBlob'
+export { default as base64ToFile } from './base64ToFile'
+export { default as blobToArrayBuffer } from './blobToArrayBuffer'
+export { default as blobToBase64 } from './blobToBase64'
+export { default as blobToUrl } from './blobToUrl'
+export { default as fileToBase64 } from './fileToBase64'
+export { default as svgToBlob } from './svgToBlob'
+export { default as urlToBlob } from './urlToBlob'
+
 export { default } from './index.default'
 export const version = '__VERSION__' as string

@@ -174,7 +174,19 @@ const functionList = {
   mountStyle, // 动态加载css样式
   preloader, // 图片预加载
   waiting, // 等待一段时间
-  awaitTo // 替代try catch处理promise错误
+  awaitTo, // 替代try catch处理promise错误
+  // 二进制
+  arrayBufferToBase64, // arrayBuffer转Base64
+  arrayBufferToBlob, // arrayBuffer转Blob
+  base64ToArrayBuffer, // base64转ArrayBuffer
+  base64ToBlob, // base64转Blob
+  base64ToFile, // base64转File
+  blobToArrayBuffer, // blob转ArrayBuffer
+  blobToBase64, // blob转Base64
+  blobToUrl, // blob转Url
+  fileToBase64, // file转Base64
+  svgToBlob, // svg转Blob
+  urlToBlob // url转Blob
 }
 ```
 
