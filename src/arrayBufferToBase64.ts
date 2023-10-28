@@ -7,7 +7,7 @@
  */
 function arrayBufferToBase64(input: ArrayBuffer, mime = 'image/png') {
 	const u8Array = String.fromCharCode(...new Uint8Array(input))
-	return `data:${mime};base64,${window.btoa(u8Array)}`
+	return `data:${mime};base64,${btoa(u8Array)}`
 }
 
 export default arrayBufferToBase64

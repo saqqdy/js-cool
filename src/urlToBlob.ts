@@ -6,7 +6,7 @@
  */
 function urlToBlob(input: string): Promise<Blob | null> {
 	return new Promise((resolve, reject) => {
-		if (!window.fetch) {
+		if (!fetch) {
 			const xhr = new XMLHttpRequest()
 			xhr.open('get', input, true)
 			xhr.responseType = 'blob'

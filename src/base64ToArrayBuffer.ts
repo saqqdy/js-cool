@@ -16,7 +16,7 @@ function base64ToArrayBuffer(input: string): ArrayBuffer {
 	}
 
 	if (inBrowser) {
-		const bstr = window.atob(data)
+		const bstr = atob(data)
 		let len = bstr.length
 		const u8Array = new Uint8Array(len)
 		while (len--) {
