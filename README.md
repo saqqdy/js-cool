@@ -3613,7 +3613,7 @@ declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefin
 
 #### arrayBufferToBase64
 
-arrayBuffer转Base64
+arrayBuffer to base64
 
 - Since: `5.13.0`
 
@@ -3641,7 +3641,7 @@ declare function arrayBufferToBase64(input: ArrayBuffer, mime?: string): string
 
 #### arrayBufferToBlob
 
-arrayBuffer转Blob
+arrayBuffer to blob
 
 - Since: `5.13.0`
 
@@ -3669,7 +3669,7 @@ declare function arrayBufferToBlob(input: ArrayBuffer, mime?: string): Blob
 
 #### base64ToArrayBuffer
 
-base64转ArrayBuffer
+base64 to arrayBuffer
 
 - Since: `5.13.0`
 
@@ -3696,7 +3696,7 @@ declare function base64ToArrayBuffer(input: string): ArrayBuffer
 
 #### base64ToBlob
 
-base64转Blob
+base64 to blob
 
 - Since: `5.13.0`
 
@@ -3723,7 +3723,7 @@ declare function base64ToBlob(input: string): Blob
 
 #### base64ToFile
 
-base64转File
+base64 to file
 
 - Since: `5.13.0`
 
@@ -3751,7 +3751,7 @@ declare function base64ToFile(input: string, fileName: string): File
 
 #### blobToArrayBuffer
 
-blob转ArrayBuffer
+blob to arrayBuffer
 
 - Since: `5.13.0`
 
@@ -3779,7 +3779,7 @@ declare function blobToArrayBuffer(input: Blob): Promise<ArrayBuffer | null>
 
 #### blobToBase64
 
-blob转Base64
+blob to base64
 
 - Since: `5.13.0`
 
@@ -3807,7 +3807,7 @@ declare function blobToBase64(input: Blob): Promise<string | null>
 
 #### blobToUrl
 
-blob转Url
+blob to url
 
 - Since: `5.13.0`
 
@@ -3834,7 +3834,7 @@ declare function blobToUrl(input: Blob): string
 
 #### fileToBase64
 
-file转Base64
+file to base64
 
 - Since: `5.13.0`
 
@@ -3862,7 +3862,7 @@ declare function fileToBase64(input: File): Promise<string | null>
 
 #### svgToBlob
 
-svg转Blob
+svg to blob
 
 - Since: `5.13.0`
 
@@ -3889,7 +3889,7 @@ declare function svgToBlob(input: string): Blob
 
 #### urlToBlob
 
-url转Blob
+url to blob
 
 - Since: `5.13.0`
 
