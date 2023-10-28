@@ -13,6 +13,7 @@
 9. new `fileToBase64` function, see: [fileToBase64](https://github.com/saqqdy/js-cool#filetobase64)
 10. new `svgToBlob` function, see: [svgToBlob](https://github.com/saqqdy/js-cool#svgtoblob)
 11. new `urlToBlob` function, see: [urlToBlob](https://github.com/saqqdy/js-cool#urltoblob)
+12. new `inNodeJs` function, see: [inNodeJs](https://github.com/saqqdy/js-cool#innodejs)
 
 ## 2023.10.09 v5.12.0
 

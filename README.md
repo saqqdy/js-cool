@@ -64,6 +64,7 @@ Collection of common JavaScript / TypeScript utilities
       - [isArray](#isarray)
       - [isIterable](#isiterable)
       - [inBrowser](#inbrowser)
+      - [inNodeJs](#innodejs)
       - [windowSize](#windowsize)
       - [getAppVersion](#getappversion)
       - [appVersion](#appversion)
@@ -1081,6 +1082,30 @@ function test() {
 
 ```ts
 declare const inBrowser: boolean
+```
+
+#### inNodeJs
+
+Determine if it is running on node.js
+
+- Since: `5.13.0`
+
+- Arguments: `none`
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+if (inNodeJs) {
+  //
+}
+```
+
+- Types:
+
+```ts
+declare const inNodeJs: boolean
 ```
 
 #### windowSize

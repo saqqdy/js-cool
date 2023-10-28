@@ -98,6 +98,7 @@ const functionList = {
   isArray, // 判断是否数组
   isIterable, // 判断是否可迭代对象
   inBrowser, // 判断是否在浏览器端运行
+  inNodeJs, // 判断是否在nodejs环境运行
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号(deprecated)
   appVersion, // 获取APP版本号
