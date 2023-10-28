@@ -1,11 +1,13 @@
 /**
- * String, number to base64
+ * arrayBuffer to base64
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - arrayBuffer
+ * @param mime - image mime, default: image/png
+ * @returns - base64
  */
-function arrayBufferToBase64(input: string) {
-	//
+function arrayBufferToBase64(input: ArrayBuffer, mime = 'image/png') {
+	const u8Array = String.fromCharCode(...new Uint8Array(input))
+	return `data:${mime};base64,${window.btoa(u8Array)}`
 }
 
 export default arrayBufferToBase64

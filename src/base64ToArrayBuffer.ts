@@ -1,11 +1,30 @@
+import inBrowser from './inBrowser'
+
 /**
- * String, number to base64
+ * base64 to arrayBuffer
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - base64 string
+ * @returns - arrayBuffer
  */
-function base64ToArrayBuffer(input: string) {
-	//
+function base64ToArrayBuffer(input: string): ArrayBuffer {
+	let [pre, data] = input.split(',')
+
+	if (!pre) throw new Error('Not a valid base64')
+	else if (!data) {
+		data = pre
+		pre = ''
+	}
+
+	if (inBrowser) {
+		const bstr = window.atob(data)
+		let len = bstr.length
+		const u8Array = new Uint8Array(len)
+		while (len--) {
+			u8Array[len] = bstr.charCodeAt(len)
+		}
+		return u8Array
+	}
+	return Buffer.from(data, 'base64')
 }
 
 export default base64ToArrayBuffer

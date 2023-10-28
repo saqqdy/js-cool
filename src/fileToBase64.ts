@@ -1,11 +1,13 @@
+import blobToBase64 from './blobToBase64'
+
 /**
- * String, number to base64
+ * file to base64
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - file data
+ * @returns - base64 string
  */
-function fileToBase64(input: string) {
-	//
+function fileToBase64(input: File): Promise<string | null> {
+	return blobToBase64(input)
 }
 
 export default fileToBase64

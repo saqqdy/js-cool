@@ -1,11 +1,12 @@
 /**
- * String, number to base64
+ * arrayBuffer to blob
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - arrayBuffer
+ * @param mime - image mime, default: image/png
+ * @returns - blob
  */
-function arrayBufferToBlob(input: string) {
-	//
+function arrayBufferToBlob(input: ArrayBuffer, mime = 'image/png') {
+	return new Blob([input], { type: mime })
 }
 
 export default arrayBufferToBlob

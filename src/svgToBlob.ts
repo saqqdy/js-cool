@@ -1,11 +1,11 @@
 /**
- * String, number to base64
+ * svg to blob
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - svg string
+ * @returns - blob
  */
-function svgToBlob(input: string) {
-	//
+function svgToBlob(input: string): Blob {
+	return new Blob([input], { type: 'image/svg+xml' })
 }
 
 export default svgToBlob

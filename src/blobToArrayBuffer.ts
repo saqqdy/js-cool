@@ -1,11 +1,16 @@
 /**
- * String, number to base64
+ * blob to arrayBuffer
  *
- * @param input - the string to be encoded
- * @returns - the BASE64 encoding
+ * @param input - blob data
+ * @returns - arrayBuffer
  */
-function blobToArrayBuffer(input: string) {
-	//
+function blobToArrayBuffer(input: Blob): Promise<ArrayBuffer | null> {
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader()
+		reader.onload = () => resolve(reader.result as ArrayBuffer)
+		reader.onerror = reject
+		reader.readAsArrayBuffer(input)
+	})
 }
 
 export default blobToArrayBuffer

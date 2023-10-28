@@ -1,8 +1,8 @@
 {
 	"name": "js-cool",
 	"description": "Collection of common JavaScript / TypeScript utilities",
-	"version": "5.12.0",
-	"packageManager": "pnpm@8.8.0",
+	"version": "5.13.0",
+	"packageManager": "pnpm@8.9.2",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm-bundler.js",
 	"browser": "dist/index.esm-browser.js",
