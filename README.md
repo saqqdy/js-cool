@@ -3619,23 +3619,24 @@ arrayBuffer转Base64
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description      | Type          | Optional | Required | Default     |
+| ---------- | ---------------- | ------------- | -------- | -------- | ----------- |
+| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -           |
+| mime       | image mime       | `String`      | -        | `false`  | `image/png` |
 
-- Returns: `Object`
+- Returns: `String`
 
 - Example:
 
 ```ts
-arrayBufferToBase64()
-// result
+arrayBufferToBase64(arrayBuffer, 'image/png')
+// data:image/png;base64,xxxxxxxxxxxx
 ```
 
 - Types:
 
 ```ts
-declare function arrayBufferToBase64<T>(source: T): any
+declare function arrayBufferToBase64(input: ArrayBuffer, mime?: string): string
 ```
 
 #### arrayBufferToBlob
@@ -3646,23 +3647,24 @@ arrayBuffer转Blob
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description      | Type          | Optional | Required | Default     |
+| ---------- | ---------------- | ------------- | -------- | -------- | ----------- |
+| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -           |
+| mime       | image mime       | `String`      | -        | `false`  | `image/png` |
 
-- Returns: `Object`
+- Returns: `Blob`
 
 - Example:
 
 ```ts
-arrayBufferToBlob()
-// result
+arrayBufferToBase64(arrayBuffer, 'image/png')
+// Blob
 ```
 
 - Types:
 
 ```ts
-declare function arrayBufferToBlob<T>(source: T): any
+declare function arrayBufferToBlob(input: ArrayBuffer, mime?: string): Blob
 ```
 
 #### base64ToArrayBuffer
@@ -3673,23 +3675,23 @@ base64转ArrayBuffer
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `ArrayBuffer`
 
 - Example:
 
 ```ts
-base64ToArrayBuffer()
-// result
+base64ToArrayBuffer(base64)
+// ArrayBuffer
 ```
 
 - Types:
 
 ```ts
-declare function base64ToArrayBuffer<T>(source: T): any
+declare function base64ToArrayBuffer(input: string): ArrayBuffer
 ```
 
 #### base64ToBlob
@@ -3700,23 +3702,23 @@ base64转Blob
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `Blob`
 
 - Example:
 
 ```ts
-base64ToBlob()
-// result
+base64ToBlob(base64)
+// Blob
 ```
 
 - Types:
 
 ```ts
-declare function base64ToBlob<T>(source: T): any
+declare function base64ToBlob(input: string): Blob
 ```
 
 #### base64ToFile
@@ -3727,23 +3729,24 @@ base64转File
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
+| fileName   | file name     | `String` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `File`
 
 - Example:
 
 ```ts
-base64ToFile()
-// result
+base64ToFile(base64, 'image.png')
+// File
 ```
 
 - Types:
 
 ```ts
-declare function base64ToFile<T>(source: T): any
+declare function base64ToFile(input: string, fileName: string): File
 ```
 
 #### blobToArrayBuffer
@@ -3754,23 +3757,24 @@ blob转ArrayBuffer
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `ArrayBuffer`
 
 - Example:
 
 ```ts
-blobToArrayBuffer()
-// result
+blobToArrayBuffer(blob).then(data => {
+  // ArrayBuffer
+})
 ```
 
 - Types:
 
 ```ts
-declare function blobToArrayBuffer<T>(source: T): any
+declare function blobToArrayBuffer(input: Blob): Promise<ArrayBuffer | null>
 ```
 
 #### blobToBase64
@@ -3781,23 +3785,24 @@ blob转Base64
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `String`
 
 - Example:
 
 ```ts
-blobToBase64()
-// result
+blobToBase64(blob).then(data => {
+  // data:image/png;base64,xxxxxxxxxxxx
+})
 ```
 
 - Types:
 
 ```ts
-declare function blobToBase64<T>(source: T): any
+declare function blobToBase64(input: Blob): Promise<string | null>
 ```
 
 #### blobToUrl
@@ -3808,23 +3813,23 @@ blob转Url
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
 
 - Returns: `Object`
 
 - Example:
 
 ```ts
-blobToUrl()
-// result
+blobToUrl(blob)
+// blob:xxxxxxx
 ```
 
 - Types:
 
 ```ts
-declare function blobToUrl<T>(source: T): any
+declare function blobToUrl(input: Blob): string
 ```
 
 #### fileToBase64
@@ -3835,23 +3840,24 @@ file转Base64
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | file data   | `File` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `String`
 
 - Example:
 
 ```ts
-fileToBase64()
-// result
+fileToBase64(file).then(data => {
+  // data:image/png;base64,xxxxxxxxxxxx
+})
 ```
 
 - Types:
 
 ```ts
-declare function fileToBase64<T>(source: T): any
+declare function fileToBase64(input: File): Promise<string | null>
 ```
 
 #### svgToBlob
@@ -3864,21 +3870,21 @@ svg转Blob
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| input      | svg string  | `String` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `Blob`
 
 - Example:
 
 ```ts
-svgToBlob()
-// result
+svgToBlob(svg)
+// Blob
 ```
 
 - Types:
 
 ```ts
-declare function svgToBlob<T>(source: T): any
+declare function svgToBlob(input: string): Blob
 ```
 
 #### urlToBlob
@@ -3891,21 +3897,22 @@ url转Blob
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| source     | source data | `String` | -        | `false`  | -       |
+| input      | url         | `String` | -        | `true`   | -       |
 
-- Returns: `Object`
+- Returns: `Blob`
 
 - Example:
 
 ```ts
-urlToBlob()
-// result
+urlToBlob(url).then(blob => {
+  // Blob
+})
 ```
 
 - Types:
 
 ```ts
-declare function urlToBlob<T>(source: T): any
+declare function urlToBlob(input: string): Promise<Blob | null>
 ```
 
 ## Support & Issues
