@@ -1,6 +1,7 @@
 /**
  * Sort Chinese by Chinese phonetic alphabet
  *
+ * @since 5.14.0
  * @example
  * ```js
  * sortPinyin('/name.png')

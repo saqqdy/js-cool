@@ -1,6 +1,7 @@
 /**
  * Sorter factory function
  *
+ * @since 5.14.0
  * @example
  * ```js
  * sorter('/name.png')
