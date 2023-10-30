@@ -111,6 +111,7 @@ Collection of common JavaScript / TypeScript utilities
       - [delay](#delay)
       - [getType](#gettype)
       - [getFileType](#getfiletype)
+      - [sortPinyin](#sortpinyin)
       - [cleanData](#cleandata)
       - [download](#download)
       - [searchObject](#searchobject)
@@ -2562,6 +2563,78 @@ getFileType('/name.xyz')
 
 ```ts
 declare function getFileType(url: string): {
+  suffix: string
+  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
+}
+```
+
+#### sorter
+
+Sorter factory function
+
+- Since: `5.14.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | file url    | `string` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+sorter('/name.png')
+// { "suffix": "png", "type": "image" }
+
+sorter('/name.PDF')
+// { "suffix": "pdf", "type": "pdf" }
+
+sorter('/name.xyz')
+// { "suffix": "xyz", "type": "other" }
+```
+
+- Types:
+
+```ts
+declare function sorter(url: string): {
+  suffix: string
+  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
+}
+```
+
+#### sortPinyin
+
+Sort Chinese by Chinese phonetic alphabet
+
+- Since: `5.14.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | file url    | `string` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+sortPinyin('/name.png')
+// { "suffix": "png", "type": "image" }
+
+sortPinyin('/name.PDF')
+// { "suffix": "pdf", "type": "pdf" }
+
+sortPinyin('/name.xyz')
+// { "suffix": "xyz", "type": "other" }
+```
+
+- Types:
+
+```ts
+declare function sortPinyin(url: string): {
   suffix: string
   type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
 }

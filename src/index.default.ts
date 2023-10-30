@@ -84,6 +84,8 @@ import extend from './extend'
 import delay from './delay'
 import getType from './getType'
 import getFileType from './getFileType'
+import sorter from './sorter'
+import sortPinyin from './sortPinyin'
 import isPlainObject from './isPlainObject'
 import isDarkMode from './isDarkMode'
 import cleanData from './cleanData'
@@ -189,6 +191,8 @@ export default {
 	getScrollPosition,
 	getType,
 	getFileType,
+	sorter,
+	sortPinyin,
 	parseUrlParam,
 	spliceUrlParam,
 	getUrlParam,

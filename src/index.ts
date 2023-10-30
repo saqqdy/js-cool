@@ -115,6 +115,8 @@ export { default as extend, ExtendArrayData, ExtendObjectData, ExtendData } from
 export { default as delay } from './delay'
 export { default as getType } from './getType'
 export { default as getFileType } from './getFileType'
+export { default as sorter } from './sorter'
+export { default as sortPinyin } from './sortPinyin'
 export { default as cleanData } from './cleanData'
 export { default as searchObject, type SearchKeySet } from './searchObject'
 export { default as openUrl } from './openUrl'

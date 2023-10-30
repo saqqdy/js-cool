@@ -145,6 +145,8 @@ const functionList = {
   delay, // 防抖节流
   getType, // 获取目标类型
   getFileType, // 根据链接后缀判断文件类型
+  sorter, // 排序工厂函数
+  sortPinyin, // 中文按拼音排序
   cleanData, // 清洗数据
   download, // 文件下载
   searchObject, // 对象查找

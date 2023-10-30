@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.10.31 v5.14.0
+
+1. new `sorter` function, see: [sorter](https://github.com/saqqdy/js-cool#sorter)
+2. new `sortPinyin` function, see: [sortPinyin](https://github.com/saqqdy/js-cool#sortpinyin)
+
 ## 2023.10.27 v5.13.0
 
 1. new `arrayBufferToBase64` function, see: [arrayBufferToBase64](https://github.com/saqqdy/js-cool#arraybuffertobase64)
