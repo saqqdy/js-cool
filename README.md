@@ -2576,32 +2576,35 @@ Sorter factory function
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| url        | file url    | `string` | -        | `true`   | -       |
+| Parameters | Description                                                      | Type                   | Optional | Required | Default |
+| ---------- | ---------------------------------------------------------------- | ---------------------- | -------- | -------- | ------- |
+| locales    | A string with a BCP 47 language tag, or an array of such strings | `string` `Array`       | -        | `false`  | -       |
+| options    | An object adjusting the output format.                           | `Intl.CollatorOptions` | -        | `false`  | -       |
 
-- Returns: `object`
+- Returns: `Function`
 
 - Example:
 
 ```ts
-sorter('/name.png')
-// { "suffix": "png", "type": "image" }
+const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
 
-sorter('/name.PDF')
-// { "suffix": "pdf", "type": "pdf" }
-
-sorter('/name.xyz')
-// { "suffix": "xyz", "type": "other" }
+items.sort(
+  sorter('zh-Hans-CN', {
+    ignorePunctuation: true,
+    sensitivity: 'variant',
+    numeric: true
+  })
+)
+// [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
 ```
 
 - Types:
 
 ```ts
-declare function sorter(url: string): {
-  suffix: string
-  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
-}
+declare function sorter(
+  locales?: string | string[],
+  options?: Intl.CollatorOptions
+): <T = string, P = string>(a: T, b: P) => number
 ```
 
 #### sortPinyin
@@ -2612,32 +2615,34 @@ Sort Chinese by Chinese phonetic alphabet
 
 - Arguments:
 
-| Parameters | Description | Type     | Optional | Required | Default |
-| ---------- | ----------- | -------- | -------- | -------- | ------- |
-| url        | file url    | `string` | -        | `true`   | -       |
+| Parameters | Description                            | Type                   | Optional | Required | Default |
+| ---------- | -------------------------------------- | ---------------------- | -------- | -------- | ------- |
+| a          | The first element for comparison.      | `any`               | -        | `true`   | -       |
+| b          | The second element for comparison.     | `any`               | -        | `true`   | -       |
+| options    | An object adjusting the output format. | `Intl.CollatorOptions` | -        | `false`  | -       |
 
-- Returns: `object`
+- Returns: `number`
 
 - Example:
 
 ```ts
-sortPinyin('/name.png')
-// { "suffix": "png", "type": "image" }
+const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
 
-sortPinyin('/name.PDF')
-// { "suffix": "pdf", "type": "pdf" }
+items.sort(sortPinyin)
+// [ ",11", 0, "10", 13, 3, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
 
-sortPinyin('/name.xyz')
-// { "suffix": "xyz", "type": "other" }
+items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric: true }))
+// [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
 ```
 
 - Types:
 
 ```ts
-declare function sortPinyin(url: string): {
-  suffix: string
-  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
-}
+declare function sortPinyin<T = string, P = string>(
+  a: T,
+  b: P,
+  options?: Intl.CollatorOptions
+): number
 ```
 
 #### cleanData
