@@ -4,6 +4,7 @@
 
 1. new `sorter` function, see: [sorter](https://github.com/saqqdy/js-cool#sorter)
 2. new `sortPinyin` function, see: [sortPinyin](https://github.com/saqqdy/js-cool#sortpinyin)
+3. upgrade all packages
 
 ## 2023.10.27 v5.13.0
 
