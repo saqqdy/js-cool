@@ -2618,8 +2618,8 @@ Sort Chinese by Chinese phonetic alphabet
 
 | Parameters | Description                            | Type                   | Optional | Required | Default |
 | ---------- | -------------------------------------- | ---------------------- | -------- | -------- | ------- |
-| a          | The first element for comparison.      | `any`               | -        | `true`   | -       |
-| b          | The second element for comparison.     | `any`               | -        | `true`   | -       |
+| a          | The first element for comparison.      | `any`                  | -        | `true`   | -       |
+| b          | The second element for comparison.     | `any`                  | -        | `true`   | -       |
 | options    | An object adjusting the output format. | `Intl.CollatorOptions` | -        | `false`  | -       |
 
 - Returns: `number`
