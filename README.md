@@ -111,6 +111,7 @@ Collection of common JavaScript / TypeScript utilities
       - [delay](#delay)
       - [getType](#gettype)
       - [getFileType](#getfiletype)
+      - [sorter](#sorter)
       - [sortPinyin](#sortpinyin)
       - [cleanData](#cleandata)
       - [download](#download)
