@@ -12,6 +12,7 @@
  * // enable samesite
  * setCookie('number', 666, 20, '/', false)
  * ```
+ * @since 1.0.2
  * @param name - cookie name
  * @param value - Set the value to be stored, either as an object or as a string
  * @param seconds - cookie validity default 1 day

@@ -115,6 +115,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
  * isEqual(NaN, NaN)
  * // true
  * ```
+ * @since 5.12.0
  * @param a - source
  * @param b - compare
  * @returns - a equals to b

@@ -3,7 +3,6 @@ import sorter from './sorter'
 /**
  * Sort Chinese by Chinese phonetic alphabet
  *
- * @since 5.14.0
  * @example
  * ```js
  * const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
@@ -14,10 +13,11 @@ import sorter from './sorter'
  * items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric:true }))
  * // [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
  * ```
+ * @since 5.14.0
  * @param a - The first element for comparison.
  * @param b - The second element for comparison.
  * @param options - An object adjusting the output format.
- * @returns - sort function
+ * @returns - number
  */
 function sortPinyin<T = string, P = string>(a: T, b: P, options: Intl.CollatorOptions = {}) {
 	// const aIsNumber = !isNaN(+a)

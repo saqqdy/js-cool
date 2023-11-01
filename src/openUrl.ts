@@ -1,6 +1,7 @@
 /**
  * Open link in new tab (file jump download if browser can't parse)
  *
+ * @since 1.0.6
  * @param url - link
  */
 function openUrl(url: string) {

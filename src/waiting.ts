@@ -1,6 +1,7 @@
 /**
  * waiting for a while
  *
+ * @since 5.5.0
  * @param milliseconds - waiting time (milliseconds)
  * @param throwOnTimeout - throw on timeout
  */

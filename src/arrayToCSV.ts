@@ -12,6 +12,7 @@
  * arrayToCSV([['a', '"b" great'], ['c', 3.1415]])
  * // '"a", """b"" great"\n "c",3.1415'
  * ```
+ * @since 1.0.9
  * @param data - json data
  * @param delimiter - delimiter, default ','
  * @returns CSV data

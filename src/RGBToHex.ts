@@ -6,6 +6,7 @@
  * RGBToHex(255, 165, 1)
  * // 'ffa501'
  * ```
+ * @since 1.0.9
  * @param r - the 1st value of RGB
  * @param g - RGB's 2nd value
  * @param b - RGB's 3rd value

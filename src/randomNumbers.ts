@@ -15,6 +15,7 @@ import shuffle from './shuffle'
  * randomNumbers(4, 5, false)
  * // [0, 1, 2, 2]
  * ```
+ * @since 5.4.0
  * @param n - Number of generated integers, default: 1
  * @param sum - Sum of generated integers, default: 100
  * @param max - Generate integers that are not zero, default: true

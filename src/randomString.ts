@@ -70,6 +70,7 @@ export interface RandomStringOptions {
  * })
  * // PFYAPD5KFqOHIADL
  * ```
+ * @since 5.0.0
  * @param len - the length of the random string that needs to be obtained
  * @param options - optional, randomString options
  * @returns - random string

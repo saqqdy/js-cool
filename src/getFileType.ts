@@ -12,6 +12,7 @@
  * getFileType('/name.xyz')
  * // { "suffix": "xyz", "type": "other" }
  * ```
+ * @since 5.11.0
  * @param url - file url
  * @returns result
  */

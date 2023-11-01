@@ -34,6 +34,7 @@ function extendObject(target: ExtendData, source: ExtendData, deep: boolean): vo
 /**
  * extend greedy
  *
+ * @since 1.0.2
  * @param target - boolean | ExtendData
  * @param args - ArrayOneMore<ExtendData>
  */

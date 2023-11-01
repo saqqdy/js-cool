@@ -5,6 +5,7 @@
  * ```js
  * isIterable([]) // true
  * ```
+ * @since 5.7.0
  * @param target - any target
  * @returns - target is Array
  */

@@ -6,6 +6,7 @@
  * getCookie('data1')
  * // 100
  * ```
+ * @since 1.0.2
  * @param name - cookie name
  * @returns - the cookie string
  */

@@ -3,6 +3,7 @@ import type { AnyFunction, AnyObject } from './types'
 /**
  * removeEvent removes the event delegate created by addEvent
  *
+ * @since 1.0.2
  * @param element - js dom object
  * @param type - The type of the event. No need to add on
  * @param handler - Callback method.

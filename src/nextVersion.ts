@@ -17,6 +17,7 @@ export interface Version {
  *
  * nextVersion('1.2.33', 'premajor', 'alpha') // 2.0.0-alpha.1
  * ```
+ * @since 5.10.0
  * @param version - version(like: 1.0.0)
  * @param type - optional, version type
  * @param preid - optional, prerelease id

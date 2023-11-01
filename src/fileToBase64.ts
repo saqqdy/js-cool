@@ -3,6 +3,7 @@ import blobToBase64 from './blobToBase64'
 /**
  * file to base64
  *
+ * @since 5.13.0
  * @param input - file data
  * @returns - base64 string
  */

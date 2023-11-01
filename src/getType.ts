@@ -1,6 +1,7 @@
 /**
  * Get the target type
  *
+ * @since 1.0.2
  * @param target - target
  * @returns type
  */

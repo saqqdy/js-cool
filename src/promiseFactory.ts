@@ -24,6 +24,7 @@
  * const res = promise() // res => 100
  * const res = await promise() // res => 200
  * ```
+ * @since 5.10.0
  * @param original - original object
  * @param resolver - resolver function
  * @returns - result

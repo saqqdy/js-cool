@@ -12,6 +12,7 @@
  * nextIndex(10, 100)
  * // 100
  * ```
+ * @since 1.0.2
  * @param min - optional, minimum value
  * @param max - optional, maximum value
  * @returns - number

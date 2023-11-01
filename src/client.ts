@@ -2,6 +2,7 @@
  * The client method returns a browser judgment result: `{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE. true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
  *
  * @deprecated Will be refactored for the next major release
+ * @since 1.0.1
  * @param name - optional, e.g. pass in MicroMessenger to return whether it is the built-in browser of Weixin
  * @param userAgent - optional, pass in a custom ua, default takes the browser's navigator.userAgent
  * @returns - the common ua match table, if name is passed, then returns whether the terminal matches true/false

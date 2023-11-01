@@ -1,6 +1,7 @@
 /**
  * Intercept string, Chinese counts as 2 bytes
  *
+ * @since 1.0.1
  * @param str - the string to be intercepted
  * @param len -
  * @param hasDot -

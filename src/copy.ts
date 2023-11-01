@@ -3,6 +3,7 @@ import inBrowser from './inBrowser'
 /**
  * copy to clipboard
  *
+ * @since 5.0.0
  * @param value - any target
  * @returns - target is Object
  */

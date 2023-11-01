@@ -2,6 +2,7 @@
  * Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
  *
  * @deprecated will be removed in the next major release.
+ * @since 1.0.2
  * @returns - position
  */
 function getScrollPosition() {

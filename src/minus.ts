@@ -8,6 +8,7 @@ import unique from './unique'
  * ```js
  * minus([1, 2], [2, '33'], [2, 4]) // [1]
  * ```
+ * @since 2.2.1
  * @param args - arguments
  * @returns - new array
  */

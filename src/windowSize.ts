@@ -10,6 +10,7 @@ export interface WindowSizeObj {
  * ```js
  * windowSize() // { width: 1280, height: 800 }
  * ```
+ * @since 1.0.1
  * @returns - the width and height
  */
 function windowSize(): WindowSizeObj {

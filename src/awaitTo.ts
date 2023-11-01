@@ -3,6 +3,7 @@ import isArray from './isArray'
 /**
  * Async await wrapper for easy error handling
  *
+ * @since 5.2.0
  * @param promise - Promise
  * @param promises - Promise rest params
  * @return - [Error, undefined] | [null, data | data[]]

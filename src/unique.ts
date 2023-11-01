@@ -7,6 +7,7 @@ import contains from './contains'
  * ```js
  * unique([1, 2, 2, '33']) // [1, 2, '33']
  * ```
+ * @since 2.2.1
  * @param arr - array data
  * @returns - new array
  */

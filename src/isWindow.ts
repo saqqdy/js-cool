@@ -8,6 +8,7 @@ import isObject from './isObject'
  * isWindow({}) // false
  * isWindow(window) // true
  * ```
+ * @since 5.0.0
  * @param target - any
  * @returns - target is Window
  */

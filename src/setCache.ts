@@ -17,6 +17,7 @@ export interface CacheData<T = unknown> {
  * // set number, expires in 20 seconds
  * setCache('number', 666, 20)
  * ```
+ * @since 1.0.2
  * @param name - cache name
  * @param value - cache data, can be passed directly into Object
  * @param seconds - cache time (seconds)

@@ -9,6 +9,7 @@ import union from './union'
  * ```js
  * complement([1, 2], [2, '33'], [2]) // [1, '33']
  * ```
+ * @since 2.2.1
  * @param args - arguments
  * @returns array
  */

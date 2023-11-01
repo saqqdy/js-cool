@@ -6,6 +6,7 @@
  * getCHSLength('测试')
  * // 2
  * ```
+ * @since 1.0.1
  * @param str - string
  * @returns - length
  */

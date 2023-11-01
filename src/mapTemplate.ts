@@ -20,6 +20,7 @@
  * })
  * // My name is saqqdy, I'm 18 years old.
  * ```
+ * @since 5.9.0
  * @param tmp - Template string
  * @param data - Template data of map function
  * @returns - result

@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.11.01 v5.14.1
+
+1. docs work
+
 ## 2023.10.31 v5.14.0
 
 1. new `sorter` function, see: [sorter](https://github.com/saqqdy/js-cool#sorter)

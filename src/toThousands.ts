@@ -12,6 +12,7 @@
  * toThousands(null)
  * // ''
  * ```
+ * @since 3.0.0
  * @param num - input number
  * @returns - the split string
  */

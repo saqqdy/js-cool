@@ -15,6 +15,7 @@ import inBrowser from './inBrowser'
  * getUrlParams(true)
  * // \{"key1":100\}
  * ```
+ * @since 5.0.0
  * @param url - pass in the url string
  * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
  * @returns - result

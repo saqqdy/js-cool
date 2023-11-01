@@ -1,6 +1,7 @@
 /**
  * svg to blob
  *
+ * @since 5.13.0
  * @param input - svg string
  * @returns - blob
  */

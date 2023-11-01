@@ -1,6 +1,7 @@
 /**
  * url to blob
  *
+ * @since 5.13.0
  * @param input - url
  * @returns - blob
  */

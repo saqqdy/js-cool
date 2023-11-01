@@ -3,6 +3,7 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
 /**
  * base64 to blob
  *
+ * @since 5.13.0
  * @param input - base64 string
  * @returns - blob
  */

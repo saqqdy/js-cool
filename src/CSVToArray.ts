@@ -12,6 +12,7 @@
  * CSVToArray('col1,col2\\\na,b\\\nc,d', ',', true)
  * // `[['a','b'],['c','d']]`.
  * ```
+ * @since 1.0.9
  * @param data - csv data
  * @param delimiter - separator, default ','
  * @param omitFirstRow - the first row is the table header data, default false

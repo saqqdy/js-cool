@@ -8,6 +8,7 @@ import _eval from './_eval'
  * isExitsFunction('test') // false
  * isExitsFunction('console.log') // true
  * ```
+ * @since 1.0.1
  * @param name - incoming function name
  * @returns - true/false
  */

@@ -3,6 +3,7 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
 /**
  * base64 to file
  *
+ * @since 5.13.0
  * @param input - base64 string
  * @param fileName - file name
  * @returns - the BASE64 encoding

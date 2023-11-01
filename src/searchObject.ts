@@ -7,6 +7,7 @@ export interface SearchKeySet {
 /**
  * tree object depth lookup
  *
+ * @since 5.0.0
  * @param tree - tree object
  * @param expression - required Query method
  * @param keySet - optional Default subclass name, query name

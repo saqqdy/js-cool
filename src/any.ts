@@ -7,6 +7,7 @@ import type { AnyFunction } from './types'
  * any([0, 1, 2, 0], x => x >= 2)
  * // true
  * ```
+ * @since 1.0.9
  * @param arr - the target array
  * @param fn - the judgment method
  * @returns - the result of the judgment

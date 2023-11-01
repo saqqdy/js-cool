@@ -1,6 +1,7 @@
 /**
  * blob to base64
  *
+ * @since 5.13.0
  * @param input - blob data
  * @returns - base64 string
  */

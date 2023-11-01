@@ -5,6 +5,7 @@
  * ```js
  * isArray([]) // true
  * ```
+ * @since 1.0.2
  * @param target - any target
  * @returns - target is Array
  */

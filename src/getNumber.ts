@@ -9,6 +9,7 @@
  * getNumber('234test.88')
  * // '234.88'.
  * ```
+ * @since 1.0.1
  * @param string - pass in a string with a number
  * @returns - a pure numeric string
  */

@@ -9,6 +9,7 @@
  * fillIPv6('2409:8005:800::1c')
  * // '2409:8005:0800:0000:0000:0000:0000:001c'
  * ```
+ * @since 2.2.2
  * @returns - string
  */
 function fillIPv6(ip: string): string {

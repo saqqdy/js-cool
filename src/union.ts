@@ -12,6 +12,7 @@ import unique from './unique'
  * union([1, 2], [2, '33'], [1, 11, 2, '2'])
  * // [ 1, 2, '33', 11, '2' ]
  * ```
+ * @since 2.2.1
  * @param args - arguments
  * @returns - new array
  */

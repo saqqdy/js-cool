@@ -40,6 +40,7 @@
  * compareVersion('1.11.0-release.10', '1.11.0-tag.1')
  * // => 1
  * ```
+ * @since 4.7.0
  * @param input - input version
  * @param compare - compare version
  * @return 1/0/-1
