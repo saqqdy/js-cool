@@ -95,6 +95,8 @@ const functionList = {
   isPlainObject, // 是否plainObject
   isDarkMode, // 是否暗色模式
   isObject, // 是否object类型
+  isDate, // 是否日期类型
+  isRegExp, // 是否正则类型
   isArray, // 判断是否数组
   isIterable, // 判断是否可迭代对象
   inBrowser, // 判断是否在浏览器端运行
@@ -141,7 +143,8 @@ const functionList = {
   promiseFactory, // 将一个对象转换为promise like api
   fixNumber, // 截取小数点后几位，不足的不补0
   mapTemplate, // 替换模板字符串的特定数据
-  extend, // 深拷贝
+  extend, // 深拷贝&合并对象
+  clone, // 深拷贝 (不支持Buffer、Promise、Set、Map)
   delay, // 防抖节流
   getType, // 获取目标类型
   getFileType, // 根据链接后缀判断文件类型

@@ -30,6 +30,8 @@ import isExitsVariable from './isExitsVariable'
 import isEqual from './isEqual'
 import isWindow from './isWindow'
 import isObject from './isObject'
+import isDate from './isDate'
+import isRegExp from './isRegExp'
 import isArray from './isArray'
 import isIterable from './isIterable'
 import inBrowser from './inBrowser'
@@ -81,6 +83,7 @@ import promiseFactory from './promiseFactory'
 import fixNumber from './fixNumber'
 import mapTemplate from './mapTemplate'
 import extend from './extend'
+import clone from './clone'
 import delay from './delay'
 import getType from './getType'
 import getFileType from './getFileType'
@@ -167,6 +170,7 @@ export default {
 	encodeBase64,
 	encodeUtf8,
 	extend,
+	clone,
 	fillIPv6,
 	fixNumber,
 	mapTemplate,
@@ -204,6 +208,8 @@ export default {
 	isEqual,
 	isWindow,
 	isObject,
+	isDate,
+	isRegExp,
 	isArray,
 	isIterable,
 	isPlainObject,

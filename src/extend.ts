@@ -32,7 +32,7 @@ function extendObject(target: ExtendData, source: ExtendData, deep: boolean): vo
 }
 
 /**
- * extend greedy
+ * deep copy & merge objects
  *
  * @since 1.0.2
  * @param target - boolean | ExtendData

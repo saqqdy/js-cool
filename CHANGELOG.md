@@ -1,5 +1,11 @@
 # Change logs
 
+## 2023.11.06 v5.15.0
+
+1. new `clone` function, see: [clone](https://github.com/saqqdy/js-cool#clone)
+2. new `isDate` function, see: [isDate](https://github.com/saqqdy/js-cool#isdate)
+3. new `isRegExp` function, see: [isRegExp](https://github.com/saqqdy/js-cool#isregexp)
+
 ## 2023.11.01 v5.14.1
 
 1. docs work

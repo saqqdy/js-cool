@@ -25,139 +25,141 @@ Collection of common JavaScript / TypeScript utilities
 
 </div>
 
-- [js-cool](#js-cool)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Es6 module](#es6-module)
-    - [Node.js require](#nodejs-require)
-    - [Using unpkg CDN](#using-unpkg-cdn)
-  - [API Reference](#api-reference)
-    - [Global Parameters](#global-parameters)
-      - [client](#client) - The client method returns a browser result object
-      - [pattern](#pattern) - Collection of common regular expressions
-    - [Extras for String & Array & Object & Function](#extras-for-string--array--object--function)
-      - [clearAttr](#clearattr) - Remove all attributes of HTML tags
-      - [clearHtml](#clearhtml) - Removing HTML tags
-      - [escape](#escape) - Escaping HTML Special Characters
-      - [unescape](#unescape) - Restore HTML Special Characters
-      - [getNumber](#getnumber) - Get the number in the string
-      - [camel2Dash](#camel2dash) - Converts humped strings to -spaced and all lowercase Dash pattern
-      - [dash2Camel](#dash2camel) - Converts -spaced and all lowercase Dash patterns to humped strings
-      - [randomColor](#randomcolor) - Generate random hexadecimal colors
-      - [randomNumber](#randomnumber) - Get a random number
-      - [randomNumbers](#randomnumbers) - Generate n random integers that sum to a fixed sum
-      - [randomString](#randomstring) - Get a random string
-      - [shuffle](#shuffle) - shuffling algorithm, Reordering arrays or strings
-      - [fingerprint](#fingerprint) - Generating Browser Fingerprints
-      - [getCHSLength](#getchslength) - Get the length of the string, Chinese counts as 2 characters
-      - [cutCHSString](#cutchsstring) - Intercept string, Chinese counts as 2 bytes
-      - [upperFirst](#upperfirst) - First letter capitalized
-    - [Determine](#determine)
-      - [isDigitals](#isdigitals) - Determine if a string is a number
-      - [isExitsFunction](#isexitsfunction) - Determine if a function is defined
-      - [isExitsVariable](#isexitsvariable) - Determine if a variable is defined
-      - [isEqual](#isequal) - Determine if 2 objects are equal
-      - [isWindow](#iswindow) - Determine if window object
-      - [isPlainObject](#isplainobject) - Determine if target is an plain object
-      - [isDarkMode](#isdarkmode) - Determine if dark color mode
-      - [isObject](#isobject) - Determine if target is an object
-      - [isArray](#isarray) - Determine if it is an array
-      - [isIterable](#isiterable) - Determine if it is iterable
-      - [inBrowser](#inbrowser) - Determine if it is running on the browser side
-      - [inNodeJs](#innodejs) - Determine if it is running on node.js
-      - [windowSize](#windowsize) - Get the window size
-      - [getAppVersion](#getappversion) - Get the APP version number
-      - [appVersion](#appversion) - Get the app version number
-      - [getOsVersion](#getosversion) - Get the phone system version
-      - [osVersion](#osversion) - get the system version
-      - [browserVersion](#browserversion) - Get the browser name and version
-      - [compareVersion](#compareversion) - Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
-      - [parseUrlParam](#parseurlparam) - parse url params. (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
-      - [spliceUrlParam](#spliceurlparam) - Splice URL parameters (single layer only)
-      - [getDirParam](#getdirparam) - Get the URL parameter in the form of a directory
-      - [getQueryParam](#getqueryparam) - Get a single query parameter (behind "#")
-      - [getQueryParams](#getqueryparams) - Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
-      - [getUrlParam](#geturlparam) - Get a single URL parameter (from the "location.search", before "#")
-      - [getUrlParams](#geturlparams) - Get all URL parameters (from the "location.search", before "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
-    - [localStorage & sessionStorage & Cookie](#localstorage--sessionstorage--cookie)
-      - [getCache](#getcache) - Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
-      - [setCache](#setcache) - Set the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
-      - [delCache](#delcache) - Delete localStorage
-      - [getSession](#getsession) - Get the session, if the deposited is Object, the retrieved is also Object, no need to convert again
-      - [setSession](#setsession) - Set the session, if the deposited is Object, the retrieved is also Object, no need to convert again
-      - [delSession](#delsession) - Delete sessionStorage
-      - [getCookie](#getcookie) - Get cookie by name
-      - [getCookies](#getcookies) - Get all cookies
-      - [setCookie](#setcookie) - Set cookie
-      - [delCookie](#delcookie) - Delete cookie
-    - [Base64 & UTF8](#base64--utf8)
-      - [encodeBase64](#encodebase64) - convert strings, numbers to base64
-      - [decodeBase64](#decodebase64) - base64 decoding
-      - [encodeUtf8](#encodeutf8) - convert strings, numbers to utf8
-      - [decodeUtf8](#decodeutf8) - utf8 decoding
-    - [Events](#events)
-      - [stopBubble](#stopbubble) - stop bubbling
-      - [stopDefault](#stopdefault) - stop default events
-      - [addEvent](#addevent) - event delegate, support multiple delegates
-      - [removeEvent](#removeevent) - removeEvent removes the event delegate created by addEvent
-      - [getScrollPosition](#getscrollposition) - Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
-    - [Utilities](#utilities)
-      - [nextIndex](#nextindex) - return the next zIndex value
-      - [nextVersion](#nextversion) - return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
-      - [promiseFactory](#promisefactory) - Convert an object to a promise like api
-      - [fixNumber](#fixnumber) - truncate a few decimal places, not 0 for shortage
-      - [mapTemplate](#maptemplate) - Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
-      - [extend](#extend) - deep copy
-      - [delay](#delay) - anti-dither throttling
-      - [getType](#gettype) - Get the target type
-      - [getFileType](#getfiletype) - Determine file type based on link suffix
-      - [sorter](#sorter) - Sorter factory function
-      - [sortPinyin](#sortpinyin) - Sort Chinese by Chinese phonetic alphabet
-      - [cleanData](#cleandata) - Data cleaning methods
-      - [download](#download) - Several ways of file downloading
-      - [searchObject](#searchobject) - tree object depth lookup
-      - [openUrl](#openurl) - Open link in new tab (file jump download if browser can't parse)
-      - [copy](#copy) - copy to clipboard
-      - [toThousands](#tothousands) - Digital thousandths division
-      - [all](#all) - return true if the provided predicate function returns true for all elements in a set, otherwise return false
-      - [any](#any) - Returns true if the provided predicate function returns true for at least one element of a set, false otherwise
-      - [uuid](#uuid) - generate uuid on browser side, use v4 method
-      - [CSVToArray](#csvtoarray) - Converts a comma-separated string of values (CSV) to a 2D array.
-      - [arrayToCSV](#arraytocsv) - Converts a two-dimensional array to a comma-separated string of values (CSV).
-      - [CSVToJSON](#csvtojson) - Converts a comma-separated string of values (CSV) to an array of 2D objects. The first line of the string is used as the header line.
-      - [JSONToCSV](#jsontocsv) - Converts an array of objects to a comma-separated value (CSV) string containing only the specified columns.
-      - [RGBToHex](#rgbtohex) - Converts RGB component values to color codes.
-      - [intersect](#intersect) - Find the intersection of multiple arrays
-      - [union](#union) - Find the concatenation of multiple arrays
-      - [minus](#minus) - Find the set of differences of multiple arrays that belong to A but not to B/C/D... of the elements of
-      - [complement](#complement) - Find the complement of multiple arrays
-      - [contains](#contains) - Whether the array contains the specified element
-      - [unique](#unique) - Array de-duplication
-      - [fillIPv6](#fillipv6) - ipv6 address completion
-      - [getProperty](#getproperty) - Get array, object property values based on path string
-      - [setProperty](#setproperty) - Set array, object property values based on path string
-      - [loadSource](#loadsource) - load resources dynamically, support js, images, css links, css style strings
-      - [mountCss](#mountcss) - dynamically load css link resources
-      - [mountImg](#mountimg) - load image resource dynamically
-      - [mountJs](#mountjs) - load js link resources dynamically
-      - [mountStyle](#mountstyle) - load css styles dynamically
-      - [preloader](#preloader) - Image preloading
-      - [waiting](#waiting) - waiting for a while
-      - [awaitTo](#awaitto) - Async await wrapper for easy error handling
-    - [Blob arrayBuffer base64 file blobUrl](#blob-arraybuffer-base64-file-bloburl)
-      - [arrayBufferToBase64](#arraybuffertobase64) - arrayBuffer to base64
-      - [arrayBufferToBlob](#arraybuffertoblob) - arrayBuffer to blob
-      - [base64ToArrayBuffer](#base64toarraybuffer) - base64 to arrayBuffer
-      - [base64ToBlob](#base64toblob) - base64 to blob
-      - [base64ToFile](#base64tofile) - base64 to file
-      - [blobToArrayBuffer](#blobtoarraybuffer) - blob to arrayBuffer
-      - [blobToBase64](#blobtobase64) - blob to base64
-      - [blobToUrl](#blobtourl) - blob to url
-      - [fileToBase64](#filetobase64) - file to base64
-      - [svgToBlob](#svgtoblob) - svg to blob
-      - [urlToBlob](#urltoblob) - url to blob
-  - [Support & Issues](#support--issues)
-  - [License](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Es6 module](#es6-module)
+  - [Node.js require](#nodejs-require)
+  - [Using unpkg CDN](#using-unpkg-cdn)
+- [API Reference](#api-reference)
+  - [Global Parameters](#global-parameters)
+    - [client](#client) - The client method returns a browser result object
+    - [pattern](#pattern) - Collection of common regular expressions
+  - [Extras for String & Array & Object & Function](#extras-for-string--array--object--function)
+    - [clearAttr](#clearattr) - Remove all attributes of HTML tags
+    - [clearHtml](#clearhtml) - Removing HTML tags
+    - [escape](#escape) - Escaping HTML Special Characters
+    - [unescape](#unescape) - Restore HTML Special Characters
+    - [getNumber](#getnumber) - Get the number in the string
+    - [camel2Dash](#camel2dash) - Converts humped strings to -spaced and all lowercase Dash pattern
+    - [dash2Camel](#dash2camel) - Converts -spaced and all lowercase Dash patterns to humped strings
+    - [randomColor](#randomcolor) - Generate random hexadecimal colors
+    - [randomNumber](#randomnumber) - Get a random number
+    - [randomNumbers](#randomnumbers) - Generate n random integers that sum to a fixed sum
+    - [randomString](#randomstring) - Get a random string
+    - [shuffle](#shuffle) - shuffling algorithm, Reordering arrays or strings
+    - [fingerprint](#fingerprint) - Generating Browser Fingerprints
+    - [getCHSLength](#getchslength) - Get the length of the string, Chinese counts as 2 characters
+    - [cutCHSString](#cutchsstring) - Intercept string, Chinese counts as 2 bytes
+    - [upperFirst](#upperfirst) - First letter capitalized
+  - [Determine](#determine)
+    - [isDigitals](#isdigitals) - Determine if a string is a number
+    - [isExitsFunction](#isexitsfunction) - Determine if a function is defined
+    - [isExitsVariable](#isexitsvariable) - Determine if a variable is defined
+    - [isEqual](#isequal) - Determine if 2 objects are equal
+    - [isWindow](#iswindow) - Determine if window object
+    - [isPlainObject](#isplainobject) - Determine if target is an plain object
+    - [isDarkMode](#isdarkmode) - Determine if dark color mode
+    - [isObject](#isobject) - Determine if target is an object
+    - [isDate](#isdate) - Determine if target is Date
+    - [isRegExp](#isregexp) - Determine if target is RegExp
+    - [isArray](#isarray) - Determine if it is an array
+    - [isIterable](#isiterable) - Determine if it is iterable
+    - [inBrowser](#inbrowser) - Determine if it is running on the browser side
+    - [inNodeJs](#innodejs) - Determine if it is running on node.js
+    - [windowSize](#windowsize) - Get the window size
+    - [getAppVersion](#getappversion) - Get the APP version number
+    - [appVersion](#appversion) - Get the app version number
+    - [getOsVersion](#getosversion) - Get the phone system version
+    - [osVersion](#osversion) - get the system version
+    - [browserVersion](#browserversion) - Get the browser name and version
+    - [compareVersion](#compareversion) - Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
+    - [parseUrlParam](#parseurlparam) - parse url params. (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+    - [spliceUrlParam](#spliceurlparam) - Splice URL parameters (single layer only)
+    - [getDirParam](#getdirparam) - Get the URL parameter in the form of a directory
+    - [getQueryParam](#getqueryparam) - Get a single query parameter (behind "#")
+    - [getQueryParams](#getqueryparams) - Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+    - [getUrlParam](#geturlparam) - Get a single URL parameter (from the "location.search", before "#")
+    - [getUrlParams](#geturlparams) - Get all URL parameters (from the "location.search", before "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+  - [localStorage & sessionStorage & Cookie](#localstorage--sessionstorage--cookie)
+    - [getCache](#getcache) - Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [setCache](#setcache) - Set the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [delCache](#delcache) - Delete localStorage
+    - [getSession](#getsession) - Get the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [setSession](#setsession) - Set the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [delSession](#delsession) - Delete sessionStorage
+    - [getCookie](#getcookie) - Get cookie by name
+    - [getCookies](#getcookies) - Get all cookies
+    - [setCookie](#setcookie) - Set cookie
+    - [delCookie](#delcookie) - Delete cookie
+  - [Base64 & UTF8](#base64--utf8)
+    - [encodeBase64](#encodebase64) - convert strings, numbers to base64
+    - [decodeBase64](#decodebase64) - base64 decoding
+    - [encodeUtf8](#encodeutf8) - convert strings, numbers to utf8
+    - [decodeUtf8](#decodeutf8) - utf8 decoding
+  - [Events](#events)
+    - [stopBubble](#stopbubble) - stop bubbling
+    - [stopDefault](#stopdefault) - stop default events
+    - [addEvent](#addevent) - event delegate, support multiple delegates
+    - [removeEvent](#removeevent) - removeEvent removes the event delegate created by addEvent
+    - [getScrollPosition](#getscrollposition) - Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
+  - [Utilities](#utilities)
+    - [nextIndex](#nextindex) - return the next zIndex value
+    - [nextVersion](#nextversion) - return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
+    - [promiseFactory](#promisefactory) - Convert an object to a promise like api
+    - [fixNumber](#fixnumber) - truncate a few decimal places, not 0 for shortage
+    - [mapTemplate](#maptemplate) - Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
+    - [extend](#extend) - deep copy & merge objects
+    - [clone](#clone) - deep copy (Buffer, Promise, Set, Map are not supported)
+    - [delay](#delay) - anti-dither throttling
+    - [getType](#gettype) - Get the target type
+    - [getFileType](#getfiletype) - Determine file type based on link suffix
+    - [sorter](#sorter) - Sorter factory function
+    - [sortPinyin](#sortpinyin) - Sort Chinese by Chinese phonetic alphabet
+    - [cleanData](#cleandata) - Data cleaning methods
+    - [download](#download) - Several ways of file downloading
+    - [searchObject](#searchobject) - tree object depth lookup
+    - [openUrl](#openurl) - Open link in new tab (file jump download if browser can't parse)
+    - [copy](#copy) - copy to clipboard
+    - [toThousands](#tothousands) - Digital thousandths division
+    - [all](#all) - return true if the provided predicate function returns true for all elements in a set, otherwise return false
+    - [any](#any) - Returns true if the provided predicate function returns true for at least one element of a set, false otherwise
+    - [uuid](#uuid) - generate uuid on browser side, use v4 method
+    - [CSVToArray](#csvtoarray) - Converts a comma-separated string of values (CSV) to a 2D array.
+    - [arrayToCSV](#arraytocsv) - Converts a two-dimensional array to a comma-separated string of values (CSV).
+    - [CSVToJSON](#csvtojson) - Converts a comma-separated string of values (CSV) to an array of 2D objects. The first line of the string is used as the header line.
+    - [JSONToCSV](#jsontocsv) - Converts an array of objects to a comma-separated value (CSV) string containing only the specified columns.
+    - [RGBToHex](#rgbtohex) - Converts RGB component values to color codes.
+    - [intersect](#intersect) - Find the intersection of multiple arrays
+    - [union](#union) - Find the concatenation of multiple arrays
+    - [minus](#minus) - Find the set of differences of multiple arrays that belong to A but not to B/C/D... of the elements of
+    - [complement](#complement) - Find the complement of multiple arrays
+    - [contains](#contains) - Whether the array contains the specified element
+    - [unique](#unique) - Array de-duplication
+    - [fillIPv6](#fillipv6) - ipv6 address completion
+    - [getProperty](#getproperty) - Get array, object property values based on path string
+    - [setProperty](#setproperty) - Set array, object property values based on path string
+    - [loadSource](#loadsource) - load resources dynamically, support js, images, css links, css style strings
+    - [mountCss](#mountcss) - dynamically load css link resources
+    - [mountImg](#mountimg) - load image resource dynamically
+    - [mountJs](#mountjs) - load js link resources dynamically
+    - [mountStyle](#mountstyle) - load css styles dynamically
+    - [preloader](#preloader) - Image preloading
+    - [waiting](#waiting) - waiting for a while
+    - [awaitTo](#awaitto) - Async await wrapper for easy error handling
+  - [Blob arrayBuffer base64 file blobUrl](#blob-arraybuffer-base64-file-bloburl)
+    - [arrayBufferToBase64](#arraybuffertobase64) - arrayBuffer to base64
+    - [arrayBufferToBlob](#arraybuffertoblob) - arrayBuffer to blob
+    - [base64ToArrayBuffer](#base64toarraybuffer) - base64 to arrayBuffer
+    - [base64ToBlob](#base64toblob) - base64 to blob
+    - [base64ToFile](#base64tofile) - base64 to file
+    - [blobToArrayBuffer](#blobtoarraybuffer) - blob to arrayBuffer
+    - [blobToBase64](#blobtobase64) - blob to base64
+    - [blobToUrl](#blobtourl) - blob to url
+    - [fileToBase64](#filetobase64) - file to base64
+    - [svgToBlob](#svgtoblob) - svg to blob
+    - [urlToBlob](#urltoblob) - url to blob
+- [Support & Issues](#support--issues)
+- [License](#license)
 
 ## Installation
 
@@ -1033,6 +1035,61 @@ isObject({}) // true
 
 ```ts
 declare function isObject<T = any>(target: T): target is Object
+```
+
+#### isDate
+
+Determine if target is Date
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+const now = new Date()
+
+isDate(now)
+// true
+```
+
+- Types:
+
+```ts
+declare function isDate<T = any>(target: T): target is Date
+```
+
+#### isRegExp
+
+Determine if target is RegExp
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isRegExp(/\d/) // true
+```
+
+- Types:
+
+```ts
+declare function isRegExp<T = any>(target: T): target is RegExp
 ```
 
 #### isArray
@@ -2431,7 +2488,7 @@ declare function mapTemplate(
 
 #### extend
 
-deep copy
+deep copy & merge objects
 
 - Since: `1.0.2`
 
@@ -2472,6 +2529,34 @@ declare type ExtendArrayData = any[]
 declare type ExtendData = ExtendArrayData | ExtendObjectData
 
 declare type ExtendObjectData = Record<string, any>
+```
+
+#### clone
+
+deep copy (Buffer, Promise, Set, Map are not supported)
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description   | Type  | Optional | Required | Default |
+| ---------- | ------------- | ----- | -------- | -------- | ------- |
+| source     | source object | `any` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+const source = { a: 100, reg: /\d+/g, arr: [1, 2] }
+const res = clone(source)
+// { a: 100, reg: /\d+/g, arr: [1, 2] }
+```
+
+- Types:
+
+```ts
+declare function clone<T = any>(parent: T): T
 ```
 
 #### delay
