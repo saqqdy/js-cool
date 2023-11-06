@@ -192,7 +192,7 @@ osVersion()
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/js-cool@latest/dist/index.global.prod.js"></script>
 <script>
   jsCool.browserVersion()
 </script>
