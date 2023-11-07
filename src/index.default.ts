@@ -115,7 +115,6 @@ import getProperty from './getProperty'
 import setProperty from './setProperty'
 import preloader from './preloader'
 import waiting from './waiting'
-import awaitTo from './awaitTo'
 
 // Blob arrayBuffer base64 file blobUrl
 import arrayBufferToBase64 from './arrayBufferToBase64'
@@ -130,7 +129,7 @@ import fileToBase64 from './fileToBase64'
 import svgToBlob from './svgToBlob'
 import urlToBlob from './urlToBlob'
 
-import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
+import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 
 export default {
 	version: '__VERSION__',

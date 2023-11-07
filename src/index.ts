@@ -6,6 +6,7 @@ export { default as mountImg } from 'mount-image'
 export { default as mountJs } from 'mount-script'
 export { default as mountStyle } from 'mount-style'
 export { download } from 'use-downloads'
+export { default as awaitTo } from 'await-to-done'
 
 // Global Parameters
 export { default as client } from './client'
@@ -144,7 +145,6 @@ export { default as getProperty } from './getProperty'
 export { default as setProperty } from './setProperty'
 export { default as preloader } from './preloader'
 export { default as waiting } from './waiting'
-export { default as awaitTo } from './awaitTo'
 
 // Blob arrayBuffer base64 file blobUrl
 export { default as arrayBufferToBase64 } from './arrayBufferToBase64'

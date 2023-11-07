@@ -11,6 +11,7 @@
 		"premajor",
 		"preminor",
 		"prepatch",
+		"reinstaller",
 		"samesite",
 		"saqqdy",
 		"tscjs",

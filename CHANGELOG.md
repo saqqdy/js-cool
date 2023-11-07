@@ -1,5 +1,9 @@
 # Change logs
 
+## 2023.11.06 v5.15.1
+
+1. move `awaitTo` to `await-to-done` function, see: [await-to-done](https://github.com/saqqdy/await-to-done)
+
 ## 2023.11.06 v5.15.0
 
 1. new `clone` function, see: [clone](https://github.com/saqqdy/js-cool#clone)
