@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "Collection of common JavaScript / TypeScript utilities",
-	"version": "5.15.1",
+	"version": "5.15.2",
 	"packageManager": "pnpm@8.9.2",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm-bundler.js",
@@ -34,6 +34,7 @@
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
 		"deploy": "sh scripts/deploy.sh",
 		"roll-types": "api-extractor run && rm-all temp",
+		"circular": "madge dist/ -c",
 		"watch": "pnpm build:bundle -w",
 		"pub": "tscjs scripts/publish",
 		"unpub": "tscjs scripts/unpublish",
@@ -47,7 +48,7 @@
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
-		"await-to-done": "^1.0.1",
+		"await-to-done": "^1.0.2",
 		"load-source": "^1.2.0",
 		"mount-css": "^1.2.0",
 		"mount-image": "^1.2.0",
@@ -81,6 +82,7 @@
 		"eslint": "^8.52.0",
 		"fast-glob": "^3.3.1",
 		"load-yml": "^1.4.0",
+		"madge": "^6.1.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.0.3",
 		"prettier-config-common": "^1.4.0",
