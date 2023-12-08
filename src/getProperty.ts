@@ -13,6 +13,7 @@
  * getProperty(target, 'b[0].c') // 2
  * getProperty(target, () => 'a') // 1
  * ```
+ * @since 2.2.4
  * @param target - target array, object
  * @param prop - query target, can pass function
  * @returns result

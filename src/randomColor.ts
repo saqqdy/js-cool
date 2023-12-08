@@ -1,6 +1,7 @@
 /**
  * Generate random hexadecimal colors
  *
+ * @since 5.5.0
  * @returns - result
  */
 function randomColor(): string {

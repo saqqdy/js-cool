@@ -5,6 +5,7 @@
  * ```js
  * upperFirst('saqqdy') // Saqqdy
  * ```
+ * @since 1.0.1
  * @param string - the string to be converted
  * @returns - the converted string
  */

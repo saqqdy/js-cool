@@ -1,4 +1,4 @@
-import type { ArrayOneMore } from '../typings/common'
+import type { ArrayOneMore } from './types'
 import randomNumbers from './randomNumbers'
 import shuffle from './shuffle'
 
@@ -70,6 +70,7 @@ export interface RandomStringOptions {
  * })
  * // PFYAPD5KFqOHIADL
  * ```
+ * @since 5.0.0
  * @param len - the length of the random string that needs to be obtained
  * @param options - optional, randomString options
  * @returns - random string

@@ -1,6 +1,7 @@
 /**
  * Converts humped strings to -spaced and all lowercase Dash pattern
  *
+ * @since 1.0.1
  * @param string - the string to be converted
  * @returns - the converted string
  */

@@ -3,6 +3,7 @@ import inBrowser from './inBrowser'
 /**
  * Generating Browser Fingerprints
  *
+ * @since 5.2.0
  * @param domain - key string, default: location.host
  * @returns - fingerprint
  */

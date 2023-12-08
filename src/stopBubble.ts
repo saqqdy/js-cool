@@ -1,6 +1,7 @@
 /**
  * Block bubbling
  *
+ * @since 1.0.2
  * @param e - dom's event object
  * @returns - false
  */

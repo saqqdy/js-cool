@@ -7,6 +7,7 @@ import contains from './contains'
  * ```js
  * intersect([1, 2], [2, 3, 4], [2, 8], [2, '33']) // [2]
  * ```
+ * @since 2.2.1
  * @param args - arguments
  * @returns - new array
  */

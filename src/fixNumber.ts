@@ -14,6 +14,7 @@ import pattern from './pattern'
  * fixNumber('100.8888', 3)
  * // 100.888
  * ```
+ * @since 1.0.2
  * @param number - the number of digits to be processed, required
  * @param n - the number of decimal places to keep, default is 2
  * @returns - the new number

@@ -25,118 +25,141 @@ Collection of common JavaScript / TypeScript utilities
 
 </div>
 
-- [js-cool](#js-cool)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Es6 module](#es6-module)
-    - [Node.js require](#nodejs-require)
-    - [Using unpkg CDN](#using-unpkg-cdn)
-  - [API Reference](#api-reference)
-    - [Global Parameters](#global-parameters)
-      - [client](#client)
-      - [pattern](#pattern)
-    - [Extras for String & Array & Object & Function](#extras-for-string--array--object--function)
-      - [trim](#trim)
-      - [clearAttr](#clearattr)
-      - [clearHtml](#clearhtml)
-      - [escape](#escape)
-      - [unescape](#unescape)
-      - [getNumber](#getnumber)
-      - [camel2Dash](#camel2dash)
-      - [dash2Camel](#dash2camel)
-      - [randomColor](#randomcolor)
-      - [randomNumber](#randomnumber)
-      - [randomNumbers](#randomnumbers)
-      - [randomString](#randomstring)
-      - [shuffle](#shuffle)
-      - [fingerprint](#fingerprint)
-      - [getCHSLength](#getchslength)
-      - [cutCHSString](#cutchsstring)
-    - [Determine](#determine)
-      - [isDigitals](#isdigitals)
-      - [isExitsFunction](#isexitsfunction)
-      - [isExitsVariable](#isexitsvariable)
-      - [isWindow](#iswindow)
-      - [isPlainObject](#isplainobject)
-      - [isDarkMode](#isdarkmode)
-      - [isObject](#isobject)
-      - [isArray](#isarray)
-      - [inBrowser](#inbrowser)
-      - [windowSize](#windowsize)
-      - [getAppVersion](#getappversion)
-      - [appVersion](#appversion)
-      - [getOsVersion](#getosversion)
-      - [osVersion](#osversion)
-      - [browserVersion](#browserversion)
-      - [compareVersion](#compareversion)
-      - [parseUrlParam](#parseurlparam)
-      - [spliceUrlParam](#spliceurlparam)
-      - [getDirParam](#getdirparam)
-      - [getQueryParam](#getqueryparam)
-      - [getQueryParams](#getqueryparams)
-      - [getUrlParam](#geturlparam)
-      - [getUrlParams](#geturlparams)
-    - [localStorage & sessionStorage & Cookie](#localstorage--sessionstorage--cookie)
-      - [getCache](#getcache)
-      - [setCache](#setcache)
-      - [delCache](#delcache)
-      - [getSession](#getsession)
-      - [setSession](#setsession)
-      - [delSession](#delsession)
-      - [getCookie](#getcookie)
-      - [getCookies](#getcookies)
-      - [setCookie](#setcookie)
-      - [delCookie](#delcookie)
-    - [Base64 & UTF8](#base64--utf8)
-      - [encodeBase64](#encodebase64)
-      - [encodeUtf8](#encodeutf8)
-      - [decodeBase64](#decodebase64)
-      - [decodeUtf8](#decodeutf8)
-    - [Events](#events)
-      - [stopBubble](#stopbubble)
-      - [stopDefault](#stopdefault)
-      - [addEvent](#addevent)
-      - [removeEvent](#removeevent)
-      - [getScrollPosition](#getscrollposition)
-    - [Utilities](#utilities)
-      - [nextIndex](#nextindex)
-      - [fixNumber](#fixnumber)
-      - [extend](#extend)
-      - [delay](#delay)
-      - [getType](#gettype)
-      - [cleanData](#cleandata)
-      - [download](#download)
-      - [searchObject](#searchobject)
-      - [openUrl](#openurl)
-      - [copy](#copy)
-      - [toThousands](#tothousands)
-      - [all](#all)
-      - [any](#any)
-      - [uuid](#uuid)
-      - [CSVToArray](#csvtoarray)
-      - [arrayToCSV](#arraytocsv)
-      - [CSVToJSON](#csvtojson)
-      - [JSONToCSV](#jsontocsv)
-      - [RGBToHex](#rgbtohex)
-      - [intersect](#intersect)
-      - [union](#union)
-      - [minus](#minus)
-      - [complement](#complement)
-      - [contains](#contains)
-      - [unique](#unique)
-      - [fillIPv6](#fillipv6)
-      - [getProperty](#getproperty)
-      - [setProperty](#setproperty)
-      - [loadSource](#loadsource)
-      - [mountCss](#mountcss)
-      - [mountImg](#mountimg)
-      - [mountJs](#mountjs)
-      - [mountStyle](#mountstyle)
-      - [preloader](#preloader)
-      - [waiting](#waiting)
-      - [awaitTo](#awaitto)
-  - [Support & Issues](#support--issues)
-  - [License](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Es6 module](#es6-module)
+  - [Node.js require](#nodejs-require)
+  - [Using unpkg CDN](#using-unpkg-cdn)
+- [API Reference](#api-reference)
+  - [Global Parameters](#global-parameters)
+    - [client](#client) - The client method returns a browser result object
+    - [pattern](#pattern) - Collection of common regular expressions
+  - [Extras for String & Array & Object & Function](#extras-for-string--array--object--function)
+    - [clearAttr](#clearattr) - Remove all attributes of HTML tags
+    - [clearHtml](#clearhtml) - Removing HTML tags
+    - [escape](#escape) - Escaping HTML Special Characters
+    - [unescape](#unescape) - Restore HTML Special Characters
+    - [getNumber](#getnumber) - Get the number in the string
+    - [camel2Dash](#camel2dash) - Converts humped strings to -spaced and all lowercase Dash pattern
+    - [dash2Camel](#dash2camel) - Converts -spaced and all lowercase Dash patterns to humped strings
+    - [randomColor](#randomcolor) - Generate random hexadecimal colors
+    - [randomNumber](#randomnumber) - Get a random number
+    - [randomNumbers](#randomnumbers) - Generate n random integers that sum to a fixed sum
+    - [randomString](#randomstring) - Get a random string
+    - [shuffle](#shuffle) - shuffling algorithm, Reordering arrays or strings
+    - [fingerprint](#fingerprint) - Generating Browser Fingerprints
+    - [getCHSLength](#getchslength) - Get the length of the string, Chinese counts as 2 characters
+    - [cutCHSString](#cutchsstring) - Intercept string, Chinese counts as 2 bytes
+    - [upperFirst](#upperfirst) - First letter capitalized
+  - [Determine](#determine)
+    - [isDigitals](#isdigitals) - Determine if a string is a number
+    - [isExitsFunction](#isexitsfunction) - Determine if a function is defined
+    - [isExitsVariable](#isexitsvariable) - Determine if a variable is defined
+    - [isEqual](#isequal) - Determine if 2 objects are equal
+    - [isWindow](#iswindow) - Determine if window object
+    - [isPlainObject](#isplainobject) - Determine if target is an plain object
+    - [isDarkMode](#isdarkmode) - Determine if dark color mode
+    - [isObject](#isobject) - Determine if target is an object
+    - [isDate](#isdate) - Determine if target is Date
+    - [isRegExp](#isregexp) - Determine if target is RegExp
+    - [isArray](#isarray) - Determine if it is an array
+    - [isIterable](#isiterable) - Determine if it is iterable
+    - [inBrowser](#inbrowser) - Determine if it is running on the browser side
+    - [inNodeJs](#innodejs) - Determine if it is running on node.js
+    - [windowSize](#windowsize) - Get the window size
+    - [getAppVersion](#getappversion) - Get the APP version number
+    - [appVersion](#appversion) - Get the app version number
+    - [getOsVersion](#getosversion) - Get the phone system version
+    - [osVersion](#osversion) - get the system version
+    - [browserVersion](#browserversion) - Get the browser name and version
+    - [compareVersion](#compareversion) - Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
+    - [parseUrlParam](#parseurlparam) - parse url params. (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+    - [spliceUrlParam](#spliceurlparam) - Splice URL parameters (single layer only)
+    - [getDirParam](#getdirparam) - Get the URL parameter in the form of a directory
+    - [getQueryParam](#getqueryparam) - Get a single query parameter (behind "#")
+    - [getQueryParams](#getqueryparams) - Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+    - [getUrlParam](#geturlparam) - Get a single URL parameter (from the "location.search", before "#")
+    - [getUrlParams](#geturlparams) - Get all URL parameters (from the "location.search", before "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
+  - [localStorage & sessionStorage & Cookie](#localstorage--sessionstorage--cookie)
+    - [getCache](#getcache) - Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [setCache](#setcache) - Set the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [delCache](#delcache) - Delete localStorage
+    - [getSession](#getsession) - Get the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [setSession](#setsession) - Set the session, if the deposited is Object, the retrieved is also Object, no need to convert again
+    - [delSession](#delsession) - Delete sessionStorage
+    - [getCookie](#getcookie) - Get cookie by name
+    - [getCookies](#getcookies) - Get all cookies
+    - [setCookie](#setcookie) - Set cookie
+    - [delCookie](#delcookie) - Delete cookie
+  - [Base64 & UTF8](#base64--utf8)
+    - [encodeBase64](#encodebase64) - convert strings, numbers to base64
+    - [decodeBase64](#decodebase64) - base64 decoding
+    - [encodeUtf8](#encodeutf8) - convert strings, numbers to utf8
+    - [decodeUtf8](#decodeutf8) - utf8 decoding
+  - [Events](#events)
+    - [stopBubble](#stopbubble) - stop bubbling
+    - [stopDefault](#stopdefault) - stop default events
+    - [addEvent](#addevent) - event delegate, support multiple delegates
+    - [removeEvent](#removeevent) - removeEvent removes the event delegate created by addEvent
+    - [getScrollPosition](#getscrollposition) - Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
+  - [Utilities](#utilities)
+    - [nextIndex](#nextindex) - return the next zIndex value
+    - [nextVersion](#nextversion) - return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
+    - [promiseFactory](#promisefactory) - Convert an object to a promise like api
+    - [fixNumber](#fixnumber) - truncate a few decimal places, not 0 for shortage
+    - [mapTemplate](#maptemplate) - Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
+    - [extend](#extend) - deep copy & merge objects
+    - [clone](#clone) - deep copy (Buffer, Promise, Set, Map are not supported)
+    - [delay](#delay) - anti-dither throttling
+    - [getType](#gettype) - Get the target type
+    - [getFileType](#getfiletype) - Determine file type based on link suffix
+    - [sorter](#sorter) - Sorter factory function
+    - [sortPinyin](#sortpinyin) - Sort Chinese by Chinese phonetic alphabet
+    - [cleanData](#cleandata) - Data cleaning methods
+    - [download](#download) - Several ways of file downloading
+    - [searchObject](#searchobject) - tree object depth lookup
+    - [openUrl](#openurl) - Open link in new tab (file jump download if browser can't parse)
+    - [copy](#copy) - copy to clipboard
+    - [toThousands](#tothousands) - Digital thousandths division
+    - [all](#all) - return true if the provided predicate function returns true for all elements in a set, otherwise return false
+    - [any](#any) - Returns true if the provided predicate function returns true for at least one element of a set, false otherwise
+    - [uuid](#uuid) - generate uuid on browser side, use v4 method
+    - [CSVToArray](#csvtoarray) - Converts a comma-separated string of values (CSV) to a 2D array.
+    - [arrayToCSV](#arraytocsv) - Converts a two-dimensional array to a comma-separated string of values (CSV).
+    - [CSVToJSON](#csvtojson) - Converts a comma-separated string of values (CSV) to an array of 2D objects. The first line of the string is used as the header line.
+    - [JSONToCSV](#jsontocsv) - Converts an array of objects to a comma-separated value (CSV) string containing only the specified columns.
+    - [RGBToHex](#rgbtohex) - Converts RGB component values to color codes.
+    - [intersect](#intersect) - Find the intersection of multiple arrays
+    - [union](#union) - Find the concatenation of multiple arrays
+    - [minus](#minus) - Find the set of differences of multiple arrays that belong to A but not to B/C/D... of the elements of
+    - [complement](#complement) - Find the complement of multiple arrays
+    - [contains](#contains) - Whether the array contains the specified element
+    - [unique](#unique) - Array de-duplication
+    - [fillIPv6](#fillipv6) - ipv6 address completion
+    - [getProperty](#getproperty) - Get array, object property values based on path string
+    - [setProperty](#setproperty) - Set array, object property values based on path string
+    - [loadSource](#loadsource) - load resources dynamically, support js, images, css links, css style strings
+    - [mountCss](#mountcss) - dynamically load css link resources
+    - [mountImg](#mountimg) - load image resource dynamically
+    - [mountJs](#mountjs) - load js link resources dynamically
+    - [mountStyle](#mountstyle) - load css styles dynamically
+    - [preloader](#preloader) - Image preloading
+    - [waiting](#waiting) - waiting for a while
+    - [awaitTo](#awaitto) - Async await wrapper for easy error handling
+  - [Blob arrayBuffer base64 file blobUrl](#blob-arraybuffer-base64-file-bloburl)
+    - [arrayBufferToBase64](#arraybuffertobase64) - arrayBuffer to base64
+    - [arrayBufferToBlob](#arraybuffertoblob) - arrayBuffer to blob
+    - [base64ToArrayBuffer](#base64toarraybuffer) - base64 to arrayBuffer
+    - [base64ToBlob](#base64toblob) - base64 to blob
+    - [base64ToFile](#base64tofile) - base64 to file
+    - [blobToArrayBuffer](#blobtoarraybuffer) - blob to arrayBuffer
+    - [blobToBase64](#blobtobase64) - blob to base64
+    - [blobToUrl](#blobtourl) - blob to url
+    - [fileToBase64](#filetobase64) - file to base64
+    - [svgToBlob](#svgtoblob) - svg to blob
+    - [urlToBlob](#urltoblob) - url to blob
+- [Support & Issues](#support--issues)
+- [License](#license)
 
 ## Installation
 
@@ -169,7 +192,7 @@ osVersion()
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/js-cool@latest/dist/index.global.prod.js"></script>
 <script>
   jsCool.browserVersion()
 </script>
@@ -181,9 +204,9 @@ osVersion()
 
 #### client
 
-the client method returns a browser result object
+The client method returns a browser result object
 
-- Since: `5.2.0`
+- Since: `1.0.1`
 
 - Arguments: `none`
 
@@ -226,7 +249,7 @@ declare class Client {
 
 #### pattern
 
-pattern returns some common rules
+Collection of common regular expressions
 
 - Since: `1.0.1`
 
@@ -277,7 +300,7 @@ Remove all attributes of HTML tags
 
 | Parameters | Description           | Type     | Optional | Required | Default |
 | ---------- | --------------------- | -------- | -------- | -------- | ------- |
-| string     | string with html tags | `string` | -        | true     | -       |
+| string     | string with html tags | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -304,7 +327,7 @@ Remove HTML tags
 
 | Parameters | Description           | Type     | Optional | Required | Default |
 | ---------- | --------------------- | -------- | -------- | -------- | ------- |
-| string     | string with html tags | `string` | -        | true     | -       |
+| string     | string with html tags | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -331,7 +354,7 @@ Escaping HTML Special Characters
 
 | Parameters | Description           | Type     | Optional | Required | Default |
 | ---------- | --------------------- | -------- | -------- | -------- | ------- |
-| string     | string with html tags | `string` | -        | true     | -       |
+| string     | string with html tags | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -358,7 +381,7 @@ Restore HTML Special Characters
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| string     | string      | `string` | -        | true     | -       |
+| string     | string      | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -385,7 +408,7 @@ Get the number in the string
 
 | Parameters | Description                    | Type     | Optional | Required | Default |
 | ---------- | ------------------------------ | -------- | -------- | -------- | ------- |
-| string     | pass in a string with a number | `string` | -        | true     | -       |
+| string     | pass in a string with a number | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -415,7 +438,7 @@ Converts humped strings to -spaced and all lowercase Dash pattern
 
 | Parameters | Description                | Type     | Optional | Required | Default |
 | ---------- | -------------------------- | -------- | -------- | -------- | ------- |
-| string     | the string to be converted | `string` | -        | true     | -       |
+| string     | the string to be converted | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -441,7 +464,7 @@ Converts -spaced and all lowercase Dash patterns to humped strings
 
 | Parameters | Description                | Type     | Optional | Required | Default |
 | ---------- | -------------------------- | -------- | -------- | -------- | ------- |
-| string     | the string to be converted | `string` | -        | true     | -       |
+| string     | the string to be converted | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -489,8 +512,8 @@ Get a random number
 
 | Parameters | Description                            | Type     | Optional | Required | Default |
 | ---------- | -------------------------------------- | -------- | -------- | -------- | ------- |
-| min        | the minimum value of the random number | `number` | -        | false    | 1       |
-| max        | the maximum value of the random number | `number` | -        | false    | 10      |
+| min        | the minimum value of the random number | `number` | -        | `false`  | 1       |
+| max        | the maximum value of the random number | `number` | -        | `false`  | 10      |
 
 - Returns: `number`
 
@@ -517,9 +540,9 @@ Generate n random integers that sum to a fixed sum
 
 | Parameters | Description                         | Type      | Optional | Required | Default |
 | ---------- | ----------------------------------- | --------- | -------- | -------- | ------- |
-| n          | Number of generated integers        | `number`  | -        | false    | 1       |
-| sum        | Sum of generated integers           | `number`  | -        | false    | 100     |
-| noZero     | Generate integers that are not zero | `boolean` | -        | false    | true    |
+| n          | Number of generated integers        | `number`  | -        | `false`  | 1       |
+| sum        | Sum of generated integers           | `number`  | -        | `false`  | 100     |
+| noZero     | Generate integers that are not zero | `boolean` | -        | `false`  | `true`  |
 
 - Returns: `Array<number>`
 
@@ -554,8 +577,8 @@ Get a random string
 
 | Parameters | Description                                               | Type                            | Optional | Required | Default                                               |
 | ---------- | --------------------------------------------------------- | ------------------------------- | -------- | -------- | ----------------------------------------------------- |
-| len        | the length of the random string that needs to be obtained | `number`                        | -        | false    | 32                                                    |
-| options    | randomString options                                      | `RandomStringOptions` `boolean` | -        | false    | `{ charTypes: ['uppercase', 'lowercase', 'number'] }` |
+| len        | the length of the random string that needs to be obtained | `number`                        | -        | `false`  | 32                                                    |
+| options    | randomString options                                      | `RandomStringOptions` `boolean` | -        | `false`  | `{ charTypes: ['uppercase', 'lowercase', 'number'] }` |
 
 - Returns: `string`
 
@@ -648,8 +671,8 @@ shuffling algorithm, Reordering arrays or strings
 
 | Parameters | Description                | Type             | Optional | Required | Default |
 | ---------- | -------------------------- | ---------------- | -------- | -------- | ------- |
-| value      | arrays or strings          | `array` `string` | -        | true     | -       |
-| size       | new array or string length | `number`         | -        | false    | -       |
+| value      | arrays or strings          | `array` `string` | -        | `true`   | -       |
+| size       | new array or string length | `number`         | -        | `false`  | -       |
 
 - Returns: `array | string`
 
@@ -687,7 +710,7 @@ Generating Browser Fingerprints
 
 | Parameters | Description | Type     | Optional | Required | Default       |
 | ---------- | ----------- | -------- | -------- | -------- | ------------- |
-| domain     | key string  | `string` | -        | false    | location.host |
+| domain     | key string  | `string` | -        | `false`  | location.host |
 
 - Returns: `string`
 
@@ -713,7 +736,7 @@ Get the length of the string, Chinese counts as 2 characters
 
 | Parameters | Description  | Type     | Optional | Required | Default |
 | ---------- | ------------ | -------- | -------- | -------- | ------- |
-| str        | input string | `string` | -        | true     | -       |
+| str        | input string | `string` | -        | `true`   | -       |
 
 - Returns: `number`
 
@@ -739,9 +762,9 @@ Intercept string, Chinese counts as 2 bytes
 
 | Parameters | Description                  | Type      | Optional | Required | Default |
 | ---------- | ---------------------------- | --------- | -------- | -------- | ------- |
-| str        | the string to be intercepted | `string`  | -        | true     | -       |
-| len        | length                       | `number`  | -        | false    | -       |
-| hasDot     | output with dot              | `boolean` | -        | false    | `false` |
+| str        | the string to be intercepted | `string`  | -        | `true`   | -       |
+| len        | length                       | `number`  | -        | `false`  | -       |
+| hasDot     | output with dot              | `boolean` | -        | `false`  | `false` |
 
 - Returns: `string`
 
@@ -758,6 +781,32 @@ cutCHSString('测试', 1, true) // 测...
 declare function cutCHSString(str: string, len?: number, hasDot?: boolean): string
 ```
 
+#### upperFirst
+
+First letter capitalized
+
+- Since: `1.0.1`
+
+- Arguments:
+
+| Parameters | Description                | Type     | Optional | Required | Default |
+| ---------- | -------------------------- | -------- | -------- | -------- | ------- |
+| string     | the string to be converted | `string` | -        | `true`   | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+upperFirst('saqqdy') // Saqqdy
+```
+
+- Types:
+
+```ts
+declare function upperFirst(string: string): string
+```
+
 ### Determine
 
 #### isDigitals
@@ -770,7 +819,7 @@ Determine if a string is a number
 
 | Parameters | Description             | Type     | Optional | Required | Default |
 | ---------- | ----------------------- | -------- | -------- | -------- | ------- |
-| str        | the string to be tested | `string` | -        | true     | -       |
+| str        | the string to be tested | `string` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -797,7 +846,7 @@ Determine if a function is defined
 
 | Parameters | Description   | Type     | Optional | Required | Default |
 | ---------- | ------------- | -------- | -------- | -------- | ------- |
-| name       | function name | `string` | -        | true     | -       |
+| name       | function name | `string` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -824,7 +873,7 @@ Determine if a variable is defined
 
 | Parameters | Description   | Type     | Optional | Required | Default |
 | ---------- | ------------- | -------- | -------- | -------- | ------- |
-| name       | variable name | `string` | -        | true     | -       |
+| name       | variable name | `string` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -841,6 +890,40 @@ isExitsVariable('window') // true
 declare function isExitsVariable(name: string): boolean
 ```
 
+#### isEqual
+
+Determine if 2 objects are equal
+
+- Since: `5.12.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| a          | source      | `any` | -        | `true`   | -       |
+| b          | compare     | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isEqual({ a: 22, b: {} }, { b: {}, a: 22 })
+// true
+
+isEqual([1, 2], [2, 1])
+// false
+
+isEqual(NaN, NaN)
+// true
+```
+
+- Types:
+
+```ts
+declare function isEqual<T, P>(a: T, b: P): boolean
+```
+
 #### isWindow
 
 Determine if window object
@@ -851,7 +934,7 @@ Determine if window object
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| target     | any target  | `any` | -        | true     | -       |
+| target     | any target  | `any` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -878,7 +961,7 @@ Determine if target is an plain object
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| target     | any target  | `any` | -        | true     | -       |
+| target     | any target  | `any` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -938,7 +1021,7 @@ Determine if target is an object
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| target     | any target  | `any` | -        | true     | -       |
+| target     | any target  | `any` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -954,6 +1037,61 @@ isObject({}) // true
 declare function isObject<T = any>(target: T): target is Object
 ```
 
+#### isDate
+
+Determine if target is Date
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+const now = new Date()
+
+isDate(now)
+// true
+```
+
+- Types:
+
+```ts
+declare function isDate<T = any>(target: T): target is Date
+```
+
+#### isRegExp
+
+Determine if target is RegExp
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isRegExp(/\d/) // true
+```
+
+- Types:
+
+```ts
+declare function isRegExp<T = any>(target: T): target is RegExp
+```
+
 #### isArray
 
 Determine if it is an array
@@ -964,7 +1102,7 @@ Determine if it is an array
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| target     | any target  | `any` | -        | true     | -       |
+| target     | any target  | `any` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -977,7 +1115,33 @@ isArray([]) // true
 - Types:
 
 ```ts
-declare function isArray<T = any>(target: T): target is any[]
+declare function isIterable(target: any): target is any[]
+```
+
+#### isIterable
+
+Determine if it is iterable
+
+- Since: `5.7.0`
+
+- Arguments:
+
+| Parameters | Description | Type  | Optional | Required | Default |
+| ---------- | ----------- | ----- | -------- | -------- | ------- |
+| target     | any target  | `any` | -        | `true`   | -       |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+isIterable([]) // true
+```
+
+- Types:
+
+```ts
+declare function isIterable<T = any>(target: T | Iterable<T>): target is Iterable<T>
 ```
 
 #### inBrowser
@@ -1003,6 +1167,30 @@ function test() {
 
 ```ts
 declare const inBrowser: boolean
+```
+
+#### inNodeJs
+
+Determine if it is running on node.js
+
+- Since: `5.13.0`
+
+- Arguments: `none`
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+if (inNodeJs) {
+  //
+}
+```
+
+- Types:
+
+```ts
+declare const inNodeJs: boolean
 ```
 
 #### windowSize
@@ -1045,9 +1233,9 @@ Get the APP version number
 
 | Parameters | Description                                 | Type      | Optional | Required | Default               |
 | ---------- | ------------------------------------------- | --------- | -------- | -------- | --------------------- |
-| appName    | app name                                    | `string`  | -        | true     | -                     |
-| withApp    | whether to bring the name                   | `boolean` | -        | false    | -                     |
-| userAgent  | ua or any ua like string, may not be passed | `string`  | -        | false    | `navigator.userAgent` |
+| appName    | app name                                    | `string`  | -        | `true`   | -                     |
+| withApp    | whether to bring the name                   | `boolean` | -        | `false`  | -                     |
+| userAgent  | ua or any ua like string, may not be passed | `string`  | -        | `false`  | `navigator.userAgent` |
 
 - Returns: `string | boolean | null`
 
@@ -1078,11 +1266,11 @@ Get the app version number
 
 - Arguments:
 
-| Parameters | Description                                 | Type      | Optional   | Required | Default             |
-| ---------- | ------------------------------------------- | --------- | ---------- | -------- | ------------------- |
-| appName    | app name                                    | `string`  | -          | true     | -                   |
-| ua         | ua or any ua like string, may not be passed | `string`  | -          | false    | navigator.userAgent |
-| ignoreCase | whether to ignore case                      | `boolean` | true/false | false    | true                |
+| Parameters | Description                                 | Type      | Optional       | Required | Default             |
+| ---------- | ------------------------------------------- | --------- | -------------- | -------- | ------------------- |
+| appName    | app name                                    | `string`  | -              | `true`   | -                   |
+| ua         | ua or any ua like string, may not be passed | `string`  | -              | `false`  | navigator.userAgent |
+| ignoreCase | whether to ignore case                      | `boolean` | `true`/`false` | `false`  | `true`              |
 
 - Returns: `string | null`
 
@@ -1118,9 +1306,9 @@ Get the phone system version
 
 | Parameters | Description                                        | Type     | Optional | Required | Default               |
 | ---------- | -------------------------------------------------- | -------- | -------- | -------- | --------------------- |
-| osName     | system type string Android, iPod, iWatch or iPhone | `string` | -        | true     | -                     |
-| withOS     | whether to bring the name                          | `string` | -        | false    | -                     |
-| userAgent  | ua or any ua like string, may not be passed        | `string` | -        | false    | `navigator.userAgent` |
+| osName     | system type string Android, iPod, iWatch or iPhone | `string` | -        | `true`   | -                     |
+| withOS     | whether to bring the name                          | `string` | -        | `false`  | -                     |
+| userAgent  | ua or any ua like string, may not be passed        | `string` | -        | `false`  | `navigator.userAgent` |
 
 - Returns: `string | boolean | null`
 
@@ -1154,7 +1342,7 @@ get the system version
 
 | Parameters | Description                                 | Type     | Optional | Required | Default             |
 | ---------- | ------------------------------------------- | -------- | -------- | -------- | ------------------- |
-| ua         | ua or any ua like string, may not be passed | `string` | -        | false    | navigator.userAgent |
+| ua         | ua or any ua like string, may not be passed | `string` | -        | `false`  | navigator.userAgent |
 
 - Returns: `OsVersion | null`
 
@@ -1196,7 +1384,7 @@ Get the browser name and version
 
 | Parameters | Description                                 | Type     | Optional | Required | Default             |
 | ---------- | ------------------------------------------- | -------- | -------- | -------- | ------------------- |
-| ua         | ua or any ua like string, may not be passed | `string` | -        | false    | navigator.userAgent |
+| ua         | ua or any ua like string, may not be passed | `string` | -        | `false`  | navigator.userAgent |
 
 - Returns: `BrowserVersion | null`
 
@@ -1220,7 +1408,9 @@ declare function browserVersion(ua?: string): BrowserVersion | null
 
 #### compareVersion
 
-Version number size comparison
+> v5.8.0 support compare tag version
+
+Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
 
 - Since: `4.7.0`
 
@@ -1228,8 +1418,8 @@ Version number size comparison
 
 | Parameters | Description     | Type     | Optional | Required | Default |
 | ---------- | --------------- | -------- | -------- | -------- | ------- |
-| input      | input version   | `string` | -        | true     | -       |
-| compare    | compare version | `string` | -        | true     | -       |
+| input      | input version   | `string` | -        | `true`   | -       |
+| compare    | compare version | `string` | -        | `true`   | -       |
 
 - Returns: `0 | 1 | -1`
 
@@ -1237,13 +1427,41 @@ Version number size comparison
 
 ```ts
 compareVersion('1.11.0', '1.9.9')
-// => 1 // 1=Version 1.11.0 is newer than 1.9.9
+// => 1: 1=Version 1.11.0 is newer than 1.9.9
 
 compareVersion('1.11.0', '1.11.0')
-// => 0 // 0=Versions 1.11.0 and 1.11.0 are the same
+// => 0: 0=Versions 1.11.0 and 1.11.0 are the same
 
 compareVersion('1.11.0', '1.99.0')
-// => -1 // -1=Version 1.11.0 is older than 1.99.0
+// => -1: -1=Version 1.11.0 is older than 1.99.0
+
+compareVersion('1.0.0.0.0.10', '1.0')
+// => -1
+
+// compare tag version: rc > beta > alpha > other
+compareVersion('1.11.0', '1.11.0-beta.1')
+// => -1
+
+compareVersion('1.11.0-beta.1', '1.11.0')
+// => -1
+
+compareVersion('1.11.0-beta.10', '1.11.0-beta.10')
+// => 0
+
+compareVersion('1.11.0-alpha.10', '1.11.0-beta.1')
+// => -1
+
+compareVersion('1.11.0-alpha.10', '1.11.0-rc.1')
+// => -1
+
+compareVersion('1.11.0-tag.10', '1.11.0-alpha.1')
+// => -1
+
+compareVersion('1.11.0-tag.10', '1.11.0-tag.1')
+// => 1
+
+compareVersion('1.11.0-release.10', '1.11.0-tag.1')
+// => 1
 ```
 
 - Types:
@@ -1262,8 +1480,8 @@ parse url params. (If covert is passed true: Scientific notation, binary, octal 
 
 | Parameters | Description                                         | Type      | Optional       | Required | Default |
 | ---------- | --------------------------------------------------- | --------- | -------------- | -------- | ------- |
-| url        | url string (like: ?key1=value1&key2=value2)         | `string`  | -              | true     | -       |
-| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false` |
+| url        | url string (like: ?key1=value1&key2=value2)         | `string`  | -              | `true`   | -       |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | `false`  | `false` |
 
 - Returns: `object`
 
@@ -1298,9 +1516,9 @@ Splice URL parameters (single layer only)
 
 | Parameters        | Description                                                    | Type      | Optional       | Required | Default |
 | ----------------- | -------------------------------------------------------------- | --------- | -------------- | -------- | ------- |
-| params            | json object                                                    | `object`  | -              | true     | -       |
-| covert            | Convert a null value type (null/undefined/) to an empty string | `boolean` | `true`/`false` | false    | `false` |
-| withQuestionsMark | Splicing a question mark                                       | `boolean` | `true`/`false` | false    | `true`  |
+| params            | json object                                                    | `object`  | -              | `true`   | -       |
+| covert            | Convert a null value type (null/undefined/) to an empty string | `boolean` | `true`/`false` | `false`  | `false` |
+| withQuestionsMark | Splicing a question mark                                       | `boolean` | `true`/`false` | `false`  | `true`  |
 
 - Returns: `string`
 
@@ -1334,7 +1552,7 @@ Get the URL parameter in the form of a directory
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| url        | http url    | `object` | -        | true     | -       |
+| url        | http url    | `object` | -        | `true`   | -       |
 
 - Returns: `object`
 
@@ -1365,8 +1583,8 @@ Get a single query parameter (behind "#")
 
 | Parameters | Description            | Type     | Optional | Required | Default         |
 | ---------- | ---------------------- | -------- | -------- | -------- | --------------- |
-| key        | key name               | `string` | -        | true     | -               |
-| url        | pass in the url string | `string` | -        | false    | `location.href` |
+| key        | key name               | `string` | -        | `true`   | -               |
+| url        | pass in the url string | `string` | -        | `false`  | `location.href` |
 
 - Returns: `string`
 
@@ -1398,8 +1616,8 @@ Get all query parameters (behind "#"). (If covert is passed true: Scientific not
 
 | Parameters | Description                                         | Type      | Optional       | Required | Default         |
 | ---------- | --------------------------------------------------- | --------- | -------------- | -------- | --------------- |
-| url        | pass in the url string                              | `string`  | -              | false    | `location.href` |
-| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false`         |
+| url        | pass in the url string                              | `string`  | -              | `false`  | `location.href` |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | `false`  | `false`         |
 
 - Returns: `object`
 
@@ -1432,8 +1650,8 @@ Get a single URL parameter (from the "location.search", before "#")
 
 | Parameters | Description            | Type     | Optional | Required | Default         |
 | ---------- | ---------------------- | -------- | -------- | -------- | --------------- |
-| key        | key name               | `string` | -        | true     | -               |
-| url        | pass in the url string | `string` | -        | false    | `location.href` |
+| key        | key name               | `string` | -        | `true`   | -               |
+| url        | pass in the url string | `string` | -        | `false`  | `location.href` |
 
 - Returns: `string`
 
@@ -1465,8 +1683,8 @@ Get all URL parameters (from the "location.search", before "#"). (If covert is p
 
 | Parameters | Description                                         | Type      | Optional       | Required | Default         |
 | ---------- | --------------------------------------------------- | --------- | -------------- | -------- | --------------- |
-| url        | pass in the url string                              | `string`  | -              | false    | `location.href` |
-| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | false    | `false`         |
+| url        | pass in the url string                              | `string`  | -              | `false`  | `location.href` |
+| covert     | Converts a specific string to a corresponding value | `boolean` | `true`/`false` | `false`  | `false`         |
 
 - Returns: `object`
 
@@ -1501,7 +1719,7 @@ Get the cache, if the deposited is Object, the retrieved is also Object, no need
 
 | Parameters | Description    | Type     | Optional | Required | Default |
 | ---------- | -------------- | -------- | -------- | -------- | ------- |
-| name       | cache key name | `string` | -        | true     | -       |
+| name       | cache key name | `string` | -        | `true`   | -       |
 
 - Returns: `any`
 
@@ -1541,9 +1759,9 @@ Set the cache, if the deposited is Object, the retrieved is also Object, no need
 
 | Parameters | Description                                    | Type     | Optional | Required | Default |
 | ---------- | ---------------------------------------------- | -------- | -------- | -------- | ------- |
-| name       | cache key name                                 | `string` | -        | true     | -       |
-| value      | cache data, can be passed directly into Object | `any`    | -        | true     | -       |
-| seconds    | cache time (seconds)                           | `number` | -        | false    | -       |
+| name       | cache key name                                 | `string` | -        | `true`   | -       |
+| value      | cache data, can be passed directly into Object | `any`    | -        | `true`   | -       |
+| seconds    | cache time (seconds)                           | `number` | -        | `false`  | -       |
 
 - Returns: `void`
 
@@ -1583,7 +1801,7 @@ Delete localStorage
 
 | Parameters | Description    | Type     | Optional | Required | Default |
 | ---------- | -------------- | -------- | -------- | -------- | ------- |
-| name       | cache key name | `string` | -        | true     | -       |
+| name       | cache key name | `string` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1609,7 +1827,7 @@ Get the session, if the deposited is Object, the retrieved is also Object, no ne
 
 | Parameters | Description      | Type     | Optional | Required | Default |
 | ---------- | ---------------- | -------- | -------- | -------- | ------- |
-| name       | session key name | `string` | -        | true     | -       |
+| name       | session key name | `string` | -        | `true`   | -       |
 
 - Returns: `any`
 
@@ -1647,9 +1865,9 @@ Set the session, if the deposited is Object, the retrieved is also Object, no ne
 
 | Parameters | Description                                      | Type     | Optional | Required | Default |
 | ---------- | ------------------------------------------------ | -------- | -------- | -------- | ------- |
-| name       | session key name                                 | `string` | -        | true     | -       |
-| value      | session data, can be passed directly into Object | `any`    | -        | true     | -       |
-| seconds    | session time (seconds)                           | `number` | -        | false    | -       |
+| name       | session key name                                 | `string` | -        | `true`   | -       |
+| value      | session data, can be passed directly into Object | `any`    | -        | `true`   | -       |
+| seconds    | session time (seconds)                           | `number` | -        | `false`  | -       |
 
 - Returns: `void`
 
@@ -1689,7 +1907,7 @@ Delete sessionStorage
 
 | Parameters | Description      | Type     | Optional | Required | Default |
 | ---------- | ---------------- | -------- | -------- | -------- | ------- |
-| name       | session key name | `string` | -        | true     | -       |
+| name       | session key name | `string` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1715,7 +1933,7 @@ Get cookie by name
 
 | Parameters | Description     | Type     | Optional | Required | Default |
 | ---------- | --------------- | -------- | -------- | -------- | ------- |
-| name       | cookie key name | `string` | -        | true     | -       |
+| name       | cookie key name | `string` | -        | `true`   | -       |
 
 - Returns: `any`
 
@@ -1764,11 +1982,11 @@ Set cookie
 
 | Parameters | Description                                     | Type     | Optional               | Required | Default |
 | ---------- | ----------------------------------------------- | -------- | ---------------------- | -------- | ------- |
-| name       | cookie key name                                 | `string` | -                      | true     | -       |
-| value      | cookie data, can be passed directly into Object | `any`    | -                      | true     | -       |
-| seconds    | cookie time (seconds)                           | `number` | -                      | false    | -       |
-| path       | cookie path                                     | `string` | -                      | false    | `/`     |
-| samesite   | SameSite type                                   | `string` | `Strict`/`Lax` /`None` | false    | `None`  |
+| name       | cookie key name                                 | `string` | -                      | `true`   | -       |
+| value      | cookie data, can be passed directly into Object | `any`    | -                      | `true`   | -       |
+| seconds    | cookie time (seconds)                           | `number` | -                      | `false`  | -       |
+| path       | cookie path                                     | `string` | -                      | `false`  | `/`     |
+| samesite   | SameSite type                                   | `string` | `Strict`/`Lax` /`None` | `false`  | `None`  |
 
 - Returns: `void`
 
@@ -1813,7 +2031,7 @@ Delete cookie
 
 | Parameters | Description     | Type     | Optional | Required | Default |
 | ---------- | --------------- | -------- | -------- | -------- | ------- |
-| name       | cookie key name | `string` | -        | true     | -       |
+| name       | cookie key name | `string` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1841,7 +2059,7 @@ convert strings, numbers to base64
 
 | Parameters | Description              | Type              | Optional | Required | Default |
 | ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
-| input      | the string to be encoded | `string`/`number` | -        | true     | -       |
+| input      | the string to be encoded | `string`/`number` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1867,7 +2085,7 @@ base64 decoding
 
 | Parameters | Description              | Type              | Optional | Required | Default |
 | ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
-| input      | the string to be decoded | `string`/`number` | -        | true     | -       |
+| input      | the string to be decoded | `string`/`number` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1893,7 +2111,7 @@ convert strings, numbers to utf8
 
 | Parameters | Description              | Type              | Optional | Required | Default |
 | ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
-| input      | the string to be encoded | `string`/`number` | -        | true     | -       |
+| input      | the string to be encoded | `string`/`number` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1919,7 +2137,7 @@ utf8 decoding
 
 | Parameters | Description              | Type              | Optional | Required | Default |
 | ---------- | ------------------------ | ----------------- | -------- | -------- | ------- |
-| input      | the string to be decoded | `string`/`number` | -        | true     | -       |
+| input      | the string to be decoded | `string`/`number` | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -1947,7 +2165,7 @@ stop bubbling
 
 | Parameters | Description        | Type    | Optional | Required | Default |
 | ---------- | ------------------ | ------- | -------- | -------- | ------- |
-| e          | dom's event object | `Event` | -        | true     | -       |
+| e          | dom's event object | `Event` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -1973,7 +2191,7 @@ stop default events
 
 | Parameters | Description        | Type    | Optional | Required | Default |
 | ---------- | ------------------ | ------- | -------- | -------- | ------- |
-| e          | dom's event object | `Event` | -        | true     | -       |
+| e          | dom's event object | `Event` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -1999,9 +2217,9 @@ event delegate, support multiple delegates
 
 | Parameters | Description                              | Type          | Optional | Required | Default |
 | ---------- | ---------------------------------------- | ------------- | -------- | -------- | ------- |
-| element    | js dom object                            | `HTMLElement` | -        | true     | -       |
-| type       | The type of the event. No need to add on | `string`      | -        | true     | -       |
-| handler    | Callback method                          | `function`    | -        | true     | -       |
+| element    | js dom object                            | `HTMLElement` | -        | `true`   | -       |
+| type       | The type of the event. No need to add on | `string`      | -        | `true`   | -       |
+| handler    | Callback method                          | `function`    | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -2027,9 +2245,9 @@ removeEvent removes the event delegate created by addEvent
 
 | Parameters | Description                              | Type          | Optional | Required | Default |
 | ---------- | ---------------------------------------- | ------------- | -------- | -------- | ------- |
-| element    | js dom object                            | `HTMLElement` | -        | true     | -       |
-| type       | The type of the event. No need to add on | `string`      | -        | true     | -       |
-| handler    | Callback method                          | `function`    | -        | true     | -       |
+| element    | js dom object                            | `HTMLElement` | -        | `true`   | -       |
+| type       | The type of the event. No need to add on | `string`      | -        | `true`   | -       |
+| handler    | Callback method                          | `function`    | -        | `true`   | -       |
 
 - Returns: `void`
 
@@ -2081,8 +2299,8 @@ return the next zIndex value
 
 | Parameters | Description   | Type     | Optional | Required | Default |
 | ---------- | ------------- | -------- | -------- | -------- | ------- |
-| min        | minimum value | `number` | -        | false    | `0`     |
-| max        | maximum value | `number` | -        | false    | -       |
+| min        | minimum value | `number` | -        | `false`  | `0`     |
+| max        | maximum value | `number` | -        | `false`  | -       |
 
 - Returns: `number`
 
@@ -2102,6 +2320,93 @@ nextIndex(10, 100) // 100
 declare function nextIndex(min?: number, max?: number): number
 ```
 
+#### nextVersion
+
+return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
+
+- Since: `5.10.0`
+
+- Arguments:
+
+| Parameters | Description          | Type                                                                                    | Optional | Required | Default |
+| ---------- | -------------------- | --------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| version    | version(like: 1.0.0) | `string`                                                                                | -        | `true`   | -       |
+| type       | version type         | `major` \| `minor` \| `patch` \| `premajor` \| `preminor` \| `prepatch` \| `prerelease` | -        | `false`  | `patch` |
+| preid      | prerelease id        | `string`                                                                                | -        | `false`  | ''      |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+nextVersion('1.2.33') // 1.2.34
+
+nextVersion('1.2.33', 'major') // 2.0.0
+
+nextVersion('1.2.33', 'premajor', 'alpha') // 2.0.0-alpha.1
+```
+
+- Types:
+
+```ts
+declare function nextVersion(
+  version: string,
+  type?: 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease',
+  preid?: string
+): string
+```
+
+#### promiseFactory
+
+Convert an object to a promise like api
+
+- Since: `5.10.0`
+
+- Arguments:
+
+| Parameters | Description       | Type       | Optional | Required | Default |
+| ---------- | ----------------- | ---------- | -------- | -------- | ------- |
+| original   | original object   | `object`   | -        | `true`   | -       |
+| resolver   | resolver function | `Function` | -        | `true`   | -       |
+
+- Returns: `T & PromiseLike<T>`
+
+- Example:
+
+```ts
+import { promiseFactory, waiting } from 'js-cool'
+
+function promise() {
+  const stats = {
+    value: 100
+  }
+
+  const resolver = () =>
+    new Promise(resolve =>
+      waiting(2000).then(() => {
+        stats.value = 200
+        resolve(stats)
+      })
+    )
+
+  return promiseFactory(stats, resolver)
+}
+
+const res = promise()
+// res => 100
+const res = await promise()
+// res => 200
+```
+
+- Types:
+
+```ts
+declare function promiseFactory<T extends object>(
+  original: T,
+  resolver: () => Promise<any>
+): T & PromiseLike<T>
+```
+
 #### fixNumber
 
 truncate a few decimal places, not 0 for shortage
@@ -2112,8 +2417,8 @@ truncate a few decimal places, not 0 for shortage
 
 | Parameters | Description                          | Type              | Optional | Required | Default |
 | ---------- | ------------------------------------ | ----------------- | -------- | -------- | ------- |
-| number     | the number of digits to be processed | `number`/`string` | -        | true     | -       |
-| n          | the number of decimal places to keep | `number`          | -        | false    | `2`     |
+| number     | the number of digits to be processed | `number`/`string` | -        | `true`   | -       |
+| n          | the number of decimal places to keep | `number`          | -        | `false`  | `2`     |
 
 - Returns: `string | number`
 
@@ -2136,9 +2441,54 @@ fixNumber('100.8888', 3)
 declare function fixNumber(number: string | number, n?: number): number
 ```
 
+#### mapTemplate
+
+Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
+
+- Since: `5.9.0`
+
+- Arguments:
+
+| Parameters | Description                   | Type                  | Optional | Required | Default |
+| ---------- | ----------------------------- | --------------------- | -------- | -------- | ------- |
+| tmp        | Template string               | `string`              | -        | `true`   | -       |
+| data       | Template data of map function | `Function`\| `Object` | -        | `true`   | -       |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+const tmp = "My name is ${name}, I'm ${age} years old."
+mapTemplate(tmp, {
+  name: 'saqqdy',
+  age: 18
+})
+// My name is saqqdy, I'm 18 years old.
+
+mapTemplate(tmp, key => ({ name: 'saqqdy', age: 28 })[key])
+// My name is saqqdy, I'm 28 years old.
+
+const tmp1 = "My name is {{name}}, I'm {{age}} years old."
+mapTemplate(tmp1, {
+  name: 'saqqdy',
+  age: 18
+})
+// My name is saqqdy, I'm 18 years old.
+```
+
+- Types:
+
+```ts
+declare function mapTemplate(
+  tmp: string,
+  data: ((value: string) => unknown) | Record<string, unknown>
+): string
+```
+
 #### extend
 
-deep copy
+deep copy & merge objects
 
 - Since: `1.0.2`
 
@@ -2146,8 +2496,8 @@ deep copy
 
 | Parameters | Description                | Type                                 | Optional | Required | Default |
 | ---------- | -------------------------- | ------------------------------------ | -------- | -------- | ------- |
-| target     | boolean or array or object | `boolean`/`ArrayOneMore<ExtendData>` | -        | true     | -       |
-| ...args    | array or object            | `ArrayOneMore<ExtendData>`           | -        | true     | -       |
+| target     | boolean or array or object | `boolean`/`ArrayOneMore<ExtendData>` | -        | `true`   | -       |
+| ...args    | array or object            | `ArrayOneMore<ExtendData>`           | -        | `true`   | -       |
 
 - Returns: `array | object`
 
@@ -2179,6 +2529,34 @@ declare type ExtendArrayData = any[]
 declare type ExtendData = ExtendArrayData | ExtendObjectData
 
 declare type ExtendObjectData = Record<string, any>
+```
+
+#### clone
+
+deep copy (Buffer, Promise, Set, Map are not supported)
+
+- Since: `5.15.0`
+
+- Arguments:
+
+| Parameters | Description   | Type  | Optional | Required | Default |
+| ---------- | ------------- | ----- | -------- | -------- | ------- |
+| source     | source object | `any` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+const source = { a: 100, reg: /\d+/g, arr: [1, 2] }
+const res = clone(source)
+// { a: 100, reg: /\d+/g, arr: [1, 2] }
+```
+
+- Types:
+
+```ts
+declare function clone<T = any>(parent: T): T
 ```
 
 #### delay
@@ -2221,7 +2599,7 @@ Get the target type
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| target     | any target  | `any` | -        | true     | -       |
+| target     | any target  | `any` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -2266,6 +2644,119 @@ declare function getType<T = any>(
   | 'null'
 ```
 
+#### getFileType
+
+Determine file type based on link suffix
+
+- Since: `5.11.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| url        | file url    | `string` | -        | `true`   | -       |
+
+- Returns: `object`
+
+- Example:
+
+```ts
+getFileType('/name.png')
+// { "suffix": "png", "type": "image" }
+
+getFileType('/name.PDF')
+// { "suffix": "pdf", "type": "pdf" }
+
+getFileType('/name.xyz')
+// { "suffix": "xyz", "type": "other" }
+```
+
+- Types:
+
+```ts
+declare function getFileType(url: string): {
+  suffix: string
+  type: 'audio' | 'video' | 'image' | 'other' | 'word' | 'txt' | 'excel' | 'pdf' | 'ppt' | 'zip'
+}
+```
+
+#### sorter
+
+Sorter factory function
+
+- Since: `5.14.0`
+
+- Arguments:
+
+| Parameters | Description                                                      | Type                   | Optional | Required | Default |
+| ---------- | ---------------------------------------------------------------- | ---------------------- | -------- | -------- | ------- |
+| locales    | A string with a BCP 47 language tag, or an array of such strings | `string` `Array`       | -        | `false`  | -       |
+| options    | An object adjusting the output format.                           | `Intl.CollatorOptions` | -        | `false`  | -       |
+
+- Returns: `Function`
+
+- Example:
+
+```ts
+const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
+
+items.sort(
+  sorter('zh-Hans-CN', {
+    ignorePunctuation: true,
+    sensitivity: 'variant',
+    numeric: true
+  })
+)
+// [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
+```
+
+- Types:
+
+```ts
+declare function sorter(
+  locales?: string | string[],
+  options?: Intl.CollatorOptions
+): <T = string, P = string>(a: T, b: P) => number
+```
+
+#### sortPinyin
+
+Sort Chinese by Chinese phonetic alphabet
+
+- Since: `5.14.0`
+
+- Arguments:
+
+| Parameters | Description                            | Type                   | Optional | Required | Default |
+| ---------- | -------------------------------------- | ---------------------- | -------- | -------- | ------- |
+| a          | The first element for comparison.      | `any`                  | -        | `true`   | -       |
+| b          | The second element for comparison.     | `any`                  | -        | `true`   | -       |
+| options    | An object adjusting the output format. | `Intl.CollatorOptions` | -        | `false`  | -       |
+
+- Returns: `number`
+
+- Example:
+
+```ts
+const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
+
+items.sort(sortPinyin)
+// [ ",11", 0, "10", 13, 3, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
+
+items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric: true }))
+// [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
+```
+
+- Types:
+
+```ts
+declare function sortPinyin<T = string, P = string>(
+  a: T,
+  b: P,
+  options?: Intl.CollatorOptions
+): number
+```
+
 #### cleanData
 
 Data cleaning methods
@@ -2276,9 +2767,9 @@ Data cleaning methods
 
 | Parameters | Description                                                                                        | Type             | Optional | Required | Default |
 | ---------- | -------------------------------------------------------------------------------------------------- | ---------------- | -------- | -------- | ------- |
-| data       | the object to be cleaned                                                                           | `object`         | -        | true     | -       |
-| map        | the data queue to be cleaned, can be passed as array or object                                     | `array`/`object` | -        | true     | -       |
-| nullFix    | the value returned if there is no corresponding property, the default does not return the property | `any`            | -        | false    | -       |
+| data       | the object to be cleaned                                                                           | `object`         | -        | `true`   | -       |
+| map        | the data queue to be cleaned, can be passed as array or object                                     | `array`/`object` | -        | `true`   | -       |
+| nullFix    | the value returned if there is no corresponding property, the default does not return the property | `any`            | -        | `false`  | -       |
 
 - Returns: `any`
 
@@ -2309,9 +2800,9 @@ Several ways of file downloading:
 
 | Parameters | Description   | Type     | Optional                           | Required | Default    |
 | ---------- | ------------- | -------- | ---------------------------------- | -------- | ---------- |
-| url        | url link      | `string` | -                                  | true     | -          |
-| filename   | file name     | `string` | -                                  | true     | -          |
-| type       | download type | `string` | `href`/`open`/`download`/`request` | false    | `download` |
+| url        | url link      | `string` | -                                  | `true`   | -          |
+| filename   | file name     | `string` | -                                  | `true`   | -          |
+| type       | download type | `string` | `href`/`open`/`download`/`request` | `false`  | `download` |
 
 - Returns: `void`
 
@@ -2337,10 +2828,10 @@ tree object depth lookup
 
 | Parameters | Description                                          | Type             | Optional | Required | Default |
 | ---------- | ---------------------------------------------------- | ---------------- | -------- | -------- | ------- |
-| tree       | tree object                                          | `array`/`object` | -        | true     | -       |
-| expression | required Query method                                | `any`            | -        | true     | -       |
-| keySet     | optional Default subclass name, query name           | `SearchKeySet`   | -        | true     | -       |
-| number     | optional Number of lookups, if not passed, query all | `number`         | -        | false    | -       |
+| tree       | tree object                                          | `array`/`object` | -        | `true`   | -       |
+| expression | required Query method                                | `any`            | -        | `true`   | -       |
+| keySet     | optional Default subclass name, query name           | `SearchKeySet`   | -        | `true`   | -       |
+| number     | optional Number of lookups, if not passed, query all | `number`         | -        | `false`  | -       |
 
 - Returns: `any`
 
@@ -2371,7 +2862,7 @@ Open link in new tab (file jump download if browser can't parse)
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| url        | http url    | `string` | -        | true     | -       |
+| url        | http url    | `string` | -        | `true`   | -       |
 
 - Returns: `boolean | undefined`
 
@@ -2397,7 +2888,7 @@ copy to clipboard
 
 | Parameters | Description | Type  | Optional | Required | Default |
 | ---------- | ----------- | ----- | -------- | -------- | ------- |
-| value      | any value   | `any` | -        | true     | -       |
+| value      | any value   | `any` | -        | `true`   | -       |
 
 - Returns: `boolean | undefined`
 
@@ -2423,7 +2914,7 @@ Digital thousandths division
 
 | Parameters | Description | Type              | Optional | Required | Default |
 | ---------- | ----------- | ----------------- | -------- | -------- | ------- |
-| num        | the number  | `string`/`number` | -        | true     | -       |
+| num        | the number  | `string`/`number` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -2449,8 +2940,8 @@ return true if the provided predicate function returns true for all elements in 
 
 | Parameters | Description         | Type       | Optional | Required | Default |
 | ---------- | ------------------- | ---------- | -------- | -------- | ------- |
-| arr        | the target array    | `array`    | -        | true     | -       |
-| fn         | the judgment method | `function` | -        | true     | -       |
+| arr        | the target array    | `array`    | -        | `true`   | -       |
+| fn         | the judgment method | `function` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -2477,8 +2968,8 @@ Returns true if the provided predicate function returns true for at least one el
 
 | Parameters | Description         | Type       | Optional | Required | Default |
 | ---------- | ------------------- | ---------- | -------- | -------- | ------- |
-| arr        | the target array    | `array`    | -        | true     | -       |
-| fn         | the judgment method | `function` | -        | true     | -       |
+| arr        | the target array    | `array`    | -        | `true`   | -       |
+| fn         | the judgment method | `function` | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -2527,9 +3018,9 @@ Converts a comma-separated string of values (CSV) to a 2D array.
 
 | Parameters   | Description                            | Type      | Optional | Required | Default |
 | ------------ | -------------------------------------- | --------- | -------- | -------- | ------- |
-| data         | csv data                               | `string`  | -        | true     | -       |
-| delimiter    | delimiter                              | `string`  | -        | false    | ','     |
-| omitFirstRow | the first row is the table header data | `boolean` | -        | false    | `false` |
+| data         | csv data                               | `string`  | -        | `true`   | -       |
+| delimiter    | delimiter                              | `string`  | -        | `false`  | ','     |
+| omitFirstRow | the first row is the table header data | `boolean` | -        | `false`  | `false` |
 
 - Returns: `string`
 
@@ -2557,8 +3048,8 @@ Converts a two-dimensional array to a comma-separated string of values (CSV).
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| arr        | json data   | `array`  | -        | true     | -       |
-| delimiter  | delimiter   | `string` | -        | false    | ','     |
+| arr        | json data   | `array`  | -        | `true`   | -       |
+| delimiter  | delimiter   | `string` | -        | `false`  | ','     |
 
 - Returns: `string`
 
@@ -2603,8 +3094,8 @@ Converts a comma-separated string of values (CSV) to an array of 2D objects. The
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| data       | csv data    | `string` | -        | true     | -       |
-| delimiter  | delimiter   | `string` | -        | false    | ','     |
+| data       | csv data    | `string` | -        | `true`   | -       |
+| delimiter  | delimiter   | `string` | -        | `false`  | ','     |
 
 - Returns: `string`
 
@@ -2634,9 +3125,9 @@ Converts an array of objects to a comma-separated value (CSV) string containing 
 
 | Parameters | Description           | Type     | Optional | Required | Default |
 | ---------- | --------------------- | -------- | -------- | -------- | ------- |
-| arr        | json data             | `array`  | -        | true     | -       |
-| columns    | the specified columns | `array`  | -        | true     | -       |
-| delimiter  | delimiter             | `string` | -        | false    | ','     |
+| arr        | json data             | `array`  | -        | `true`   | -       |
+| columns    | the specified columns | `array`  | -        | `true`   | -       |
+| delimiter  | delimiter             | `string` | -        | `false`  | ','     |
 
 - Returns: `string`
 
@@ -2663,9 +3154,9 @@ Converts RGB component values to color codes.
 
 | Parameters | Description          | Type     | Optional | Required | Default |
 | ---------- | -------------------- | -------- | -------- | -------- | ------- |
-| r          | the 1st value of RGB | `number` | -        | true     | -       |
-| g          | RGB's 2nd value      | `number` | -        | true     | -       |
-| b          | RGB's 3nd value      | `number` | -        | true     | -       |
+| r          | the 1st value of RGB | `number` | -        | `true`   | -       |
+| g          | RGB's 2nd value      | `number` | -        | `true`   | -       |
+| b          | RGB's 3nd value      | `number` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -2691,7 +3182,7 @@ Find the intersection of multiple arrays
 
 | Parameters | Description   | Type    | Optional | Required | Default |
 | ---------- | ------------- | ------- | -------- | -------- | ------- |
-| ...arr     | array targets | `array` | -        | true     | -       |
+| ...arr     | array targets | `array` | -        | `true`   | -       |
 
 - Returns: `array`
 
@@ -2717,7 +3208,7 @@ Find the concatenation of multiple arrays
 
 | Parameters | Description   | Type    | Optional | Required | Default |
 | ---------- | ------------- | ------- | -------- | -------- | ------- |
-| ...arr     | array targets | `array` | -        | true     | -       |
+| ...arr     | array targets | `array` | -        | `true`   | -       |
 
 - Returns: `array`
 
@@ -2743,7 +3234,7 @@ Find the set of differences of multiple arrays that belong to A but not to B/C/D
 
 | Parameters | Description   | Type    | Optional | Required | Default |
 | ---------- | ------------- | ------- | -------- | -------- | ------- |
-| ...arr     | array targets | `array` | -        | true     | -       |
+| ...arr     | array targets | `array` | -        | `true`   | -       |
 
 - Returns: `array`
 
@@ -2769,7 +3260,7 @@ Find the complement of multiple arrays
 
 | Parameters | Description   | Type    | Optional | Required | Default |
 | ---------- | ------------- | ------- | -------- | -------- | ------- |
-| ...arr     | array targets | `array` | -        | true     | -       |
+| ...arr     | array targets | `array` | -        | `true`   | -       |
 
 - Returns: `array`
 
@@ -2795,8 +3286,8 @@ Whether the array contains the specified element
 
 | Parameters | Description      | Type    | Optional | Required | Default |
 | ---------- | ---------------- | ------- | -------- | -------- | ------- |
-| arr        | array target     | `array` | -        | true     | -       |
-| item       | any array member | `any`   | -        | true     | -       |
+| arr        | array target     | `array` | -        | `true`   | -       |
+| item       | any array member | `any`   | -        | `true`   | -       |
 
 - Returns: `boolean`
 
@@ -2823,7 +3314,7 @@ Array de-duplication
 
 | Parameters | Description  | Type    | Optional | Required | Default |
 | ---------- | ------------ | ------- | -------- | -------- | ------- |
-| arr        | array target | `array` | -        | true     | -       |
+| arr        | array target | `array` | -        | `true`   | -       |
 
 - Returns: `array`
 
@@ -2849,7 +3340,7 @@ ipv6 address completion
 
 | Parameters | Description | Type     | Optional | Required | Default |
 | ---------- | ----------- | -------- | -------- | -------- | ------- |
-| ip         | ip address  | `string` | -        | true     | -       |
+| ip         | ip address  | `string` | -        | `true`   | -       |
 
 - Returns: `string`
 
@@ -2876,8 +3367,8 @@ Get array, object property values based on path string
 
 | Parameters | Description                     | Type                | Optional | Required | Default |
 | ---------- | ------------------------------- | ------------------- | -------- | -------- | ------- |
-| target     | target array, object            | `array`/`object`    | -        | true     | -       |
-| prop       | query target, can pass function | `string`/`function` | -        | true     | -       |
+| target     | target array, object            | `array`/`object`    | -        | `true`   | -       |
+| prop       | query target, can pass function | `string`/`function` | -        | `true`   | -       |
 
 - Returns: `any`
 
@@ -2920,9 +3411,9 @@ Set array, object property values based on path string
 
 | Parameters | Description                                      | Type                | Optional | Required | Default |
 | ---------- | ------------------------------------------------ | ------------------- | -------- | -------- | ------- |
-| target     | target array, object                             | `array`/`object`    | -        | true     | -       |
-| prop       | set target, can pass function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | true     | -       |
-| value      | value                                            | `any`               | -        | true     | -       |
+| target     | target array, object                             | `array`/`object`    | -        | `true`   | -       |
+| prop       | set target, can pass function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | `true`   | -       |
+| value      | value                                            | `any`               | -        | `true`   | -       |
 
 - Returns: `any`
 
@@ -2966,8 +3457,8 @@ load resources dynamically, support js, images, css links, css style strings
 
 | Parameters | Description                                                           | Type            | Optional | Required | Default |
 | ---------- | --------------------------------------------------------------------- | --------------- | -------- | -------- | ------- |
-| url        | link to the resource, type must be passed when passing in styleString | `string`        | -        | true     | -       |
-| options    | parameters: attrs, props, force                                       | `SourceOptions` | -        | false    | -       |
+| url        | link to the resource, type must be passed when passing in styleString | `string`        | -        | `true`   | -       |
+| options    | parameters: attrs, props, force                                       | `SourceOptions` | -        | `false`  | -       |
 
 - Returns: `boolean | imageUrl`
 
@@ -3010,8 +3501,8 @@ dynamically load css link resources
 
 | Parameters | Description                     | Type         | Optional | Required | Default |
 | ---------- | ------------------------------- | ------------ | -------- | -------- | ------- |
-| url        | resource url                    | `string`     | -        | true     | -       |
-| options    | parameters: attrs, props, force | `CssOptions` | -        | false    | -       |
+| url        | resource url                    | `string`     | -        | `true`   | -       |
+| options    | parameters: attrs, props, force | `CssOptions` | -        | `false`  | -       |
 
 - Returns: `boolean`
 
@@ -3067,8 +3558,8 @@ load image resource dynamically
 
 | Parameters | Description                     | Type         | Optional | Required | Default |
 | ---------- | ------------------------------- | ------------ | -------- | -------- | ------- |
-| url        | resource url                    | `string`     | -        | true     | -       |
-| options    | parameters: attrs, props, force | `ImgOptions` | -        | false    | -       |
+| url        | resource url                    | `string`     | -        | `true`   | -       |
+| options    | parameters: attrs, props, force | `ImgOptions` | -        | `false`  | -       |
 
 - Returns: `boolean | imageUrl`
 
@@ -3128,8 +3619,8 @@ load js link resources dynamically
 
 | Parameters | Description                     | Type        | Optional | Required | Default |
 | ---------- | ------------------------------- | ----------- | -------- | -------- | ------- |
-| url        | resource url                    | `string`    | -        | true     | -       |
-| options    | parameters: attrs, props, force | `JsOptions` | -        | false    | -       |
+| url        | resource url                    | `string`    | -        | `true`   | -       |
+| options    | parameters: attrs, props, force | `JsOptions` | -        | `false`  | -       |
 
 - Returns: `boolean`
 
@@ -3182,8 +3673,8 @@ load css styles dynamically
 
 | Parameters | Description                     | Type           | Optional | Required | Default |
 | ---------- | ------------------------------- | -------------- | -------- | -------- | ------- |
-| url        | resource url                    | `string`       | -        | true     | -       |
-| options    | parameters: attrs, props, force | `StyleOptions` | -        | false    | -       |
+| url        | resource url                    | `string`       | -        | `true`   | -       |
+| options    | parameters: attrs, props, force | `StyleOptions` | -        | `false`  | -       |
 
 - Returns: `boolean`
 
@@ -3216,7 +3707,7 @@ Image preloading
 
 | Parameters | Description | Type             | Optional | Required | Default |
 | ---------- | ----------- | ---------------- | -------- | -------- | ------- |
-| images     | images url  | `string` `array` | -        | true     | -       |
+| images     | images url  | `string` `array` | -        | `true`   | -       |
 
 - Returns: void
 
@@ -3238,15 +3729,18 @@ declare function preloader(images: string[]): Record<string, HTMLImageElement>
 
 #### waiting
 
+> v5.8.1 Support throw on timeout
+
 waiting for a while
 
 - Since: `5.5.0`
 
 - Arguments:
 
-| Parameters   | Description                 | Type     | Optional | Required | Default |
-| ------------ | --------------------------- | -------- | -------- | -------- | ------- |
-| milliseconds | waiting time (milliseconds) | `number` | -        | true     | -       |
+| Parameters     | Description                 | Type      | Optional | Required | Default |
+| -------------- | --------------------------- | --------- | -------- | -------- | ------- |
+| milliseconds   | waiting time (milliseconds) | `number`  | -        | `true`   | -       |
+| throwOnTimeout | throw on timeout            | `boolean` | -        | `false`  | `false` |
 
 - Returns: `Promise<void>`
 
@@ -3254,47 +3748,361 @@ waiting for a while
 
 ```ts
 waiting(2000)
+
+await waiting(2000, true)
+// reject
 ```
 
 - Types:
 
 ```ts
-declare function waiting(milliseconds: number): Promise<void>
+declare function waiting(milliseconds: number, throwOnTimeout?: boolean): Promise<void>
 ```
 
 #### awaitTo
 
 Async await wrapper for easy error handling
 
+> v5.7.0 Extend awaitTo to support passing in multiple promises
+
 - Since: `5.2.0`
 
 - Arguments:
 
-| Parameters | Description      | Type      | Optional | Required | Default |
-| ---------- | ---------------- | --------- | -------- | -------- | ------- |
-| promise    | promise function | `Promise` | -        | true     | -       |
+| Parameters  | Description         | Type                  | Optional | Required | Default |
+| ----------- | ------------------- | --------------------- | -------- | -------- | ------- |
+| promise     | promise function    | `Promise` `Promise[]` | -        | `true`   | -       |
+| ...promises | Promise rest params | `Promise[]`           | -        | `false`  | -       |
 
-- Returns: `[Error, undefined]` or `[null, data]`
+- Returns: `[Error, undefined]` or `[null, data | data[]]`
 
 - Example:
 
 ```ts
 import { awaitTo as to } from 'js-cool'
 
-const [err, data] = await to(
-  axios({
-    /* ... */
-  })
-)
+// 1. simple use
+const [err, data] = await to(new Promise())
 if (err) {
   // handle request error
 }
+
+// 2. Pass in multiple promises
+const [err, data] = await to(promise1, promise2)
+// or
+const [err, data] = await to([promise1, promise2])
 ```
 
 - Types:
 
 ```ts
 declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
+```
+
+### Blob arrayBuffer base64 file blobUrl
+
+#### arrayBufferToBase64
+
+arrayBuffer to base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description      | Type          | Optional | Required | Default     |
+| ---------- | ---------------- | ------------- | -------- | -------- | ----------- |
+| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -           |
+| mime       | image mime       | `String`      | -        | `false`  | `image/png` |
+
+- Returns: `String`
+
+- Example:
+
+```ts
+arrayBufferToBase64(arrayBuffer, 'image/png')
+// data:image/png;base64,xxxxxxxxxxxx
+```
+
+- Types:
+
+```ts
+declare function arrayBufferToBase64(input: ArrayBuffer, mime?: string): string
+```
+
+#### arrayBufferToBlob
+
+arrayBuffer to blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description      | Type          | Optional | Required | Default     |
+| ---------- | ---------------- | ------------- | -------- | -------- | ----------- |
+| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -           |
+| mime       | image mime       | `String`      | -        | `false`  | `image/png` |
+
+- Returns: `Blob`
+
+- Example:
+
+```ts
+arrayBufferToBase64(arrayBuffer, 'image/png')
+// Blob
+```
+
+- Types:
+
+```ts
+declare function arrayBufferToBlob(input: ArrayBuffer, mime?: string): Blob
+```
+
+#### base64ToArrayBuffer
+
+base64 to arrayBuffer
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
+
+- Returns: `ArrayBuffer`
+
+- Example:
+
+```ts
+base64ToArrayBuffer(base64)
+// ArrayBuffer
+```
+
+- Types:
+
+```ts
+declare function base64ToArrayBuffer(input: string): ArrayBuffer
+```
+
+#### base64ToBlob
+
+base64 to blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
+
+- Returns: `Blob`
+
+- Example:
+
+```ts
+base64ToBlob(base64)
+// Blob
+```
+
+- Types:
+
+```ts
+declare function base64ToBlob(input: string): Blob
+```
+
+#### base64ToFile
+
+base64 to file
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description   | Type     | Optional | Required | Default |
+| ---------- | ------------- | -------- | -------- | -------- | ------- |
+| input      | base64 string | `String` | -        | `true`   | -       |
+| fileName   | file name     | `String` | -        | `true`   | -       |
+
+- Returns: `File`
+
+- Example:
+
+```ts
+base64ToFile(base64, 'image.png')
+// File
+```
+
+- Types:
+
+```ts
+declare function base64ToFile(input: string, fileName: string): File
+```
+
+#### blobToArrayBuffer
+
+blob to arrayBuffer
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
+
+- Returns: `ArrayBuffer`
+
+- Example:
+
+```ts
+blobToArrayBuffer(blob).then(data => {
+  // ArrayBuffer
+})
+```
+
+- Types:
+
+```ts
+declare function blobToArrayBuffer(input: Blob): Promise<ArrayBuffer | null>
+```
+
+#### blobToBase64
+
+blob to base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
+
+- Returns: `String`
+
+- Example:
+
+```ts
+blobToBase64(blob).then(data => {
+  // data:image/png;base64,xxxxxxxxxxxx
+})
+```
+
+- Types:
+
+```ts
+declare function blobToBase64(input: Blob): Promise<string | null>
+```
+
+#### blobToUrl
+
+blob to url
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | blob data   | `Blob` | -        | `true`   | -       |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+blobToUrl(blob)
+// blob:xxxxxxx
+```
+
+- Types:
+
+```ts
+declare function blobToUrl(input: Blob): string
+```
+
+#### fileToBase64
+
+file to base64
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type   | Optional | Required | Default |
+| ---------- | ----------- | ------ | -------- | -------- | ------- |
+| input      | file data   | `File` | -        | `true`   | -       |
+
+- Returns: `String`
+
+- Example:
+
+```ts
+fileToBase64(file).then(data => {
+  // data:image/png;base64,xxxxxxxxxxxx
+})
+```
+
+- Types:
+
+```ts
+declare function fileToBase64(input: File): Promise<string | null>
+```
+
+#### svgToBlob
+
+svg to blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| input      | svg string  | `String` | -        | `true`   | -       |
+
+- Returns: `Blob`
+
+- Example:
+
+```ts
+svgToBlob(svg)
+// Blob
+```
+
+- Types:
+
+```ts
+declare function svgToBlob(input: string): Blob
+```
+
+#### urlToBlob
+
+url to blob
+
+- Since: `5.13.0`
+
+- Arguments:
+
+| Parameters | Description | Type     | Optional | Required | Default |
+| ---------- | ----------- | -------- | -------- | -------- | ------- |
+| input      | url         | `String` | -        | `true`   | -       |
+
+- Returns: `Blob`
+
+- Example:
+
+```ts
+urlToBlob(url).then(blob => {
+  // Blob
+})
+```
+
+- Types:
+
+```ts
+declare function urlToBlob(input: string): Promise<Blob | null>
 ```
 
 ## Support & Issues

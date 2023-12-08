@@ -7,6 +7,7 @@ export interface DirParamType {
  * Get directory form URL parameters
  *
  * @deprecated It will be refactored and renamed getDirParams in the next major release.
+ * @since 1.0.1
  * @param url - pass in the url address
  * @returns - parameter object
  */

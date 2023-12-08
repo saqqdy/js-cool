@@ -1,9 +1,10 @@
-import type { AnyObject } from '../typings/common'
+import type { AnyObject } from './types'
 import isArray from './isArray'
 
 /**
  * Data cleaning methods
  *
+ * @since 1.0.2
  * @param data - the object to be cleaned, must be passed
  * @param map - the data queue to be cleaned, can be passed as array or object
  * @param map -

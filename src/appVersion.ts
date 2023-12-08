@@ -11,6 +11,7 @@ import inBrowser from './inBrowser'
  * appVersion('appname', false) // null
  * appVersion('appname') // 1.0.0-beta.8
  * ```
+ * @since 5.1.0
  * @param appName - app name
  * @param ua - ua or any ua like string, may not be passed, default is navigator.userAgent
  * @param ignoreCase - whether to ignore case
@@ -35,7 +36,7 @@ function appVersion(appName: string, ua?: string | boolean, ignoreCase?: boolean
 	}
 	if (typeof ignoreCase !== 'boolean') ignoreCase = true
 
-	const reg = new RegExp(`${appName}\/(\\d+(?:.\\d)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
+	const reg = new RegExp(`${appName}\/(\\d+(?:.\\d+)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
 	const match = ua.match(reg)
 
 	return match ? match[1] : null

@@ -1,7 +1,8 @@
 /**
- * pattern returns some common regulars: any, arrjson, chinese, email, float, isjson, json, mobile, number, pass, postcode, qq, string, tel, textarea, url, username
+ * Collection of common regular expressions
  *
  * @deprecated It will be refactored and renamed patterns in the next major release.
+ * @since 1.0.1
  * @returns - object
  */
 const pattern = {

@@ -5,6 +5,7 @@
  * ```js
  * isDarkMode() // true
  * ```
+ * @since 5.5.0
  * @returns - result
  */
 function isDarkMode(): boolean {

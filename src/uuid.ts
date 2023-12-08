@@ -5,6 +5,7 @@
  * ```js
  * uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
  * ```
+ * @since 1.0.9
  * @returns - uuid
  */
 const uuid = (): string =>

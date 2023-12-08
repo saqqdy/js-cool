@@ -135,6 +135,7 @@ function createEntry(config: Config) {
 			'mount-style',
 			'load-source',
 			'use-downloads',
+			'await-to-done',
 			'os-lang'
 		)
 	}

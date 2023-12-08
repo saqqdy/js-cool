@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { AnyFunction, AnyObject } from '../typings/common'
+import type { AnyFunction, AnyObject } from './types'
 
 /**
  * addEvent() event delegate, supports multiple delegates
  *
+ * @since 1.0.2
  * @param element - js dom object
  * @param type - The event type. No need to add on
  * @param handler - callback method

@@ -1,5 +1,83 @@
 # Change logs
 
+## 2023.11.13 v5.15.2
+
+1. move `awaitTo` to `await-to-done` function, see: [await-to-done](https://github.com/saqqdy/await-to-done)
+2. fix circle require
+
+## 2023.11.06 v5.15.0
+
+1. new `clone` function, see: [clone](https://github.com/saqqdy/js-cool#clone)
+2. new `isDate` function, see: [isDate](https://github.com/saqqdy/js-cool#isdate)
+3. new `isRegExp` function, see: [isRegExp](https://github.com/saqqdy/js-cool#isregexp)
+
+## 2023.11.01 v5.14.1
+
+1. docs work
+
+## 2023.10.31 v5.14.0
+
+1. new `sorter` function, see: [sorter](https://github.com/saqqdy/js-cool#sorter)
+2. new `sortPinyin` function, see: [sortPinyin](https://github.com/saqqdy/js-cool#sortpinyin)
+3. upgrade all packages
+
+## 2023.10.27 v5.13.0
+
+1. new `arrayBufferToBase64` function, see: [arrayBufferToBase64](https://github.com/saqqdy/js-cool#arraybuffertobase64)
+2. new `arrayBufferToBlob` function, see: [arrayBufferToBlob](https://github.com/saqqdy/js-cool#arraybuffertoblob)
+3. new `base64ToArrayBuffer` function, see: [base64ToArrayBuffer](https://github.com/saqqdy/js-cool#base64toarraybuffer)
+4. new `base64ToBlob` function, see: [base64ToBlob](https://github.com/saqqdy/js-cool#base64toblob)
+5. new `base64ToFile` function, see: [base64ToFile](https://github.com/saqqdy/js-cool#base64tofile)
+6. new `blobToArrayBuffer` function, see: [blobToArrayBuffer](https://github.com/saqqdy/js-cool#blobtoarraybuffer)
+7. new `blobToBase64` function, see: [blobToBase64](https://github.com/saqqdy/js-cool#blobtobase64)
+8. new `blobToUrl` function, see: [blobToUrl](https://github.com/saqqdy/js-cool#blobtourl)
+9. new `fileToBase64` function, see: [fileToBase64](https://github.com/saqqdy/js-cool#filetobase64)
+10. new `svgToBlob` function, see: [svgToBlob](https://github.com/saqqdy/js-cool#svgtoblob)
+11. new `urlToBlob` function, see: [urlToBlob](https://github.com/saqqdy/js-cool#urltoblob)
+12. new `inNodeJs` function, see: [inNodeJs](https://github.com/saqqdy/js-cool#innodejs)
+
+## 2023.10.09 v5.12.0
+
+1. new `isEqual` function, see: [isEqual](https://github.com/saqqdy/js-cool#isequal)
+2. upgrade all packages
+
+## 2023.10.09 v5.11.0
+
+1. new `getFileType` function, see: [getFileType](https://github.com/saqqdy/js-cool#getfiletype)
+2. upgrade all packages
+
+## 2023.09.23 v5.10.0
+
+1. new `nextVersion` function, see: [nextVersion](https://github.com/saqqdy/js-cool#nextversion)
+2. new `promiseFactory` function, see: [promiseFactory](https://github.com/saqqdy/js-cool#promiseFactory)
+
+## 2023.09.20 v5.9.0
+
+1. new `mapTemplate` function, see: [mapTemplate](https://github.com/saqqdy/js-cool#maptemplate)
+
+## 2023.09.16 v5.8.1
+
+1. `waiting` support throw on timeout [API Docs](https://www.saqqdy.com/js-cool#waiting)
+
+## 2023.09.11 v5.8.0
+
+1. `compareVersion` support tag version [API Docs](https://www.saqqdy.com/js-cool#compareversion)
+
+## 2023.09.06 v5.7.2
+
+1. fix regexp bug of appVersion
+
+## 2023.09.01 v5.7.1
+
+1. revert nextIndex function
+
+## 2023.08.22 v5.7.0
+
+1. new `isIterable` function, see: [isIterable](https://github.com/saqqdy/js-cool#isiterable)
+2. Extend awaitTo to support passing in multiple promises, see: [awaitTo](https://github.com/saqqdy/js-cool#awaitto)
+3. fix types
+4. upgrade all packages
+
 ## 2023.08.18 v5.6.0
 
 1. new `getCookies` function, see: [getCookies](https://github.com/saqqdy/js-cool#getcookies)
@@ -62,7 +140,7 @@
 
 ## 2023.06.14 v4.7.0
 
-1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool/functions/compareVersion.html)
+1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool#compareversion)
 2. upgrade all packages
 
 ## 2023.06.06 v4.6.0
@@ -71,7 +149,7 @@
 
 ## 2023.06.05 v4.5.0
 
-1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool/functions/inBrowser.html)
+1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool#inbrowser)
 2. some translate work
 3. upgrade all packages
 

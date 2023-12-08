@@ -17,6 +17,7 @@
  *
  * getSession('data4') // null
  * ```
+ * @since 1.0.2
  * @param name - name
  * @returns - sessionStorage
  */

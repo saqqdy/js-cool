@@ -15,6 +15,7 @@
  * shuffle(arr, 2)
  * // [3, 2]
  * ```
+ * @since 5.4.0
  * @param value - arrays or strings
  * @param size - new array or string length
  * @returns - result

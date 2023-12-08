@@ -17,6 +17,7 @@ export interface SessionData<T = unknown> {
  * // set number, expires in 20 seconds
  * setSession('number', 666, 20)
  * ```
+ * @since 1.0.2
  * @param name - name
  * @param value - Set the value to be stored, either as an object or as a string
  * @param seconds - the valid time

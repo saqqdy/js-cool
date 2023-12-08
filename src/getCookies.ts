@@ -6,6 +6,7 @@
  * getCookies()
  * // \{ token: 'xxx', name: 'saqqdy' \}
  * ```
+ * @since 5.6.0
  * @returns - the cookie values
  */
 function getCookies() {

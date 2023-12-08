@@ -1,6 +1,7 @@
 /**
  * Remove all attributes of HTML tags
  *
+ * @since 1.0.1
  * @param string - pass in the string
  * @returns newString
  */

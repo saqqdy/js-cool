@@ -6,6 +6,7 @@
  * contains([1, 2], 2) // true
  * contains([1, 2], 3) // false
  * ```
+ * @since 2.2.1
  * @param arr - the target array
  * @param item - the target to find
  * @returns boolean

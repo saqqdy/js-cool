@@ -9,6 +9,7 @@
  * randomNumber(0.1, 0.9)
  * // 0.8
  * ```
+ * @since 5.0.0
  * @param min - the minimum value of the random number
  * @param max - the maximum value of the random number
  * @returns - random number

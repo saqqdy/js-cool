@@ -4,6 +4,7 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 /**
  * String, number to base64
  *
+ * @since 1.0.1
  * @param input - the string to be encoded
  * @returns - the BASE64 encoding
  */

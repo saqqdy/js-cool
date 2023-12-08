@@ -9,6 +9,7 @@
  * CSVToJSON('col1;col2\\\na;b\\\nc;d', ';')
  * // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`.
  * ```
+ * @since 1.0.9
  * @param data - csv data
  * @param delimiter - delimiter, default ','
  * @returns - json

@@ -6,6 +6,7 @@
  * unescape('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')
  * // '<div>test<br />string</div>'
  * ```
+ * @since 5.5.0
  * @param string - string
  * @returns - newString
  */

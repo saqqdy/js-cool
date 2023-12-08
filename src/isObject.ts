@@ -7,6 +7,7 @@ import getType from './getType'
  * ```js
  * isObject({}) // true
  * ```
+ * @since 5.0.0
  * @param target - any target
  * @returns - target is Object
  */

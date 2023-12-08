@@ -56,7 +56,7 @@ osVersion()
 2. 使用 CDN 引入
 
 ```html
-<script src="https://unpkg.com/js-cool@4.4.0/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/js-cool@latest/dist/index.global.prod.js"></script>
 <script>
   jsCool.browserVersion()
 </script>
@@ -90,12 +90,17 @@ const functionList = {
   isDigitals, // 是否为由数字组成的字符串
   isExitsFunction, // 是否存在指定函数
   isExitsVariable, // 是否存在指定变量
+  isEqual, // 比较2个对象是否相等
   isWindow, // 是否window对象
   isPlainObject, // 是否plainObject
   isDarkMode, // 是否暗色模式
   isObject, // 是否object类型
+  isDate, // 是否日期类型
+  isRegExp, // 是否正则类型
   isArray, // 判断是否数组
+  isIterable, // 判断是否可迭代对象
   inBrowser, // 判断是否在浏览器端运行
+  inNodeJs, // 判断是否在nodejs环境运行
   windowSize, // windowSize获取窗口大小
   getAppVersion, // 获取APP版本号(deprecated)
   appVersion, // 获取APP版本号
@@ -134,10 +139,17 @@ const functionList = {
   getScrollPosition, // 获取滑动到顶部和底部 返回'top' 'bottom'，建议使用限流
   // 工具类
   nextIndex, // 返回下一个zIndex值
+  nextVersion, // 返回下一个版本号
+  promiseFactory, // 将一个对象转换为promise like api
   fixNumber, // 截取小数点后几位，不足的不补0
-  extend, // 深拷贝
+  mapTemplate, // 替换模板字符串的特定数据
+  extend, // 深拷贝&合并对象
+  clone, // 深拷贝 (不支持Buffer、Promise、Set、Map)
   delay, // 防抖节流
   getType, // 获取目标类型
+  getFileType, // 根据链接后缀判断文件类型
+  sorter, // 排序工厂函数
+  sortPinyin, // 中文按拼音排序
   cleanData, // 清洗数据
   download, // 文件下载
   searchObject, // 对象查找
@@ -168,7 +180,19 @@ const functionList = {
   mountStyle, // 动态加载css样式
   preloader, // 图片预加载
   waiting, // 等待一段时间
-  awaitTo // 替代try catch处理promise错误
+  awaitTo, // 替代try catch处理promise错误
+  // 二进制
+  arrayBufferToBase64, // arrayBuffer转Base64
+  arrayBufferToBlob, // arrayBuffer转Blob
+  base64ToArrayBuffer, // base64转ArrayBuffer
+  base64ToBlob, // base64转Blob
+  base64ToFile, // base64转File
+  blobToArrayBuffer, // blob转ArrayBuffer
+  blobToBase64, // blob转Base64
+  blobToUrl, // blob转Url
+  fileToBase64, // file转Base64
+  svgToBlob, // svg转Blob
+  urlToBlob // url转Blob
 }
 ```
 

@@ -1,6 +1,7 @@
 /**
  * Decoding Utf8
  *
+ * @since 1.0.1
  * @param input - the string to be decoded
  * @returns decoded string
  */

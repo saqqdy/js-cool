@@ -27,10 +27,15 @@ import cutCHSString from './cutCHSString'
 import isDigitals from './isDigitals'
 import isExitsFunction from './isExitsFunction'
 import isExitsVariable from './isExitsVariable'
+import isEqual from './isEqual'
 import isWindow from './isWindow'
 import isObject from './isObject'
+import isDate from './isDate'
+import isRegExp from './isRegExp'
 import isArray from './isArray'
+import isIterable from './isIterable'
 import inBrowser from './inBrowser'
+import inNodeJs from './inNodeJs'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import appVersion from './appVersion'
@@ -73,10 +78,17 @@ import getScrollPosition from './getScrollPosition'
 
 // tools
 import nextIndex from './nextIndex'
+import nextVersion from './nextVersion'
+import promiseFactory from './promiseFactory'
 import fixNumber from './fixNumber'
+import mapTemplate from './mapTemplate'
 import extend from './extend'
+import clone from './clone'
 import delay from './delay'
 import getType from './getType'
+import getFileType from './getFileType'
+import sorter from './sorter'
+import sortPinyin from './sortPinyin'
 import isPlainObject from './isPlainObject'
 import isDarkMode from './isDarkMode'
 import cleanData from './cleanData'
@@ -103,9 +115,21 @@ import getProperty from './getProperty'
 import setProperty from './setProperty'
 import preloader from './preloader'
 import waiting from './waiting'
-import awaitTo from './awaitTo'
 
-import { loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
+// Blob arrayBuffer base64 file blobUrl
+import arrayBufferToBase64 from './arrayBufferToBase64'
+import arrayBufferToBlob from './arrayBufferToBlob'
+import base64ToArrayBuffer from './base64ToArrayBuffer'
+import base64ToBlob from './base64ToBlob'
+import base64ToFile from './base64ToFile'
+import blobToArrayBuffer from './blobToArrayBuffer'
+import blobToBase64 from './blobToBase64'
+import blobToUrl from './blobToUrl'
+import fileToBase64 from './fileToBase64'
+import svgToBlob from './svgToBlob'
+import urlToBlob from './urlToBlob'
+
+import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 
 export default {
 	version: '__VERSION__',
@@ -145,8 +169,10 @@ export default {
 	encodeBase64,
 	encodeUtf8,
 	extend,
+	clone,
 	fillIPv6,
 	fixNumber,
+	mapTemplate,
 	getAppVersion,
 	appVersion,
 	getCHSLength,
@@ -167,6 +193,9 @@ export default {
 	fingerprint,
 	getScrollPosition,
 	getType,
+	getFileType,
+	sorter,
+	sortPinyin,
 	parseUrlParam,
 	spliceUrlParam,
 	getUrlParam,
@@ -175,16 +204,34 @@ export default {
 	isDigitals,
 	isExitsFunction,
 	isExitsVariable,
+	isEqual,
 	isWindow,
 	isObject,
+	isDate,
+	isRegExp,
 	isArray,
+	isIterable,
 	isPlainObject,
 	isDarkMode,
 	inBrowser,
+	inNodeJs,
 	minus,
 	nextIndex,
+	nextVersion,
+	promiseFactory,
 	waiting,
 	awaitTo,
+	arrayBufferToBase64,
+	arrayBufferToBlob,
+	base64ToArrayBuffer,
+	base64ToBlob,
+	base64ToFile,
+	blobToArrayBuffer,
+	blobToBase64,
+	blobToUrl,
+	fileToBase64,
+	svgToBlob,
+	urlToBlob,
 	openUrl,
 	copy,
 	pattern,

@@ -6,6 +6,7 @@
  * escape('<div>test<br />string</div>')
  * // '&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;'
  * ```
+ * @since 5.5.0
  * @param string - string with html tags
  * @returns - newString
  */

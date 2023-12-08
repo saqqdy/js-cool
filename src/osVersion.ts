@@ -29,6 +29,7 @@ export interface OsVersion {
  * osVersion() // \{ name: 'WindowsPhone', version: '10.0' \}
  *
  * ```
+ * @since 5.1.0
  * @param ua - ua or any ua like string, may not be passed, default is navigator.userAgent
  * @return OsVersion|null
  */

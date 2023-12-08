@@ -6,6 +6,7 @@
  * isExitsVariable('test') // false
  * isExitsVariable('window') // true
  * ```
+ * @since 1.0.1
  * @param name - variable name
  * @returns - true/false
  */

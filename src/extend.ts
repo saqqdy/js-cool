@@ -1,4 +1,4 @@
-import type { ArrayOneMore } from '../typings/common'
+import type { ArrayOneMore } from './types'
 import isArray from './isArray'
 import isPlainObject from './isPlainObject'
 
@@ -32,8 +32,9 @@ function extendObject(target: ExtendData, source: ExtendData, deep: boolean): vo
 }
 
 /**
- * extend greedy
+ * deep copy & merge objects
  *
+ * @since 1.0.2
  * @param target - boolean | ExtendData
  * @param args - ArrayOneMore<ExtendData>
  */

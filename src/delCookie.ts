@@ -3,6 +3,7 @@ import getCookie from './getCookie'
 /**
  * Delete cookie
  *
+ * @since 1.0.2
  * @param name - cookie name
  */
 function delCookie(name: string) {

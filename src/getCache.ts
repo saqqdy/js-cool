@@ -17,6 +17,7 @@
  *
  * getCache('data4') // null
  * ```
+ * @since 1.0.2
  * @param name - cache name
  * @returns - data, if it's an object, it's also an object
  */

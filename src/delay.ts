@@ -1,8 +1,9 @@
-import type { AnyFunction } from '../typings/common'
+import type { AnyFunction } from './types'
 
 /**
  * debounce & throttle
  *
+ * @since 1.0.2
  * @returns class
  */
 function delay() {

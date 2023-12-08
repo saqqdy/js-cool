@@ -1,6 +1,7 @@
 /**
  * Image preloading
  *
+ * @since 5.5.0
  * @param images - images url
  */
 function preloader(images: string): HTMLImageElement

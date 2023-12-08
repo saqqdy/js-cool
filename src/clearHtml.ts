@@ -1,6 +1,7 @@
 /**
  * Removing HTML tags
  *
+ * @since 1.0.1
  * @param string - string with html tags
  * @returns newString
  */

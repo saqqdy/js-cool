@@ -16,6 +16,7 @@
  *
  * setProperty(target, () => 'a') // 1
  * ```
+ * @since 2.7.0
  * @param target - target array, object
  * @param prop - set target, can pass function, 'a' | 'a[1].c'
  * @returns - the corresponding value
