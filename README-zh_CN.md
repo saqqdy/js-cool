@@ -110,6 +110,8 @@ const functionList = {
   compareVersion, // 版本号大小对比
   parseUrlParam, // 解析url参数（key1=value1&key2=value2）
   spliceUrlParam, // 拼接URL参数（仅支持单层）
+  safeParse, // 安全解析JSON字符串
+  safeStringify, // 安全转换JSON对象为字符串
   getDirParam, // 获取目录形式URL参数
   getQueryParam, // 获取query参数（#后面）
   getQueryParams, // 获取所有query参数（#后面）

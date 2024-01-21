@@ -1,5 +1,10 @@
 # Change logs
 
+## 2024.01.21 v5.16.0
+
+1. new `safeParse` `safeStringify` function
+2. upgrade all packages
+
 ## 2023.11.13 v5.15.2
 
 1. move `awaitTo` to `await-to-done` function, see: [await-to-done](https://github.com/saqqdy/await-to-done)

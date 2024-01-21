@@ -45,6 +45,8 @@ import browserVersion from './browserVersion'
 import compareVersion from './compareVersion'
 import parseUrlParam from './parseUrlParam'
 import spliceUrlParam from './spliceUrlParam'
+import safeParse from './safeParse'
+import safeStringify from './safeStringify'
 import getDirParam from './getDirParam'
 import getQueryParam from './getQueryParam'
 import getQueryParams from './getQueryParams'
@@ -198,6 +200,8 @@ export default {
 	sortPinyin,
 	parseUrlParam,
 	spliceUrlParam,
+	safeParse,
+	safeStringify,
 	getUrlParam,
 	getUrlParams,
 	intersect,

@@ -75,6 +75,8 @@ Collection of common JavaScript / TypeScript utilities
     - [compareVersion](#compareversion) - Version number size comparison, tag version: `rc` > `beta` > `alpha` > `other`
     - [parseUrlParam](#parseurlparam) - parse url params. (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
     - [spliceUrlParam](#spliceurlparam) - Splice URL parameters (single layer only)
+    - [safeParse](#safeparse) - Secure parsing of JSON strings
+    - [safeStringify](#safestringify) - Secure stringify of JSON Object
     - [getDirParam](#getdirparam) - Get the URL parameter in the form of a directory
     - [getQueryParam](#getqueryparam) - Get a single query parameter (behind "#")
     - [getQueryParams](#getqueryparams) - Get all query parameters (behind "#"). (If covert is passed true: Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
@@ -1525,9 +1527,14 @@ Splice URL parameters (single layer only)
 - Example:
 
 ```ts
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key4: '测试' }) // ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true) // ?key1=100&key2=true&key3=&key4=
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true, false) // key1=100&key2=true&key3=&key4=
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key4: '测试' })
+// ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true)
+// ?key1=100&key2=true&key3=&key4=
+
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true, false)
+// key1=100&key2=true&key3=&key4=
 ```
 
 - Types:
@@ -1538,6 +1545,77 @@ declare function spliceUrlParam(
   covert?: boolean,
   withQuestionsMark?: boolean
 ): string | null
+```
+
+#### safeParse
+
+Secure parsing of JSON strings
+
+- Since: `5.16.0`
+
+- Arguments:
+
+| Parameters | Description             | Type      | Optional       | Required | Default |
+| ---------- | ----------------------- | --------- | -------------- | -------- | ------- |
+| data       | JSON string             | `string`  | -              | `true`   | -       |
+| covert     | Whether to convert data | `boolean` | `true`/`false` | `false`  | `true`  |
+
+- Returns: `Object`
+
+- Example:
+
+```ts
+safeParse('100')
+// 100
+
+safeParse('{"a":"undefined","b":"NaN","c":"Infinity"}')
+// { b: NaN, c: Infinity }
+```
+
+- Types:
+
+```ts
+declare function safeParse(data: string, covert?: boolean): any
+```
+
+#### safeStringify
+
+Secure stringify of JSON Object
+
+- Since: `5.16.0`
+
+- Arguments:
+
+| Parameters | Description             | Type      | Optional       | Required | Default |
+| ---------- | ----------------------- | --------- | -------------- | -------- | ------- |
+| data       | JSON Object             | `any`     | -              | `true`   | -       |
+| covert     | Whether to convert data | `boolean` | `true`/`false` | `false`  | `true`  |
+
+- Returns: `string`
+
+- Example:
+
+```ts
+safeStringify(100)
+// "100"
+
+safeStringify(undefined)
+// "undefined"
+
+safeStringify(NaN)
+// "NaN"
+
+safeStringify(Infinity)
+// "Infinity"
+
+safeStringify({ a: undefined, b: NaN, c: Infinity })
+// {"a":"undefined","b":"NaN","c":"Infinity"}
+```
+
+- Types:
+
+```ts
+declare function safeStringify(data: any, covert?: boolean): string
 ```
 
 #### getDirParam

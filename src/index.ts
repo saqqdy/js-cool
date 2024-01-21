@@ -77,6 +77,8 @@ export { default as browserVersion, type BrowserVersion } from './browserVersion
 export { default as compareVersion } from './compareVersion'
 export { default as parseUrlParam } from './parseUrlParam'
 export { default as spliceUrlParam } from './spliceUrlParam'
+export { default as safeParse } from './safeParse'
+export { default as safeStringify } from './safeStringify'
 export { default as getDirParam, type DirParamType } from './getDirParam'
 export { default as getQueryParam } from './getQueryParam'
 export { default as getQueryParams } from './getQueryParams'
