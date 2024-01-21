@@ -21,6 +21,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # Replace <USERNAME> with your own Github username and <REPO> with the repository name, for example, in my case it's
-git push -f https://github.com/saqqdy/js-cool.git master:gh-pages
+git push -f https://github.com/saqqdy/js-cool.git main:gh-pages
 
 cd -
