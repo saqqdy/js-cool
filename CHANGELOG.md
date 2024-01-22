@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.01.22 v5.17.0
+
+1. `randomColor` supports a range of custom color values, which can be used to customize the generation of dark, light, warm, etc.
+
 ## 2024.01.21 v5.16.0
 
 1. new `safeParse` `safeStringify` function

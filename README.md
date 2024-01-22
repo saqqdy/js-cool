@@ -486,22 +486,42 @@ declare function dash2Camel(string: string): string
 
 Generate random hexadecimal colors
 
+> Support for custom color value ranges starting with version 5.17.0, which can be used to customize the generation of darker, lighter, warmer colors, etc.
+
 - Since: `5.5.0`
 
-- Arguments: none
+- Arguments:
+
+| Parameters | Description                             | Type                                   | Optional | Required | Default |
+| ---------- | --------------------------------------- | -------------------------------------- | -------- | -------- | ------- |
+| min        | the minimum value of the random numbers | `number` \/ `[number, number, number]` | -        | `false`  | -       |
+| max        | the maximum value of the random numbers | `number` \/ `[number, number, number]` | -        | `false`  | -       |
 
 - Returns: `string`
 
 - Example:
 
 ```ts
-randomColor() // #ff6600
+randomColor()
+// #bf444b
+
+randomColor(200)
+// #d6e9d7
+
+randomColor(200, 255)
+// #d3f9e4
+
+randomColor([0, 0, 0], [255, 255, 255])
+// #e2f2f3
 ```
 
 - Types:
 
 ```ts
-declare function randomColor(): string
+declare function randomColor(
+  min?: number | [number, number, number],
+  max?: number | [number, number, number]
+): string
 ```
 
 #### randomNumber
