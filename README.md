@@ -1571,6 +1571,8 @@ declare function spliceUrlParam(
 
 Secure parsing of JSON strings
 
+> support BigInt since `v5.17.1`
+
 - Since: `5.16.0`
 
 - Arguments:
@@ -1588,8 +1590,8 @@ Secure parsing of JSON strings
 safeParse('100')
 // 100
 
-safeParse('{"a":"undefined","b":"NaN","c":"Infinity"}')
-// { b: NaN, c: Infinity }
+safeParse('{"a":"undefined","b":"NaN","c":"Infinity","d":"9007199254740993"}')
+// { b: NaN, c: Infinity, d: 9007199254740993n }
 ```
 
 - Types:
@@ -1601,6 +1603,8 @@ declare function safeParse(data: string, covert?: boolean): any
 #### safeStringify
 
 Secure stringify of JSON Object
+
+> support BigInt since `v5.17.1`
 
 - Since: `5.16.0`
 
@@ -1628,8 +1632,8 @@ safeStringify(NaN)
 safeStringify(Infinity)
 // "Infinity"
 
-safeStringify({ a: undefined, b: NaN, c: Infinity })
-// {"a":"undefined","b":"NaN","c":"Infinity"}
+safeStringify({ a: undefined, b: NaN, c: Infinity, d: BigInt(Number.MAX_SAFE_INTEGER) + 2n })
+// {"a":"undefined","b":"NaN","c":"Infinity","d":"9007199254740993"}
 ```
 
 - Types:

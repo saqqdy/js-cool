@@ -6,8 +6,8 @@
  * safeParse('100')
  * // 100
  *
- * safeParse('{"a":"undefined","b":"NaN","c":"Infinity"}')
- * // { b: NaN, c: Infinity }
+ * safeParse('{"a":"undefined","b":"NaN","c":"Infinity","d":"9007199254740993"}')
+ * // { b: NaN, c: Infinity, d: 9007199254740993n }
  * ```
  * @param data - JSON string
  * @param covert - Whether to convert data, default: true
@@ -21,9 +21,15 @@ function safeParse(data: string, covert = true): any {
 		'-Infinity': -Infinity
 	}
 	return JSON.parse(data, (key, val) => {
-		if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val)) {
+		if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val))
 			return VALUE_MAP[val as keyof typeof VALUE_MAP]
-		}
+		else if (
+			typeof val === 'string' &&
+			/^(\-|\+)?\d+(\.\d+)?$/.test(val) &&
+			!Number.isSafeInteger(+val)
+		)
+			return BigInt(val)
+
 		return val
 	})
 }
