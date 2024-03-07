@@ -48,7 +48,7 @@ const configs: Config[] = IS_WATCH
 				format: 'cjs',
 				env: 'development'
 			}
-	  ]
+		]
 	: [
 			{
 				input: 'src/index.ts',
@@ -90,7 +90,7 @@ const configs: Config[] = IS_WATCH
 				format: 'cjs',
 				env: 'development'
 			}
-	  ]
+		]
 
 function createEntries() {
 	return configs.map(createEntry)

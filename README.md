@@ -107,6 +107,7 @@ Collection of common JavaScript / TypeScript utilities
   - [Utilities](#utilities)
     - [nextIndex](#nextindex) - return the next zIndex value
     - [nextVersion](#nextversion) - return the next version, **Only version types with no more than 3 digits are supported**. (Follow the npm version rules)
+    - [punctualTimer](#punctualtimer) - punctual setInterval
     - [promiseFactory](#promisefactory) - Convert an object to a promise like api
     - [fixNumber](#fixnumber) - truncate a few decimal places, not 0 for shortage
     - [mapTemplate](#maptemplate) - Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
@@ -2452,6 +2453,38 @@ nextVersion('1.2.33', 'premajor', 'alpha') // 2.0.0-alpha.1
 
 ```ts
 declare function nextVersion(
+  version: string,
+  type?: 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease',
+  preid?: string
+): string
+```
+
+#### punctualTimer
+
+punctual setInterval
+
+- Since: `5.18.0`
+
+- Arguments:
+
+| Parameters | Description  | Type       | Optional | Required | Default |
+| ---------- | ------------ | ---------- | -------- | -------- | ------- |
+| callback   | call         | `function` | -        | `true`   | -       |
+| type       | version type | `number`   | -        | `false`  | `1000`  |
+
+- Returns: `void`
+
+- Example:
+
+```ts
+const printDate = () => console.log(new Date())
+punctualTimer(printDate, 1000)
+```
+
+- Types:
+
+```ts
+declare function punctualTimer(
   version: string,
   type?: 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease',
   preid?: string

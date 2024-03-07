@@ -81,6 +81,7 @@ import getScrollPosition from './getScrollPosition'
 // tools
 import nextIndex from './nextIndex'
 import nextVersion from './nextVersion'
+import punctualTimer from './punctualTimer'
 import promiseFactory from './promiseFactory'
 import fixNumber from './fixNumber'
 import mapTemplate from './mapTemplate'
@@ -222,6 +223,7 @@ export default {
 	minus,
 	nextIndex,
 	nextVersion,
+	punctualTimer,
 	promiseFactory,
 	waiting,
 	awaitTo,

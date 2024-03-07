@@ -142,6 +142,7 @@ const functionList = {
   // 工具类
   nextIndex, // 返回下一个zIndex值
   nextVersion, // 返回下一个版本号
+  punctualTimer, // 准时的setInterval
   promiseFactory, // 将一个对象转换为promise like api
   fixNumber, // 截取小数点后几位，不足的不补0
   mapTemplate, // 替换模板字符串的特定数据

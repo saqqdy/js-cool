@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.03.07 v5.18.0
+
+1. new `punctualTimer` function, see: [punctualTimer](https://github.com/saqqdy/js-cool#punctualtimer)
+
 ## 2024.01.21 v5.17.1
 
 1. `safeParse` `safeStringify` supports converting bigint

@@ -113,6 +113,7 @@ export { default as getScrollPosition } from './getScrollPosition'
 // tools
 export { default as nextIndex } from './nextIndex'
 export { default as nextVersion, type Version } from './nextVersion'
+export { default as punctualTimer } from './punctualTimer'
 export { default as promiseFactory } from './promiseFactory'
 export { default as fixNumber } from './fixNumber'
 export { default as mapTemplate } from './mapTemplate'
