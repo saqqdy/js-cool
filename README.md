@@ -2467,10 +2467,11 @@ punctual setInterval
 
 - Arguments:
 
-| Parameters | Description  | Type       | Optional | Required | Default |
-| ---------- | ------------ | ---------- | -------- | -------- | ------- |
-| callback   | call         | `function` | -        | `true`   | -       |
-| type       | version type | `number`   | -        | `false`  | `1000`  |
+| Parameters | Description                                                                                                                                                                                                                          | Type       | Optional | Required | Default |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | -------- | -------- | ------- |
+| handler    | A function to be executed after the timer expires.                                                                                                                                                                                   | `function` | -        | `true`   | -       |
+| delay      | The time, in milliseconds that the timer should wait before the specified function or code is executed. If this parameter is omitted, a value of 0 is used, meaning execute "immediately", or more accurately, the next event cycle. | `number`   | -        | `true`   | -       |
+| ...args    | Additional arguments which are passed through to the function specified by handler.                                                                                                                                                  | `any[]`    | -        | `false`  | -       |
 
 - Returns: `void`
 
@@ -2484,11 +2485,7 @@ punctualTimer(printDate, 1000)
 - Types:
 
 ```ts
-declare function punctualTimer(
-  version: string,
-  type?: 'major' | 'minor' | 'patch' | 'premajor' | 'preminor' | 'prepatch' | 'prerelease',
-  preid?: string
-): string
+declare function punctualTimer<T extends Function>(handler: T, delay: number, ...args: any[]): void
 ```
 
 #### promiseFactory
