@@ -134,6 +134,8 @@ import urlToBlob from './urlToBlob'
 
 import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 
+export type * from './types'
+
 export default {
 	version: '__VERSION__',
 	download,

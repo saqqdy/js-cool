@@ -11,7 +11,17 @@
  * @param delay - The time, in milliseconds that the timer should wait before the specified function or code is executed. If this parameter is omitted, a value of 0 is used, meaning execute "immediately", or more accurately, the next event cycle.
  * @param args - Additional arguments which are passed through to the function specified by handler.
  */
-function punctualTimer<T extends Function>(handler: T, delay: number, ...args: any[]) {
+function punctualTimer<TArgs extends any[]>(
+	handler: (args: void) => void,
+	delay: number,
+	[...args]?: TArgs
+): void
+function punctualTimer<TArgs extends any[]>(
+	handler: (...args: TArgs) => void,
+	delay: number,
+	[...args]?: TArgs
+): void
+function punctualTimer<TArgs extends any[]>(handler: any, delay: number, ...args: TArgs) {
 	handler()
 	let counter = 1
 	const start = new Date().getTime()

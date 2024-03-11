@@ -2485,7 +2485,16 @@ punctualTimer(printDate, 1000)
 - Types:
 
 ```ts
-declare function punctualTimer<T extends Function>(handler: T, delay: number, ...args: any[]): void
+declare function punctualTimer<TArgs extends any[]>(
+  handler: (args: void) => void,
+  delay: number,
+  [...args]?: TArgs
+): void
+declare function punctualTimer<TArgs extends any[]>(
+  handler: (...args: TArgs) => void,
+  delay: number,
+  [...args]?: TArgs
+): void
 ```
 
 #### promiseFactory

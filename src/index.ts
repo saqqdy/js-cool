@@ -1,5 +1,3 @@
-export type * from './types'
-
 export { default as loadSource } from 'load-source'
 export { default as mountCss } from 'mount-css'
 export { default as mountImg } from 'mount-image'
@@ -163,4 +161,5 @@ export { default as svgToBlob } from './svgToBlob'
 export { default as urlToBlob } from './urlToBlob'
 
 export { default } from './index.default'
+export type * from './index.default'
 export const version = '__VERSION__' as string
