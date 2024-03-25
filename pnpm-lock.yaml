@@ -51,7 +51,7 @@ devDependencies:
     version: 5.12.0(@babel/core@7.24.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.2)
   '@microsoft/api-extractor':
     specifier: ^7.42.3
-    version: 7.42.3(@types/node@20.11.25)
+    version: 7.43.0(@types/node@20.11.25)
   '@rollup/plugin-alias':
     specifier: ^5.1.0
     version: 5.1.0(rollup@4.12.1)
@@ -1643,8 +1643,8 @@ packages:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.42.3(@types/node@20.11.25):
-    resolution: {integrity: sha512-JNLJFpGHz6ekjS6bvYXxUBeRGnSHeCMFNvRbCQ+7XXB/ZFrgLSMPwWtEq40AiWAy+oyG5a4RSNwdJTp0B2USvQ==}
+  /@microsoft/api-extractor@7.43.0(@types/node@20.11.25):
+    resolution: {integrity: sha512-GFhTcJpB+MI6FhvXEI9b2K0snulNLWHqC/BbcJtyNYcKUiw7l3Lgis5ApsYncJ0leALX7/of4XfmXk+maT111w==}
     hasBin: true
     dependencies:
       '@microsoft/api-extractor-model': 7.28.13(@types/node@20.11.25)
@@ -1659,7 +1659,7 @@ packages:
       resolve: 1.22.4
       semver: 7.5.4
       source-map: 0.6.1
-      typescript: 5.3.3
+      typescript: 5.4.2
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -7455,12 +7455,6 @@ packages:
   /typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
-    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
