@@ -97,7 +97,7 @@
 		"typedoc": "^0.25.11",
 		"typedoc-plugin-markdown": "^3.17.1",
 		"typescript": "^5.4.2",
-		"zx": "^7.2.3"
+		"zx": "^8.0.2"
 	},
 	"engines": {
 		"node": ">=12.20"
