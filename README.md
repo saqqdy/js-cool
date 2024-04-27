@@ -3567,11 +3567,11 @@ Set array, object property values based on path string
 
 - Arguments:
 
-| Parameters | Description                                      | Type                | Optional | Required | Default |
-| ---------- | ------------------------------------------------ | ------------------- | -------- | -------- | ------- |
-| target     | target array, object                             | `array`/`object`    | -        | `true`   | -       |
+| Parameters | Description                                     | Type                | Optional | Required | Default |
+| ---------- | ----------------------------------------------- | ------------------- | -------- | -------- | ------- |
+| target     | target array, object                            | `array`/`object`    | -        | `true`   | -       |
 | prop       | set target, support function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | `true`   | -       |
-| value      | value                                            | `any`               | -        | `true`   | -       |
+| value      | value                                           | `any`               | -        | `true`   | -       |
 
 - Returns: `any`
 
