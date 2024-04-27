@@ -3502,14 +3502,17 @@ declare function fillIPv6(ip: string): string
 
 Get array, object property values based on path string
 
+> v5.19.0 support defaultValue
+
 - Since: `2.2.4`
 
 - Arguments:
 
-| Parameters | Description                     | Type                | Optional | Required | Default |
-| ---------- | ------------------------------- | ------------------- | -------- | -------- | ------- |
-| target     | target array, object            | `array`/`object`    | -        | `true`   | -       |
-| prop       | query target, can pass function | `string`/`function` | -        | `true`   | -       |
+| Parameters   | Description                     | Type                | Optional | Required | Default |
+| ------------ | ------------------------------- | ------------------- | -------- | -------- | ------- |
+| target       | target array, object            | `array`/`object`    | -        | `true`   | -       |
+| prop         | query target, can pass function | `string`/`function` | -        | `true`   | -       |
+| defaultValue | default value                   | `any`               | -        | `false`  | -       |
 
 - Returns: `any`
 
@@ -3520,25 +3523,39 @@ const target = {
   a: 1,
   b: [
     {
-      c: 2
+      c: 2,
+      d: NaN
     }
   ]
 }
 getProperty(target, 'a') // 1
+getProperty(target, 'd', 100) // 100
 getProperty(target, 'b[0].c') // 2
+getProperty(target, 'b[0].d', 100) // 100
 getProperty(target, () => 'a') // 1
 ```
 
 - Types:
 
 ```ts
-declare function getProperty(
-  target: any,
+export declare function getProperty<T extends Record<string, any>>(
+  target: T,
   prop:
     | string
     | {
         (): string
-      }
+      },
+  defaultValue?: any
+): any
+
+export declare function getProperty<T extends Array<any>>(
+  target: T,
+  prop:
+    | string
+    | {
+        (): string
+      },
+  defaultValue?: any
 ): any
 ```
 
@@ -3553,7 +3570,7 @@ Set array, object property values based on path string
 | Parameters | Description                                      | Type                | Optional | Required | Default |
 | ---------- | ------------------------------------------------ | ------------------- | -------- | -------- | ------- |
 | target     | target array, object                             | `array`/`object`    | -        | `true`   | -       |
-| prop       | set target, can pass function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | `true`   | -       |
+| prop       | set target, support function, 'a' \| 'a\[1\].c' | `string`/`function` | -        | `true`   | -       |
 | value      | value                                            | `any`               | -        | `true`   | -       |
 
 - Returns: `any`
@@ -3569,9 +3586,9 @@ const target = {
     }
   ]
 }
-setProperty(target, 'a') // 1
-setProperty(target, 'b[0].c') // 2
-setProperty(target, () => 'a') // 1
+setProperty(target, 'a', 2)
+setProperty(target, 'b[0].c', 3)
+setProperty(target, () => 'a', 100)
 ```
 
 - Types:

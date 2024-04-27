@@ -1,5 +1,11 @@
 # Change logs
 
+## 2024.04.27 v5.19.0
+
+1. `getProperty` support defaultValue
+2. fix types
+3. upgrade all packages
+
 ## 2024.03.11 v5.18.1
 
 1. fix types

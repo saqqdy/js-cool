@@ -10,15 +10,15 @@
  *      }]
  * }
  *
- * setProperty(target, 'a') // 1
+ * setProperty(target, 'a', 2)
  *
- * setProperty(target, 'b[0].c') // 2
+ * setProperty(target, 'b[0].c', 3)
  *
- * setProperty(target, () => 'a') // 1
+ * setProperty(target, () => 'a', 100)
  * ```
  * @since 2.7.0
  * @param target - target array, object
- * @param prop - set target, can pass function, 'a' | 'a[1].c'
+ * @param prop - set target, support function, 'a' | 'a[1].c'
  * @returns - the corresponding value
  */
 function setProperty(target: any, prop: string | { (): string }, value: any): any {
