@@ -3963,14 +3963,16 @@ declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefin
 
 arrayBuffer to base64
 
+> v5.19.1 remove default params of mime
+
 - Since: `5.13.0`
 
 - Arguments:
 
-| Parameters | Description      | Type          | Optional | Required | Default     |
-| ---------- | ---------------- | ------------- | -------- | -------- | ----------- |
-| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -           |
-| mime       | image mime       | `String`      | -        | `false`  | `image/png` |
+| Parameters | Description      | Type          | Optional | Required | Default |
+| ---------- | ---------------- | ------------- | -------- | -------- | ------- |
+| input      | arrayBuffer data | `ArrayBuffer` | -        | `true`   | -       |
+| mime       | image mime       | `String`      | -        | `false`  | -       |
 
 - Returns: `String`
 
@@ -3979,6 +3981,9 @@ arrayBuffer to base64
 ```ts
 arrayBufferToBase64(arrayBuffer, 'image/png')
 // data:image/png;base64,xxxxxxxxxxxx
+
+arrayBufferToBase64(arrayBuffer)
+// xxxxxxxxxxxx
 ```
 
 - Types:
@@ -4005,7 +4010,7 @@ arrayBuffer to blob
 - Example:
 
 ```ts
-arrayBufferToBase64(arrayBuffer, 'image/png')
+arrayBufferToBlob(arrayBuffer, 'image/png')
 // Blob
 ```
 

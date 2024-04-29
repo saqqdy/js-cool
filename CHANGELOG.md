@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.04.29 v5.19.1
+
+1. remove default params of `arrayBufferToBase64`
+
 ## 2024.04.27 v5.19.0
 
 1. `getProperty` support defaultValue
