@@ -152,7 +152,7 @@ importers:
         version: 5.4.5
       zx:
         specifier: ^8.0.2
-        version: 8.0.2
+        version: 8.1.1
 
 packages:
 
@@ -1263,6 +1263,9 @@ packages:
 
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
+
+  '@types/node@20.12.12':
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
 
   '@types/node@20.12.7':
     resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
@@ -4241,9 +4244,9 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
 
-  zx@8.0.2:
-    resolution: {integrity: sha512-3g+ePtPYmyrjRuASlJiUhkje1je4a47woML/fzTKBb9PA5BzRQbSswwyJ8nlFWJjA1ORRi6TMyAdhuz/jK+Gaw==}
-    engines: {node: '>= 16.0.0'}
+  zx@8.1.1:
+    resolution: {integrity: sha512-JYAyM06wK+KLy07MkipBTghtd3zsYBxTH44Fh3p932ntDKdT5jxziEK51siPG+rqT+MWV1yK9mCM1/CB92PV7Q==}
+    engines: {node: '>= 12.17.0'}
     hasBin: true
 
 snapshots:
@@ -5568,7 +5571,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.12
     optional: true
 
   '@types/js-yaml@4.0.9': {}
@@ -5579,12 +5582,16 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.12
     optional: true
 
   '@types/mdast@3.0.15':
     dependencies:
       '@types/unist': 2.0.10
+
+  '@types/node@20.12.12':
+    dependencies:
+      undici-types: 5.26.5
 
   '@types/node@20.12.7':
     dependencies:
@@ -7317,7 +7324,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.12
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8938,7 +8945,7 @@ snapshots:
 
   yocto-queue@1.0.0: {}
 
-  zx@8.0.2:
+  zx@8.1.1:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.12
