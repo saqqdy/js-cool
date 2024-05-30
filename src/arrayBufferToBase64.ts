@@ -5,7 +5,7 @@
  * ```js
  * arrayBufferToBase64(arrayBuffer, 'image/png')
  * // data:image/png;base64,xxxxxxxxxxxx
- * 
+ *
  * arrayBufferToBase64(arrayBuffer)
  * // xxxxxxxxxxxx
  * ```

@@ -108,7 +108,7 @@ function createEntry(config: Config) {
 			file: config.file,
 			format: config.format,
 			exports: 'auto',
-			extend: true,
+			// extend: true,
 			plugins: [],
 			globals: {}
 		},

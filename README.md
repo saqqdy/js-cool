@@ -3955,6 +3955,19 @@ const [err, data] = await to([promise1, promise2])
 
 ```ts
 declare function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
+
+declare function awaitTo<P extends readonly unknown[] | [], E = Error>(
+  promise: PromiseAll<P>
+): Promise<[E, undefined] | [null, P]>
+
+declare function awaitTo<T, P extends readonly unknown[] | [], E = Error>(
+  promise: Promise<T>,
+  ...promises: PromiseAll<P>
+): Promise<[E, undefined] | [null, [T, ...P]]>
+
+export declare type PromiseAll<P extends readonly unknown[] | []> = {
+  -readonly [K in keyof P]: Promise<P[K]>
+}
 ```
 
 ### Blob arrayBuffer base64 file blobUrl

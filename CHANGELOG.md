@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.05.30 v5.19.2
+
+1. upgrade `await-to-done`, fix types
+
 ## 2024.04.29 v5.19.1
 
 1. remove default params of `arrayBufferToBase64`
