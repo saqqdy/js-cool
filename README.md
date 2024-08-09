@@ -1556,7 +1556,10 @@ spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined, key5: 'æµ
 spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined }, true)
 // ?key1=100&key2=true&key3=&key4=
 
-spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined }, { covert: true, withQuestionsMark: false })
+spliceUrlParam(
+  { key1: '100', key2: true, key3: null, key4: undefined },
+  { covert: true, withQuestionsMark: false }
+)
 // key1=100&key2=true&key3=&key4=
 ```
 

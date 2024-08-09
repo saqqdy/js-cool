@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.08.09 v5.21.0
+
+1. `spliceUrlParam` Breaking change: SpliceUrlParamOptions
+
 ## 2024.08.09 v5.20.0
 
 1. `spliceUrlParam` Breaking change: remove encodeURIComponent
