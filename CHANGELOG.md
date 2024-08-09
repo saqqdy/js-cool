@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.08.09 v5.20.0
+
+1. `spliceUrlParam` Breaking change: remove encodeURIComponent
+
 ## 2024.05.30 v5.19.2
 
 1. upgrade `await-to-done`, fix types

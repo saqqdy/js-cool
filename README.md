@@ -1533,6 +1533,8 @@ declare function parseUrlParam(url: string, covert?: boolean): Record<string, un
 
 Splice URL parameters (single layer only)
 
+> v5.20.0 Breaking change: remove encodeURIComponent
+
 - Since: `5.3.0`
 
 - Arguments:
@@ -1548,8 +1550,8 @@ Splice URL parameters (single layer only)
 - Example:
 
 ```ts
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key4: '测试' })
-// ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key5: '测试' })
+// ?key1=100&key2=true&key3=null&key4=undefined&key5=测试
 
 spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true)
 // ?key1=100&key2=true&key3=&key4=
