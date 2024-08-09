@@ -1534,40 +1534,45 @@ declare function parseUrlParam(url: string, covert?: boolean): Record<string, un
 Splice URL parameters (single layer only)
 
 > v5.20.0 Breaking change: remove encodeURIComponent
+> v5.21.0 Breaking change: covert support boolean & SpliceUrlParamOptions
 
 - Since: `5.3.0`
 
 - Arguments:
 
-| Parameters        | Description                                                    | Type      | Optional       | Required | Default |
-| ----------------- | -------------------------------------------------------------- | --------- | -------------- | -------- | ------- |
-| params            | json object                                                    | `object`  | -              | `true`   | -       |
-| covert            | Convert a null value type (null/undefined/) to an empty string | `boolean` | `true`/`false` | `false`  | `false` |
-| withQuestionsMark | Splicing a question mark                                       | `boolean` | `true`/`false` | `false`  | `true`  |
+| Parameters | Description                                                                             | Type                                 | Optional | Required | Default |
+| ---------- | --------------------------------------------------------------------------------------- | ------------------------------------ | -------- | -------- | ------- |
+| params     | json object                                                                             | `object`                             | -        | `true`   | -       |
+| covert     | Convert a null value type (null/undefined/) to an empty string or spliceUrlParamOptions | `boolean` \| `SpliceUrlParamOptions` | -        | `false`  | `false` |
 
 - Returns: `string`
 
 - Example:
 
 ```ts
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined', key5: '测试' })
+spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined, key5: '测试' })
 // ?key1=100&key2=true&key3=null&key4=undefined&key5=测试
 
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true)
+spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined }, true)
 // ?key1=100&key2=true&key3=&key4=
 
-spliceUrlParam({ key1: '100', key2: 'true', key3: 'null', key4: 'undefined' }, true, false)
+spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined }, { covert: true, withQuestionsMark: false })
 // key1=100&key2=true&key3=&key4=
 ```
 
 - Types:
 
 ```ts
-declare function spliceUrlParam(
-  params: Record<string, unknown>,
-  covert?: boolean,
+declare function spliceUrlParam<T extends Record<string, unknown>>(
+  params: T,
+  covert?: SpliceUrlParamOptions | boolean
+): string
+
+declare interface SpliceUrlParamOptions {
+  covert?: boolean
+  encode?: boolean
   withQuestionsMark?: boolean
-): string | null
+}
 ```
 
 #### safeParse
