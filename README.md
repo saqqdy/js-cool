@@ -1390,7 +1390,7 @@ osVersion() // \{ name: 'WindowsPhone', version: '10.0' \}
 
 ```ts
 declare interface OsVersion {
-  name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS'
+  name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS' | 'Harmony'
   version: string
 }
 
@@ -1422,7 +1422,55 @@ browserVersion() // \{ name: 'Chrome', version: '114.0.0.0' \}
 
 ```ts
 declare interface BrowserVersion {
-  name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS'
+  name:
+    | 'Safari'
+    | 'Chrome'
+    | 'IE'
+    | 'Edge'
+    | 'Firefox'
+    | 'Firefox Focus'
+    | 'Chromium'
+    | 'Opera'
+    | 'Vivaldi'
+    | 'Yandex'
+    | 'Arora'
+    | 'Lunascape'
+    | 'QupZilla'
+    | 'Coc Coc'
+    | 'Kindle'
+    | 'Iceweasel'
+    | 'Konqueror'
+    | 'Iceape'
+    | 'SeaMonkey'
+    | 'Epiphany'
+    | '360'
+    | '360SE'
+    | '360EE'
+    | 'Maxthon'
+    | 'QQBrowser'
+    | 'QQ'
+    | 'Baidu'
+    | 'UC'
+    | 'Sogou'
+    | 'Liebao'
+    | 'LBBROWSER'
+    | '2345Explorer'
+    | '115Browser'
+    | 'TheWorld'
+    | 'XiaoMi'
+    | 'Vivo'
+    | 'Quark'
+    | 'Qiyu'
+    | 'Wechat'
+    | 'WechatWork'
+    | 'Taobao'
+    | 'Alipay'
+    | 'Weibo'
+    | 'Douban'
+    | 'Suning'
+    | 'iQiYi'
+    | 'DingTalk'
+    | 'Huawei'
   version: string
 }
 

@@ -1,7 +1,7 @@
 import inBrowser from './inBrowser'
 
 export interface OsVersion {
-	name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS'
+	name: 'Windows' | 'MacOS' | 'Android' | 'iOS' | 'WindowsPhone' | 'Debian' | 'WebOS' | 'Harmony'
 	version: string
 }
 
@@ -50,7 +50,8 @@ function osVersion(ua?: string): OsVersion | null {
 		iOS: /i(?:pad|phone|pod)(?:.*)cpu(?: i(?:pad|phone|pod))? os (\d+(?:[\.|_]\d+)+) like/,
 		WindowsPhone: /Windows Phone(?: OS)? ([\d.]+);/,
 		Debian: /Debian\/([\d.]+)/,
-		WebOS: /hpwOS\/([\d.]+);/
+		WebOS: /hpwOS\/([\d.]+);/,
+		Harmony: /openharmony\s+([\d.]+)/
 	} as const
 
 	let key: keyof typeof OS_REG_MAP
