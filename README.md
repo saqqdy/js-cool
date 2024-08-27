@@ -254,6 +254,8 @@ declare class Client {
 
 Collection of common regular expressions
 
+> v5.21.2 `pattern` support mac/ip4/ip4_pri
+
 - Since: `1.0.1`
 
 - Arguments: `none`
@@ -288,6 +290,9 @@ declare const pattern: {
   array: RegExp
   isjson: RegExp
   textarea: RegExp
+  mac: RegExp
+  ip4: RegExp
+  ip4_pri: RegExp
 }
 ```
 
@@ -1581,7 +1586,7 @@ declare function parseUrlParam(url: string, covert?: boolean): Record<string, un
 
 Splice URL parameters (single layer only)
 
-> v5.20.0 Breaking change: remove encodeURIComponent
+> v5.20.0 Breaking change: remove encodeURIComponent</br>
 > v5.21.0 Breaking change: covert support boolean & SpliceUrlParamOptions
 
 - Since: `5.3.0`

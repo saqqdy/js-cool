@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.08.27 v5.21.2
+
+1. `pattern` support mac/ip4/ip4_pri
+
 ## 2024.08.12 v5.21.1
 
 1. `osVersion` support Harmony
