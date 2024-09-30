@@ -61,8 +61,8 @@ importers:
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.24.6)(@types/babel__core@7.20.5)(rollup@4.18.0)
       '@rollup/plugin-commonjs':
-        specifier: ^25.0.8
-        version: 25.0.8(rollup@4.18.0)
+        specifier: ^28.0.0
+        version: 28.0.0(rollup@4.18.0)
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.18.0)
@@ -1000,9 +1000,9 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-commonjs@25.0.8':
-    resolution: {integrity: sha512-ZEZWTK5n6Qde0to4vS9Mr5x/0UZoqCxPVR9KRUjU4kA2sO7GEUn1fop0DAwpO6z0Nw/kJON9bDmSxdWxO/TT1A==}
-    engines: {node: '>=14.0.0'}
+  '@rollup/plugin-commonjs@28.0.0':
+    resolution: {integrity: sha512-BJcu+a+Mpq476DMXG+hevgPSl56bkUoi88dKT8t3RyUp8kGuOh+2bU8Gs7zXDlu+fyZggnJ+iOBGrb/O1SorYg==}
+    engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
@@ -2369,6 +2369,14 @@ packages:
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
+
+  fdir@6.4.0:
+    resolution: {integrity: sha512-3oB133prH1o4j/L5lLW7uOCF1PlD+/It2L0eL/iAqWMB91RBbqTewABqxhj0ibBd90EEmWZq7ntIWzVaWcXTGQ==}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
 
   fetch-blob@3.2.0:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
@@ -5310,14 +5318,15 @@ snapshots:
       '@types/babel__core': 7.20.5
       rollup: 4.18.0
 
-  '@rollup/plugin-commonjs@25.0.8(rollup@4.18.0)':
+  '@rollup/plugin-commonjs@28.0.0(rollup@4.18.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
       commondir: 1.0.1
       estree-walker: 2.0.2
-      glob: 8.1.0
+      fdir: 6.4.0(picomatch@2.3.1)
       is-reference: 1.2.1
       magic-string: 0.30.10
+      picomatch: 2.3.1
     optionalDependencies:
       rollup: 4.18.0
 
@@ -6857,6 +6866,10 @@ snapshots:
   fastq@1.17.1:
     dependencies:
       reusify: 1.0.4
+
+  fdir@6.4.0(picomatch@2.3.1):
+    optionalDependencies:
+      picomatch: 2.3.1
 
   fetch-blob@3.2.0:
     dependencies:
