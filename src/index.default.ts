@@ -36,6 +36,7 @@ import isArray from './isArray'
 import isIterable from './isIterable'
 import inBrowser from './inBrowser'
 import inNodeJs from './inNodeJs'
+import isNumberBrowser from './isNumberBrowser'
 import windowSize from './windowSize'
 import getAppVersion from './getAppVersion'
 import appVersion from './appVersion'
@@ -222,6 +223,7 @@ export default {
 	isDarkMode,
 	inBrowser,
 	inNodeJs,
+	isNumberBrowser,
 	minus,
 	nextIndex,
 	nextVersion,

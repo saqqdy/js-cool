@@ -30,7 +30,7 @@ export interface OsVersion {
  *
  * ```
  * @since 5.1.0
- * @param ua - ua or any ua like string, may not be passed, default is navigator.userAgent
+ * @param ua - ua or any ua like string, allowed to be undefined, default is navigator.userAgent
  * @return OsVersion|null
  */
 function osVersion(ua?: string): OsVersion | null {

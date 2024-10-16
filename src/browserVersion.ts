@@ -62,7 +62,7 @@ export interface BrowserVersion {
  * browserVersion() // \{ name: 'Chrome', version: '114.0.0.0' \}
  * ```
  * @since 5.2.0
- * @param ua - ua or any ua like string, may not be passed, default is navigator.userAgent
+ * @param ua - ua or any ua like string, allowed to be undefined, default is navigator.userAgent
  * @return BrowserVersion|null
  */
 function browserVersion(ua?: string): BrowserVersion | null {

@@ -66,6 +66,7 @@ Collection of common JavaScript / TypeScript utilities
     - [isIterable](#isiterable) - Determine if it is iterable
     - [inBrowser](#inbrowser) - Determine if it is running on the browser side
     - [inNodeJs](#innodejs) - Determine if it is running on node.js
+    - [isNumberBrowser](#isnumberbrowser) - Detect if the client is a 360 browser
     - [windowSize](#windowsize) - Get the window size
     - [getAppVersion](#getappversion) - Get the APP version number
     - [appVersion](#appversion) - Get the app version number
@@ -1221,6 +1222,36 @@ if (inNodeJs) {
 declare const inNodeJs: boolean
 ```
 
+#### isNumberBrowser
+
+Detect if the client is a 360 browser
+
+- Since: `5.22.0`
+
+- Arguments:
+
+| Parameters | Description                                       | Type     | Optional | Required | Default               |
+| ---------- | ------------------------------------------------- | -------- | -------- | -------- | --------------------- |
+| userAgent  | ua or any ua like string, allowed to be undefined | `string` | -        | `false`  | `navigator.userAgent` |
+
+- Returns: `boolean`
+
+- Example:
+
+```ts
+// 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36 QIHU 360EE'
+// true
+
+// 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36'
+// true
+```
+
+- Types:
+
+```ts
+declare function isNumberBrowser(userAgent?: string): boolean
+```
+
 #### windowSize
 
 Get the window size
@@ -1259,11 +1290,11 @@ Get the APP version number
 
 - Arguments:
 
-| Parameters | Description                                 | Type      | Optional | Required | Default               |
-| ---------- | ------------------------------------------- | --------- | -------- | -------- | --------------------- |
-| appName    | app name                                    | `string`  | -        | `true`   | -                     |
-| withApp    | whether to bring the name                   | `boolean` | -        | `false`  | -                     |
-| userAgent  | ua or any ua like string, may not be passed | `string`  | -        | `false`  | `navigator.userAgent` |
+| Parameters | Description                                       | Type      | Optional | Required | Default               |
+| ---------- | ------------------------------------------------- | --------- | -------- | -------- | --------------------- |
+| appName    | app name                                          | `string`  | -        | `true`   | -                     |
+| withApp    | whether to bring the name                         | `boolean` | -        | `false`  | -                     |
+| userAgent  | ua or any ua like string, allowed to be undefined | `string`  | -        | `false`  | `navigator.userAgent` |
 
 - Returns: `string | boolean | null`
 
@@ -1294,11 +1325,11 @@ Get the app version number
 
 - Arguments:
 
-| Parameters | Description                                 | Type      | Optional       | Required | Default             |
-| ---------- | ------------------------------------------- | --------- | -------------- | -------- | ------------------- |
-| appName    | app name                                    | `string`  | -              | `true`   | -                   |
-| ua         | ua or any ua like string, may not be passed | `string`  | -              | `false`  | navigator.userAgent |
-| ignoreCase | whether to ignore case                      | `boolean` | `true`/`false` | `false`  | `true`              |
+| Parameters | Description                                       | Type      | Optional       | Required | Default             |
+| ---------- | ------------------------------------------------- | --------- | -------------- | -------- | ------------------- |
+| appName    | app name                                          | `string`  | -              | `true`   | -                   |
+| ua         | ua or any ua like string, allowed to be undefined | `string`  | -              | `false`  | navigator.userAgent |
+| ignoreCase | whether to ignore case                            | `boolean` | `true`/`false` | `false`  | `true`              |
 
 - Returns: `string | null`
 
@@ -1336,7 +1367,7 @@ Get the phone system version
 | ---------- | -------------------------------------------------- | -------- | -------- | -------- | --------------------- |
 | osName     | system type string Android, iPod, iWatch or iPhone | `string` | -        | `true`   | -                     |
 | withOS     | whether to bring the name                          | `string` | -        | `false`  | -                     |
-| userAgent  | ua or any ua like string, may not be passed        | `string` | -        | `false`  | `navigator.userAgent` |
+| userAgent  | ua or any ua like string, allowed to be undefined  | `string` | -        | `false`  | `navigator.userAgent` |
 
 - Returns: `string | boolean | null`
 
@@ -1368,9 +1399,9 @@ get the system version
 
 - Arguments:
 
-| Parameters | Description                                 | Type     | Optional | Required | Default             |
-| ---------- | ------------------------------------------- | -------- | -------- | -------- | ------------------- |
-| ua         | ua or any ua like string, may not be passed | `string` | -        | `false`  | navigator.userAgent |
+| Parameters | Description                                       | Type     | Optional | Required | Default             |
+| ---------- | ------------------------------------------------- | -------- | -------- | -------- | ------------------- |
+| ua         | ua or any ua like string, allowed to be undefined | `string` | -        | `false`  | navigator.userAgent |
 
 - Returns: `OsVersion | null`
 
@@ -1410,9 +1441,9 @@ Get the browser name and version
 
 - Arguments:
 
-| Parameters | Description                                 | Type     | Optional | Required | Default             |
-| ---------- | ------------------------------------------- | -------- | -------- | -------- | ------------------- |
-| ua         | ua or any ua like string, may not be passed | `string` | -        | `false`  | navigator.userAgent |
+| Parameters | Description                                       | Type     | Optional | Required | Default             |
+| ---------- | ------------------------------------------------- | -------- | -------- | -------- | ------------------- |
+| ua         | ua or any ua like string, allowed to be undefined | `string` | -        | `false`  | navigator.userAgent |
 
 - Returns: `BrowserVersion | null`
 

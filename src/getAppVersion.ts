@@ -5,7 +5,7 @@
  * @since 1.0.1
  * @param appName - app name
  * @param withApp - whether to bring the name
- * @param userAgent - ua, may not be passed, default is navigator.appVersion
+ * @param userAgent - ua, allowed to be undefined, default is navigator.userAgent
  * @return null/true/false
  */
 function getAppVersion(
@@ -13,7 +13,7 @@ function getAppVersion(
 	withApp?: boolean,
 	userAgent?: string
 ): string | boolean | null {
-	userAgent = userAgent || navigator.appVersion
+	userAgent = userAgent || navigator.userAgent
 	const reg = new RegExp(appName + '\\/([\\d\\.]+)', 'i')
 	const isApp = userAgent.includes(appName)
 	const ver = userAgent.match(reg)

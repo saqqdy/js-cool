@@ -1,5 +1,10 @@
 # Change logs
 
+## 2024.10.16 v5.22.0
+
+1. new `isNumberBrowser` function, see: [isNumberBrowser](https://github.com/saqqdy/js-cool#isnumberbrowser)
+2. Default value of agent string for `getOsVersion` and `getAppVersion` changed to navigator.appVersion.
+
 ## 2024.08.27 v5.21.2
 
 1. `pattern` support mac/ip4/ip4_pri

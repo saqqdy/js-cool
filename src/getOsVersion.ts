@@ -15,7 +15,7 @@ import getAppVersion from './getAppVersion'
  * @since 1.0.1
  * @param osName - system type string Android, iPod, iWatch or iPhone
  * @param withOS - whether to bring the name
- * @param userAgent - ua, may not be passed, default takes navigator.appVersion
+ * @param userAgent - ua, allowed to be undefined, default takes navigator.userAgent
  * @return - null/true/false
  */
 function getOsVersion(
@@ -23,7 +23,7 @@ function getOsVersion(
 	withOS?: boolean,
 	userAgent?: string
 ): string | boolean | null {
-	userAgent = userAgent || navigator.appVersion
+	userAgent = userAgent || navigator.userAgent
 	const d = ['iPhone', 'iPad', 'iPod', 'iWatch', 'Mac', 'iMac', 'iOS']
 	let name = osName,
 		ver
