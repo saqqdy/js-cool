@@ -32,19 +32,15 @@ function nextVersion(
 
 	switch (type) {
 		case 'major':
-			if (ver.minor || ver.patch) {
-				ver.major++
-				ver.minor = 0
-				ver.patch = 0
-			}
+			if (ver.minor || ver.patch || !ver.preid) ver.major++
+			ver.minor = 0
+			ver.patch = 0
 			ver.preid = ''
 			ver.release = undefined
 			break
 		case 'minor':
-			if (ver.patch) {
-				ver.minor++
-				ver.patch = 0
-			}
+			if (ver.patch || !ver.preid) ver.minor++
+			ver.patch = 0
 			ver.preid = ''
 			ver.release = undefined
 			break

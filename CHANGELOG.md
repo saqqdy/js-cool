@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.11.15 v5.22.1
+
+1. fix bugs of `nextVersion`
+
 ## 2024.10.16 v5.22.0
 
 1. new `isNumberBrowser` function, see: [isNumberBrowser](https://github.com/saqqdy/js-cool#isnumberbrowser)
