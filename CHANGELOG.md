@@ -1,5 +1,9 @@
 # Change logs
 
+## 2024.11.18 v5.23.0
+
+1. `punctualTimer` got returns of PunctualTimerReturns
+
 ## 2024.11.15 v5.22.1
 
 1. fix bugs of `nextVersion`

@@ -2557,6 +2557,8 @@ declare function nextVersion(
 
 punctual setInterval
 
+> v5.23.0 got returns of PunctualTimerReturns
+
 - Since: `5.18.0`
 
 - Arguments:
@@ -2567,13 +2569,15 @@ punctual setInterval
 | delay      | The time, in milliseconds that the timer should wait before the specified function or code is executed. If this parameter is omitted, a value of 0 is used, meaning execute "immediately", or more accurately, the next event cycle. | `number`   | -        | `true`   | -       |
 | ...args    | Additional arguments which are passed through to the function specified by handler.                                                                                                                                                  | `any[]`    | -        | `false`  | -       |
 
-- Returns: `void`
+- Returns: `PunctualTimerReturns`
 
 - Example:
 
 ```ts
 const printDate = () => console.log(new Date())
-punctualTimer(printDate, 1000)
+const timer = punctualTimer(printDate, 1000)
+console.log(timer.count) // 10
+timer.clear() // clear punctualTimer or use clearTimeout(timer.timer)
 ```
 
 - Types:
@@ -2583,12 +2587,19 @@ declare function punctualTimer<TArgs extends any[]>(
   handler: (args: void) => void,
   delay: number,
   [...args]?: TArgs
-): void
+): PunctualTimerReturns
+
 declare function punctualTimer<TArgs extends any[]>(
   handler: (...args: TArgs) => void,
   delay: number,
   [...args]?: TArgs
-): void
+): PunctualTimerReturns
+
+declare interface PunctualTimerReturns {
+  count: number
+  timer: number | null
+  clear: () => void
+}
 ```
 
 #### promiseFactory

@@ -90,7 +90,7 @@ function randomString(
 		result = ''
 	if (typeof len !== 'number') {
 		options = len
-		len = typeof options === 'object' ? options.length ?? 32 : 32 // default
+		len = typeof options === 'object' ? (options.length ?? 32) : 32 // default
 	}
 	if (typeof options === 'boolean') {
 		if (options) charTypes.push('special')

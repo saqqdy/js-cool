@@ -1,10 +1,18 @@
+export interface PunctualTimerReturns {
+	count: number
+	timer: number | null
+	clear: () => void
+}
+
 /**
  * punctual setInterval
  *
  * @example
  * ```js
  * const printDate = () => console.log(new Date())
- * punctualTimer(printDate, 1000)
+ * const timer = punctualTimer(printDate, 1000)
+ * console.log(timer.count) // 10
+ * timer.clear() // clear punctualTimer or use clearTimeout(timer.timer)
  * ```
  * @since 5.18.0
  * @param handler - A function to be executed after the timer expires.
@@ -15,25 +23,41 @@ function punctualTimer<TArgs extends any[]>(
 	handler: (args: void) => void,
 	delay: number,
 	[...args]?: TArgs
-): void
+): PunctualTimerReturns
 function punctualTimer<TArgs extends any[]>(
 	handler: (...args: TArgs) => void,
 	delay: number,
 	[...args]?: TArgs
-): void
-function punctualTimer<TArgs extends any[]>(handler: any, delay: number, ...args: TArgs) {
+): PunctualTimerReturns
+function punctualTimer<TArgs extends any[]>(
+	handler: any,
+	delay: number,
+	...args: TArgs
+): PunctualTimerReturns {
 	handler()
-	let counter = 1
+	let _this: PunctualTimerReturns = {
+		count: 1,
+		timer: null,
+		clear() {
+			if (this.timer) {
+				clearTimeout(this.timer)
+				this.timer = null
+			}
+			_this = null as any
+			return _this
+		}
+	}
 	const start = new Date().getTime()
 	const instance = () => {
 		handler()
-		const ideal = counter * delay
+		const ideal = _this.count * delay
 		const real = new Date().getTime() - start
-		counter++
+		_this.count++
 		const diff = real - ideal
-		setTimeout(instance, delay - diff, ...args) // Repair by system time
+		_this.timer = setTimeout(instance, delay - diff, ...args) // Repair by system time
 	}
-	setTimeout(instance, delay, ...args)
+	_this.timer = setTimeout(instance, delay, ...args)
+	return _this
 }
 
 export default punctualTimer
