@@ -7,7 +7,7 @@ import inBrowser from './inBrowser'
  * @param input - base64 string
  * @returns - arrayBuffer
  */
-function base64ToArrayBuffer(input: string): ArrayBuffer {
+function base64ToArrayBuffer(input: string) {
 	let [pre, data] = input.split(',')
 
 	if (!pre) throw new Error('Not a valid base64')
