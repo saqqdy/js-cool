@@ -9,13 +9,16 @@ export interface SpliceUrlParamOptions {
  *
  * @example
  * ```js
- * spliceUrlParam('\{"key1":"100","key2":true,"key3":null,"key4":undefined,"key5":"测试"\}')
+ * spliceUrlParam(\{"key1":"100","key2":true,"key3":null,"key4":undefined,"key5":"测试"\})
  * // ?key1=100&key2=true&key3=null&key4=undefined&key5=测试
  *
- * spliceUrlParam('\{"key1":"100","key2":true,"key3":null,"key4":undefined\}', true)
+ * spliceUrlParam(\{"key1":"100","key2":true,"key3":null,"key4":undefined,"key5":"测试"\}, \{ encode: true \})
+ * // ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+ *
+ * spliceUrlParam(\{"key1":"100","key2":true,"key3":null,"key4":undefined\}, true)
  * // ?key1=100&key2=true&key3=&key4=
  *
- * spliceUrlParam('\{"key1":"100","key2":true,"key3":null,"key4":undefined\}', true, false)
+ * spliceUrlParam(\{"key1":"100","key2":true,"key3":null,"key4":undefined\}, \{ covert: true, withQuestionsMark: false \})
  * // key1=100&key2=true&key3=&key4=
  * ```
  * @since 5.3.0

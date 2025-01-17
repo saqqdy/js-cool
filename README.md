@@ -1637,6 +1637,12 @@ Splice URL parameters (single layer only)
 spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined, key5: '测试' })
 // ?key1=100&key2=true&key3=null&key4=undefined&key5=测试
 
+spliceUrlParam(
+  { key1: '100', key2: true, key3: null, key4: undefined, key5: '测试' },
+  { encode: true }
+)
+// ?key1=100&key2=true&key3=null&key4=undefined&key5=%E6%B5%8B%E8%AF%95
+
 spliceUrlParam({ key1: '100', key2: true, key3: null, key4: undefined }, true)
 // ?key1=100&key2=true&key3=&key4=
 
