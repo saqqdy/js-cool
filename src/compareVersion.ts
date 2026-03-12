@@ -13,7 +13,7 @@
  * // => -1: -1=Version 1.11.0 is older than 1.99.0
  *
  * compareVersion('1.0.0.0.0.10', '1.0')
- * // => -1
+ * // => 1
  *
  * // compare tag version: rc > beta > alpha > other
  * compareVersion('1.11.0', '1.11.0-beta.1')
@@ -74,8 +74,10 @@ function compareVersion(input: string, compare: string) {
 
 	const inputSubArr = inputSubVer.split('.')
 	const compareSubArr = compareSubVer.split('.')
-	inputSubArr[0] = VER_TYPES.indexOf(inputSubArr[0]) + 1 + ''
-	compareSubArr[0] = VER_TYPES.indexOf(compareSubArr[0]) + 1 + ''
+	// Priority: rc(4) > beta(3) > alpha(2) > unknown(1)
+	// indexOf returns -1 for unknown, so we use: indexOf + 2 (gives 1 for unknown)
+	inputSubArr[0] = VER_TYPES.indexOf(inputSubArr[0]) + 2 + ''
+	compareSubArr[0] = VER_TYPES.indexOf(compareSubArr[0]) + 2 + ''
 	return compareVersion(inputSubArr.join('.'), compareSubArr.join('.'))
 }
 

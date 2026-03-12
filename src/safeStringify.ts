@@ -28,6 +28,7 @@ function safeStringify(data: any, covert = true): string {
 			if ([Infinity, -Infinity, undefined, NaN].includes(val)) return String(val)
 			else if (typeof val === 'number' && !Number.isSafeInteger(val))
 				return String(BigInt(val))
+			else if (typeof val === 'bigint') return String(val)
 		} else if (typeof val === 'bigint') return String(val)
 		return val
 	})

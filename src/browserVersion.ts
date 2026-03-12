@@ -77,9 +77,9 @@ function browserVersion(ua?: string): BrowserVersion | null {
 	const BROWSER_REG_MAP = {
 		Safari: /Version\/([\d.]+)/,
 		Chrome: /(?:Chrome|CriOS)\/([\d.]+)/,
+		Firefox: /(?:Firefox|FxiOS)\/([\d.]+)/,
 		IE: /(?:MSIE |rv:)([\d.]+)/,
 		Edge: /Edge\/([\d.]+)/,
-		Firefox: /(?:Firefox|FxiOS)\/([\d.]+)/,
 		'Firefox Focus': /Focus\/([\d.]+)/,
 		Chromium: /Chromium\/([\d.]+)/,
 		Opera: /(?:Opera|OPR)\/([\d.]+)/,

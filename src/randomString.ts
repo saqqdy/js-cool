@@ -8,7 +8,7 @@ export interface RandomStringOptions {
 	length?: number
 	charTypes?: RandomStringCharType | ArrayOneMore<RandomStringCharType>
 	/**
-	 * Elimination of confusing characters: oOLl,9gq,Vv,Uu,I1
+	 * Elimination of confusing characters: I,L,O,U,V,i,l,o,u,v,0,1,9
 	 */
 	noConfuse?: boolean
 	/**
@@ -56,7 +56,7 @@ export interface RandomStringOptions {
  * })
  * // 7450026301030286
  *
- * // 8. Elimination of confusing characters: oOLl,9gq,Vv,Uu,I1
+ * // 8. Elimination of confusing characters: I,L,O,U,V,i,l,o,u,v,0,1,9
  * randomString({
  * 	length: 16,
  * 	noConfuse: true

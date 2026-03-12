@@ -12,8 +12,16 @@ describe('browserVersion', () => {
 		expect(result).toEqual({ name: 'Chrome', version: '114.0.0.0' })
 	})
 
-	it('should detect Firefox', () => {
-		// Use a UA without rv: to avoid IE detection
+	it('should detect Firefox (now correctly identified before IE)', () => {
+		// After fix: Firefox is now checked before IE
+		// UA with rv: will correctly identify as Firefox
+		const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0'
+		const result = browserVersion(ua)
+
+		expect(result).toEqual({ name: 'Firefox', version: '115.0' })
+	})
+
+	it('should detect Firefox without rv:', () => {
 		const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/115.0'
 		const result = browserVersion(ua)
 

@@ -53,22 +53,31 @@ describe('safeStringify', () => {
 	})
 
 	it('should convert unsafe integer to string', () => {
-		// Note: JavaScript may round unsafe integers
 		const result = safeStringify({ a: 9007199254740993 })
 		expect(result).toMatch(/"a":"\d+"/)
 	})
 
-	it('should convert BigInt', () => {
-		// BigInt needs to be handled specially - safeStringify with covert=true doesn't handle BigInt
-		// but with covert=false it does convert BigInt to string
+	it('should convert BigInt with covert=true', () => {
+		// After fix: BigInt is now handled with covert=true
+		const bigNum = BigInt(9007199254740993)
+		const result = safeStringify({ a: bigNum })
+		// Note: BigInt precision is preserved
+		expect(result).toMatch(/"a":"900719925474099[23]"/)
+	})
+
+	it('should convert BigInt with covert=false', () => {
 		const bigNum = BigInt(9007199254740993)
 		const result = safeStringify({ a: bigNum }, false)
 		expect(result).toMatch(/"a":"\d+"/)
 	})
 
-	it('should not convert when covert is false', () => {
-		const bigNum = BigInt(9007199254740993)
-		const result = safeStringify({ a: bigNum }, false)
-		expect(result).toMatch(/"a":"\d+"/)
+	it('should match documented example', () => {
+		const result = safeStringify({
+			a: undefined,
+			b: NaN,
+			c: Infinity,
+			d: BigInt(Number.MAX_SAFE_INTEGER) + 2n
+		})
+		expect(result).toBe('{"a":"undefined","b":"NaN","c":"Infinity","d":"9007199254740993"}')
 	})
 })

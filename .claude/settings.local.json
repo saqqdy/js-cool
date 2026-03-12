@@ -3,13 +3,7 @@
     "allow": [
       "Bash(pnpm add:*)",
       "Bash(pnpm test:*)",
-      "Bash(ls -la /Users/saqqdy/www/saqqdy/js-cool/src/*.ts | wc -l)",
-      "Bash(pnpm test:coverage 2>&1)",
-      "Bash(ls -la /Users/saqqdy/www/saqqdy/js-cool/test/*.test.ts | wc -l)",
-      "Bash(ls /Users/saqqdy/www/saqqdy/js-cool/src/*.ts | wc -l)",
-      "Bash(ls /Users/saqqdy/www/saqqdy/js-cool/test/*.test.ts | xargs -I {} basename {} .test.ts | sort)",
-      "Bash(node -e \"\nconst normal = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\nconst noconfuse = 'ABCDEFGHJKMNPQRSTWXYZ'\nconst excludedUpper = [...normal].filter\\(c => !noconfuse.includes\\(c\\)\\)\nconsole.log\\('Excluded uppercase:', excludedUpper\\)\n\nconst normalLower = 'abcdefghijklmnopqrstuvwxyz'\nconst noconfuseLower = 'abcdefghjkmnpqrstwxyz'\nconst excludedLower = [...normalLower].filter\\(c => !noconfuseLower.includes\\(c\\)\\)\nconsole.log\\('Excluded lowercase:', excludedLower\\)\n\nconst normalNum = '0123456789'\nconst noconfuseNum = '2345678'\nconst excludedNum = [...normalNum].filter\\(c => !noconfuseNum.includes\\(c\\)\\)\nconsole.log\\('Excluded numbers:', excludedNum\\)\n\")",
-      "Bash(pnpm run:*)"
+      "Bash(pnpm test:coverage 2>&1)"
     ]
   }
 }
