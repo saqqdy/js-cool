@@ -18,8 +18,21 @@ export interface JSONArray extends Array<JSONValue> {}
  *
  * @example
  * ```js
- * isPlainObject({}) // true
- * isPlainObject(window) // false
+ * // Plain objects
+ * isPlainObject({})              // true
+ * isPlainObject({ a: 1 })        // true
+ * isPlainObject(Object.create({})) // true
+ *
+ * // Not plain objects
+ * isPlainObject(window)          // false
+ * isPlainObject([])              // false
+ * isPlainObject(new Date())      // false
+ * isPlainObject(null)            // false
+ * isPlainObject(() => {})        // false
+ *
+ * // Class instances
+ * class MyClass {}
+ * isPlainObject(new MyClass())   // false
  * ```
  * @since 5.0.0
  * @param target - any target

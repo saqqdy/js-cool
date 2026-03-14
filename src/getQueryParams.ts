@@ -2,23 +2,31 @@ import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
 
 /**
- * Get all URL parameters (behind "#")
+ * Get all URL parameters (behind "#", from hash)
  *
  * @example
  * ```js
+ * // From URL string
  * getQueryParams('https://test.com?key1=100#/home?key1=200')
- * // \{"key1":"200"\}
+ * // { key1: '200' }
  *
- * getQueryParams('https://test.com?key1=100#/home?key1=200', true)
- * // \{"key1":200\}
+ * // With type conversion
+ * getQueryParams('https://test.com#/page?id=100&active=true', true)
+ * // { id: 100, active: true }
  *
+ * // From current page (no arguments)
+ * // URL: https://example.com#/page?token=abc&userId=123
+ * getQueryParams()
+ * // { token: 'abc', userId: '123' }
+ *
+ * // With conversion from current page
  * getQueryParams(true)
- * // \{"key1":200\}
+ * // { token: 'abc', userId: 123 }
  * ```
  * @since 5.0.0
- * @param url - pass in the url string
- * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
- * @returns - result
+ * @param url - URL string or boolean for type conversion
+ * @param covert - Converts specific strings to corresponding values
+ * @returns - object with all parameters
  */
 function getQueryParams(url: string): Record<string, string>
 function getQueryParams(url: boolean): Record<string, unknown>

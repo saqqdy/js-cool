@@ -3,8 +3,19 @@ import getCookie from './getCookie'
 /**
  * Delete cookie
  *
+ * @example
+ * ```js
+ * // Delete single cookie
+ * setCookie('token', 'xxx')
+ * delCookie('token')
+ * getCookie('token') // null
+ *
+ * // Delete multiple cookies
+ * delCookie('sessionId')
+ * delCookie('userId')
+ * ```
  * @since 1.0.2
- * @param name - cookie name
+ * @param name - cookie name to delete
  */
 function delCookie(name: string) {
 	const e = new Date()

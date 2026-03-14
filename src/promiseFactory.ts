@@ -1,14 +1,13 @@
 /**
- * Convert an object to a promise like api
+ * Convert an object to a promise-like API (thenable object)
  *
  * @example
  * ```js
  * import { promiseFactory, waiting } from 'js-cool'
  *
- * function promise() {
- *   const stats = {
- *    value: 100
- *   }
+ * // Create a thenable object
+ * function loadData() {
+ *   const stats = { value: 100 }
  *
  *   const resolver = () =>
  *     new Promise(resolve =>
@@ -21,13 +20,21 @@
  *   return promiseFactory(stats, resolver)
  * }
  *
- * const res = promise() // res => 100
- * const res = await promise() // res => 200
+ * // Synchronous access (returns initial value)
+ * const result = loadData()
+ * console.log(result.value) // 100
+ *
+ * // Asynchronous access (returns resolved value)
+ * const asyncResult = await loadData()
+ * console.log(asyncResult.value) // 200
+ *
+ * // Use with .then()
+ * loadData().then(data => console.log(data.value))
  * ```
  * @since 5.10.0
- * @param original - original object
- * @param resolver - resolver function
- * @returns - result
+ * @param original - original object to wrap
+ * @param resolver - function that returns a Promise
+ * @returns - thenable object that behaves like both the original object and a Promise
  */
 function promiseFactory<T extends object>(
 	original: T,

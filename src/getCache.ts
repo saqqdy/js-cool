@@ -1,25 +1,28 @@
 /**
- * Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+ * Get the cache from localStorage, if the deposited is Object, the retrieved is also Object
  *
  * @example
  * ```js
- * const data1 = 100
- * const data2 = { a: 10 }
- * const data3 = null
+ * // Set values first
+ * setCache('data1', 100)
+ * setCache('data2', { a: 10 })
+ * setCache('data3', null)
  *
- * setCache('data1', data1)
- * setCache('data2', data2)
- * setCache('data3', data3)
- *
+ * // Get values
  * getCache('data1') // 100
- * getCache('data2') // {a:10}
+ * getCache('data2') // { a: 10 }
  * getCache('data3') // null
  *
+ * // Non-existent key returns null
  * getCache('data4') // null
+ *
+ * // With expiration (set with setCache)
+ * setCache('temp', 'value', 10) // expires in 10 seconds
+ * getCache('temp') // 'value' (within 10s) or null (after 10s)
  * ```
  * @since 1.0.2
  * @param name - cache name
- * @returns - data, if it's an object, it's also an object
+ * @returns - cached data (parsed if JSON), or null if not found/expired
  */
 function getCache(name: string): any {
 	const data = localStorage.getItem(name)

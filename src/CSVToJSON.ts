@@ -3,16 +3,26 @@
  *
  * @example
  * ```js
- * CSVToJSON('col1,col2\\na,b\\\nc,d')
- * // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`.
+ * // Basic usage
+ * CSVToJSON('col1,col2\\na,b\\nc,d')
+ * // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]
  *
- * CSVToJSON('col1;col2\\\na;b\\\nc;d', ';')
- * // `[{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]`.
+ * // With custom delimiter
+ * CSVToJSON('col1;col2\\na;b\\nc;d', ';')
+ * // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}]
+ *
+ * // With numbers (as strings)
+ * CSVToJSON('name,age\\nJohn,30\\nJane,25')
+ * // [{'name': 'John', 'age': '30'}, {'name': 'Jane', 'age': '25'}]
+ *
+ * // Empty values
+ * CSVToJSON('a,b\\n1,\\n,2')
+ * // [{'a': '1', 'b': ''}, {'a': '', 'b': '2'}]
  * ```
  * @since 1.0.9
- * @param data - csv data
+ * @param data - csv data string
  * @param delimiter - delimiter, default ','
- * @returns - json
+ * @returns - array of objects
  */
 function CSVToJSON(data: string, delimiter = ',') {
 	const titles = data.slice(0, data.indexOf('\n')).split(delimiter)

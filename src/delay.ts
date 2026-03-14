@@ -3,8 +3,33 @@ import type { AnyFunction } from './types'
 /**
  * debounce & throttle
  *
+ * @example
+ * ```js
+ * const d = delay()
+ *
+ * // Debounce mode (first trigger only)
+ * // Execute immediately on first call, ignore subsequent calls within 500ms
+ * d.register('search', () => console.log('searching...'), 500, true)
+ *
+ * // Throttle mode (last trigger)
+ * // Delay execution, only the last call within 500ms will be executed
+ * d.register('save', () => console.log('saving...'), 500, false)
+ *
+ * // Cancel pending execution
+ * d.destroy('search')
+ *
+ * // Use in event handler
+ * input.addEventListener('input', () => {
+ *   d.register('input', handleInput, 300, false)
+ * })
+ *
+ * // Use for resize
+ * window.addEventListener('resize', () => {
+ *   d.register('resize', handleResize, 200, false)
+ * })
+ * ```
  * @since 1.0.2
- * @returns class
+ * @returns object with register and destroy methods
  */
 function delay() {
 	return {

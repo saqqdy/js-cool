@@ -3,7 +3,25 @@
  *
  * @example
  * ```js
- * upperFirst('saqqdy') // Saqqdy
+ * // Basic usage
+ * upperFirst('saqqdy')
+ * // 'Saqqdy'
+ *
+ * // Single character
+ * upperFirst('a')
+ * // 'A'
+ *
+ * // Already capitalized
+ * upperFirst('Hello')
+ * // 'Hello'
+ *
+ * // Empty string
+ * upperFirst('')
+ * // ''
+ *
+ * // With numbers
+ * upperFirst('1test')
+ * // '1test'
  * ```
  * @since 1.0.1
  * @param string - the string to be converted

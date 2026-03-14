@@ -3,10 +3,26 @@
  *
  * @example
  * ```js
- * uuid() // '4222fcfe-5721-4632-bede-6043885be57d'
+ * // Generate UUID
+ * uuid()
+ * // '4222fcfe-5721-4632-bede-6043885be57d'
+ *
+ * // Use for unique IDs
+ * const id = uuid()
+ * document.getElementById('form').id = id
+ *
+ * // Use for session tracking
+ * const sessionId = uuid()
+ * localStorage.setItem('sessionId', sessionId)
+ *
+ * // Use for database keys
+ * const user = {
+ *   id: uuid(),
+ *   name: 'John'
+ * }
  * ```
  * @since 1.0.9
- * @returns - uuid
+ * @returns - uuid string (v4 format)
  */
 const uuid = (): string =>
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

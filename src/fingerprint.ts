@@ -3,9 +3,29 @@ import inBrowser from './inBrowser'
 /**
  * Generating Browser Fingerprints
  *
+ * @example
+ * ```js
+ * // Basic usage - uses current domain
+ * const fp = fingerprint()
+ * // 'a1b2c3d4e5f6'
+ *
+ * // With custom domain
+ * const fp = fingerprint('myapp.com')
+ * // 'f6e5d4c3b2a1'
+ *
+ * // Use for user tracking
+ * const userId = fingerprint()
+ * localStorage.setItem('deviceId', userId)
+ *
+ * // Use for security
+ * const currentFp = fingerprint()
+ * if (storedFp !== currentFp) {
+ *   console.warn('Device changed!')
+ * }
+ * ```
  * @since 5.2.0
  * @param domain - key string, default: location.host
- * @returns - fingerprint
+ * @returns - fingerprint string or null in non-browser environment
  */
 function fingerprint(domain?: string) {
 	if (!inBrowser) return null

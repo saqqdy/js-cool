@@ -1,407 +1,629 @@
-# Change logs
+# Changelog
 
-## 2025.01.17 v5.23.1
+All notable changes to this project will be documented in this file.
 
-1. docs work
-2. upgrade all packages
+## [5.23.2] - 2026-03-14
 
-## 2024.11.18 v5.23.0
+### Docs
+- Rewrite README-zh_CN.md with comprehensive API documentation
+- Optimize JSDoc for all functions in src directory with comprehensive `@example` tags
+- Add multiple usage examples covering various scenarios for each function
+- Improve parameter and return value documentation
 
-1. `punctualTimer` got returns of PunctualTimerReturns
+## [5.23.1] - 2025-01-17
 
-## 2024.11.15 v5.22.1
+### Docs
+- Documentation improvements
 
-1. fix bugs of `nextVersion`
+### Dependencies
+- Upgrade all packages
 
-## 2024.10.16 v5.22.0
+## [5.23.0] - 2024-11-18
 
-1. new `isNumberBrowser` function, see: [isNumberBrowser](https://github.com/saqqdy/js-cool#isnumberbrowser)
-2. Default value of agent string for `getOsVersion` and `getAppVersion` changed to navigator.appVersion.
+### Changed
+- `punctualTimer` now returns `PunctualTimerReturns` type
 
-## 2024.08.27 v5.21.2
+## [5.22.1] - 2024-11-15
 
-1. `pattern` support mac/ip4/ip4_pri
+### Fixed
+- Fix bugs in `nextVersion`
 
-## 2024.08.12 v5.21.1
+## [5.22.0] - 2024-10-16
 
-1. `osVersion` support Harmony
+### Added
+- New `isNumberBrowser` function - detect 360 browser
 
-## 2024.08.09 v5.21.0
+### Changed
+- Default value of agent string for `getOsVersion` and `getAppVersion` changed to `navigator.appVersion`
 
-1. `spliceUrlParam` Breaking change: SpliceUrlParamOptions
+## [5.21.2] - 2024-08-27
 
-## 2024.08.09 v5.20.0
+### Added
+- `pattern` now supports `mac`, `ip4`, `ip4_pri` regex patterns
 
-1. `spliceUrlParam` Breaking change: remove encodeURIComponent
+## [5.21.1] - 2024-08-12
 
-## 2024.05.30 v5.19.2
+### Added
+- `osVersion` now supports Harmony OS detection
 
-1. upgrade `await-to-done`, fix types
+## [5.21.0] - 2024-08-09
 
-## 2024.04.29 v5.19.1
+### Changed
+- **BREAKING**: `spliceUrlParam` options changed to `SpliceUrlParamOptions`
 
-1. remove default params of `arrayBufferToBase64`
+## [5.20.0] - 2024-08-09
 
-## 2024.04.27 v5.19.0
+### Changed
+- **BREAKING**: `spliceUrlParam` removes automatic `encodeURIComponent`
 
-1. `getProperty` support defaultValue
-2. fix types
-3. upgrade all packages
+## [5.19.2] - 2024-05-30
 
-## 2024.03.11 v5.18.1
+### Dependencies
+- Upgrade `await-to-done`, fix types
 
-1. fix types
-2. fix export error
+## [5.19.1] - 2024-04-29
 
-## 2024.03.07 v5.18.0
+### Changed
+- Remove default params from `arrayBufferToBase64`
 
-1. new `punctualTimer` function, see: [punctualTimer](https://github.com/saqqdy/js-cool#punctualtimer)
+## [5.19.0] - 2024-04-27
 
-## 2024.01.21 v5.17.1
+### Added
+- `getProperty` now supports `defaultValue` parameter
 
-1. `safeParse` `safeStringify` supports converting bigint
+### Fixed
+- Fix type definitions
 
-## 2024.01.22 v5.17.0
+### Dependencies
+- Upgrade all packages
 
-1. `randomColor` supports a range of custom color values, which can be used to customize the generation of dark, light, warm, etc.
+## [5.18.1] - 2024-03-11
 
-## 2024.01.21 v5.16.0
+### Fixed
+- Fix type definitions
+- Fix export errors
 
-1. new `safeParse` `safeStringify` function
-2. upgrade all packages
+## [5.18.0] - 2024-03-07
 
-## 2023.11.13 v5.15.2
+### Added
+- New `punctualTimer` function - precise setInterval
 
-1. move `awaitTo` to `await-to-done` function, see: [await-to-done](https://github.com/saqqdy/await-to-done)
-2. fix circle require
+## [5.17.1] - 2024-01-21
 
-## 2023.11.06 v5.15.0
+### Changed
+- `safeParse` and `safeStringify` now support BigInt conversion
 
-1. new `clone` function, see: [clone](https://github.com/saqqdy/js-cool#clone)
-2. new `isDate` function, see: [isDate](https://github.com/saqqdy/js-cool#isdate)
-3. new `isRegExp` function, see: [isRegExp](https://github.com/saqqdy/js-cool#isregexp)
+## [5.17.0] - 2024-01-22
 
-## 2023.11.01 v5.14.1
+### Added
+- `randomColor` now supports custom color value ranges for generating dark, light, warm colors
 
-1. docs work
+## [5.16.0] - 2024-01-21
 
-## 2023.10.31 v5.14.0
+### Added
+- New `safeParse` function - safely parse JSON strings
+- New `safeStringify` function - safely stringify JSON objects
 
-1. new `sorter` function, see: [sorter](https://github.com/saqqdy/js-cool#sorter)
-2. new `sortPinyin` function, see: [sortPinyin](https://github.com/saqqdy/js-cool#sortpinyin)
-3. upgrade all packages
+### Dependencies
+- Upgrade all packages
 
-## 2023.10.27 v5.13.0
+## [5.15.2] - 2023-11-13
 
-1. new `arrayBufferToBase64` function, see: [arrayBufferToBase64](https://github.com/saqqdy/js-cool#arraybuffertobase64)
-2. new `arrayBufferToBlob` function, see: [arrayBufferToBlob](https://github.com/saqqdy/js-cool#arraybuffertoblob)
-3. new `base64ToArrayBuffer` function, see: [base64ToArrayBuffer](https://github.com/saqqdy/js-cool#base64toarraybuffer)
-4. new `base64ToBlob` function, see: [base64ToBlob](https://github.com/saqqdy/js-cool#base64toblob)
-5. new `base64ToFile` function, see: [base64ToFile](https://github.com/saqqdy/js-cool#base64tofile)
-6. new `blobToArrayBuffer` function, see: [blobToArrayBuffer](https://github.com/saqqdy/js-cool#blobtoarraybuffer)
-7. new `blobToBase64` function, see: [blobToBase64](https://github.com/saqqdy/js-cool#blobtobase64)
-8. new `blobToUrl` function, see: [blobToUrl](https://github.com/saqqdy/js-cool#blobtourl)
-9. new `fileToBase64` function, see: [fileToBase64](https://github.com/saqqdy/js-cool#filetobase64)
-10. new `svgToBlob` function, see: [svgToBlob](https://github.com/saqqdy/js-cool#svgtoblob)
-11. new `urlToBlob` function, see: [urlToBlob](https://github.com/saqqdy/js-cool#urltoblob)
-12. new `inNodeJs` function, see: [inNodeJs](https://github.com/saqqdy/js-cool#innodejs)
+### Changed
+- Move `awaitTo` to standalone package `await-to-done`
 
-## 2023.10.09 v5.12.0
+### Fixed
+- Fix circular require issues
 
-1. new `isEqual` function, see: [isEqual](https://github.com/saqqdy/js-cool#isequal)
-2. upgrade all packages
+## [5.15.0] - 2023-11-06
 
-## 2023.10.09 v5.11.0
+### Added
+- New `clone` function - deep clone
+- New `isDate` function - check if value is Date
+- New `isRegExp` function - check if value is RegExp
 
-1. new `getFileType` function, see: [getFileType](https://github.com/saqqdy/js-cool#getfiletype)
-2. upgrade all packages
+## [5.14.1] - 2023-11-01
 
-## 2023.09.23 v5.10.0
+### Docs
+- Documentation improvements
 
-1. new `nextVersion` function, see: [nextVersion](https://github.com/saqqdy/js-cool#nextversion)
-2. new `promiseFactory` function, see: [promiseFactory](https://github.com/saqqdy/js-cool#promiseFactory)
+## [5.14.0] - 2023-10-31
 
-## 2023.09.20 v5.9.0
+### Added
+- New `sorter` function - sorting factory function
+- New `sortPinyin` function - sort Chinese by pinyin
 
-1. new `mapTemplate` function, see: [mapTemplate](https://github.com/saqqdy/js-cool#maptemplate)
+### Dependencies
+- Upgrade all packages
 
-## 2023.09.16 v5.8.1
+## [5.13.0] - 2023-10-27
 
-1. `waiting` support throw on timeout [API Docs](https://www.saqqdy.com/js-cool#waiting)
+### Added
+- New `arrayBufferToBase64` function
+- New `arrayBufferToBlob` function
+- New `base64ToArrayBuffer` function
+- New `base64ToBlob` function
+- New `base64ToFile` function
+- New `blobToArrayBuffer` function
+- New `blobToBase64` function
+- New `blobToUrl` function
+- New `fileToBase64` function
+- New `svgToBlob` function
+- New `urlToBlob` function
+- New `inNodeJs` function
 
-## 2023.09.11 v5.8.0
+## [5.12.0] - 2023-10-09
 
-1. `compareVersion` support tag version [API Docs](https://www.saqqdy.com/js-cool#compareversion)
+### Added
+- New `isEqual` function - deep equality comparison
 
-## 2023.09.06 v5.7.2
+### Dependencies
+- Upgrade all packages
 
-1. fix regexp bug of appVersion
+## [5.11.0] - 2023-10-09
 
-## 2023.09.01 v5.7.1
+### Added
+- New `getFileType` function - determine file type by extension
 
-1. revert nextIndex function
+### Dependencies
+- Upgrade all packages
 
-## 2023.08.22 v5.7.0
+## [5.10.0] - 2023-09-23
 
-1. new `isIterable` function, see: [isIterable](https://github.com/saqqdy/js-cool#isiterable)
-2. Extend awaitTo to support passing in multiple promises, see: [awaitTo](https://github.com/saqqdy/js-cool#awaitto)
-3. fix types
-4. upgrade all packages
+### Added
+- New `nextVersion` function - calculate next version number
+- New `promiseFactory` function - convert object to promise-like API
 
-## 2023.08.18 v5.6.0
+## [5.9.0] - 2023-09-20
 
-1. new `getCookies` function, see: [getCookies](https://github.com/saqqdy/js-cool#getcookies)
-2. some improvements for getType/getSession/getCache/fixNumber
-3. fix bugs: toThousands/parseUrlParam
-4. new pattern.number/nextIndex
-5. deprecated getScrollPosition
-6. fix types
+### Added
+- New `mapTemplate` function - template string replacement
 
-## 2023.08.10 v5.5.0
+## [5.8.1] - 2023-09-16
 
-1. new `preloader` `escape` `unescape` `randomColor` `isDarkMode` `waiting` function, see: [preloader](https://github.com/saqqdy/js-cool#preloader), [escape](https://github.com/saqqdy/js-cool#escape), [unescape](https://github.com/saqqdy/js-cool#unescape), [randomColor](https://github.com/saqqdy/js-cool#randomcolor), [isDarkMode](https://github.com/saqqdy/js-cool#isdarkmode), [waiting](https://github.com/saqqdy/js-cool#waiting)
+### Changed
+- `waiting` now supports `throwOnTimeout` option
 
-## 2023.08.05 v5.4.0
+## [5.8.0] - 2023-09-11
 
-1. new `shuffle` `randomNumbers` function, see: [shuffle](https://github.com/saqqdy/js-cool#shuffle), [randomNumbers](https://github.com/saqqdy/js-cool#randomnumbers)
-2. Band new randomString function, see: [randomString](https://github.com/saqqdy/js-cool#randomstring)
+### Changed
+- `compareVersion` now supports tag versions (`rc` > `beta` > `alpha`)
 
-## 2023.08.02 v5.3.2
+## [5.7.2] - 2023-09-06
 
-1. Optimize usage of `getQueryParams` `getUrlParams`
-2. upgrade all packages
+### Fixed
+- Fix regexp bug in `appVersion`
 
-## 2023.07.31 v5.3.1
+## [5.7.1] - 2023-09-01
 
-1. fix appVersion bug
+### Fixed
+- Revert `nextIndex` function changes
 
-## 2023.07.18 v5.3.0
+## [5.7.0] - 2023-08-22
 
-1. new `spliceUrlParam` function
-2. deprecated `isDigitals`
-3. fix types & bugs
-4. docs work
+### Added
+- New `isIterable` function
+- `awaitTo` now supports multiple promises
 
-## 2023.07.17 v5.2.0
+### Fixed
+- Fix type definitions
 
-1. new `awaitTo` `fingerprint` `browserVersion` function
-2. fix bugs of `osVersion`
-3. deprecated `trim` `pattern` `getDirParam`
-4. docs work
+### Dependencies
+- Upgrade all packages
 
-## 2023.07.07 v5.1.0
+## [5.6.0] - 2023-08-18
 
-1. add `appVersion` `osVersion`
-2. deprecated `getOsVersion` `getAppVersion`
+### Added
+- New `getCookies` function
+- New `pattern.number` regex
+- New `nextIndex` function
 
-## 2023.07.05 v5.0.0
+### Changed
+- Improvements to `getType`, `getSession`, `getCache`, `fixNumber`
 
-1. add `copy` `getQueryParam` `getQueryParams` `getUrlParams` function
-2. change the params of `getUrlParam`
-3. add `isWindow` function
-4. add `isObject` `isArray` function
-5. remove `getRandomStrWidthSpecialChar`
-6. remove `getParameter`
-7. remove `getIsAppVersionLastest`, use `compareVersion` instead
-8. `searchTreeObject` rename to `searchObject`
-9. `getRandomNum` rename to `randomNumber`
-10. `getRandomStr` rename to `randomString`
-11. upgrade all packages
+### Fixed
+- Fix bugs in `toThousands`, `parseUrlParam`
 
-## 2023.06.14 v4.7.0
+### Deprecated
+- `getScrollPosition` will be removed in next major version
 
-1. add `compareVersion` [API Docs](https://www.saqqdy.com/js-cool#compareversion)
-2. upgrade all packages
+## [5.5.0] - 2023-08-10
 
-## 2023.06.06 v4.6.0
+### Added
+- New `preloader` function - image preloading
+- New `escape` function - escape HTML special characters
+- New `unescape` function - unescape HTML special characters
+- New `randomColor` function - generate random hex colors
+- New `isDarkMode` function - detect dark mode
+- New `waiting` function - wait for specified time
 
-1. drop `textareaInsertText` & `textareaMoveToEnd`, If you still need to use it, we using [grace-textarea](https://github.com/saqqdy/grace-textarea)
+## [5.4.0] - 2023-08-05
 
-## 2023.06.05 v4.5.0
+### Added
+- New `shuffle` function - shuffle array or string
+- New `randomNumbers` function - generate n random integers with fixed sum
+- Brand new `randomString` function with more options
 
-1. add `inBrowser` [API Docs](https://www.saqqdy.com/js-cool#inbrowser)
-2. some translate work
-3. upgrade all packages
+## [5.3.2] - 2023-08-02
 
-## 2023.05.31 v4.4.1
+### Changed
+- Optimize `getQueryParams` and `getUrlParams` usage
 
-1. fix esm module
+### Dependencies
+- Upgrade all packages
 
-## 2023.05.23 v4.4.0
+## [5.3.1] - 2023-07-31
 
-1. fix outputs
-2. fix exports
+### Fixed
+- Fix `appVersion` bug
 
-## 2023.05.22 v4.3.0
+## [5.3.0] - 2023-07-18
 
-1. fix export default
-2. fix types
-3. upgrade all packages
+### Added
+- New `spliceUrlParam` function
 
-## 2023.05.21 v4.2.0
+### Deprecated
+- `isDigitals` will be removed in next major version
 
-1. use `use-downloads`
-2. some translate work
+### Fixed
+- Fix type definitions and bugs
 
-## 2023.05.20 v4.1.0
+### Docs
+- Documentation improvements
 
-1. use `load-source` `mount-css` `mount-image` `mount-script` `mount-style`
-2. some translate work
+## [5.2.0] - 2023-07-17
 
-## 2023.05.18 v4.0.0
+### Added
+- New `awaitTo` function - async error handling wrapper
+- New `fingerprint` function - generate browser fingerprint
+- New `browserVersion` function - get browser name and version
 
-1. split `csv` into `arrayToCSV` `CSVToArray` `CSVToJSON` `JSONToCSV`
-2. split `cache` into `setCache` `getCache` `delCache`
-3. split `session`into `setSession` `getSession` `delSession`
-4. split `cookie` into `setCookie` `getCookie` `delCookie`
-5. drop `tslib` package
-6. new build scripts & output
+### Fixed
+- Fix bugs in `osVersion`
 
-## 2023.04.07 v3.1.0
+### Deprecated
+- `trim` will be removed in next major version
+- `pattern` will be renamed to `patterns`
+- `getDirParam` will be renamed to `getDirParams`
 
-1. Optimize build output by removing `tslib` from the package
+### Docs
+- Documentation improvements
 
-## 2023.04.06 v3.0.0
+## [5.1.0] - 2023-07-07
 
-1. remove `imgAdapt` `imgChoose` `throttle` `debounce` `enWxJumpLink` `enWxJumpLinkOld` `deWxJumpLink` `deWxJumpLinkOld` `clearHtmlExpSN` ` clearHtmlN` `clearHtmlNS` `clearHtmlTag` `formatTime` `formatTimeStr` `getFileType` `clearBr`
-2. move `arrayToCSV` `CSVToArray` `CSVToJSON` `JSONToCSV` to `csv`
-3. move `setCache` `getCache` `delCache` to `cache`
-4. move `setSession` `getSession` `delSession` to `session`
-5. move `setCookie` `getCookie` `delCookie` to `cookie`
-6. add `isPlainObject` function
-7. support `const addEvent = require('js-cool/addEvent')` This introduction method
-8. build product differentiate between esnext and es5, default output esnext
-9. `splitThousand` => `toThousands`
-10. `getWindowSize` => `windowSize`
-11. new `extend` function
+### Added
+- New `appVersion` function
+- New `osVersion` function
 
-## 2022.12.13 v2.8.0
+### Deprecated
+- `getAppVersion` - use `appVersion` instead
+- `getOsVersion` - use `osVersion` instead
 
-1. `loadSource` `mountCss` `mountImg` `mountJs` `mountStyle` new support for passing in custom properties, adjusting the input form, and improving the ts type, fixing IE compatibility issues
-2. dependency package upgrade
+## [5.0.0] - 2023-07-05
 
-## 2022.12.07 v2.7.1
+### Added
+- New `copy` function - copy to clipboard
+- New `getQueryParam` function - get single query param
+- New `getQueryParams` function - get all query params
+- New `getUrlParams` function - get all URL params
+- New `isWindow` function
+- New `isObject` function
+- New `isArray` function
 
-Extend the types supported by `getType` method.
+### Changed
+- **BREAKING**: `getUrlParam` parameters changed
 
-## 2022.12.04 v2.7.0
+### Removed
+- `getRandomStrWidthSpecialChar` - use `randomString` instead
+- `getParameter` - use `getUrlParam` instead
+- `getIsAppVersionLatest` - use `compareVersion` instead
 
-1. add `setProperty` method
-2. fix getProperty bug
+### Renamed
+- `searchTreeObject` → `searchObject`
+- `getRandomNum` → `randomNumber`
+- `getRandomStr` → `randomString`
 
-## 2022.12.04 v2.6.0
+### Dependencies
+- Upgrade all packages
 
-1. add `loadSource` `mountCss` `mountImg` `mountJs` `mountStyle` 5 methods
-2. upgrade the dependency package
+## [4.7.0] - 2023-06-14
 
-## 2022.09.10 v2.5.0
+### Added
+- New `compareVersion` function
 
-1. adjust exports export method, focus on supporting node esm mode
-2. optimize build scripts
-3. upgrade dependency packages
+### Dependencies
+- Upgrade all packages
 
-## 2022.08.23 v2.4.0
+## [4.6.0] - 2023-06-06
 
-1. upgrade dependency packages
-2. optimize the build process
+### Removed
+- `textareaInsertText` and `textareaMoveToEnd` - use [grace-textarea](https://github.com/saqqdy/grace-textarea) instead
 
-## 2022.03.12 v2.3.2
+## [4.5.0] - 2023-06-05
 
-1. upgrade dependency packages
-2. optimize the documentation
+### Added
+- New `inBrowser` function
 
-## 2022.02.25 v2.3.1
+### Docs
+- Translation improvements
 
-1. fix `tslib` package issue
+### Dependencies
+- Upgrade all packages
 
-## 2021.11.11 v2.3.0
+## [4.4.1] - 2023-05-31
 
-1. export module to keep default
-2. upgrade dependency package
+### Fixed
+- Fix ESM module
 
-## 2021.10.23 v2.2.4
+## [4.4.0] - 2023-05-23
 
-1. add getProperty method
+### Fixed
+- Fix outputs and exports
 
-## 2021.10.19 v2.2.3
+## [4.3.0] - 2023-05-22
 
-1. improve fillIPv6 method
+### Fixed
+- Fix export default
+- Fix type definitions
 
-## 2021.10.18 v2.2.2
+### Dependencies
+- Upgrade all packages
 
-1. add fillIPv6 method
+## [4.2.0] - 2023-05-21
 
-## 2021.10.15 v2.2.1
+### Changed
+- Use `use-downloads` package
 
-1. add methods to find the intersection, concatenation, difference and complement of multiple arrays
-2. add contains method
-3. add a unique method for de-duplication
+### Docs
+- Translation improvements
 
-## 2021.09.21 v2.1.3
+## [4.1.0] - 2023-05-20
 
-1. build output banner
+### Changed
+- Use standalone packages: `load-source`, `mount-css`, `mount-image`, `mount-script`, `mount-style`
 
-## 2021.09.10 v2.1.2
+### Docs
+- Translation improvements
 
-1. improve typescript types
-2. upgrade dependency package
+## [4.0.0] - 2023-05-18
 
-## 2021.09.02 v2.1.1
+### Changed
+- **BREAKING**: Split `csv` into `arrayToCSV`, `CSVToArray`, `CSVToJSON`, `JSONToCSV`
+- **BREAKING**: Split `cache` into `setCache`, `getCache`, `delCache`
+- **BREAKING**: Split `session` into `setSession`, `getSession`, `delSession`
+- **BREAKING**: Split `cookie` into `setCookie`, `getCookie`, `delCookie`
 
-1. refine typescript types
+### Removed
+- `tslib` package dependency
 
-## 2021.08.29 v2.1.0
+### Changed
+- New build scripts and output format
 
-1. add build es module
+## [3.1.0] - 2023-04-07
 
-## 2021.08.28 v2.0.1
+### Changed
+- Optimize build output by removing `tslib`
 
-1. fix several issues
-2. optimize code, optimize documentation
+## [3.0.0] - 2023-04-06
 
-## 2021.08.26 v2.0.0
+### Removed
+- `imgAdapt`, `imgChoose`, `throttle`, `debounce`, `enWxJumpLink`, `enWxJumpLinkOld`, `deWxJumpLink`, `deWxJumpLinkOld`, `clearHtmlExpSN`, `clearHtmlN`, `clearHtmlNS`, `clearHtmlTag`, `formatTime`, `formatTimeStr`, `getFileType`, `clearBr`
 
-1. refactor all the code to typescript
-2. rewrite method comments according to tsdoc specification
+### Changed
+- Move CSV functions to `csv` module
+- Move cache functions to `cache` module
+- Move session functions to `session` module
+- Move cookie functions to `cookie` module
+- `splitThousand` → `toThousands`
+- `getWindowSize` → `windowSize`
 
-## 2021.07.26 v1.1.0
+### Added
+- New `isPlainObject` function
+- New `extend` function
+- Support direct import: `require('js-cool/addEvent')`
+- Build output now differentiates between esnext and es5
 
-1. use webpack to build umd package
+## [2.8.0] - 2022-12-13
 
-## 2021.03.03 v1.0.9
+### Changed
+- `loadSource`, `mountCss`, `mountImg`, `mountJs`, `mountStyle` now support custom properties
+- Improved TypeScript types
+- Fixed IE compatibility issues
 
-1. add all/any/RGBToHex/uuid methods
-2. add CSV to object conversion methods: arrayToCSV/CSVToArray/CSVToJSON/JSONtoCSV
+### Dependencies
+- Upgrade packages
 
-## 2021.03.02 v1.0.8
+## [2.7.1] - 2022-12-07
 
-1. add splitThousand method
+### Changed
+- Extend types supported by `getType` method
 
-## 2021.03.01 v1.0.7
+## [2.7.0] - 2022-12-04
 
-1. fix nextIndex bug
+### Added
+- New `setProperty` function
 
-## 2021.02.18 v1.0.6
+### Fixed
+- Fix `getProperty` bug
 
-1. add openUrl method
+## [2.6.0] - 2022-12-04
 
-## 2021.02.18 v1.0.5
+### Added
+- New `loadSource` function
+- New `mountCss` function
+- New `mountImg` function
+- New `mountJs` function
+- New `mountStyle` function
 
-1. add download/searchTreeObject method
+### Dependencies
+- Upgrade packages
 
-## 2021.02.08 v1.0.4
+## [2.5.0] - 2022-09-10
 
-1. update getCookie/setCookie methods
+### Changed
+- Adjust exports to support Node ESM mode
+- Optimize build scripts
 
-## 2021.02.01 v1.0.3
+### Dependencies
+- Upgrade packages
 
-1. handle bugs
+## [2.4.0] - 2022-08-23
 
-## 2021.01.23 v1.0.2
+### Dependencies
+- Upgrade packages
 
-1. add nextIndex,fixNumber,delay,extend,getType,isArray,cleanData,getCache,setCache,delCache
-2. delete getLocal,setLocal,delLocal
+### Changed
+- Optimize build process
 
-## 2020.12.14 v1.0.1
+## [2.3.2] - 2022-03-12
 
-1. create project
+### Dependencies
+- Upgrade packages
+
+### Docs
+- Optimize documentation
+
+## [2.3.1] - 2022-02-25
+
+### Fixed
+- Fix `tslib` package issue
+
+## [2.3.0] - 2021-11-11
+
+### Changed
+- Export module keeps default
+
+### Dependencies
+- Upgrade packages
+
+## [2.2.4] - 2021-10-23
+
+### Added
+- New `getProperty` function
+
+## [2.2.3] - 2021-10-19
+
+### Changed
+- Improve `fillIPv6` function
+
+## [2.2.2] - 2021-10-18
+
+### Added
+- New `fillIPv6` function
+
+## [2.2.1] - 2021-10-15
+
+### Added
+- New `intersect` function - find intersection of arrays
+- New `union` function - find union of arrays
+- New `minus` function - find difference of arrays
+- New `complement` function - find complement of arrays
+- New `contains` function - check if array contains element
+- New `unique` function - array deduplication
+
+## [2.1.3] - 2021-09-21
+
+### Changed
+- Add build output banner
+
+## [2.1.2] - 2021-09-10
+
+### Changed
+- Improve TypeScript types
+
+### Dependencies
+- Upgrade packages
+
+## [2.1.1] - 2021-09-02
+
+### Changed
+- Refine TypeScript types
+
+## [2.1.0] - 2021-08-29
+
+### Added
+- Build ES module output
+
+## [2.0.1] - 2021-08-28
+
+### Fixed
+- Fix several issues
+
+### Docs
+- Optimize code and documentation
+
+## [2.0.0] - 2021-08-26
+
+### Changed
+- **BREAKING**: Refactor all code to TypeScript
+- Rewrite method comments according to TSDoc specification
+
+## [1.1.0] - 2021-07-26
+
+### Changed
+- Use webpack to build UMD package
+
+## [1.0.9] - 2021-03-03
+
+### Added
+- New `all` function
+- New `any` function
+- New `RGBToHex` function
+- New `uuid` function
+- New `arrayToCSV` function
+- New `CSVToArray` function
+- New `CSVToJSON` function
+- New `JSONToCSV` function
+
+## [1.0.8] - 2021-03-02
+
+### Added
+- New `splitThousand` function
+
+## [1.0.7] - 2021-03-01
+
+### Fixed
+- Fix `nextIndex` bug
+
+## [1.0.6] - 2021-02-18
+
+### Added
+- New `openUrl` function
+
+## [1.0.5] - 2021-02-18
+
+### Added
+- New `download` function
+- New `searchTreeObject` function
+
+## [1.0.4] - 2021-02-08
+
+### Changed
+- Update `getCookie` and `setCookie` methods
+
+## [1.0.3] - 2021-02-01
+
+### Fixed
+- Handle bugs
+
+## [1.0.2] - 2021-01-23
+
+### Added
+- New `nextIndex` function
+- New `fixNumber` function
+- New `delay` function
+- New `extend` function
+- New `getType` function
+- New `isArray` function
+- New `cleanData` function
+- New `getCache` function
+- New `setCache` function
+- New `delCache` function
+
+### Removed
+- `getLocal`, `setLocal`, `delLocal`
+
+## [1.0.1] - 2020-12-14
+
+### Added
+- Initial release

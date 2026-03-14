@@ -5,7 +5,18 @@ import getType from './getType'
  *
  * @example
  * ```js
- * isObject({}) // true
+ * // Objects
+ * isObject({})              // true
+ * isObject({ a: 1 })        // true
+ * isObject(new Object())    // true
+ *
+ * // Not objects
+ * isObject([])              // false
+ * isObject(null)            // false
+ * isObject(window)          // false
+ * isObject(() => {})        // false
+ * isObject('string')        // false
+ * isObject(123)             // false
  * ```
  * @since 5.0.0
  * @param target - any target

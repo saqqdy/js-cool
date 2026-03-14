@@ -6,19 +6,27 @@ import inBrowser from './inBrowser'
  *
  * @example
  * ```js
+ * // From URL string
  * getUrlParams('https://test.com?key1=100#/home?key1=200')
- * // \{"key1":"100"\}
+ * // { key1: '100' }
  *
- * getUrlParams('https://test.com?key1=100#/home?key1=200', true)
- * // \{"key1":100\}
+ * // With type conversion
+ * getUrlParams('https://test.com?id=100&active=true#/page', true)
+ * // { id: 100, active: true }
  *
+ * // From current page (no arguments)
+ * // URL: https://example.com?token=abc&userId=123#/page
+ * getUrlParams()
+ * // { token: 'abc', userId: '123' }
+ *
+ * // With conversion from current page
  * getUrlParams(true)
- * // \{"key1":100\}
+ * // { token: 'abc', userId: 123 }
  * ```
  * @since 5.0.0
- * @param url - pass in the url string
- * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
- * @returns - result
+ * @param url - URL string or boolean for type conversion
+ * @param covert - Converts specific strings to corresponding values
+ * @returns - object with all parameters
  */
 function getUrlParams(url: string): Record<string, string>
 function getUrlParams(url: boolean): Record<string, unknown>

@@ -1,9 +1,35 @@
 /**
  * Get the target type
  *
+ * @example
+ * ```js
+ * // Primitive types
+ * getType(123)        // 'number'
+ * getType('hello')    // 'string'
+ * getType(true)       // 'boolean'
+ * getType(undefined)  // 'undefined'
+ * getType(null)       // 'null'
+ *
+ * // Reference types
+ * getType([])         // 'array'
+ * getType({})         // 'object'
+ * getType(() => {})   // 'function'
+ * getType(/regex/)    // 'regexp'
+ * getType(new Date()) // 'date'
+ *
+ * // Special objects
+ * getType(window)     // 'window'
+ * getType(document)   // 'document'
+ * getType(Promise.resolve()) // 'promise'
+ * getType(new Error()) // 'error'
+ *
+ * // Class
+ * class MyClass {}
+ * getType(MyClass)    // 'function'
+ * ```
  * @since 1.0.2
  * @param target - target
- * @returns type
+ * @returns type string
  */
 function getType<T = any>(target: T) {
 	const type: Record<

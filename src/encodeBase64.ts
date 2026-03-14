@@ -4,6 +4,24 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 /**
  * String, number to base64
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * encodeBase64('Hello World')
+ * // 'SGVsbG8gV29ybGQ='
+ *
+ * // Encode Chinese characters
+ * encodeBase64('你好')
+ * // '5L2g5aW9'
+ *
+ * // Encode JSON string
+ * encodeBase64('{"name":"John"}')
+ * // 'eyJuYW1lIjoiSm9obiJ9'
+ *
+ * // Encode with special characters
+ * encodeBase64('<?xml version="1.0"?>')
+ * // 'PD94bWwgdmVyc2lvbj0iMS4wIj8+'
+ * ```
  * @since 1.0.1
  * @param input - the string to be encoded
  * @returns - the BASE64 encoding

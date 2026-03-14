@@ -7,9 +7,30 @@ import isRegExp from './isRegExp'
  *
  * @example
  * ```js
- * const source = { a: 100, reg: /\d+/g, arr: [1, 2] }
+ * // Clone object
+ * const source = { a: 100, b: { c: 200 } }
  * const res = clone(source)
- * // { a: 100, reg: /\d+/g, arr: [1, 2] }
+ * // { a: 100, b: { c: 200 } }
+ * res.b.c = 300 // source.b.c still 200
+ *
+ * // Clone array
+ * const arr = [1, 2, { x: 10 }]
+ * const arrCopy = clone(arr)
+ * // [1, 2, { x: 10 }]
+ *
+ * // Clone with RegExp
+ * const obj = { reg: /\d+/g }
+ * const objCopy = clone(obj)
+ * // { reg: /\d+/g }
+ *
+ * // Clone with Date
+ * const dateObj = { date: new Date() }
+ * const dateCopy = clone(dateObj)
+ *
+ * // Handle circular reference
+ * const circular = { a: 1 }
+ * circular.self = circular
+ * const circularCopy = clone(circular)
  * ```
  * @since 5.15.0
  * @param parent - source object

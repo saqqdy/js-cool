@@ -2,23 +2,34 @@
  * shuffling algorithm, Reordering arrays or strings
  *
  * @example
- * ```ts
+ * ```js
+ * // Shuffle string
  * const str = 'abcde'
- * const arr = [1,2,3]
- *
  * shuffle(str)
- * // cdbse
+ * // 'cdbse'
  *
+ * // Shuffle array
+ * const arr = [1, 2, 3]
  * shuffle(arr)
  * // [3, 1, 2]
  *
+ * // Shuffle with size limit
  * shuffle(arr, 2)
  * // [3, 2]
+ *
+ * // Shuffle string with size
+ * shuffle('hello', 3)
+ * // 'leh'
+ *
+ * // Original is modified
+ * const original = [1, 2, 3]
+ * const shuffled = shuffle(original)
+ * // original is now shuffled too
  * ```
  * @since 5.4.0
  * @param value - arrays or strings
- * @param size - new array or string length
- * @returns - result
+ * @param size - new array or string length (default: original length)
+ * @returns - shuffled result (same type as input)
  */
 function shuffle(value: string, size?: number): string
 function shuffle<T extends unknown[] = unknown[]>(value: T, size?: number): T

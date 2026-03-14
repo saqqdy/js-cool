@@ -5,16 +5,30 @@ import pattern from './pattern'
  *
  * @example
  * ```js
- * parseUrlParam('?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test')
- * // \{"key1":"100","key2":"true","key3":"null","key4":"undefined","key5":"NaN","key6":"10.888","key7":"Infinity","key8":"test"\}
+ * // Basic usage - returns strings
+ * parseUrlParam('?key1=100&key2=true&key3=null')
+ * // { key1: '100', key2: 'true', key3: 'null' }
  *
- * parseUrlParam('?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888&key7=Infinity&key8=test', true)
- * // \{"key1":100,"key2":true,"key3":null,"key5":NaN,"key6":10.888,"key7":Infinity,"key8":"test"\}
+ * // With type conversion
+ * parseUrlParam('?key1=100&key2=true&key3=null&key4=undefined&key5=NaN&key6=10.888', true)
+ * // { key1: 100, key2: true, key3: null, key5: NaN, key6: 10.888 }
+ *
+ * // Special values
+ * parseUrlParam('?inf=Infinity&negInf=-Infinity', true)
+ * // { inf: Infinity, negInf: -Infinity }
+ *
+ * // Empty/missing values
+ * parseUrlParam('?empty=&missing')
+ * // { empty: '', missing: '' }
+ *
+ * // URL encoded values
+ * parseUrlParam('?name=John%20Doe&email=test%40example.com')
+ * // { name: 'John Doe', email: 'test@example.com' }
  * ```
  * @since 5.0.0
  * @param url - url string (like: ?key1=value1&key2=value2)
- * @param covert - Converts a specific string to a corresponding value (Scientific notation, binary, octal and hexadecimal types of data are not converted, like: 0b111, 0o13, 0xFF, 1e3, -1e-2)
- * @returns object
+ * @param covert - Converts specific strings to corresponding values (default: false)
+ * @returns object with parsed parameters
  */
 function parseUrlParam(url: string, covert = false) {
 	if (!url) {

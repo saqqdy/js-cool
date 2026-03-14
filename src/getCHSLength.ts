@@ -3,12 +3,29 @@
  *
  * @example
  * ```js
+ * // Pure Chinese
  * getCHSLength('测试')
- * // 2
+ * // 4
+ *
+ * // Pure English
+ * getCHSLength('test')
+ * // 4
+ *
+ * // Mixed content
+ * getCHSLength('测试test')
+ * // 8 (4 + 4)
+ *
+ * // With numbers
+ * getCHSLength('测试123')
+ * // 7 (4 + 3)
+ *
+ * // Empty string
+ * getCHSLength('')
+ * // 0
  * ```
  * @since 1.0.1
  * @param str - string
- * @returns - length
+ * @returns - length (Chinese characters count as 2)
  */
 function getCHSLength(str: string): number {
 	// eslint-disable-next-line no-control-regex

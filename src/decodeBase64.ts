@@ -4,6 +4,24 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 /**
  * base64 decoding
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * decodeBase64('SGVsbG8gV29ybGQ=')
+ * // 'Hello World'
+ *
+ * // Decode Chinese characters
+ * decodeBase64('5L2g5aW9')
+ * // '你好'
+ *
+ * // Decode JSON string
+ * decodeBase64('eyJuYW1lIjoiSm9obiJ9')
+ * // '{"name":"John"}'
+ *
+ * // With special characters
+ * decodeBase64('PD94bWwgdmVyc2lvbj0iMS4wIj8+')
+ * // '<?xml version="1.0"?>'
+ * ```
  * @since 1.0.1
  * @param input - the string to be decoded
  * @returns decoded string

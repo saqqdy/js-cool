@@ -1,6 +1,20 @@
 /**
  * Encoding Utf8
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * encodeUtf8('Hello World')
+ * // 'Hello World'
+ *
+ * // Encode Chinese characters
+ * encodeUtf8('你好')
+ * // Returns UTF-8 encoded string
+ *
+ * // Encode with line breaks
+ * encodeUtf8('Line1\r\nLine2')
+ * // 'Line1\nLine2'
+ * ```
  * @since 1.0.1
  * @param input - the string to be encoded
  * @returns - the UTF-8 encoding

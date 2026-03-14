@@ -3,19 +3,28 @@
  *
  * @example
  * ```js
+ * // Default range (5000-10000)
  * nextIndex()
- * // 1
+ * // 5001 (or higher based on existing elements)
  *
+ * // Custom minimum
  * nextIndex(1000)
  * // 1001
  *
- * nextIndex(10, 100)
- * // 100
+ * // With maximum limit
+ * nextIndex(5000, 10000)
+ * // 5001 (won't exceed 10000)
+ *
+ * // Use for modal/overlay
+ * modal.style.zIndex = nextIndex()
+ *
+ * // Use for tooltips
+ * tooltip.style.zIndex = nextIndex()
  * ```
  * @since 1.0.2
- * @param min - optional, minimum value
- * @param max - optional, maximum value
- * @returns - number
+ * @param min - minimum zIndex value (default: 5000)
+ * @param max - maximum zIndex value (default: 10000)
+ * @returns - next available zIndex number
  */
 // function nextIndex(min = 0, max?: number): number {
 // 	const doms = [min]

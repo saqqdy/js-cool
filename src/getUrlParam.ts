@@ -6,16 +6,27 @@ import inBrowser from './inBrowser'
  *
  * @example
  * ```js
- * getUrlParam('key1')
- * // key1 => xxx
+ * // From current page URL search
+ * // URL: https://example.com?token=abc123#/page
+ * getUrlParam('token')
+ * // 'abc123'
  *
+ * // With custom URL
  * getUrlParam('key1', 'https://test.com?key1=100#/home?key1=200')
- * // key1 => 100
+ * // '100' (gets value from search, not hash)
+ *
+ * // Missing parameter
+ * getUrlParam('nonexistent')
+ * // undefined
+ *
+ * // URL encoded values
+ * getUrlParam('name', 'https://example.com?name=John%20Doe#/page')
+ * // 'John Doe'
  * ```
  * @since 5.0.0
- * @param key - key name
- * @param url - pass in the url string
- * @returns - result
+ * @param key - parameter name
+ * @param url - URL string (optional, uses current location.search if not provided)
+ * @returns - parameter value or undefined
  */
 function getUrlParam(key: string): string | undefined
 function getUrlParam(key: string, url: string): string | undefined

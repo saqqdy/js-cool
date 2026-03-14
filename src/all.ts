@@ -5,7 +5,20 @@ import type { AnyFunction } from './types'
  *
  * @example
  * ```js
+ * // All elements greater than 1
  * all([4, 2, 3], x => x > 1)
+ * // true
+ *
+ * // Not all elements greater than 2
+ * all([4, 2, 3], x => x > 2)
+ * // false
+ *
+ * // All strings
+ * all(['a', 'b', 'c'], x => typeof x === 'string')
+ * // true
+ *
+ * // Empty array returns true
+ * all([], x => x > 0)
  * // true
  * ```
  * @since 1.0.9

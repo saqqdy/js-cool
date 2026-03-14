@@ -1,9 +1,33 @@
 /**
  * Get slide to top and bottom return 'top' 'bottom', recommend using limit flow
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * const pos = getScrollPosition()
+ * // 'top' | 'bottom' | undefined
+ *
+ * // Use in scroll event
+ * window.addEventListener('scroll', () => {
+ *   const pos = getScrollPosition()
+ *   if (pos === 'bottom') {
+ *     loadMore()
+ *   } else if (pos === 'top') {
+ *     refresh()
+ *   }
+ * })
+ *
+ * // With throttle
+ * const d = delay()
+ * window.addEventListener('scroll', () => {
+ *   d.register('scroll', () => {
+ *     console.log(getScrollPosition())
+ *   }, 100, false)
+ * })
+ * ```
  * @deprecated will be removed in the next major release.
  * @since 1.0.2
- * @returns - position
+ * @returns - 'top', 'bottom', or undefined
  */
 function getScrollPosition() {
 	const innerH =

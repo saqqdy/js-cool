@@ -5,6 +5,22 @@ import type { AnyFunction, AnyObject } from './types'
 /**
  * addEvent() event delegate, supports multiple delegates
  *
+ * @example
+ * ```js
+ * // Basic usage - add click event
+ * const btn = document.getElementById('btn')
+ * addEvent(btn, 'click', function(e) {
+ *   console.log('Button clicked!')
+ * })
+ *
+ * // Add multiple events
+ * const input = document.querySelector('input')
+ * addEvent(input, 'focus', function() { console.log('focused') })
+ * addEvent(input, 'blur', function() { console.log('blurred') })
+ *
+ * // Works with custom events
+ * addEvent(document, 'customEvent', handler)
+ * ```
  * @since 1.0.2
  * @param element - js dom object
  * @param type - The event type. No need to add on

@@ -5,8 +5,19 @@ import isObject from './isObject'
  *
  * @example
  * ```js
- * isWindow({}) // false
- * isWindow(window) // true
+ * // Window object
+ * isWindow(window)       // true
+ *
+ * // Not window
+ * isWindow({})           // false
+ * isWindow(document)     // false
+ * isWindow(null)         // false
+ * isWindow(undefined)    // false
+ *
+ * // Iframe window
+ * const iframe = document.createElement('iframe')
+ * document.body.appendChild(iframe)
+ * isWindow(iframe.contentWindow) // true
  * ```
  * @since 5.0.0
  * @param target - any

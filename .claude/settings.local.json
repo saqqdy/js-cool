@@ -3,7 +3,8 @@
     "allow": [
       "Bash(pnpm add:*)",
       "Bash(pnpm test:*)",
-      "Bash(pnpm test:coverage 2>&1)"
+      "Bash(pnpm test:coverage 2>&1)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

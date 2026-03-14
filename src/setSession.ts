@@ -4,23 +4,32 @@ export interface SessionData<T = unknown> {
 }
 
 /**
- * Write sessionStorage
+ * Write value to sessionStorage with optional expiration
  *
  * @example
  * ```js
- * // set boolean
+ * // Set boolean
  * setSession('boolean', true)
  *
- * // set object
+ * // Set object
  * setSession('object', { name: 'saqqdy' })
  *
- * // set number, expires in 20 seconds
- * setSession('number', 666, 20)
+ * // Set number
+ * setSession('number', 666)
+ *
+ * // Set with expiration (20 seconds)
+ * setSession('temp', 'value', 20)
+ *
+ * // Set array
+ * setSession('list', [1, 2, 3])
+ *
+ * // String expiration time
+ * setSession('key', 'value', '30')
  * ```
  * @since 1.0.2
- * @param name - name
- * @param value - Set the value to be stored, either as an object or as a string
- * @param seconds - the valid time
+ * @param name - session storage key
+ * @param value - value to store (any type, will be JSON serialized)
+ * @param seconds - optional expiration time in seconds
  */
 function setSession<T = unknown>(name: string, value: T, seconds?: number | string) {
 	if (typeof seconds === 'string') seconds = parseInt(seconds)

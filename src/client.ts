@@ -1,6 +1,25 @@
 /**
  * The client method returns a browser judgment result: `{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE. true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
  *
+ * @example
+ * ```js
+ * // Get all browser info
+ * client()
+ * // { IE: false, GECKO: true, WEBKIT: false, OPERA: false, TRIDENT: false, MOBILE: true, IOS: true, ANDROID: false, IPHONE: true, IPAD: false, QQBROWSER: false, WEIXIN: false, QQ: null }
+ *
+ * // Check if WeChat browser
+ * client('MicroMessenger')
+ * // true (if in WeChat)
+ *
+ * // Check if QQ browser
+ * client('QQBrowser')
+ * // true (if in QQ Browser)
+ *
+ * // With custom userAgent
+ * const ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15'
+ * client('', ua)
+ * // { IOS: true, IPHONE: true, ... }
+ * ```
  * @deprecated Will be refactored for the next major release
  * @since 1.0.1
  * @param name - optional, e.g. pass in MicroMessenger to return whether it is the built-in browser of Weixin

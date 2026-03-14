@@ -4,23 +4,32 @@ export interface CacheData<T = unknown> {
 }
 
 /**
- * Get the cache, if the deposited is Object, the retrieved is also Object, no need to convert again
+ * Set cache to localStorage with optional expiration
  *
  * @example
  * ```js
- * // set boolean
+ * // Set boolean
  * setCache('boolean', true)
  *
- * // set object
+ * // Set object
  * setCache('object', { name: 'saqqdy' })
  *
- * // set number, expires in 20 seconds
- * setCache('number', 666, 20)
+ * // Set number
+ * setCache('number', 666)
+ *
+ * // Set with expiration (20 seconds)
+ * setCache('temp', 'value', 20)
+ *
+ * // Set array
+ * setCache('list', [1, 2, 3])
+ *
+ * // String expiration time
+ * setCache('key', 'value', '30')
  * ```
  * @since 1.0.2
- * @param name - cache name
- * @param value - cache data, can be passed directly into Object
- * @param seconds - cache time (seconds)
+ * @param name - cache key name
+ * @param value - value to cache (any type, will be JSON serialized)
+ * @param seconds - optional expiration time in seconds
  */
 function setCache<T = unknown>(name: string, value: T, seconds?: number | string) {
 	if (typeof seconds === 'string') seconds = parseInt(seconds)

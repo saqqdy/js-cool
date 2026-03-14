@@ -2,20 +2,31 @@ import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
 
 /**
- * Get a single query parameter (behind "#")
+ * Get a single query parameter (behind "#", from hash)
  *
  * @example
  * ```js
- * getQueryParam('key1')
- * // key1 => xxx
+ * // From current page URL hash
+ * // URL: https://example.com#/page?token=abc123
+ * getQueryParam('token')
+ * // 'abc123'
  *
+ * // With custom URL
  * getQueryParam('key1', 'https://test.com?key1=100#/home?key1=200')
- * // key1 => 200
+ * // '200' (gets value from hash, not search)
+ *
+ * // Missing parameter
+ * getQueryParam('nonexistent')
+ * // undefined
+ *
+ * // URL encoded values
+ * getQueryParam('name', 'https://example.com#/page?name=John%20Doe')
+ * // 'John Doe'
  * ```
  * @since 5.0.0
- * @param key - key name
- * @param url - pass in the url string
- * @returns - result
+ * @param key - parameter name
+ * @param url - URL string (optional, uses current location.href if not provided)
+ * @returns - parameter value or undefined
  */
 function getQueryParam(key: string): string | undefined
 function getQueryParam(key: string, url: string): string | undefined

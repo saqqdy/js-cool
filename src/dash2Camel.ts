@@ -1,6 +1,20 @@
 /**
  * Converts -spaced and all lowercase Dash patterns to humped strings
  *
+ * @example
+ * ```js
+ * dash2Camel('font-size')
+ * // 'fontSize'
+ *
+ * dash2Camel('background-color')
+ * // 'backgroundColor'
+ *
+ * dash2Camel('margin-top')
+ * // 'marginTop'
+ *
+ * dash2Camel('border-top-left-radius')
+ * // 'borderTopLeftRadius'
+ * ```
  * @since 1.0.1
  * @param string - the string to be converted
  * @returns - the converted string

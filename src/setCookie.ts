@@ -3,21 +3,30 @@
  *
  * @example
  * ```js
- * // expires in 86400 seconds
+ * // Basic usage - expires in 1 day (86400 seconds)
  * setCookie('token', 'xxxxxx')
  *
- * // set to path
- * setCookie('token', 'xxxxxx', 20, '/app')
+ * // Custom expiration (20 seconds)
+ * setCookie('session', 'abc123', 20)
  *
- * // enable samesite
+ * // Set to specific path
+ * setCookie('token', 'xxxxxx', 86400, '/app')
+ *
+ * // Disable SameSite (for cross-site requests)
  * setCookie('number', 666, 20, '/', false)
+ *
+ * // Boolean value
+ * setCookie('loggedIn', true, 3600)
+ *
+ * // Number value
+ * setCookie('count', 42, 3600)
  * ```
  * @since 1.0.2
  * @param name - cookie name
- * @param value - Set the value to be stored, either as an object or as a string
- * @param seconds - cookie validity default 1 day
- * @param path - path, default '/'
- * @param samesite - SameSite, default true
+ * @param value - cookie value (string, number, or boolean)
+ * @param seconds - cookie validity in seconds (default: 86400 = 1 day)
+ * @param path - cookie path (default: '/')
+ * @param samesite - enable SameSite for HTTPS (default: true)
  */
 function setCookie<T extends string | number | boolean>(
 	name: string,

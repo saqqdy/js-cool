@@ -1,13 +1,26 @@
 /**
- * Read all cookies
+ * Read all cookies as an object
  *
  * @example
  * ```js
+ * // Set some cookies
+ * setCookie('token', 'abc123')
+ * setCookie('userId', '456')
+ *
+ * // Get all cookies
  * getCookies()
- * // \{ token: 'xxx', name: 'saqqdy' \}
+ * // { token: 'abc123', userId: '456' }
+ *
+ * // Empty cookies
+ * document.cookie = ''
+ * getCookies()
+ * // {}
+ *
+ * // Special values are converted to empty string
+ * // null, undefined, NaN values become ''
  * ```
  * @since 5.6.0
- * @returns - the cookie values
+ * @returns - object with all cookie key-value pairs
  */
 function getCookies() {
 	const cookies: Record<string, string> = {}

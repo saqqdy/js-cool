@@ -1,9 +1,38 @@
 /**
  * Collection of common regular expressions
  *
+ * @example
+ * ```js
+ * // Test email
+ * pattern.email.test('test@example.com') // true
+ *
+ * // Test mobile (Chinese)
+ * pattern.mobile.test('13800138000') // true
+ *
+ * // Test URL
+ * pattern.url.test('https://example.com') // true
+ *
+ * // Test number
+ * pattern.number.test('123.45') // true
+ *
+ * // Test Chinese characters
+ * pattern.chinese.test('中') // true
+ *
+ * // Available patterns:
+ * // pattern.any - matches any character
+ * // pattern.number - matches numbers (including decimals and negatives)
+ * // pattern.email - matches email addresses
+ * // pattern.mobile - matches Chinese mobile numbers
+ * // pattern.url - matches URLs
+ * // pattern.chinese - matches Chinese characters
+ * // pattern.idCard - matches Chinese ID cards
+ * // pattern.qq - matches QQ numbers
+ * // pattern.ip4 - matches IPv4 addresses
+ * // pattern.mac - matches MAC addresses
+ * ```
  * @deprecated It will be refactored and renamed patterns in the next major release.
  * @since 1.0.1
- * @returns - object
+ * @returns - object containing regex patterns
  */
 const pattern = {
 	any: /[\w\W]+/,

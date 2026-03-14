@@ -5,19 +5,29 @@ import sorter from './sorter'
  *
  * @example
  * ```js
+ * // Basic usage
  * const items = ['啊我', '波拉', 'abc', 0, 3, '10', ',11', 13, null, '阿吧', 'ABB', 'BDD', 'ACD', 'ä']
- *
  * items.sort(sortPinyin)
  * // [ ",11", 0, "10", 13, 3, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
  *
- * items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric:true }))
+ * // With options
+ * items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric: true }))
  * // [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
+ *
+ * // Pure Chinese sorting
+ * const chinese = ['张三', '李四', '王五']
+ * chinese.sort(sortPinyin)
+ * // Sorted by pinyin
+ *
+ * // Mixed content
+ * const mixed = ['中文', 'English', '123']
+ * mixed.sort(sortPinyin)
  * ```
  * @since 5.14.0
  * @param a - The first element for comparison.
  * @param b - The second element for comparison.
- * @param options - An object adjusting the output format.
- * @returns - number
+ * @param options - An object adjusting the output format (Intl.CollatorOptions).
+ * @returns - negative, zero, or positive number
  */
 function sortPinyin<T = string, P = string>(a: T, b: P, options: Intl.CollatorOptions = {}) {
 	// const aIsNumber = !isNaN(+a)

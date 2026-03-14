@@ -34,9 +34,32 @@ function extendObject(target: ExtendData, source: ExtendData, deep: boolean): vo
 /**
  * deep copy & merge objects
  *
+ * @example
+ * ```js
+ * // Shallow merge
+ * extend({ a: 1 }, { b: 2 })
+ * // { a: 1, b: 2 }
+ *
+ * // Deep merge
+ * extend(true, { a: { x: 1 } }, { a: { y: 2 } })
+ * // { a: { x: 1, y: 2 } }
+ *
+ * // Merge multiple objects
+ * extend({}, { a: 1 }, { b: 2 }, { c: 3 })
+ * // { a: 1, b: 2, c: 3 }
+ *
+ * // Merge arrays
+ * extend([1, 2], [3, 4])
+ * // [3, 4, 3, 4]
+ *
+ * // Clone object
+ * const original = { a: 1, b: { c: 2 } }
+ * const clone = extend(true, {}, original)
+ * ```
  * @since 1.0.2
- * @param target - boolean | ExtendData
- * @param args - ArrayOneMore<ExtendData>
+ * @param target - boolean | ExtendData - if true, perform deep merge
+ * @param args - ArrayOneMore<ExtendData> - objects to merge
+ * @returns - merged object
  */
 function extend(target: ExtendObjectData, ...args: ArrayOneMore<ExtendObjectData>): ExtendObjectData
 function extend(target: boolean, ...args: ArrayOneMore<ExtendObjectData>): ExtendObjectData

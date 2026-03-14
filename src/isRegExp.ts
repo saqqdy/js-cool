@@ -5,7 +5,16 @@ import getType from './getType'
  *
  * @example
  * ```js
- * isRegExp(/\d/) // true
+ * // RegExp objects
+ * isRegExp(/\d/)                 // true
+ * isRegExp(/hello/gi)            // true
+ * isRegExp(new RegExp('test'))   // true
+ *
+ * // Not RegExp
+ * isRegExp('\\d')                // false
+ * isRegExp({})                   // false
+ * isRegExp(null)                 // false
+ * isRegExp(undefined)            // false
  * ```
  * @since 5.15.0
  * @param target - any target

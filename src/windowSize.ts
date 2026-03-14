@@ -8,10 +8,28 @@ export interface WindowSizeObj {
  *
  * @example
  * ```js
- * windowSize() // { width: 1280, height: 800 }
+ * // Basic usage
+ * windowSize()
+ * // { width: 1280, height: 800 }
+ *
+ * // Responsive design
+ * const { width, height } = windowSize()
+ * if (width < 768) {
+ *   console.log('Mobile view')
+ * }
+ *
+ * // Use in resize handler
+ * window.addEventListener('resize', () => {
+ *   const { width, height } = windowSize()
+ *   updateLayout(width, height)
+ * })
+ *
+ * // Aspect ratio
+ * const { width, height } = windowSize()
+ * const ratio = width / height
  * ```
  * @since 1.0.1
- * @returns - the width and height
+ * @returns - object with width and height properties
  */
 function windowSize(): WindowSizeObj {
 	const s: WindowSizeObj = { width: 0, height: 0 }

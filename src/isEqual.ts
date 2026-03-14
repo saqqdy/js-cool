@@ -102,23 +102,42 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 }
 
 /**
- * Determine if 2 objects are equal
+ * Determine if 2 objects are equal (deep comparison)
  *
  * @example
  * ```js
+ * // Objects with same properties
  * isEqual({ a: 22, b: {} }, { b: {}, a: 22 })
  * // true
  *
+ * // Arrays with different order
  * isEqual([1, 2], [2, 1])
  * // false
  *
+ * // NaN equals NaN
  * isEqual(NaN, NaN)
+ * // true
+ *
+ * // Deep comparison
+ * isEqual({ a: { b: 1 } }, { a: { b: 1 } })
+ * // true
+ *
+ * // Different types
+ * isEqual('1', 1)
+ * // false
+ *
+ * // Date objects
+ * isEqual(new Date('2020-01-01'), new Date('2020-01-01'))
+ * // true
+ *
+ * // RegExp objects
+ * isEqual(/test/gi, /test/gi)
  * // true
  * ```
  * @since 5.12.0
  * @param a - source
  * @param b - compare
- * @returns - a equals to b
+ * @returns - true if a equals b
  */
 function isEqual<T, P>(a: T, b: P): boolean {
 	return eq(a, b)

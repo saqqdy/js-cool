@@ -3,18 +3,34 @@
  *
  * @example
  * ```js
+ * // Image types
  * getFileType('/name.png')
- * // { "suffix": "png", "type": "image" }
+ * // { suffix: 'png', type: 'image' }
  *
- * getFileType('/name.PDF')
- * // { "suffix": "pdf", "type": "pdf" }
+ * getFileType('/photo.JPG')
+ * // { suffix: 'jpg', type: 'image' }
  *
- * getFileType('/name.xyz')
- * // { "suffix": "xyz", "type": "other" }
+ * // Document types
+ * getFileType('/document.PDF')
+ * // { suffix: 'pdf', type: 'pdf' }
+ *
+ * getFileType('/report.docx')
+ * // { suffix: 'docx', type: 'word' }
+ *
+ * // Media types
+ * getFileType('/video.mp4')
+ * // { suffix: 'mp4', type: 'video' }
+ *
+ * getFileType('/audio.mp3')
+ * // { suffix: 'mp3', type: 'audio' }
+ *
+ * // Unknown type
+ * getFileType('/file.xyz')
+ * // { suffix: 'xyz', type: 'other' }
  * ```
  * @since 5.11.0
- * @param url - file url
- * @returns result
+ * @param url - file url or filename
+ * @returns object with suffix and type properties
  */
 function getFileType(url: string) {
 	if (!url) throw new Error('"url" is required')

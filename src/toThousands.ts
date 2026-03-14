@@ -3,12 +3,23 @@
  *
  * @example
  * ```js
+ * // Basic usage
  * toThousands(10000000222)
- * // 10,000,000,222
+ * // '10,000,000,222'
  *
- * toThousands(100.2232323)
- * // 100.2232323
+ * // With decimal
+ * toThousands(1234567.89)
+ * // '1,234,567.89'
  *
+ * // String input
+ * toThousands('123456789')
+ * // '123,456,789'
+ *
+ * // Zero
+ * toThousands(0)
+ * // '0'
+ *
+ * // Null/undefined
  * toThousands(null)
  * // ''
  * ```

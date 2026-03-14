@@ -2,28 +2,34 @@
  * Replacing specific data in a template string, support `${xxxx}` `{{xxxx}}` and `{xxxx}`
  *
  * @example
- * ```ts
+ * ```js
+ * // Using ${} syntax
  * const tmp = "My name is ${name}, I'm ${age} years old."
- * mapTemplate(tmp, {
- *     name: 'saqqdy',
- *     age: 18
- * })
- * // My name is saqqdy, I'm 18 years old.
+ * mapTemplate(tmp, { name: 'saqqdy', age: 18 })
+ * // "My name is saqqdy, I'm 18 years old."
  *
+ * // Using {{}} syntax
+ * const tmp2 = "My name is {{name}}, I'm {{age}} years old."
+ * mapTemplate(tmp2, { name: 'saqqdy', age: 18 })
+ * // "My name is saqqdy, I'm 18 years old."
+ *
+ * // Using {} syntax
+ * const tmp3 = "Hello {name}!"
+ * mapTemplate(tmp3, { name: 'World' })
+ * // "Hello World!"
+ *
+ * // Using function for dynamic values
  * mapTemplate(tmp, key => ({ name: 'saqqdy', age: 28 }[key]))
- * // My name is saqqdy, I'm 28 years old.
+ * // "My name is saqqdy, I'm 28 years old."
  *
- * const tmp = "My name is {{name}}, I'm {{age}} years old."
- * mapTemplate(tmp, {
- *     name: 'saqqdy',
- *     age: 18
- * })
- * // My name is saqqdy, I'm 18 years old.
+ * // Missing keys are preserved
+ * mapTemplate('Hello ${name}!', {})
+ * // "Hello ${name}!"
  * ```
  * @since 5.9.0
- * @param tmp - Template string
- * @param data - Template data of map function
- * @returns - result
+ * @param tmp - Template string with placeholders
+ * @param data - Object with values or function to resolve placeholders
+ * @returns - String with placeholders replaced
  */
 function mapTemplate(
 	tmp: string,

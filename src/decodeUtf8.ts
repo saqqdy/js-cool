@@ -1,6 +1,20 @@
 /**
  * Decoding Utf8
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * decodeUtf8('Hello World')
+ * // 'Hello World'
+ *
+ * // Decode Chinese characters
+ * decodeUtf8('ä½ å¥½')
+ * // '你好'
+ *
+ * // Decode mixed content
+ * decodeUtf8('Helloä¸–ç•Œ')
+ * // 'Hello世界'
+ * ```
  * @since 1.0.1
  * @param input - the string to be decoded
  * @returns decoded string

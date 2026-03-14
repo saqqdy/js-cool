@@ -7,9 +7,34 @@ export interface SearchKeySet {
 /**
  * tree object depth lookup
  *
+ * @example
+ * ```js
+ * // Basic usage with object expression
+ * const tree = {
+ *   name: 'root',
+ *   child: [
+ *     { name: 'node1', child: [{ name: 'node1-1' }] },
+ *     { name: 'node2' }
+ *   ]
+ * }
+ * searchObject(tree, { name: 'node1' }, { childName: 'child', keyName: 'name' })
+ * // [{ name: 'node1' }]
+ *
+ * // With function expression
+ * searchObject(tree, node => node.name.includes('node'), { childName: 'child', keyName: 'name' })
+ * // [{ name: 'node1' }, { name: 'node1-1' }, { name: 'node2' }]
+ *
+ * // Limit result count
+ * searchObject(tree, { name: 'node' }, { childName: 'child', keyName: 'name' }, 1)
+ * // [{ name: 'node1' }] (only first match)
+ *
+ * // With string expression (matches keyName)
+ * searchObject(tree, 'node1-1', { childName: 'child', keyName: 'name' })
+ * // [{ name: 'node1-1' }]
+ * ```
  * @since 5.0.0
  * @param tree - tree object
- * @param expression - required Query method
+ * @param expression - required Query method (object/function/string)
  * @param keySet - optional Default subclass name, query name
  * @param number - optional Number of lookups, if not passed, query all
  * @returns - the queried array

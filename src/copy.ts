@@ -3,9 +3,29 @@ import inBrowser from './inBrowser'
 /**
  * copy to clipboard
  *
+ * @example
+ * ```js
+ * // Copy text
+ * copy('Hello World')
+ * // true (copied successfully)
+ *
+ * // Copy number
+ * copy(12345)
+ * // true
+ *
+ * // Copy JSON string
+ * copy(JSON.stringify({ name: 'John' }))
+ * // true
+ *
+ * // Use in button click
+ * document.getElementById('copyBtn').addEventListener('click', () => {
+ *   const success = copy(document.getElementById('content').innerText)
+ *   if (success) alert('Copied!')
+ * })
+ * ```
  * @since 5.0.0
- * @param value - any target
- * @returns - target is Object
+ * @param value - any target to copy
+ * @returns - true if copy succeeded, false/undefined otherwise
  */
 function copy(value: any) {
 	if (!inBrowser) return

@@ -3,10 +3,25 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
 /**
  * base64 to file
  *
+ * @example
+ * ```js
+ * // Basic usage
+ * const base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+ * const file = base64ToFile(base64, 'image.png')
+ * // File { name: 'image.png', size: 67, type: 'image/png' }
+ *
+ * // Create file for upload
+ * const jpegBase64 = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...'
+ * const jpegFile = base64ToFile(jpegBase64, 'photo.jpg')
+ *
+ * // Use with FormData
+ * const formData = new FormData()
+ * formData.append('file', file)
+ * ```
  * @since 5.13.0
  * @param input - base64 string
  * @param fileName - file name
- * @returns - the BASE64 encoding
+ * @returns - file object
  */
 function base64ToFile(input: string, fileName: string): File {
 	const [pre] = input.split(',')

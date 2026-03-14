@@ -6,7 +6,21 @@ import unique from './unique'
  *
  * @example
  * ```js
- * minus([1, 2], [2, '33'], [2, 4]) // [1]
+ * // Basic usage
+ * minus([1, 2], [2, '33'], [2, 4])
+ * // [1]
+ *
+ * // With strings
+ * minus(['a', 'b', 'c'], ['b'], ['c'])
+ * // ['a']
+ *
+ * // Multiple arrays
+ * minus([1, 2, 3, 4], [2, 3], [4])
+ * // [1]
+ *
+ * // No difference
+ * minus([1, 2], [1, 2])
+ * // []
  * ```
  * @since 2.2.1
  * @param args - arguments
