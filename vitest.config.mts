@@ -10,7 +10,7 @@ export default defineConfig({
 			provider: 'istanbul',
 			reporter: ['text', 'json', 'html'],
 			include: ['src/**/*.ts'],
-			exclude: ['src/types.ts', 'src/all.ts', 'src/index.ts'],
-		},
-	},
+			exclude: ['src/types.ts', 'src/all.ts', 'src/index.ts']
+		}
+	}
 })

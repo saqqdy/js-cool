@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { describe, expect, it, vi, beforeAll, afterAll } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import fingerprint from '../src/fingerprint'
 
 describe('fingerprint', () => {
@@ -21,9 +21,12 @@ describe('fingerprint', () => {
 
 		// Use a valid base64 PNG string (1x1 red pixel)
 		// This is a real valid PNG in base64
-		const validPngBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg=='
+		const validPngBase64 =
+			'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg=='
 
-		HTMLCanvasElement.prototype.toDataURL = vi.fn(() => `data:image/png;base64,${validPngBase64}`)
+		HTMLCanvasElement.prototype.toDataURL = vi.fn(
+			() => `data:image/png;base64,${validPngBase64}`
+		)
 	})
 
 	afterAll(() => {

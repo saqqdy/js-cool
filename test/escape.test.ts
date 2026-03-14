@@ -3,7 +3,9 @@ import escape from '../src/escape'
 
 describe('escape', () => {
 	it('should escape HTML special characters', () => {
-		expect(escape('<div>test<br />string</div>')).toBe('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')
+		expect(escape('<div>test<br />string</div>')).toBe(
+			'&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;'
+		)
 	})
 
 	it('should escape ampersand', () => {

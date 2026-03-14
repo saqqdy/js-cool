@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { describe, expect, it, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import setCache from '../src/setCache'
 import getCache from '../src/getCache'
 import delCache from '../src/delCache'

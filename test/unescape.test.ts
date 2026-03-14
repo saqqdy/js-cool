@@ -3,7 +3,9 @@ import unescape from '../src/unescape'
 
 describe('unescape', () => {
 	it('should unescape HTML special characters', () => {
-		expect(unescape('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')).toBe('<div>test<br />string</div>')
+		expect(unescape('&lt;div&gt;test&lt;br /&gt;string&lt;/div&gt;')).toBe(
+			'<div>test<br />string</div>'
+		)
 	})
 
 	it('should unescape ampersand', () => {

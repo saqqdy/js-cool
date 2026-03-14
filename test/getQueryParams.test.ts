@@ -10,7 +10,9 @@ describe('getQueryParams', () => {
 	})
 
 	it('should convert values when covert is true', () => {
-		expect(getQueryParams('https://test.com?key1=100#/home?key1=200', true)).toEqual({ key1: 200 })
+		expect(getQueryParams('https://test.com?key1=100#/home?key1=200', true)).toEqual({
+			key1: 200
+		})
 	})
 
 	it('should return params from location.href in browser', () => {

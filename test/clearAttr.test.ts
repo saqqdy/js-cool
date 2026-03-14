@@ -15,7 +15,9 @@ describe('clearAttr', () => {
 	})
 
 	it('should handle multiple tags', () => {
-		expect(clearAttr('<div class="a"><span id="b">text</span></div>')).toBe('<div><span>text</span></div>')
+		expect(clearAttr('<div class="a"><span id="b">text</span></div>')).toBe(
+			'<div><span>text</span></div>'
+		)
 	})
 
 	it('should handle self-closing tags', () => {

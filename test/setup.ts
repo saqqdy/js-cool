@@ -11,7 +11,8 @@ if (!globalThis.Uint8Array) {
 
 // Mock fetch for urlToBlob tests
 if (!globalThis.fetch) {
-	globalThis.fetch = (() => Promise.resolve({
-		blob: () => Promise.resolve(new Blob(['test'])),
-	})) as any
+	globalThis.fetch = (() =>
+		Promise.resolve({
+			blob: () => Promise.resolve(new Blob(['test']))
+		})) as any
 }

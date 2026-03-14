@@ -13,13 +13,20 @@ describe('searchObject', () => {
 	]
 
 	it('should search by expression object', () => {
-		const result = searchObject(tree, { name: 'child1' }, { childName: 'child', keyName: 'name' })
+		const result = searchObject(
+			tree,
+			{ name: 'child1' },
+			{ childName: 'child', keyName: 'name' }
+		)
 		expect(result.length).toBe(1)
 		expect(result[0].name).toBe('child1')
 	})
 
 	it('should search by expression function', () => {
-		const result = searchObject(tree, (item: any) => item.value === 2, { childName: 'child', keyName: 'name' })
+		const result = searchObject(tree, (item: any) => item.value === 2, {
+			childName: 'child',
+			keyName: 'name'
+		})
 		expect(result.length).toBe(1)
 		expect(result[0].name).toBe('child2')
 	})
@@ -37,7 +44,10 @@ describe('searchObject', () => {
 
 	it('should use default keySet when not provided', () => {
 		const treeWithDefaultKeys = [{ name: 'test', child: [] }]
-		const result = searchObject(treeWithDefaultKeys, 'test', { childName: 'child', keyName: 'name' })
+		const result = searchObject(treeWithDefaultKeys, 'test', {
+			childName: 'child',
+			keyName: 'name'
+		})
 		expect(result.length).toBe(1)
 	})
 })

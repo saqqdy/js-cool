@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { describe, expect, it, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import setSession from '../src/setSession'
 import getSession from '../src/getSession'
 import delSession from '../src/delSession'

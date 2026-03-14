@@ -11,7 +11,9 @@ describe('fillIPv6', () => {
 	})
 
 	it('should handle full IPv6', () => {
-		expect(fillIPv6('2409:8005:0800:0000:0000:0000:0000:0002')).toBe('2409:8005:0800:0000:0000:0000:0000:0002')
+		expect(fillIPv6('2409:8005:0800:0000:0000:0000:0000:0002')).toBe(
+			'2409:8005:0800:0000:0000:0000:0000:0002'
+		)
 	})
 
 	it('should handle IPv6 with double colon at end', () => {

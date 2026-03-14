@@ -601,7 +601,7 @@ const tree = {
     { id: 2, name: 'child1', children: [] },
     { id: 3, name: 'child2', children: [
       { id: 4, name: 'grandchild' }
-    ]}
+    ] }
   ]
 }
 
@@ -626,8 +626,8 @@ searchObject(tree, item => item.id > 2, {
 
 ```js
 import {
-  isArray, isObject, isPlainObject, isDate, isRegExp,
-  isWindow, isIterable, isDigitals
+  isArray, isDate, isDigitals, isIterable, isObject,
+  isPlainObject, isRegExp, isWindow
 } from 'js-cool'
 
 // isArray
@@ -703,8 +703,8 @@ windowSize()  // { width: 375, height: 667 } (移动端)
 
 ```js
 import {
-  appVersion, osVersion, browserVersion,
-  isNumberBrowser, fingerprint
+  appVersion, browserVersion, fingerprint,
+  isNumberBrowser, osVersion
 } from 'js-cool'
 
 // appVersion - 从 UA 获取 APP 版本
@@ -887,7 +887,7 @@ getDirParam('/user/123/profile')
 #### localStorage (getCache / setCache / delCache)
 
 ```js
-import { getCache, setCache, delCache } from 'js-cool'
+import { delCache, getCache, setCache } from 'js-cool'
 
 // 存储字符串
 setCache('name', 'value')
@@ -919,7 +919,7 @@ delCache('user')
 #### sessionStorage (getSession / setSession / delSession)
 
 ```js
-import { getSession, setSession, delSession } from 'js-cool'
+import { delSession, getSession, setSession } from 'js-cool'
 
 setSession('temp', 'data')
 getSession('temp')  // 'data'
@@ -936,7 +936,7 @@ delSession('temp')
 #### Cookie (getCookie / getCookies / setCookie / delCookie)
 
 ```js
-import { getCookie, getCookies, setCookie, delCookie } from 'js-cool'
+import { delCookie, getCookie, getCookies, setCookie } from 'js-cool'
 
 // 设置 cookie (默认: 1天)
 setCookie('name', 'value')
@@ -971,7 +971,7 @@ delCookie('name', { path: '/', domain: '.example.com' })
 #### Base64
 
 ```js
-import { encodeBase64, decodeBase64 } from 'js-cool'
+import { decodeBase64, encodeBase64 } from 'js-cool'
 
 // 编码
 encodeBase64('hello')              // 'aGVsbG8='
@@ -988,7 +988,7 @@ decodeBase64('eyJhIjoxfQ==')       // '{"a":1}'
 #### UTF-8
 
 ```js
-import { encodeUtf8, decodeUtf8 } from 'js-cool'
+import { decodeUtf8, encodeUtf8 } from 'js-cool'
 
 encodeUtf8('hello')    // 编码后的字符串
 encodeUtf8('你好')     // 编码后的字符串
@@ -1018,7 +1018,7 @@ safeStringify({ a: () => {} })             // '{"a":null}'
 ### 事件
 
 ```js
-import { stopBubble, stopDefault, addEvent, removeEvent } from 'js-cool'
+import { addEvent, removeEvent, stopBubble, stopDefault } from 'js-cool'
 
 // 阻止冒泡
 document.getElementById('btn').addEventListener('click', (e) => {
@@ -1427,8 +1427,8 @@ const [err, results] = await awaitTo(
 
 ```js
 import {
-  loadSource, mountJs, mountCss,
-  mountStyle, mountImg, preloader
+  loadSource, mountCss, mountImg,
+  mountJs, mountStyle, preloader
 } from 'js-cool'
 
 // 加载 JS 文件
@@ -1506,7 +1506,7 @@ const blob = await urlToBlob('https://example.com/image.png')
 ### CSV 转换
 
 ```js
-import { CSVToArray, arrayToCSV, CSVToJSON, JSONToCSV } from 'js-cool'
+import { CSVToArray, CSVToJSON, JSONToCSV, arrayToCSV } from 'js-cool'
 
 const csv = 'name,age,city\nJohn,30,NYC\nJane,25,LA'
 

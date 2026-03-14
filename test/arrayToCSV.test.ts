@@ -3,13 +3,22 @@ import arrayToCSV from '../src/arrayToCSV'
 
 describe('arrayToCSV', () => {
 	it('should convert 2D array to CSV string', () => {
-		const result = arrayToCSV([['a', 'b'], ['c', 'd']])
+		const result = arrayToCSV([
+			['a', 'b'],
+			['c', 'd']
+		])
 		expect(result).toContain('"a"')
 		expect(result).toContain('"b"')
 	})
 
 	it('should support custom delimiter', () => {
-		const result = arrayToCSV([['a', 'b'], ['c', 'd']], ';')
+		const result = arrayToCSV(
+			[
+				['a', 'b'],
+				['c', 'd']
+			],
+			';'
+		)
 		expect(result).toContain(';')
 	})
 

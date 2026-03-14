@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { describe, expect, it, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import setCookie from '../src/setCookie'
 import getCookie from '../src/getCookie'
 import delCookie from '../src/delCookie'
@@ -38,8 +38,8 @@ describe('cookie functions', () => {
 
 		const cookies = getCookies()
 
-		expect(cookies['cookie1']).toBe('value1')
-		expect(cookies['cookie2']).toBe('value2')
+		expect(cookies.cookie1).toBe('value1')
+		expect(cookies.cookie2).toBe('value2')
 	})
 
 	it('should handle string seconds', () => {

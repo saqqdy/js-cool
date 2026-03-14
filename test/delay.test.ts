@@ -20,7 +20,7 @@ describe('delay', () => {
 
 		// Wait for timeout to clear
 		await new Promise(resolve => setTimeout(resolve, 60))
-		expect(d.map['test']).toBeUndefined()
+		expect(d.map.test).toBeUndefined()
 	})
 
 	it('should register and delay execute fn in throttle mode', async () => {
