@@ -53,20 +53,20 @@ describe('safeStringify', () => {
 	})
 
 	it('should convert unsafe integer to string', () => {
-		const result = safeStringify({ a: 9007199254740993 })
+		const result = safeStringify({ a: BigInt('9007199254740993') })
 		expect(result).toMatch(/"a":"\d+"/)
 	})
 
 	it('should convert BigInt with covert=true', () => {
 		// After fix: BigInt is now handled with covert=true
-		const bigNum = BigInt(9007199254740993)
+		const bigNum = BigInt('9007199254740993')
 		const result = safeStringify({ a: bigNum })
 		// Note: BigInt precision is preserved
 		expect(result).toMatch(/"a":"900719925474099[23]"/)
 	})
 
 	it('should convert BigInt with covert=false', () => {
-		const bigNum = BigInt(9007199254740993)
+		const bigNum = BigInt('9007199254740993')
 		const result = safeStringify({ a: bigNum }, false)
 		expect(result).toMatch(/"a":"\d+"/)
 	})

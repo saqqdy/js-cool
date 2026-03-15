@@ -4,6 +4,7 @@ import isRegExp from '../src/isRegExp'
 describe('isRegExp', () => {
 	it('should return true for RegExp', () => {
 		expect(isRegExp(/\d/)).toBe(true)
+		// eslint-disable-next-line prefer-regex-literals
 		expect(isRegExp(new RegExp('test'))).toBe(true)
 	})
 

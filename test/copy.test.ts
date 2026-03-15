@@ -24,7 +24,7 @@ describe('copy', () => {
 	})
 
 	it('should handle empty string', () => {
-		const result = copy('')
+		copy('')
 		expect(document.execCommand).toHaveBeenCalledWith('copy')
 	})
 })

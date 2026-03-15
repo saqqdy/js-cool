@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [5.23.2] - 2026-03-14
 
+### Added
+- Add vitest testing framework with comprehensive unit tests for all functions
+
+### Fixed
+- Fix bugs in `browserVersion`, `compareVersion`, `nextVersion`, `randomString`, `safeStringify`
+- Fix JSDoc garbled characters in `decodeUtf8`
+
 ### Docs
 - Rewrite README-zh_CN.md with comprehensive API documentation
 - Optimize JSDoc for all functions in src directory with comprehensive `@example` tags

@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import isNumberBrowser from '../src/isNumberBrowser'
 
 describe('isNumberBrowser', () => {

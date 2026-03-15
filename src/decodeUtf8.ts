@@ -7,16 +7,16 @@
  * decodeUtf8('Hello World')
  * // 'Hello World'
  *
- * // Decode Chinese characters
- * decodeUtf8('ä½ å¥½')
+ * // Decode UTF-8 encoded string
+ * decodeUtf8('\xc3\xa4\xc2\xbd\xc2\xa0\xc3\xa5\xc2\xa5\xc2\xbd')
  * // '你好'
  *
  * // Decode mixed content
- * decodeUtf8('Helloä¸–ç•Œ')
+ * decodeUtf8('Hello\xc3\xa4\xc2\xb8\xe2\x80\x93\xc3\xa7\xe2\x80\xa2\xc5\x92')
  * // 'Hello世界'
  * ```
  * @since 1.0.1
- * @param input - the string to be decoded
+ * @param utftext - the string to be decoded
  * @returns decoded string
  */
 function decodeUtf8(utftext: string) {
