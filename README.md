@@ -69,23 +69,23 @@ client.get(['device', 'browser', 'engine', 'os'])
 // { device: 'Mobile', browser: 'Chrome', os: 'Android', engine: 'Blink' }
 
 // Get single info
-client.get('browser')  // { browser: 'Chrome' }
-client.get('device')   // { device: 'Mobile' }
-client.get('os')       // { os: 'Android' }
-client.get('engine')   // { engine: 'Blink' }
+client.get('browser') // { browser: 'Chrome' }
+client.get('device') // { device: 'Mobile' }
+client.get('os') // { os: 'Android' }
+client.get('engine') // { engine: 'Blink' }
 
 // Get multiple info
 client.get(['browser', 'os'])
 // { browser: 'Chrome', os: 'Android' }
 
 // Get language
-client.getLanguage()  // 'en-US'
+client.getLanguage() // 'en-US'
 
 // Get network info
-client.getNetwork()  // { effectiveType: '4g', downlink: 10 }
+client.getNetwork() // { effectiveType: '4g', downlink: 10 }
 
 // Get orientation
-client.getOrientationStatus()  // 'vertical' | 'horizontal'
+client.getOrientationStatus() // 'vertical' | 'horizontal'
 ```
 
 #### pattern
@@ -96,54 +96,54 @@ Common regex patterns collection.
 import { pattern } from 'js-cool'
 
 // Email validation
-pattern.email.test('test@example.com')     // true
-pattern.email.test('invalid-email')        // false
+pattern.email.test('test@example.com') // true
+pattern.email.test('invalid-email') // false
 
 // Chinese mobile phone
-pattern.mobile.test('13800138000')         // true
-pattern.mobile.test('12345678901')         // false
+pattern.mobile.test('13800138000') // true
+pattern.mobile.test('12345678901') // false
 
 // URL validation
-pattern.url.test('https://example.com')    // true
-pattern.url.test('ftp://files.server')     // true
+pattern.url.test('https://example.com') // true
+pattern.url.test('ftp://files.server') // true
 
 // Number validation
-pattern.number.test('12345')               // true
-pattern.number.test('12.34')               // true
+pattern.number.test('12345') // true
+pattern.number.test('12.34') // true
 
 // Chinese characters
-pattern.chinese.test('中文测试')           // true
-pattern.chinese.test('test123')            // false
+pattern.chinese.test('中文测试') // true
+pattern.chinese.test('test123') // false
 
 // QQ number
-pattern.qq.test('123456789')               // true
+pattern.qq.test('123456789') // true
 
 // Telephone (landline)
-pattern.tel.test('010-12345678')           // true
-pattern.tel.test('021-87654321')           // true
+pattern.tel.test('010-12345678') // true
+pattern.tel.test('021-87654321') // true
 
 // Postcode (China)
-pattern.postcode.test('100000')            // true
+pattern.postcode.test('100000') // true
 
 // Username (alphanumeric + underscore, 4-16 chars)
-pattern.username.test('user_name')         // true
+pattern.username.test('user_name') // true
 
 // Password (at least 6 chars with letter and number)
-pattern.pass.test('abc123')                // true
+pattern.pass.test('abc123') // true
 
 // JSON string
-pattern.json.test('{"a":1}')               // true
+pattern.json.test('{"a":1}') // true
 
 // MAC address
-pattern.mac.test('00:1A:2B:3C:4D:5E')      // true
+pattern.mac.test('00:1A:2B:3C:4D:5E') // true
 
 // IPv4 address
-pattern.ip4.test('192.168.1.1')            // true
+pattern.ip4.test('192.168.1.1') // true
 
 // Private IPv4
-pattern.ip4_pri.test('192.168.1.1')        // true
-pattern.ip4_pri.test('10.0.0.1')           // true
-pattern.ip4_pri.test('172.16.0.1')         // true
+pattern.ip4_pri.test('192.168.1.1') // true
+pattern.ip4_pri.test('10.0.0.1') // true
+pattern.ip4_pri.test('172.16.0.1') // true
 ```
 
 ---
@@ -157,10 +157,10 @@ Remove whitespace from string ends.
 ```js
 import { trim } from 'js-cool'
 
-trim('  hello  ')        // 'hello'
-trim('\nhello\n')        // 'hello'
-trim('\thello\t')        // 'hello'
-trim('  hello world  ')  // 'hello world'
+trim('  hello  ') // 'hello'
+trim('\nhello\n') // 'hello'
+trim('\thello\t') // 'hello'
+trim('  hello world  ') // 'hello world'
 ```
 
 #### clearAttr
@@ -190,10 +190,10 @@ Remove HTML tags.
 ```js
 import { clearHtml } from 'js-cool'
 
-clearHtml('<div>test<br/>string</div>')  // 'teststring'
-clearHtml('<p>Hello <b>World</b></p>')   // 'Hello World'
-clearHtml('<a href="#">link</a>')        // 'link'
-clearHtml('plain text')                  // 'plain text'
+clearHtml('<div>test<br/>string</div>') // 'teststring'
+clearHtml('<p>Hello <b>World</b></p>') // 'Hello World'
+clearHtml('<a href="#">link</a>') // 'link'
+clearHtml('plain text') // 'plain text'
 ```
 
 #### escape / unescape
@@ -204,14 +204,14 @@ Escape/unescape HTML special characters.
 import { escape, unescape } from 'js-cool'
 
 // Escape
-escape('<div>test</div>')        // '&lt;div&gt;test&lt;/div&gt;'
-escape('a < b & c > d')          // 'a &lt; b &amp; c &gt; d'
-escape('"hello" & \'world\'')    // '&quot;hello&quot; &amp; &#39;world&#39;'
+escape('<div>test</div>') // '&lt;div&gt;test&lt;/div&gt;'
+escape('a < b & c > d') // 'a &lt; b &amp; c &gt; d'
+escape('"hello" & \'world\'') // '&quot;hello&quot; &amp; &#39;world&#39;'
 
 // Unescape
-unescape('&lt;div&gt;test&lt;/div&gt;')  // '<div>test</div>'
-unescape('&amp;lt;')                     // '&lt;'
-unescape('&quot;hello&quot;')            // '"hello"'
+unescape('&lt;div&gt;test&lt;/div&gt;') // '<div>test</div>'
+unescape('&amp;lt;') // '&lt;'
+unescape('&quot;hello&quot;') // '"hello"'
 ```
 
 #### getNumber
@@ -221,12 +221,12 @@ Extract number from string.
 ```js
 import { getNumber } from 'js-cool'
 
-getNumber('Chrome123.45')     // '123.45'
-getNumber('price: $99.99')    // '99.99'
-getNumber('version 2.0.1')    // '2.0.1'
-getNumber('no numbers here')  // ''
-getNumber('123abc456')        // '123456'
-getNumber('-12.34')           // '-12.34'
+getNumber('Chrome123.45') // '123.45'
+getNumber('price: $99.99') // '99.99'
+getNumber('version 2.0.1') // '2.0.1'
+getNumber('no numbers here') // ''
+getNumber('123abc456') // '123456'
+getNumber('-12.34') // '-12.34'
 ```
 
 #### camel2Dash / dash2Camel
@@ -237,15 +237,15 @@ Convert between camelCase and kebab-case.
 import { camel2Dash, dash2Camel } from 'js-cool'
 
 // camelCase to kebab-case
-camel2Dash('jsCool')          // 'js-cool'
+camel2Dash('jsCool') // 'js-cool'
 camel2Dash('backgroundColor') // 'background-color'
-camel2Dash('marginTop')       // 'margin-top'
-camel2Dash('XMLHttpRequest')  // 'x-m-l-http-request'
+camel2Dash('marginTop') // 'margin-top'
+camel2Dash('XMLHttpRequest') // 'x-m-l-http-request'
 
 // kebab-case to camelCase
-dash2Camel('js-cool')         // 'jsCool'
-dash2Camel('background-color')// 'backgroundColor'
-dash2Camel('margin-top')      // 'marginTop'
+dash2Camel('js-cool') // 'jsCool'
+dash2Camel('background-color') // 'backgroundColor'
+dash2Camel('margin-top') // 'marginTop'
 dash2Camel('-webkit-transform') // 'WebkitTransform'
 ```
 
@@ -256,10 +256,10 @@ Capitalize first letter.
 ```js
 import { upperFirst } from 'js-cool'
 
-upperFirst('hello')      // 'Hello'
-upperFirst('HELLO')      // 'HELLO'
-upperFirst('h')          // 'H'
-upperFirst('')           // ''
+upperFirst('hello') // 'Hello'
+upperFirst('HELLO') // 'HELLO'
+upperFirst('h') // 'H'
+upperFirst('') // ''
 ```
 
 #### randomString
@@ -270,11 +270,11 @@ Generate random string with various options.
 import { randomString } from 'js-cool'
 
 // Default: 32 chars with uppercase, lowercase, numbers
-randomString()  // 'aB3dE7fG9hJ2kL5mN8pQ1rS4tU6vW0xY'
+randomString() // 'aB3dE7fG9hJ2kL5mN8pQ1rS4tU6vW0xY'
 
 // Specify length
-randomString(8)   // 'xY7mN2pQ'
-randomString(16)  // 'aB3dE7fG9hJ2kL5m'
+randomString(8) // 'xY7mN2pQ'
+randomString(16) // 'aB3dE7fG9hJ2kL5m'
 
 // Using options object
 randomString({ length: 16 })
@@ -313,8 +313,8 @@ randomString({ length: 16, charTypes: ['uppercase', 'lowercase', 'number'], stri
 // Guaranteed to have at least 1 uppercase, 1 lowercase, 1 number
 
 // Old API style (still supported)
-randomString(16, true)  // 16 chars with special characters
-randomString(true)      // 32 chars with special characters
+randomString(16, true) // 16 chars with special characters
+randomString(true) // 32 chars with special characters
 ```
 
 #### getCHSLength
@@ -324,11 +324,11 @@ Get string length (Chinese = 2 chars).
 ```js
 import { getCHSLength } from 'js-cool'
 
-getCHSLength('hello')       // 5
-getCHSLength('你好')        // 4
-getCHSLength('hello世界')   // 9 (5 + 4)
-getCHSLength('测试Test')    // 8 (4 + 4)
-getCHSLength('')            // 0
+getCHSLength('hello') // 5
+getCHSLength('你好') // 4
+getCHSLength('hello世界') // 9 (5 + 4)
+getCHSLength('测试Test') // 8 (4 + 4)
+getCHSLength('') // 0
 ```
 
 #### cutCHSString
@@ -338,12 +338,12 @@ Truncate string (Chinese = 2 bytes).
 ```js
 import { cutCHSString } from 'js-cool'
 
-cutCHSString('hello世界', 6)        // 'hello世'
-cutCHSString('hello世界', 6, true)  // 'hello世...'
-cutCHSString('测试字符串', 4)        // '测试'
-cutCHSString('测试字符串', 4, true)  // '测试...'
-cutCHSString('abc', 10)             // 'abc'
-cutCHSString('abc', 10, true)       // 'abc'
+cutCHSString('hello世界', 6) // 'hello世'
+cutCHSString('hello世界', 6, true) // 'hello世...'
+cutCHSString('测试字符串', 4) // '测试'
+cutCHSString('测试字符串', 4, true) // '测试...'
+cutCHSString('abc', 10) // 'abc'
+cutCHSString('abc', 10, true) // 'abc'
 ```
 
 ---
@@ -358,16 +358,16 @@ Shuffle array or string.
 import { shuffle } from 'js-cool'
 
 // Shuffle array
-shuffle([1, 2, 3, 4, 5])     // [3, 1, 5, 2, 4]
-shuffle(['a', 'b', 'c'])     // ['c', 'a', 'b']
+shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 2, 4]
+shuffle(['a', 'b', 'c']) // ['c', 'a', 'b']
 
 // Shuffle string
-shuffle('hello')             // 'lleho'
-shuffle('abcdefg')           // 'gfedcba'
+shuffle('hello') // 'lleho'
+shuffle('abcdefg') // 'gfedcba'
 
 // Shuffle with size limit
-shuffle([1, 2, 3, 4, 5], 3)  // [4, 1, 5] (3 random elements)
-shuffle('hello', 3)          // 'leh' (3 random chars)
+shuffle([1, 2, 3, 4, 5], 3) // [4, 1, 5] (3 random elements)
+shuffle('hello', 3) // 'leh' (3 random chars)
 ```
 
 #### unique
@@ -377,11 +377,11 @@ Remove duplicates from array.
 ```js
 import { unique } from 'js-cool'
 
-unique([1, 2, 2, 3, 3, 3])           // [1, 2, 3]
-unique(['a', 'b', 'a', 'c'])         // ['a', 'b', 'c']
-unique([1, '1', 1])                  // [1, '1']
-unique([true, false, true])          // [true, false]
-unique([null, null, undefined])      // [null, undefined]
+unique([1, 2, 2, 3, 3, 3]) // [1, 2, 3]
+unique(['a', 'b', 'a', 'c']) // ['a', 'b', 'c']
+unique([1, '1', 1]) // [1, '1']
+unique([true, false, true]) // [true, false]
+unique([null, null, undefined]) // [null, undefined]
 ```
 
 #### intersect
@@ -391,10 +391,10 @@ Intersection of multiple arrays.
 ```js
 import { intersect } from 'js-cool'
 
-intersect([1, 2, 3], [2, 3, 4])              // [2, 3]
-intersect([1, 2, 3], [2, 3, 4], [3, 4, 5])   // [3]
-intersect(['a', 'b'], ['b', 'c'])            // ['b']
-intersect([1, 2], [3, 4])                    // []
+intersect([1, 2, 3], [2, 3, 4]) // [2, 3]
+intersect([1, 2, 3], [2, 3, 4], [3, 4, 5]) // [3]
+intersect(['a', 'b'], ['b', 'c']) // ['b']
+intersect([1, 2], [3, 4]) // []
 ```
 
 #### union
@@ -404,10 +404,10 @@ Union of multiple arrays.
 ```js
 import { union } from 'js-cool'
 
-union([1, 2], [3, 4])                // [1, 2, 3, 4]
-union([1, 2], [2, 3])                // [1, 2, 3]
-union([1, 2], [2, 3], [3, 4])        // [1, 2, 3, 4]
-union(['a'], ['b'], ['c'])           // ['a', 'b', 'c']
+union([1, 2], [3, 4]) // [1, 2, 3, 4]
+union([1, 2], [2, 3]) // [1, 2, 3]
+union([1, 2], [2, 3], [3, 4]) // [1, 2, 3, 4]
+union(['a'], ['b'], ['c']) // ['a', 'b', 'c']
 ```
 
 #### minus
@@ -417,10 +417,10 @@ Difference of multiple arrays (elements in first but not in others).
 ```js
 import { minus } from 'js-cool'
 
-minus([1, 2, 3], [2, 3, 4])          // [1]
-minus([1, 2, 3, 4], [2, 3])          // [1, 4]
-minus([1, 2, 3], [2], [3])           // [1]
-minus(['a', 'b', 'c'], ['b'])        // ['a', 'c']
+minus([1, 2, 3], [2, 3, 4]) // [1]
+minus([1, 2, 3, 4], [2, 3]) // [1, 4]
+minus([1, 2, 3], [2], [3]) // [1]
+minus(['a', 'b', 'c'], ['b']) // ['a', 'c']
 ```
 
 #### complement
@@ -430,9 +430,9 @@ Complement of multiple arrays (elements not in all arrays combined).
 ```js
 import { complement } from 'js-cool'
 
-complement([1, 2], [2, 3])           // [1, 3]
-complement([1, 2], [3, 4])           // [1, 2, 3, 4]
-complement(['a', 'b'], ['b', 'c'])   // ['a', 'c']
+complement([1, 2], [2, 3]) // [1, 3]
+complement([1, 2], [3, 4]) // [1, 2, 3, 4]
+complement(['a', 'b'], ['b', 'c']) // ['a', 'c']
 ```
 
 #### contains
@@ -442,11 +442,11 @@ Check if array contains element.
 ```js
 import { contains } from 'js-cool'
 
-contains([1, 2, 3], 2)           // true
-contains([1, 2, 3], 4)           // false
-contains(['a', 'b'], 'a')        // true
-contains([null], null)           // true
-contains([NaN], NaN)             // true
+contains([1, 2, 3], 2) // true
+contains([1, 2, 3], 4) // false
+contains(['a', 'b'], 'a') // true
+contains([null], null) // true
+contains([NaN], NaN) // true
 ```
 
 #### all / any
@@ -457,16 +457,16 @@ Check array elements against predicate.
 import { all, any } from 'js-cool'
 
 // all - check if all elements pass
-all([1, 2, 3], x => x > 0)           // true
-all([1, 2, 3], x => x > 1)           // false
+all([1, 2, 3], x => x > 0) // true
+all([1, 2, 3], x => x > 1) // false
 all(['a', 'b'], x => x.length === 1) // true
-all([], x => x > 0)                  // true (empty array)
+all([], x => x > 0) // true (empty array)
 
 // any - check if any element passes
-any([1, 2, 3], x => x > 2)           // true
-any([1, 2, 3], x => x > 10)          // false
-any(['hello', 'world'], x => x.includes('o'))  // true
-any([], x => x > 0)                  // false (empty array)
+any([1, 2, 3], x => x > 2) // true
+any([1, 2, 3], x => x > 10) // false
+any(['hello', 'world'], x => x.includes('o')) // true
+any([], x => x > 0) // false (empty array)
 ```
 
 ---
@@ -514,8 +514,8 @@ const cloned = clone(obj)
 cloned.a.b = 2
 cloned.a.c.push(4)
 
-obj.a.b      // still 1
-obj.a.c      // still [1, 2, 3]
+obj.a.b // still 1
+obj.a.c // still [1, 2, 3]
 
 // Clone array
 const arr = [{ a: 1 }, { b: 2 }]
@@ -537,19 +537,19 @@ Deep equality comparison.
 ```js
 import { isEqual } from 'js-cool'
 
-isEqual({ a: 1 }, { a: 1 })              // true
-isEqual({ a: 1, b: 2 }, { b: 2, a: 1 })  // true (order doesn't matter)
-isEqual([1, 2, 3], [1, 2, 3])            // true
-isEqual(NaN, NaN)                        // true
-isEqual(null, null)                      // true
-isEqual(undefined, undefined)            // true
+isEqual({ a: 1 }, { a: 1 }) // true
+isEqual({ a: 1, b: 2 }, { b: 2, a: 1 }) // true (order doesn't matter)
+isEqual([1, 2, 3], [1, 2, 3]) // true
+isEqual(NaN, NaN) // true
+isEqual(null, null) // true
+isEqual(undefined, undefined) // true
 
-isEqual({ a: 1 }, { a: 2 })              // false
-isEqual([1, 2], [2, 1])                  // false (order matters)
-isEqual({ a: 1 }, { a: 1, b: 2 })        // false
+isEqual({ a: 1 }, { a: 2 }) // false
+isEqual([1, 2], [2, 1]) // false (order matters)
+isEqual({ a: 1 }, { a: 1, b: 2 }) // false
 
 // Deep comparison
-isEqual({ a: { b: { c: 1 } } }, { a: { b: { c: 1 } } })  // true
+isEqual({ a: { b: { c: 1 } } }, { a: { b: { c: 1 } } }) // true
 ```
 
 #### getProperty / setProperty
@@ -567,14 +567,14 @@ const obj = {
 }
 
 // Get property
-getProperty(obj, 'a.b.0.c')           // 1
-getProperty(obj, 'a.b.1.c')           // 2
-getProperty(obj, 'a.d.e')             // 'hello'
-getProperty(obj, 'a.b')               // [{ c: 1 }, { c: 2 }]
+getProperty(obj, 'a.b.0.c') // 1
+getProperty(obj, 'a.b.1.c') // 2
+getProperty(obj, 'a.d.e') // 'hello'
+getProperty(obj, 'a.b') // [{ c: 1 }, { c: 2 }]
 
 // With default value
-getProperty(obj, 'a.b.5.c', 'default')  // 'default'
-getProperty(obj, 'x.y.z', null)         // null
+getProperty(obj, 'a.b.5.c', 'default') // 'default'
+getProperty(obj, 'x.y.z', null) // null
 
 // Set property
 setProperty(obj, 'a.b.0.c', 100)
@@ -599,9 +599,7 @@ const tree = {
   name: 'root',
   children: [
     { id: 2, name: 'child1', children: [] },
-    { id: 3, name: 'child2', children: [
-      { id: 4, name: 'grandchild' }
-    ] }
+    { id: 3, name: 'child2', children: [{ id: 4, name: 'grandchild' }] }
   ]
 }
 
@@ -626,54 +624,60 @@ searchObject(tree, item => item.id > 2, {
 
 ```js
 import {
-  isArray, isDate, isDigitals, isIterable, isObject,
-  isPlainObject, isRegExp, isWindow
+  isArray,
+  isDate,
+  isDigitals,
+  isIterable,
+  isObject,
+  isPlainObject,
+  isRegExp,
+  isWindow
 } from 'js-cool'
 
 // isArray
-isArray([1, 2, 3])           // true
-isArray('array')             // false
-isArray(null)                // false
+isArray([1, 2, 3]) // true
+isArray('array') // false
+isArray(null) // false
 
 // isObject
-isObject({})                 // true
-isObject([])                 // true (arrays are objects)
-isObject(null)               // false
-isObject(function(){})       // true
+isObject({}) // true
+isObject([]) // true (arrays are objects)
+isObject(null) // false
+isObject(function () {}) // true
 
 // isPlainObject
-isPlainObject({})            // true
-isPlainObject(Object.create(null))  // true
-isPlainObject([])            // false
-isPlainObject(new Date())    // false
+isPlainObject({}) // true
+isPlainObject(Object.create(null)) // true
+isPlainObject([]) // false
+isPlainObject(new Date()) // false
 
 // isDate
-isDate(new Date())           // true
-isDate('2024-01-01')         // false
-isDate(1234567890000)        // false
+isDate(new Date()) // true
+isDate('2024-01-01') // false
+isDate(1234567890000) // false
 
 // isRegExp
-isRegExp(/test/)             // true
+isRegExp(/test/) // true
 isRegExp(new RegExp('test')) // true
-isRegExp('/test/')           // false
+isRegExp('/test/') // false
 
 // isWindow
-isWindow(window)             // true (in browser)
-isWindow({})                 // false
+isWindow(window) // true (in browser)
+isWindow({}) // false
 
 // isIterable
-isIterable([1, 2, 3])        // true
-isIterable('string')         // true
-isIterable(new Set())        // true
-isIterable(new Map())        // true
-isIterable({})               // false
-isIterable(null)             // false
+isIterable([1, 2, 3]) // true
+isIterable('string') // true
+isIterable(new Set()) // true
+isIterable(new Map()) // true
+isIterable({}) // false
+isIterable(null) // false
 
 // isDigitals
-isDigitals('12345')          // true
-isDigitals('12.34')          // true
-isDigitals('-123')           // true
-isDigitals('12a34')          // false
+isDigitals('12345') // true
+isDigitals('12.34') // true
+isDigitals('-123') // true
+isDigitals('12a34') // false
 ```
 
 ---
@@ -684,17 +688,17 @@ isDigitals('12a34')          // false
 import { inBrowser, inNodeJs, isDarkMode, windowSize } from 'js-cool'
 
 // inBrowser - check if running in browser
-inBrowser()  // true in browser, false in Node.js
+inBrowser() // true in browser, false in Node.js
 
 // inNodeJs - check if running in Node.js
-inNodeJs()   // true in Node.js, false in browser
+inNodeJs() // true in Node.js, false in browser
 
 // isDarkMode - check if dark mode is enabled
-isDarkMode()  // true if user prefers dark mode
+isDarkMode() // true if user prefers dark mode
 
 // windowSize - get window dimensions
-windowSize()  // { width: 1920, height: 1080 }
-windowSize()  // { width: 375, height: 667 } (mobile)
+windowSize() // { width: 1920, height: 1080 }
+windowSize() // { width: 375, height: 667 } (mobile)
 ```
 
 ---
@@ -702,16 +706,13 @@ windowSize()  // { width: 375, height: 667 } (mobile)
 ### Browser Detection
 
 ```js
-import {
-  appVersion, browserVersion, fingerprint,
-  isNumberBrowser, osVersion
-} from 'js-cool'
+import { appVersion, browserVersion, fingerprint, isNumberBrowser, osVersion } from 'js-cool'
 
 // appVersion - get app version from UA
-appVersion('Chrome')          // '123.0.0.0'
-appVersion('Safari')          // '17.0'
-appVersion('Firefox')         // '123.0'
-appVersion('MicroMessenger')  // '8.0' (WeChat)
+appVersion('Chrome') // '123.0.0.0'
+appVersion('Safari') // '17.0'
+appVersion('Firefox') // '123.0'
+appVersion('MicroMessenger') // '8.0' (WeChat)
 
 // With custom UA
 appVersion('Chrome', 'Mozilla/5.0 Chrome/100.0.0.0')
@@ -733,10 +734,10 @@ browserVersion()
 // { name: 'Edge', version: '123.0.0.0' }
 
 // isNumberBrowser - check if 360 browser
-isNumberBrowser()  // true if 360 browser
+isNumberBrowser() // true if 360 browser
 
 // fingerprint - generate browser fingerprint
-fingerprint()              // 'wc7sWJJA8'
+fingerprint() // 'wc7sWJJA8'
 fingerprint('example.com') // 'xK9mN2pL5' (with custom domain)
 ```
 
@@ -751,16 +752,16 @@ Compare version numbers.
 ```js
 import { compareVersion } from 'js-cool'
 
-compareVersion('1.2.3', '1.2.2')   // 1 (greater)
-compareVersion('1.2.3', '1.2.3')   // 0 (equal)
-compareVersion('1.2.3', '1.2.4')   // -1 (less)
-compareVersion('2.0.0', '1.9.9')   // 1
-compareVersion('1.10.0', '1.9.0')  // 1
+compareVersion('1.2.3', '1.2.2') // 1 (greater)
+compareVersion('1.2.3', '1.2.3') // 0 (equal)
+compareVersion('1.2.3', '1.2.4') // -1 (less)
+compareVersion('2.0.0', '1.9.9') // 1
+compareVersion('1.10.0', '1.9.0') // 1
 
 // With pre-release tags (priority: rc > beta > alpha)
-compareVersion('1.0.0-rc.1', '1.0.0-beta.1')   // 1
+compareVersion('1.0.0-rc.1', '1.0.0-beta.1') // 1
 compareVersion('1.0.0-beta.1', '1.0.0-alpha.1') // 1
-compareVersion('1.0.0-alpha.1', '1.0.0')        // -1
+compareVersion('1.0.0-alpha.1', '1.0.0') // -1
 
 // Practical usage
 const needsUpdate = compareVersion(currentVersion, minVersion) < 0
@@ -786,7 +787,7 @@ parseUrlParam('name=hello%20world&list=1,2,3')
 // { name: 'hello world', list: '1,2,3' }
 
 // Empty string
-parseUrlParam('')  // {}
+parseUrlParam('') // {}
 
 // Special values (not converted even with true)
 parseUrlParam('hex=0xFF&bin=0b111&oct=0o77&exp=1e3', true)
@@ -829,9 +830,9 @@ Get URL parameters (from location.search, before #).
 import { getUrlParam, getUrlParams } from 'js-cool'
 
 // Get single param
-getUrlParam('a', '?a=1&b=2')       // '1'
-getUrlParam('b', '?a=1&b=2')       // '2'
-getUrlParam('c', '?a=1&b=2')       // null
+getUrlParam('a', '?a=1&b=2') // '1'
+getUrlParam('b', '?a=1&b=2') // '2'
+getUrlParam('c', '?a=1&b=2') // null
 
 // Get all params
 getUrlParams('?a=1&b=2&c=3')
@@ -854,8 +855,8 @@ Get query parameters (after #).
 import { getQueryParam, getQueryParams } from 'js-cool'
 
 // Get single query param
-getQueryParam('a', '#/?a=1&b=2')     // '1'
-getQueryParam('b', 'https://example.com#/page?a=1&b=2')  // '1'
+getQueryParam('a', '#/?a=1&b=2') // '1'
+getQueryParam('b', 'https://example.com#/page?a=1&b=2') // '1'
 
 // Get all query params
 getQueryParams('#/?a=1&b=2')
@@ -894,22 +895,22 @@ setCache('name', 'value')
 
 // Store object (auto JSON stringify/parse)
 setCache('user', { id: 1, name: 'John' })
-getCache('user')  // { id: 1, name: 'John' }
+getCache('user') // { id: 1, name: 'John' }
 
 // Store number
 setCache('count', 100)
-getCache('count')  // 100
+getCache('count') // 100
 
 // Store boolean
 setCache('flag', true)
-getCache('flag')   // true
+getCache('flag') // true
 
 // With expiration (in seconds)
-setCache('session', 'data', 3600)  // expires in 1 hour
+setCache('session', 'data', 3600) // expires in 1 hour
 setCache('token', 'abc123', 86400) // expires in 24 hours
 
 // Get non-existent key
-getCache('nonexistent')  // null
+getCache('nonexistent') // null
 
 // Delete
 delCache('name')
@@ -922,13 +923,13 @@ delCache('user')
 import { delSession, getSession, setSession } from 'js-cool'
 
 setSession('temp', 'data')
-getSession('temp')  // 'data'
+getSession('temp') // 'data'
 
 setSession('list', [1, 2, 3])
-getSession('list')  // [1, 2, 3]
+getSession('list') // [1, 2, 3]
 
-setSession('config', { theme: 'dark' }, 1800)  // 30 min expiry
-getSession('config')  // { theme: 'dark' }
+setSession('config', { theme: 'dark' }, 1800) // 30 min expiry
+getSession('config') // { theme: 'dark' }
 
 delSession('temp')
 ```
@@ -953,11 +954,11 @@ setCookie('name', 'value', {
 })
 
 // Get single cookie
-getCookie('name')      // 'value'
-getCookie('nonexistent')  // null
+getCookie('name') // 'value'
+getCookie('nonexistent') // null
 
 // Get all cookies
-getCookies()  // { name: 'value', other: 'data' }
+getCookies() // { name: 'value', other: 'data' }
 
 // Delete cookie
 delCookie('name')
@@ -974,15 +975,15 @@ delCookie('name', { path: '/', domain: '.example.com' })
 import { decodeBase64, encodeBase64 } from 'js-cool'
 
 // Encode
-encodeBase64('hello')              // 'aGVsbG8='
-encodeBase64('你好')               // '5L2g5aW9'
-encodeBase64('{"a":1}')            // 'eyJhIjoxfQ=='
-encodeBase64(12345)                // 'MTIzNDU='
+encodeBase64('hello') // 'aGVsbG8='
+encodeBase64('你好') // '5L2g5aW9'
+encodeBase64('{"a":1}') // 'eyJhIjoxfQ=='
+encodeBase64(12345) // 'MTIzNDU='
 
 // Decode
-decodeBase64('aGVsbG8=')           // 'hello'
-decodeBase64('5L2g5aW9')           // '你好'
-decodeBase64('eyJhIjoxfQ==')       // '{"a":1}'
+decodeBase64('aGVsbG8=') // 'hello'
+decodeBase64('5L2g5aW9') // '你好'
+decodeBase64('eyJhIjoxfQ==') // '{"a":1}'
 ```
 
 #### UTF-8
@@ -990,9 +991,9 @@ decodeBase64('eyJhIjoxfQ==')       // '{"a":1}'
 ```js
 import { decodeUtf8, encodeUtf8 } from 'js-cool'
 
-encodeUtf8('hello')    // encoded string
-encodeUtf8('你好')     // encoded string
-decodeUtf8(encoded)   // original string
+encodeUtf8('hello') // encoded string
+encodeUtf8('你好') // encoded string
+decodeUtf8(encoded) // original string
 ```
 
 #### Safe JSON
@@ -1001,16 +1002,16 @@ decodeUtf8(encoded)   // original string
 import { safeParse, safeStringify } from 'js-cool'
 
 // safeParse - never throws
-safeParse('{"a":1}')          // { a: 1 }
-safeParse('invalid json')     // null (no error!)
-safeParse('{"a":BigInt(1)}')  // { a: BigInt(1) }
-safeParse(null)               // null
-safeParse(undefined)          // null
+safeParse('{"a":1}') // { a: 1 }
+safeParse('invalid json') // null (no error!)
+safeParse('{"a":BigInt(1)}') // { a: BigInt(1) }
+safeParse(null) // null
+safeParse(undefined) // null
 
 // safeStringify - handles BigInt, circular refs
-safeStringify({ a: 1 })                    // '{"a":1}'
-safeStringify({ a: BigInt(9007199254740993n) })  // handles BigInt
-safeStringify({ a: () => {} })             // '{"a":null}'
+safeStringify({ a: 1 }) // '{"a":1}'
+safeStringify({ a: BigInt(9007199254740993n) }) // handles BigInt
+safeStringify({ a: () => {} }) // '{"a":null}'
 ```
 
 ---
@@ -1021,17 +1022,17 @@ safeStringify({ a: () => {} })             // '{"a":null}'
 import { addEvent, removeEvent, stopBubble, stopDefault } from 'js-cool'
 
 // Stop bubbling
-document.getElementById('btn').addEventListener('click', (e) => {
-  stopBubble(e)  // e.stopPropagation()
+document.getElementById('btn').addEventListener('click', e => {
+  stopBubble(e) // e.stopPropagation()
 })
 
 // Prevent default
-document.getElementById('link').addEventListener('click', (e) => {
-  stopDefault(e)  // e.preventDefault()
+document.getElementById('link').addEventListener('click', e => {
+  stopDefault(e) // e.preventDefault()
 })
 
 // Event delegation
-const handler = (e) => {
+const handler = e => {
   console.log('clicked:', e.target)
 }
 
@@ -1042,7 +1043,7 @@ addEvent(document, 'click', handler)
 removeEvent(document, 'click', handler)
 
 // Delegate to specific container
-addEvent(document.getElementById('list'), 'click', (e) => {
+addEvent(document.getElementById('list'), 'click', e => {
   if (e.target.tagName === 'LI') {
     console.log('List item clicked')
   }
@@ -1058,9 +1059,9 @@ addEvent(document.getElementById('list'), 'click', (e) => {
 ```js
 import { uuid } from 'js-cool'
 
-uuid()  // '550e8400-e29b-41d4-a716-446655440000'
-uuid()  // '6ba7b810-9dad-11d1-80b4-00c04fd430c8'
-uuid()  // 'f47ac10b-58cc-4372-a567-0e02b2c3d479'
+uuid() // '550e8400-e29b-41d4-a716-446655440000'
+uuid() // '6ba7b810-9dad-11d1-80b4-00c04fd430c8'
+uuid() // 'f47ac10b-58cc-4372-a567-0e02b2c3d479'
 ```
 
 #### copy
@@ -1069,7 +1070,7 @@ uuid()  // 'f47ac10b-58cc-4372-a567-0e02b2c3d479'
 import { copy } from 'js-cool'
 
 // Basic usage
-await copy('text to copy')  // true
+await copy('text to copy') // true
 
 // In async function
 async function handleCopy() {
@@ -1106,8 +1107,8 @@ download('data:text/plain,Hello World', 'hello.txt')
 ```js
 import { openUrl } from 'js-cool'
 
-openUrl('https://example.com')           // Opens in new tab
-openUrl('https://example.com/file.pdf')  // Downloads if can't parse
+openUrl('https://example.com') // Opens in new tab
+openUrl('https://example.com/file.pdf') // Downloads if can't parse
 ```
 
 #### toThousands
@@ -1115,12 +1116,12 @@ openUrl('https://example.com/file.pdf')  // Downloads if can't parse
 ```js
 import { toThousands } from 'js-cool'
 
-toThousands(1234567.89)     // '1,234,567.89'
-toThousands(1234567890)     // '1,234,567,890'
-toThousands(1234.567)       // '1,234.567'
-toThousands('1234567')      // '1,234,567'
-toThousands(null)           // ''
-toThousands(undefined)      // ''
+toThousands(1234567.89) // '1,234,567.89'
+toThousands(1234567890) // '1,234,567,890'
+toThousands(1234.567) // '1,234.567'
+toThousands('1234567') // '1,234,567'
+toThousands(null) // ''
+toThousands(undefined) // ''
 ```
 
 #### randomNumber / randomNumbers
@@ -1129,22 +1130,22 @@ toThousands(undefined)      // ''
 import { randomNumber, randomNumbers } from 'js-cool'
 
 // Random integer
-randomNumber()           // random int between 1-10
-randomNumber(1, 100)     // random int between 1-100
-randomNumber(0, 1)       // 0 or 1
-randomNumber(-10, 10)    // random int between -10 and 10
+randomNumber() // random int between 1-10
+randomNumber(1, 100) // random int between 1-100
+randomNumber(0, 1) // 0 or 1
+randomNumber(-10, 10) // random int between -10 and 10
 
 // Random float
-randomNumber(0.1, 0.9)   // random float between 0.1 and 0.9
+randomNumber(0.1, 0.9) // random float between 0.1 and 0.9
 
 // Random numbers with fixed sum
-randomNumbers(4, 100)    // [25, 30, 20, 25] (sum = 100)
-randomNumbers(3, 10)     // [3, 4, 3] (sum = 10)
-randomNumbers(5, 1)      // [0, 0, 1, 0, 0] (sum = 1)
+randomNumbers(4, 100) // [25, 30, 20, 25] (sum = 100)
+randomNumbers(3, 10) // [3, 4, 3] (sum = 10)
+randomNumbers(5, 1) // [0, 0, 1, 0, 0] (sum = 1)
 
 // Allow zeros (default: true)
-randomNumbers(4, 100, true)   // no zeros allowed
-randomNumbers(4, 100, false)  // zeros allowed
+randomNumbers(4, 100, true) // no zeros allowed
+randomNumbers(4, 100, false) // zeros allowed
 ```
 
 #### randomColor
@@ -1153,14 +1154,14 @@ randomNumbers(4, 100, false)  // zeros allowed
 import { randomColor } from 'js-cool'
 
 // Random color
-randomColor()                    // '#bf444b'
+randomColor() // '#bf444b'
 
 // Lighter colors (higher minimum)
-randomColor(200)                 // '#d6e9d7' (all channels >= 200)
-randomColor(128)                 // '#a1b2c3' (all channels >= 128)
+randomColor(200) // '#d6e9d7' (all channels >= 200)
+randomColor(128) // '#a1b2c3' (all channels >= 128)
 
 // Range for all channels
-randomColor(200, 255)            // '#d3f9e4' (200-255)
+randomColor(200, 255) // '#d3f9e4' (200-255)
 
 // Individual channel ranges
 randomColor([0, 100, 0], [100, 255, 100])
@@ -1173,10 +1174,10 @@ randomColor([200, 100, 0], [255, 200, 100])
 randomColor([0, 100, 200], [100, 200, 255])
 
 // Dark colors
-randomColor(0, 100)              // '#3a2b1c'
+randomColor(0, 100) // '#3a2b1c'
 
 // Pastel colors
-randomColor(150, 230)            // '#c8e6c9'
+randomColor(150, 230) // '#c8e6c9'
 ```
 
 #### nextIndex
@@ -1184,9 +1185,9 @@ randomColor(150, 230)            // '#c8e6c9'
 ```js
 import { nextIndex } from 'js-cool'
 
-nextIndex()  // 1001
-nextIndex()  // 1002
-nextIndex()  // 1003
+nextIndex() // 1001
+nextIndex() // 1002
+nextIndex() // 1003
 
 // Useful for modals, tooltips
 modal.style.zIndex = nextIndex()
@@ -1197,16 +1198,16 @@ modal.style.zIndex = nextIndex()
 ```js
 import { nextVersion } from 'js-cool'
 
-nextVersion('1.2.3', 'major')   // '2.0.0'
-nextVersion('1.2.3', 'minor')   // '1.3.0'
-nextVersion('1.2.3', 'patch')   // '1.2.4'
-nextVersion('1.2.3', 'premajor')    // '2.0.0-0'
-nextVersion('1.2.3', 'preminor')    // '1.3.0-0'
-nextVersion('1.2.3', 'prepatch')    // '1.2.4-0'
-nextVersion('1.2.3-alpha.1', 'prerelease')  // '1.2.3-alpha.2'
+nextVersion('1.2.3', 'major') // '2.0.0'
+nextVersion('1.2.3', 'minor') // '1.3.0'
+nextVersion('1.2.3', 'patch') // '1.2.4'
+nextVersion('1.2.3', 'premajor') // '2.0.0-0'
+nextVersion('1.2.3', 'preminor') // '1.3.0-0'
+nextVersion('1.2.3', 'prepatch') // '1.2.4-0'
+nextVersion('1.2.3-alpha.1', 'prerelease') // '1.2.3-alpha.2'
 
 // Default is patch
-nextVersion('1.2.3')  // '1.2.4'
+nextVersion('1.2.3') // '1.2.4'
 ```
 
 #### getType
@@ -1214,21 +1215,21 @@ nextVersion('1.2.3')  // '1.2.4'
 ```js
 import { getType } from 'js-cool'
 
-getType([1, 2, 3])        // 'array'
-getType({})               // 'object'
-getType(null)             // 'null'
-getType(undefined)        // 'undefined'
-getType('string')         // 'string'
-getType(123)              // 'number'
-getType(true)             // 'boolean'
-getType(() => {})         // 'function'
-getType(new Date())       // 'date'
-getType(/regex/)          // 'regexp'
-getType(new Error())      // 'error'
-getType(new Map())        // 'map'
-getType(new Set())        // 'set'
-getType(Symbol())         // 'symbol'
-getType(BigInt(1))        // 'bigint'
+getType([1, 2, 3]) // 'array'
+getType({}) // 'object'
+getType(null) // 'null'
+getType(undefined) // 'undefined'
+getType('string') // 'string'
+getType(123) // 'number'
+getType(true) // 'boolean'
+getType(() => {}) // 'function'
+getType(new Date()) // 'date'
+getType(/regex/) // 'regexp'
+getType(new Error()) // 'error'
+getType(new Map()) // 'map'
+getType(new Set()) // 'set'
+getType(Symbol()) // 'symbol'
+getType(BigInt(1)) // 'bigint'
 ```
 
 #### getFileType
@@ -1236,13 +1237,13 @@ getType(BigInt(1))        // 'bigint'
 ```js
 import { getFileType } from 'js-cool'
 
-getFileType('document.pdf')        // 'pdf'
-getFileType('image.png')           // 'image'
-getFileType('video.mp4')           // 'video'
-getFileType('audio.mp3')           // 'audio'
-getFileType('archive.zip')         // 'archive'
-getFileType('code.js')             // 'code'
-getFileType('https://example.com/file.pdf')  // 'pdf'
+getFileType('document.pdf') // 'pdf'
+getFileType('image.png') // 'image'
+getFileType('video.mp4') // 'video'
+getFileType('audio.mp3') // 'audio'
+getFileType('archive.zip') // 'archive'
+getFileType('code.js') // 'code'
+getFileType('https://example.com/file.pdf') // 'pdf'
 ```
 
 #### fixNumber
@@ -1250,11 +1251,11 @@ getFileType('https://example.com/file.pdf')  // 'pdf'
 ```js
 import { fixNumber } from 'js-cool'
 
-fixNumber(3.14159)       // '3.14' (default 2 decimal places)
-fixNumber(3.14159, 2)    // '3.14'
-fixNumber(3.14159, 4)    // '3.1416'
-fixNumber(3.1, 4)        // '3.1' (no trailing zeros)
-fixNumber(100, 2)        // '100'
+fixNumber(3.14159) // '3.14' (default 2 decimal places)
+fixNumber(3.14159, 2) // '3.14'
+fixNumber(3.14159, 4) // '3.1416'
+fixNumber(3.1, 4) // '3.1' (no trailing zeros)
+fixNumber(100, 2) // '100'
 ```
 
 #### delay
@@ -1282,10 +1283,10 @@ d.destroy('search')
 import { waiting } from 'js-cool'
 
 // Basic wait
-await waiting(1000)  // wait 1 second
+await waiting(1000) // wait 1 second
 
 // With throw on timeout
-await waiting(5000, true)  // throws after 5 seconds
+await waiting(5000, true) // throws after 5 seconds
 
 // In async function
 async function example() {
@@ -1299,7 +1300,7 @@ async function poll() {
   while (true) {
     const result = await checkStatus()
     if (result.done) break
-    await waiting(1000)  // wait before next poll
+    await waiting(1000) // wait before next poll
   }
 }
 ```
@@ -1389,7 +1390,7 @@ timer.stop()
 timer.start()
 
 // Check if running
-timer.isRunning  // true/false
+timer.isRunning // true/false
 ```
 
 #### awaitTo
@@ -1413,12 +1414,7 @@ async function getUser(id) {
 }
 
 // Multiple promises
-const [err, results] = await awaitTo(
-  Promise.all([
-    fetch('/api/users'),
-    fetch('/api/posts')
-  ])
-)
+const [err, results] = await awaitTo(Promise.all([fetch('/api/users'), fetch('/api/posts')]))
 ```
 
 ---
@@ -1426,10 +1422,7 @@ const [err, results] = await awaitTo(
 ### Resource Loading
 
 ```js
-import {
-  loadSource, mountCss, mountImg,
-  mountJs, mountStyle, preloader
-} from 'js-cool'
+import { loadSource, mountCss, mountImg, mountJs, mountStyle, preloader } from 'js-cool'
 
 // Load JS file
 await mountJs('https://example.com/script.js')
@@ -1455,11 +1448,7 @@ await loadSource({ type: 'css', url: 'https://example.com/styles.css' })
 await loadSource({ type: 'img', url: 'https://example.com/image.png' })
 
 // Preload images
-await preloader([
-  'image1.jpg',
-  'image2.jpg',
-  'image3.jpg'
-])
+await preloader(['image1.jpg', 'image2.jpg', 'image3.jpg'])
 ```
 
 ---
@@ -1468,10 +1457,17 @@ await preloader([
 
 ```js
 import {
-  arrayBufferToBase64, arrayBufferToBlob,
-  base64ToArrayBuffer, base64ToBlob, base64ToFile,
-  blobToArrayBuffer, blobToBase64, blobToUrl,
-  fileToBase64, svgToBlob, urlToBlob
+  arrayBufferToBase64,
+  arrayBufferToBlob,
+  base64ToArrayBuffer,
+  base64ToBlob,
+  base64ToFile,
+  blobToArrayBuffer,
+  blobToBase64,
+  blobToUrl,
+  fileToBase64,
+  svgToBlob,
+  urlToBlob
 } from 'js-cool'
 
 // ArrayBuffer conversions
@@ -1488,10 +1484,10 @@ const file = base64ToFile('data:image/png;base64,...', 'image.png', 'image/png')
 // Blob conversions
 const buffer = await blobToArrayBuffer(blob)
 const base64 = await blobToBase64(blob)
-const url = blobToUrl(blob)  // 'blob:origin/uuid'
+const url = blobToUrl(blob) // 'blob:origin/uuid'
 
 // File conversions
-const base64 = await fileToBase64(file)  // 'data:image/png;base64,...'
+const base64 = await fileToBase64(file) // 'data:image/png;base64,...'
 
 // SVG conversion
 const blob = svgToBlob('<svg viewBox="0 0 100 100">...</svg>')
@@ -1515,7 +1511,11 @@ CSVToArray(csv)
 // [['name', 'age', 'city'], ['John', '30', 'NYC'], ['Jane', '25', 'LA']]
 
 // 2D array to CSV
-arrayToCSV([['name', 'age'], ['John', 30], ['Jane', 25]])
+arrayToCSV([
+  ['name', 'age'],
+  ['John', 30],
+  ['Jane', 25]
+])
 // 'name,age\nJohn,30\nJane,25'
 
 // CSV to JSON
@@ -1527,7 +1527,10 @@ CSVToJSON(csv)
 
 // JSON to CSV
 JSONToCSV(
-  [{ name: 'John', age: 30 }, { name: 'Jane', age: 25 }],
+  [
+    { name: 'John', age: 30 },
+    { name: 'Jane', age: 25 }
+  ],
   ['name', 'age']
 )
 // 'name,age\nJohn,30\nJane,25'
@@ -1542,11 +1545,11 @@ JSONToCSV(
 ```js
 import { RGBToHex } from 'js-cool'
 
-RGBToHex(255, 0, 0)      // '#ff0000'
-RGBToHex(0, 255, 0)      // '#00ff00'
-RGBToHex(0, 0, 255)      // '#0000ff'
-RGBToHex(255, 255, 255)  // '#ffffff'
-RGBToHex(0, 0, 0)        // '#000000'
+RGBToHex(255, 0, 0) // '#ff0000'
+RGBToHex(0, 255, 0) // '#00ff00'
+RGBToHex(0, 0, 255) // '#0000ff'
+RGBToHex(255, 255, 255) // '#ffffff'
+RGBToHex(0, 0, 0) // '#000000'
 ```
 
 ---
