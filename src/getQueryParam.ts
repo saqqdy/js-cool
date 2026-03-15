@@ -1,5 +1,5 @@
-import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
+import parseUrlParam from './parseUrlParam'
 
 /**
  * Get a single query parameter (behind "#", from hash)
@@ -33,17 +33,21 @@ function getQueryParam(key: string, url: string): string | undefined
 function getQueryParam(key: string, url?: string): string | undefined {
 	if (!key) {
 		console.info('key is required')
+
 		return undefined
 	} else if (!url) {
 		if (!inBrowser) {
 			console.info('url is required')
+
 			return undefined
 		}
 		url = location.href
 	}
 	const [before, after] = url.split('#')
+
 	url = after || before
 	url = url.slice(url.lastIndexOf('?'))
+
 	return parseUrlParam(url)[key] as string | undefined
 }
 

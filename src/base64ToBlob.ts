@@ -20,6 +20,7 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
  */
 function base64ToBlob(input: string): Blob {
 	const [pre] = input.split(',')
+
 	if (!pre) throw new Error('Not a valid base64')
 
 	const mime = pre.match(/:(.*?);/)?.[1]

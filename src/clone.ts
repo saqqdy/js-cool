@@ -38,8 +38,9 @@ import isRegExp from './isRegExp'
  */
 function clone<T = any>(parent: T): T {
 	// handle regexp
-	const getRegExp = (reg: RegExp) => {
+	const getRegExp = (reg: RegExp): string => {
 		let flags = ''
+
 		if (reg.global) flags += 'g'
 		if (reg.ignoreCase) flags += 'i'
 		if (reg.multiline) flags += 'm'

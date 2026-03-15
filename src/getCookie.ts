@@ -24,8 +24,9 @@
  * @returns - cookie value string or null if not found
  */
 function getCookie(name: string): any {
-	const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+	const reg = new RegExp(`(^| )${name}=([^;]*)(;|$)`)
 	const arr = document.cookie.match(reg)
+
 	if (arr) {
 		return decodeURIComponent(arr[2])
 	} else {

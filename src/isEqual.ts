@@ -2,7 +2,7 @@ import isArray from './isArray'
 
 // @see https://underscorejs.org/#isEqual
 // Internal recursive comparison function for `isEqual`.
-const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
+const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]): boolean {
 	// Identical objects are equal. `0 === -0`, but they aren't identical.
 	// See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
 	if (a === b) return a !== 0 || 1 / a === 1 / b
@@ -10,6 +10,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 	if (a == null || b == null) return a === b
 	// Compare `[[Class]]` names.
 	const className = toString.call(a)
+
 	if (className !== toString.call(b)) return false
 	switch (className) {
 		// Strings, numbers, regular expressions, dates, and booleans are compared by value.
@@ -17,12 +18,13 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 		case '[object String]':
 			// Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
 			// equivalent to `new String("5")`.
-			return '' + a === '' + b
+			return `${a}` === `${b}`
 		case '[object Number]':
 			// `NaN`s are equivalent, but non-reflexive.
 			// Object(NaN) is equivalent to NaN
 			// eslint-disable-next-line no-self-compare
 			if (+a !== +a) return +b !== +b
+
 			// An `egal` comparison is performed for other numeric values.
 			return +a === 0 ? 1 / +a === 1 / (b as unknown as number) : +a === +b
 		case '[object Date]':
@@ -34,6 +36,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 	}
 
 	const areArrays = isArray(a) && isArray(b)
+
 	if (!areArrays) {
 		if (typeof a != 'object' || typeof b != 'object') return false
 
@@ -41,6 +44,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 		// from different frames are.
 		const aCtor = a.constructor
 		const bCtor = b.constructor
+
 		if (
 			aCtor !== bCtor &&
 			!(
@@ -63,6 +67,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 	aStack = aStack || []
 	bStack = bStack || []
 	let length = aStack.length
+
 	while (length--) {
 		// Linear search. Performance is inversely proportional to the number of
 		// unique nested structures.
@@ -86,6 +91,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 		// Deep compare objects.
 		const keys = Object.keys(a)
 		let key: keyof typeof a
+
 		length = keys.length
 		// Ensure that both objects contain the same number of properties before comparing deep equality.
 		if (Object.keys(b).length !== length) return false
@@ -98,6 +104,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]) {
 	// Remove the first object from the stack of traversed objects.
 	aStack.pop()
 	bStack.pop()
+
 	return true
 }
 

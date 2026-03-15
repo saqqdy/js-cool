@@ -19,11 +19,13 @@
  * @param input - the string to be encoded
  * @returns - the UTF-8 encoding
  */
-function encodeUtf8(string: string) {
+function encodeUtf8(string: string): string {
 	string = string.replace(/\r\n/g, '\n')
 	let utftext = ''
+
 	for (let n = 0; n < string.length; n++) {
 		const c = string.charCodeAt(n)
+
 		if (c < 128) {
 			utftext += String.fromCharCode(c)
 		} else if (c > 127 && c < 2048) {
@@ -35,6 +37,7 @@ function encodeUtf8(string: string) {
 			utftext += String.fromCharCode((c & 63) | 128)
 		}
 	}
+
 	return utftext
 }
 

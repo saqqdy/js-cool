@@ -33,9 +33,10 @@
  */
 function shuffle(value: string, size?: number): string
 function shuffle<T extends unknown[] = unknown[]>(value: T, size?: number): T
-function shuffle<T extends unknown[] = unknown[]>(value: T | string, size?: number) {
+function shuffle<T extends unknown[] = unknown[]>(value: T | string, size?: number): T | string {
 	let index = -1,
 		isString = false
+
 	if (typeof value === 'string') {
 		value = value.split('') as T
 		isString = true
@@ -49,6 +50,7 @@ function shuffle<T extends unknown[] = unknown[]>(value: T | string, size?: numb
 	while (++index < size) {
 		const rand = index + Math.floor(Math.random() * (lastIndex - index + 1))
 		const _val = value[rand]
+
 		value[rand] = value[index]
 		value[index] = _val
 	}

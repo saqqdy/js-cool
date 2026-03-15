@@ -34,10 +34,11 @@ function setCookie<T extends string | number | boolean>(
 	seconds: string | number,
 	path = '/',
 	samesite = true
-) {
-	if (typeof seconds === 'string') seconds = parseInt(seconds)
+): void {
+	if (typeof seconds === 'string') seconds = Number.parseInt(seconds)
 
 	const _t = new Date()
+
 	seconds ||= 86400
 	_t.setTime(_t.getTime() + seconds * 1000)
 

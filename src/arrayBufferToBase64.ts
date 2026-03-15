@@ -14,8 +14,9 @@
  * @param mime - image mime, eq: image/png
  * @returns - base64
  */
-function arrayBufferToBase64(input: ArrayBuffer, mime?: string) {
+function arrayBufferToBase64(input: ArrayBuffer, mime?: string): string {
 	const u8Array = String.fromCharCode(...new Uint8Array(input))
+
 	return mime ? `data:${mime};base64,${btoa(u8Array)}` : btoa(u8Array)
 }
 

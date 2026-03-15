@@ -1,266 +1,266 @@
 import { download } from 'use-downloads'
 
-// Global Parameters
-import client from './client'
-import pattern from './pattern'
-
-// String extensions, array methods
-import trim from './trim'
-import clearAttr from './clearAttr'
-import clearHtml from './clearHtml'
-import escape from './escape'
-import unescape from './unescape'
-import getNumber from './getNumber'
-import camel2Dash from './camel2Dash'
-import dash2Camel from './dash2Camel'
-import upperFirst from './upperFirst'
-import randomColor from './randomColor'
-import randomNumber from './randomNumber'
-import randomNumbers from './randomNumbers'
-import randomString from './randomString'
-import shuffle from './shuffle'
-import fingerprint from './fingerprint'
-import getCHSLength from './getCHSLength'
-import cutCHSString from './cutCHSString'
-
-// Get the status of
-import isDigitals from './isDigitals'
-import isExitsFunction from './isExitsFunction'
-import isExitsVariable from './isExitsVariable'
-import isEqual from './isEqual'
-import isWindow from './isWindow'
-import isObject from './isObject'
-import isDate from './isDate'
-import isRegExp from './isRegExp'
-import isArray from './isArray'
-import isIterable from './isIterable'
-import inBrowser from './inBrowser'
-import inNodeJs from './inNodeJs'
-import isNumberBrowser from './isNumberBrowser'
-import windowSize from './windowSize'
-import getAppVersion from './getAppVersion'
-import appVersion from './appVersion'
-import getOsVersion from './getOsVersion'
-import osVersion from './osVersion'
-import browserVersion from './browserVersion'
-import compareVersion from './compareVersion'
-import parseUrlParam from './parseUrlParam'
-import spliceUrlParam from './spliceUrlParam'
-import safeParse from './safeParse'
-import safeStringify from './safeStringify'
-import getDirParam from './getDirParam'
-import getQueryParam from './getQueryParam'
-import getQueryParams from './getQueryParams'
-import getUrlParam from './getUrlParam'
-import getUrlParams from './getUrlParams'
-
-// Cache, cookie, session
-import getCache from './getCache'
-import setCache from './setCache'
-import delCache from './delCache'
-import getSession from './getSession'
-import setSession from './setSession'
-import delSession from './delSession'
-import getCookie from './getCookie'
-import getCookies from './getCookies'
-import setCookie from './setCookie'
-import delCookie from './delCookie'
-
-// Encoding and decoding
-import encodeBase64 from './encodeBase64'
-import encodeUtf8 from './encodeUtf8'
-import decodeBase64 from './decodeBase64'
-import decodeUtf8 from './decodeUtf8'
-
-// Event delegates, other event methods
-import stopBubble from './stopBubble'
-import stopDefault from './stopDefault'
+import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 import addEvent from './addEvent'
-import removeEvent from './removeEvent'
-import getScrollPosition from './getScrollPosition'
 
-// tools
-import nextIndex from './nextIndex'
-import nextVersion from './nextVersion'
-import punctualTimer from './punctualTimer'
-import promiseFactory from './promiseFactory'
-import fixNumber from './fixNumber'
-import mapTemplate from './mapTemplate'
-import extend from './extend'
-import clone from './clone'
-import delay from './delay'
-import getType from './getType'
-import getFileType from './getFileType'
-import sorter from './sorter'
-import sortPinyin from './sortPinyin'
-import isPlainObject from './isPlainObject'
-import isDarkMode from './isDarkMode'
-import cleanData from './cleanData'
-import searchObject from './searchObject'
-import openUrl from './openUrl'
-import copy from './copy'
-import toThousands from './toThousands'
 import all from './all'
 import any from './any'
-import uuid from './uuid'
-import CSVToArray from './CSVToArray'
-import arrayToCSV from './arrayToCSV'
-import CSVToJSON from './CSVToJSON'
-import JSONToCSV from './JSONToCSV'
-import RGBToHex from './RGBToHex'
-import intersect from './intersect'
-import union from './union'
-import minus from './minus'
-import complement from './complement'
-import contains from './contains'
-import unique from './unique'
-import fillIPv6 from './fillIPv6'
-import getProperty from './getProperty'
-import setProperty from './setProperty'
-import preloader from './preloader'
-import waiting from './waiting'
-
+import appVersion from './appVersion'
 // Blob arrayBuffer base64 file blobUrl
 import arrayBufferToBase64 from './arrayBufferToBase64'
 import arrayBufferToBlob from './arrayBufferToBlob'
+import arrayToCSV from './arrayToCSV'
 import base64ToArrayBuffer from './base64ToArrayBuffer'
 import base64ToBlob from './base64ToBlob'
 import base64ToFile from './base64ToFile'
 import blobToArrayBuffer from './blobToArrayBuffer'
 import blobToBase64 from './blobToBase64'
 import blobToUrl from './blobToUrl'
-import fileToBase64 from './fileToBase64'
-import svgToBlob from './svgToBlob'
-import urlToBlob from './urlToBlob'
+import browserVersion from './browserVersion'
+import camel2Dash from './camel2Dash'
+import cleanData from './cleanData'
+import clearAttr from './clearAttr'
+import clearHtml from './clearHtml'
 
-import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
+// Global Parameters
+import client from './client'
+import clone from './clone'
+import compareVersion from './compareVersion'
+import complement from './complement'
+import contains from './contains'
+import copy from './copy'
+import CSVToArray from './CSVToArray'
+import CSVToJSON from './CSVToJSON'
+import cutCHSString from './cutCHSString'
+import dash2Camel from './dash2Camel'
+import decodeBase64 from './decodeBase64'
+import decodeUtf8 from './decodeUtf8'
+import delay from './delay'
+import delCache from './delCache'
+import delCookie from './delCookie'
+import delSession from './delSession'
+// Encoding and decoding
+import encodeBase64 from './encodeBase64'
+import encodeUtf8 from './encodeUtf8'
+import escape from './escape'
+import extend from './extend'
+import fileToBase64 from './fileToBase64'
+import fillIPv6 from './fillIPv6'
+import fingerprint from './fingerprint'
+import fixNumber from './fixNumber'
+import getAppVersion from './getAppVersion'
+// Cache, cookie, session
+import getCache from './getCache'
+import getCHSLength from './getCHSLength'
+import getCookie from './getCookie'
+import getCookies from './getCookies'
+
+import getDirParam from './getDirParam'
+import getFileType from './getFileType'
+import getNumber from './getNumber'
+import getOsVersion from './getOsVersion'
+import getProperty from './getProperty'
+import getQueryParam from './getQueryParam'
+import getQueryParams from './getQueryParams'
+import getScrollPosition from './getScrollPosition'
+import getSession from './getSession'
+import getType from './getType'
+
+import getUrlParam from './getUrlParam'
+import getUrlParams from './getUrlParams'
+import inBrowser from './inBrowser'
+import inNodeJs from './inNodeJs'
+
+import intersect from './intersect'
+import isArray from './isArray'
+import isDarkMode from './isDarkMode'
+import isDate from './isDate'
+// Get the status of
+import isDigitals from './isDigitals'
+
+import isEqual from './isEqual'
+import isExitsFunction from './isExitsFunction'
+import isExitsVariable from './isExitsVariable'
+import isIterable from './isIterable'
+import isNumberBrowser from './isNumberBrowser'
+import isObject from './isObject'
+import isPlainObject from './isPlainObject'
+import isRegExp from './isRegExp'
+import isWindow from './isWindow'
+import JSONToCSV from './JSONToCSV'
+import mapTemplate from './mapTemplate'
+import minus from './minus'
+// tools
+import nextIndex from './nextIndex'
+import nextVersion from './nextVersion'
+import openUrl from './openUrl'
+import osVersion from './osVersion'
+import parseUrlParam from './parseUrlParam'
+import pattern from './pattern'
+import preloader from './preloader'
+import promiseFactory from './promiseFactory'
+import punctualTimer from './punctualTimer'
+import randomColor from './randomColor'
+import randomNumber from './randomNumber'
+import randomNumbers from './randomNumbers'
+import randomString from './randomString'
+import removeEvent from './removeEvent'
+import RGBToHex from './RGBToHex'
+import safeParse from './safeParse'
+import safeStringify from './safeStringify'
+import searchObject from './searchObject'
+import setCache from './setCache'
+import setCookie from './setCookie'
+import setProperty from './setProperty'
+import setSession from './setSession'
+import shuffle from './shuffle'
+import sorter from './sorter'
+import sortPinyin from './sortPinyin'
+import spliceUrlParam from './spliceUrlParam'
+// Event delegates, other event methods
+import stopBubble from './stopBubble'
+
+import stopDefault from './stopDefault'
+import svgToBlob from './svgToBlob'
+import toThousands from './toThousands'
+// String extensions, array methods
+import trim from './trim'
+import unescape from './unescape'
+import union from './union'
+import unique from './unique'
+import upperFirst from './upperFirst'
+import urlToBlob from './urlToBlob'
+import uuid from './uuid'
+import waiting from './waiting'
+
+import windowSize from './windowSize'
 
 export type * from './types'
 
 export default {
-	version: '__VERSION__',
-	download,
-	RGBToHex,
 	addEvent,
 	all,
 	any,
-	getCache,
-	setCache,
-	delCache,
-	getSession,
-	setSession,
-	delSession,
-	getCookie,
-	getCookies,
-	setCookie,
-	delCookie,
-	camel2Dash,
-	cleanData,
-	clearAttr,
-	clearHtml,
-	escape,
-	unescape,
-	client,
-	complement,
-	contains,
-	CSVToArray,
-	arrayToCSV,
-	CSVToJSON,
-	JSONToCSV,
-	cutCHSString,
-	dash2Camel,
-	decodeBase64,
-	decodeUtf8,
-	delay,
-	encodeBase64,
-	encodeUtf8,
-	extend,
-	clone,
-	fillIPv6,
-	fixNumber,
-	mapTemplate,
-	getAppVersion,
 	appVersion,
-	getCHSLength,
-	getDirParam,
-	compareVersion,
-	getNumber,
-	getOsVersion,
-	osVersion,
-	browserVersion,
-	getQueryParam,
-	getQueryParams,
-	getProperty,
-	randomColor,
-	randomNumber,
-	randomNumbers,
-	randomString,
-	shuffle,
-	fingerprint,
-	getScrollPosition,
-	getType,
-	getFileType,
-	sorter,
-	sortPinyin,
-	parseUrlParam,
-	spliceUrlParam,
-	safeParse,
-	safeStringify,
-	getUrlParam,
-	getUrlParams,
-	intersect,
-	isDigitals,
-	isExitsFunction,
-	isExitsVariable,
-	isEqual,
-	isWindow,
-	isObject,
-	isDate,
-	isRegExp,
-	isArray,
-	isIterable,
-	isPlainObject,
-	isDarkMode,
-	inBrowser,
-	inNodeJs,
-	isNumberBrowser,
-	minus,
-	nextIndex,
-	nextVersion,
-	punctualTimer,
-	promiseFactory,
-	waiting,
-	awaitTo,
 	arrayBufferToBase64,
 	arrayBufferToBlob,
+	arrayToCSV,
+	awaitTo,
 	base64ToArrayBuffer,
 	base64ToBlob,
 	base64ToFile,
 	blobToArrayBuffer,
 	blobToBase64,
 	blobToUrl,
-	fileToBase64,
-	svgToBlob,
-	urlToBlob,
-	openUrl,
+	browserVersion,
+	camel2Dash,
+	cleanData,
+	clearAttr,
+	clearHtml,
+	client,
+	clone,
+	compareVersion,
+	complement,
+	contains,
 	copy,
-	pattern,
-	removeEvent,
-	searchObject,
-	setProperty,
-	stopBubble,
-	stopDefault,
-	toThousands,
-	trim,
-	union,
-	unique,
-	upperFirst,
-	uuid,
-	windowSize,
+	CSVToArray,
+	CSVToJSON,
+	cutCHSString,
+	dash2Camel,
+	decodeBase64,
+	decodeUtf8,
+	delay,
+	delCache,
+	delCookie,
+	delSession,
+	download,
+	encodeBase64,
+	encodeUtf8,
+	escape,
+	extend,
+	fileToBase64,
+	fillIPv6,
+	fingerprint,
+	fixNumber,
+	getAppVersion,
+	getCache,
+	getCHSLength,
+	getCookie,
+	getCookies,
+	getDirParam,
+	getFileType,
+	getNumber,
+	getOsVersion,
+	getProperty,
+	getQueryParam,
+	getQueryParams,
+	getScrollPosition,
+	getSession,
+	getType,
+	getUrlParam,
+	getUrlParams,
+	inBrowser,
+	inNodeJs,
+	intersect,
+	isArray,
+	isDarkMode,
+	isDate,
+	isDigitals,
+	isEqual,
+	isExitsFunction,
+	isExitsVariable,
+	isIterable,
+	isNumberBrowser,
+	isObject,
+	isPlainObject,
+	isRegExp,
+	isWindow,
+	JSONToCSV,
 	loadSource,
+	mapTemplate,
+	minus,
 	mountCss,
 	mountImg,
 	mountJs,
 	mountStyle,
-	preloader
+	nextIndex,
+	nextVersion,
+	openUrl,
+	osVersion,
+	parseUrlParam,
+	pattern,
+	preloader,
+	promiseFactory,
+	punctualTimer,
+	randomColor,
+	randomNumber,
+	randomNumbers,
+	randomString,
+	removeEvent,
+	RGBToHex,
+	safeParse,
+	safeStringify,
+	searchObject,
+	setCache,
+	setCookie,
+	setProperty,
+	setSession,
+	shuffle,
+	sorter,
+	sortPinyin,
+	spliceUrlParam,
+	stopBubble,
+	stopDefault,
+	svgToBlob,
+	toThousands,
+	trim,
+	unescape,
+	union,
+	unique,
+	upperFirst,
+	urlToBlob,
+	uuid,
+	version: '__VERSION__',
+	waiting,
+	windowSize,
 }

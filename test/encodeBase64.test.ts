@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import encodeBase64 from '../src/encodeBase64'
 import decodeBase64 from '../src/decodeBase64'
+import encodeBase64 from '../src/encodeBase64'
 
 describe('encodeBase64', () => {
 	it('should encode string to base64', () => {
@@ -36,6 +36,7 @@ describe('decodeBase64', () => {
 	it('should be reversible', () => {
 		const original = 'Hello, 世界!'
 		const encoded = encodeBase64(original)
+
 		expect(decodeBase64(encoded)).toBe(original)
 	})
 })

@@ -32,9 +32,11 @@ function getCache(name: string): any {
 	try {
 		const exp = new Date()
 		const obj = JSON.parse(data)
+
 		if ('value' in obj || 'expires' in obj) {
 			if (!obj.expires || obj.expires > exp.getTime()) return obj.value
 			sessionStorage.removeItem(name)
+
 			return null
 		}
 	} catch {

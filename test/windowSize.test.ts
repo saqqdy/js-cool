@@ -16,20 +16,22 @@ describe('windowSize', () => {
 
 	it('should use document.body.clientWidth when innerWidth is not available', () => {
 		const originalInnerWidth = window.innerWidth
+
 		// @ts-expect-error - mock innerWidth
 		delete window.innerWidth
 
 		// Mock document.body
 		Object.defineProperty(document, 'body', {
+			configurable: true,
 			value: {
+				clientHeight: 600,
 				clientWidth: 800,
-				clientHeight: 600
 			},
 			writable: true,
-			configurable: true
 		})
 
 		const result = windowSize()
+
 		expect(result.width).toBeGreaterThan(0)
 		expect(result.height).toBeGreaterThan(0)
 
@@ -40,15 +42,16 @@ describe('windowSize', () => {
 	it('should use document.documentElement.clientWidth', () => {
 		// Mock document.documentElement
 		Object.defineProperty(document, 'documentElement', {
+			configurable: true,
 			value: {
+				clientHeight: 768,
 				clientWidth: 1024,
-				clientHeight: 768
 			},
 			writable: true,
-			configurable: true
 		})
 
 		const result = windowSize()
+
 		expect(result.width).toBe(1024)
 		expect(result.height).toBe(768)
 	})

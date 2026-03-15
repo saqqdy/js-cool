@@ -13,6 +13,6 @@ if (!globalThis.Uint8Array) {
 if (!globalThis.fetch) {
 	globalThis.fetch = (() =>
 		Promise.resolve({
-			blob: () => Promise.resolve(new Blob(['test']))
+			blob: () => Promise.resolve(new Blob(['test'])),
 		})) as any
 }

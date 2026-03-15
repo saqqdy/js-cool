@@ -1,4 +1,5 @@
 import decodeUtf8 from './decodeUtf8'
+
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
 /**
@@ -26,7 +27,7 @@ const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
  * @param input - the string to be decoded
  * @returns decoded string
  */
-function decodeBase64(input: string) {
+function decodeBase64(input: string): string {
 	let output = '',
 		chr1,
 		chr2,
@@ -36,7 +37,8 @@ function decodeBase64(input: string) {
 		enc3,
 		enc4,
 		i = 0
-	input = input.replace(/[^A-Za-z0-9\+\/\=]/g, '')
+
+	input = input.replace(/[^A-Za-z0-9+/=]/g, '')
 	while (i < input.length) {
 		enc1 = _keyStr.indexOf(input.charAt(i++))
 		enc2 = _keyStr.indexOf(input.charAt(i++))
@@ -54,6 +56,7 @@ function decodeBase64(input: string) {
 		}
 	}
 	output = decodeUtf8(output)
+
 	return output
 }
 

@@ -1,31 +1,31 @@
 /** @type {Partial<import("typedoc").TypeDocOptions>} */
 const config = {
-	out: 'docs',
-	entryPoints: ['./src'],
-	json: 'docs/out.json',
-	name: 'JS-COOL DOCS',
-	includeVersion: true,
-	readme: 'README.md',
-	sort: ['source-order'],
 	categorizeByGroup: false,
-	searchCategoryBoosts: {
-		Component: 2,
-		Model: 1.2
-	},
-	searchGroupBoosts: {
-		Classes: 1.5
-	},
+	entryPoints: ['./src'],
 	hostedBaseUrl: 'https://www.saqqdy.com/js-cool/',
-	navigationLinks: {
-		Docs: 'https://www.saqqdy.com/js-cool/',
-		GitHub: 'https://github.com/saqqdy/js-cool',
-		CHANGELOG: 'https://github.com/saqqdy/js-cool/blob/master/CHANGELOG.md'
-	},
+	includeVersion: true,
+	json: 'docs/out.json',
 	// highlightLanguages: ['typescript', 'tsx', 'css', 'json', 'jsonc', 'python', 'yaml', 'markdown'],
 	markdownItOptions: {
-		html: true
+		html: true,
 	},
-	suppressCommentWarningsInDeclarationFiles: true
+	name: 'JS-COOL DOCS',
+	navigationLinks: {
+		CHANGELOG: 'https://github.com/saqqdy/js-cool/blob/master/CHANGELOG.md',
+		Docs: 'https://www.saqqdy.com/js-cool/',
+		GitHub: 'https://github.com/saqqdy/js-cool',
+	},
+	out: 'docs',
+	readme: 'README.md',
+	searchCategoryBoosts: {
+		Component: 2,
+		Model: 1.2,
+	},
+	searchGroupBoosts: {
+		Classes: 1.5,
+	},
+	sort: ['source-order'],
+	suppressCommentWarningsInDeclarationFiles: true,
 	// emit: true,
 	// exclude: '',
 	// externalPattern: '',

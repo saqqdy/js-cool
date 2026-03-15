@@ -29,6 +29,7 @@ import unique from './unique'
 function minus<T = unknown>(...args: T[][]): T[] {
 	return args.reduce((pre, cur, index) => {
 		index === 1 && (pre = unique(pre))
+
 		return pre.filter(item => !contains(cur, item))
 	})
 }

@@ -8,14 +8,16 @@ describe('fingerprint', () => {
 	beforeAll(() => {
 		// Mock canvas getContext to return a mock 2D context
 		const mockCtx = {
-			textBaseline: '',
-			font: '',
-			fillStyle: '',
 			fillRect: vi.fn(),
-			fillText: vi.fn()
+			fillStyle: '',
+			fillText: vi.fn(),
+			font: '',
+			textBaseline: '',
 		}
+
 		HTMLCanvasElement.prototype.getContext = vi.fn((contextId: string) => {
 			if (contextId === '2d') return mockCtx as any
+
 			return null
 		}) as any
 
@@ -48,6 +50,7 @@ describe('fingerprint', () => {
 
 	it('should return a string for same domain', () => {
 		const result = fingerprint('example.com')
+
 		expect(typeof result).toBe('string')
 	})
 

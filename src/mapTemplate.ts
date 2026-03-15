@@ -38,16 +38,14 @@ function mapTemplate(
 	if (!tmp || !data) throw new Error('"tmp" & "data" is required')
 	const regexp = tmp.match(/\$\{(\w+)\}/g) ? /\$\{(\w+)\}/g : /\{?\{(\w+)\}\}?/g
 
-	return (
-		'' +
-		tmp.replace(regexp, (string: string, replaceValue: string) => {
-			if (typeof data === 'function') return '' + data(replaceValue)
-			for (const key in data) {
-				if (replaceValue === key) return '' + data[key]
-			}
-			return string
-		})
-	)
+	return `${tmp.replace(regexp, (string: string, replaceValue: string) => {
+		if (typeof data === 'function') return `${data(replaceValue)}`
+		for (const key in data) {
+			if (replaceValue === key) return `${data[key]}`
+		}
+
+		return string
+	})}`
 }
 
 export default mapTemplate

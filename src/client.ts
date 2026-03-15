@@ -26,27 +26,31 @@
  * @param userAgent - optional, pass in a custom ua, default takes the browser's navigator.userAgent
  * @returns - the common ua match table, if name is passed, then returns whether the terminal matches true/false
  */
-const client = (name = '', userAgent = navigator.userAgent) => {
+const client = (
+	name = '',
+	userAgent = navigator.userAgent
+): boolean | Record<string, boolean | RegExpMatchArray | null> => {
 	const userAgentL = userAgent.toLowerCase()
+
 	if (name) {
 		return userAgent.includes(name)
 	} else {
 		return {
-			IE: userAgentL.includes('msie') && !userAgentL.includes('opera'),
+			ANDROID: userAgent.includes('Android') || userAgent.includes('Adr'), // android or uc browser
 			GECKO: userAgentL.includes('gecko') && !userAgentL.includes('khtml'), // firefox
-			WEBKIT: userAgentL.includes('applewebkit'), // safari/chrome
-			OPERA: userAgentL.includes('opera') && userAgentL.includes('presto'), // opera
-			TRIDENT: userAgentL.includes('trident'), // IE
-			MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/),
+			IE: userAgentL.includes('msie') && !userAgentL.includes('opera'),
 			// MOBILEDEVICE: !!userAgentL.match(/iphone|android|phone|mobile|wap|netfront|x11|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i),
 			IOS: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // ios
-			ANDROID: userAgent.includes('Android') || userAgent.includes('Adr'), // android or uc browser
-			IPHONE: userAgent.includes('iPhone'), // iPhone or QQ HD browser
 			IPAD: userAgent.includes('iPad'), // iPad
+			IPHONE: userAgent.includes('iPhone'), // iPhone or QQ HD browser
+			MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/),
+			OPERA: userAgentL.includes('opera') && userAgentL.includes('presto'), // opera
+			QQ: userAgent.match(/\sQQ/i), // QQ
 			// WEBAPP: !userAgent.indexOf('Safari') > -1, // webapp
 			QQBROWSER: userAgent.includes('QQBrowser'), // QQ browser
+			TRIDENT: userAgentL.includes('trident'), // IE
+			WEBKIT: userAgentL.includes('applewebkit'), // safari/chrome
 			WEIXIN: userAgent.includes('MicroMessenger'), // weixin
-			QQ: userAgent.match(/\sQQ/i) // QQ
 		}
 	}
 }

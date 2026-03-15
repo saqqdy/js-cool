@@ -1,24 +1,28 @@
+/* eslint-disable no-template-curly-in-string */
 import { describe, expect, it } from 'vitest'
 import mapTemplate from '../src/mapTemplate'
 
 describe('mapTemplate', () => {
 	it('should replace ${} placeholders', () => {
 		const tmp = "My name is ${name}, I'm ${age} years old."
-		expect(mapTemplate(tmp, { name: 'saqqdy', age: 18 })).toBe(
+
+		expect(mapTemplate(tmp, { age: 18, name: 'saqqdy' })).toBe(
 			"My name is saqqdy, I'm 18 years old."
 		)
 	})
 
 	it('should replace {{}} placeholders', () => {
 		const tmp = "My name is {{name}}, I'm {{age}} years old."
-		expect(mapTemplate(tmp, { name: 'saqqdy', age: 18 })).toBe(
+
+		expect(mapTemplate(tmp, { age: 18, name: 'saqqdy' })).toBe(
 			"My name is saqqdy, I'm 18 years old."
 		)
 	})
 
 	it('should work with function', () => {
 		const tmp = "My name is ${name}, I'm ${age} years old."
-		expect(mapTemplate(tmp, (key: string) => ({ name: 'saqqdy', age: 28 })[key])).toBe(
+
+		expect(mapTemplate(tmp, (key: string) => ({ age: 28, name: 'saqqdy' })[key])).toBe(
 			"My name is saqqdy, I'm 28 years old."
 		)
 	})
@@ -35,3 +39,4 @@ describe('mapTemplate', () => {
 		expect(mapTemplate('Hello ${name}', {})).toBe('Hello ${name}')
 	})
 })
+/* eslint-enable no-template-curly-in-string */

@@ -3,6 +3,6 @@ import inNodeJs from '../src/inNodeJs'
 
 describe('inNodeJs', () => {
 	it('should be true in Node.js environment', () => {
-		expect(inNodeJs).toBe(true)
+		expect(inNodeJs).toBeTruthy()
 	})
 })

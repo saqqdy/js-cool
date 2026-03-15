@@ -25,14 +25,15 @@
  * @param string - escaped string
  * @returns - unescaped string
  */
-function unescape(string: string) {
+function unescape(string: string): string {
 	const map = {
+		'&#39;': "'",
 		'&amp;': '&',
-		'&lt;': '<',
 		'&gt;': '>',
+		'&lt;': '<',
 		'&quot;': '"',
-		'&#39;': "'"
 	}
+
 	return string.replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, m => map[m as keyof typeof map])
 }
 

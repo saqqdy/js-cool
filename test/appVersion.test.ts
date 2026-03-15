@@ -42,7 +42,8 @@ describe('appVersion', () => {
 	it('should work with boolean ua parameter', () => {
 		// In happy-dom, Chrome may or may not be in userAgent
 		const result = appVersion('Chrome', true)
+
 		// Result depends on actual userAgent
-		expect(result === null || typeof result === 'string').toBe(true)
+		expect(result === null || typeof result === 'string').toBeTruthy()
 	})
 })

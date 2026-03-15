@@ -19,8 +19,9 @@ function extendObject(target: ExtendObjectData, source: ExtendObjectData, deep: 
 function extendObject(target: ExtendArrayData, source: ExtendArrayData, deep: boolean): void
 function extendObject(target: ExtendData, source: ExtendData, deep: boolean): void {
 	let key: keyof typeof source
+
 	for (key in source)
-		if (source.hasOwnProperty(key)) {
+		if (Object.prototype.hasOwnProperty.call(source, key)) {
 			if (deep && (isPlainObject(source[key]) || isArray(source[key] as ExtendArrayData))) {
 				if (isPlainObject(source[key]) && !isPlainObject(target[key]))
 					target[key] = {} as ExtendObjectData
@@ -67,6 +68,7 @@ function extend(target: ExtendArrayData, ...args: ArrayOneMore<ExtendArrayData>)
 function extend(target: boolean, ...args: ArrayOneMore<ExtendArrayData>): ExtendArrayData
 function extend(target: boolean | ExtendData, ...args: ArrayOneMore<ExtendData>): ExtendData {
 	let deep = false
+
 	if (typeof target === 'boolean') {
 		deep = target
 		target = args.shift()!
@@ -74,6 +76,7 @@ function extend(target: boolean | ExtendData, ...args: ArrayOneMore<ExtendData>)
 	args.forEach(arg => {
 		extendObject(target as ExtendData, arg, deep)
 	})
+
 	return target
 }
 

@@ -28,7 +28,7 @@
  * @returns - length (Chinese characters count as 2)
  */
 function getCHSLength(str: string): number {
-	// eslint-disable-next-line no-control-regex
+	// eslint-disable-next-line no-control-regex, regexp/no-control-character
 	return str.replace(/[^\x00-\xFF]/g, '**').length
 }
 

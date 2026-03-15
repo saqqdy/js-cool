@@ -44,11 +44,12 @@ describe('addEvent', () => {
 		const existingHandler = vi.fn()
 		const element = {
 			events: {},
-			onclick: existingHandler
+			onclick: existingHandler,
 		} as any
 
 		delete element.addEventListener
 		const handler = vi.fn()
+
 		addEvent(element, 'click', handler)
 
 		expect(element.events.click[0]).toBe(existingHandler)
@@ -56,10 +57,12 @@ describe('addEvent', () => {
 
 	it('should handle events type initialization', () => {
 		const element = {} as any
+
 		delete element.addEventListener
 		delete element.events
 
 		const handler = vi.fn()
+
 		addEvent(element, 'click', handler)
 
 		expect(element.events).toBeDefined()

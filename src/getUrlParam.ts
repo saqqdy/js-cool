@@ -1,5 +1,5 @@
-import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
+import parseUrlParam from './parseUrlParam'
 
 /**
  * Get a single URL parameter (from the "location.search", before "#")
@@ -33,16 +33,19 @@ function getUrlParam(key: string, url: string): string | undefined
 function getUrlParam(key: string, url?: string): string | undefined {
 	if (!key) {
 		console.info('key is required')
+
 		return undefined
 	} else if (!url) {
 		if (!inBrowser) {
 			console.info('url is required')
+
 			return undefined
 		}
 		url = location.search
 	} else {
 		url = url.slice(url.indexOf('?')).split('#')[0]
 	}
+
 	return parseUrlParam(url)[key] as string | undefined
 }
 

@@ -26,7 +26,7 @@ import type { AnyFunction, AnyObject } from './types'
  * @param type - The type of the event. No need to add on
  * @param handler - Callback method.
  */
-function removeEvent(element: AnyObject, type: string, handler: AnyFunction) {
+function removeEvent(element: AnyObject, type: string, handler: AnyFunction): void {
 	if (element.removeEventListener) {
 		element.removeEventListener(type, handler, false)
 	} else {

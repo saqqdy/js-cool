@@ -32,9 +32,11 @@ import contains from './contains'
  */
 function unique<T = unknown>(arr: T[]): T[] {
 	const newArray: T[] = []
+
 	for (const el of arr) {
-		!contains(newArray, el) && newArray.push(el)
+		if (!contains(newArray, el)) newArray.push(el)
 	}
+
 	return newArray
 }
 

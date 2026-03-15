@@ -29,14 +29,15 @@
  * @param hasDot - whether to add ellipsis when truncated (default: false)
  * @returns - the intercepted string
  */
-function cutCHSString(str: string, len: number = str.length, hasDot = false) {
+function cutCHSString(str: string, len: number = str.length, hasDot = false): string {
 	if (!str) return ''
 	let newLength = 0,
 		newStr = '',
 		singleChar = ''
-	// eslint-disable-next-line no-control-regex
+	// eslint-disable-next-line no-control-regex, regexp/no-control-character
 	const chineseRegex = /[^\x00-\xFF]/g
 	const strLength = str.replace(chineseRegex, '**').length
+
 	for (let i = 0; i < strLength; i++) {
 		singleChar = str.charAt(i).toString()
 		if (singleChar.match(chineseRegex) != null) {
@@ -53,6 +54,7 @@ function cutCHSString(str: string, len: number = str.length, hasDot = false) {
 	if (hasDot && strLength > len) {
 		newStr += '...'
 	}
+
 	return newStr
 }
 

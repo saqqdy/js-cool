@@ -1,7 +1,7 @@
 export interface SearchKeySet {
+	[prop: string]: any
 	childName: string
 	keyName: string
-	[prop: string]: any
 }
 
 /**
@@ -39,9 +39,15 @@ export interface SearchKeySet {
  * @param number - optional Number of lookups, if not passed, query all
  * @returns - the queried array
  */
-function searchObject(tree: object | any[], expression: any, keySet: SearchKeySet, number = 0) {
+function searchObject(
+	tree: object | any[],
+	expression: any,
+	keySet: SearchKeySet,
+	number = 0
+): any[] {
 	const retNode: any[] = []
 	const isLimit = number > 0
+
 	if (!keySet || typeof keySet !== 'object') {
 		keySet = { childName: 'child', keyName: 'name' }
 	}
@@ -54,14 +60,16 @@ function searchObject(tree: object | any[], expression: any, keySet: SearchKeySe
 	 * @param expression - expression
 	 * @returns Nodes
 	 */
-	function deepSearch(tree: any, expression: any) {
+	function deepSearch(tree: any, expression: any): void {
 		for (let i = 0; i < tree.length; i++) {
 			if (tree[i][keySet.childName] && tree[i][keySet.childName].length > 0) {
 				deepSearch(tree[i][keySet.childName], expression)
 			}
 			let result = true
+
 			if (typeof expression === 'object') {
 				const keys = Object.keys(expression)
+
 				for (const key of keys) {
 					if (expression[key] !== tree[i][key]) {
 						result = false
@@ -78,6 +86,7 @@ function searchObject(tree: object | any[], expression: any, keySet: SearchKeySe
 				if (number > 0) {
 					if (result) {
 						const treeNode = { ...tree[i] }
+
 						delete treeNode[keySet.childName]
 						retNode.push(treeNode)
 						number--
@@ -88,6 +97,7 @@ function searchObject(tree: object | any[], expression: any, keySet: SearchKeySe
 			} else {
 				if (result) {
 					const treeNode = { ...tree[i] }
+
 					delete treeNode[keySet.childName]
 					retNode.push(treeNode)
 				}
@@ -95,6 +105,7 @@ function searchObject(tree: object | any[], expression: any, keySet: SearchKeySe
 		}
 	}
 	deepSearch(tree, expression)
+
 	return retNode
 }
 

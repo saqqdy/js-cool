@@ -36,8 +36,10 @@ function isNumberBrowser(userAgent?: string): boolean {
 function isNumberBrowserByUserAgent(userAgent?: string): boolean {
 	userAgent = userAgent || navigator.userAgent
 	const ua = userAgent.toLowerCase()
+
 	if (ua.includes('360se') || ua.includes('360ee')) return true
 	else if (userAgent.includes('Safari') && ua.includes('wow64')) return true
+
 	return false
 }
 
@@ -48,12 +50,13 @@ function isNumberBrowserByUserAgent(userAgent?: string): boolean {
  * @param filename - file name
  * @returns - result
  */
-function isNumberBrowserByDll(filename: string) {
+function isNumberBrowserByDll(filename: string): boolean {
 	if (navigator.userAgent.includes('Safari')) {
 		for (const key in navigator.plugins) {
 			if (navigator.plugins[key].filename === filename) return true
 		}
 	}
+
 	return false
 }
 
@@ -65,11 +68,13 @@ function isNumberBrowserByDll(filename: string) {
  * @param value - mime value
  * @returns - result
  */
-function isNumberBrowserByMimeTypes(option: string, value: string) {
+function isNumberBrowserByMimeTypes(option: string, value: string): boolean {
 	const mimeTypes: any = navigator.mimeTypes
+
 	for (const mt in mimeTypes) {
 		if (mimeTypes[mt][option] === value) return true
 	}
+
 	return false
 }
 

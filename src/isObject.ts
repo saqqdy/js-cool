@@ -22,7 +22,7 @@ import getType from './getType'
  * @param target - any target
  * @returns - target is Object
  */
-function isObject(target: any): target is Object {
+function isObject(target: any): target is object {
 	return target && getType(target) === 'object'
 }
 

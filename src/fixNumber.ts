@@ -30,12 +30,13 @@ import pattern from './pattern'
  * @param n - the number of decimal places to keep, default is 2
  * @returns - the new number (not padded with zeros)
  */
-function fixNumber(number: string | number, n = 2) {
-	const reg = new RegExp('^(.*\\..{' + n + '}).*$')
-	number = '' + number
+function fixNumber(number: string | number, n = 2): number {
+	const reg = new RegExp(`^(.*\\..{${n}}).*$`)
+
+	number = `${number}`
 	if (!pattern.number.test(number)) throw new Error('"number" is not a number')
 
-	return parseFloat(number.replace(reg, '$1'))
+	return Number.parseFloat(number.replace(reg, '$1'))
 }
 
 export default fixNumber

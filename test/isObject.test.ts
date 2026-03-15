@@ -3,15 +3,15 @@ import isObject from '../src/isObject'
 
 describe('isObject', () => {
 	it('should return true for plain object', () => {
-		expect(isObject({})).toBe(true)
+		expect(isObject({})).toBeTruthy()
 	})
 
 	it('should return true for object with properties', () => {
-		expect(isObject({ a: 1, b: 2 })).toBe(true)
+		expect(isObject({ a: 1, b: 2 })).toBeTruthy()
 	})
 
 	it('should return false for array', () => {
-		expect(isObject([])).toBe(false)
+		expect(isObject([])).toBeFalsy()
 	})
 
 	it('should return falsy for null', () => {
@@ -23,8 +23,8 @@ describe('isObject', () => {
 	})
 
 	it('should return false for primitive values', () => {
-		expect(isObject(123)).toBe(false)
-		expect(isObject('string')).toBe(false)
-		expect(isObject(true)).toBe(false)
+		expect(isObject(123)).toBeFalsy()
+		expect(isObject('string')).toBeFalsy()
+		expect(isObject(true)).toBeFalsy()
 	})
 })

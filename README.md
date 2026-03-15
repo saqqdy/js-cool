@@ -301,7 +301,10 @@ randomString({ length: 16, charTypes: ['lowercase', 'number', 'special'] })
 // 'a1@b2#c3$d4%e5^f6'
 
 // All char types
-randomString({ length: 20, charTypes: ['uppercase', 'lowercase', 'number', 'special'] })
+randomString({
+  length: 20,
+  charTypes: ['uppercase', 'lowercase', 'number', 'special'],
+})
 // 'A1a@B2b#C3c$D4d%E5e^'
 
 // Exclude confusing characters (o, O, 0, l, 1, I)
@@ -309,7 +312,11 @@ randomString({ length: 16, noConfuse: true })
 // 'aB3dE7fG9hJ2kL5m' (no o, O, 0, l, 1, I)
 
 // Strict mode: must include at least one of each char type
-randomString({ length: 16, charTypes: ['uppercase', 'lowercase', 'number'], strict: true })
+randomString({
+  length: 16,
+  charTypes: ['uppercase', 'lowercase', 'number'],
+  strict: true,
+})
 // Guaranteed to have at least 1 uppercase, 1 lowercase, 1 number
 
 // Old API style (still supported)
@@ -562,8 +569,8 @@ import { getProperty, setProperty } from 'js-cool'
 const obj = {
   a: {
     b: [{ c: 1 }, { c: 2 }],
-    d: { e: 'hello' }
-  }
+    d: { e: 'hello' },
+  },
 }
 
 // Get property
@@ -599,8 +606,8 @@ const tree = {
   name: 'root',
   children: [
     { id: 2, name: 'child1', children: [] },
-    { id: 3, name: 'child2', children: [{ id: 4, name: 'grandchild' }] }
-  ]
+    { id: 3, name: 'child2', children: [{ id: 4, name: 'grandchild' }] },
+  ],
 }
 
 // Search by predicate
@@ -608,13 +615,15 @@ searchObject(tree, item => item.id === 3, { children: 'children' })
 // [{ id: 3, name: 'child2', ... }]
 
 // Search by name
-searchObject(tree, item => item.name.includes('child'), { children: 'children' })
+searchObject(tree, item => item.name.includes('child'), {
+  children: 'children',
+})
 // [{ id: 2, ... }, { id: 3, ... }, { id: 4, ... }]
 
 // Custom key set
 searchObject(tree, item => item.id > 2, {
   children: 'children',
-  id: 'id'
+  id: 'id',
 })
 ```
 
@@ -631,7 +640,7 @@ import {
   isObject,
   isPlainObject,
   isRegExp,
-  isWindow
+  isWindow,
 } from 'js-cool'
 
 // isArray
@@ -950,7 +959,7 @@ setCookie('name', 'value', {
   path: '/',
   domain: '.example.com',
   secure: true,
-  sameSite: 'Strict'
+  sameSite: 'Strict',
 })
 
 // Get single cookie
@@ -1326,7 +1335,7 @@ mapTemplate('Hello, {name}!', { name: 'World' })
 mapTemplate('${greeting}, ${name}! You have ${count} messages.', {
   greeting: 'Hello',
   name: 'John',
-  count: 5
+  count: 5,
 })
 // 'Hello, John! You have 5 messages.'
 
@@ -1343,7 +1352,7 @@ import { sorter } from 'js-cool'
 const users = [
   { name: 'Bob', age: 30 },
   { name: 'Alice', age: 25 },
-  { name: 'Charlie', age: 35 }
+  { name: 'Charlie', age: 35 },
 ]
 
 // Sort by string field
@@ -1440,7 +1449,9 @@ mountStyle(`
 
 // Load image
 await mountImg('https://example.com/image.png')
-const img = await mountImg('https://example.com/image.png', { crossOrigin: 'anonymous' })
+const img = await mountImg('https://example.com/image.png', {
+  crossOrigin: 'anonymous',
+})
 
 // Generic resource loader
 await loadSource({ type: 'js', url: 'https://example.com/script.js' })
@@ -1467,7 +1478,7 @@ import {
   blobToUrl,
   fileToBase64,
   svgToBlob,
-  urlToBlob
+  urlToBlob,
 } from 'js-cool'
 
 // ArrayBuffer conversions
@@ -1514,7 +1525,7 @@ CSVToArray(csv)
 arrayToCSV([
   ['name', 'age'],
   ['John', 30],
-  ['Jane', 25]
+  ['Jane', 25],
 ])
 // 'name,age\nJohn,30\nJane,25'
 
@@ -1529,7 +1540,7 @@ CSVToJSON(csv)
 JSONToCSV(
   [
     { name: 'John', age: 30 },
-    { name: 'Jane', age: 25 }
+    { name: 'Jane', age: 25 },
   ],
   ['name', 'age']
 )

@@ -45,7 +45,7 @@
  * @param compare - compare version
  * @return 1/0/-1
  */
-function compareVersion(input: string, compare: string) {
+function compareVersion(input: string, compare: string): 1 | 0 | -1 {
 	const VER_TYPES = ['alpha', 'beta', 'rc']
 	const [inputVer, inputSubVer = ''] = input.split('-')
 	const [compareVer, compareSubVer = ''] = compare.split('-')
@@ -61,8 +61,8 @@ function compareVersion(input: string, compare: string) {
 	}
 
 	for (let i = 0; i < len; i++) {
-		const num1 = parseInt(v1[i])
-		const num2 = parseInt(v2[i])
+		const num1 = Number.parseInt(v1[i])
+		const num2 = Number.parseInt(v2[i])
 
 		if (num1 > num2) return 1
 		else if (num1 < num2) return -1
@@ -74,10 +74,12 @@ function compareVersion(input: string, compare: string) {
 
 	const inputSubArr = inputSubVer.split('.')
 	const compareSubArr = compareSubVer.split('.')
+
 	// Priority: rc(4) > beta(3) > alpha(2) > unknown(1)
 	// indexOf returns -1 for unknown, so we use: indexOf + 2 (gives 1 for unknown)
-	inputSubArr[0] = VER_TYPES.indexOf(inputSubArr[0]) + 2 + ''
-	compareSubArr[0] = VER_TYPES.indexOf(compareSubArr[0]) + 2 + ''
+	inputSubArr[0] = `${VER_TYPES.indexOf(inputSubArr[0]) + 2}`
+	compareSubArr[0] = `${VER_TYPES.indexOf(compareSubArr[0]) + 2}`
+
 	return compareVersion(inputSubArr.join('.'), compareSubArr.join('.'))
 }
 

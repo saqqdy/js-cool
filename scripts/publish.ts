@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { execSync } from 'node:child_process'
 import { version } from '../package.json'
 
 const [, , ...args] = process.argv
@@ -16,6 +16,6 @@ else if (IS_TEST) {
 }
 
 execSync(command, {
-	stdio: 'inherit'
+	stdio: 'inherit',
 })
 console.info('Published js-cool')

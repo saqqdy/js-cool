@@ -19,8 +19,8 @@
  * @param string - the string to be converted
  * @returns - the converted string
  */
-function dash2Camel(string: string) {
-	return string.replace(/[\-]{1,1}([a-z]{1,1})/g, function () {
+function dash2Camel(string: string): string {
+	return string.replace(/-([a-z])/g, function () {
 		// eslint-disable-next-line prefer-rest-params
 		return arguments[1].toLocaleUpperCase()
 	})

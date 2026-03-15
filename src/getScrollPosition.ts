@@ -29,7 +29,7 @@
  * @since 1.0.2
  * @returns - 'top', 'bottom', or undefined
  */
-function getScrollPosition() {
+function getScrollPosition(): 'top' | 'bottom' | undefined {
 	const innerH =
 		window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 	const docScrollTop = document.documentElement.scrollTop
@@ -38,6 +38,7 @@ function getScrollPosition() {
 	const bodyScrollHeight = document.body.scrollHeight
 	let scrollT = 0,
 		scrollH = 0
+
 	if (docScrollTop === 0) {
 		scrollT = bodyScrollTop
 		scrollH = bodyScrollHeight

@@ -14,12 +14,13 @@ describe('copy', () => {
 		const result = copy('test text')
 
 		expect(document.execCommand).toHaveBeenCalledWith('copy')
-		expect(result).toBe(true)
+		expect(result).toBeTruthy()
 	})
 
 	it('should return undefined in non-browser environment', () => {
 		// This test is actually running in happy-dom, so copy should work
 		const result = copy('test')
+
 		expect(result).toBeDefined()
 	})
 

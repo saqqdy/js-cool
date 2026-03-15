@@ -20,7 +20,7 @@
  * @param mime - image mime, default: image/png
  * @returns - blob
  */
-function arrayBufferToBlob(input: ArrayBuffer, mime = 'image/png') {
+function arrayBufferToBlob(input: ArrayBuffer, mime = 'image/png'): Blob {
 	return new Blob([input], { type: mime })
 }
 

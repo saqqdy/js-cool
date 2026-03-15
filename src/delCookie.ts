@@ -17,12 +17,14 @@ import getCookie from './getCookie'
  * @since 1.0.2
  * @param name - cookie name to delete
  */
-function delCookie(name: string) {
+function delCookie(name: string): void {
 	const e = new Date()
+
 	e.setTime(e.getTime() - 1)
 	const cval = getCookie(name)
+
 	if (cval !== null) {
-		document.cookie = name + '=' + cval + ';expires=' + e.toUTCString() + ';path=/'
+		document.cookie = `${name}=${cval};expires=${e.toUTCString()};path=/`
 	}
 }
 

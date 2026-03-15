@@ -14,9 +14,10 @@ function getAppVersion(
 	userAgent?: string
 ): string | boolean | null {
 	userAgent = userAgent || navigator.userAgent
-	const reg = new RegExp(appName + '\\/([\\d\\.]+)', 'i')
+	const reg = new RegExp(`${appName}\\/([\\d\\.]+)`, 'i')
 	const isApp = userAgent.includes(appName)
 	const ver = userAgent.match(reg)
+
 	// withApp = typeof(withApp) != "undefined" ? withApp : false;
 	if (ver) {
 		if (withApp) {

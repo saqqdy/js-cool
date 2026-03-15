@@ -1,13 +1,13 @@
-import { spawn } from 'child_process'
+import { spawn } from 'node:child_process'
 import { cp } from '@node-kit/extra.fs'
 
 const [, , ...args] = process.argv
 
-async function run() {
+async function run(): Promise<void> {
 	await Promise.all([build(), copy()])
 }
 
-async function build() {
+async function build(): Promise<void> {
 	await spawn(
 		'rollup',
 		['-c', 'build/rollup.config.ts', '--configPlugin', '@rollup/plugin-typescript'].concat(
@@ -17,7 +17,7 @@ async function build() {
 	)
 }
 
-async function copy() {
+async function copy(): Promise<void> {
 	await cp('src/index.mjs', 'dist')
 }
 

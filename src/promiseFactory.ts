@@ -47,7 +47,7 @@ function promiseFactory<T extends object>(
 			onRejected?: (reason: any) => TResult2 | PromiseLike<TResult2>
 		): PromiseLike<TResult1 | TResult2> {
 			return resolver().then(onFulfilled, onRejected)
-		}
+		},
 	}
 }
 

@@ -7,20 +7,12 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export const banner =
-	'/*!\n' +
-	' * ' +
-	pkg.name +
-	' v' +
-	pkg.version +
-	'\n' +
-	' * ' +
-	pkg.description +
-	'\n' +
-	' * (c) 2021-' +
-	new Date().getFullYear() +
-	' saqqdy \n' +
-	' * Released under the MIT License.\n' +
-	' */'
+	`/*!\n` +
+	` * ${pkg.name} v${pkg.version}\n` +
+	` * ${pkg.description}\n` +
+	` * (c) 2021-${new Date().getFullYear()} saqqdy \n` +
+	` * Released under the MIT License.\n` +
+	` */`
 
 export const externals = {}
 
@@ -39,19 +31,17 @@ export const extensions = [
 	'.es',
 	'.json',
 	'.less',
-	'.css'
+	'.css',
 ]
 
 export const alias = {
 	'@': resolve(__dirname, '..', 'src'),
-	'js-cool': resolve(__dirname, '..')
+	'js-cool': resolve(__dirname, '..'),
 }
 
-export const reporter = (opt: any, outputOptions: any, info: any) =>
+export const reporter = (opt: any, outputOptions: any, info: any): string =>
 	`${chalk.cyan(
 		chalk.bold(
 			outputOptions.file ? `${outputOptions.file.split('src/').pop()}` : info.fileName || ''
 		)
-	)}: bundle size ${chalk.yellow(info.bundleSize)} -> minified ${chalk.green(
-		(info.minSize && `${info.minSize}`) || ''
-	)}`
+	)}: bundle size ${chalk.yellow(info.bundleSize)} -> minified ${chalk.green((info.minSize && `${info.minSize}`) || '')}`

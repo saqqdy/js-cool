@@ -32,6 +32,7 @@ function spliceUrlParam<T extends Record<string, unknown>>(
 ): string {
 	if (!params) {
 		console.info('params is required')
+
 		return ''
 	}
 	let encode = false,
@@ -45,14 +46,17 @@ function spliceUrlParam<T extends Record<string, unknown>>(
 	}
 
 	const result: string[] = []
+
 	for (key in params) {
 		if (typeof key === 'string') {
-			const val = '' + (covert ? (params[key] ?? '') : params[key])
+			const val = `${covert ? (params[key] ?? '') : params[key]}`
+
 			result.push(`${key}=${encode ? encodeURIComponent(val) : val}`)
 		}
 	}
 
-	if (withQuestionsMark) return '?' + result.join('&')
+	if (withQuestionsMark) return `?${result.join('&')}`
+
 	return result.join('&')
 }
 

@@ -12,7 +12,8 @@ describe('cutCHSString', () => {
 
 	it('should add dots when hasDot is true', () => {
 		const result = cutCHSString('测试字符串', 4, true)
-		expect(result.endsWith('...')).toBe(true)
+
+		expect(result.endsWith('...')).toBeTruthy()
 	})
 
 	it('should handle pure English', () => {

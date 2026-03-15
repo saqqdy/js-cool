@@ -33,7 +33,7 @@ const JSONToCSV = (arr: any[], columns: any[], delimiter = ','): string =>
 				(acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
 				''
 			)
-		)
+		),
 	].join('\n')
 
 export default JSONToCSV

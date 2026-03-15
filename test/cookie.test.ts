@@ -2,10 +2,10 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it } from 'vitest'
-import setCookie from '../src/setCookie'
-import getCookie from '../src/getCookie'
 import delCookie from '../src/delCookie'
+import getCookie from '../src/getCookie'
 import getCookies from '../src/getCookies'
+import setCookie from '../src/setCookie'
 
 describe('cookie functions', () => {
 	beforeEach(() => {

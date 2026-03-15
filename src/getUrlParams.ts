@@ -1,5 +1,5 @@
-import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
+import parseUrlParam from './parseUrlParam'
 
 /**
  * Get all URL parameters (from the "location.search", before "#")
@@ -38,6 +38,7 @@ function getUrlParams(
 	if (!url || typeof url === 'boolean') {
 		if (!inBrowser) {
 			console.info('url is required')
+
 			return null
 		}
 		typeof url === 'boolean' && (covert = url)
@@ -45,6 +46,7 @@ function getUrlParams(
 	} else {
 		url = url.slice(url.indexOf('?')).split('#')[0]
 	}
+
 	return parseUrlParam(url, covert)
 }
 

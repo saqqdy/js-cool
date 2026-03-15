@@ -27,20 +27,22 @@ import inBrowser from './inBrowser'
  * @param domain - key string, default: location.host
  * @returns - fingerprint string or null in non-browser environment
  */
-function fingerprint(domain?: string) {
+function fingerprint(domain?: string): string | null {
 	if (!inBrowser) return null
 	if (!domain) domain = location.host
 
-	function bin2hex(s: string) {
+	function bin2hex(s: string): string {
 		let i,
 			l,
 			n,
 			o = ''
+
 		s += ''
 		for (i = 0, l = s.length; i < l; i++) {
 			n = s.charCodeAt(i).toString(16)
-			o += n.length < 2 ? '0' + n : n
+			o += n.length < 2 ? `0${n}` : n
 		}
+
 		return o
 	}
 

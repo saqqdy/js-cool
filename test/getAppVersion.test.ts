@@ -23,7 +23,7 @@ describe('getAppVersion', () => {
 		const ua = 'Mozilla/5.0 Chrome Safari/537.36'
 		const result = getAppVersion('Chrome', false, ua)
 
-		expect(result).toBe(false)
+		expect(result).toBeFalsy()
 	})
 
 	it('should return null when app not found', () => {

@@ -25,7 +25,7 @@
  * @param e - dom's event object
  * @returns - false
  */
-function stopBubble(e: Event) {
+function stopBubble(e: Event): boolean {
 	if (e && e.stopPropagation) {
 		// Firefox
 		e.stopPropagation() // e.preventDefault();
@@ -33,6 +33,7 @@ function stopBubble(e: Event) {
 		// IE
 		e.cancelBubble = true // e.returnValue = false;
 	}
+
 	return false
 }
 

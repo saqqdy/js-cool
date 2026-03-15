@@ -80,6 +80,7 @@ describe('browserVersion', () => {
 
 	it('should use navigator.userAgent in browser', () => {
 		const result = browserVersion()
+
 		expect(result).toBeDefined()
 	})
 })

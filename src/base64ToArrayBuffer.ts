@@ -23,7 +23,7 @@ import inBrowser from './inBrowser'
  * @param input - base64 string (with or without data URL prefix)
  * @returns - arrayBuffer (Uint8Array in browser, Buffer in Node.js)
  */
-function base64ToArrayBuffer(input: string) {
+function base64ToArrayBuffer(input: string): Uint8Array | Buffer {
 	let [pre, data] = input.split(',')
 
 	if (!pre) throw new Error('Not a valid base64')
@@ -36,11 +36,14 @@ function base64ToArrayBuffer(input: string) {
 		const bstr = atob(data)
 		let len = bstr.length
 		const u8Array = new Uint8Array(len)
+
 		while (len--) {
 			u8Array[len] = bstr.charCodeAt(len)
 		}
+
 		return u8Array
 	}
+
 	return Buffer.from(data, 'base64')
 }
 

@@ -31,7 +31,7 @@
  * @param target - target
  * @returns type string
  */
-function getType<T = any>(target: T) {
+function getType<T = any>(target: T): string {
 	const type: Record<
 		string,
 		| 'array'
@@ -54,30 +54,31 @@ function getType<T = any>(target: T) {
 		| 'error'
 	> = {
 		'[object Array]': 'array',
+		'[object AsyncFunction]': 'function',
 		'[object Boolean]': 'boolean',
 		'[object Date]': 'date',
-		'[object Promise]': 'promise',
+		'[object Error]': 'error',
 		'[object Function]': 'function', // Function | Class
-		'[object AsyncFunction]': 'function',
 		'[object GeneratorFunction]': 'function', // Generator
-		'[object Math]': 'math', // Math
-		'[object Window]': 'window', // Window
-		'[object Navigator]': 'navigator', // Navigator
 		'[object global]': 'global', // global
 		'[object HTMLDocument]': 'document', // document
-		'[object Symbol]': 'symbol',
+		'[object Math]': 'math', // Math
+		'[object Navigator]': 'navigator', // Navigator
+		'[object Null]': 'null',
 		'[object Number]': 'number',
 		'[object Object]': 'object', // Object | Proxy
+		'[object Promise]': 'promise',
 		'[object RegExp]': 'regexp',
 		'[object String]': 'string',
+		'[object Symbol]': 'symbol',
 		'[object Undefined]': 'undefined',
-		'[object Null]': 'null',
-		'[object Error]': 'error'
+		'[object Window]': 'window', // Window
 	}
 
 	if (target === null) return 'null'
 	else if (typeof target === 'object' || typeof target === 'function')
 		return type[Object.prototype.toString.call(target) as keyof typeof type] || 'object'
+
 	return typeof target
 }
 

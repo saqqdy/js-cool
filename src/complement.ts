@@ -30,6 +30,7 @@ import union from './union'
 function complement<T = unknown>(...args: T[][]): T[] {
 	const intersectArray = intersect(...args) // Intersection set
 	const unionArray = union(...args) // Complementary set
+
 	return unionArray.filter(item => !contains(intersectArray, item))
 }
 

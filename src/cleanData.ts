@@ -29,13 +29,14 @@ import isArray from './isArray'
  * @param nullFix - optional, the value returned if there is no corresponding property, the default does not return the property
  * @returns - the cleaned object
  */
-function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
+function cleanData(data: any, map: any[] | AnyObject, nullFix?: any): any {
 	const result: any = {}
+
 	if (!data) return
 	if (!map) return data
 	if (isArray(map)) {
 		map.forEach(key => {
-			if (data.hasOwnProperty(key)) {
+			if (Object.prototype.hasOwnProperty.call(data, key)) {
 				result[key] = data[key]
 			} else if (typeof nullFix !== 'undefined') {
 				result[key] = nullFix
@@ -47,7 +48,7 @@ function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
 				result[key] = map[key](data)
 			} else {
 				if (!map[key]) map[key] = key
-				if (data.hasOwnProperty(map[key])) {
+				if (Object.prototype.hasOwnProperty.call(data, map[key])) {
 					result[key] = data[map[key]]
 				} else if (typeof nullFix !== 'undefined') {
 					result[key] = nullFix
@@ -55,6 +56,7 @@ function cleanData(data: any, map: any[] | AnyObject, nullFix?: any) {
 			}
 		}
 	}
+
 	return result
 }
 

@@ -31,7 +31,7 @@ import shuffle from './shuffle'
  * @param noZero - Generate integers that are not zero, default: true
  * @returns - array of random integers
  */
-function randomNumbers(n?: number, sum?: number, noZero?: boolean) {
+function randomNumbers(n?: number, sum?: number, noZero?: boolean): number[] {
 	n ??= 1
 	sum ??= 100
 	noZero ??= true
@@ -42,12 +42,15 @@ function randomNumbers(n?: number, sum?: number, noZero?: boolean) {
 	// const _max = noZero ? Math.round(sum / n) : Math.ceil(sum / n)
 	const _max = Math.round(sum / n)
 	const numbers = []
+
 	while (--n > 0) {
 		const num = randomNumber(noZero ? 1 : 0, _max)
+
 		_reached += num
 		numbers.push(num)
 	}
 	numbers.push(sum - _reached)
+
 	return shuffle(numbers)
 }
 

@@ -37,14 +37,17 @@ function getProperty(target: any, prop: string | { (): string }, defaultValue?: 
 	if (!prop) return target
 	if (prop instanceof Function) prop = prop()
 	const arr = prop.split('.')
+
 	for (let p of arr) {
 		let index = -1
+
 		// eslint-disable-next-line no-sequences
-		p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''))
+		p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = Number.parseInt(num)), ''))
 		if (p) target = target?.[p]
 		if (index !== -1 && target) target = target?.[index]
 	}
 	if (defaultValue === undefined) return target
+
 	// undefined | null | NaN => defaultValue
 	// eslint-disable-next-line eqeqeq
 	return target || target == false ? target : defaultValue

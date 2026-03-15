@@ -2,9 +2,9 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it } from 'vitest'
-import setSession from '../src/setSession'
-import getSession from '../src/getSession'
 import delSession from '../src/delSession'
+import getSession from '../src/getSession'
+import setSession from '../src/setSession'
 
 describe('setSession & getSession & delSession', () => {
 	beforeEach(() => {

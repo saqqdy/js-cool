@@ -32,7 +32,10 @@
  * @param url - file url or filename
  * @returns object with suffix and type properties
  */
-function getFileType(url: string) {
+function getFileType(url: string): {
+	suffix: string
+	type: 'image' | 'txt' | 'excel' | 'word' | 'pdf' | 'ppt' | 'zip' | 'video' | 'audio' | 'other'
+} {
 	if (!url) throw new Error('"url" is required')
 
 	const _arr = url.split('.')
@@ -62,7 +65,7 @@ function getFileType(url: string) {
 
 	return {
 		suffix,
-		type
+		type,
 	}
 }
 

@@ -2,9 +2,9 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it } from 'vitest'
-import setCache from '../src/setCache'
-import getCache from '../src/getCache'
 import delCache from '../src/delCache'
+import getCache from '../src/getCache'
+import setCache from '../src/setCache'
 
 describe('setCache & getCache & delCache', () => {
 	beforeEach(() => {

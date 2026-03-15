@@ -19,13 +19,14 @@
  * @param utftext - the string to be decoded
  * @returns decoded string
  */
-function decodeUtf8(utftext: string) {
+function decodeUtf8(utftext: string): string {
 	let string = '',
 		i = 0,
 		c = 0,
 		// c1 = 0,
 		c2 = 0,
 		c3 = 0
+
 	while (i < utftext.length) {
 		c = utftext.charCodeAt(i)
 		if (c < 128) {
@@ -42,6 +43,7 @@ function decodeUtf8(utftext: string) {
 			i += 3
 		}
 	}
+
 	return string
 }
 

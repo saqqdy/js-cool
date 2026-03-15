@@ -1,7 +1,7 @@
 export interface PunctualTimerReturns {
+	clear: () => void
 	count: number
 	timer: number | null
-	clear: () => void
 }
 
 /**
@@ -36,27 +36,32 @@ function punctualTimer<TArgs extends any[]>(
 ): PunctualTimerReturns {
 	handler()
 	let _this: PunctualTimerReturns = {
-		count: 1,
-		timer: null,
 		clear() {
 			if (this.timer) {
 				clearTimeout(this.timer)
 				this.timer = null
 			}
 			_this = null as any
+
 			return _this
-		}
+		},
+		count: 1,
+		timer: null,
 	}
 	const start = new Date().getTime()
-	const instance = () => {
+	const instance = (): void => {
 		handler()
 		const ideal = _this.count * delay
 		const real = new Date().getTime() - start
+
 		_this.count++
 		const diff = real - ideal
+
 		_this.timer = setTimeout(instance, delay - diff, ...args) // Repair by system time
 	}
+
 	_this.timer = setTimeout(instance, delay, ...args)
+
 	return _this
 }
 

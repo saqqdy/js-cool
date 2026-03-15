@@ -5,8 +5,8 @@ import shuffle from './shuffle'
 export type RandomStringCharType = 'uppercase' | 'lowercase' | 'number' | 'special'
 
 export interface RandomStringOptions {
-	length?: number
 	charTypes?: RandomStringCharType | ArrayOneMore<RandomStringCharType>
+	length?: number
 	/**
 	 * Elimination of confusing characters: I,L,O,U,V,i,l,o,u,v,0,1,9
 	 */
@@ -88,6 +88,7 @@ function randomString(
 		noConfuse = false,
 		strict = false,
 		result = ''
+
 	if (typeof len !== 'number') {
 		options = len
 		len = typeof options === 'object' ? (options.length ?? 32) : 32 // default
@@ -103,10 +104,10 @@ function randomString(
 	}
 
 	const chars: Record<RandomStringCharType, string> = {
-		uppercase: noConfuse ? 'ABCDEFGHJKMNPQRSTWXYZ' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 		lowercase: noConfuse ? 'abcdefghjkmnpqrstwxyz' : 'abcdefghijklmnopqrstuvwxyz',
 		number: noConfuse ? '2345678' : '0123456789',
-		special: '~!@#$%^&*_+|:-=[];,.' // '~!@#$%^&*()_+{}|:"<>?`-=[]\\;\',./'
+		special: '~!@#$%^&*_+|:-=[];,.', // '~!@#$%^&*()_+{}|:"<>?`-=[]\\;\',./'
+		uppercase: noConfuse ? 'ABCDEFGHJKMNPQRSTWXYZ' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 	}
 
 	if (!strict) return generateString(len, charTypes.map(charType => chars[charType]).join(''))
@@ -127,12 +128,14 @@ function randomString(
  * @param chars - chars
  * @returns - result
  */
-function generateString(len: number, chars: string) {
+function generateString(len: number, chars: string): string {
 	let str = ''
 	const _maxPos = chars.length
+
 	for (let i = 0; i < len; i++) {
 		str += chars.charAt(Math.floor(Math.random() * _maxPos))
 	}
+
 	return str
 }
 

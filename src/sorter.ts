@@ -32,8 +32,11 @@
  * @param options - An object adjusting the output format.
  * @returns - compare function for Array.sort()
  */
-function sorter(locales?: string | string[], options?: Intl.CollatorOptions) {
-	return function <T = string, P = string>(a: T, b: P) {
+function sorter(
+	locales?: string | string[],
+	options?: Intl.CollatorOptions
+): (a: any, b: any) => number {
+	return function <T = string, P = string>(a: T, b: P): number {
 		const canUse = canUseLocales()
 
 		return canUse
@@ -47,12 +50,13 @@ function sorter(locales?: string | string[], options?: Intl.CollatorOptions) {
  *
  * @returns - result
  */
-function canUseLocales() {
+function canUseLocales(): boolean {
 	try {
 		''.localeCompare('', 'i')
 	} catch (err: any) {
 		return err.name === 'RangeError'
 	}
+
 	return false
 }
 

@@ -2,9 +2,9 @@
  * @vitest-environment happy-dom
  */
 import { describe, expect, it } from 'vitest'
+import base64ToArrayBuffer from '../src/base64ToArrayBuffer'
 import base64ToBlob from '../src/base64ToBlob'
 import base64ToFile from '../src/base64ToFile'
-import base64ToArrayBuffer from '../src/base64ToArrayBuffer'
 import fileToBase64 from '../src/fileToBase64'
 
 describe('base64ToBlob', () => {
@@ -19,6 +19,7 @@ describe('base64ToBlob', () => {
 	it('should convert base64 without mime type', () => {
 		// Test with just base64 data (no prefix)
 		const result = base64ToBlob('SGVsbG8gV29ybGQ=')
+
 		expect(result).toBeInstanceOf(Blob)
 	})
 })
@@ -35,6 +36,7 @@ describe('base64ToFile', () => {
 
 	it('should convert base64 without mime type', () => {
 		const result = base64ToFile('SGVsbG8gV29ybGQ=', 'test.txt')
+
 		expect(result).toBeInstanceOf(File)
 		expect(result.name).toBe('test.txt')
 	})

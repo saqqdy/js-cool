@@ -25,6 +25,7 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
  */
 function base64ToFile(input: string, fileName: string): File {
 	const [pre] = input.split(',')
+
 	if (!pre) throw new Error('Not a valid base64')
 
 	const mime = pre.match(/:(.*?);/)?.[1]

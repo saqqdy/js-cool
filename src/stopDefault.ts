@@ -30,12 +30,13 @@
  * @param e - dom's event object
  * @returns - false
  */
-function stopDefault(e: Event) {
+function stopDefault(e: Event): boolean {
 	if (e && e.preventDefault) {
 		e.preventDefault()
 	} else {
 		;(window as any).event.returnValue = false
 	}
+
 	return false
 }
 

@@ -27,6 +27,7 @@ function contains(arr: any[], item: any): boolean {
 	for (const el of arr) {
 		if (el === item) return true
 	}
+
 	return false
 }
 

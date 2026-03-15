@@ -34,7 +34,7 @@ describe('getProperty', () => {
 		const target = { a: false }
 		const result = getProperty(target, 'a', true)
 
-		expect(result).toBe(false)
+		expect(result).toBeFalsy()
 	})
 
 	it('should return target when prop is empty', () => {
@@ -56,7 +56,7 @@ describe('getProperty', () => {
 	})
 
 	it('should return NaN value', () => {
-		const target = { a: NaN }
+		const target = { a: Number.NaN }
 		const result = getProperty(target, 'a', 100)
 
 		expect(result).toBe(100)

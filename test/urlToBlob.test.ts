@@ -8,8 +8,9 @@ describe('urlToBlob', () => {
 	it('should fetch url and return blob', async () => {
 		// Mock fetch to return a Response with blob method
 		const mockBlob = new Blob(['test content'], { type: 'text/plain' })
+
 		globalThis.fetch = vi.fn().mockResolvedValue({
-			blob: () => Promise.resolve(mockBlob)
+			blob: () => Promise.resolve(mockBlob),
 		})
 
 		const result = await urlToBlob('https://example.com/image.png')
@@ -25,7 +26,7 @@ describe('urlToBlob', () => {
 
 		// Restore fetch
 		globalThis.fetch = vi.fn().mockResolvedValue({
-			blob: () => Promise.resolve(new Blob(['test']))
+			blob: () => Promise.resolve(new Blob(['test'])),
 		})
 	})
 })

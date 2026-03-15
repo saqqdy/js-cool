@@ -4,6 +4,7 @@ import punctualTimer from '../src/punctualTimer'
 describe('punctualTimer', () => {
 	it('should execute handler immediately', () => {
 		const handler = vi.fn()
+
 		punctualTimer(handler, 100)
 
 		expect(handler).toHaveBeenCalledTimes(1)
@@ -31,6 +32,7 @@ describe('punctualTimer', () => {
 
 	it('should execute on interval', async () => {
 		const handler = vi.fn()
+
 		punctualTimer(handler, 30)
 
 		await new Promise(resolve => setTimeout(resolve, 40))

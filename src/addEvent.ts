@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { AnyFunction, AnyObject } from './types'
 
 /**
@@ -26,7 +24,7 @@ import type { AnyFunction, AnyObject } from './types'
  * @param type - The event type. No need to add on
  * @param handler - callback method
  */
-function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
+function addEvent(element: AnyObject, type: string, handler: AnyFunction): void {
 	if (element.addEventListener) {
 		element.addEventListener(type, handler, false)
 	} else {
@@ -36,17 +34,18 @@ function addEvent(element: AnyObject, type: string, handler: AnyFunction) {
 		if (!element.events) element.events = {}
 		// Create a hash table of event handlers for each "element/event" pair
 		let handlers = element.events[type]
+
 		if (!handlers) {
 			handlers = element.events[type] = {}
 			// Store the event handler functions that exist (if any)
-			if (element['on' + type]) {
-				handlers[0] = element['on' + type]
+			if (element[`on${type}`]) {
+				handlers[0] = element[`on${type}`]
 			}
 		}
 		// Store event handling functions in a hash table
 		handlers[handler.$$guid] = handler
 		// Assign a global event handler to do all the work
-		element['on' + type] = handleEvent
+		element[`on${type}`] = handleEvent
 	}
 }
 // a counter used to create unique IDs
@@ -61,24 +60,28 @@ addEvent.guid = 1
  */
 function handleEvent(event: any): boolean {
 	let returnValue = true
-	// @ts-expect-error
+	// @ts-expect-error - IE uses global event objects, need to access `this` context
+	// eslint-disable-next-line ts/no-this-alias
 	const that: any = this
+
 	// Capturing event objects (IE uses global event objects)
 	event =
 		event ||
 		fixEvent(((that.ownerDocument || that.document || that).parentWindow || window).event)
 	// Get a reference to the hash table of the event handling function
-	// @ts-expect-error
+	// @ts-expect-error - accessing events property on element for IE compatibility
 	const handlers = (this as any).events[event.type]
+
 	// Execute each handler function
 	for (const i in handlers) {
-		// @ts-expect-error
+		// @ts-expect-error - assigning handler to $$handleEvent for IE compatibility
 		;(this as any).$$handleEvent = handlers[i]
-		// @ts-expect-error
+		// @ts-expect-error - calling $$handleEvent method on `this` context
 		if ((this as any).$$handleEvent(event) === false) {
 			returnValue = false
 		}
 	}
+
 	return returnValue
 }
 
@@ -93,6 +96,7 @@ function fixEvent(event: any): any {
 	// Adding standard W3C methods
 	event.preventDefault = fixEvent.preventDefault
 	event.stopPropagation = fixEvent.stopPropagation
+
 	return event
 }
 fixEvent.preventDefault = function () {

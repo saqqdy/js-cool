@@ -2,10 +2,10 @@
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"target": "ES5",
+		"rootDir": ".",
 		"declaration": true,
 		"emitDeclarationOnly": true,
-		"sourceMap": false,
 		"outDir": "../temp",
-		"rootDir": "."
+		"sourceMap": false
 	}
 }

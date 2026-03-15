@@ -21,6 +21,6 @@
  * @since 5.13.0
  * @returns boolean - true if running in Node.js
  */
-const inNodeJs = typeof global !== 'undefined'
+const inNodeJs = typeof globalThis !== 'undefined'
 
 export default inNodeJs

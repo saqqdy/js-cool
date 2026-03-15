@@ -23,6 +23,7 @@ describe('getUrlParam', () => {
 
 	it('should use location.search when no url provided', () => {
 		const result = getUrlParam('test')
+
 		expect(result).toBeUndefined()
 	})
 })

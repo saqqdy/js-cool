@@ -37,6 +37,7 @@ function osVersion(ua?: string): OsVersion | null {
 	if (!ua) {
 		if (!inBrowser) {
 			console.info('url is required')
+
 			return null
 		}
 		ua = navigator.userAgent
@@ -44,43 +45,47 @@ function osVersion(ua?: string): OsVersion | null {
 	ua = ua.toLowerCase()
 
 	const OS_REG_MAP = {
-		Windows: /windows nt\s+([\w.]+)/,
-		MacOS: /mac os x\s+([\w_]+)/,
 		Android: /android\s+([\d.]+)/,
-		iOS: /i(?:pad|phone|pod)(?:.*)cpu(?: i(?:pad|phone|pod))? os (\d+(?:[\.|_]\d+)+) like/,
-		WindowsPhone: /Windows Phone(?: OS)? ([\d.]+);/,
 		Debian: /Debian\/([\d.]+)/,
+		Harmony: /openharmony\s+([\d.]+)/,
+		iOS: /i(?:pad|phone|pod).*cpu(?: i(?:pad|phone|pod))? os (\d+(?:[.|_]\d+)+) like/,
+		MacOS: /mac os x\s+(\w+)/,
 		WebOS: /hpwOS\/([\d.]+);/,
-		Harmony: /openharmony\s+([\d.]+)/
+		Windows: /windows nt\s+([\w.]+)/,
+		WindowsPhone: /Windows Phone(?: OS)? ([\d.]+);/,
 	} as const
 
 	let key: keyof typeof OS_REG_MAP
 
 	for (key in OS_REG_MAP) {
 		const match = ua.match(OS_REG_MAP[key])
+
 		if (!match) continue
 		else {
 			let version = (match[1] || '').replace(/_/g, '.')
+
 			if (key === 'Windows') {
 				const VERSION_MAP = {
-					'10': '10 || 11',
-					'6.3': '8.1',
-					'6.2': '8',
-					'6.1': '7',
-					'6.0': 'Vista',
-					'5.2': 'XP 64-Bit',
-					'5.1': 'XP',
-					'5.0': '2000',
-					'4.0': 'NT 4.0',
 					'3.5.1': 'NT 3.5.1',
-					'3.5': 'NT 3.5',
-					'3.1': 'NT 3.1'
+					3.1: 'NT 3.1',
+					3.5: 'NT 3.5',
+					'4.0': 'NT 4.0',
+					'5.0': '2000',
+					5.1: 'XP',
+					5.2: 'XP 64-Bit',
+					'6.0': 'Vista',
+					6.1: '7',
+					6.2: '8',
+					6.3: '8.1',
+					10: '10 || 11',
 				}
+
 				version = VERSION_MAP[version as keyof typeof VERSION_MAP] || version
 			}
+
 			return {
 				name: key,
-				version
+				version,
 			}
 		}
 	}

@@ -3,7 +3,7 @@ import isIterable from '../src/isIterable'
 
 describe('isIterable', () => {
 	it('should return true for array', () => {
-		expect(isIterable([])).toBe(true)
+		expect(isIterable([])).toBeTruthy()
 	})
 
 	it('should throw for string', () => {
@@ -12,27 +12,27 @@ describe('isIterable', () => {
 	})
 
 	it('should return true for typed array', () => {
-		expect(isIterable(new Uint8Array())).toBe(true)
+		expect(isIterable(new Uint8Array())).toBeTruthy()
 	})
 
 	it('should return true for Set', () => {
-		expect(isIterable(new Set())).toBe(true)
+		expect(isIterable(new Set())).toBeTruthy()
 	})
 
 	it('should return true for Map', () => {
-		expect(isIterable(new Map())).toBe(true)
+		expect(isIterable(new Map())).toBeTruthy()
 	})
 
 	it('should return false for null', () => {
-		expect(isIterable(null)).toBe(false)
+		expect(isIterable(null)).toBeFalsy()
 	})
 
 	it('should return false for undefined', () => {
-		expect(isIterable(undefined)).toBe(false)
+		expect(isIterable(undefined)).toBeFalsy()
 	})
 
 	it('should return false for plain object', () => {
-		expect(isIterable({})).toBe(false)
+		expect(isIterable({})).toBeFalsy()
 	})
 
 	it('should throw for number', () => {

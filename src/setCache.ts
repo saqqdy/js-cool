@@ -1,6 +1,6 @@
 export interface CacheData<T = unknown> {
-	value: T
 	expires?: number
+	value: T
 }
 
 /**
@@ -31,14 +31,14 @@ export interface CacheData<T = unknown> {
  * @param value - value to cache (any type, will be JSON serialized)
  * @param seconds - optional expiration time in seconds
  */
-function setCache<T = unknown>(name: string, value: T, seconds?: number | string) {
-	if (typeof seconds === 'string') seconds = parseInt(seconds)
+function setCache<T = unknown>(name: string, value: T, seconds?: number | string): void {
+	if (typeof seconds === 'string') seconds = Number.parseInt(seconds)
 
 	const expires = seconds ? new Date().getTime() + seconds * 1000 : undefined
 
 	const data = {
+		expires,
 		value,
-		expires
 	}
 
 	localStorage.setItem(name, JSON.stringify(data))

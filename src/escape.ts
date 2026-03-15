@@ -24,14 +24,15 @@
  * @param string - string with html special characters
  * @returns - escaped string
  */
-function escape(string: string) {
+function escape(string: string): string {
 	const map = {
+		'"': '&quot;',
 		'&': '&amp;',
+		"'": '&#39;',
 		'<': '&lt;',
 		'>': '&gt;',
-		'"': '&quot;',
-		"'": '&#39;'
 	}
+
 	return string.replace(/[&<>"']/g, m => map[m as keyof typeof map])
 }
 

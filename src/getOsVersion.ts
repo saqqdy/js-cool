@@ -28,14 +28,17 @@ function getOsVersion(
 	let name = osName,
 		ver
 	const index = d.indexOf(osName)
+
 	if (index > -1 && userAgent.includes('like Mac OS X')) {
 		name = 'OS'
 	}
-	const reg = new RegExp(name + '\\s[\\d\\_]+', 'ig')
-	ver = (userAgent.match(reg) + '').replace(/\s/gi, '/').replace(/_/gi, '.')
+	const reg = new RegExp(`${name}\\s[\\d\\_]+`, 'ig')
+
+	ver = `${userAgent.match(reg)}`.replace(/\s/gi, '/').replace(/_/gi, '.')
 	if (index > -1) {
-		ver = ver.replace(/OS\//gi, osName + '/')
+		ver = ver.replace(/OS\//gi, `${osName}/`)
 	}
+
 	return getAppVersion(osName, withOS, ver)
 }
 

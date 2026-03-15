@@ -7,24 +7,24 @@ import stopBubble from '../src/stopBubble'
 describe('stopBubble', () => {
 	it('should call stopPropagation on event', () => {
 		const event = {
-			stopPropagation: vi.fn()
+			stopPropagation: vi.fn(),
 		} as any
 
 		const result = stopBubble(event)
 
 		expect(event.stopPropagation).toHaveBeenCalled()
-		expect(result).toBe(false)
+		expect(result).toBeFalsy()
 	})
 
 	it('should handle event without stopPropagation', () => {
 		const event = {
-			cancelBubble: false
+			cancelBubble: false,
 		} as any
 
 		const result = stopBubble(event)
 
-		expect(event.cancelBubble).toBe(true)
-		expect(result).toBe(false)
+		expect(event.cancelBubble).toBeTruthy()
+		expect(result).toBeFalsy()
 	})
 
 	it('should handle null or undefined event', () => {

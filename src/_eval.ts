@@ -23,10 +23,12 @@
  * @param functionName - function name string to evaluate
  * @returns - Function | undefined
  */
+// eslint-disable-next-line ts/no-unsafe-function-type
 function _eval(functionName: string): Function | undefined {
 	const Fn = Function
+
 	try {
-		return new Fn('return ' + functionName)()
+		return new Fn(`return ${functionName}`)()
 	} catch {
 		return undefined
 	}

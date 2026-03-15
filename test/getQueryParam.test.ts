@@ -19,6 +19,7 @@ describe('getQueryParam', () => {
 
 	it('should use location.href when no url provided', () => {
 		const result = getQueryParam('test')
+
 		expect(result).toBeUndefined()
 	})
 })

@@ -27,16 +27,19 @@ import inBrowser from './inBrowser'
  * @param value - any target to copy
  * @returns - true if copy succeeded, false/undefined otherwise
  */
-function copy(value: any) {
+function copy(value: any): boolean | undefined {
 	if (!inBrowser) return
 	const textarea = document.createElement('textarea')
+
 	textarea.style.position = 'absolute'
 	textarea.style.opacity = '0'
-	textarea.innerText = value
+	textarea.textContent = value
 	document.body.appendChild(textarea)
 	textarea.select()
 	const status = document.execCommand('copy')
+
 	document.body.removeChild(textarea)
+
 	return status
 }
 

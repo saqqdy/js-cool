@@ -31,8 +31,19 @@ import type { AnyFunction } from './types'
  * @since 1.0.2
  * @returns object with register and destroy methods
  */
-function delay() {
+function delay(): {
+	map: any
+	destroy: (id: string) => void
+	register: (id: string, fn: AnyFunction, time: number, boo: boolean) => void
+} {
 	return {
+		destroy(id: string) {
+			if (!this.map[id]) {
+				return
+			}
+			clearTimeout(this.map[id].timeout)
+			delete this.map[id]
+		},
 		map: {} as any,
 		register(id: string, fn: AnyFunction, time: number, boo: boolean) {
 			if (boo) {
@@ -42,13 +53,13 @@ function delay() {
 					fn()
 				}
 				this.map[id] = {
-					id,
-					fn,
-					time,
 					boo,
+					fn,
+					id,
+					time,
 					timeout: setTimeout(() => {
 						this.destroy(id)
-					}, time)
+					}, time),
 				}
 			} else {
 				// Throttling, delayed execution for a certain period of time
@@ -57,21 +68,14 @@ function delay() {
 					this.destroy(id)
 				}
 				this.map[id] = {
-					id,
-					fn,
-					time,
 					boo,
-					timeout: setTimeout(fn, time)
+					fn,
+					id,
+					time,
+					timeout: setTimeout(fn, time),
 				}
 			}
 		},
-		destroy(id: string) {
-			if (!this.map[id]) {
-				return
-			}
-			clearTimeout(this.map[id].timeout)
-			delete this.map[id]
-		}
 	}
 }
 

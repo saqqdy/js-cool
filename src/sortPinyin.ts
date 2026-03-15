@@ -29,7 +29,11 @@ import sorter from './sorter'
  * @param options - An object adjusting the output format (Intl.CollatorOptions).
  * @returns - negative, zero, or positive number
  */
-function sortPinyin<T = string, P = string>(a: T, b: P, options: Intl.CollatorOptions = {}) {
+function sortPinyin<T = string, P = string>(
+	a: T,
+	b: P,
+	options: Intl.CollatorOptions = {}
+): number {
 	// const aIsNumber = !isNaN(+a)
 	// const bIsNumber = !isNaN(+b)
 
@@ -37,19 +41,19 @@ function sortPinyin<T = string, P = string>(a: T, b: P, options: Intl.CollatorOp
 	// else if (aIsNumber) return -1
 	// else if (bIsNumber) return 1
 
-	const aIsHans = /[^\x00-\xFF]+/g.test(String(a)) // eslint-disable-line no-control-regex
-	const bIsHans = /[^\x00-\xFF]+/g.test(String(b)) // eslint-disable-line no-control-regex
+	const aIsHans = /[^\x00-\xFF]+/g.test(String(a)) // eslint-disable-line no-control-regex, regexp/no-control-character
+	const bIsHans = /[^\x00-\xFF]+/g.test(String(b)) // eslint-disable-line no-control-regex, regexp/no-control-character
 
 	if (aIsHans && !bIsHans) return 1
 	if (!aIsHans && bIsHans) return -1
 
 	return sorter(['zh-Hans-CN', 'en-u-kn-true', 'de-DE-u-co-phonebk'], {
-		ignorePunctuation: true,
-		sensitivity: 'variant',
-		numeric: true,
-		collation: 'pinyin',
 		caseFirst: 'false',
-		...options
+		collation: 'pinyin',
+		ignorePunctuation: true,
+		numeric: true,
+		sensitivity: 'variant',
+		...options,
 	})(a, b)
 }
 

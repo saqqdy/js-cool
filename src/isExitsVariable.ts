@@ -28,6 +28,7 @@ function isExitsVariable(name: string): boolean {
 			return true
 		}
 	} catch {}
+
 	return false
 }
 

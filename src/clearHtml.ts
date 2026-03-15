@@ -19,7 +19,7 @@
  * @param string - string with html tags
  * @returns newString
  */
-function clearHtml(string: string) {
+function clearHtml(string: string): string {
 	return string.replace(/<\/?.+?>/g, '').replace(/[\r\n]/g, '')
 }
 

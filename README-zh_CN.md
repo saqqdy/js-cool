@@ -301,7 +301,10 @@ randomString({ length: 16, charTypes: ['lowercase', 'number', 'special'] })
 // 'a1@b2#c3$d4%e5^f6'
 
 // 所有字符类型
-randomString({ length: 20, charTypes: ['uppercase', 'lowercase', 'number', 'special'] })
+randomString({
+  length: 20,
+  charTypes: ['uppercase', 'lowercase', 'number', 'special'],
+})
 // 'A1a@B2b#C3c$D4d%E5e^'
 
 // 排除易混淆字符 (o, O, 0, l, 1, I)
@@ -309,7 +312,11 @@ randomString({ length: 16, noConfuse: true })
 // 'aB3dE7fG9hJ2kL5m' (不含 o, O, 0, l, 1, I)
 
 // 严格模式：每种字符类型至少包含一个
-randomString({ length: 16, charTypes: ['uppercase', 'lowercase', 'number'], strict: true })
+randomString({
+  length: 16,
+  charTypes: ['uppercase', 'lowercase', 'number'],
+  strict: true,
+})
 // 保证至少包含1个大写、1个小写、1个数字
 
 // 旧版 API（仍支持）
@@ -562,8 +569,8 @@ import { getProperty, setProperty } from 'js-cool'
 const obj = {
   a: {
     b: [{ c: 1 }, { c: 2 }],
-    d: { e: 'hello' }
-  }
+    d: { e: 'hello' },
+  },
 }
 
 // 获取属性
@@ -599,8 +606,8 @@ const tree = {
   name: 'root',
   children: [
     { id: 2, name: 'child1', children: [] },
-    { id: 3, name: 'child2', children: [{ id: 4, name: 'grandchild' }] }
-  ]
+    { id: 3, name: 'child2', children: [{ id: 4, name: 'grandchild' }] },
+  ],
 }
 
 // 按条件查找
@@ -608,13 +615,15 @@ searchObject(tree, item => item.id === 3, { children: 'children' })
 // [{ id: 3, name: 'child2', ... }]
 
 // 按名称查找
-searchObject(tree, item => item.name.includes('child'), { children: 'children' })
+searchObject(tree, item => item.name.includes('child'), {
+  children: 'children',
+})
 // [{ id: 2, ... }, { id: 3, ... }, { id: 4, ... }]
 
 // 自定义键配置
 searchObject(tree, item => item.id > 2, {
   children: 'children',
-  id: 'id'
+  id: 'id',
 })
 ```
 
@@ -631,7 +640,7 @@ import {
   isObject,
   isPlainObject,
   isRegExp,
-  isWindow
+  isWindow,
 } from 'js-cool'
 
 // isArray
@@ -950,7 +959,7 @@ setCookie('name', 'value', {
   path: '/',
   domain: '.example.com',
   secure: true,
-  sameSite: 'Strict'
+  sameSite: 'Strict',
 })
 
 // 获取单个 cookie
@@ -1326,7 +1335,7 @@ mapTemplate('Hello, {name}!', { name: 'World' })
 mapTemplate('${greeting}, ${name}! You have ${count} messages.', {
   greeting: 'Hello',
   name: 'John',
-  count: 5
+  count: 5,
 })
 // 'Hello, John! You have 5 messages.'
 
@@ -1343,7 +1352,7 @@ import { sorter } from 'js-cool'
 const users = [
   { name: 'Bob', age: 30 },
   { name: 'Alice', age: 25 },
-  { name: 'Charlie', age: 35 }
+  { name: 'Charlie', age: 35 },
 ]
 
 // 按字符串字段排序
@@ -1440,7 +1449,9 @@ mountStyle(`
 
 // 加载图片
 await mountImg('https://example.com/image.png')
-const img = await mountImg('https://example.com/image.png', { crossOrigin: 'anonymous' })
+const img = await mountImg('https://example.com/image.png', {
+  crossOrigin: 'anonymous',
+})
 
 // 通用资源加载器
 await loadSource({ type: 'js', url: 'https://example.com/script.js' })
@@ -1467,7 +1478,7 @@ import {
   blobToUrl,
   fileToBase64,
   svgToBlob,
-  urlToBlob
+  urlToBlob,
 } from 'js-cool'
 
 // ArrayBuffer 转换
@@ -1514,7 +1525,7 @@ CSVToArray(csv)
 arrayToCSV([
   ['name', 'age'],
   ['John', 30],
-  ['Jane', 25]
+  ['Jane', 25],
 ])
 // 'name,age\nJohn,30\nJane,25'
 
@@ -1529,7 +1540,7 @@ CSVToJSON(csv)
 JSONToCSV(
   [
     { name: 'John', age: 30 },
-    { name: 'Jane', age: 25 }
+    { name: 'Jane', age: 25 },
   ],
   ['name', 'age']
 )

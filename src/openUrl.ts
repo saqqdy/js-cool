@@ -18,8 +18,9 @@
  * @since 1.0.6
  * @param url - link to open
  */
-function openUrl(url: string) {
+function openUrl(url: string): void {
 	const dom = document.createElement('a')
+
 	dom.style.display = 'none'
 	dom.href = url
 	dom.setAttribute('target', '_blank')

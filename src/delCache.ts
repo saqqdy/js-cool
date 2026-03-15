@@ -15,7 +15,7 @@
  * @since 1.0.2
  * @param name - cache name to delete
  */
-function delCache(name: string) {
+function delCache(name: string): void {
 	localStorage.removeItem(name)
 }
 

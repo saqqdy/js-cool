@@ -1,3 +1,3 @@
-import { execSync } from 'child_process'
+import { execSync } from 'node:child_process'
 
 execSync('curl -X PUT -d "sync_upstream=true" "https://registry-direct.npmmirror.com/js-cool/sync"')

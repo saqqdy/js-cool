@@ -30,9 +30,11 @@ function setProperty(target: any, prop: string | { (): string }, value: any): an
 
 	arr.forEach((p, i) => {
 		let index = -1
+
 		// p = p.replace(/\[(\d+)\]$/, (str, num) => ((index = parseInt(num)), ''))
 		p = p.replace(/\[(\d+)\]$/, (str, num) => {
-			index = parseInt(num)
+			index = Number.parseInt(num)
+
 			return ''
 		})
 		if (i !== arr.length - 1) {
@@ -56,6 +58,7 @@ function setProperty(target: any, prop: string | { (): string }, value: any): an
 			}
 		}
 	})
+
 	return target
 }
 

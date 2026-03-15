@@ -21,6 +21,5 @@
 		"unpublish",
 		"vuepress"
 	],
-	"typescript.tsdk": "node_modules/typescript/lib",
 	"npm.packageManager": "pnpm"
 }

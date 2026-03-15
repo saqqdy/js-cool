@@ -3,21 +3,21 @@ import isExitsFunction from '../src/isExitsFunction'
 
 describe('isExitsFunction', () => {
 	it('should return true for existing function', () => {
-		expect(isExitsFunction('console.log')).toBe(true)
+		expect(isExitsFunction('console.log')).toBeTruthy()
 	})
 
 	it('should return true for any valid identifier', () => {
 		// Note: _eval uses new Function which treats any valid identifier as truthy
-		expect(isExitsFunction('test')).toBe(true)
+		expect(isExitsFunction('test')).toBeTruthy()
 	})
 
 	it('should return true for built-in functions', () => {
-		expect(isExitsFunction('parseInt')).toBe(true)
-		expect(isExitsFunction('parseFloat')).toBe(true)
+		expect(isExitsFunction('parseInt')).toBeTruthy()
+		expect(isExitsFunction('parseFloat')).toBeTruthy()
 	})
 
 	it('should return true for constructors', () => {
-		expect(isExitsFunction('Number')).toBe(true)
-		expect(isExitsFunction('String')).toBe(true)
+		expect(isExitsFunction('Number')).toBeTruthy()
+		expect(isExitsFunction('String')).toBeTruthy()
 	})
 })

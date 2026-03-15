@@ -88,14 +88,15 @@ function parseVersion(version: string): Version {
 		minor: 0,
 		patch: 0,
 		preid: '',
-		release: undefined
+		release: undefined,
 	}
 	const [mainVer, subVer = ''] = version.split('-')
+
 	;[ver.major = 0, ver.minor = 0, ver.patch = 0] = mainVer.split('.').map(el => +el)
 	if (subVer.includes('.'))
 		[ver.preid, ver.release] = subVer.split('.').map((el, i) => (i > 0 ? +el : el)) as [
 			string,
-			number
+			number,
 		]
 	else if (subVer) ver.release = +subVer
 
@@ -104,8 +105,9 @@ function parseVersion(version: string): Version {
 
 function stringifyVersion(ver: Version): string {
 	const mainVer = [ver.major, ver.minor, ver.patch].join('.')
-	const subVer = `${ver.preid ? ver.preid + '.' : ''}${ver.release ?? ''}`
-	return `${mainVer}${subVer ? '-' + subVer : ''}`
+	const subVer = `${ver.preid ? `${ver.preid}.` : ''}${ver.release ?? ''}`
+
+	return `${mainVer}${subVer ? `-${subVer}` : ''}`
 }
 
 export default nextVersion

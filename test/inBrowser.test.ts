@@ -6,6 +6,6 @@ import inBrowser from '../src/inBrowser'
 
 describe('inBrowser', () => {
 	it('should be true in happy-dom environment', () => {
-		expect(inBrowser).toBe(true)
+		expect(inBrowser).toBeTruthy()
 	})
 })

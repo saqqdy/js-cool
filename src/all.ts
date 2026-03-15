@@ -26,6 +26,6 @@ import type { AnyFunction } from './types'
  * @param fn - the judgment method
  * @returns - the result of the judgment
  */
-const all = <T = unknown>(arr: T[], fn: AnyFunction) => arr.every(fn)
+const all = <T = unknown>(arr: T[], fn: AnyFunction): boolean => arr.every(fn)
 
 export default all

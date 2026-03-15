@@ -15,7 +15,7 @@
  * @since 1.0.2
  * @param name - session name to delete
  */
-function delSession(name: string) {
+function delSession(name: string): void {
 	sessionStorage.removeItem(name)
 }
 

@@ -24,11 +24,13 @@ function appVersion(appName: string, ua: string, ignoreCase: boolean): string | 
 function appVersion(appName: string, ua?: string | boolean, ignoreCase?: boolean): string | null {
 	if (!appName || typeof appName !== 'string') {
 		console.info('appName is required')
+
 		return null
 	} else if (typeof ua === 'boolean' || !ua) {
 		// us=undefined|true|false
 		if (!inBrowser) {
 			console.info('ua is required')
+
 			return null
 		}
 		if (typeof ua === 'boolean') ignoreCase = ua
@@ -36,7 +38,7 @@ function appVersion(appName: string, ua?: string | boolean, ignoreCase?: boolean
 	}
 	if (typeof ignoreCase !== 'boolean') ignoreCase = true
 
-	const reg = new RegExp(`${appName}\/(\\d+(?:.\\d+)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
+	const reg = new RegExp(`${appName}/(\\d+(?:.\\d+)*(?:-\\w+.\\d+)*)`, ignoreCase ? 'i' : '')
 	const match = ua.match(reg)
 
 	return match ? match[1] : null

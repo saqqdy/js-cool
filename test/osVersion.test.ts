@@ -50,6 +50,7 @@ describe('osVersion', () => {
 
 	it('should use navigator.userAgent in browser', () => {
 		const result = osVersion()
+
 		expect(result).toBeDefined()
 	})
 })

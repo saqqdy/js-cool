@@ -15,17 +15,18 @@
  */
 function safeParse(data: string, covert = true): any {
 	const VALUE_MAP = {
-		undefined,
-		NaN,
+		'-Infinity': -Infinity,
 		Infinity,
-		'-Infinity': -Infinity
+		NaN: Number.NaN,
+		undefined,
 	}
+
 	return JSON.parse(data, (key, val) => {
 		if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val))
 			return VALUE_MAP[val as keyof typeof VALUE_MAP]
 		else if (
 			typeof val === 'string' &&
-			/^(\-|\+)?\d+(\.\d+)?$/.test(val) &&
+			/^(-|\+)?\d+(\.\d+)?$/.test(val) &&
 			!Number.isSafeInteger(+val)
 		)
 			return BigInt(val)

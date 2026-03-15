@@ -24,13 +24,15 @@
  * @param delimiter - delimiter, default ','
  * @returns - array of objects
  */
-function CSVToJSON(data: string, delimiter = ',') {
+function CSVToJSON(data: string, delimiter = ','): Record<string, string>[] {
 	const titles = data.slice(0, data.indexOf('\n')).split(delimiter)
+
 	return data
 		.slice(data.indexOf('\n') + 1)
 		.split('\n')
 		.map((v: string) => {
 			const values = v.split(delimiter)
+
 			return titles.reduce(
 				// eslint-disable-next-line no-sequences
 				(obj: any, title, index) => ((obj[title] = values[index]), obj),

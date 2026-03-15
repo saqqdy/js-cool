@@ -24,9 +24,11 @@
  * @param delimiter - delimiter, default ','
  * @returns CSV string
  */
-const arrayToCSV = <T extends unknown[][]>(arr: T, delimiter = ',') =>
+const arrayToCSV = <T extends unknown[][]>(arr: T, delimiter = ','): string =>
 	arr
-		.map(v => v.map((x: any) => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter))
+		.map(v =>
+			v.map((x: any) => (Number.isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)
+		)
 		.join('\n')
 
 export default arrayToCSV

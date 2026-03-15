@@ -25,7 +25,7 @@
  * @param omitFirstRow - skip the first row (header), default false
  * @returns 2D array of values
  */
-const CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) =>
+const CSVToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] =>
 	data
 		.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
 		.split('\n')

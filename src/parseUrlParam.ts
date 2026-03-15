@@ -30,36 +30,40 @@ import pattern from './pattern'
  * @param covert - Converts specific strings to corresponding values (default: false)
  * @returns object with parsed parameters
  */
-function parseUrlParam(url: string, covert = false) {
+function parseUrlParam(url: string, covert = false): Record<string, unknown> {
 	if (!url) {
 		console.info('url is required')
+
 		return {}
 	}
 
 	url = url.substring(url.lastIndexOf('?') + 1) // delete string before "?"
 
 	const VALUE_MAP = {
-		null: null,
-		undefined,
-		true: true,
+		'-Infinity': -Infinity,
 		false: false,
-		NaN,
 		Infinity,
-		'-Infinity': -Infinity
+		NaN: Number.NaN,
+		null: null,
+		true: true,
+		undefined,
 	}
 	const result: Record<string, unknown> = {}
 
 	url.replace(/([^?&=]+)=([^?&=]*)/g, (rs: string, $1: string, $2: string) => {
 		const key = decodeURIComponent($1)
+
 		$2 = decodeURIComponent($2)
 		result[key] = $2
 		if (covert) {
 			if ($2 in VALUE_MAP) result[key] = VALUE_MAP[$2 as keyof typeof VALUE_MAP]
 			else if (pattern.number.test($2)) result[key] = Number($2)
 		}
+
 		return rs
 	})
 	if (covert) return result as Record<string, unknown>
+
 	return result as Record<string, string>
 }
 

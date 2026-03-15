@@ -19,6 +19,7 @@ describe('openUrl', () => {
 
 		// Anchor should be removed from DOM
 		const anchors = document.querySelectorAll('a')
-		expect(anchors.length).toBe(0)
+
+		expect(anchors).toHaveLength(0)
 	})
 })

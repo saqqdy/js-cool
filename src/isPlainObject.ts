@@ -6,12 +6,11 @@ export type Primitive = bigint | boolean | null | number | string | symbol | und
 
 export type JSONValue = Primitive | PlainObject | JSONArray
 
-// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
 export interface PlainObject {
 	[key: string]: JSONValue
 }
 
-export interface JSONArray extends Array<JSONValue> {}
+export type JSONArray = Array<JSONValue>
 
 /**
  * Determine if target is an plain object

@@ -27,13 +27,14 @@ describe('removeEvent', () => {
 
 	it('should remove event from events hash in legacy mode', () => {
 		const handler = vi.fn()
+
 		;(handler as any).$$guid = 1
 		const element = {
 			events: {
 				click: {
-					1: handler
-				}
-			}
+					1: handler,
+				},
+			},
 		} as any
 
 		// Remove addEventListener to trigger legacy path

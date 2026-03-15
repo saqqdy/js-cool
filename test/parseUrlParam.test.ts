@@ -8,21 +8,25 @@ describe('parseUrlParam', () => {
 
 	it('should convert values when covert is true', () => {
 		const result = parseUrlParam('?key1=100&key2=true&key3=null', true)
+
 		expect(result).toEqual({ key1: 100, key2: true, key3: null })
 	})
 
 	it('should handle NaN', () => {
 		const result = parseUrlParam('?key=NaN', true)
+
 		expect(result.key).toBeNaN()
 	})
 
 	it('should handle Infinity', () => {
 		const result = parseUrlParam('?key=Infinity', true)
+
 		expect(result.key).toBe(Infinity)
 	})
 
 	it('should handle undefined value', () => {
 		const result = parseUrlParam('?key=undefined', true)
+
 		expect(result.key).toBeUndefined()
 	})
 

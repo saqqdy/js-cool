@@ -1,6 +1,6 @@
 export interface WindowSizeObj {
-	width: number
 	height: number
+	width: number
 }
 
 /**
@@ -32,7 +32,8 @@ export interface WindowSizeObj {
  * @returns - object with width and height properties
  */
 function windowSize(): WindowSizeObj {
-	const s: WindowSizeObj = { width: 0, height: 0 }
+	const s: WindowSizeObj = { height: 0, width: 0 }
+
 	if (window.innerWidth) {
 		s.width = window.innerWidth
 		s.height = window.innerHeight
@@ -45,6 +46,7 @@ function windowSize(): WindowSizeObj {
 		s.width = document.documentElement.clientWidth
 		s.height = document.documentElement.clientHeight
 	}
+
 	return s
 }
 

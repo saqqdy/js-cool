@@ -1,6 +1,6 @@
-import { writeFileSync } from 'fs'
-import { resolve } from 'path'
-import { spawnSync } from 'child_process'
+import { writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { spawnSync } from 'node:child_process'
 import pkg from '../package.json'
 
 const argv: string[] = process.argv.slice(2)
@@ -9,6 +9,7 @@ const PACKAGE_JSON_URL = resolve(__dirname, '../package.json')
 if (argv.length) {
 	if (['small', 'middle', 'large'].includes(argv[0])) {
 		const arr: number[] = pkg.version.split('.').map(item => +item)
+
 		switch (argv[0]) {
 			case 'small':
 				arr[2]++
@@ -29,8 +30,8 @@ if (argv.length) {
 
 		writeFileSync(PACKAGE_JSON_URL, JSON.stringify(pkg, null, 4))
 		spawnSync('npx', ['prettier', '--write', './package.json'], {
+			shell: process.platform === 'win32',
 			stdio: 'inherit',
-			shell: process.platform === 'win32'
 		})
 	} else {
 		console.info('Please enter a valid version')

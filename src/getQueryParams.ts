@@ -1,5 +1,5 @@
-import parseUrlParam from './parseUrlParam'
 import inBrowser from './inBrowser'
+import parseUrlParam from './parseUrlParam'
 
 /**
  * Get all URL parameters (behind "#", from hash)
@@ -38,14 +38,17 @@ function getQueryParams(
 	if (!url || typeof url === 'boolean') {
 		if (!inBrowser) {
 			console.info('url is required')
+
 			return null
 		}
 		typeof url === 'boolean' && (covert = url)
 		url = location.href
 	}
 	const [before, after] = url.split('#')
+
 	url = after || before
 	url = url.slice(url.lastIndexOf('?'))
+
 	return parseUrlParam(url, covert)
 }
 

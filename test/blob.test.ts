@@ -2,11 +2,11 @@
  * @vitest-environment happy-dom
  */
 import { describe, expect, it } from 'vitest'
-import svgToBlob from '../src/svgToBlob'
-import blobToUrl from '../src/blobToUrl'
-import blobToBase64 from '../src/blobToBase64'
-import blobToArrayBuffer from '../src/blobToArrayBuffer'
 import arrayBufferToBlob from '../src/arrayBufferToBlob'
+import blobToArrayBuffer from '../src/blobToArrayBuffer'
+import blobToBase64 from '../src/blobToBase64'
+import blobToUrl from '../src/blobToUrl'
+import svgToBlob from '../src/svgToBlob'
 
 describe('svgToBlob', () => {
 	it('should convert svg string to blob', () => {

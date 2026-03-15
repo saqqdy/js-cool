@@ -19,9 +19,9 @@
  * @param string - the string to be converted
  * @returns - the converted string
  */
-function camel2Dash(string: string) {
+function camel2Dash(string: string): string {
 	return string
-		.replace(/([A-Z]{1,1})/g, '-$1')
+		.replace(/([A-Z])/g, '-$1')
 		.replace(/^-/, '')
 		.toLocaleLowerCase()
 }

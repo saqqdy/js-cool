@@ -19,7 +19,7 @@
  * @param string - pass in the string
  * @returns newString
  */
-function clearAttr(string: string) {
+function clearAttr(string: string): string {
 	return string.replace(/<([a-zA-Z1-7]+)\s*[^><]*>/g, '<$1>')
 }
 

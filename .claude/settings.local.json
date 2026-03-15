@@ -5,7 +5,11 @@
 			"Bash(pnpm test:*)",
 			"Bash(pnpm test:coverage 2>&1)",
 			"Bash(npx tsc:*)",
-			"Bash(npx eslint:*)"
+			"Bash(npx eslint:*)",
+			"Bash(npm view:*)",
+			"Bash(pnpm install:*)",
+			"Bash(pnpm lint:*)",
+			"Bash(pnpm prettier:*)"
 		]
 	}
 }
