@@ -1,0 +1,89 @@
+/**
+ * Custom Styles
+ * Inspired by UnoCSS documentation theme
+ */
+
+:root {
+	--vp-c-brand-1: #3eaf7c;
+	--vp-c-brand-2: #42b883;
+	--vp-c-brand-3: #35a06c;
+	--vp-c-brand-soft: rgba(62, 175, 124, 0.14);
+
+	--vp-c-bg: #ffffff;
+	--vp-c-bg-soft: #f6f6f7;
+	--vp-c-bg-mute: #f1f1f1;
+	--vp-c-bg-alt: #f6f8fa;
+
+	--vp-c-text-1: #2c3e50;
+	--vp-c-text-2: #476582;
+	--vp-c-text-3: #90a4ae;
+}
+
+.dark {
+	--vp-c-brand-1: #42b883;
+	--vp-c-brand-2: #3eaf7c;
+	--vp-c-brand-3: #35a06c;
+	--vp-c-brand-soft: rgba(66, 184, 131, 0.14);
+
+	--vp-c-bg: #1a1a1a;
+	--vp-c-bg-soft: #242424;
+	--vp-c-bg-mute: #2f2f2f;
+	--vp-c-bg-alt: #0d0d0d;
+
+	--vp-c-text-1: #e2e8f0;
+	--vp-c-text-2: #a0aec0;
+	--vp-c-text-3: #718096;
+}
+
+/* Hero */
+.VPHero .name {
+	background: linear-gradient(120deg, var(--vp-c-brand-1), #42b883);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* Home Features */
+.VPFeature {
+	border-radius: 12px;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.VPFeature:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.dark .VPFeature:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Code Block */
+.vp-code-group .tabs label {
+	font-weight: 500;
+}
+
+/* Sidebar */
+.VPSidebarItem.is-active > .item > .link > .text {
+	color: var(--vp-c-brand-1);
+}
+
+/* Custom Container */
+.custom-block {
+	border-radius: 8px;
+}
+
+.custom-block.tip {
+	border-color: var(--vp-c-brand-1);
+}
+
+/* API Table */
+.vp-doc table {
+	display: table;
+	width: 100%;
+}
+
+.vp-doc th:first-child,
+.vp-doc td:first-child {
+	white-space: nowrap;
+}

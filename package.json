@@ -31,6 +31,9 @@
 		"build": "run-s clean build:{bundle,types}",
 		"build:bundle": "tscjs scripts/build",
 		"build:types": "tsc -p src/tsconfig.json && pnpm roll-types",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:preview": "vitepress preview docs",
 		"build:docs": "rm-all docs && typedoc && prettier --write \"**/*.md\"",
 		"deploy": "sh scripts/deploy.sh",
 		"roll-types": "api-extractor run && rm-all temp",
@@ -102,6 +105,7 @@
 		"typedoc": "^0.28.17",
 		"typedoc-plugin-markdown": "^4.4.1",
 		"typescript": "^5.7.3",
+		"vitepress": "^1.6.4",
 		"vitest": "^3.2.4",
 		"zx": "^8.3.0"
 	},

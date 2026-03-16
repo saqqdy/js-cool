@@ -5,7 +5,8 @@ coverage/
 dist/
 es/
 lib/
-docs/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
 npm-debug.log
 yarn.lock
 yarn-error.log
