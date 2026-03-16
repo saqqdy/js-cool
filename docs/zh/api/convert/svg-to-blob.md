@@ -1,9 +1,33 @@
-# svg-to-blob
+# svgToBlob
 
-请参考 [English Documentation](/api/convert/svg-to-blob) 获取完整 API 信息。
+将 SVG 字符串转换为 Blob。
 
 ## 用法
 
 ```js
-import { svg-to-blob } from 'js-cool'
+import { svgToBlob } from 'js-cool'
+```
+
+## 签名
+
+```typescript
+function svgToBlob(svg: string): Blob
+```
+
+## 参数
+
+| 参数  | 类型     | 描述       |
+| ----- | -------- | ---------- |
+| `svg` | `string` | SVG 字符串 |
+
+## 返回值
+
+`Blob` - 带有 SVG MIME 类型的 Blob。
+
+## 示例
+
+```js
+const svg = '<svg>...</svg>'
+const blob = svgToBlob(svg)
+// Blob { type: 'image/svg+xml' }
 ```

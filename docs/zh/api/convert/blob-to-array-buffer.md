@@ -1,9 +1,36 @@
-# blob-to-array-buffer
+# blobToArrayBuffer
 
-请参考 [English Documentation](/api/convert/blob-to-array-buffer) 获取完整 API 信息。
+将 Blob 转换为 ArrayBuffer。
 
 ## 用法
 
 ```js
-import { blob-to-array-buffer } from 'js-cool'
+import { blobToArrayBuffer } from 'js-cool'
 ```
+
+## 签名
+
+```typescript
+function blobToArrayBuffer(blob: Blob): Promise<ArrayBuffer>
+```
+
+## 参数
+
+| 参数   | 类型   | 描述      |
+| ------ | ------ | --------- |
+| `blob` | `Blob` | Blob 输入 |
+
+## 返回值
+
+`Promise<ArrayBuffer>` - ArrayBuffer。
+
+## 示例
+
+```js
+const blob = new Blob(['Hello World'])
+const buffer = await blobToArrayBuffer(blob)
+```
+
+## 相关
+
+- [arrayBufferToBlob](/zh/api/convert/array-buffer-to-blob) - ArrayBuffer 转 Blob

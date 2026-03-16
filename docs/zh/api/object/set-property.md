@@ -1,9 +1,38 @@
-# set-property
+# setProperty
 
-请参考 [English Documentation](/api/object/set-property) 获取完整 API 信息。
+安全地设置嵌套属性值。
 
 ## 用法
 
 ```js
-import { set-property } from 'js-cool'
+import { setProperty } from 'js-cool'
 ```
+
+## 签名
+
+```typescript
+function setProperty(obj: any, path: string, value: any): void
+```
+
+## 参数
+
+| 参数    | 类型     | 描述                     |
+| ------- | -------- | ------------------------ |
+| `obj`   | `any`    | 目标对象                 |
+| `path`  | `string` | 属性路径（如 'a.b.c'）   |
+| `value` | `any`    | 要设置的值               |
+
+## 示例
+
+```js
+const obj = {}
+setProperty(obj, 'a.b.c', 1)
+// obj = { a: { b: { c: 1 } } }
+
+setProperty(obj, 'users.0.name', 'John')
+// obj.users[0].name = 'John'
+```
+
+## 相关
+
+- [getProperty](/api/object/get-property) - 获取嵌套属性

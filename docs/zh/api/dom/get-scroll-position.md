@@ -1,9 +1,32 @@
-# get-scroll-position
+# getScrollPosition
 
-请参考 [English Documentation](/api/dom/get-scroll-position) 获取完整 API 信息。
+获取当前滚动位置。
 
 ## 用法
 
 ```js
-import { get-scroll-position } from 'js-cool'
+import { getScrollPosition } from 'js-cool'
+```
+
+## 签名
+
+```typescript
+function getScrollPosition(): { x: number, y: number }
+```
+
+## 返回值
+
+`{ x: number, y: number }` - 滚动位置对象。
+
+## 示例
+
+```js
+getScrollPosition()
+// { x: 0, y: 100 }
+
+// 超过阈值时滚动到顶部
+const { y } = getScrollPosition()
+if (y > 500) {
+  window.scrollTo(0, 0)
+}
 ```

@@ -1,9 +1,34 @@
-# del-cookie
+# delCookie
 
-请参考 [English Documentation](/api/storage/del-cookie) 获取完整 API 信息。
+删除 Cookie。
 
 ## 用法
 
 ```js
-import { del-cookie } from 'js-cool'
+import { delCookie } from 'js-cool'
 ```
+
+## 签名
+
+```typescript
+function delCookie(name: string): void
+```
+
+## 参数
+
+| 参数   | 类型     | 描述       |
+| ------ | -------- | ---------- |
+| `name` | `string` | Cookie 名称 |
+
+## 示例
+
+```js
+setCookie('token', 'abc123')
+delCookie('token')
+getCookie('token') // null
+```
+
+## 相关
+
+- [setCookie](/zh/api/storage/set-cookie) - 设置 Cookie
+- [getCookie](/zh/api/storage/get-cookie) - 获取 Cookie

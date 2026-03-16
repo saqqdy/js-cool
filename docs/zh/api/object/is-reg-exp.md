@@ -1,9 +1,33 @@
-# is-reg-exp
+# isRegExp
 
-请参考 [English Documentation](/api/object/is-reg-exp) 获取完整 API 信息。
+检查值是否为正则表达式。
 
 ## 用法
 
 ```js
-import { is-reg-exp } from 'js-cool'
+import { isRegExp } from 'js-cool'
+```
+
+## 签名
+
+```typescript
+function isRegExp(value: any): value is RegExp
+```
+
+## 参数
+
+| 参数    | 类型  | 描述       |
+| ------- | ----- | ---------- |
+| `value` | `any` | 要检查的值 |
+
+## 返回值
+
+`boolean` - 如果值是正则表达式则返回 `true`。
+
+## 示例
+
+```js
+isRegExp(/test/) // true
+isRegExp(new RegExp('test')) // true
+isRegExp('test') // false
 ```
