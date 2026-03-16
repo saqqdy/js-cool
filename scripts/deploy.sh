@@ -3,12 +3,11 @@
 # Make sure the script throws the error encountered
 set -e
 
-
 # Generate static files
-pnpm build:docs
+pnpm docs:build
 
 # Go to the generated folder
-cd docs/
+cd docs/.vitepress/dist
 
 # If you are publishing to a custom domain
 # echo 'github.saqqdy.com' > CNAME

@@ -2,9 +2,10 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	title: 'js-cool',
+	base: '/js-cool/',
 
 	head: [
-		['link', { rel: 'icon', href: '/logo.svg' }],
+		['link', { rel: 'icon', href: '/js-cool/logo.svg' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 	],
 
