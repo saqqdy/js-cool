@@ -17,9 +17,9 @@ git add .
 git commit -m 'deploy'
 
 # if publishing to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
-# Replace <USERNAME> with your own Github username and <REPO> with the repository name, for example, in my case it's
-git push -f https://github.com/saqqdy/js-cool.git master:gh-pages
+# Replace <USERNAME> with your own Github username and <REPO> with the repository name
+git push -f https://github.com/saqqdy/js-cool.git main:gh-pages
 
 cd -
