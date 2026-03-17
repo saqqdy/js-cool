@@ -12,7 +12,7 @@
 [![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**[Documentation](https://www.saqqdy.com/js-cool)** • **[Changelog](./CHANGELOG.md)** • **[简体中文](./README-zh_CN.md)**
+**[Changelog](./CHANGELOG.md)** • **[简体中文](./README-zh_CN.md)**
 
 </div>
 
@@ -50,6 +50,31 @@ const { osVersion, copy, randomString } = require('js-cool')
 import copy from 'js-cool/copy'
 import { randomString } from 'js-cool'
 ```
+
+---
+
+## Function Categories
+
+js-cool provides **140+ utility functions** organized into **16 categories**:
+
+| Category | Description | Functions |
+|----------|-------------|-----------|
+| **String** | String manipulation | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape` |
+| **Array** | Array processing | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject` |
+| **Object** | Object manipulation | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray` |
+| **Type Check** | Type checking | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil` |
+| **Validate** | Validation functions | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard` |
+| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion` |
+| **DOM** | DOM manipulation | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize` |
+| **Storage** | Browser storage | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie` |
+| **Convert** | Format conversion | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob` |
+| **Number** | Number processing | `clamp`, `round`, `sum`, `average`, `inRange` |
+| **Date** | Date processing | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth` |
+| **Color** | Color manipulation | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor` |
+| **Utility** | General utilities | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
+| **Async Flow** | Async flow control | `debounce`, `throttle`, `retry`, `awaitTo` |
+| **Encode** | Encoding/decoding | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8` |
+| **Network** | Network utilities | `fillIPv6` |
 
 ---
 

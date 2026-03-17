@@ -2,6 +2,61 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.24.0] - 2026-03-17
+
+### Added
+
+- New VitePress documentation site with bilingual support (English/Chinese)
+- New functions:
+  - `chunk` - Split array into chunks
+  - `flatten` - Flatten nested arrays
+  - `groupBy` - Group array by key
+  - `keyBy` - Create object mapping from array
+  - `sample` - Get random element from array
+  - `sampleSize` - Get N random elements from array
+  - `sum` - Sum array values
+  - `average` - Calculate average of array
+  - `clamp` - Clamp number within range
+  - `round` - Round number to precision
+  - `inRange` - Check if number in range
+  - `kebabCase` - Convert to kebab-case
+  - `snakeCase` - Convert to snake_case
+  - `truncate` - Truncate string with ellipsis
+  - `omit` - Omit object properties
+  - `pick` - Pick object properties
+  - `isEmpty` - Check if value is empty
+  - `isNil` - Check if value is null/undefined
+  - `isEmail` - Validate email address
+  - `isPhone` - Validate phone number
+  - `isURL` - Validate URL
+  - `isIDCard` - Validate Chinese ID card
+  - `isCreditCard` - Validate credit card number
+  - `isLightColor` - Check if color is light
+  - `isToday` - Check if date is today
+  - `formatDate` - Format date string
+  - `dateDiff` - Calculate date difference
+  - `relativeTime` - Get relative time string
+  - `getDaysInMonth` - Get days in month
+  - `hexToRGB` - Convert hex to RGB
+  - `rgbToHSL` - Convert RGB to HSL
+  - `lighten` - Lighten color
+  - `darken` - Darken color
+  - `debounce` - Debounce function
+  - `throttle` - Throttle function
+  - `retry` - Retry async function
+
+### Changed
+
+- Reorganized all 140+ functions into 16 categories
+- Updated documentation site from TypeDoc to VitePress
+- Improved test coverage with comprehensive unit tests
+
+### Fixed
+
+- Fixed ESLint errors in source files
+- Fixed `isNaN` usage to `Number.isNaN`
+- Fixed missing return type annotations
+
 ## [5.23.2] - 2026-03-14
 
 ### Added

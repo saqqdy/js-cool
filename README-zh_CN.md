@@ -12,7 +12,7 @@
 [![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**[文档](https://www.saqqdy.com/js-cool)** • **[更新日志](./CHANGELOG.md)** • **[English](./README.md)**
+**[更新日志](./CHANGELOG.md)** • **[English](./README.md)**
 
 </div>
 
@@ -50,6 +50,31 @@ const { osVersion, copy, randomString } = require('js-cool')
 import copy from 'js-cool/copy'
 import { randomString } from 'js-cool'
 ```
+
+---
+
+## 函数分类
+
+js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
+
+| 类别 | 描述 | 函数 |
+|------|------|------|
+| **字符串** | 字符串处理 | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape` |
+| **数组** | 数组处理 | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject` |
+| **对象** | 对象处理 | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray` |
+| **类型判断** | 类型检查 | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil` |
+| **验证函数** | 验证函数 | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard` |
+| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion` |
+| **DOM** | DOM操作 | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize` |
+| **存储** | 浏览器存储 | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie` |
+| **转换** | 格式转换 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob` |
+| **数字** | 数字处理 | `clamp`, `round`, `sum`, `average`, `inRange` |
+| **日期** | 日期处理 | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth` |
+| **颜色** | 颜色处理 | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor` |
+| **工具** | 通用工具 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
+| **异步流程** | 异步流程控制 | `debounce`, `throttle`, `retry`, `awaitTo` |
+| **编码解码** | 编码解码 | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8` |
+| **网络** | 网络工具 | `fillIPv6` |
 
 ---
 

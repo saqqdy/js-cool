@@ -45,18 +45,12 @@ function formatDate(date: Date | string | number, format = 'YYYY-MM-DD HH:mm:ss'
 		YYYY: () => String(d.getFullYear())
 	}
 
-	let result = format
-
-	// Sort tokens by length descending to replace longer tokens first
+	// Process format string - match all tokens at once to avoid partial replacements
+	// Sort tokens by length descending to match longer tokens first
 	const sortedTokens = Object.keys(tokens).sort((a, b) => b.length - a.length)
+	const tokenRegex = new RegExp(sortedTokens.join('|'), 'g')
 
-	for (const token of sortedTokens) {
-		if (result.includes(token)) {
-			result = result.replace(new RegExp(token, 'g'), tokens[token]())
-		}
-	}
-
-	return result
+	return format.replace(tokenRegex, match => tokens[match]?.() ?? match)
 }
 
 export default formatDate

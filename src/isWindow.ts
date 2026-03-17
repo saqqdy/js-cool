@@ -1,5 +1,3 @@
-import isObject from './isObject'
-
 /**
  * Determine if target is an window object
  *
@@ -24,7 +22,7 @@ import isObject from './isObject'
  * @returns - target is Window
  */
 function isWindow(target: any): target is Window {
-	return target && isObject(target) && target === target.window
+	return target != null && target === target.window
 }
 
 export default isWindow

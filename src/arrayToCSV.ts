@@ -27,7 +27,7 @@
 const arrayToCSV = <T extends unknown[][]>(arr: T, delimiter = ','): string =>
 	arr
 		.map(v =>
-			v.map((x: any) => (Number.isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)
+			v.map((x: any) => (typeof x === 'string' ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)
 		)
 		.join('\n')
 
