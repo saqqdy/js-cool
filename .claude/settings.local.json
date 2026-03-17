@@ -11,7 +11,9 @@
       "Bash(pnpm lint:*)",
       "Bash(pnpm prettier:*)",
       "Bash(ls:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(pnpm:*)"
     ]
   }
 }
