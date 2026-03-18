@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [6.0.0] - 2026-03-17
 
+### Removed
+
+- **BREAKING**: `getAppVersion` - use `appVersion` instead
+- **BREAKING**: `getOsVersion` - use `osVersion` instead
+
 ### Added
 
 - New VitePress documentation site with bilingual support (English/Chinese)
