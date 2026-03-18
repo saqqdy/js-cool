@@ -48,7 +48,6 @@ import fileToBase64 from './fileToBase64'
 import fillIPv6 from './fillIPv6'
 import fingerprint from './fingerprint'
 import fixNumber from './fixNumber'
-import getAppVersion from './getAppVersion'
 // Cache, cookie, session
 import getCache from './getCache'
 import getCHSLength from './getCHSLength'
@@ -58,7 +57,6 @@ import getCookies from './getCookies'
 import getDirParam from './getDirParam'
 import getFileType from './getFileType'
 import getNumber from './getNumber'
-import getOsVersion from './getOsVersion'
 import getProperty from './getProperty'
 import getQueryParam from './getQueryParam'
 import getQueryParams from './getQueryParams'
@@ -182,7 +180,6 @@ export default {
 	fillIPv6,
 	fingerprint,
 	fixNumber,
-	getAppVersion,
 	getCache,
 	getCHSLength,
 	getCookie,
@@ -190,7 +187,6 @@ export default {
 	getDirParam,
 	getFileType,
 	getNumber,
-	getOsVersion,
 	getProperty,
 	getQueryParam,
 	getQueryParams,
