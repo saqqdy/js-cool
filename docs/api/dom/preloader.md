@@ -1,4 +1,4 @@
-# preloader
+# preloader <Badge type="info" text="since v5.5.0" />
 
 Preload resources (images, scripts, etc.).
 

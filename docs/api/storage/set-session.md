@@ -1,4 +1,4 @@
-# setSession
+# setSession <Badge type="info" text="since v1.0.2" />
 
 Set item in sessionStorage with expiration.
 

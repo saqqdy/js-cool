@@ -1,4 +1,4 @@
-# fileToBase64
+# fileToBase64 <Badge type="info" text="v5.13.0" />
 
 将 File 转换为 Base64 字符串。
 

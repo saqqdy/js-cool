@@ -1,4 +1,4 @@
-# isExitsFunction
+# isExitsFunction <Badge type="info" text="v1.0.1" />
 
 检查指定的函数是否存在。
 

@@ -1,4 +1,4 @@
-# all
+# all <Badge type="info" text="v1.0.9" />
 
 检查数组中所有元素是否都满足条件。
 

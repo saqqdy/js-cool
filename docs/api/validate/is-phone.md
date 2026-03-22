@@ -1,4 +1,4 @@
-# isPhone
+# isPhone <Badge type="info" text="since v6.0.0" />
 
 Check if string is a valid phone number (Chinese mobile).
 

@@ -1,4 +1,4 @@
-# svgToBlob
+# svgToBlob <Badge type="info" text="since v5.13.0" />
 
 Convert SVG string to Blob.
 

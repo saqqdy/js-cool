@@ -1,4 +1,4 @@
-# isWindow
+# isWindow <Badge type="info" text="since v5.0.0" />
 
 Check if value is a window object.
 

@@ -1,4 +1,4 @@
-# encodeBase64
+# encodeBase64 <Badge type="info" text="since v1.0.1" />
 
 Encode a string to Base64 format.
 

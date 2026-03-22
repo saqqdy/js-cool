@@ -1,4 +1,4 @@
-# formatDate
+# formatDate <Badge type="info" text="since v6.0.0" />
 
 Format date to string with customizable format tokens.
 

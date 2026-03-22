@@ -1,4 +1,4 @@
-# clearHtml
+# clearHtml <Badge type="info" text="since v1.0.1" />
 
 Remove HTML tags from a string.
 

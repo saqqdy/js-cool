@@ -1,4 +1,4 @@
-# setCache
+# setCache <Badge type="info" text="v1.0.2" />
 
 在 localStorage 中设置项（支持过期时间）。
 

@@ -1,4 +1,4 @@
-# copy
+# copy <Badge type="info" text="since v5.0.0" />
 
 Copy text to clipboard.
 

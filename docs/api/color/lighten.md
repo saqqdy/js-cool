@@ -1,4 +1,4 @@
-# lighten
+# lighten <Badge type="info" text="since v6.0.0" />
 
 Lightens a color by a percentage.
 

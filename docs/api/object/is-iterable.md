@@ -1,4 +1,4 @@
-# isIterable
+# isIterable <Badge type="info" text="since v5.7.0" />
 
 Check if value is iterable.
 

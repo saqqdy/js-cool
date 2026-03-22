@@ -1,4 +1,4 @@
-# inBrowser
+# inBrowser <Badge type="info" text="since v4.5.0" />
 
 Check if running in browser environment.
 

@@ -1,4 +1,4 @@
-# getQueryParams
+# getQueryParams <Badge type="info" text="since v5.0.0" />
 
 Get all URL parameters (behind "#", from hash).
 

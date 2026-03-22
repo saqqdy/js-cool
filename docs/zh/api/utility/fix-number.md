@@ -1,4 +1,4 @@
-# fixNumber
+# fixNumber <Badge type="info" text="v1.0.2" />
 
 将数字保留指定小数位数。
 

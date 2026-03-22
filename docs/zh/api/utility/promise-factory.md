@@ -1,4 +1,4 @@
-# promiseFactory
+# promiseFactory <Badge type="info" text="v5.10.0" />
 
 创建一个可访问值的 Promise。
 

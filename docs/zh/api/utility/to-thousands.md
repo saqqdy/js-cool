@@ -1,4 +1,4 @@
-# toThousands
+# toThousands <Badge type="info" text="v3.0.0" />
 
 格式化数字为千分位格式。
 

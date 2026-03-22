@@ -1,4 +1,4 @@
-# contains
+# contains <Badge type="info" text="v2.2.1" />
 
 检查数组是否包含指定元素。
 

@@ -1,4 +1,4 @@
-# intersect
+# intersect <Badge type="info" text="v2.2.1" />
 
 获取多个数组的交集。
 

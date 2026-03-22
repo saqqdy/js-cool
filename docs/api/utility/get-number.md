@@ -1,4 +1,4 @@
-# getNumber
+# getNumber <Badge type="info" text="since v1.0.1" />
 
 Get the number in the string.
 

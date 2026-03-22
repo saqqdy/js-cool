@@ -1,4 +1,4 @@
-# delay
+# delay <Badge type="info" text="since v1.0.2" />
 
 Delay execution for a specified time.
 

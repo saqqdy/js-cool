@@ -1,4 +1,4 @@
-# isLightColor
+# isLightColor <Badge type="info" text="since v6.0.0" />
 
 Determines if a color is light based on its luminance.
 

@@ -1,4 +1,4 @@
-# extend
+# extend <Badge type="info" text="v1.0.2" />
 
 深度合并对象。
 

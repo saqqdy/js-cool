@@ -1,4 +1,4 @@
-# unescape
+# unescape <Badge type="info" text="v5.5.0" />
 
 反转义字符串中的 HTML 实体。
 

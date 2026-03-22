@@ -1,4 +1,4 @@
-# sorter
+# sorter <Badge type="info" text="v5.14.0" />
 
 根据键对对象数组进行排序。
 

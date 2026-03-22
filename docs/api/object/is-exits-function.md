@@ -1,4 +1,4 @@
-# isExitsFunction
+# isExitsFunction <Badge type="info" text="since v1.0.1" />
 
 The presence or absence of the specified function.
 

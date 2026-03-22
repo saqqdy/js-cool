@@ -1,4 +1,9 @@
-# pattern
+# pattern <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
+
+::: warning Deprecated
+It will be refactored and renamed patterns in the next major release.
+:::
+
 
 Common regex patterns object.
 

@@ -1,4 +1,4 @@
-# nextIndex
+# nextIndex <Badge type="info" text="since v1.0.2" />
 
 Get the next available z-index value.
 

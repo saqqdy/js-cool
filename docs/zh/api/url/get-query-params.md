@@ -1,4 +1,4 @@
-# getQueryParams
+# getQueryParams <Badge type="info" text="v5.0.0" />
 
 获取所有 URL 参数（在"#"后面，从 hash 获取）。
 

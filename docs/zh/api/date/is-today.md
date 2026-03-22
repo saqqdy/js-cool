@@ -1,4 +1,4 @@
-# isToday
+# isToday <Badge type="info" text="v6.0.0" />
 
 检查日期是否为今天。
 

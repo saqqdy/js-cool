@@ -1,4 +1,4 @@
-# getCache
+# getCache <Badge type="info" text="v1.0.2" />
 
 从 localStorage 获取项。
 

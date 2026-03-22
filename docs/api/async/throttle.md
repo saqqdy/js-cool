@@ -1,4 +1,4 @@
-# throttle
+# throttle <Badge type="info" text="since v6.0.0" />
 
 Throttle function that limits the rate at which the function can be invoked.
 

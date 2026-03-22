@@ -1,4 +1,4 @@
-# getCookies
+# getCookies <Badge type="info" text="since v5.6.0" />
 
 Get all cookies as an object.
 

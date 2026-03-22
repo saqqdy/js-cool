@@ -1,4 +1,4 @@
-# chunk
+# chunk <Badge type="info" text="v6.0.0" />
 
 将数组拆分成多个指定大小的块。
 

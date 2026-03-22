@@ -1,4 +1,4 @@
-# isEqual
+# isEqual <Badge type="info" text="since v5.12.0" />
 
 Deep compare two values.
 

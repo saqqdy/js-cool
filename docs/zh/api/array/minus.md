@@ -1,4 +1,4 @@
-# minus
+# minus <Badge type="info" text="v2.2.1" />
 
 获取在第一个数组中但不在其他数组中的元素。
 

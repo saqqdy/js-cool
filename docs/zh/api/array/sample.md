@@ -1,4 +1,4 @@
-# sample
+# sample <Badge type="info" text="v6.0.0" />
 
 从数组中获取一个随机元素。
 

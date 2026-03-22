@@ -1,4 +1,4 @@
-# cleanData
+# cleanData <Badge type="info" text="since v1.0.2" />
 
 Extract specific keys from an object.
 

@@ -1,4 +1,4 @@
-# stopBubble
+# stopBubble <Badge type="info" text="v1.0.2" />
 
 阻止事件冒泡。
 

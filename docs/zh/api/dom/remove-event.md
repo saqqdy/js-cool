@@ -1,4 +1,4 @@
-# removeEvent
+# removeEvent <Badge type="info" text="v1.0.2" />
 
 移除事件监听器。
 

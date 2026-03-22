@@ -1,4 +1,4 @@
-# waiting
+# waiting <Badge type="info" text="since v5.5.0" />
 
 Wait for a specified time.
 

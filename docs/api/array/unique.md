@@ -1,4 +1,4 @@
-# unique
+# unique <Badge type="info" text="since v2.2.1" />
 
 Remove duplicate values from an array.
 

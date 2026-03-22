@@ -1,4 +1,4 @@
-# mapTemplate
+# mapTemplate <Badge type="info" text="v5.9.0" />
 
 模板字符串替换。
 

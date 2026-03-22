@@ -1,4 +1,4 @@
-# urlToBlob
+# urlToBlob <Badge type="info" text="v5.13.0" />
 
 将 URL 转换为 Blob。
 

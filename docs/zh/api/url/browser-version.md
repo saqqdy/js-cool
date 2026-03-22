@@ -1,4 +1,4 @@
-# browserVersion
+# browserVersion <Badge type="info" text="v5.2.0" />
 
 获取浏览器版本信息。
 

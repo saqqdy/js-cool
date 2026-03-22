@@ -1,4 +1,4 @@
-# toThousands
+# toThousands <Badge type="info" text="since v3.0.0" />
 
 Format number with thousands separators.
 

@@ -1,4 +1,4 @@
-# randomNumber
+# randomNumber <Badge type="info" text="since v5.0.0" />
 
 Generate a random number in range.
 

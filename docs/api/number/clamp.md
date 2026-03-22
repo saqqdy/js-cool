@@ -1,4 +1,4 @@
-# clamp
+# clamp <Badge type="info" text="since v6.0.0" />
 
 Clamps number within the inclusive lower and upper bounds.
 

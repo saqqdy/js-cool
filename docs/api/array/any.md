@@ -1,4 +1,4 @@
-# any
+# any <Badge type="info" text="since v1.0.9" />
 
 Check if any element satisfies a condition.
 

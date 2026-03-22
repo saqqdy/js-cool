@@ -1,4 +1,4 @@
-# randomColor
+# randomColor <Badge type="info" text="since v5.5.0" />
 
 Generate a random color.
 

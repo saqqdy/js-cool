@@ -1,4 +1,4 @@
-# sampleSize
+# sampleSize <Badge type="info" text="since v6.0.0" />
 
 Gets n random elements at unique keys from array up to the size of array.
 

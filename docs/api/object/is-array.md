@@ -1,4 +1,4 @@
-# isArray
+# isArray <Badge type="info" text="since v1.0.2" />
 
 Check if value is an array.
 

@@ -1,4 +1,4 @@
-# getFileType
+# getFileType <Badge type="info" text="v5.11.0" />
 
 根据链接后缀判断文件类型。
 

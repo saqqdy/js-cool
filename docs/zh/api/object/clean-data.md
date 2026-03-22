@@ -1,4 +1,4 @@
-# cleanData
+# cleanData <Badge type="info" text="v1.0.2" />
 
 从对象中提取指定的键。
 

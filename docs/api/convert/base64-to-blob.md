@@ -1,4 +1,4 @@
-# base64ToBlob
+# base64ToBlob <Badge type="info" text="since v5.13.0" />
 
 Convert Base64 string to Blob.
 

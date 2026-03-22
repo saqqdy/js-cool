@@ -1,4 +1,4 @@
-# getProperty
+# getProperty <Badge type="info" text="v2.2.4" />
 
 安全地获取嵌套属性值。
 

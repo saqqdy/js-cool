@@ -1,4 +1,4 @@
-# getUrlParam
+# getUrlParam <Badge type="info" text="since v5.0.0" />
 
 Get a single URL parameter value.
 

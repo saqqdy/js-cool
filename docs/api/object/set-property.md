@@ -1,4 +1,4 @@
-# setProperty
+# setProperty <Badge type="info" text="since v2.7.0" />
 
 Safely set a nested property value.
 

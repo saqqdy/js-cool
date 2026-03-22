@@ -1,4 +1,4 @@
-# keyBy
+# keyBy <Badge type="info" text="since v6.0.0" />
 
 Creates an object composed of keys generated from the results of running each element of collection thru iteratee. The corresponding value of each key is the last element responsible for generating the key.
 

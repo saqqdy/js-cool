@@ -1,4 +1,4 @@
-# escape
+# escape <Badge type="info" text="v5.5.0" />
 
 转义字符串中的 HTML 特殊字符。
 

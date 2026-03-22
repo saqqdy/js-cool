@@ -1,4 +1,4 @@
-# omit
+# omit <Badge type="info" text="since v6.0.0" />
 
 Creates an object composed of the own and inherited enumerable property paths of object that are not omitted.
 

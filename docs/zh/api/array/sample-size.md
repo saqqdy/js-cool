@@ -1,4 +1,4 @@
-# sampleSize
+# sampleSize <Badge type="info" text="v6.0.0" />
 
 从数组中获取 n 个不重复的随机元素，最多到数组大小。
 

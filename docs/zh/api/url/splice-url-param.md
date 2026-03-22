@@ -1,4 +1,4 @@
-# spliceUrlParam
+# spliceUrlParam <Badge type="info" text="v5.3.0" />
 
 拼接参数到 URL。
 

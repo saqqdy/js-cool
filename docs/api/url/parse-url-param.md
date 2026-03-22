@@ -1,4 +1,4 @@
-# parseUrlParam
+# parseUrlParam <Badge type="info" text="since v5.0.0" />
 
 Parse URL parameters with type conversion.
 

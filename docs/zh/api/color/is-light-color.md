@@ -1,4 +1,4 @@
-# isLightColor
+# isLightColor <Badge type="info" text="v6.0.0" />
 
 根据亮度判断颜色是否为浅色。
 

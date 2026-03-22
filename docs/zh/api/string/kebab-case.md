@@ -1,4 +1,4 @@
-# kebabCase
+# kebabCase <Badge type="info" text="v6.0.0" />
 
 将字符串转换为短横线命名法（kebab case）。
 

@@ -1,4 +1,4 @@
-# addEvent
+# addEvent <Badge type="info" text="v1.0.2" />
 
 添加事件监听器（跨浏览器兼容）。
 

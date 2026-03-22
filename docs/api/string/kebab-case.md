@@ -1,4 +1,4 @@
-# kebabCase
+# kebabCase <Badge type="info" text="since v6.0.0" />
 
 Converts string to kebab case.
 

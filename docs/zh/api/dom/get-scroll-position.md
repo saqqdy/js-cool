@@ -1,4 +1,8 @@
-# getScrollPosition
+# getScrollPosition <Badge type="danger" text="已废弃" /> <Badge type="info" text="v1.0.2" />
+
+::: warning 已废弃
+将在下一个主要版本中移除。
+:::
 
 获取当前滚动位置。
 

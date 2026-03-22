@@ -1,4 +1,4 @@
-# getType
+# getType <Badge type="info" text="since v1.0.2" />
 
 Get the type of a value.
 

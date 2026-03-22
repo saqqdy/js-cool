@@ -1,4 +1,4 @@
-# truncate
+# truncate <Badge type="info" text="since v6.0.0" />
 
 Truncates string if it's longer than the given maximum string length. The last characters of the truncated string are replaced with the omission string.
 

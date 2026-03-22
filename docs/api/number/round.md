@@ -1,4 +1,4 @@
-# round
+# round <Badge type="info" text="since v6.0.0" />
 
 Computes number rounded to precision.
 

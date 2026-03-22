@@ -1,4 +1,9 @@
-# isDigitals
+# isDigitals <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
+
+::: warning Deprecated
+will be removed in the next major release.
+:::
+
 
 Check if string contains only digits.
 

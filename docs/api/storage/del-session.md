@@ -1,4 +1,4 @@
-# delSession
+# delSession <Badge type="info" text="since v1.0.2" />
 
 Delete item from sessionStorage.
 

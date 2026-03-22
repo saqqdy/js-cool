@@ -1,4 +1,4 @@
-# average
+# average <Badge type="info" text="since v6.0.0" />
 
 Computes the average of the values in array.
 

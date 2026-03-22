@@ -1,4 +1,4 @@
-# punctualTimer
+# punctualTimer <Badge type="info" text="v5.18.0" />
 
 精准 setInterval - 一个补偿漂移以保持准确时间的计时器。
 

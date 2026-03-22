@@ -1,4 +1,4 @@
-# randomNumbers
+# randomNumbers <Badge type="info" text="v5.4.0" />
 
 生成随机数数组。
 

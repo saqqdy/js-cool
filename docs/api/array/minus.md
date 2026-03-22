@@ -1,4 +1,4 @@
-# minus
+# minus <Badge type="info" text="since v2.2.1" />
 
 Get elements in first array but not in others.
 

@@ -1,4 +1,4 @@
-# clearHtml
+# clearHtml <Badge type="info" text="v1.0.1" />
 
 移除字符串中的 HTML 标签。
 

@@ -1,4 +1,4 @@
-# sample
+# sample <Badge type="info" text="since v6.0.0" />
 
 Gets a random element from an array.
 

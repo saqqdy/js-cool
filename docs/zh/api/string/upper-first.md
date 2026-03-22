@@ -1,4 +1,4 @@
-# upperFirst
+# upperFirst <Badge type="info" text="v1.0.1" />
 
 首字母大写。
 

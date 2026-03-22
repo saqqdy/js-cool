@@ -1,4 +1,4 @@
-# dateDiff
+# dateDiff <Badge type="info" text="v6.0.0" />
 
 计算两个日期之间的差值。
 

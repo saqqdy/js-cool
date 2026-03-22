@@ -1,4 +1,4 @@
-# unique
+# unique <Badge type="info" text="v2.2.1" />
 
 数组去重。
 

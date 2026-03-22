@@ -1,4 +1,4 @@
-# sortPinyin
+# sortPinyin <Badge type="info" text="v5.14.0" />
 
 按照中文拼音对中文进行排序。
 

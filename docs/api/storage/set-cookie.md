@@ -1,4 +1,4 @@
-# setCookie
+# setCookie <Badge type="info" text="since v1.0.2" />
 
 Set a cookie.
 

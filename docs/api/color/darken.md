@@ -1,4 +1,4 @@
-# darken
+# darken <Badge type="info" text="since v6.0.0" />
 
 Darkens a color by a percentage.
 

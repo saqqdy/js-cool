@@ -1,4 +1,4 @@
-# appVersion
+# appVersion <Badge type="info" text="v5.1.0" />
 
 从 User Agent 获取应用版本。
 

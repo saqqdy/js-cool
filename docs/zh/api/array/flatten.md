@@ -1,4 +1,4 @@
-# flatten
+# flatten <Badge type="info" text="v6.0.0" />
 
 将数组扁平化一层。
 

@@ -1,4 +1,4 @@
-# truncate
+# truncate <Badge type="info" text="v6.0.0" />
 
 如果字符串长度超过指定的最大长度，则截断字符串。截断后的字符串末尾会用省略字符串替换。
 

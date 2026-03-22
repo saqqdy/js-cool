@@ -1,4 +1,4 @@
-# svgToBlob
+# svgToBlob <Badge type="info" text="v5.13.0" />
 
 将 SVG 字符串转换为 Blob。
 

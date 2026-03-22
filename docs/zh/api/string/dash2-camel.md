@@ -1,4 +1,4 @@
-# dash2Camel
+# dash2Camel <Badge type="info" text="v1.0.1" />
 
 将短横线命名（kebab-case）转换为驼峰命名。
 

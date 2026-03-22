@@ -1,4 +1,4 @@
-# camel2Dash
+# camel2Dash <Badge type="info" text="v1.0.1" />
 
 将驼峰字符串转换为短横线命名（kebab-case）。
 

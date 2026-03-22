@@ -1,4 +1,4 @@
-# openUrl
+# openUrl <Badge type="info" text="since v1.0.6" />
 
 Open URL in new window/tab.
 

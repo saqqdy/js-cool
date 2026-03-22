@@ -1,4 +1,4 @@
-# nextIndex
+# nextIndex <Badge type="info" text="v1.0.2" />
 
 获取下一个可用的 z-index 值。
 

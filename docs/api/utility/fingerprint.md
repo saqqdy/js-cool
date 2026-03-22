@@ -1,4 +1,4 @@
-# fingerprint
+# fingerprint <Badge type="info" text="since v5.2.0" />
 
 Generate browser fingerprint.
 

@@ -1,4 +1,4 @@
-# clamp
+# clamp <Badge type="info" text="v6.0.0" />
 
 将数字限制在包含的下限和上限范围内。
 

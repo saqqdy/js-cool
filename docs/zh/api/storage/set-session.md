@@ -1,4 +1,4 @@
-# setSession
+# setSession <Badge type="info" text="v1.0.2" />
 
 在 sessionStorage 中设置项（支持过期时间）。
 

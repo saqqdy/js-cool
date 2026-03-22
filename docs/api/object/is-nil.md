@@ -1,4 +1,4 @@
-# isNil
+# isNil <Badge type="info" text="since v6.0.0" />
 
 Checks if value is null or undefined.
 

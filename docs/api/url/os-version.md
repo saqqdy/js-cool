@@ -1,4 +1,4 @@
-# osVersion
+# osVersion <Badge type="info" text="since v5.1.0" />
 
 Get the system name and version.
 

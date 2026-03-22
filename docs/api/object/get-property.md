@@ -1,4 +1,4 @@
-# getProperty
+# getProperty <Badge type="info" text="since v2.2.4" />
 
 Safely get a nested property value.
 

@@ -1,4 +1,4 @@
-# openUrl
+# openUrl <Badge type="info" text="v1.0.6" />
 
 在新窗口/标签页中打开 URL。
 

@@ -1,4 +1,4 @@
-# searchObject
+# searchObject <Badge type="info" text="since v5.0.0" />
 
 Search in nested objects/arrays.
 

@@ -1,4 +1,4 @@
-# isRegExp
+# isRegExp <Badge type="info" text="since v5.15.0" />
 
 Check if value is a RegExp.
 

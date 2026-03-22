@@ -1,4 +1,4 @@
-# union
+# union <Badge type="info" text="since v2.2.1" />
 
 Get the union of multiple arrays.
 

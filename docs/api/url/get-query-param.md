@@ -1,4 +1,4 @@
-# getQueryParam
+# getQueryParam <Badge type="info" text="since v5.0.0" />
 
 Get a single query parameter (behind "#", from hash).
 

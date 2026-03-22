@@ -1,4 +1,4 @@
-# getNumber
+# getNumber <Badge type="info" text="v1.0.1" />
 
 获取字符串中的数字。
 

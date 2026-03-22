@@ -1,4 +1,4 @@
-# decodeBase64
+# decodeBase64 <Badge type="info" text="since v1.0.1" />
 
 Decode a Base64 encoded string.
 

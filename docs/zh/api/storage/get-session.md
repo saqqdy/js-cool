@@ -1,4 +1,4 @@
-# getSession
+# getSession <Badge type="info" text="v1.0.2" />
 
 从 sessionStorage 获取项。
 

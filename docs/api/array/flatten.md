@@ -1,4 +1,4 @@
-# flatten
+# flatten <Badge type="info" text="since v6.0.0" />
 
 Flattens array a single level deep.
 

@@ -1,4 +1,4 @@
-# getUrlParam
+# getUrlParam <Badge type="info" text="v5.0.0" />
 
 获取单个 URL 参数值。
 

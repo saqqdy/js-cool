@@ -1,4 +1,4 @@
-# delCache
+# delCache <Badge type="info" text="v1.0.2" />
 
 从 localStorage 删除项。
 

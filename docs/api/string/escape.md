@@ -1,4 +1,4 @@
-# escape
+# escape <Badge type="info" text="since v5.5.0" />
 
 Escape HTML special characters in a string.
 

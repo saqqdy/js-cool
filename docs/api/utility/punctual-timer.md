@@ -1,4 +1,4 @@
-# punctualTimer
+# punctualTimer <Badge type="info" text="since v5.18.0" />
 
 Punctual setInterval - a timer that compensates for drift to maintain accurate timing.
 

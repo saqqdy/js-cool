@@ -1,4 +1,4 @@
-# isArray
+# isArray <Badge type="info" text="v1.0.2" />
 
 检查值是否为数组。
 

@@ -1,4 +1,4 @@
-# omit
+# omit <Badge type="info" text="v6.0.0" />
 
 创建一个对象，由未排除的属性组成。
 

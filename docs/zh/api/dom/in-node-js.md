@@ -1,4 +1,4 @@
-# inNodeJs
+# inNodeJs <Badge type="info" text="v5.13.0" />
 
 检查是否在 Node.js 环境中运行。
 

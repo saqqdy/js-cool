@@ -1,4 +1,4 @@
-# average
+# average <Badge type="info" text="v6.0.0" />
 
 计算数组中所有值的平均值。
 

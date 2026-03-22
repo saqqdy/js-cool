@@ -1,4 +1,4 @@
-# getSession
+# getSession <Badge type="info" text="since v1.0.2" />
 
 Get item from sessionStorage.
 

@@ -1,4 +1,4 @@
-# spliceUrlParam
+# spliceUrlParam <Badge type="info" text="since v5.3.0" />
 
 Splice parameters into URL.
 

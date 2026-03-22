@@ -1,4 +1,4 @@
-# promiseFactory
+# promiseFactory <Badge type="info" text="since v5.10.0" />
 
 Create a promise with accessible value.
 

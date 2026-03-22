@@ -1,4 +1,4 @@
-# mapTemplate
+# mapTemplate <Badge type="info" text="since v5.9.0" />
 
 Replace template placeholders with values.
 

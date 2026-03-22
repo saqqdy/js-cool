@@ -1,4 +1,4 @@
-# isDarkMode
+# isDarkMode <Badge type="info" text="since v5.5.0" />
 
 Check if dark mode is enabled.
 

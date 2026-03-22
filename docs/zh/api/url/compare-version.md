@@ -1,4 +1,4 @@
-# compareVersion
+# compareVersion <Badge type="info" text="v4.7.0" />
 
 比较两个版本字符串。
 

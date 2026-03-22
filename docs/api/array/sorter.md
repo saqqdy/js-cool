@@ -1,4 +1,4 @@
-# sorter
+# sorter <Badge type="info" text="since v5.14.0" />
 
 Sort an array of objects by a key.
 

@@ -1,4 +1,4 @@
-# isNumberBrowser
+# isNumberBrowser <Badge type="info" text="since v5.22.0" />
 
 Detect if the client is a 360 browser.
 

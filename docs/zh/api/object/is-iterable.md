@@ -1,4 +1,4 @@
-# isIterable
+# isIterable <Badge type="info" text="v5.7.0" />
 
 检查值是否可迭代。
 

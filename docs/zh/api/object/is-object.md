@@ -1,4 +1,4 @@
-# isObject
+# isObject <Badge type="info" text="v5.0.0" />
 
 检查值是否为对象（非 null，非数组）。
 

@@ -1,4 +1,8 @@
-# getDirParam
+# getDirParam <Badge type="danger" text="已废弃" /> <Badge type="info" text="v1.0.1" />
+
+::: warning 已废弃
+将在下一个主要版本中重构并重命名为 getDirParams。
+:::
 
 获取目录风格的 URL 参数。
 

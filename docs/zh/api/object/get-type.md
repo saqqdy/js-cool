@@ -1,4 +1,4 @@
-# getType
+# getType <Badge type="info" text="v1.0.2" />
 
 获取值的类型。
 

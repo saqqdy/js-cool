@@ -1,4 +1,4 @@
-# compareVersion
+# compareVersion <Badge type="info" text="since v4.7.0" />
 
 Compare two version strings.
 

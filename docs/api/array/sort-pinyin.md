@@ -1,4 +1,4 @@
-# sortPinyin
+# sortPinyin <Badge type="info" text="since v5.14.0" />
 
 Sort Chinese by Chinese phonetic alphabet (pinyin).
 

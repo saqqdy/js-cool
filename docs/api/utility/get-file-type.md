@@ -1,4 +1,4 @@
-# getFileType
+# getFileType <Badge type="info" text="since v5.11.0" />
 
 Determine file type based on link suffix.
 

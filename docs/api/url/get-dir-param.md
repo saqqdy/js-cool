@@ -1,4 +1,9 @@
-# getDirParam
+# getDirParam <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
+
+::: warning Deprecated
+It will be refactored and renamed getDirParams in the next major release.
+:::
+
 
 Get directory-style URL parameters.
 

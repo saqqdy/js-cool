@@ -1,4 +1,4 @@
-# isToday
+# isToday <Badge type="info" text="since v6.0.0" />
 
 Check if date is today.
 

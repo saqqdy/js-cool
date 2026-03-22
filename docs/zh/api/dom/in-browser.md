@@ -1,4 +1,4 @@
-# inBrowser
+# inBrowser <Badge type="info" text="v4.5.0" />
 
 检查是否在浏览器环境中运行。
 

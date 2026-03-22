@@ -1,4 +1,4 @@
-# base64ToFile
+# base64ToFile <Badge type="info" text="since v5.13.0" />
 
 Convert Base64 string to File.
 

@@ -1,4 +1,4 @@
-# addEvent
+# addEvent <Badge type="info" text="since v1.0.2" />
 
 Add event listener (cross-browser compatible).
 

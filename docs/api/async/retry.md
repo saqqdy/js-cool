@@ -1,4 +1,4 @@
-# retry
+# retry <Badge type="info" text="since v6.0.0" />
 
 Retry a function until it succeeds or the retry limit is reached.
 

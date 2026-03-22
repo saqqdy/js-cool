@@ -1,4 +1,9 @@
-# trim
+# trim <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
+
+::: warning Deprecated
+will be removed in the next major release. Use String.prototype.trim() instead.
+:::
+
 
 Trim whitespace from a string.
 

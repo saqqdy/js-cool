@@ -1,4 +1,4 @@
-# dash2Camel
+# dash2Camel <Badge type="info" text="since v1.0.1" />
 
 Convert dash-case (kebab-case) string to camelCase.
 

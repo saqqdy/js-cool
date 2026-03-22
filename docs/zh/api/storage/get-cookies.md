@@ -1,4 +1,4 @@
-# getCookies
+# getCookies <Badge type="info" text="v5.6.0" />
 
 获取所有 Cookie 为对象形式。
 

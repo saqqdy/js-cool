@@ -1,4 +1,4 @@
-# chunk
+# chunk <Badge type="info" text="since v6.0.0" />
 
 Creates an array of elements split into groups the length of size.
 

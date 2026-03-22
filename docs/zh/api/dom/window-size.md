@@ -1,4 +1,4 @@
-# windowSize
+# windowSize <Badge type="info" text="v1.0.1" />
 
 获取窗口尺寸。
 

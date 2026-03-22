@@ -1,4 +1,4 @@
-# setCookie
+# setCookie <Badge type="info" text="v1.0.2" />
 
 设置 Cookie。
 

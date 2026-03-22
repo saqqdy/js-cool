@@ -1,4 +1,4 @@
-# fingerprint
+# fingerprint <Badge type="info" text="v5.2.0" />
 
 生成浏览器指纹。
 

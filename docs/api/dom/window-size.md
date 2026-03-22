@@ -1,4 +1,4 @@
-# windowSize
+# windowSize <Badge type="info" text="since v1.0.1" />
 
 Get window dimensions.
 

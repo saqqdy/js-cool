@@ -1,4 +1,4 @@
-# upperFirst
+# upperFirst <Badge type="info" text="since v1.0.1" />
 
 Capitalize the first letter of a string.
 

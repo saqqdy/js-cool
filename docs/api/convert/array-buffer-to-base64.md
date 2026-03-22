@@ -1,4 +1,4 @@
-# arrayBufferToBase64
+# arrayBufferToBase64 <Badge type="info" text="since v5.13.0" />
 
 Convert ArrayBuffer to Base64 string.
 

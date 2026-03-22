@@ -1,4 +1,9 @@
-# getScrollPosition
+# getScrollPosition <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.2" />
+
+::: warning Deprecated
+will be removed in the next major release.
+:::
+
 
 Get current scroll position.
 

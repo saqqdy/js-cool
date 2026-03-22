@@ -1,4 +1,4 @@
-# clone
+# clone <Badge type="info" text="since v5.15.0" />
 
 Deep clone an object or array.
 

@@ -1,4 +1,4 @@
-# setCache
+# setCache <Badge type="info" text="since v1.0.2" />
 
 Set an item in localStorage with optional expiration.
 

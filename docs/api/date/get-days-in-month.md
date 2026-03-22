@@ -1,4 +1,4 @@
-# getDaysInMonth
+# getDaysInMonth <Badge type="info" text="since v6.0.0" />
 
 Get the number of days in a month.
 

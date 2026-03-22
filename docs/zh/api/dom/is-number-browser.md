@@ -1,4 +1,4 @@
-# isNumberBrowser
+# isNumberBrowser <Badge type="info" text="v5.22.0" />
 
 检测客户端是否为 360 浏览器。
 

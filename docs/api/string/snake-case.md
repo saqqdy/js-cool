@@ -1,4 +1,4 @@
-# snakeCase
+# snakeCase <Badge type="info" text="since v6.0.0" />
 
 Converts string to snake case.
 

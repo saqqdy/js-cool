@@ -1,4 +1,4 @@
-# inNodeJs
+# inNodeJs <Badge type="info" text="since v5.13.0" />
 
 Check if running in Node.js environment.
 

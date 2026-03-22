@@ -1,4 +1,4 @@
-# shuffle
+# shuffle <Badge type="info" text="since v5.4.0" />
 
 Randomly shuffle an array.
 

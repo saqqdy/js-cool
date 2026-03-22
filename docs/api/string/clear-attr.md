@@ -1,4 +1,4 @@
-# clearAttr
+# clearAttr <Badge type="info" text="since v1.0.1" />
 
 Remove all attributes of HTML tags.
 

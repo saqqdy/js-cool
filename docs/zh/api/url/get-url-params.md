@@ -1,4 +1,4 @@
-# getUrlParams
+# getUrlParams <Badge type="info" text="v5.0.0" />
 
 解析 URL 参数为对象。
 

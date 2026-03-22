@@ -1,4 +1,4 @@
-# stopDefault
+# stopDefault <Badge type="info" text="v1.0.2" />
 
 阻止事件的默认行为。
 

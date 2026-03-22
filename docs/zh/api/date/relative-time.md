@@ -1,4 +1,4 @@
-# relativeTime
+# relativeTime <Badge type="info" text="v6.0.0" />
 
 获取相对时间字符串（例如："3分钟前"、"2小时后"）。
 

@@ -1,4 +1,8 @@
-# client
+# client <Badge type="danger" text="已废弃" /> <Badge type="info" text="v1.0.1" />
+
+::: warning 已废弃
+将在下一个主要版本中重构
+:::
 
 获取浏览器/客户端信息。
 

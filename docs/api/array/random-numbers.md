@@ -1,4 +1,4 @@
-# randomNumbers
+# randomNumbers <Badge type="info" text="since v5.4.0" />
 
 Generate an array of random numbers.
 

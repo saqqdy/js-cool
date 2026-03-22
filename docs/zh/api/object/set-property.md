@@ -1,4 +1,4 @@
-# setProperty
+# setProperty <Badge type="info" text="v2.7.0" />
 
 安全地设置嵌套属性值。
 

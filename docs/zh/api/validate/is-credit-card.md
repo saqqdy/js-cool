@@ -1,4 +1,4 @@
-# isCreditCard
+# isCreditCard <Badge type="info" text="v6.0.0" />
 
 使用 Luhn 算法检查字符串是否为有效的信用卡号码。
 

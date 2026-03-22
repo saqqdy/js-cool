@@ -1,4 +1,4 @@
-# isPhone
+# isPhone <Badge type="info" text="v6.0.0" />
 
 检查字符串是否为有效的手机号码（中国手机号）。
 

@@ -1,4 +1,4 @@
-# isRegExp
+# isRegExp <Badge type="info" text="v5.15.0" />
 
 检查值是否为正则表达式。
 

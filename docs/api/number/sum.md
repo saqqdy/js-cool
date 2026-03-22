@@ -1,4 +1,4 @@
-# sum
+# sum <Badge type="info" text="since v6.0.0" />
 
 Computes the sum of the values in array.
 

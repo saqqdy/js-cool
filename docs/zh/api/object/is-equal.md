@@ -1,4 +1,4 @@
-# isEqual
+# isEqual <Badge type="info" text="v5.12.0" />
 
 深度比较两个值。
 

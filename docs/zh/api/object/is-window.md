@@ -1,4 +1,4 @@
-# isWindow
+# isWindow <Badge type="info" text="v5.0.0" />
 
 检查值是否为 window 对象。
 

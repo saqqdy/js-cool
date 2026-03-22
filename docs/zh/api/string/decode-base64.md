@@ -1,4 +1,4 @@
-# decodeBase64
+# decodeBase64 <Badge type="info" text="v1.0.1" />
 
 解码 Base64 编码的字符串。
 

@@ -1,4 +1,4 @@
-# all
+# all <Badge type="info" text="since v1.0.9" />
 
 Check if all elements satisfy a condition.
 

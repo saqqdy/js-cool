@@ -1,4 +1,4 @@
-# encodeUtf8
+# encodeUtf8 <Badge type="info" text="v1.0.1" />
 
 将字符串编码为 UTF-8 格式。
 

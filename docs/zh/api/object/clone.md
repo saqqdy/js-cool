@@ -1,4 +1,4 @@
-# clone
+# clone <Badge type="info" text="v5.15.0" />
 
 深拷贝对象或数组。
 

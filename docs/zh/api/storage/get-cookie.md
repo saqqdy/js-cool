@@ -1,4 +1,4 @@
-# getCookie
+# getCookie <Badge type="info" text="v1.0.2" />
 
 获取 Cookie 值。
 

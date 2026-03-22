@@ -1,4 +1,4 @@
-# decodeUtf8
+# decodeUtf8 <Badge type="info" text="since v1.0.1" />
 
 Decode a UTF-8 encoded string.
 

@@ -1,4 +1,4 @@
-# randomString
+# randomString <Badge type="info" text="v5.0.0" />
 
 生成随机字符串。
 

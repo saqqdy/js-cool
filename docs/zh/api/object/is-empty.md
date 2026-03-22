@@ -1,4 +1,4 @@
-# isEmpty
+# isEmpty <Badge type="info" text="v6.0.0" />
 
 检查值是否为空对象、集合、Map 或 Set。
 

@@ -1,4 +1,4 @@
-# debounce
+# debounce <Badge type="info" text="v6.0.0" />
 
 防抖函数，延迟执行函数直到在最后一次调用后经过指定的等待时间。
 

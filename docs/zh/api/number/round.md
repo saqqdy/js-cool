@@ -1,4 +1,4 @@
-# round
+# round <Badge type="info" text="v6.0.0" />
 
 将数字四舍五入到指定精度。
 

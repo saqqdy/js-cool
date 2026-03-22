@@ -1,4 +1,4 @@
-# nextVersion
+# nextVersion <Badge type="info" text="v5.10.0" />
 
 获取下一个版本号。
 

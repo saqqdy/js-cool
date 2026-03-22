@@ -1,4 +1,4 @@
-# stopDefault
+# stopDefault <Badge type="info" text="since v1.0.2" />
 
 Prevent default event behavior.
 

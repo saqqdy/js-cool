@@ -1,4 +1,4 @@
-# inRange
+# inRange <Badge type="info" text="since v6.0.0" />
 
 Checks if number is between start and up to, but not including, end. If end is not specified, it's set to start with start then set to 0.
 

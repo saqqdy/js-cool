@@ -1,4 +1,4 @@
-# delCookie
+# delCookie <Badge type="info" text="v1.0.2" />
 
 删除 Cookie。
 

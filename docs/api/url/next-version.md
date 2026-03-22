@@ -1,4 +1,4 @@
-# nextVersion
+# nextVersion <Badge type="info" text="since v5.10.0" />
 
 Get the next version number.
 

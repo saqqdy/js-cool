@@ -1,4 +1,4 @@
-# darken
+# darken <Badge type="info" text="v6.0.0" />
 
 按百分比使颜色变暗。
 

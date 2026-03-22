@@ -1,4 +1,4 @@
-# uuid
+# uuid <Badge type="info" text="since v1.0.9" />
 
 Generate a UUID (v4).
 

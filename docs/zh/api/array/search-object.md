@@ -1,4 +1,4 @@
-# searchObject
+# searchObject <Badge type="info" text="v5.0.0" />
 
 在嵌套对象/数组中搜索。
 

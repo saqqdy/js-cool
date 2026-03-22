@@ -1,4 +1,4 @@
-# relativeTime
+# relativeTime <Badge type="info" text="since v6.0.0" />
 
 Get relative time string (e.g., "3 minutes ago", "in 2 hours").
 

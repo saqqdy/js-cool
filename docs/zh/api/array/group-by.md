@@ -1,4 +1,4 @@
-# groupBy
+# groupBy <Badge type="info" text="v6.0.0" />
 
 创建一个对象，其键由遍历每个元素后通过迭代器生成的结果组成。
 

@@ -1,4 +1,4 @@
-# isExitsVariable
+# isExitsVariable <Badge type="info" text="v1.0.1" />
 
 检查指定的变量是否存在。
 

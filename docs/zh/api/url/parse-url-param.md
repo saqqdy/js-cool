@@ -1,4 +1,4 @@
-# parseUrlParam
+# parseUrlParam <Badge type="info" text="v5.0.0" />
 
 解析 URL 参数并支持类型转换。
 

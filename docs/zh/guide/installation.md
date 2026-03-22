@@ -12,10 +12,6 @@ pnpm add js-cool
 npm install js-cool
 ```
 
-```bash [yarn]
-yarn add js-cool
-```
-
 ```bash [bun]
 bun add js-cool
 ```

@@ -1,4 +1,4 @@
-# encodeBase64
+# encodeBase64 <Badge type="info" text="v1.0.1" />
 
 将字符串编码为 Base64 格式。
 

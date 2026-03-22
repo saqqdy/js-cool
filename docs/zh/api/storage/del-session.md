@@ -1,4 +1,4 @@
-# delSession
+# delSession <Badge type="info" text="v1.0.2" />
 
 从 sessionStorage 删除项。
 

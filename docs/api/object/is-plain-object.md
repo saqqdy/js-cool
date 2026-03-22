@@ -1,4 +1,4 @@
-# isPlainObject
+# isPlainObject <Badge type="info" text="since v5.0.0" />
 
 Check if value is a plain object (created by `{}` or `new Object()`).
 

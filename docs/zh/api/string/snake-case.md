@@ -1,4 +1,4 @@
-# snakeCase
+# snakeCase <Badge type="info" text="v6.0.0" />
 
 将字符串转换为蛇形命名法（snake case）。
 

@@ -1,4 +1,4 @@
-# getQueryParam
+# getQueryParam <Badge type="info" text="v5.0.0" />
 
 获取单个查询参数（在"#"后面，从 hash 获取）。
 

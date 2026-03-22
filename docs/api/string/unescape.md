@@ -1,4 +1,4 @@
-# unescape
+# unescape <Badge type="info" text="since v5.5.0" />
 
 Unescape HTML entities in a string.
 

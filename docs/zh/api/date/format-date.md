@@ -1,4 +1,4 @@
-# formatDate
+# formatDate <Badge type="info" text="v6.0.0" />
 
 将日期格式化为字符串，支持自定义格式标记。
 

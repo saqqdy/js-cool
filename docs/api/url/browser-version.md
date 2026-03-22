@@ -1,4 +1,4 @@
-# browserVersion
+# browserVersion <Badge type="info" text="since v5.2.0" />
 
 Get browser version information.
 

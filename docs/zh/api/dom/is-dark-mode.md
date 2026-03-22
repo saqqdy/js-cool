@@ -1,4 +1,4 @@
-# isDarkMode
+# isDarkMode <Badge type="info" text="v5.5.0" />
 
 检查是否启用了深色模式。
 

@@ -1,4 +1,4 @@
-# getUrlParams
+# getUrlParams <Badge type="info" text="since v5.0.0" />
 
 Parse URL parameters into an object.
 

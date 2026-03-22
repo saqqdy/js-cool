@@ -1,4 +1,4 @@
-# appVersion
+# appVersion <Badge type="info" text="since v5.1.0" />
 
 Get app version from user agent.
 

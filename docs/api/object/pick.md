@@ -1,4 +1,4 @@
-# pick
+# pick <Badge type="info" text="since v6.0.0" />
 
 Creates an object composed of the picked object properties.
 

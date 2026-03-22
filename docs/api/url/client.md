@@ -1,4 +1,9 @@
-# client
+# client <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
+
+::: warning Deprecated
+Will be refactored for the next major release
+:::
+
 
 Get browser/client information.
 

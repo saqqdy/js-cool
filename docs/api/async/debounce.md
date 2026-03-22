@@ -1,4 +1,4 @@
-# debounce
+# debounce <Badge type="info" text="since v6.0.0" />
 
 Debounce function that delays invoking the function until after the specified wait time has elapsed since the last call.
 

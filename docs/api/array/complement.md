@@ -1,4 +1,4 @@
-# complement
+# complement <Badge type="info" text="since v2.2.1" />
 
 Get the complement of arrays (elements not in intersection).
 

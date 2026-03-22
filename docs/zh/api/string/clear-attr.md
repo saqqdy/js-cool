@@ -1,4 +1,4 @@
-# clearAttr
+# clearAttr <Badge type="info" text="v1.0.1" />
 
 移除 HTML 标签的所有属性。
 

@@ -1,4 +1,4 @@
-# isObject
+# isObject <Badge type="info" text="since v5.0.0" />
 
 Check if value is an object (not null, not array).
 

@@ -1,4 +1,8 @@
-# pattern
+# pattern <Badge type="danger" text="已废弃" /> <Badge type="info" text="v1.0.1" />
+
+::: warning 已废弃
+将在下一个主要版本中重构并重命名为 patterns。
+:::
 
 常用正则表达式模式对象。
 

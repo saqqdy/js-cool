@@ -1,4 +1,4 @@
-# any
+# any <Badge type="info" text="v1.0.9" />
 
 检查数组中是否有任意元素满足条件。
 

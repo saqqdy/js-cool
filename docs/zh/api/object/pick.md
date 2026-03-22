@@ -1,4 +1,4 @@
-# pick
+# pick <Badge type="info" text="v6.0.0" />
 
 创建一个对象，由选中的属性组成。
 

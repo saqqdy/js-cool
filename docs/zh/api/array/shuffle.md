@@ -1,4 +1,4 @@
-# shuffle
+# shuffle <Badge type="info" text="v5.4.0" />
 
 随机打乱数组顺序。
 

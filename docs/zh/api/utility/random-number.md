@@ -1,4 +1,4 @@
-# randomNumber
+# randomNumber <Badge type="info" text="v5.0.0" />
 
 生成指定范围内的随机数。
 

@@ -1,4 +1,4 @@
-# getDaysInMonth
+# getDaysInMonth <Badge type="info" text="v6.0.0" />
 
 获取指定月份的天数。
 

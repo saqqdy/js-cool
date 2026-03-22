@@ -1,4 +1,4 @@
-# blobToUrl
+# blobToUrl <Badge type="info" text="v5.13.0" />
 
 将 Blob 转换为对象 URL。
 

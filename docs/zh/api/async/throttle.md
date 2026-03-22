@@ -1,4 +1,4 @@
-# throttle
+# throttle <Badge type="info" text="v6.0.0" />
 
 节流函数，限制函数在一定时间内只能执行一次。
 

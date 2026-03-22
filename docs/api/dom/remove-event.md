@@ -1,4 +1,4 @@
-# removeEvent
+# removeEvent <Badge type="info" text="since v1.0.2" />
 
 Remove event listener.
 

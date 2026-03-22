@@ -1,4 +1,4 @@
-# isDate
+# isDate <Badge type="info" text="v5.15.0" />
 
 检查值是否为 Date 对象。
 

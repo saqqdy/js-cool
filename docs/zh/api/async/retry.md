@@ -1,4 +1,4 @@
-# retry
+# retry <Badge type="info" text="v6.0.0" />
 
 重试函数，直到成功或达到重试限制。
 

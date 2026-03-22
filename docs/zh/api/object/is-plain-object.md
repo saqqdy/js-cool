@@ -1,4 +1,4 @@
-# isPlainObject
+# isPlainObject <Badge type="info" text="v5.0.0" />
 
 检查值是否为纯对象（由 `{}` 或 `new Object()` 创建）。
 

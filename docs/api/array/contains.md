@@ -1,4 +1,4 @@
-# contains
+# contains <Badge type="info" text="since v2.2.1" />
 
 Check if an array contains an element.
 

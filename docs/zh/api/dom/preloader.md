@@ -1,4 +1,4 @@
-# preloader
+# preloader <Badge type="info" text="v5.5.0" />
 
 预加载资源（图片、脚本等）。
 

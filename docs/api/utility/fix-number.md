@@ -1,4 +1,4 @@
-# fixNumber
+# fixNumber <Badge type="info" text="since v1.0.2" />
 
 Fix number to specified decimal places.
 
