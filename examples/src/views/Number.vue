@@ -36,13 +36,13 @@ clamp(-10, 0, 100) // 0`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">clamp(</code>
+          <code class="code-inline">clamp(</code>
           <n-input-number v-model:value="clampVal" style="width: 80px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="clampMin" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="clampMax" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -58,11 +58,11 @@ clamp(-10, 0, 100) // 0`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">round(</code>
+          <code class="code-inline">round(</code>
           <n-input-number v-model:value="roundVal" :step="0.00001" style="width: 100px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="roundDecimals" :min="0" :max="10" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -80,11 +80,11 @@ average([1, 2, 3, 4, 5]) // 3`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">sum([1,2,3,4,5])</code>
+            <code class="code-inline">sum([1,2,3,4,5])</code>
             <n-tag size="small" :bordered="false">{{ sum([1, 2, 3, 4, 5]) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">average([1,2,3,4,5])</code>
+            <code class="code-inline">average([1,2,3,4,5])</code>
             <n-tag size="small" :bordered="false">{{ average([1, 2, 3, 4, 5]) }}</n-tag>
           </n-space>
         </n-space>
@@ -99,13 +99,13 @@ average([1, 2, 3, 4, 5]) // 3`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">inRange(</code>
+          <code class="code-inline">inRange(</code>
           <n-input-number v-model:value="inRangeVal" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="inRangeMin" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="inRangeMax" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -135,11 +135,11 @@ average([1, 2, 3, 4, 5]) // 3`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">fixNumber(</code>
+          <code class="code-inline">fixNumber(</code>
           <n-input-number v-model:value="fixVal" :step="0.00001" style="width: 100px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="fixDecimals" :min="0" :max="10" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -169,11 +169,11 @@ average([1, 2, 3, 4, 5]) // 3`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">randomNumber(</code>
+          <code class="code-inline">randomNumber(</code>
           <n-input-number v-model:value="randomMin" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="randomMax" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -189,11 +189,11 @@ average([1, 2, 3, 4, 5]) // 3`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">randomNumbers(</code>
+          <code class="code-inline">randomNumbers(</code>
           <n-input-number v-model:value="randomNumCount" :min="1" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="randomNumSum" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>

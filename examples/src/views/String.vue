@@ -108,7 +108,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
         <n-space vertical>
           <n-input v-model:value="truncateInput" style="width: 300px;" />
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">length:</code>
+            <code class="code-inline">length:</code>
             <n-input-number v-model:value="truncateLen" :min="1" style="width: 80px;" />
           </n-space>
         </n-space>
@@ -116,15 +116,15 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 11px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">{ length: {{ truncateLen }} }</code>
+            <code class="code-inline" style="font-size: 11px;">{ length: {{ truncateLen }} }</code>
             <n-tag type="info" size="small">{{ truncate(truncateInput, { length: truncateLen }) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 11px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">{ length: {{ truncateLen }}, omission: '…' }</code>
+            <code class="code-inline" style="font-size: 11px;">{ length: {{ truncateLen }}, omission: '…' }</code>
             <n-tag type="info" size="small">{{ truncate(truncateInput, { length: truncateLen, omission: '…' }) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 11px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">{ length: {{ truncateLen }}, separator: ' ' }</code>
+            <code class="code-inline" style="font-size: 11px;">{ length: {{ truncateLen }}, separator: ' ' }</code>
             <n-tag type="info" size="small">{{ truncate(truncateInput, { length: truncateLen, separator: ' ' }) }}</n-tag>
           </n-space>
         </n-space>

@@ -40,15 +40,15 @@ fillIPv6('2001:db8::1')
           </n-space>
           <n-space vertical>
             <n-space align="center">
-              <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">fillIPv6('::1')</code>
+              <code class="code-inline">fillIPv6('::1')</code>
               <n-tag size="small" :bordered="false">{{ fillIPv6('::1') }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">fillIPv6('2001:db8::1')</code>
+              <code class="code-inline">fillIPv6('2001:db8::1')</code>
               <n-tag size="small" :bordered="false">{{ fillIPv6('2001:db8::1') }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">fillIPv6('fe80::')</code>
+              <code class="code-inline">fillIPv6('fe80::')</code>
               <n-tag size="small" :bordered="false">{{ fillIPv6('fe80::') }}</n-tag>
             </n-space>
           </n-space>

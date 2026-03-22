@@ -55,7 +55,7 @@ shuffle('hello', 3) // 'leh'`"
             <n-tag>{{ JSON.stringify(shuffleInput) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">size:</code>
+            <code class="code-inline">size:</code>
             <n-input-number v-model:value="shuffleSize" :min="1" :max="shuffleInput.length" style="width: 80px;" placeholder="all" clearable />
             <n-button size="small" @click="doShuffle">Shuffle</n-button>
           </n-space>
@@ -65,11 +65,11 @@ shuffle('hello', 3) // 'leh'`"
         <n-space vertical>
           <n-tag type="info">{{ JSON.stringify(shuffleResult.length ? shuffleResult : shuffle([...shuffleInput])) }}</n-tag>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">shuffle('hello')</code>
+            <code class="code-inline">shuffle('hello')</code>
             <n-tag size="small">{{ shuffle('hello') }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">shuffle('hello', 3)</code>
+            <code class="code-inline">shuffle('hello', 3)</code>
             <n-tag size="small">{{ shuffle('hello', 3) }}</n-tag>
           </n-space>
         </n-space>

@@ -59,13 +59,13 @@ generatePresets()
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">RGB(</code>
+          <code class="code-inline">RGB(</code>
           <n-input-number v-model:value="rgbR" :min="0" :max="255" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="rgbG" :min="0" :max="255" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">,</code>
+          <code class="code-inline">,</code>
           <n-input-number v-model:value="rgbB" :min="0" :max="255" style="width: 70px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">)</code>
+          <code class="code-inline">)</code>
         </n-space>
       </template>
       <template #result>
@@ -85,15 +85,15 @@ generatePresets()
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">rgbToHSL(255, 0, 0)</code>
+            <code class="code-inline">rgbToHSL(255, 0, 0)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(rgbToHSL(255, 0, 0)) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">rgbToHSL(0, 255, 0)</code>
+            <code class="code-inline">rgbToHSL(0, 255, 0)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(rgbToHSL(0, 255, 0)) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">rgbToHSL(0, 0, 255)</code>
+            <code class="code-inline">rgbToHSL(0, 0, 255)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(rgbToHSL(0, 0, 255)) }}</n-tag>
           </n-space>
         </n-space>
@@ -116,16 +116,16 @@ darken('#3b82f6', 20) // darker shade`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">lighten(</code>
+            <code class="code-inline">lighten(</code>
             <n-input-number v-model:value="lightenAmount" :min="0" :max="100" style="width: 70px;" />
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">%)</code>
+            <code class="code-inline">%)</code>
             <n-tag type="info" size="small" :bordered="false">{{ lighten(colorForShade, lightenAmount) }}</n-tag>
             <div :style="{ width: '32px', height: '32px', borderRadius: '4px', border: '1px solid #ddd', backgroundColor: lighten(colorForShade, lightenAmount) }" />
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">darken(</code>
+            <code class="code-inline">darken(</code>
             <n-input-number v-model:value="darkenAmount" :min="0" :max="100" style="width: 70px;" />
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">%)</code>
+            <code class="code-inline">%)</code>
             <n-tag type="info" size="small" :bordered="false">{{ darken(colorForShade, darkenAmount) }}</n-tag>
             <div :style="{ width: '32px', height: '32px', borderRadius: '4px', border: '1px solid #ddd', backgroundColor: darken(colorForShade, darkenAmount) }" />
           </n-space>
@@ -170,9 +170,9 @@ randomColor([200, 100, 0], [255, 200, 100]) // warm colors`"
       <template #input>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">range:</code>
+            <code class="code-inline">range:</code>
             <n-input-number v-model:value="randomMin" :min="0" :max="255" style="width: 70px;" />
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">-</code>
+            <code class="code-inline">-</code>
             <n-input-number v-model:value="randomMax" :min="0" :max="255" style="width: 70px;" />
           </n-space>
           <n-space align="center">

@@ -18,6 +18,54 @@ code, pre {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
 }
 
+/* Code inline style - supports dark mode */
+.code-inline {
+  font-size: 12px;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.dark .code-inline {
+  background: #2d2d2d;
+}
+
+/* Code block style - supports dark mode */
+.code-block {
+  font-size: 12px;
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.dark .code-block {
+  background: #2d2d2d;
+}
+
+/* Demo box - supports dark mode */
+.demo-box {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.dark .demo-box {
+  background: #2d2d2d;
+}
+
+.demo-box-inner {
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.dark .demo-box-inner {
+  background: #1a1a1a;
+  border-color: #444;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

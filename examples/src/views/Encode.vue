@@ -61,12 +61,12 @@ encodeBase64('你好') // Works with Chinese characters`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Encoded:</code>
+            <code class="code-inline">Encoded:</code>
             <n-tag type="info" size="small" :bordered="false">{{ base64Encoded || '-' }}</n-tag>
           </n-space>
           <n-space align="center">
             <n-button size="small" @click="handleBase64Decode">Decode</n-button>
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Decoded:</code>
+            <code class="code-inline">Decoded:</code>
             <n-tag size="small" :bordered="false">{{ base64Decoded || '-' }}</n-tag>
           </n-space>
         </n-space>
@@ -89,12 +89,12 @@ decodeUtf8(encoded) // 'Hello 世界'`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Encoded:</code>
+            <code class="code-inline">Encoded:</code>
             <n-tag type="info" size="small" :bordered="false">{{ utf8Encoded || '-' }}</n-tag>
           </n-space>
           <n-space align="center">
             <n-button size="small" @click="handleUtf8Decode">Decode</n-button>
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Decoded:</code>
+            <code class="code-inline">Decoded:</code>
             <n-tag size="small" :bordered="false">{{ utf8Decoded || '-' }}</n-tag>
           </n-space>
         </n-space>

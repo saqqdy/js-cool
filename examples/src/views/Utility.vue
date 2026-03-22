@@ -188,15 +188,15 @@ isDarkMode() // true if dark mode`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">inBrowser</code>
+            <code class="code-inline">inBrowser</code>
             <n-tag size="small" :bordered="false">{{ envInfo.inBrowser }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">inNodeJs</code>
+            <code class="code-inline">inNodeJs</code>
             <n-tag size="small" :bordered="false">{{ envInfo.inNodeJs }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">isDarkMode()</code>
+            <code class="code-inline">isDarkMode()</code>
             <n-tag size="small" :bordered="false">{{ darkMode }}</n-tag>
           </n-space>
         </n-space>

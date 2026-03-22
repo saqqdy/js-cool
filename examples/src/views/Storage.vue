@@ -77,7 +77,7 @@ delCache('key')`"
       </template>
       <template #result>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Result:</code>
+          <code class="code-inline">Result:</code>
           <n-tag type="info" size="small" :bordered="false">{{ lsResult ?? 'null' }}</n-tag>
         </n-space>
       </template>
@@ -107,7 +107,7 @@ delSession('key')`"
       </template>
       <template #result>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Result:</code>
+          <code class="code-inline">Result:</code>
           <n-tag type="info" size="small" :bordered="false">{{ ssResult ?? 'null' }}</n-tag>
         </n-space>
       </template>
@@ -140,10 +140,10 @@ delCookie('key')`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Result:</code>
+            <code class="code-inline">Result:</code>
             <n-tag type="info" size="small" :bordered="false">{{ cookieResult ?? 'null' }}</n-tag>
           </n-space>
-          <pre v-if="Object.keys(allCookies).length" style="font-size: 12px; background: #f5f5f5; padding: 12px; border-radius: 8px; overflow-x: auto;">{{ JSON.stringify(allCookies, null, 2) }}</pre>
+          <pre v-if="Object.keys(allCookies).length" class="code-block">{{ JSON.stringify(allCookies, null, 2) }}</pre>
         </n-space>
       </template>
     </FunctionCard>

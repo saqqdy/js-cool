@@ -28,9 +28,9 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">formatDate(new Date(), '</code>
+          <code class="code-inline">formatDate(new Date(), '</code>
           <n-input v-model:value="formatPattern" style="width: 200px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">')</code>
+          <code class="code-inline">')</code>
         </n-space>
       </template>
       <template #result>
@@ -38,15 +38,15 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
           <n-tag type="info" size="small" :bordered="false">{{ formatDate(new Date(), formatPattern) }}</n-tag>
           <n-space wrap>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">YYYY-MM-DD</code>
+              <code class="code-inline" style="font-size: 11px;">YYYY-MM-DD</code>
               <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'YYYY-MM-DD') }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">hh:mm A</code>
+              <code class="code-inline" style="font-size: 11px;">hh:mm A</code>
               <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'hh:mm A') }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">YYYY/MM/DD</code>
+              <code class="code-inline" style="font-size: 11px;">YYYY/MM/DD</code>
               <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'YYYY/MM/DD') }}</n-tag>
             </n-space>
           </n-space>
@@ -69,7 +69,7 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
         </n-space>
       </template>
       <template #result>
-        <pre style="font-size: 12px; background: #f5f5f5; padding: 12px; border-radius: 8px; overflow-x: auto;">{{ JSON.stringify(dateDiff(diffStart, diffEnd), null, 2) }}</pre>
+        <pre class="code-block">{{ JSON.stringify(dateDiff(diffStart, diffEnd), null, 2) }}</pre>
       </template>
     </FunctionCard>
 
@@ -86,28 +86,28 @@ relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">en</code>
+            <code class="code-inline">en</code>
             <n-tag type="info" size="small" :bordered="false">{{ relativeTime(relativeInput) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">zh</code>
+            <code class="code-inline">zh</code>
             <n-tag type="info" size="small" :bordered="false">{{ relativeTime(relativeInput, new Date(), 'zh') }}</n-tag>
           </n-space>
           <n-space wrap>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">now - 1min</code>
+              <code class="code-inline" style="font-size: 11px;">now - 1min</code>
               <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 60000)) }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">now - 1hr</code>
+              <code class="code-inline" style="font-size: 11px;">now - 1hr</code>
               <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 3600000)) }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">now - 1day</code>
+              <code class="code-inline" style="font-size: 11px;">now - 1day</code>
               <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 86400000)) }}</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 11px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px;">now + 1hr</code>
+              <code class="code-inline" style="font-size: 11px;">now + 1hr</code>
               <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() + 3600000)) }}</n-tag>
             </n-space>
           </n-space>
@@ -138,9 +138,9 @@ getDaysInMonth(2023, 2) // 28`"
     >
       <template #input>
         <n-space align="center">
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Year:</code>
+          <code class="code-inline">Year:</code>
           <n-input-number v-model:value="yearInput" style="width: 100px;" />
-          <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Month:</code>
+          <code class="code-inline">Month:</code>
           <n-input-number v-model:value="monthInput" style="width: 70px;" />
         </n-space>
       </template>
@@ -149,11 +149,11 @@ getDaysInMonth(2023, 2) // 28`"
           <n-tag type="info" size="small" :bordered="false">{{ getDaysInMonth(yearInput, monthInput) }} days</n-tag>
           <n-space>
             <n-space align="center">
-              <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">getDaysInMonth(2024, 2)</code>
+              <code class="code-inline">getDaysInMonth(2024, 2)</code>
               <n-tag size="small" :bordered="false">{{ getDaysInMonth(2024, 2) }} days (leap year)</n-tag>
             </n-space>
             <n-space align="center">
-              <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">getDaysInMonth(2023, 2)</code>
+              <code class="code-inline">getDaysInMonth(2023, 2)</code>
               <n-tag size="small" :bordered="false">{{ getDaysInMonth(2023, 2) }} days</n-tag>
             </n-space>
           </n-space>

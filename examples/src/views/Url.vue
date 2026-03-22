@@ -58,11 +58,11 @@ getUrlParams('?name=John&age=25')
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">getUrlParams(url)</code>
+            <code class="code-inline">getUrlParams(url)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(getUrlParams(urlInput)) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">getUrlParams(url, true)</code>
+            <code class="code-inline">getUrlParams(url, true)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(getUrlParams(urlInput, true)) }}</n-tag>
           </n-space>
         </n-space>
@@ -85,15 +85,15 @@ spliceUrlParam({ name: 'John', age: 25 })
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">parseUrlParam(str)</code>
+            <code class="code-inline">parseUrlParam(str)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(parseUrlParam(paramStr)) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">parseUrlParam(str, true)</code>
+            <code class="code-inline">parseUrlParam(str, true)</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(parseUrlParam(paramStr, true)) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">spliceUrlParam</code>
+            <code class="code-inline">spliceUrlParam</code>
             <n-tag type="info" size="small" :bordered="false">{{ spliceUrlParam(paramObj) }}</n-tag>
           </n-space>
         </n-space>
@@ -111,7 +111,7 @@ spliceUrlParam({ name: 'John', age: 25 })
         <n-input v-model:value="dirUrl" style="width: 100%;" />
       </template>
       <template #result>
-        <pre style="font-size: 12px; background: #f5f5f5; padding: 12px; border-radius: 8px; overflow-x: auto;">{{ JSON.stringify(getDirParam(dirUrl), null, 2) }}</pre>
+        <pre class="code-block">{{ JSON.stringify(getDirParam(dirUrl), null, 2) }}</pre>
       </template>
     </FunctionCard>
 
@@ -127,7 +127,7 @@ client.getOS() // { os: 'Mac OS' }`"
         <n-button size="small" @click="getClientInfo">Get Client Info</n-button>
       </template>
       <template #result>
-        <pre style="font-size: 12px; background: #f5f5f5; padding: 12px; border-radius: 8px; overflow-x: auto;">{{ JSON.stringify(clientInfo, null, 2) }}</pre>
+        <pre class="code-block">{{ JSON.stringify(clientInfo, null, 2) }}</pre>
       </template>
     </FunctionCard>
 
@@ -142,15 +142,15 @@ appVersion('Chrome') // '123.0.0.0'`"
       <template #result>
         <n-space vertical>
           <div>
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">browserVersion()</code>
-            <pre style="font-size: 12px; background: #f5f5f5; padding: 8px; margin-top: 8px; border-radius: 4px; overflow-x: auto;">{{ JSON.stringify(browserVersion(), null, 2) }}</pre>
+            <code class="code-inline">browserVersion()</code>
+            <pre class="code-block">{{ JSON.stringify(browserVersion(), null, 2) }}</pre>
           </div>
           <div>
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">osVersion()</code>
-            <pre style="font-size: 12px; background: #f5f5f5; padding: 8px; margin-top: 8px; border-radius: 4px; overflow-x: auto;">{{ JSON.stringify(osVersion(), null, 2) }}</pre>
+            <code class="code-inline">osVersion()</code>
+            <pre class="code-block">{{ JSON.stringify(osVersion(), null, 2) }}</pre>
           </div>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">appVersion('Chrome')</code>
+            <code class="code-inline">appVersion('Chrome')</code>
             <n-tag type="info" size="small" :bordered="false">{{ appVersion('Chrome') }}</n-tag>
           </n-space>
         </n-space>
@@ -192,15 +192,15 @@ nextVersion('1.2.3', 'patch') // '1.2.4'`"
       <template #result>
         <n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">major</code>
+            <code class="code-inline">major</code>
             <n-tag type="info" size="small" :bordered="false">{{ nextVersion(versionInput, 'major') }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">minor</code>
+            <code class="code-inline">minor</code>
             <n-tag type="info" size="small" :bordered="false">{{ nextVersion(versionInput, 'minor') }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">patch</code>
+            <code class="code-inline">patch</code>
             <n-tag type="info" size="small" :bordered="false">{{ nextVersion(versionInput, 'patch') }}</n-tag>
           </n-space>
         </n-space>

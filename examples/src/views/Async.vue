@@ -101,11 +101,11 @@ handler.flush() // execute immediately`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Output:</code>
+            <code class="code-inline">Output:</code>
             <n-tag type="info" size="small" :bordered="false">{{ debounceOutput || '(waiting...)' }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Executions:</code>
+            <code class="code-inline">Executions:</code>
             <n-tag size="small" :bordered="false">{{ debounceCount }}</n-tag>
           </n-space>
         </n-space>
@@ -132,11 +132,11 @@ handler('input') // executes at most once per second`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Output:</code>
+            <code class="code-inline">Output:</code>
             <n-tag type="info" size="small" :bordered="false">{{ throttleOutput || '(waiting...)' }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Executions:</code>
+            <code class="code-inline">Executions:</code>
             <n-tag size="small" :bordered="false">{{ throttleCount }}</n-tag>
           </n-space>
         </n-space>
@@ -164,11 +164,11 @@ console.log('Data:', data)`"
       <template #result>
         <n-space v-if="awaitToResult" vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">error:</code>
+            <code class="code-inline">error:</code>
             <n-tag type="info" size="small" :bordered="false">{{ awaitToResult.err?.message || 'null' }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">data:</code>
+            <code class="code-inline">data:</code>
             <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(awaitToResult.data) }}</n-tag>
           </n-space>
         </n-space>

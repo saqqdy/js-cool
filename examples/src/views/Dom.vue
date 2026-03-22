@@ -81,12 +81,13 @@ const incrementBubble = () => { bubbleCount.value++ }
     >
       <template #result>
         <div
-          style="background: #f5f5f5; padding: 16px; border-radius: 8px; cursor: pointer;"
+          class="demo-box"
+          style="cursor: pointer;"
           @click="incrementBubble"
         >
           <p style="margin-bottom: 8px; font-size: 14px;">Outer div (clicks: {{ bubbleCount }})</p>
           <div
-            style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #ddd;"
+            class="demo-box-inner"
             @click="handleBubble"
           >
             Inner div (stopBubble) - clicks won't bubble

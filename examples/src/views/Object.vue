@@ -43,21 +43,22 @@ extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } })
       <template #result>
         <n-space vertical>
           <div>
-            <code style="font-size: 11px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Shallow: extend({ a: { x: 1 } }, { a: { y: 2 } })</code>
-            <pre style="font-size: 12px; background: #f5f5f5; padding: 8px; margin-top: 4px; border-radius: 4px;">{{ JSON.stringify(extend({ a: { x: 1 } }, { a: { y: 2 } }), null, 2) }}</pre>
+            <n-code code="extend({ a: { x: 1 } }, { a: { y: 2 } })" language="javascript" />
+            <n-tag type="info" size="small" style="margin-top: 4px;">{{ JSON.stringify(extend({ a: { x: 1 } }, { a: { y: 2 } }), null, 2) }}</n-tag>
           </div>
           <div>
-            <code style="font-size: 11px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Deep: extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } })</code>
-            <pre style="font-size: 12px; background: #f5f5f5; padding: 8px; margin-top: 4px; border-radius: 4px;">{{ JSON.stringify(extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } }), null, 2) }}</pre>
+            <n-code code="extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } })" language="javascript" />
+            <n-tag type="info" size="small" style="margin-top: 4px;">{{ JSON.stringify(extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } }), null, 2) }}</n-tag>
           </div>
         </n-space>
       </template>
     </FunctionCard>
 
     <FunctionCard
-      title="getProperty"
-      description="Get nested property by path"
-      :code="`getProperty({ a: { b: { c: 1 } } }, 'a.b.c') // 1`"
+      title="getProperty / setProperty"
+      description="Get/set nested property by path"
+      :code="`getProperty({ a: { b: { c: 1 } } }, 'a.b.c') // 1
+setProperty(obj, 'a.b.c', 100) // sets nested value`"
     >
       <template #input>
         <n-space vertical>
@@ -70,6 +71,12 @@ extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } })
             <span style="color: #999;">→</span>
             <n-tag type="info">{{ JSON.stringify(getProperty(objInput, pathInput)) }}</n-tag>
           </n-space>
+        </n-space>
+      </template>
+      <template #result>
+        <n-space align="center">
+          <n-code code="setProperty({}, 'a.b.c', 1)" language="javascript" />
+          <n-tag type="info" size="small">{{ JSON.stringify(setProperty({}, 'a.b.c', 1)) }}</n-tag>
         </n-space>
       </template>
     </FunctionCard>
@@ -119,8 +126,8 @@ safeStringify({ a: BigInt(1n) }) // handles BigInt`"
             <n-tag type="info">{{ JSON.stringify(safeParse('invalid')) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <n-code :code="`safeStringify({ a: BigInt(1n) })`" language="javascript" />
-            <n-tag type="info" size="small">{{ safeStringify({ a: BigInt(1n) }) }}</n-tag>
+            <n-code :code="`safeStringify(testObj)`" language="javascript" />
+            <n-tag type="info" size="small">{{ safeStringify(testObj) }}</n-tag>
           </n-space>
         </n-space>
       </template>

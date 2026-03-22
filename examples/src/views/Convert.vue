@@ -42,11 +42,11 @@ decodeBase64('SGVsbG8=') // 'Hello'`"
       <template #result>
         <n-space vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">encodeBase64</code>
+            <code class="code-inline">encodeBase64</code>
             <n-tag type="info" size="small" :bordered="false">{{ encodeBase64(base64Input) }}</n-tag>
           </n-space>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">decodeBase64</code>
+            <code class="code-inline">decodeBase64</code>
             <n-tag type="info" size="small" :bordered="false">{{ decodeBase64(encodeBase64(base64Input)) }}</n-tag>
           </n-space>
         </n-space>
@@ -69,7 +69,7 @@ blobToUrl(blob) // 'blob:origin/uuid'`"
       <template #result>
         <n-space v-if="blobUrl" vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">Blob URL:</code>
+            <code class="code-inline">Blob URL:</code>
             <n-tag type="info" size="small" :bordered="false">{{ blobUrl }}</n-tag>
           </n-space>
           <a :href="blobUrl" target="_blank" style="color: #18a058; font-size: 14px;">Open in new tab</a>
@@ -92,7 +92,7 @@ blobToUrl(blob) // 'blob:origin/uuid'`"
       <template #result>
         <n-space v-if="svgBlobUrl" vertical>
           <n-space align="center">
-            <code style="font-size: 12px; background: #f5f5f5; padding: 2px 8px; border-radius: 4px;">SVG Blob URL:</code>
+            <code class="code-inline">SVG Blob URL:</code>
             <n-tag type="info" size="small" :bordered="false">{{ svgBlobUrl }}</n-tag>
           </n-space>
           <img :src="svgBlobUrl" style="max-width: 96px; border: 1px solid #ddd; border-radius: 4px;" />
@@ -128,7 +128,7 @@ svgToBlob(svgString)
 urlToBlob(url)           // Promise`"
     >
       <template #result>
-        <pre style="font-size: 12px; background: #f5f5f5; padding: 12px; border-radius: 8px; overflow-x: auto;">arrayBufferToBase64(buffer, mimeType?)
+        <pre class="code-block">arrayBufferToBase64(buffer, mimeType?)
 arrayBufferToBlob(buffer, mimeType)
 base64ToArrayBuffer(base64)
 base64ToBlob(base64)
