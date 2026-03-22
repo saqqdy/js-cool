@@ -6,25 +6,25 @@ import './assets/index.css'
 const modules = import.meta.glob('./views/*.vue')
 
 const routes = Object.keys(modules)
-  .filter((path) => !path.includes('Home.vue'))
-  .map((path) => {
-    const name = path.match(/\.\/views\/(.+)\.vue$/)?.[1] || ''
-    return {
-      path: `/${name.toLowerCase()}`,
-      name,
-      component: modules[path],
-    }
-  })
+	.filter(path => !path.includes('Home.vue'))
+	.map(path => {
+		const name = path.match(/\.\/views\/(.+)\.vue$/)?.[1] || ''
+		return {
+			path: `/${name.toLowerCase()}`,
+			name,
+			component: modules[path],
+		}
+	})
 
 routes.unshift({
-  path: '/',
-  name: 'Home',
-  component: () => import('./views/Home.vue'),
+	path: '/',
+	name: 'Home',
+	component: () => import('./views/Home.vue'),
 })
 
 const router = createRouter({
-  history: createWebHistory('/js-cool/'),
-  routes,
+	history: createWebHistory('/js-cool/'),
+	routes,
 })
 
 createApp(App).use(router).mount('#app')

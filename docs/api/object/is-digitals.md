@@ -4,7 +4,6 @@
 will be removed in the next major release.
 :::
 
-
 Check if string contains only digits.
 
 ## Usage

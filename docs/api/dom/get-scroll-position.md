@@ -4,7 +4,6 @@
 will be removed in the next major release.
 :::
 
-
 Get current scroll position.
 
 ## Usage

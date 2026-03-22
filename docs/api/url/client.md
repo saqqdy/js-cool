@@ -4,7 +4,6 @@
 Will be refactored for the next major release
 :::
 
-
 Get browser/client information.
 
 ## Usage

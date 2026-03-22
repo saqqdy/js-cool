@@ -65,6 +65,7 @@ Branch "master" is not allowed to deploy to github-pages due to environment prot
 Workflow 文件：`.github/workflows/deploy.yml`
 
 构建步骤：
+
 1. 构建主库 `js-cool`（examples 通过 `link:..` 依赖它）
 2. 进入 examples 目录安装依赖并构建
 3. 上传 `examples/dist` 到 GitHub Pages
@@ -77,9 +78,9 @@ Workflow 文件：`.github/workflows/deploy.yml`
 
 如需部署到其他平台：
 
-| 平台 | 配置 |
-|------|------|
+| 平台    | 配置                                               |
+| ------- | -------------------------------------------------- |
 | Netlify | 添加 `_redirects` 文件，内容：`/* /index.html 200` |
-| Vercel | 添加 `vercel.json` 配置 rewrites |
-| Nginx | 配置：`try_files $uri $uri/ /index.html;` |
-| Apache | 使用 `.htaccess` 配置 `FallbackResource` |
+| Vercel  | 添加 `vercel.json` 配置 rewrites                   |
+| Nginx   | 配置：`try_files $uri $uri/ /index.html;`          |
+| Apache  | 使用 `.htaccess` 配置 `FallbackResource`           |

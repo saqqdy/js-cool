@@ -4,7 +4,6 @@
 It will be refactored and renamed getDirParams in the next major release.
 :::
 
-
 Get directory-style URL parameters.
 
 ## Usage

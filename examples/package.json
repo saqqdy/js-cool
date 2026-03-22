@@ -1,30 +1,30 @@
 {
-  "name": "js-cool-examples",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@vicons/ionicons5": "^0.13.0",
-    "highlight.js": "^11.11.1",
-    "js-cool": "link:..",
-    "naive-ui": "^2.44.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "autoprefixer": "^10.4.27",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3",
-    "unplugin-vue-components": "^31.0.0",
-    "vite": "^6.2.4",
-    "vue-tsc": "^2.2.8"
-  }
+	"name": "js-cool-examples",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@vicons/ionicons5": "^0.13.0",
+		"highlight.js": "^11.11.1",
+		"js-cool": "link:..",
+		"naive-ui": "^2.44.1",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.2.2",
+		"@vitejs/plugin-vue": "^5.2.3",
+		"autoprefixer": "^10.4.27",
+		"postcss": "^8.5.8",
+		"tailwindcss": "^4.2.2",
+		"typescript": "^5.9.3",
+		"unplugin-vue-components": "^31.0.0",
+		"vite": "^6.2.4",
+		"vue-tsc": "^2.2.8"
+	}
 }

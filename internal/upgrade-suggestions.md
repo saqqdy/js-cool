@@ -12,21 +12,21 @@
 
 #### 数组方法
 
-| 建议新增方法 | 描述 | Lodash 对应 | 优先级 |
-|-------------|------|-------------|--------|
-| `differenceBy` | 按条件求差集 | `_.differenceBy` | ⭐⭐⭐ |
-| `intersectionBy` | 按条件求交集 | `_.intersectionBy` | ⭐⭐⭐ |
-| `unionBy` | 按条件求并集 | `_.unionBy` | ⭐⭐⭐ |
-| `findIndex` | 查找索引 | `_.findIndex` | ⭐⭐⭐⭐ |
-| `findLastIndex` | 反向查找索引 | `_.findLastIndex` | ⭐⭐⭐ |
-| `take` | 取前 N 个元素 | `_.take` | ⭐⭐⭐⭐ |
-| `takeRight` | 取后 N 个元素 | `_.takeRight` | ⭐⭐⭐⭐ |
-| `drop` | 丢弃前 N 个 | `_.drop` | ⭐⭐⭐ |
-| `dropRight` | 丢弃后 N 个 | `_.dropRight` | ⭐⭐⭐ |
-| `zip` | 数组压缩 | `_.zip` | ⭐⭐⭐ |
-| `unzip` | 数组解压 | `_.unzip` | ⭐⭐⭐ |
-| `partition` | 分区 | `_.partition` | ⭐⭐⭐⭐ |
-| `countBy` | 计数分组 | `_.countBy` | ⭐⭐⭐ |
+| 建议新增方法     | 描述          | Lodash 对应        | 优先级   |
+| ---------------- | ------------- | ------------------ | -------- |
+| `differenceBy`   | 按条件求差集  | `_.differenceBy`   | ⭐⭐⭐   |
+| `intersectionBy` | 按条件求交集  | `_.intersectionBy` | ⭐⭐⭐   |
+| `unionBy`        | 按条件求并集  | `_.unionBy`        | ⭐⭐⭐   |
+| `findIndex`      | 查找索引      | `_.findIndex`      | ⭐⭐⭐⭐ |
+| `findLastIndex`  | 反向查找索引  | `_.findLastIndex`  | ⭐⭐⭐   |
+| `take`           | 取前 N 个元素 | `_.take`           | ⭐⭐⭐⭐ |
+| `takeRight`      | 取后 N 个元素 | `_.takeRight`      | ⭐⭐⭐⭐ |
+| `drop`           | 丢弃前 N 个   | `_.drop`           | ⭐⭐⭐   |
+| `dropRight`      | 丢弃后 N 个   | `_.dropRight`      | ⭐⭐⭐   |
+| `zip`            | 数组压缩      | `_.zip`            | ⭐⭐⭐   |
+| `unzip`          | 数组解压      | `_.unzip`          | ⭐⭐⭐   |
+| `partition`      | 分区          | `_.partition`      | ⭐⭐⭐⭐ |
+| `countBy`        | 计数分组      | `_.countBy`        | ⭐⭐⭐   |
 
 **示例实现建议**：
 
@@ -42,13 +42,16 @@ function partition<T>(array: T[], predicate: (value: T) => boolean): [T[], T[]] 
   const pass: T[] = []
   const fail: T[] = []
   for (const item of array) {
-    (predicate(item) ? pass : fail).push(item)
+    ;(predicate(item) ? pass : fail).push(item)
   }
   return [pass, fail]
 }
 
 // countBy.ts
-function countBy<T>(array: T[], iteratee: keyof T | ((value: T) => string)): Record<string, number> {
+function countBy<T>(
+  array: T[],
+  iteratee: keyof T | ((value: T) => string)
+): Record<string, number> {
   const result: Record<string, number> = {}
   const getKey = typeof iteratee === 'function' ? iteratee : (item: T) => String(item[iteratee])
 
@@ -62,18 +65,18 @@ function countBy<T>(array: T[], iteratee: keyof T | ((value: T) => string)): Rec
 
 #### 对象方法
 
-| 建议新增方法 | 描述 | Lodash 对应 | 优先级 |
-|-------------|------|-------------|--------|
-| `mapKeys` | 映射键名 | `_.mapKeys` | ⭐⭐⭐ |
-| `mapValues` | 映射值 | `_.mapValues` | ⭐⭐⭐⭐ |
-| `invert` | 键值反转 | `_.invert` | ⭐⭐⭐ |
-| `keys` | 获取键数组 | `_.keys` | ⭐⭐ |
-| `values` | 获取值数组 | `_.values` | ⭐⭐ |
-| `entries` | 获取键值对 | `_.entries` | ⭐⭐ |
-| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐ |
-| `has` | 检查属性存在 | `_.has` | ⭐⭐⭐ |
-| `mergeWith` | 自定义合并 | `_.mergeWith` | ⭐⭐ |
-| `transform` | 对象转换 | `_.transform` | ⭐⭐ |
+| 建议新增方法  | 描述         | Lodash 对应     | 优先级   |
+| ------------- | ------------ | --------------- | -------- |
+| `mapKeys`     | 映射键名     | `_.mapKeys`     | ⭐⭐⭐   |
+| `mapValues`   | 映射值       | `_.mapValues`   | ⭐⭐⭐⭐ |
+| `invert`      | 键值反转     | `_.invert`      | ⭐⭐⭐   |
+| `keys`        | 获取键数组   | `_.keys`        | ⭐⭐     |
+| `values`      | 获取值数组   | `_.values`      | ⭐⭐     |
+| `entries`     | 获取键值对   | `_.entries`     | ⭐⭐     |
+| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐     |
+| `has`         | 检查属性存在 | `_.has`         | ⭐⭐⭐   |
+| `mergeWith`   | 自定义合并   | `_.mergeWith`   | ⭐⭐     |
+| `transform`   | 对象转换     | `_.transform`   | ⭐⭐     |
 
 **示例实现建议**：
 
@@ -102,15 +105,15 @@ function invert<T extends string | number>(obj: Record<string, T>): Record<T, st
 
 #### 字符串方法
 
-| 建议新增方法 | 描述 | Lodash 对应 | 优先级 |
-|-------------|------|-------------|--------|
-| `words` | 分词 | `_.words` | ⭐⭐ |
-| `capitalize` | 首字母大写其余小写 | `_.capitalize` | ⭐⭐⭐ |
-| `lowerFirst` | 首字母小写 | `_.lowerFirst` | ⭐⭐⭐ |
-| `padStart` | 前填充 | `String.prototype.padStart` | ⭐⭐ |
-| `padEnd` | 后填充 | `String.prototype.padEnd` | ⭐⭐ |
-| `repeat` | 重复字符串 | `String.prototype.repeat` | ⭐⭐ |
-| `template` | 模板引擎 | `_.template` | ⭐⭐⭐ |
+| 建议新增方法 | 描述               | Lodash 对应                 | 优先级 |
+| ------------ | ------------------ | --------------------------- | ------ |
+| `words`      | 分词               | `_.words`                   | ⭐⭐   |
+| `capitalize` | 首字母大写其余小写 | `_.capitalize`              | ⭐⭐⭐ |
+| `lowerFirst` | 首字母小写         | `_.lowerFirst`              | ⭐⭐⭐ |
+| `padStart`   | 前填充             | `String.prototype.padStart` | ⭐⭐   |
+| `padEnd`     | 后填充             | `String.prototype.padEnd`   | ⭐⭐   |
+| `repeat`     | 重复字符串         | `String.prototype.repeat`   | ⭐⭐   |
+| `template`   | 模板引擎           | `_.template`                | ⭐⭐⭐ |
 
 ### 1.2 中优先级 - 增强现有方法
 
@@ -274,7 +277,10 @@ interface SchemaRules {
   validate?: (value: any) => boolean
 }
 
-function validate(data: Record<string, any>, schema: Record<string, SchemaRules>): {
+function validate(
+  data: Record<string, any>,
+  schema: Record<string, SchemaRules>
+): {
   valid: boolean
   errors: Record<string, string[]>
 } {
@@ -361,8 +367,7 @@ function getType(value: unknown): string {
   }
 
   // ... 复杂类型判断
-  const result = /* ... */
-  typeCache.set(value as object, result)
+  const result = /* ... */ typeCache.set(value as object, result)
   return result
 }
 ```
@@ -463,16 +468,15 @@ function parseDate(date: Date | string | number): Date | null {
 
 ```typescript
 // getProperty.ts - 增强类型推导
-type PathImpl<T, Key extends string> =
-  T extends object
-    ? Key extends `${infer K}.${infer Rest}`
-      ? K extends keyof T
-        ? `${K}.${PathImpl<T[K], Rest>}`
-        : never
-      : Key extends keyof T
-        ? Key
-        : never
-    : never
+type PathImpl<T, Key extends string> = T extends object
+  ? Key extends `${infer K}.${infer Rest}`
+    ? K extends keyof T
+      ? `${K}.${PathImpl<T[K], Rest>}`
+      : never
+    : Key extends keyof T
+      ? Key
+      : never
+  : never
 
 function getProperty<T, P extends PathImpl<T, string>>(
   obj: T,
@@ -530,11 +534,10 @@ class JsCoolError extends Error {
 function getProperty(obj: any, path: string, defaultValue?: any): any {
   if (obj === null || obj === undefined) {
     if (defaultValue !== undefined) return defaultValue
-    throw new JsCoolError(
-      `Cannot read property '${path}' of null or undefined`,
-      'INVALID_INPUT',
-      { obj, path }
-    )
+    throw new JsCoolError(`Cannot read property '${path}' of null or undefined`, 'INVALID_INPUT', {
+      obj,
+      path,
+    })
   }
   // ...
 }
@@ -595,6 +598,7 @@ import { camel2Dash, dash2Camel } from 'js-cool/string'
 **目标**：达到 95%+ 代码覆盖率
 
 **建议**：
+
 1. 增加边界条件测试
 2. 增加性能基准测试
 3. 增加跨环境测试（浏览器、Node.js、Deno、Bun）
@@ -611,7 +615,9 @@ describe('unique benchmark', () => {
   })
 
   bench('unique with objects (by key)', () => {
-    const data = Array(1000).fill(null).map((_, i) => ({ id: i % 100, value: i }))
+    const data = Array(1000)
+      .fill(null)
+      .map((_, i) => ({ id: i % 100, value: i }))
     unique(data, 'id')
   })
 })
@@ -643,7 +649,7 @@ function use(plugin: JsCoolPlugin) {
     },
     extendType: (name, check) => {
       // 扩展类型检查
-    }
+    },
   })
   plugins.set(plugin.name, true)
 }
@@ -655,7 +661,7 @@ const lodashCompatPlugin: JsCoolPlugin = {
     // 添加 lodash 风格的别名
     api.addFunction('uniq', unique)
     api.addFunction('cloneDeep', clone)
-  }
+  },
 }
 ```
 
@@ -691,15 +697,15 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 **建议**：明确支持的运行环境
 
-| 环境 | 最低版本 | 测试状态 |
-|------|---------|---------|
-| Chrome | 60+ | ✅ |
-| Firefox | 55+ | ✅ |
-| Safari | 12+ | ✅ |
-| Edge | 79+ | ✅ |
-| Node.js | 14+ | ✅ |
-| Deno | 1.0+ | ⚠️ 待测试 |
-| Bun | 1.0+ | ⚠️ 待测试 |
+| 环境    | 最低版本 | 测试状态  |
+| ------- | -------- | --------- |
+| Chrome  | 60+      | ✅        |
+| Firefox | 55+      | ✅        |
+| Safari  | 12+      | ✅        |
+| Edge    | 79+      | ✅        |
+| Node.js | 14+      | ✅        |
+| Deno    | 1.0+     | ⚠️ 待测试 |
+| Bun     | 1.0+     | ⚠️ 待测试 |
 
 ---
 
@@ -709,39 +715,39 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 **时间**：2-3 周
 
-| 任务 | 优先级 | 预估工时 |
-|------|-------|---------|
-| 新增 `take`、`drop`、`findIndex` | 高 | 2天 |
-| 新增 `partition`、`countBy` | 高 | 1天 |
-| 新增 `mapValues`、`mapKeys` | 高 | 1天 |
-| 增强 `clone` 方法 | 中 | 1天 |
-| 增强 `groupBy` 方法 | 中 | 0.5天 |
-| 完善类型定义 | 中 | 1天 |
-| 增加边界测试 | 中 | 1天 |
+| 任务                             | 优先级 | 预估工时 |
+| -------------------------------- | ------ | -------- |
+| 新增 `take`、`drop`、`findIndex` | 高     | 2天      |
+| 新增 `partition`、`countBy`      | 高     | 1天      |
+| 新增 `mapValues`、`mapKeys`      | 高     | 1天      |
+| 增强 `clone` 方法                | 中     | 1天      |
+| 增强 `groupBy` 方法              | 中     | 0.5天    |
+| 完善类型定义                     | 中     | 1天      |
+| 增加边界测试                     | 中     | 1天      |
 
 ### Phase 2: 性能与体验优化（v6.2）
 
 **时间**：2 周
 
-| 任务 | 优先级 | 预估工时 |
-|------|-------|---------|
-| 深拷贝性能优化 | 高 | 1天 |
-| 数组方法优化 | 中 | 1天 |
-| 日期解析增强 | 中 | 1天 |
-| 错误处理增强 | 低 | 0.5天 |
-| 文档完善 | 中 | 1天 |
-| 基准测试 | 低 | 1天 |
+| 任务           | 优先级 | 预估工时 |
+| -------------- | ------ | -------- |
+| 深拷贝性能优化 | 高     | 1天      |
+| 数组方法优化   | 中     | 1天      |
+| 日期解析增强   | 中     | 1天      |
+| 错误处理增强   | 低     | 0.5天    |
+| 文档完善       | 中     | 1天      |
+| 基准测试       | 低     | 1天      |
 
 ### Phase 3: 生态建设（v6.3）
 
 **时间**：持续
 
-| 任务 | 优先级 | 预估工时 |
-|------|-------|---------|
-| 插件机制 | 低 | 2天 |
-| VS Code 扩展 | 低 | 2天 |
-| 迁移指南 | 中 | 1天 |
-| Lodash 兼容插件 | 低 | 1天 |
+| 任务            | 优先级 | 预估工时 |
+| --------------- | ------ | -------- |
+| 插件机制        | 低     | 2天      |
+| VS Code 扩展    | 低     | 2天      |
+| 迁移指南        | 中     | 1天      |
+| Lodash 兼容插件 | 低     | 1天      |
 
 ---
 

@@ -10,17 +10,17 @@ const messages: Record<Locale, Messages> = { en, zh }
 const currentLocale = ref<Locale>((localStorage.getItem('locale') as Locale) || 'en')
 
 export const useI18n = () => {
-  const t = computed(() => messages[currentLocale.value])
-  const locale = computed(() => currentLocale.value)
+	const t = computed(() => messages[currentLocale.value])
+	const locale = computed(() => currentLocale.value)
 
-  const setLocale = (newLocale: Locale) => {
-    currentLocale.value = newLocale
-    localStorage.setItem('locale', newLocale)
-  }
+	const setLocale = (newLocale: Locale) => {
+		currentLocale.value = newLocale
+		localStorage.setItem('locale', newLocale)
+	}
 
-  const toggleLocale = () => {
-    setLocale(currentLocale.value === 'en' ? 'zh' : 'en')
-  }
+	const toggleLocale = () => {
+		setLocale(currentLocale.value === 'en' ? 'zh' : 'en')
+	}
 
-  return { t, locale, setLocale, toggleLocale }
+	return { t, locale, setLocale, toggleLocale }
 }

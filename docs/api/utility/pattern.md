@@ -4,7 +4,6 @@
 It will be refactored and renamed patterns in the next major release.
 :::
 
-
 Common regex patterns object.
 
 ## Usage

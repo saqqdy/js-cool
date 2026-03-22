@@ -4,7 +4,6 @@
 will be removed in the next major release. Use String.prototype.trim() instead.
 :::
 
-
 Trim whitespace from a string.
 
 ## Usage
