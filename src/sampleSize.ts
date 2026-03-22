@@ -13,7 +13,7 @@
  * // => ['c', 'a'] (2 random elements)
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to sample from
  * @param n - The number of elements to sample (default: 1)
  * @returns - Returns the random elements

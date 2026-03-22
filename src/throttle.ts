@@ -31,7 +31,7 @@ export interface ThrottleOptions {
  * throttledFn.flush()
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param fn - The function to throttle
  * @param wait - The number of milliseconds to throttle
  * @param options - The options object

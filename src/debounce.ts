@@ -35,7 +35,7 @@ export interface DebounceOptions {
  * debouncedFn.flush()
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param fn - The function to debounce
  * @param wait - The number of milliseconds to delay
  * @param options - The options object

@@ -19,7 +19,7 @@
  * // => 4
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param number - The number to round
  * @param precision - The precision to round to (default: 0)
  * @returns - Returns the rounded number

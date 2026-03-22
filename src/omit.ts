@@ -12,7 +12,7 @@
  * // => { b: 2, c: 3 }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param obj - The source object
  * @param keys - The property paths to omit
  * @returns - Returns the new object

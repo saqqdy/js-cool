@@ -16,7 +16,7 @@
  * // => true (gray is considered light)
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param color - The color to check (hex or rgb)
  * @returns - Returns true if the color is light
  */

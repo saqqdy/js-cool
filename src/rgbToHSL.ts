@@ -22,7 +22,7 @@ export interface HSLColor {
  * // => { h: 0, s: 0, l: 50 }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param r - Red (0-255)
  * @param g - Green (0-255)
  * @param b - Blue (0-255)

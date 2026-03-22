@@ -25,7 +25,7 @@ export interface DateDiffResult {
  * // => { days: 1, hours: 12, minutes: 30, seconds: 0, milliseconds: 0, ... }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param date1 - The first date
  * @param date2 - The second date
  * @returns - Returns the difference object

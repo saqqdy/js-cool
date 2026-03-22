@@ -19,7 +19,7 @@
  * // => 3
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param number - The number to clamp
  * @param lower - The lower bound
  * @param upper - The upper bound

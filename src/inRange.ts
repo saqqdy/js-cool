@@ -20,7 +20,7 @@
  * // => true
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param number - The number to check
  * @param start - The start of the range
  * @param end - The end of the range

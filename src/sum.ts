@@ -16,7 +16,7 @@
  * // => 0
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to iterate over
  * @returns - Returns the sum
  */

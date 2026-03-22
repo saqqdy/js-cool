@@ -17,7 +17,7 @@
  * // => 'hi-diddly-ho there...'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param str - The string to truncate
  * @param options - The options object
  * @returns - Returns the truncated string

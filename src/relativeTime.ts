@@ -13,7 +13,7 @@
  * // => '7 days ago'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param date - The date to compare
  * @param now - The current date (default: new Date())
  * @param locale - The locale string (default: 'en')

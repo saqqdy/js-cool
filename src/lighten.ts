@@ -13,7 +13,7 @@
  * // => '#ff3333'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param color - The color to lighten (hex or rgb)
  * @param percent - The percentage to lighten (0-100)
  * @returns - Returns the lightened color as hex

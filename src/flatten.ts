@@ -7,7 +7,7 @@
  * // => [1, 2, 3, [5]]
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to flatten
  * @returns - Returns the new flattened array
  */
@@ -36,7 +36,7 @@ function flatten<T>(array: (T | T[])[]): T[] {
  * // => [1, 2, 3, 4, 5]
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to flatten
  * @returns - Returns the new flattened array
  */

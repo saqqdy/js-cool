@@ -12,7 +12,7 @@
  * // => { a: 1 }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param obj - The source object
  * @param keys - The property paths to pick
  * @returns - Returns the new object

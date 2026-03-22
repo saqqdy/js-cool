@@ -13,7 +13,7 @@
  * // => [['a'], ['b'], ['c'], ['d']]
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to process
  * @param size - The length of each chunk (default: 1)
  * @returns - Returns the new array of chunks

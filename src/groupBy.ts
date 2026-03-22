@@ -13,7 +13,7 @@
  * // => { '3': ['one', 'two'], '5': ['three'] }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param array - The array to iterate over
  * @param iteratee - The iteratee to transform keys
  * @returns - Returns the composed aggregate object

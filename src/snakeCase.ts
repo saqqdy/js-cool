@@ -16,7 +16,7 @@
  * // => 'foo_bar_baz'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param str - The string to convert
  * @returns - Returns the snake case string
  */

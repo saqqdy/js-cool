@@ -22,7 +22,7 @@ export interface RGBColor {
  * // => { r: 0, g: 0, b: 0 }
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param hex - The hex color string
  * @returns - Returns the RGB object or null if invalid
  */

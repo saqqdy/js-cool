@@ -21,18 +21,22 @@ function safeParse(data: string, covert = true): any {
 		undefined,
 	}
 
-	return JSON.parse(data, (key, val) => {
-		if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val))
-			return VALUE_MAP[val as keyof typeof VALUE_MAP]
-		else if (
-			typeof val === 'string' &&
-			/^(-|\+)?\d+(\.\d+)?$/.test(val) &&
-			!Number.isSafeInteger(+val)
-		)
-			return BigInt(val)
+	try {
+		return JSON.parse(data, (key, val) => {
+			if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val))
+				return VALUE_MAP[val as keyof typeof VALUE_MAP]
+			else if (
+				typeof val === 'string' &&
+				/^(-|\+)?\d+(\.\d+)?$/.test(val) &&
+				!Number.isSafeInteger(+val)
+			)
+				return BigInt(val)
 
-		return val
-	})
+			return val
+		})
+	} catch {
+		return null
+	}
 }
 
 export default safeParse

@@ -16,7 +16,7 @@
  * // => 30
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param year - The year
  * @param month - The month (0-11, where 0 is January)
  * @returns - Returns the number of days in the month

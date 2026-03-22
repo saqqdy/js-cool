@@ -10,7 +10,7 @@
  * // => false (if today is not 2020-01-01)
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param date - The date to check
  * @returns - Returns true if date is today
  */

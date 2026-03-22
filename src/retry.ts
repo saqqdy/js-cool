@@ -38,7 +38,7 @@ export interface RetryOptions {
  * })
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param fn - The function to retry
  * @param options - The retry options
  * @returns - Returns a promise that resolves with the result

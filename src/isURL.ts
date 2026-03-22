@@ -19,7 +19,7 @@
  * // => false (missing protocol)
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param value - The string to check
  * @returns - Returns true if string is a valid URL
  */

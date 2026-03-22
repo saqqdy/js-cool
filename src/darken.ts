@@ -13,7 +13,7 @@
  * // => '#cc0000'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param color - The color to darken (hex or rgb)
  * @param percent - The percentage to darken (0-100)
  * @returns - Returns the darkened color as hex

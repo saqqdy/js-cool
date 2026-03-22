@@ -13,7 +13,7 @@
  * // => '2024年01月15日'
  * ```
  *
- * @since 5.24.0
+ * @since 6.0.0
  * @param date - The date to format
  * @param format - The format string (default: 'YYYY-MM-DD HH:mm:ss')
  * @returns - Returns the formatted date string
