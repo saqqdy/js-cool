@@ -16,9 +16,9 @@ function clearAttr(string: string): string
 
 ## 参数
 
-| 参数     | 类型     | 描述         |
-| -------- | -------- | ------------ |
-| `string` | `string` | HTML 字符串  |
+| 参数     | 类型     | 描述        |
+| -------- | -------- | ----------- |
+| `string` | `string` | HTML 字符串 |
 
 ## 返回值
 

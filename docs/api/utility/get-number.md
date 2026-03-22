@@ -16,8 +16,8 @@ function getNumber(string: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description                   |
-| --------- | -------- | ----------------------------- |
+| Parameter | Type     | Description                    |
+| --------- | -------- | ------------------------------ |
 | `string`  | `string` | Pass in a string with a number |
 
 ## Returns

@@ -16,9 +16,9 @@ function clearAttr(string: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description       |
-| --------- | -------- | ----------------- |
-| `string`  | `string` | The HTML string   |
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
+| `string`  | `string` | The HTML string |
 
 ## Returns
 

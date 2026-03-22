@@ -22,13 +22,13 @@ function setCookie<T extends string | number | boolean>(
 
 ## 参数
 
-| 参数       | 类型                        | 描述                              |
-| ---------- | --------------------------- | --------------------------------- |
-| `name`     | `string`                    | Cookie 名称                       |
+| 参数       | 类型                          | 描述                              |
+| ---------- | ----------------------------- | --------------------------------- |
+| `name`     | `string`                      | Cookie 名称                       |
 | `value`    | `string \| number \| boolean` | Cookie 值                         |
-| `seconds`  | `string \| number`          | 过期时间（秒），默认 86400（1天） |
-| `path`     | `string`                    | Cookie 路径，默认 '/'             |
-| `samesite` | `boolean`                   | 是否启用 SameSite，默认 true      |
+| `seconds`  | `string \| number`            | 过期时间（秒），默认 86400（1天） |
+| `path`     | `string`                      | Cookie 路径，默认 '/'             |
+| `samesite` | `boolean`                     | 是否启用 SameSite，默认 true      |
 
 ## 示例
 

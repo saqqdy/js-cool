@@ -16,8 +16,8 @@ function isExitsVariable(name: string): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description      |
-| --------- | -------- | ---------------- |
+| Parameter | Type     | Description       |
+| --------- | -------- | ----------------- |
 | `name`    | `string` | The variable name |
 
 ## Returns

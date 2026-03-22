@@ -26,3 +26,4 @@ randomColor() // '#ff6600'
 
 // Use for styling
 element.style.backgroundColor = randomColor()
+```

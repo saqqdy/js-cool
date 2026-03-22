@@ -34,12 +34,12 @@ getUrlParams('https://example.com?name=John&age=30')
 
 js-cool supports all modern browsers and Node.js >= 18.
 
-| Browser | Support |
-| ------- | ------- |
-| Chrome  | ✅      |
-| Firefox | ✅      |
-| Safari  | ✅      |
-| Edge    | ✅      |
+| Browser | Support  |
+| ------- | -------- |
+| Chrome  | ✅       |
+| Firefox | ✅       |
+| Safari  | ✅       |
+| Edge    | ✅       |
 | Node.js | ✅ >= 18 |
 
 ## License

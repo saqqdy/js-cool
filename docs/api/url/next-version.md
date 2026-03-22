@@ -11,17 +11,14 @@ import { nextVersion } from 'js-cool'
 ## Signature
 
 ```typescript
-function nextVersion(
-  version: string,
-  type?: 'major' | 'minor' | 'patch'
-): string
+function nextVersion(version: string, type?: 'major' | 'minor' | 'patch'): string
 ```
 
 ## Parameters
 
-| Parameter | Type                          | Description           |
-| --------- | ----------------------------- | --------------------- |
-| `version` | `string`                      | Current version       |
+| Parameter | Type                            | Description                       |
+| --------- | ------------------------------- | --------------------------------- |
+| `version` | `string`                        | Current version                   |
 | `type`    | `'major' \| 'minor' \| 'patch'` | Increment type (default: 'patch') |
 
 ## Returns

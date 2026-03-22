@@ -18,9 +18,9 @@ function getQueryParams(url: string, covert: boolean): Record<string, unknown>
 
 ## Parameters
 
-| Parameter | Type                | Description                                      |
-| --------- | ------------------- | ------------------------------------------------ |
-| `url`     | `string \| boolean` | URL string or boolean for type conversion        |
+| Parameter | Type                | Description                                       |
+| --------- | ------------------- | ------------------------------------------------- |
+| `url`     | `string \| boolean` | URL string or boolean for type conversion         |
 | `covert`  | `boolean`           | Converts specific strings to corresponding values |
 
 ## Returns

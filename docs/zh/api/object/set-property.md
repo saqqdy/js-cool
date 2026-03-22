@@ -16,11 +16,11 @@ function setProperty(obj: any, path: string, value: any): void
 
 ## 参数
 
-| 参数    | 类型     | 描述                     |
-| ------- | -------- | ------------------------ |
-| `obj`   | `any`    | 目标对象                 |
-| `path`  | `string` | 属性路径（如 'a.b.c'）   |
-| `value` | `any`    | 要设置的值               |
+| 参数    | 类型     | 描述                   |
+| ------- | -------- | ---------------------- |
+| `obj`   | `any`    | 目标对象               |
+| `path`  | `string` | 属性路径（如 'a.b.c'） |
+| `value` | `any`    | 要设置的值             |
 
 ## 示例
 

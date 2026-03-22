@@ -16,10 +16,10 @@ function fixNumber(num: number, decimals?: number): number
 
 ## 参数
 
-| 参数       | 类型     | 描述                  |
-| ---------- | -------- | --------------------- |
-| `num`      | `number` | 要处理的数字          |
-| `decimals` | `number` | 小数位数（默认：2）   |
+| 参数       | 类型     | 描述                |
+| ---------- | -------- | ------------------- |
+| `num`      | `number` | 要处理的数字        |
+| `decimals` | `number` | 小数位数（默认：2） |
 
 ## 返回值
 

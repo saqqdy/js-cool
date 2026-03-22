@@ -16,9 +16,9 @@ function getSession<T = any>(key: string): T | null
 
 ## Parameters
 
-| Parameter | Type     | Description   |
-| --------- | -------- | ------------- |
-| `key`     | `string` | Key to get    |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `key`     | `string` | Key to get  |
 
 ## Returns
 

@@ -17,9 +17,9 @@ function flattenDeep<T>(array: any[]): T[]
 
 ## Parameters
 
-| Parameter | Type          | Description              |
-| --------- | ------------- | ------------------------ |
-| `array`   | `(T \| T[])[]` | The array to flatten     |
+| Parameter | Type           | Description          |
+| --------- | -------------- | -------------------- |
+| `array`   | `(T \| T[])[]` | The array to flatten |
 
 ## Returns
 

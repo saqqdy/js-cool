@@ -16,9 +16,9 @@ function CSVToArray(csv: string, delimiter?: string): string[][]
 
 ## 参数
 
-| 参数        | 类型     | 描述                   |
-| ----------- | -------- | ---------------------- |
-| `csv`       | `string` | 要转换的 CSV 字符串    |
+| 参数        | 类型     | 描述                  |
+| ----------- | -------- | --------------------- |
+| `csv`       | `string` | 要转换的 CSV 字符串   |
 | `delimiter` | `string` | 列分隔符（默认：','） |
 
 ## 返回值

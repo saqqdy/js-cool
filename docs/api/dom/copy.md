@@ -16,8 +16,8 @@ function copy(value: string | number): boolean | undefined
 
 ## Parameters
 
-| Parameter | Type              | Description       |
-| --------- | ----------------- | ----------------- |
+| Parameter | Type               | Description      |
+| --------- | ------------------ | ---------------- |
 | `value`   | `string \| number` | The text to copy |
 
 ## Returns

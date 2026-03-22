@@ -16,11 +16,11 @@ function relativeTime(date: Date | string | number, now?: Date, locale?: string)
 
 ## 参数
 
-| 参数名   | 类型                       | 描述                               |
-| -------- | -------------------------- | ---------------------------------- |
-| `date`   | `Date \| string \| number` | 要比较的日期                       |
-| `now`    | `Date`                     | 当前日期（默认值：`new Date()`）   |
-| `locale` | `string`                   | 语言环境字符串（默认值：`'en'`）   |
+| 参数名   | 类型                       | 描述                             |
+| -------- | -------------------------- | -------------------------------- |
+| `date`   | `Date \| string \| number` | 要比较的日期                     |
+| `now`    | `Date`                     | 当前日期（默认值：`new Date()`） |
+| `locale` | `string`                   | 语言环境字符串（默认值：`'en'`） |
 
 ## 返回值
 
@@ -28,10 +28,10 @@ function relativeTime(date: Date | string | number, now?: Date, locale?: string)
 
 ## 支持的语言
 
-| 语言   | 代码  | 示例输出      |
-| ------ | ----- | ------------- |
-| 英语   | `en`  | "5 minutes ago" |
-| 中文   | `zh`  | "5分钟前"     |
+| 语言 | 代码 | 示例输出        |
+| ---- | ---- | --------------- |
+| 英语 | `en` | "5 minutes ago" |
+| 中文 | `zh` | "5分钟前"       |
 
 ## 示例
 

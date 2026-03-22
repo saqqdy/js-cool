@@ -36,7 +36,7 @@ function rgbToHSL(r: number, g: number, b: number): HSLColor {
 	const max = Math.max(r, g, b)
 	const min = Math.min(r, g, b)
 	let h = 0,
-	 s = 0
+		s = 0
 	const l = (max + min) / 2
 
 	if (max !== min) {
@@ -59,7 +59,7 @@ function rgbToHSL(r: number, g: number, b: number): HSLColor {
 	return {
 		h: Math.round(h * 360),
 		l: Math.round(l * 100),
-		s: Math.round(s * 100)
+		s: Math.round(s * 100),
 	}
 }
 

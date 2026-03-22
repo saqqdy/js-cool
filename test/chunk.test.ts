@@ -5,7 +5,7 @@ describe('chunk', () => {
 	it('should chunk array into specified size', () => {
 		expect(chunk(['a', 'b', 'c', 'd'], 2)).toEqual([
 			['a', 'b'],
-			['c', 'd']
+			['c', 'd'],
 		])
 	})
 

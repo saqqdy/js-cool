@@ -16,10 +16,10 @@ function appVersion(appName: string, userAgent?: string): string | null
 
 ## Parameters
 
-| Parameter   | Type     | Description                      |
-| ----------- | -------- | -------------------------------- |
-| `appName`   | `string` | App name to find                 |
-| `userAgent` | `string` | Custom UA (optional)             |
+| Parameter   | Type     | Description          |
+| ----------- | -------- | -------------------- |
+| `appName`   | `string` | App name to find     |
+| `userAgent` | `string` | Custom UA (optional) |
 
 ## Returns
 

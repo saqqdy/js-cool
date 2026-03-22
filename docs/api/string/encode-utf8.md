@@ -16,8 +16,8 @@ function encodeUtf8(string: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description         |
-| --------- | -------- | ------------------- |
+| Parameter | Type     | Description          |
+| --------- | -------- | -------------------- |
 | `string`  | `string` | The string to encode |
 
 ## Returns

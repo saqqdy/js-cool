@@ -16,9 +16,9 @@ function fingerprint(domain?: string): string | null
 
 ## 参数
 
-| 参数     | 类型     | 描述                           |
-| -------- | -------- | ------------------------------ |
-| `domain` | `string` | 域名键值（默认：location.host）|
+| 参数     | 类型     | 描述                            |
+| -------- | -------- | ------------------------------- |
+| `domain` | `string` | 域名键值（默认：location.host） |
 
 ## 返回值
 

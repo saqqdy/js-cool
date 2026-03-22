@@ -11,26 +11,22 @@ import { addEvent } from 'js-cool'
 ## 签名
 
 ```typescript
-function addEvent(
-  element: any,
-  type: string,
-  handler: Function
-): void
+function addEvent(element: any, type: string, handler: Function): void
 ```
 
 ## 参数
 
-| 参数      | 类型       | 描述               |
-| --------- | ---------- | ------------------ |
-| `element` | `any`      | DOM 元素           |
-| `type`    | `string`   | 事件类型（不含'on'）|
-| `handler` | `Function` | 事件处理函数       |
+| 参数      | 类型       | 描述                 |
+| --------- | ---------- | -------------------- |
+| `element` | `any`      | DOM 元素             |
+| `type`    | `string`   | 事件类型（不含'on'） |
+| `handler` | `Function` | 事件处理函数         |
 
 ## 示例
 
 ```js
 const btn = document.getElementById('btn')
-addEvent(btn, 'click', (e) => {
+addEvent(btn, 'click', e => {
   console.log('按钮被点击了！')
 })
 

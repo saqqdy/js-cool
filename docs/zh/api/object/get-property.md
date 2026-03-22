@@ -16,11 +16,11 @@ function getProperty(obj: any, path: string, defaultValue?: any): any
 
 ## 参数
 
-| 参数          | 类型     | 描述                      |
-| ------------- | -------- | ------------------------- |
-| `obj`         | `any`    | 源对象                    |
-| `path`        | `string` | 属性路径（如 'a.b.c'）    |
-| `defaultValue`| `any`    | 未找到时的默认值          |
+| 参数           | 类型     | 描述                   |
+| -------------- | -------- | ---------------------- |
+| `obj`          | `any`    | 源对象                 |
+| `path`         | `string` | 属性路径（如 'a.b.c'） |
+| `defaultValue` | `any`    | 未找到时的默认值       |
 
 ## 返回值
 

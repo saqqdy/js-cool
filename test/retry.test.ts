@@ -36,7 +36,7 @@ describe('retry', () => {
 		await expect(
 			retry(fn, {
 				shouldRetry: error => error.message.includes('network'),
-				times: 3
+				times: 3,
 			})
 		).rejects.toThrow('network error')
 		expect(fn).toHaveBeenCalledTimes(3)
@@ -48,17 +48,14 @@ describe('retry', () => {
 		await expect(
 			retry(fn, {
 				shouldRetry: error => !error.message.includes('fatal'),
-				times: 3
+				times: 3,
 			})
 		).rejects.toThrow('fatal error')
 		expect(fn).toHaveBeenCalledTimes(1)
 	})
 
 	it('should call onRetry callback', async () => {
-		const fn = vi
-			.fn()
-			.mockRejectedValueOnce(new Error('fail'))
-			.mockResolvedValue('success')
+		const fn = vi.fn().mockRejectedValueOnce(new Error('fail')).mockResolvedValue('success')
 
 		const onRetry = vi.fn()
 
@@ -69,10 +66,7 @@ describe('retry', () => {
 	})
 
 	it('should delay between retries', async () => {
-		const fn = vi
-			.fn()
-			.mockRejectedValueOnce(new Error('fail'))
-			.mockResolvedValue('success')
+		const fn = vi.fn().mockRejectedValueOnce(new Error('fail')).mockResolvedValue('success')
 
 		const start = Date.now()
 		await retry(fn, { delay: 100, times: 2 })

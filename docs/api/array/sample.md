@@ -16,9 +16,9 @@ function sample<T>(array: T[]): T | undefined
 
 ## Parameters
 
-| Parameter | Type  | Description               |
-| --------- | ----- | ------------------------- |
-| `array`   | `T[]` | The array to sample from  |
+| Parameter | Type  | Description              |
+| --------- | ----- | ------------------------ |
+| `array`   | `T[]` | The array to sample from |
 
 ## Returns
 

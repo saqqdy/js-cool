@@ -31,27 +31,27 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 
 ## Parameters
 
-| Parameter | Type                       | Description       |
-| --------- | -------------------------- | ----------------- |
-| `date1`   | `Date \| string \| number` | The first date    |
-| `date2`   | `Date \| string \| number` | The second date   |
+| Parameter | Type                       | Description     |
+| --------- | -------------------------- | --------------- |
+| `date1`   | `Date \| string \| number` | The first date  |
+| `date2`   | `Date \| string \| number` | The second date |
 
 ## Returns
 
 `DateDiffResult` - An object containing the difference between the two dates with the following properties:
 
-| Property        | Type     | Description                                    |
-| --------------- | -------- | ---------------------------------------------- |
-| `days`          | `number` | Whole days in the difference                   |
-| `hours`         | `number` | Remaining hours (0-23)                         |
-| `minutes`       | `number` | Remaining minutes (0-59)                       |
-| `seconds`       | `number` | Remaining seconds (0-59)                       |
-| `milliseconds`  | `number` | Remaining milliseconds (0-999)                 |
-| `total.days`    | `number` | Total difference in days                       |
-| `total.hours`   | `number` | Total difference in hours                      |
-| `total.minutes` | `number` | Total difference in minutes                    |
-| `total.seconds` | `number` | Total difference in seconds                    |
-| `total.milliseconds` | `number` | Total difference in milliseconds          |
+| Property             | Type     | Description                      |
+| -------------------- | -------- | -------------------------------- |
+| `days`               | `number` | Whole days in the difference     |
+| `hours`              | `number` | Remaining hours (0-23)           |
+| `minutes`            | `number` | Remaining minutes (0-59)         |
+| `seconds`            | `number` | Remaining seconds (0-59)         |
+| `milliseconds`       | `number` | Remaining milliseconds (0-999)   |
+| `total.days`         | `number` | Total difference in days         |
+| `total.hours`        | `number` | Total difference in hours        |
+| `total.minutes`      | `number` | Total difference in minutes      |
+| `total.seconds`      | `number` | Total difference in seconds      |
+| `total.milliseconds` | `number` | Total difference in milliseconds |
 
 Returns zero values for all properties if either date is invalid.
 

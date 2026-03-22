@@ -16,10 +16,10 @@ function extend<T extends object>(target: T, ...sources: object[]): T
 
 ## Parameters
 
-| Parameter  | Type       | Description               |
-| ---------- | ---------- | ------------------------- |
-| `target`   | `T`        | The target object        |
-| `sources`  | `object[]` | Source objects to merge |
+| Parameter | Type       | Description             |
+| --------- | ---------- | ----------------------- |
+| `target`  | `T`        | The target object       |
+| `sources` | `object[]` | Source objects to merge |
 
 ## Returns
 

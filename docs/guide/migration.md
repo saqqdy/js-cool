@@ -8,14 +8,14 @@ v6.0 migrates from Rollup to Rolldown, resulting in simplified build outputs and
 
 ### Output Files Mapping
 
-| v5.x | v6.x | Format |
-|------|------|--------|
-| `dist/index.cjs.js` | `dist/index.js` | CJS |
-| `dist/index.mjs` | `dist/index.mjs` | ESM |
-| `dist/index.esm-browser.js` | `dist/index.mjs` | ESM (use directly) |
-| `dist/index.esm-browser.prod.js` | `dist/index.mjs` | ESM (let bundler minify) |
-| `dist/index.global.js` | `dist/index.iife.js` | IIFE |
-| `dist/index.global.prod.js` | `dist/index.iife.min.js` | IIFE (minified) |
+| v5.x                             | v6.x                     | Format                   |
+| -------------------------------- | ------------------------ | ------------------------ |
+| `dist/index.cjs.js`              | `dist/index.js`          | CJS                      |
+| `dist/index.mjs`                 | `dist/index.mjs`         | ESM                      |
+| `dist/index.esm-browser.js`      | `dist/index.mjs`         | ESM (use directly)       |
+| `dist/index.esm-browser.prod.js` | `dist/index.mjs`         | ESM (let bundler minify) |
+| `dist/index.global.js`           | `dist/index.iife.js`     | IIFE                     |
+| `dist/index.global.prod.js`      | `dist/index.iife.min.js` | IIFE (minified)          |
 
 ### CDN Migration
 
@@ -50,9 +50,9 @@ import jsCool from 'js-cool'
 ### Deprecated Functions
 
 | v5.x (Deprecated) | v6.x (Replacement) |
-|-------------------|-------------------|
-| `getAppVersion()` | `appVersion()` |
-| `getOsVersion()` | `osVersion()` |
+| ----------------- | ------------------ |
+| `getAppVersion()` | `appVersion()`     |
+| `getOsVersion()`  | `osVersion()`      |
 
 ```js
 // v5.x
@@ -86,14 +86,15 @@ v6.x uses conditional exports for better module resolution:
 ```
 
 This ensures:
+
 - Correct type declarations for CJS and ESM
 - Proper module resolution in different environments
 - Better tree-shaking support
 
 ### Build Performance
 
-| Metric | v5.x (Rollup) | v6.x (Rolldown) |
-|--------|---------------|-----------------|
-| Build time | ~6-8s | ~110ms |
-| Config file | ~190 lines | ~65 lines |
-| Dependencies | 10+ plugins | Built-in |
+| Metric       | v5.x (Rollup) | v6.x (Rolldown) |
+| ------------ | ------------- | --------------- |
+| Build time   | ~6-8s         | ~110ms          |
+| Config file  | ~190 lines    | ~65 lines       |
+| Dependencies | 10+ plugins   | Built-in        |

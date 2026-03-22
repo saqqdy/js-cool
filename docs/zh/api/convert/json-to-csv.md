@@ -16,11 +16,11 @@ function JSONToCSV(arr: any[], columns: any[], delimiter?: string): string
 
 ## 参数
 
-| 参数        | 类型     | 描述                   |
-| ----------- | -------- | ---------------------- |
-| `arr`       | `any[]`  | 对象数组               |
-| `columns`   | `any[]`  | 要包含的指定列         |
-| `delimiter` | `string` | 分隔符，默认为 ','     |
+| 参数        | 类型     | 描述               |
+| ----------- | -------- | ------------------ |
+| `arr`       | `any[]`  | 对象数组           |
+| `columns`   | `any[]`  | 要包含的指定列     |
+| `delimiter` | `string` | 分隔符，默认为 ',' |
 
 ## 返回值
 
@@ -30,11 +30,24 @@ function JSONToCSV(arr: any[], columns: any[], delimiter?: string): string
 
 ```js
 // 基本用法
-JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4 }], ['a', 'b'])
+JSONToCSV(
+  [
+    { a: 1, b: 2 },
+    { a: 3, b: 4 },
+  ],
+  ['a', 'b']
+)
 // 'a,b\n"1","2"\n"3","4"'
 
 // 使用自定义分隔符
-JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4 }], ['a', 'b'], ';')
+JSONToCSV(
+  [
+    { a: 1, b: 2 },
+    { a: 3, b: 4 },
+  ],
+  ['a', 'b'],
+  ';'
+)
 // 'a;b\n"1";"2"\n"3";"4"'
 
 // 缺失的值变为空字符串

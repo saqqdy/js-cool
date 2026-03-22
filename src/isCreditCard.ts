@@ -35,7 +35,7 @@ function isCreditCard(value: string): boolean {
 
 	// Luhn algorithm
 	let sum = 0,
-	 isEven = false
+		isEven = false
 
 	for (let i = cleaned.length - 1; i >= 0; i--) {
 		let digit = Number.parseInt(cleaned[i], 10)

@@ -16,9 +16,9 @@ function isNil(value: unknown): value is null | undefined
 
 ## 参数
 
-| 参数    | 类型      | 描述         |
-| ------- | --------- | ------------ |
-| `value` | `unknown` | 要检查的值   |
+| 参数    | 类型      | 描述       |
+| ------- | --------- | ---------- |
+| `value` | `unknown` | 要检查的值 |
 
 ## 返回值
 

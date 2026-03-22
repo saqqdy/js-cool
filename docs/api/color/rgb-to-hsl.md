@@ -22,11 +22,11 @@ function rgbToHSL(r: number, g: number, b: number): HSLColor
 
 ## Parameters
 
-| Parameter | Type     | Description                  |
-| --------- | -------- | ---------------------------- |
-| `r`       | `number` | Red value (0-255)            |
-| `g`       | `number` | Green value (0-255)          |
-| `b`       | `number` | Blue value (0-255)           |
+| Parameter | Type     | Description         |
+| --------- | -------- | ------------------- |
+| `r`       | `number` | Red value (0-255)   |
+| `g`       | `number` | Green value (0-255) |
+| `b`       | `number` | Blue value (0-255)  |
 
 ## Returns
 

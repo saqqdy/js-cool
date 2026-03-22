@@ -16,8 +16,8 @@ function camel2Dash(string: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description                   |
-| --------- | -------- | ----------------------------- |
+| Parameter | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
 | `string`  | `string` | The camelCase string to convert |
 
 ## Returns

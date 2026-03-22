@@ -16,8 +16,8 @@ function delay(ms: number): Promise<void>
 
 ## Parameters
 
-| Parameter | Type     | Description         |
-| --------- | -------- | ------------------- |
+| Parameter | Type     | Description          |
+| --------- | -------- | -------------------- |
 | `ms`      | `number` | Milliseconds to wait |
 
 ## Returns

@@ -11,20 +11,16 @@ import { base64ToFile } from 'js-cool'
 ## 签名
 
 ```typescript
-function base64ToFile(
-  base64: string,
-  filename: string,
-  mime?: string
-): File
+function base64ToFile(base64: string, filename: string, mime?: string): File
 ```
 
 ## 参数
 
-| 参数       | 类型     | 描述               |
-| ---------- | -------- | ------------------ |
-| `base64`   | `string` | Base64 编码字符串   |
-| `filename` | `string` | 输出文件名         |
-| `mime`     | `string` | MIME 类型（可选）   |
+| 参数       | 类型     | 描述              |
+| ---------- | -------- | ----------------- |
+| `base64`   | `string` | Base64 编码字符串 |
+| `filename` | `string` | 输出文件名        |
+| `mime`     | `string` | MIME 类型（可选） |
 
 ## 返回值
 
@@ -33,17 +29,10 @@ function base64ToFile(
 ## 示例
 
 ```js
-const file = base64ToFile(
-  'SGVsbG8gV29ybGQ=',
-  'hello.txt',
-  'text/plain'
-)
+const file = base64ToFile('SGVsbG8gV29ybGQ=', 'hello.txt', 'text/plain')
 
 // 从 data URL 转换
-const imageFile = base64ToFile(
-  'data:image/png;base64,iVBOR...',
-  'image.png'
-)
+const imageFile = base64ToFile('data:image/png;base64,iVBOR...', 'image.png')
 ```
 
 ## 相关

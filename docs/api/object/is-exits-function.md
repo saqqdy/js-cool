@@ -16,9 +16,9 @@ function isExitsFunction(name: string): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description        |
-| --------- | -------- | ------------------ |
-| `name`    | `string` | The function name  |
+| Parameter | Type     | Description       |
+| --------- | -------- | ----------------- |
+| `name`    | `string` | The function name |
 
 ## Returns
 

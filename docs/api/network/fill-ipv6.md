@@ -16,8 +16,8 @@ function fillIPv6(ip: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description                |
-| --------- | -------- | -------------------------- |
+| Parameter | Type     | Description                   |
+| --------- | -------- | ----------------------------- |
 | `ip`      | `string` | IPv6 address string to expand |
 
 ## Returns

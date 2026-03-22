@@ -16,11 +16,11 @@ function inRange(number: number, start: number, end?: number): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description                                    |
-| --------- | -------- | ---------------------------------------------- |
-| `number`  | `number` | The number to check                            |
-| `start`   | `number` | The start of the range                         |
-| `end`     | `number` | The end of the range (exclusive, optional)     |
+| Parameter | Type     | Description                                |
+| --------- | -------- | ------------------------------------------ |
+| `number`  | `number` | The number to check                        |
+| `start`   | `number` | The start of the range                     |
+| `end`     | `number` | The end of the range (exclusive, optional) |
 
 ## Returns
 

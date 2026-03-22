@@ -16,9 +16,9 @@ function browserVersion(userAgent?: string): Record<string, string>
 
 ## 参数
 
-| 参数       | 类型     | 描述               |
-| ---------- | -------- | ------------------ |
-| `userAgent` | `string` | 自定义 UA（可选）  |
+| 参数        | 类型     | 描述              |
+| ----------- | -------- | ----------------- |
+| `userAgent` | `string` | 自定义 UA（可选） |
 
 ## 返回值
 

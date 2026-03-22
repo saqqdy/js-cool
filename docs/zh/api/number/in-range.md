@@ -16,11 +16,11 @@ function inRange(number: number, start: number, end?: number): boolean
 
 ## 参数
 
-| 参数     | 类型     | 描述                           |
-| -------- | -------- | ------------------------------ |
-| `number` | `number` | 要检查的数字                   |
-| `start`  | `number` | 范围的起始值                   |
-| `end`    | `number` | 范围的结束值（不包含，可选）   |
+| 参数     | 类型     | 描述                         |
+| -------- | -------- | ---------------------------- |
+| `number` | `number` | 要检查的数字                 |
+| `start`  | `number` | 范围的起始值                 |
+| `end`    | `number` | 范围的结束值（不包含，可选） |
 
 ## 返回值
 

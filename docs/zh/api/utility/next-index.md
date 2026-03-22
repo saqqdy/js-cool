@@ -16,10 +16,10 @@ function nextIndex(min?: number, max?: number): number
 
 ## 参数
 
-| 参数  | 类型     | 描述                       |
-| ----- | -------- | -------------------------- |
-| `min` | `number` | 最小 z-index（默认：5000） |
-| `max` | `number` | 最大 z-index（默认：10000）|
+| 参数  | 类型     | 描述                        |
+| ----- | -------- | --------------------------- |
+| `min` | `number` | 最小 z-index（默认：5000）  |
+| `max` | `number` | 最大 z-index（默认：10000） |
 
 ## 返回值
 

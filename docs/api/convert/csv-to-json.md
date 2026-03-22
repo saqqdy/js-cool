@@ -16,10 +16,10 @@ function CSVToJSON(data: string, delimiter?: string): Record<string, string>[]
 
 ## Parameters
 
-| Parameter   | Type     | Description                          |
-| ----------- | -------- | ------------------------------------ |
-| `data`      | `string` | CSV data string                      |
-| `delimiter` | `string` | Delimiter, defaults to ','           |
+| Parameter   | Type     | Description                |
+| ----------- | -------- | -------------------------- |
+| `data`      | `string` | CSV data string            |
+| `delimiter` | `string` | Delimiter, defaults to ',' |
 
 ## Returns
 

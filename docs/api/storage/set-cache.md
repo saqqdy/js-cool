@@ -16,10 +16,10 @@ function setCache(key: string, value: any, seconds?: number): void
 
 ## Parameters
 
-| Parameter | Type     | Description                      |
-| --------- | -------- | -------------------------------- |
-| `key`     | `string` | The key to set                   |
-| `value`   | `any`    | The value to store               |
+| Parameter | Type     | Description                           |
+| --------- | -------- | ------------------------------------- |
+| `key`     | `string` | The key to set                        |
+| `value`   | `any`    | The value to store                    |
 | `seconds` | `number` | Expiration time in seconds (optional) |
 
 ## Examples

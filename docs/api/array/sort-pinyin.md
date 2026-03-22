@@ -11,20 +11,16 @@ import { sortPinyin } from 'js-cool'
 ## Signature
 
 ```typescript
-function sortPinyin<T = string, P = string>(
-  a: T,
-  b: P,
-  options?: Intl.CollatorOptions
-): number
+function sortPinyin<T = string, P = string>(a: T, b: P, options?: Intl.CollatorOptions): number
 ```
 
 ## Parameters
 
-| Parameter | Type                  | Description                                        |
-| --------- | --------------------- | -------------------------------------------------- |
-| `a`       | `T`                   | The first element for comparison                   |
-| `b`       | `P`                   | The second element for comparison                  |
-| `options` | `Intl.CollatorOptions` | An object adjusting the output format (optional)  |
+| Parameter | Type                   | Description                                      |
+| --------- | ---------------------- | ------------------------------------------------ |
+| `a`       | `T`                    | The first element for comparison                 |
+| `b`       | `P`                    | The second element for comparison                |
+| `options` | `Intl.CollatorOptions` | An object adjusting the output format (optional) |
 
 ## Returns
 

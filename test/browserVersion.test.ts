@@ -33,7 +33,8 @@ describe('browserVersion', () => {
 
 	it('should detect Safari', () => {
 		// Safari UA without HuaweiBrowser/HBPC to avoid Huawei detection
-		const ua = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15 Version/16.5'
+		const ua =
+			'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15 Version/16.5'
 		const result = browserVersion(ua)
 
 		// Note: The current browserVersion implementation has Huawei regex that matches Version/

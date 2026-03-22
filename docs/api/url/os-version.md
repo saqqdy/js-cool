@@ -21,8 +21,8 @@ function osVersion(ua?: string): OsVersion | null
 
 ## Parameters
 
-| Parameter | Type     | Description                                      |
-| --------- | -------- | ------------------------------------------------ |
+| Parameter | Type     | Description                                                            |
+| --------- | -------- | ---------------------------------------------------------------------- |
 | `ua`      | `string` | User agent string (optional, uses navigator.userAgent if not provided) |
 
 ## Returns

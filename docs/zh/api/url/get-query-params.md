@@ -18,10 +18,10 @@ function getQueryParams(url: string, covert: boolean): Record<string, unknown>
 
 ## 参数
 
-| 参数     | 类型                | 描述                             |
-| -------- | ------------------- | -------------------------------- |
-| `url`    | `string \| boolean` | URL 字符串或布尔值（用于类型转换）|
-| `covert` | `boolean`           | 将特定字符串转换为对应的值       |
+| 参数     | 类型                | 描述                               |
+| -------- | ------------------- | ---------------------------------- |
+| `url`    | `string \| boolean` | URL 字符串或布尔值（用于类型转换） |
+| `covert` | `boolean`           | 将特定字符串转换为对应的值         |
 
 ## 返回值
 

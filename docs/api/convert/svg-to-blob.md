@@ -16,9 +16,9 @@ function svgToBlob(svg: string): Blob
 
 ## Parameters
 
-| Parameter | Type     | Description    |
-| --------- | -------- | -------------- |
-| `svg`     | `string` | SVG string     |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `svg`     | `string` | SVG string  |
 
 ## Returns
 

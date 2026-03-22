@@ -12,7 +12,7 @@ Add event listener (cross-browser compatible).
 import { addEvent } from 'js-cool'
 
 const btn = document.getElementById('btn')
-addEvent(btn, 'click', (e) => {
+addEvent(btn, 'click', e => {
   console.log('Button clicked!')
 })
 ```
@@ -25,7 +25,7 @@ Remove event listener.
 import { removeEvent } from 'js-cool'
 
 const btn = document.getElementById('btn')
-const handler = (e) => console.log('clicked')
+const handler = e => console.log('clicked')
 addEvent(btn, 'click', handler)
 // Later...
 removeEvent(btn, 'click', handler)
@@ -40,7 +40,7 @@ Prevent default event behavior.
 ```js
 import { stopDefault } from 'js-cool'
 
-document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', e => {
   stopDefault(e)
   console.log('Form submission prevented')
 })
@@ -53,9 +53,9 @@ Stop event bubbling.
 ```js
 import { stopBubble } from 'js-cool'
 
-document.getElementById('child').addEventListener('click', (e) => {
+document.getElementById('child').addEventListener('click', e => {
   stopBubble(e)
-  console.log('Event won\'t bubble to parent')
+  console.log("Event won't bubble to parent")
 })
 ```
 
@@ -162,11 +162,7 @@ Preload resources (images, scripts, etc.).
 ```js
 import { preloader } from 'js-cool'
 
-preloader([
-  'image1.jpg',
-  'image2.jpg',
-  'script.js'
-])
+preloader(['image1.jpg', 'image2.jpg', 'script.js'])
 ```
 
 ## See Also

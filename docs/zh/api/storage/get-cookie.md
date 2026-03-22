@@ -16,8 +16,8 @@ function getCookie(name: string): string | null
 
 ## 参数
 
-| 参数   | 类型     | 描述       |
-| ------ | -------- | ---------- |
+| 参数   | 类型     | 描述        |
+| ------ | -------- | ----------- |
 | `name` | `string` | Cookie 名称 |
 
 ## 返回值

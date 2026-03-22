@@ -11,7 +11,7 @@ import { getScrollPosition } from 'js-cool'
 ## 签名
 
 ```typescript
-function getScrollPosition(): { x: number, y: number }
+function getScrollPosition(): { x: number; y: number }
 ```
 
 ## 返回值

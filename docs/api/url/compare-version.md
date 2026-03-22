@@ -16,10 +16,10 @@ function compareVersion(v1: string, v2: string): -1 | 0 | 1
 
 ## Parameters
 
-| Parameter | Type     | Description       |
-| --------- | -------- | ----------------- |
-| `v1`      | `string` | First version     |
-| `v2`      | `string` | Second version    |
+| Parameter | Type     | Description    |
+| --------- | -------- | -------------- |
+| `v1`      | `string` | First version  |
+| `v2`      | `string` | Second version |
 
 ## Returns
 

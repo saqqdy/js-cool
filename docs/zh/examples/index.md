@@ -13,17 +13,20 @@ const formData = {
   password: '123456',
   confirmPassword: '123456',
   email: 'john@example.com',
-  remember: true
+  remember: true,
 }
 
 // 只发送必要字段到 API
 const apiData = cleanData(formData, ['username', 'password', 'email'])
 
 // 与默认值合并
-const finalData = extend({
-  role: 'user',
-  createdAt: new Date().toISOString()
-}, apiData)
+const finalData = extend(
+  {
+    role: 'user',
+    createdAt: new Date().toISOString(),
+  },
+  apiData
+)
 ```
 
 ## URL 参数解析
@@ -102,7 +105,7 @@ import { camel2Dash, dash2Camel, encodeBase64, decodeBase64 } from 'js-cool'
 const cssProps = {
   fontSize: '16px',
   backgroundColor: '#fff',
-  marginTop: '20px'
+  marginTop: '20px',
 }
 
 const kebabProps = Object.fromEntries(
@@ -126,12 +129,12 @@ import { addEvent, removeEvent, stopDefault, stopBubble } from 'js-cool'
 const handlers = new Map()
 
 function setupEvents(element) {
-  const clickHandler = (e) => {
+  const clickHandler = e => {
     stopBubble(e)
     console.log('元素被点击')
   }
 
-  const submitHandler = (e) => {
+  const submitHandler = e => {
     stopDefault(e)
     // 处理表单提交
   }
@@ -166,9 +169,9 @@ function updateState(state, path, value) {
 const config = {
   api: {
     endpoints: {
-      users: '/api/users'
-    }
-  }
+      users: '/api/users',
+    },
+  },
 }
 
 const usersEndpoint = getProperty(config, 'api.endpoints.users', '/default')

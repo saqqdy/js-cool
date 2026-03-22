@@ -16,10 +16,10 @@ function all<T>(arr: T[], fn: (item: T) => boolean): boolean
 
 ## Parameters
 
-| Parameter | Type                         | Description          |
-| --------- | ---------------------------- | -------------------- |
-| `arr`     | `T[]`                        | The array to check   |
-| `fn`      | `(item: T) => boolean`       | The test function    |
+| Parameter | Type                   | Description        |
+| --------- | ---------------------- | ------------------ |
+| `arr`     | `T[]`                  | The array to check |
+| `fn`      | `(item: T) => boolean` | The test function  |
 
 ## Returns
 

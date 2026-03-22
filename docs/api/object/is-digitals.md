@@ -16,8 +16,8 @@ function isDigitals(value: string): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description    |
-| --------- | -------- | -------------- |
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
 | `value`   | `string` | String to check |
 
 ## Returns

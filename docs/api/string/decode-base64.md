@@ -16,8 +16,8 @@ function decodeBase64(input: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description                   |
-| --------- | -------- | ----------------------------- |
+| Parameter | Type     | Description                 |
+| --------- | -------- | --------------------------- |
 | `input`   | `string` | The Base64 string to decode |
 
 ## Returns

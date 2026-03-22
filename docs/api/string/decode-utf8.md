@@ -16,9 +16,9 @@ function decodeUtf8(utftext: string): string
 
 ## Parameters
 
-| Parameter  | Type     | Description             |
-| ---------- | -------- | ----------------------- |
-| `utftext`  | `string` | The UTF-8 encoded string |
+| Parameter | Type     | Description              |
+| --------- | -------- | ------------------------ |
+| `utftext` | `string` | The UTF-8 encoded string |
 
 ## Returns
 

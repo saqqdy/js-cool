@@ -53,7 +53,7 @@ function lighten(color: string, percent: number): string {
 	g = Math.min(255, g + amount)
 	b = Math.min(255, b + amount)
 
-	return `#${  [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
+	return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
 }
 
 export default lighten

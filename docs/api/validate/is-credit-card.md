@@ -16,8 +16,8 @@ function isCreditCard(value: string): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description           |
-| --------- | -------- | --------------------- |
+| Parameter | Type     | Description         |
+| --------- | -------- | ------------------- |
 | `value`   | `string` | The string to check |
 
 ## Returns

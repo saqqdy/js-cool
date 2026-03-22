@@ -16,10 +16,10 @@ function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K
 
 ## Parameters
 
-| Parameter | Type   | Description                    |
-| --------- | ------ | ------------------------------ |
-| `obj`     | `T`    | The source object              |
-| `keys`    | `K[]`  | The property paths to pick     |
+| Parameter | Type  | Description                |
+| --------- | ----- | -------------------------- |
+| `obj`     | `T`   | The source object          |
+| `keys`    | `K[]` | The property paths to pick |
 
 ## Returns
 

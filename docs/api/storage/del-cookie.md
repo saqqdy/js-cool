@@ -16,9 +16,9 @@ function delCookie(name: string): void
 
 ## Parameters
 
-| Parameter | Type     | Description    |
-| --------- | -------- | -------------- |
-| `name`    | `string` | Cookie name    |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `name`    | `string` | Cookie name |
 
 ## Examples
 

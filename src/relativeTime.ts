@@ -55,7 +55,7 @@ function relativeTime(date: Date | string | number, now = new Date(), locale = '
 			monthsAgo: '{n} month(s) ago',
 			secondsAgo: '{n} seconds ago',
 			weeksAgo: '{n} week(s) ago',
-			yearsAgo: '{n} year(s) ago'
+			yearsAgo: '{n} year(s) ago',
 		},
 		zh: {
 			daysAgo: '{n}天前',
@@ -72,8 +72,8 @@ function relativeTime(date: Date | string | number, now = new Date(), locale = '
 			monthsAgo: '{n}个月前',
 			secondsAgo: '{n}秒前',
 			weeksAgo: '{n}周前',
-			yearsAgo: '{n}年前'
-		}
+			yearsAgo: '{n}年前',
+		},
 	}
 
 	const t = locales[locale] || locales.en

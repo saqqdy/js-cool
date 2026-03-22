@@ -16,10 +16,10 @@ function getUrlParam(url: string, name: string): string | null
 
 ## 参数
 
-| 参数   | 类型     | 描述     |
-| ------ | -------- | -------- |
+| 参数   | 类型     | 描述       |
+| ------ | -------- | ---------- |
 | `url`  | `string` | URL 字符串 |
-| `name` | `string` | 参数名   |
+| `name` | `string` | 参数名     |
 
 ## 返回值
 

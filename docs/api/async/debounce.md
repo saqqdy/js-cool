@@ -26,23 +26,24 @@ interface DebounceOptions {
 
 ## Parameters
 
-| Parameter  | Type              | Description                                          |
-| ---------- | ----------------- | ---------------------------------------------------- |
-| `fn`       | `T`               | The function to debounce                             |
-| `wait`     | `number`          | The number of milliseconds to delay (default: `0`)   |
-| `options`  | `DebounceOptions` | The options object                                   |
+| Parameter | Type              | Description                                        |
+| --------- | ----------------- | -------------------------------------------------- |
+| `fn`      | `T`               | The function to debounce                           |
+| `wait`    | `number`          | The number of milliseconds to delay (default: `0`) |
+| `options` | `DebounceOptions` | The options object                                 |
 
 ### DebounceOptions
 
-| Property   | Type      | Description                                      |
-| ---------- | --------- | ------------------------------------------------ |
+| Property   | Type      | Description                                               |
+| ---------- | --------- | --------------------------------------------------------- |
 | `leading`  | `boolean` | Whether to execute on the leading edge (default: `false`) |
 | `trailing` | `boolean` | Whether to execute on the trailing edge (default: `true`) |
-| `maxWait`  | `number`  | Maximum waiting time                             |
+| `maxWait`  | `number`  | Maximum waiting time                                      |
 
 ## Returns
 
 `T & { cancel: () => void; flush: () => void; pending: () => boolean }` - The debounced function with additional methods:
+
 - `cancel()` - Cancel pending execution
 - `flush()` - Flush immediately and execute
 - `pending()` - Check if there is a pending execution

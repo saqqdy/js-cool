@@ -16,9 +16,9 @@ function isLightColor(color: string): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description                              |
-| --------- | -------- | ---------------------------------------- |
-| `color`   | `string` | The color to check (hex or rgb format)   |
+| Parameter | Type     | Description                            |
+| --------- | -------- | -------------------------------------- |
+| `color`   | `string` | The color to check (hex or rgb format) |
 
 ## Returns
 

@@ -16,9 +16,9 @@ function blobToArrayBuffer(blob: Blob): Promise<ArrayBuffer>
 
 ## Parameters
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
-| `blob`    | `Blob` | Blob input   |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| `blob`    | `Blob` | Blob input  |
 
 ## Returns
 

@@ -59,14 +59,14 @@ import { randomString } from 'js-cool'
 
 #### 1. Build Output Files
 
-| v5.x | v6.x | Description |
-|------|------|-------------|
-| `dist/index.cjs.js` | `dist/index.js` | CJS output renamed |
-| `dist/index.mjs` | `dist/index.mjs` | ESM output (unchanged) |
-| `dist/index.esm-browser.js` | `dist/index.mjs` | Use ESM output directly |
-| `dist/index.esm-browser.prod.js` | `dist/index.mjs` | Use ESM output (build tools minify) |
-| `dist/index.global.js` | `dist/index.iife.js` | IIFE output renamed |
-| `dist/index.global.prod.js` | `dist/index.iife.min.js` | IIFE minified renamed |
+| v5.x                             | v6.x                     | Description                         |
+| -------------------------------- | ------------------------ | ----------------------------------- |
+| `dist/index.cjs.js`              | `dist/index.js`          | CJS output renamed                  |
+| `dist/index.mjs`                 | `dist/index.mjs`         | ESM output (unchanged)              |
+| `dist/index.esm-browser.js`      | `dist/index.mjs`         | Use ESM output directly             |
+| `dist/index.esm-browser.prod.js` | `dist/index.mjs`         | Use ESM output (build tools minify) |
+| `dist/index.global.js`           | `dist/index.iife.js`     | IIFE output renamed                 |
+| `dist/index.global.prod.js`      | `dist/index.iife.min.js` | IIFE minified renamed               |
 
 #### 2. CDN Usage
 
@@ -80,16 +80,16 @@ import { randomString } from 'js-cool'
 <!-- v6.x -->
 <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
 <script>
-  const { copy } = window.jsCool  // Note: lowercase 'jsCool'
+  const { copy } = window.jsCool // Note: lowercase 'jsCool'
 </script>
 ```
 
 #### 3. Deprecated Functions Removed
 
-| Removed | Replacement |
-|---------|-------------|
+| Removed           | Replacement    |
+| ----------------- | -------------- |
 | `getAppVersion()` | `appVersion()` |
-| `getOsVersion()` | `osVersion()` |
+| `getOsVersion()`  | `osVersion()`  |
 
 #### 4. Package.json Exports
 
@@ -116,6 +116,7 @@ import { randomString } from 'js-cool'
 ### Migration Steps
 
 1. **Update import paths** (if using direct file imports):
+
    ```js
    // v5.x
    import jsCool from 'js-cool/dist/index.esm-browser.js'
@@ -125,6 +126,7 @@ import { randomString } from 'js-cool'
    ```
 
 2. **Update CDN links**:
+
    ```html
    <!-- v5.x -->
    <script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
@@ -134,6 +136,7 @@ import { randomString } from 'js-cool'
    ```
 
 3. **Update global variable** (CDN users):
+
    ```js
    // v5.x
    window.JsCool
@@ -143,6 +146,7 @@ import { randomString } from 'js-cool'
    ```
 
 4. **Replace deprecated functions**:
+
    ```js
    // v5.x
    getAppVersion('Chrome')
@@ -159,24 +163,24 @@ import { randomString } from 'js-cool'
 
 js-cool provides **140+ utility functions** organized into **16 categories**:
 
-| Category | Description | Functions |
-|----------|-------------|-----------|
-| **String** | String manipulation | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape` |
-| **Array** | Array processing | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject` |
-| **Object** | Object manipulation | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray` |
-| **Type Check** | Type checking | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil` |
-| **Validate** | Validation functions | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard` |
-| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion` |
-| **DOM** | DOM manipulation | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize` |
-| **Storage** | Browser storage | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie` |
-| **Convert** | Format conversion | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob` |
-| **Number** | Number processing | `clamp`, `round`, `sum`, `average`, `inRange` |
-| **Date** | Date processing | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth` |
-| **Color** | Color manipulation | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor` |
-| **Utility** | General utilities | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
-| **Async Flow** | Async flow control | `debounce`, `throttle`, `retry`, `awaitTo` |
-| **Encode** | Encoding/decoding | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8` |
-| **Network** | Network utilities | `fillIPv6` |
+| Category          | Description                       | Functions                                                                                                                                                                                          |
+| ----------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`              |
+| **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject` |
+| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                             |
+| **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil`                                                     |
+| **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                          |
+| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                         |
+| **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                       |
+| **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                  |
+| **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`      |
+| **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                      |
+| **Date**          | Date processing                   | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth`                                                                                                                              |
+| **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                             |
+| **Utility**       | General utilities                 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint`        |
+| **Async Flow**    | Async flow control                | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                         |
+| **Encode**        | Encoding/decoding                 | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                         |
+| **Network**       | Network utilities                 | `fillIPv6`                                                                                                                                                                                         |
 
 ---
 

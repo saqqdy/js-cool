@@ -25,22 +25,23 @@ interface ThrottleOptions {
 
 ## Parameters
 
-| Parameter  | Type              | Description                                        |
-| ---------- | ----------------- | -------------------------------------------------- |
-| `fn`       | `T`               | The function to throttle                           |
-| `wait`     | `number`          | The number of milliseconds to throttle (default: `0`) |
-| `options`  | `ThrottleOptions` | The options object                                 |
+| Parameter | Type              | Description                                           |
+| --------- | ----------------- | ----------------------------------------------------- |
+| `fn`      | `T`               | The function to throttle                              |
+| `wait`    | `number`          | The number of milliseconds to throttle (default: `0`) |
+| `options` | `ThrottleOptions` | The options object                                    |
 
 ### ThrottleOptions
 
-| Property   | Type      | Description                                      |
-| ---------- | --------- | ------------------------------------------------ |
-| `leading`  | `boolean` | Whether to execute on the leading edge (default: `true`) |
+| Property   | Type      | Description                                               |
+| ---------- | --------- | --------------------------------------------------------- |
+| `leading`  | `boolean` | Whether to execute on the leading edge (default: `true`)  |
 | `trailing` | `boolean` | Whether to execute on the trailing edge (default: `true`) |
 
 ## Returns
 
 `T & { cancel: () => void; flush: () => void }` - The throttled function with additional methods:
+
 - `cancel()` - Cancel pending execution
 - `flush()` - Flush immediately and execute
 

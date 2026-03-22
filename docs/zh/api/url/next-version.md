@@ -11,18 +11,15 @@ import { nextVersion } from 'js-cool'
 ## 签名
 
 ```typescript
-function nextVersion(
-  version: string,
-  type?: 'major' | 'minor' | 'patch'
-): string
+function nextVersion(version: string, type?: 'major' | 'minor' | 'patch'): string
 ```
 
 ## 参数
 
-| 参数      | 类型                           | 描述                       |
-| --------- | ------------------------------ | -------------------------- |
-| `version` | `string`                       | 当前版本                   |
-| `type`    | `'major' \| 'minor' \| 'patch'` | 递增类型（默认：'patch'）  |
+| 参数      | 类型                            | 描述                      |
+| --------- | ------------------------------- | ------------------------- |
+| `version` | `string`                        | 当前版本                  |
+| `type`    | `'major' \| 'minor' \| 'patch'` | 递增类型（默认：'patch'） |
 
 ## 返回值
 

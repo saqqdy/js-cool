@@ -40,18 +40,18 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 
 `DateDiffResult` - 包含两个日期差值的对象，具有以下属性：
 
-| 属性               | 类型     | 描述                       |
-| ------------------ | -------- | -------------------------- |
-| `days`             | `number` | 差值中的整天数             |
-| `hours`            | `number` | 剩余小时数（0-23）         |
-| `minutes`          | `number` | 剩余分钟数（0-59）         |
-| `seconds`          | `number` | 剩余秒数（0-59）           |
-| `milliseconds`     | `number` | 剩余毫秒数（0-999）        |
-| `total.days`       | `number` | 总差值天数                 |
-| `total.hours`      | `number` | 总差值小时数               |
-| `total.minutes`    | `number` | 总差值分钟数               |
-| `total.seconds`    | `number` | 总差值秒数                 |
-| `total.milliseconds` | `number` | 总差值毫秒数             |
+| 属性                 | 类型     | 描述                |
+| -------------------- | -------- | ------------------- |
+| `days`               | `number` | 差值中的整天数      |
+| `hours`              | `number` | 剩余小时数（0-23）  |
+| `minutes`            | `number` | 剩余分钟数（0-59）  |
+| `seconds`            | `number` | 剩余秒数（0-59）    |
+| `milliseconds`       | `number` | 剩余毫秒数（0-999） |
+| `total.days`         | `number` | 总差值天数          |
+| `total.hours`        | `number` | 总差值小时数        |
+| `total.minutes`      | `number` | 总差值分钟数        |
+| `total.seconds`      | `number` | 总差值秒数          |
+| `total.milliseconds` | `number` | 总差值毫秒数        |
 
 如果任一日期无效，返回所有属性为零值的对象。
 

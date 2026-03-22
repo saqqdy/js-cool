@@ -54,7 +54,7 @@ function isLightColor(color: string): boolean {
 	// Where R, G, B are linear values (gamma corrected)
 	const toLinear = (c: number): number => {
 		c /= 255
-		return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055)**2.4
+		return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
 	}
 
 	const luminance = 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b)

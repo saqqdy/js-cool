@@ -11,20 +11,16 @@ import { cleanData } from 'js-cool'
 ## Signature
 
 ```typescript
-function cleanData(
-  data: any,
-  map: string[] | Record<string, string>,
-  nullFix?: any
-): any
+function cleanData(data: any, map: string[] | Record<string, string>, nullFix?: any): any
 ```
 
 ## Parameters
 
-| Parameter | Type                           | Description                    |
-| --------- | ------------------------------ | ------------------------------ |
-| `data`    | `any`                          | Source object                  |
-| `map`     | `string[] \| Record<string, string>` | Keys to extract or rename map |
-| `nullFix` | `any`                          | Default value for missing keys |
+| Parameter | Type                                 | Description                    |
+| --------- | ------------------------------------ | ------------------------------ |
+| `data`    | `any`                                | Source object                  |
+| `map`     | `string[] \| Record<string, string>` | Keys to extract or rename map  |
+| `nullFix` | `any`                                | Default value for missing keys |
 
 ## Returns
 

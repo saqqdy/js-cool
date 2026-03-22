@@ -11,20 +11,16 @@ import { randomNumbers } from 'js-cool'
 ## Signature
 
 ```typescript
-function randomNumbers(
-  count: number,
-  min?: number,
-  max?: number
-): number[]
+function randomNumbers(count: number, min?: number, max?: number): number[]
 ```
 
 ## Parameters
 
-| Parameter | Type     | Description                      |
-| --------- | -------- | -------------------------------- |
-| `count`   | `number` | Number of random numbers         |
-| `min`     | `number` | Minimum value (default: 0)       |
-| `max`     | `number` | Maximum value (default: 100)     |
+| Parameter | Type     | Description                  |
+| --------- | -------- | ---------------------------- |
+| `count`   | `number` | Number of random numbers     |
+| `min`     | `number` | Minimum value (default: 0)   |
+| `max`     | `number` | Maximum value (default: 100) |
 
 ## Returns
 

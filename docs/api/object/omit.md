@@ -16,10 +16,10 @@ function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K
 
 ## Parameters
 
-| Parameter | Type   | Description                    |
-| --------- | ------ | ------------------------------ |
-| `obj`     | `T`    | The source object              |
-| `keys`    | `K[]`  | The property paths to omit     |
+| Parameter | Type  | Description                |
+| --------- | ----- | -------------------------- |
+| `obj`     | `T`   | The source object          |
+| `keys`    | `K[]` | The property paths to omit |
 
 ## Returns
 

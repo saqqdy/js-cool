@@ -16,8 +16,8 @@ function isNil(value: unknown): value is null | undefined
 
 ## Parameters
 
-| Parameter | Type      | Description      |
-| --------- | --------- | ---------------- |
+| Parameter | Type      | Description        |
+| --------- | --------- | ------------------ |
 | `value`   | `unknown` | The value to check |
 
 ## Returns

@@ -16,8 +16,8 @@ function encodeBase64(input: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description           |
-| --------- | -------- | --------------------- |
+| Parameter | Type     | Description          |
+| --------- | -------- | -------------------- |
 | `input`   | `string` | The string to encode |
 
 ## Returns

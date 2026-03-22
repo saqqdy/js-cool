@@ -16,10 +16,10 @@ function setSession(key: string, value: any, seconds?: number): void
 
 ## 参数
 
-| 参数     | 类型     | 描述                     |
-| -------- | -------- | ------------------------ |
-| `key`    | `string` | 键名                     |
-| `value`  | `any`    | 要存储的值               |
+| 参数      | 类型     | 描述                 |
+| --------- | -------- | -------------------- |
+| `key`     | `string` | 键名                 |
+| `value`   | `any`    | 要存储的值           |
 | `seconds` | `number` | 过期时间（秒），可选 |
 
 ## 示例

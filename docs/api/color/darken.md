@@ -16,10 +16,10 @@ function darken(color: string, percent: number): string
 
 ## Parameters
 
-| Parameter | Type     | Description                              |
-| --------- | -------- | ---------------------------------------- |
-| `color`   | `string` | The color to darken (hex or rgb format)  |
-| `percent` | `number` | The percentage to darken (0-100)         |
+| Parameter | Type     | Description                             |
+| --------- | -------- | --------------------------------------- |
+| `color`   | `string` | The color to darken (hex or rgb format) |
+| `percent` | `number` | The percentage to darken (0-100)        |
 
 ## Returns
 

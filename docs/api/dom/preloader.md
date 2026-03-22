@@ -16,9 +16,9 @@ function preloader(resources: string[]): Promise<void>
 
 ## Parameters
 
-| Parameter   | Type       | Description          |
-| ----------- | ---------- | -------------------- |
-| `resources` | `string[]` | URLs to preload      |
+| Parameter   | Type       | Description     |
+| ----------- | ---------- | --------------- |
+| `resources` | `string[]` | URLs to preload |
 
 ## Returns
 
@@ -28,17 +28,10 @@ function preloader(resources: string[]): Promise<void>
 
 ```js
 // Preload images
-preloader([
-  'image1.jpg',
-  'image2.jpg',
-  'image3.jpg'
-]).then(() => {
+preloader(['image1.jpg', 'image2.jpg', 'image3.jpg']).then(() => {
   console.log('All images loaded')
 })
 
 // Preload scripts
-preloader([
-  'script1.js',
-  'script2.js'
-])
+preloader(['script1.js', 'script2.js'])
 ```

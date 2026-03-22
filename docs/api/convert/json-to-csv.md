@@ -16,11 +16,11 @@ function JSONToCSV(arr: any[], columns: any[], delimiter?: string): string
 
 ## Parameters
 
-| Parameter   | Type     | Description                          |
-| ----------- | -------- | ------------------------------------ |
-| `arr`       | `any[]`  | Array of objects                     |
-| `columns`   | `any[]`  | The specified columns to include     |
-| `delimiter` | `string` | Delimiter, defaults to ','           |
+| Parameter   | Type     | Description                      |
+| ----------- | -------- | -------------------------------- |
+| `arr`       | `any[]`  | Array of objects                 |
+| `columns`   | `any[]`  | The specified columns to include |
+| `delimiter` | `string` | Delimiter, defaults to ','       |
 
 ## Returns
 
@@ -30,11 +30,24 @@ function JSONToCSV(arr: any[], columns: any[], delimiter?: string): string
 
 ```js
 // Basic usage
-JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4 }], ['a', 'b'])
+JSONToCSV(
+  [
+    { a: 1, b: 2 },
+    { a: 3, b: 4 },
+  ],
+  ['a', 'b']
+)
 // 'a,b\n"1","2"\n"3","4"'
 
 // With custom delimiter
-JSONToCSV([{ a: 1, b: 2 }, { a: 3, b: 4 }], ['a', 'b'], ';')
+JSONToCSV(
+  [
+    { a: 1, b: 2 },
+    { a: 3, b: 4 },
+  ],
+  ['a', 'b'],
+  ';'
+)
 // 'a;b\n"1";"2"\n"3";"4"'
 
 // Missing values become empty strings

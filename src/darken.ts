@@ -53,7 +53,7 @@ function darken(color: string, percent: number): string {
 	g = Math.max(0, g - amount)
 	b = Math.max(0, b - amount)
 
-	return `#${  [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
+	return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
 }
 
 export default darken

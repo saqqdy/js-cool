@@ -16,9 +16,9 @@ function fileToBase64(file: File): Promise<string>
 
 ## Parameters
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
-| `file`    | `File` | File input   |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| `file`    | `File` | File input  |
 
 ## Returns
 

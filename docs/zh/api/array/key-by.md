@@ -19,9 +19,9 @@ function keyBy<T>(
 
 ## 参数
 
-| 参数       | 类型                                       | 描述               |
-| ---------- | ------------------------------------------ | ------------------ |
-| `array`    | `T[]`                                      | 要遍历的数组       |
+| 参数       | 类型                                          | 描述           |
+| ---------- | --------------------------------------------- | -------------- |
+| `array`    | `T[]`                                         | 要遍历的数组   |
 | `iteratee` | `keyof T \| ((value: T) => string \| number)` | 转换键的迭代器 |
 
 ## 返回值
@@ -31,13 +31,25 @@ function keyBy<T>(
 ## 示例
 
 ```js
-keyBy([{ id: 'a', name: 'Alice' }, { id: 'b', name: 'Bob' }], 'id')
+keyBy(
+  [
+    { id: 'a', name: 'Alice' },
+    { id: 'b', name: 'Bob' },
+  ],
+  'id'
+)
 // { a: { id: 'a', name: 'Alice' }, b: { id: 'b', name: 'Bob' } }
 
-keyBy([{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }], 'id')
+keyBy(
+  [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+  ],
+  'id'
+)
 // { '1': { id: 1, name: 'Alice' }, '2': { id: 2, name: 'Bob' } }
 
-keyBy(['a', 'b', 'c'], (v) => v.toUpperCase())
+keyBy(['a', 'b', 'c'], v => v.toUpperCase())
 // { A: 'a', B: 'b', C: 'c' }
 ```
 

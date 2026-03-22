@@ -31,18 +31,18 @@ function truncate(str: string, options?: TruncateOptions): string
 
 ## Parameters
 
-| Parameter | Type               | Description                    |
-| --------- | ------------------ | ------------------------------ |
-| `str`     | `string`           | The string to truncate         |
-| `options` | `TruncateOptions`  | The options object (optional)  |
+| Parameter | Type              | Description                   |
+| --------- | ----------------- | ----------------------------- |
+| `str`     | `string`          | The string to truncate        |
+| `options` | `TruncateOptions` | The options object (optional) |
 
 ### TruncateOptions
 
-| Property   | Type                | Default | Description                                    |
-| ---------- | ------------------- | ------- | ---------------------------------------------- |
-| `length`   | `number`            | `30`    | The maximum string length                      |
-| `omission` | `string`            | `'...'` | The string to indicate text is omitted         |
-| `separator`| `string \| RegExp`  | -       | The separator pattern to truncate to           |
+| Property    | Type               | Default | Description                            |
+| ----------- | ------------------ | ------- | -------------------------------------- |
+| `length`    | `number`           | `30`    | The maximum string length              |
+| `omission`  | `string`           | `'...'` | The string to indicate text is omitted |
+| `separator` | `string \| RegExp` | -       | The separator pattern to truncate to   |
 
 ## Returns
 

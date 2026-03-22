@@ -11,20 +11,16 @@ import { cleanData } from 'js-cool'
 ## 签名
 
 ```typescript
-function cleanData(
-  data: any,
-  map: string[] | Record<string, string>,
-  nullFix?: any
-): any
+function cleanData(data: any, map: string[] | Record<string, string>, nullFix?: any): any
 ```
 
 ## 参数
 
-| 参数      | 类型                           | 描述               |
-| --------- | ------------------------------ | ------------------ |
-| `data`    | `any`                          | 源对象             |
+| 参数      | 类型                                 | 描述                   |
+| --------- | ------------------------------------ | ---------------------- |
+| `data`    | `any`                                | 源对象                 |
 | `map`     | `string[] \| Record<string, string>` | 要提取的键或重命名映射 |
-| `nullFix` | `any`                          | 缺失键的默认值     |
+| `nullFix` | `any`                                | 缺失键的默认值         |
 
 ## 返回值
 

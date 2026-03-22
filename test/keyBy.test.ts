@@ -5,12 +5,12 @@ describe('keyBy', () => {
 	it('should key by key', () => {
 		const array = [
 			{ id: 'a', name: 'Alice' },
-			{ id: 'b', name: 'Bob' }
+			{ id: 'b', name: 'Bob' },
 		]
 		const result = keyBy(array, 'id')
 		expect(result).toEqual({
 			a: { id: 'a', name: 'Alice' },
-			b: { id: 'b', name: 'Bob' }
+			b: { id: 'b', name: 'Bob' },
 		})
 	})
 
@@ -24,7 +24,10 @@ describe('keyBy', () => {
 	})
 
 	it('should keep last item for duplicate keys', () => {
-		const array = [{ id: 'a', name: 'Alice' }, { id: 'a', name: 'Bob' }]
+		const array = [
+			{ id: 'a', name: 'Alice' },
+			{ id: 'a', name: 'Bob' },
+		]
 		const result = keyBy(array, 'id')
 		expect(result).toEqual({ a: { id: 'a', name: 'Bob' } })
 	})

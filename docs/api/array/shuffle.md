@@ -16,8 +16,8 @@ function shuffle<T>(arr: T[]): T[]
 
 ## Parameters
 
-| Parameter | Type  | Description         |
-| --------- | ----- | ------------------- |
+| Parameter | Type  | Description          |
+| --------- | ----- | -------------------- |
 | `arr`     | `T[]` | The array to shuffle |
 
 ## Returns

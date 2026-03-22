@@ -16,10 +16,10 @@ function extend<T extends object>(target: T, ...sources: object[]): T
 
 ## 参数
 
-| 参数      | 类型        | 描述           |
-| --------- | ----------- | -------------- |
-| `target`  | `T`         | 目标对象       |
-| `sources` | `object[]`  | 要合并的源对象 |
+| 参数      | 类型       | 描述           |
+| --------- | ---------- | -------------- |
+| `target`  | `T`        | 目标对象       |
+| `sources` | `object[]` | 要合并的源对象 |
 
 ## 返回值
 

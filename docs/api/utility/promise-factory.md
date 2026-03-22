@@ -11,18 +11,15 @@ import { promiseFactory } from 'js-cool'
 ## Signature
 
 ```typescript
-function promiseFactory<T>(
-  value: T,
-  resolver: () => Promise<T>
-): T & Promise<T>
+function promiseFactory<T>(value: T, resolver: () => Promise<T>): T & Promise<T>
 ```
 
 ## Parameters
 
-| Parameter  | Type              | Description           |
-| ---------- | ----------------- | --------------------- |
-| `value`    | `T`               | Initial value         |
-| `resolver` | `() => Promise<T>` | Promise resolver     |
+| Parameter  | Type               | Description      |
+| ---------- | ------------------ | ---------------- |
+| `value`    | `T`                | Initial value    |
+| `resolver` | `() => Promise<T>` | Promise resolver |
 
 ## Returns
 
@@ -32,11 +29,13 @@ function promiseFactory<T>(
 
 ```js
 const stats = { value: 100 }
-const result = promiseFactory(stats, () =>
-  new Promise(resolve => {
-    stats.value = 200
-    resolve(stats)
-  })
+const result = promiseFactory(
+  stats,
+  () =>
+    new Promise(resolve => {
+      stats.value = 200
+      resolve(stats)
+    })
 )
 
 console.log(result.value) // 100 (sync)

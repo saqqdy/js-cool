@@ -34,13 +34,13 @@ getUrlParams('https://example.com?name=John&age=30')
 
 js-cool 支持所有现代浏览器和 Node.js >= 18。
 
-| 浏览器   | 支持情况 |
-| -------- | -------- |
-| Chrome   | ✅       |
-| Firefox  | ✅       |
-| Safari   | ✅       |
-| Edge     | ✅       |
-| Node.js  | ✅ >= 18 |
+| 浏览器  | 支持情况 |
+| ------- | -------- |
+| Chrome  | ✅       |
+| Firefox | ✅       |
+| Safari  | ✅       |
+| Edge    | ✅       |
+| Node.js | ✅ >= 18 |
 
 ## 开源协议
 

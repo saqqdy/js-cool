@@ -16,8 +16,8 @@ function fingerprint(domain?: string): string | null
 
 ## Parameters
 
-| Parameter | Type     | Description                          |
-| --------- | -------- | ------------------------------------ |
+| Parameter | Type     | Description                         |
+| --------- | -------- | ----------------------------------- |
 | `domain`  | `string` | Domain key (default: location.host) |
 
 ## Returns

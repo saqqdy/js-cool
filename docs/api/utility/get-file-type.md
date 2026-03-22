@@ -19,17 +19,17 @@ function getFileType(url: string): {
 
 ## Parameters
 
-| Parameter | Type     | Description              |
-| --------- | -------- | ------------------------ |
-| `url`     | `string` | File url or filename     |
+| Parameter | Type     | Description          |
+| --------- | -------- | -------------------- |
+| `url`     | `string` | File url or filename |
 
 ## Returns
 
 `object` - Object with suffix and type properties.
 
-| Property | Type     | Description                                      |
-| -------- | -------- | ------------------------------------------------ |
-| `suffix` | `string` | File extension in lowercase                      |
+| Property | Type     | Description                                                                     |
+| -------- | -------- | ------------------------------------------------------------------------------- |
+| `suffix` | `string` | File extension in lowercase                                                     |
 | `type`   | `string` | File type category: image, txt, excel, word, pdf, ppt, zip, video, audio, other |
 
 ## Examples

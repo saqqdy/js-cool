@@ -16,10 +16,10 @@ function getUrlParam(url: string, name: string): string | null
 
 ## Parameters
 
-| Parameter | Type     | Description      |
-| --------- | -------- | ---------------- |
-| `url`     | `string` | URL string       |
-| `name`    | `string` | Parameter name   |
+| Parameter | Type     | Description    |
+| --------- | -------- | -------------- |
+| `url`     | `string` | URL string     |
+| `name`    | `string` | Parameter name |
 
 ## Returns
 

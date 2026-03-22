@@ -16,10 +16,10 @@ function clamp(number: number, lower: number, upper?: number): number
 
 ## 参数
 
-| 参数    | 类型     | 描述                                         |
-| ------- | -------- | -------------------------------------------- |
-| `number` | `number` | 要限制的数字                                 |
-| `lower`  | `number` | 下限                                         |
+| 参数     | 类型     | 描述                                                |
+| -------- | -------- | --------------------------------------------------- |
+| `number` | `number` | 要限制的数字                                        |
+| `lower`  | `number` | 下限                                                |
 | `upper`  | `number` | 上限（可选，默认为 `lower`，同时 `lower` 设为 `0`） |
 
 ## 返回值

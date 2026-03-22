@@ -34,7 +34,10 @@ cloned.a.b = 2
 console.log(obj.a.b) // 1（原对象不变）
 
 // 克隆数组
-const arr = [[1, 2], [3, 4]]
+const arr = [
+  [1, 2],
+  [3, 4],
+]
 const clonedArr = clone(arr)
 clonedArr[0][0] = 99
 console.log(arr[0][0]) // 1（原数组不变）

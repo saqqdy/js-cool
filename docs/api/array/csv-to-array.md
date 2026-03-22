@@ -16,9 +16,9 @@ function CSVToArray(csv: string, delimiter?: string): string[][]
 
 ## Parameters
 
-| Parameter   | Type     | Description                |
-| ----------- | -------- | -------------------------- |
-| `csv`       | `string` | CSV string to convert      |
+| Parameter   | Type     | Description                     |
+| ----------- | -------- | ------------------------------- |
+| `csv`       | `string` | CSV string to convert           |
 | `delimiter` | `string` | Column delimiter (default: ',') |
 
 ## Returns

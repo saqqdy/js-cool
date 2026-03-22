@@ -28,16 +28,16 @@ function getDaysInMonth(year: number, month: number): number
 ## 示例
 
 ```js
-getDaysInMonth(2024, 0)  // 2024年1月
+getDaysInMonth(2024, 0) // 2024年1月
 // => 31
 
-getDaysInMonth(2024, 1)  // 2024年2月（闰年）
+getDaysInMonth(2024, 1) // 2024年2月（闰年）
 // => 29
 
-getDaysInMonth(2023, 1)  // 2023年2月
+getDaysInMonth(2023, 1) // 2023年2月
 // => 28
 
-getDaysInMonth(2024, 3)  // 2024年4月
+getDaysInMonth(2024, 3) // 2024年4月
 // => 30
 
 getDaysInMonth(2024, 11) // 2024年12月

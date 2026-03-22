@@ -49,10 +49,10 @@ function debounce<T extends AnyFunction>(
 	const { leading = false, maxWait, trailing = true } = options
 
 	let timer: ReturnType<typeof setTimeout> | null = null,
-	 lastCallTime = 0,
-	 lastArgs: any[] | null = null,
-	 lastThis: any = null,
-	 result: any
+		lastCallTime = 0,
+		lastArgs: any[] | null = null,
+		lastThis: any = null,
+		result: any
 
 	function invokeFunc(): any {
 		const args = lastArgs

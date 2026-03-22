@@ -19,10 +19,10 @@ function keyBy<T>(
 
 ## Parameters
 
-| Parameter   | Type                                    | Description                          |
-| ----------- | --------------------------------------- | ------------------------------------ |
-| `array`     | `T[]`                                   | The array to iterate over            |
-| `iteratee`  | `keyof T \| ((value: T) => string \| number)` | The iteratee to transform keys |
+| Parameter  | Type                                          | Description                    |
+| ---------- | --------------------------------------------- | ------------------------------ |
+| `array`    | `T[]`                                         | The array to iterate over      |
+| `iteratee` | `keyof T \| ((value: T) => string \| number)` | The iteratee to transform keys |
 
 ## Returns
 
@@ -31,13 +31,25 @@ function keyBy<T>(
 ## Examples
 
 ```js
-keyBy([{ id: 'a', name: 'Alice' }, { id: 'b', name: 'Bob' }], 'id')
+keyBy(
+  [
+    { id: 'a', name: 'Alice' },
+    { id: 'b', name: 'Bob' },
+  ],
+  'id'
+)
 // { a: { id: 'a', name: 'Alice' }, b: { id: 'b', name: 'Bob' } }
 
-keyBy([{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }], 'id')
+keyBy(
+  [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+  ],
+  'id'
+)
 // { '1': { id: 1, name: 'Alice' }, '2': { id: 2, name: 'Bob' } }
 
-keyBy(['a', 'b', 'c'], (v) => v.toUpperCase())
+keyBy(['a', 'b', 'c'], v => v.toUpperCase())
 // { A: 'a', B: 'b', C: 'c' }
 ```
 

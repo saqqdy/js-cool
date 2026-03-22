@@ -19,9 +19,9 @@ function client(
 
 ## Parameters
 
-| Parameter   | Type     | Description                      |
-| ----------- | -------- | -------------------------------- |
-| `name`      | `string` | Check specific browser (optional) |
+| Parameter   | Type     | Description                              |
+| ----------- | -------- | ---------------------------------------- |
+| `name`      | `string` | Check specific browser (optional)        |
 | `userAgent` | `string` | Custom UA (default: navigator.userAgent) |
 
 ## Returns

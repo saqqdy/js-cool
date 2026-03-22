@@ -11,20 +11,16 @@ import { sortPinyin } from 'js-cool'
 ## 签名
 
 ```typescript
-function sortPinyin<T = string, P = string>(
-  a: T,
-  b: P,
-  options?: Intl.CollatorOptions
-): number
+function sortPinyin<T = string, P = string>(a: T, b: P, options?: Intl.CollatorOptions): number
 ```
 
 ## 参数
 
-| 参数      | 类型                   | 描述                             |
-| --------- | ---------------------- | -------------------------------- |
-| `a`       | `T`                    | 第一个比较元素                   |
-| `b`       | `P`                    | 第二个比较元素                   |
-| `options` | `Intl.CollatorOptions` | 调整输出格式的选项对象（可选）   |
+| 参数      | 类型                   | 描述                           |
+| --------- | ---------------------- | ------------------------------ |
+| `a`       | `T`                    | 第一个比较元素                 |
+| `b`       | `P`                    | 第二个比较元素                 |
+| `options` | `Intl.CollatorOptions` | 调整输出格式的选项对象（可选） |
 
 ## 返回值
 

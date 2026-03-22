@@ -31,7 +31,8 @@ function base64ToFile(input: string, fileName: string): File {
 	const mime = pre.match(/:(.*?);/)?.[1]
 	const arrayBuffer = base64ToArrayBuffer(input)
 
-	return new File([arrayBuffer], fileName, { type: mime })
+	// eslint-disable-next-line no-undef
+	return new File([arrayBuffer as BlobPart], fileName, { type: mime })
 }
 
 export default base64ToFile

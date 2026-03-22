@@ -16,10 +16,10 @@ function getDaysInMonth(year: number, month: number): number
 
 ## Parameters
 
-| Parameter | Type     | Description                                  |
-| --------- | -------- | -------------------------------------------- |
-| `year`    | `number` | The year                                     |
-| `month`   | `number` | The month (0-11, where 0 is January)         |
+| Parameter | Type     | Description                          |
+| --------- | -------- | ------------------------------------ |
+| `year`    | `number` | The year                             |
+| `month`   | `number` | The month (0-11, where 0 is January) |
 
 ## Returns
 
@@ -28,16 +28,16 @@ function getDaysInMonth(year: number, month: number): number
 ## Examples
 
 ```js
-getDaysInMonth(2024, 0)  // January 2024
+getDaysInMonth(2024, 0) // January 2024
 // => 31
 
-getDaysInMonth(2024, 1)  // February 2024 (leap year)
+getDaysInMonth(2024, 1) // February 2024 (leap year)
 // => 29
 
-getDaysInMonth(2023, 1)  // February 2023
+getDaysInMonth(2023, 1) // February 2023
 // => 28
 
-getDaysInMonth(2024, 3)  // April 2024
+getDaysInMonth(2024, 3) // April 2024
 // => 30
 
 getDaysInMonth(2024, 11) // December 2024

@@ -16,8 +16,8 @@ function clone<T>(source: T): T
 
 ## Parameters
 
-| Parameter | Type | Description         |
-| --------- | ---- | ------------------- |
+| Parameter | Type | Description        |
+| --------- | ---- | ------------------ |
 | `source`  | `T`  | The value to clone |
 
 ## Returns
@@ -34,7 +34,10 @@ cloned.a.b = 2
 console.log(obj.a.b) // 1 (unchanged)
 
 // Clone array
-const arr = [[1, 2], [3, 4]]
+const arr = [
+  [1, 2],
+  [3, 4],
+]
 const clonedArr = clone(arr)
 clonedArr[0][0] = 99
 console.log(arr[0][0]) // 1 (unchanged)

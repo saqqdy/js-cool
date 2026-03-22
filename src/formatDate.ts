@@ -42,7 +42,7 @@ function formatDate(date: Date | string | number, format = 'YYYY-MM-DD HH:mm:ss'
 		ss: () => String(d.getSeconds()).padStart(2, '0'),
 		SSS: () => String(d.getMilliseconds()).padStart(3, '0'),
 		YY: () => String(d.getFullYear()).slice(-2),
-		YYYY: () => String(d.getFullYear())
+		YYYY: () => String(d.getFullYear()),
 	}
 
 	// Process format string - match all tokens at once to avoid partial replacements

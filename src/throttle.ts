@@ -45,10 +45,10 @@ function throttle<T extends AnyFunction>(
 	const { leading = true, trailing = true } = options
 
 	let timer: ReturnType<typeof setTimeout> | null = null,
-	 lastArgs: any[] | null = null,
-	 lastThis: any = null,
-	 lastCallTime = 0,
-	 result: any
+		lastArgs: any[] | null = null,
+		lastThis: any = null,
+		lastCallTime = 0,
+		result: any
 
 	function invokeFunc(): any {
 		const args = lastArgs

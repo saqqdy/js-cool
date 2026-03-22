@@ -20,11 +20,11 @@ function searchObject(
 
 ## Parameters
 
-| Parameter    | Type                                    | Description         |
-| ------------ | --------------------------------------- | ------------------- |
-| `tree`       | `any[]`                                 | The tree to search  |
-| `expression` | `string \| number \| Function`          | Search expression   |
-| `key`        | `string`                                | Key to match        |
+| Parameter    | Type                           | Description        |
+| ------------ | ------------------------------ | ------------------ |
+| `tree`       | `any[]`                        | The tree to search |
+| `expression` | `string \| number \| Function` | Search expression  |
+| `key`        | `string`                       | Key to match       |
 
 ## Returns
 
@@ -33,9 +33,7 @@ function searchObject(
 ## Examples
 
 ```js
-const data = [
-  { id: 1, name: 'John', children: [{ id: 2, name: 'Jane' }] }
-]
+const data = [{ id: 1, name: 'John', children: [{ id: 2, name: 'Jane' }] }]
 
 searchObject(data, 'Jane', 'name') // { id: 2, name: 'Jane' }
 searchObject(data, item => item.id === 2) // { id: 2, name: 'Jane' }

@@ -16,9 +16,9 @@ function RGBToHex(rgb: string): string
 
 ## Parameters
 
-| Parameter | Type     | Description        |
-| --------- | -------- | ------------------ |
-| `rgb`     | `string` | RGB color string   |
+| Parameter | Type     | Description      |
+| --------- | -------- | ---------------- |
+| `rgb`     | `string` | RGB color string |
 
 ## Returns
 

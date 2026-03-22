@@ -16,8 +16,8 @@ function intersect<T>(...args: T[][]): T[]
 
 ## Parameters
 
-| Parameter | Type   | Description           |
-| --------- | ------ | --------------------- |
+| Parameter | Type    | Description         |
+| --------- | ------- | ------------------- |
 | `args`    | `T[][]` | Arrays to intersect |
 
 ## Returns

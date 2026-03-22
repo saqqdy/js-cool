@@ -16,9 +16,9 @@ function nextIndex(min?: number, max?: number): number
 
 ## Parameters
 
-| Parameter | Type     | Description                   |
-| --------- | -------- | ----------------------------- |
-| `min`     | `number` | Minimum z-index (default: 5000) |
+| Parameter | Type     | Description                      |
+| --------- | -------- | -------------------------------- |
+| `min`     | `number` | Minimum z-index (default: 5000)  |
 | `max`     | `number` | Maximum z-index (default: 10000) |
 
 ## Returns

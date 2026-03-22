@@ -26,7 +26,8 @@ function base64ToBlob(input: string): Blob {
 	const mime = pre.match(/:(.*?);/)?.[1]
 	const arrayBuffer = base64ToArrayBuffer(input)
 
-	return new Blob([arrayBuffer], { type: mime })
+	// eslint-disable-next-line no-undef
+	return new Blob([arrayBuffer as BlobPart], { type: mime })
 }
 
 export default base64ToBlob

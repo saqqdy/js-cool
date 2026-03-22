@@ -16,11 +16,11 @@ function safeStringify(data: any, replacer?: any, space?: number): string | unde
 
 ## Parameters
 
-| Parameter  | Type     | Description              |
-| ---------- | -------- | ------------------------ |
-| `data`     | `any`    | Data to stringify        |
-| `replacer` | `any`    | Replacer function        |
-| `space`    | `number` | Indentation spaces       |
+| Parameter  | Type     | Description        |
+| ---------- | -------- | ------------------ |
+| `data`     | `any`    | Data to stringify  |
+| `replacer` | `any`    | Replacer function  |
+| `space`    | `number` | Indentation spaces |
 
 ## Returns
 

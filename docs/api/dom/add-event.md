@@ -11,26 +11,22 @@ import { addEvent } from 'js-cool'
 ## Signature
 
 ```typescript
-function addEvent(
-  element: any,
-  type: string,
-  handler: Function
-): void
+function addEvent(element: any, type: string, handler: Function): void
 ```
 
 ## Parameters
 
-| Parameter | Type       | Description           |
-| --------- | ---------- | --------------------- |
-| `element` | `any`      | DOM element           |
-| `type`    | `string`   | Event type (no 'on')  |
-| `handler` | `Function` | Event handler         |
+| Parameter | Type       | Description          |
+| --------- | ---------- | -------------------- |
+| `element` | `any`      | DOM element          |
+| `type`    | `string`   | Event type (no 'on') |
+| `handler` | `Function` | Event handler        |
 
 ## Examples
 
 ```js
 const btn = document.getElementById('btn')
-addEvent(btn, 'click', (e) => {
+addEvent(btn, 'click', e => {
   console.log('Button clicked!')
 })
 

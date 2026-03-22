@@ -16,9 +16,9 @@ function sampleSize<T>(array: T[], n?: number): T[]
 
 ## Parameters
 
-| Parameter | Type     | Description                              |
-| --------- | -------- | ---------------------------------------- |
-| `array`   | `T[]`    | The array to sample from                 |
+| Parameter | Type     | Description                                     |
+| --------- | -------- | ----------------------------------------------- |
+| `array`   | `T[]`    | The array to sample from                        |
 | `n`       | `number` | The number of elements to sample (default: `1`) |
 
 ## Returns

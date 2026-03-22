@@ -16,8 +16,8 @@ function average(array: number[]): number
 
 ## Parameters
 
-| Parameter | Type       | Description          |
-| --------- | ---------- | -------------------- |
+| Parameter | Type       | Description               |
+| --------- | ---------- | ------------------------- |
 | `array`   | `number[]` | The array to iterate over |
 
 ## Returns

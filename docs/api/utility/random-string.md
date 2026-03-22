@@ -11,17 +11,14 @@ import { randomString } from 'js-cool'
 ## Signature
 
 ```typescript
-function randomString(
-  length?: number,
-  chars?: string
-): string
+function randomString(length?: number, chars?: string): string
 ```
 
 ## Parameters
 
-| Parameter | Type     | Description                    |
-| --------- | -------- | ------------------------------ |
-| `length`  | `number` | String length (default: 32)    |
+| Parameter | Type     | Description                           |
+| --------- | -------- | ------------------------------------- |
+| `length`  | `number` | String length (default: 32)           |
 | `chars`   | `string` | Character set (default: alphanumeric) |
 
 ## Returns

@@ -16,8 +16,8 @@ function getCache<T = any>(key: string): T | null
 
 ## Parameters
 
-| Parameter | Type     | Description      |
-| --------- | -------- | ---------------- |
+| Parameter | Type     | Description    |
+| --------- | -------- | -------------- |
 | `key`     | `string` | The key to get |
 
 ## Returns

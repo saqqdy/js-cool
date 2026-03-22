@@ -16,8 +16,8 @@ function isEmpty(value: unknown): boolean
 
 ## Parameters
 
-| Parameter | Type      | Description      |
-| --------- | --------- | ---------------- |
+| Parameter | Type      | Description        |
+| --------- | --------- | ------------------ |
 | `value`   | `unknown` | The value to check |
 
 ## Returns

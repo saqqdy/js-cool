@@ -16,11 +16,11 @@ function getProperty(obj: any, path: string, defaultValue?: any): any
 
 ## Parameters
 
-| Parameter     | Type     | Description              |
-| ------------- | -------- | ------------------------ |
-| `obj`         | `any`    | Source object            |
-| `path`        | `string` | Property path (e.g. 'a.b.c') |
-| `defaultValue`| `any`    | Default if not found     |
+| Parameter      | Type     | Description                  |
+| -------------- | -------- | ---------------------------- |
+| `obj`          | `any`    | Source object                |
+| `path`         | `string` | Property path (e.g. 'a.b.c') |
+| `defaultValue` | `any`    | Default if not found         |
 
 ## Returns
 

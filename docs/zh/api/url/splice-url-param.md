@@ -16,10 +16,10 @@ function spliceUrlParam(url: string, params: Record<string, any>): string
 
 ## 参数
 
-| 参数     | 类型                  | 描述       |
-| -------- | --------------------- | ---------- |
-| `url`    | `string`              | 基础 URL   |
-| `params` | `Record<string, any>` | 参数对象   |
+| 参数     | 类型                  | 描述     |
+| -------- | --------------------- | -------- |
+| `url`    | `string`              | 基础 URL |
+| `params` | `Record<string, any>` | 参数对象 |
 
 ## 返回值
 

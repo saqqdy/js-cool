@@ -16,10 +16,10 @@ function base64ToBlob(base64: string, mime?: string): Blob
 
 ## Parameters
 
-| Parameter | Type     | Description            |
-| --------- | -------- | ---------------------- |
-| `base64`  | `string` | Base64 encoded string  |
-| `mime`    | `string` | MIME type (optional)   |
+| Parameter | Type     | Description           |
+| --------- | -------- | --------------------- |
+| `base64`  | `string` | Base64 encoded string |
+| `mime`    | `string` | MIME type (optional)  |
 
 ## Returns
 

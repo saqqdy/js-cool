@@ -11,7 +11,7 @@ import { windowSize } from 'js-cool'
 ## 签名
 
 ```typescript
-function windowSize(): { width: number, height: number }
+function windowSize(): { width: number; height: number }
 ```
 
 ## 返回值

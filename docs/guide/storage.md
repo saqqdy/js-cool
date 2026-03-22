@@ -125,11 +125,11 @@ delCookie('token')
 
 ### When to Use What?
 
-| Storage | Capacity | Expiration | Use Case |
-|---------|----------|------------|----------|
-| localStorage | ~5MB | Manual | User preferences, cached data |
-| sessionStorage | ~5MB | Tab close | Temporary session data |
-| Cookie | ~4KB | Custom | Authentication, tracking |
+| Storage        | Capacity | Expiration | Use Case                      |
+| -------------- | -------- | ---------- | ----------------------------- |
+| localStorage   | ~5MB     | Manual     | User preferences, cached data |
+| sessionStorage | ~5MB     | Tab close  | Temporary session data        |
+| Cookie         | ~4KB     | Custom     | Authentication, tracking      |
 
 ### Example: User Session
 

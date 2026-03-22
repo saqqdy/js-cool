@@ -7,7 +7,7 @@ describe('groupBy', () => {
 		const result = groupBy(array, 'a')
 		expect(result).toEqual({
 			'1': [{ a: 1 }, { a: 1 }],
-			'2': [{ a: 2 }]
+			'2': [{ a: 2 }],
 		})
 	})
 

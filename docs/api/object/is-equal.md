@@ -16,10 +16,10 @@ function isEqual<T, P>(a: T, b: P): boolean
 
 ## Parameters
 
-| Parameter | Type | Description       |
-| --------- | ---- | ----------------- |
-| `a`       | `T`  | First value       |
-| `b`       | `P`  | Second value      |
+| Parameter | Type | Description  |
+| --------- | ---- | ------------ |
+| `a`       | `T`  | First value  |
+| `b`       | `P`  | Second value |
 
 ## Returns
 

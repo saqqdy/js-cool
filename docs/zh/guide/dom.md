@@ -12,7 +12,7 @@ js-cool 提供了 DOM 操作工具。
 import { addEvent } from 'js-cool'
 
 const btn = document.getElementById('btn')
-addEvent(btn, 'click', (e) => {
+addEvent(btn, 'click', e => {
   console.log('按钮被点击了！')
 })
 ```
@@ -25,7 +25,7 @@ addEvent(btn, 'click', (e) => {
 import { removeEvent } from 'js-cool'
 
 const btn = document.getElementById('btn')
-const handler = (e) => console.log('clicked')
+const handler = e => console.log('clicked')
 addEvent(btn, 'click', handler)
 // 之后...
 removeEvent(btn, 'click', handler)
@@ -40,7 +40,7 @@ removeEvent(btn, 'click', handler)
 ```js
 import { stopDefault } from 'js-cool'
 
-document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', e => {
   stopDefault(e)
   console.log('表单提交已阻止')
 })
@@ -53,7 +53,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
 ```js
 import { stopBubble } from 'js-cool'
 
-document.getElementById('child').addEventListener('click', (e) => {
+document.getElementById('child').addEventListener('click', e => {
   stopBubble(e)
   console.log('事件不会冒泡到父元素')
 })
@@ -162,11 +162,7 @@ isWindow(document) // false
 ```js
 import { preloader } from 'js-cool'
 
-preloader([
-  'image1.jpg',
-  'image2.jpg',
-  'script.js'
-])
+preloader(['image1.jpg', 'image2.jpg', 'script.js'])
 ```
 
 ## 相关

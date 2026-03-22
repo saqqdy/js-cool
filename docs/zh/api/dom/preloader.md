@@ -28,17 +28,10 @@ function preloader(resources: string[]): Promise<void>
 
 ```js
 // 预加载图片
-preloader([
-  'image1.jpg',
-  'image2.jpg',
-  'image3.jpg'
-]).then(() => {
+preloader(['image1.jpg', 'image2.jpg', 'image3.jpg']).then(() => {
   console.log('所有图片已加载')
 })
 
 // 预加载脚本
-preloader([
-  'script1.js',
-  'script2.js'
-])
+preloader(['script1.js', 'script2.js'])
 ```

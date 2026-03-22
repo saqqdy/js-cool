@@ -23,7 +23,7 @@ function stopBubble(e: Event): void
 ## 示例
 
 ```js
-document.getElementById('child').addEventListener('click', (e) => {
+document.getElementById('child').addEventListener('click', e => {
   stopBubble(e)
   console.log('事件不会冒泡到父元素')
 })

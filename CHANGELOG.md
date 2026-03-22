@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
   - Output files: `index.js` (CJS), `index.mjs` (ESM), `index.iife.js`, `index.iife.min.js`
 
 - **Package Exports**: Updated exports configuration
+
   ```json
   {
     "exports": {
@@ -46,12 +47,12 @@ All notable changes to this project will be documented in this file.
 
 ### 📦 Build Output
 
-| File | Format | Size |
-|------|--------|------|
-| `index.js` | CJS | ~159KB |
-| `index.mjs` | ESM | ~154KB |
-| `index.iife.js` | IIFE | ~175KB |
-| `index.iife.min.js` | IIFE (minified) | ~47KB |
+| File                | Format          | Size   |
+| ------------------- | --------------- | ------ |
+| `index.js`          | CJS             | ~159KB |
+| `index.mjs`         | ESM             | ~154KB |
+| `index.iife.js`     | IIFE            | ~175KB |
+| `index.iife.min.js` | IIFE (minified) | ~47KB  |
 
 ### 🔄 Migration Guide
 

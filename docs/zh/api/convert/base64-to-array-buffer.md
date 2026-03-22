@@ -16,8 +16,8 @@ function base64ToArrayBuffer(input: string): Uint8Array | Buffer
 
 ## 参数
 
-| 参数    | 类型     | 描述                    |
-| ------- | -------- | ----------------------- |
+| 参数    | 类型     | 描述                      |
+| ------- | -------- | ------------------------- |
 | `input` | `string` | Base64 或 data URL 字符串 |
 
 ## 返回值

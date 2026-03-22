@@ -16,9 +16,9 @@ function arrayBufferToBlob(input: ArrayBuffer, mime?: string): Blob
 
 ## 参数
 
-| 参数    | 类型          | 描述                        |
-| ------- | ------------- | --------------------------- |
-| `input` | `ArrayBuffer` | ArrayBuffer 输入            |
+| 参数    | 类型          | 描述                           |
+| ------- | ------------- | ------------------------------ |
+| `input` | `ArrayBuffer` | ArrayBuffer 输入               |
 | `mime`  | `string`      | MIME 类型（默认：'image/png'） |
 
 ## 返回值

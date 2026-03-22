@@ -1,4 +1,7 @@
 // ==================== DOM DOM操作 ====================
+// 从虚拟模块导入版本号（构建时注入）
+import { VERSION } from 'virtual:version'
+
 export { default as addEvent } from './addEvent'
 export { default as all } from './all'
 export { default as any } from './any'
@@ -208,7 +211,5 @@ export { default as mountJs } from 'mount-script'
 
 export { default as mountStyle } from 'mount-style'
 export { download } from 'use-downloads'
-// 从虚拟模块导入版本号（构建时注入）
-import { VERSION } from 'virtual:version'
 
 export const version = VERSION

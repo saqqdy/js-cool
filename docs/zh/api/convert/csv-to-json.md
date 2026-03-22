@@ -16,10 +16,10 @@ function CSVToJSON(data: string, delimiter?: string): Record<string, string>[]
 
 ## 参数
 
-| 参数        | 类型     | 描述                   |
-| ----------- | -------- | ---------------------- |
-| `data`      | `string` | CSV 数据字符串         |
-| `delimiter` | `string` | 分隔符，默认为 ','     |
+| 参数        | 类型     | 描述               |
+| ----------- | -------- | ------------------ |
+| `data`      | `string` | CSV 数据字符串     |
+| `delimiter` | `string` | 分隔符，默认为 ',' |
 
 ## 返回值
 

@@ -16,8 +16,8 @@ function getUrlParams(url?: string): Record<string, string>
 
 ## Parameters
 
-| Parameter | Type     | Description                        |
-| --------- | -------- | ---------------------------------- |
+| Parameter | Type     | Description                         |
+| --------- | -------- | ----------------------------------- |
 | `url`     | `string` | URL string (default: location.href) |
 
 ## Returns

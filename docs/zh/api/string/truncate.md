@@ -38,11 +38,11 @@ function truncate(str: string, options?: TruncateOptions): string
 
 ### TruncateOptions
 
-| 属性       | 类型                | 默认值  | 描述                   |
-| ---------- | ------------------- | ------- | ---------------------- |
-| `length`   | `number`            | `30`    | 最大字符串长度         |
-| `omission` | `string`            | `'...'` | 表示文本被省略的字符串 |
-| `separator`| `string \| RegExp`  | -       | 截断的分隔符模式       |
+| 属性        | 类型               | 默认值  | 描述                   |
+| ----------- | ------------------ | ------- | ---------------------- |
+| `length`    | `number`           | `30`    | 最大字符串长度         |
+| `omission`  | `string`           | `'...'` | 表示文本被省略的字符串 |
+| `separator` | `string \| RegExp` | -       | 截断的分隔符模式       |
 
 ## 返回值
 

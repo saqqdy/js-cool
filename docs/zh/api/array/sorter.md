@@ -11,20 +11,16 @@ import { sorter } from 'js-cool'
 ## 签名
 
 ```typescript
-function sorter<T>(
-  arr: T[],
-  key: keyof T,
-  order?: 'asc' | 'desc'
-): T[]
+function sorter<T>(arr: T[], key: keyof T, order?: 'asc' | 'desc'): T[]
 ```
 
 ## 参数
 
-| 参数    | 类型            | 描述                   |
-| ------- | --------------- | ---------------------- |
-| `arr`   | `T[]`           | 要排序的数组           |
-| `key`   | `keyof T`       | 排序依据的键           |
-| `order` | `'asc' \| 'desc'` | 排序顺序（默认：'asc'）|
+| 参数    | 类型              | 描述                    |
+| ------- | ----------------- | ----------------------- |
+| `arr`   | `T[]`             | 要排序的数组            |
+| `key`   | `keyof T`         | 排序依据的键            |
+| `order` | `'asc' \| 'desc'` | 排序顺序（默认：'asc'） |
 
 ## 返回值
 
@@ -36,7 +32,7 @@ function sorter<T>(
 const users = [
   { name: 'John', age: 30 },
   { name: 'Jane', age: 25 },
-  { name: 'Bob', age: 35 }
+  { name: 'Bob', age: 35 },
 ]
 
 sorter(users, 'age', 'asc')

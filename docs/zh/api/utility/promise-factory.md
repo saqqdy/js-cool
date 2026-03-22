@@ -11,18 +11,15 @@ import { promiseFactory } from 'js-cool'
 ## 签名
 
 ```typescript
-function promiseFactory<T>(
-  value: T,
-  resolver: () => Promise<T>
-): T & Promise<T>
+function promiseFactory<T>(value: T, resolver: () => Promise<T>): T & Promise<T>
 ```
 
 ## 参数
 
-| 参数       | 类型                | 描述              |
-| ---------- | ------------------- | ----------------- |
-| `value`    | `T`                 | 初始值            |
-| `resolver` | `() => Promise<T>`  | Promise 解析器    |
+| 参数       | 类型               | 描述           |
+| ---------- | ------------------ | -------------- |
+| `value`    | `T`                | 初始值         |
+| `resolver` | `() => Promise<T>` | Promise 解析器 |
 
 ## 返回值
 
@@ -32,11 +29,13 @@ function promiseFactory<T>(
 
 ```js
 const stats = { value: 100 }
-const result = promiseFactory(stats, () =>
-  new Promise(resolve => {
-    stats.value = 200
-    resolve(stats)
-  })
+const result = promiseFactory(
+  stats,
+  () =>
+    new Promise(resolve => {
+      stats.value = 200
+      resolve(stats)
+    })
 )
 
 console.log(result.value) // 100（同步）

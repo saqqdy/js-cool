@@ -25,7 +25,7 @@
  * @returns - Returns the rounded number
  */
 function round(number: number, precision = 0): number {
-	const factor = 10**precision
+	const factor = 10 ** precision
 	const temp = Math.round(number * factor * 1e10) / 1e10
 	return Math.round(temp) / factor
 }

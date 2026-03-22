@@ -16,10 +16,10 @@ function arrayToCSV<T extends unknown[][]>(arr: T, delimiter?: string): string
 
 ## Parameters
 
-| Parameter   | Type      | Description                |
-| ----------- | --------- | -------------------------- |
-| `arr`       | `T`       | 2D array to convert        |
-| `delimiter` | `string`  | Column delimiter (default: ',') |
+| Parameter   | Type     | Description                     |
+| ----------- | -------- | ------------------------------- |
+| `arr`       | `T`      | 2D array to convert             |
+| `delimiter` | `string` | Column delimiter (default: ',') |
 
 ## Returns
 
@@ -28,10 +28,19 @@ function arrayToCSV<T extends unknown[][]>(arr: T, delimiter?: string): string
 ## Examples
 
 ```js
-arrayToCSV([['name', 'age'], ['John', 30]])
+arrayToCSV([
+  ['name', 'age'],
+  ['John', 30],
+])
 // 'name,age\n"John",30'
 
-arrayToCSV([['a', 'b'], ['1', '2']], ';')
+arrayToCSV(
+  [
+    ['a', 'b'],
+    ['1', '2'],
+  ],
+  ';'
+)
 // 'a;b\n1;2'
 ```
 

@@ -19,10 +19,10 @@ function groupBy<T>(
 
 ## Parameters
 
-| Parameter   | Type                                    | Description                          |
-| ----------- | --------------------------------------- | ------------------------------------ |
-| `array`     | `T[]`                                   | The array to iterate over            |
-| `iteratee`  | `keyof T \| ((value: T) => string \| number)` | The iteratee to transform keys |
+| Parameter  | Type                                          | Description                    |
+| ---------- | --------------------------------------------- | ------------------------------ |
+| `array`    | `T[]`                                         | The array to iterate over      |
+| `iteratee` | `keyof T \| ((value: T) => string \| number)` | The iteratee to transform keys |
 
 ## Returns
 

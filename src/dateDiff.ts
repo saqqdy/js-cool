@@ -46,8 +46,8 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 				hours: 0,
 				milliseconds: 0,
 				minutes: 0,
-				seconds: 0
-			}
+				seconds: 0,
+			},
 		}
 	}
 
@@ -70,8 +70,8 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 			hours: totalHours,
 			milliseconds: totalMilliseconds,
 			minutes: totalMinutes,
-			seconds: totalSeconds
-		}
+			seconds: totalSeconds,
+		},
 	}
 }
 

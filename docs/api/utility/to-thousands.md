@@ -16,8 +16,8 @@ function toThousands(num: number | string): string
 
 ## Parameters
 
-| Parameter | Type               | Description   |
-| --------- | ------------------ | ------------- |
+| Parameter | Type               | Description      |
+| --------- | ------------------ | ---------------- |
 | `num`     | `number \| string` | Number to format |
 
 ## Returns

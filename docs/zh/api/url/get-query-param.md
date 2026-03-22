@@ -17,10 +17,10 @@ function getQueryParam(key: string, url: string): string | undefined
 
 ## 参数
 
-| 参数  | 类型     | 描述                                               |
-| ----- | -------- | -------------------------------------------------- |
-| `key` | `string` | 参数名称                                           |
-| `url` | `string` | URL 字符串（可选，未提供时使用 location.href）     |
+| 参数  | 类型     | 描述                                           |
+| ----- | -------- | ---------------------------------------------- |
+| `key` | `string` | 参数名称                                       |
+| `url` | `string` | URL 字符串（可选，未提供时使用 location.href） |
 
 ## 返回值
 

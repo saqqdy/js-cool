@@ -16,9 +16,9 @@ function randomNumber(min?: number, max?: number): number
 
 ## Parameters
 
-| Parameter | Type     | Description              |
-| --------- | -------- | ------------------------ |
-| `min`     | `number` | Minimum value (default: 0) |
+| Parameter | Type     | Description                  |
+| --------- | -------- | ---------------------------- |
+| `min`     | `number` | Minimum value (default: 0)   |
 | `max`     | `number` | Maximum value (default: 100) |
 
 ## Returns

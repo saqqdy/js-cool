@@ -16,9 +16,9 @@ function getCookie(name: string): string | null
 
 ## Parameters
 
-| Parameter | Type     | Description    |
-| --------- | -------- | -------------- |
-| `name`    | `string` | Cookie name    |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `name`    | `string` | Cookie name |
 
 ## Returns
 

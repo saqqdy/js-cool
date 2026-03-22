@@ -16,9 +16,9 @@ function urlToBlob(url: string): Promise<Blob>
 
 ## Parameters
 
-| Parameter | Type     | Description   |
-| --------- | -------- | ------------- |
-| `url`     | `string` | URL to fetch  |
+| Parameter | Type     | Description  |
+| --------- | -------- | ------------ |
+| `url`     | `string` | URL to fetch |
 
 ## Returns
 

@@ -16,9 +16,9 @@ function openUrl(url: string): void
 
 ## Parameters
 
-| Parameter | Type     | Description   |
-| --------- | -------- | ------------- |
-| `url`     | `string` | URL to open   |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `url`     | `string` | URL to open |
 
 ## Examples
 

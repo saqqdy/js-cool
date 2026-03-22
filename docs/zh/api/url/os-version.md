@@ -21,9 +21,9 @@ function osVersion(ua?: string): OsVersion | null
 
 ## 参数
 
-| 参数 | 类型     | 描述                                               |
-| ---- | -------- | -------------------------------------------------- |
-| `ua` | `string` | User Agent 字符串（可选，未提供时使用 navigator.userAgent）|
+| 参数 | 类型     | 描述                                                        |
+| ---- | -------- | ----------------------------------------------------------- |
+| `ua` | `string` | User Agent 字符串（可选，未提供时使用 navigator.userAgent） |
 
 ## 返回值
 

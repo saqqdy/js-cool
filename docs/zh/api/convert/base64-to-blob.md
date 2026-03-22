@@ -16,10 +16,10 @@ function base64ToBlob(base64: string, mime?: string): Blob
 
 ## 参数
 
-| 参数     | 类型     | 描述               |
-| -------- | -------- | ------------------ |
-| `base64` | `string` | Base64 编码字符串   |
-| `mime`   | `string` | MIME 类型（可选）   |
+| 参数     | 类型     | 描述              |
+| -------- | -------- | ----------------- |
+| `base64` | `string` | Base64 编码字符串 |
+| `mime`   | `string` | MIME 类型（可选） |
 
 ## 返回值
 

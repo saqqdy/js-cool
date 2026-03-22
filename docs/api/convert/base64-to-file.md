@@ -11,20 +11,16 @@ import { base64ToFile } from 'js-cool'
 ## Signature
 
 ```typescript
-function base64ToFile(
-  base64: string,
-  filename: string,
-  mime?: string
-): File
+function base64ToFile(base64: string, filename: string, mime?: string): File
 ```
 
 ## Parameters
 
-| Parameter  | Type     | Description          |
-| ---------- | -------- | -------------------- |
+| Parameter  | Type     | Description           |
+| ---------- | -------- | --------------------- |
 | `base64`   | `string` | Base64 encoded string |
-| `filename` | `string` | Output filename      |
-| `mime`     | `string` | MIME type (optional) |
+| `filename` | `string` | Output filename       |
+| `mime`     | `string` | MIME type (optional)  |
 
 ## Returns
 
@@ -33,17 +29,10 @@ function base64ToFile(
 ## Examples
 
 ```js
-const file = base64ToFile(
-  'SGVsbG8gV29ybGQ=',
-  'hello.txt',
-  'text/plain'
-)
+const file = base64ToFile('SGVsbG8gV29ybGQ=', 'hello.txt', 'text/plain')
 
 // From data URL
-const imageFile = base64ToFile(
-  'data:image/png;base64,iVBOR...',
-  'image.png'
-)
+const imageFile = base64ToFile('data:image/png;base64,iVBOR...', 'image.png')
 ```
 
 ## Related

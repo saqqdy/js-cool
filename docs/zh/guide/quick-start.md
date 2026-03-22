@@ -56,7 +56,10 @@ unique([1, 2, 2, 3]) // [1, 2, 3]
 shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 2, 4]（随机）
 
 // 数组转 CSV
-arrayToCSV([['name', 'age'], ['John', 30]])
+arrayToCSV([
+  ['name', 'age'],
+  ['John', 30],
+])
 // "name,age\n"John",30"
 ```
 
@@ -102,7 +105,7 @@ import { copy, addEvent, removeEvent } from 'js-cool'
 copy('Hello World')
 
 // 添加事件监听
-const handler = (e) => console.log('clicked')
+const handler = e => console.log('clicked')
 addEvent(document.getElementById('btn'), 'click', handler)
 
 // 移除事件监听

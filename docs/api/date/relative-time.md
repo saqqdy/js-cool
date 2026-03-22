@@ -16,11 +16,11 @@ function relativeTime(date: Date | string | number, now?: Date, locale?: string)
 
 ## Parameters
 
-| Parameter | Type                       | Description                           |
-| --------- | -------------------------- | ------------------------------------- |
-| `date`    | `Date \| string \| number` | The date to compare                   |
+| Parameter | Type                       | Description                              |
+| --------- | -------------------------- | ---------------------------------------- |
+| `date`    | `Date \| string \| number` | The date to compare                      |
 | `now`     | `Date`                     | The current date (default: `new Date()`) |
-| `locale`  | `string`                   | The locale string (default: `'en'`)   |
+| `locale`  | `string`                   | The locale string (default: `'en'`)      |
 
 ## Returns
 
@@ -28,10 +28,10 @@ function relativeTime(date: Date | string | number, now?: Date, locale?: string)
 
 ## Supported Locales
 
-| Locale | Code  | Example Output              |
-| ------ | ----- | --------------------------- |
-| English| `en`  | "5 minutes ago"             |
-| Chinese| `zh`  | "5分钟前"                    |
+| Locale  | Code | Example Output  |
+| ------- | ---- | --------------- |
+| English | `en` | "5 minutes ago" |
+| Chinese | `zh` | "5分钟前"       |
 
 ## Examples
 

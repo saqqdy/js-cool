@@ -16,9 +16,9 @@ function stopDefault(e: Event): boolean
 
 ## Parameters
 
-| Parameter | Type    | Description    |
-| --------- | ------- | -------------- |
-| `e`       | `Event` | Event object   |
+| Parameter | Type    | Description  |
+| --------- | ------- | ------------ |
+| `e`       | `Event` | Event object |
 
 ## Returns
 
@@ -28,13 +28,13 @@ function stopDefault(e: Event): boolean
 
 ```js
 // Prevent form submission
-document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', e => {
   stopDefault(e)
   console.log('Form submission prevented')
 })
 
 // Prevent link navigation
-document.querySelector('a').addEventListener('click', (e) => {
+document.querySelector('a').addEventListener('click', e => {
   stopDefault(e)
 })
 ```

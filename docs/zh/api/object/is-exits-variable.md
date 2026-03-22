@@ -16,9 +16,9 @@ function isExitsVariable(name: string): boolean
 
 ## 参数
 
-| 参数   | 类型     | 描述       |
-| ------ | -------- | ---------- |
-| `name` | `string` | 变量名称   |
+| 参数   | 类型     | 描述     |
+| ------ | -------- | -------- |
+| `name` | `string` | 变量名称 |
 
 ## 返回值
 

@@ -16,8 +16,8 @@ function base64ToArrayBuffer(input: string): Uint8Array | Buffer
 
 ## Parameters
 
-| Parameter | Type     | Description              |
-| --------- | -------- | ------------------------ |
+| Parameter | Type     | Description               |
+| --------- | -------- | ------------------------- |
 | `input`   | `string` | Base64 or data URL string |
 
 ## Returns

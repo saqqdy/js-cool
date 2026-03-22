@@ -28,13 +28,13 @@ function stopDefault(e: Event): boolean
 
 ```js
 // 阻止表单提交
-document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', e => {
   stopDefault(e)
   console.log('表单提交已被阻止')
 })
 
 // 阻止链接导航
-document.querySelector('a').addEventListener('click', (e) => {
+document.querySelector('a').addEventListener('click', e => {
   stopDefault(e)
 })
 ```

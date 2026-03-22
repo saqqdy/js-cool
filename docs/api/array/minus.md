@@ -16,8 +16,8 @@ function minus<T>(...args: T[][]): T[]
 
 ## Parameters
 
-| Parameter | Type   | Description                    |
-| --------- | ------ | ------------------------------ |
+| Parameter | Type    | Description                  |
+| --------- | ------- | ---------------------------- |
 | `args`    | `T[][]` | First array minus the others |
 
 ## Returns

@@ -16,9 +16,9 @@ function safeParse<T = any>(json: string): T | null
 
 ## Parameters
 
-| Parameter | Type     | Description       |
-| --------- | -------- | ----------------- |
-| `json`    | `string` | JSON string       |
+| Parameter | Type     | Description |
+| --------- | -------- | ----------- |
+| `json`    | `string` | JSON string |
 
 ## Returns
 

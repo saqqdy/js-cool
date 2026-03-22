@@ -16,10 +16,10 @@ function fixNumber(num: number, decimals?: number): number
 
 ## Parameters
 
-| Parameter  | Type     | Description                  |
-| ---------- | -------- | ---------------------------- |
-| `num`      | `number` | Number to fix                |
-| `decimals` | `number` | Decimal places (default: 2)  |
+| Parameter  | Type     | Description                 |
+| ---------- | -------- | --------------------------- |
+| `num`      | `number` | Number to fix               |
+| `decimals` | `number` | Decimal places (default: 2) |
 
 ## Returns
 

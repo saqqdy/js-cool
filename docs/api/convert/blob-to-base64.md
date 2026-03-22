@@ -16,9 +16,9 @@ function blobToBase64(blob: Blob): Promise<string>
 
 ## Parameters
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
-| `blob`    | `Blob` | Blob input   |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| `blob`    | `Blob` | Blob input  |
 
 ## Returns
 

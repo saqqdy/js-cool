@@ -17,9 +17,9 @@ function getQueryParam(key: string, url: string): string | undefined
 
 ## Parameters
 
-| Parameter | Type     | Description                                      |
-| --------- | -------- | ------------------------------------------------ |
-| `key`     | `string` | Parameter name                                   |
+| Parameter | Type     | Description                                               |
+| --------- | -------- | --------------------------------------------------------- |
+| `key`     | `string` | Parameter name                                            |
 | `url`     | `string` | URL string (optional, uses location.href if not provided) |
 
 ## Returns

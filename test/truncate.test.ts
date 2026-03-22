@@ -9,7 +9,9 @@ describe('truncate', () => {
 
 	it('should truncate to specified length', () => {
 		// length=24, omission='...' (3 chars), so truncate at 21 chars
-		expect(truncate('hi-diddly-ho there, neighborino', { length: 24 })).toBe('hi-diddly-ho there, n...')
+		expect(truncate('hi-diddly-ho there, neighborino', { length: 24 })).toBe(
+			'hi-diddly-ho there, n...'
+		)
 	})
 
 	it('should use custom omission', () => {

@@ -90,9 +90,7 @@ Search in nested objects/arrays.
 ```js
 import { searchObject } from 'js-cool'
 
-const data = [
-  { id: 1, name: 'John', children: [{ id: 2, name: 'Jane' }] }
-]
+const data = [{ id: 1, name: 'John', children: [{ id: 2, name: 'Jane' }] }]
 searchObject(data, 'name', 'Jane')
 ```
 
@@ -105,7 +103,10 @@ Convert 2D array to CSV string.
 ```js
 import { arrayToCSV } from 'js-cool'
 
-arrayToCSV([['name', 'age'], ['John', 30]])
+arrayToCSV([
+  ['name', 'age'],
+  ['John', 30],
+])
 // 'name,age\n"John",30'
 ```
 
@@ -155,7 +156,7 @@ import { sorter } from 'js-cool'
 
 const users = [
   { name: 'John', age: 30 },
-  { name: 'Jane', age: 25 }
+  { name: 'Jane', age: 25 },
 ]
 sorter(users, 'age', 'asc') // Sort by age ascending
 ```

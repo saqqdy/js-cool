@@ -22,13 +22,13 @@ function setCookie<T extends string | number | boolean>(
 
 ## Parameters
 
-| Parameter   | Type                        | Description                    |
-| ----------- | --------------------------- | ------------------------------ |
-| `name`      | `string`                    | Cookie name                    |
-| `value`     | `string \| number \| boolean` | Cookie value                   |
-| `seconds`   | `string \| number`          | Expiration in seconds (default: 86400) |
-| `path`      | `string`                    | Cookie path (default: '/')     |
-| `samesite`  | `boolean`                   | Enable SameSite (default: true) |
+| Parameter  | Type                          | Description                            |
+| ---------- | ----------------------------- | -------------------------------------- |
+| `name`     | `string`                      | Cookie name                            |
+| `value`    | `string \| number \| boolean` | Cookie value                           |
+| `seconds`  | `string \| number`            | Expiration in seconds (default: 86400) |
+| `path`     | `string`                      | Cookie path (default: '/')             |
+| `samesite` | `boolean`                     | Enable SameSite (default: true)        |
 
 ## Examples
 

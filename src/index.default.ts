@@ -1,7 +1,7 @@
 import { download } from 'use-downloads'
 
-import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 import { VERSION } from 'virtual:version'
+import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
 import addEvent from './addEvent'
 
 import all from './all'

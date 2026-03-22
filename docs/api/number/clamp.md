@@ -16,10 +16,10 @@ function clamp(number: number, lower: number, upper?: number): number
 
 ## Parameters
 
-| Parameter | Type     | Description                                    |
-| --------- | -------- | ---------------------------------------------- |
-| `number`  | `number` | The number to clamp                            |
-| `lower`   | `number` | The lower bound                                |
+| Parameter | Type     | Description                                                             |
+| --------- | -------- | ----------------------------------------------------------------------- |
+| `number`  | `number` | The number to clamp                                                     |
+| `lower`   | `number` | The lower bound                                                         |
 | `upper`   | `number` | The upper bound (optional, defaults to `lower` with `lower` set to `0`) |
 
 ## Returns

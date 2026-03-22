@@ -11,18 +11,15 @@ import { mapTemplate } from 'js-cool'
 ## Signature
 
 ```typescript
-function mapTemplate(
-  template: string,
-  data: Record<string, any> | ((key: string) => any)
-): string
+function mapTemplate(template: string, data: Record<string, any> | ((key: string) => any)): string
 ```
 
 ## Parameters
 
-| Parameter  | Type                                  | Description                |
-| ---------- | ------------------------------------- | -------------------------- |
-| `template` | `string`                              | Template with placeholders |
-| `data`     | `Record<string, any> \| Function`     | Values object or function  |
+| Parameter  | Type                              | Description                |
+| ---------- | --------------------------------- | -------------------------- |
+| `template` | `string`                          | Template with placeholders |
+| `data`     | `Record<string, any> \| Function` | Values object or function  |
 
 ## Returns
 
@@ -40,6 +37,6 @@ mapTemplate('Hello {{name}}', { name: 'World' })
 // 'Hello World'
 
 // Using function
-mapTemplate('Value: ${key}', (key) => key.toUpperCase())
+mapTemplate('Value: ${key}', key => key.toUpperCase())
 // 'Value: KEY'
 ```

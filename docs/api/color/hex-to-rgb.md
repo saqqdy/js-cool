@@ -22,8 +22,8 @@ function hexToRGB(hex: string): RGBColor | null
 
 ## Parameters
 
-| Parameter | Type     | Description                        |
-| --------- | -------- | ---------------------------------- |
+| Parameter | Type     | Description                                             |
+| --------- | -------- | ------------------------------------------------------- |
 | `hex`     | `string` | The hex color string (e.g. '#ff0000', 'ff0000', '#f00') |
 
 ## Returns

@@ -16,9 +16,9 @@ function parseUrlParam(url: string, covert?: boolean): Record<string, unknown>
 
 ## 参数
 
-| 参数     | 类型      | 描述                       |
-| -------- | --------- | -------------------------- |
-| `url`    | `string`  | 以 ? 开头的 URL 字符串     |
+| 参数     | 类型      | 描述                          |
+| -------- | --------- | ----------------------------- |
+| `url`    | `string`  | 以 ? 开头的 URL 字符串        |
 | `covert` | `boolean` | 是否转换类型（默认：`false`） |
 
 ## 返回值

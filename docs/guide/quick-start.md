@@ -56,7 +56,10 @@ unique([1, 2, 2, 3]) // [1, 2, 3]
 shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 2, 4] (random)
 
 // Array to CSV
-arrayToCSV([['name', 'age'], ['John', 30]])
+arrayToCSV([
+  ['name', 'age'],
+  ['John', 30],
+])
 // "name,age\n"John",30"
 ```
 
@@ -102,7 +105,7 @@ import { copy, addEvent, removeEvent } from 'js-cool'
 copy('Hello World')
 
 // Add event listener
-const handler = (e) => console.log('clicked')
+const handler = e => console.log('clicked')
 addEvent(document.getElementById('btn'), 'click', handler)
 
 // Remove event listener

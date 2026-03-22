@@ -16,9 +16,9 @@ function safeParse<T = any>(json: string): T | null
 
 ## 参数
 
-| 参数   | 类型     | 描述         |
-| ------ | -------- | ------------ |
-| `json` | `string` | JSON 字符串  |
+| 参数   | 类型     | 描述        |
+| ------ | -------- | ----------- |
+| `json` | `string` | JSON 字符串 |
 
 ## 返回值
 

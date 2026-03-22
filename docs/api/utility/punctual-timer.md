@@ -26,21 +26,21 @@ function punctualTimer<TArgs extends any[]>(
 
 ## Parameters
 
-| Parameter | Type       | Description                                                                                     |
-| --------- | ---------- | ----------------------------------------------------------------------------------------------- |
-| `handler` | `function` | A function to be executed after the timer expires                                               |
-| `delay`   | `number`   | The time, in milliseconds that the timer should wait before the specified function is executed  |
-| `...args` | `any[]`    | Additional arguments which are passed through to the function specified by handler              |
+| Parameter | Type       | Description                                                                                    |
+| --------- | ---------- | ---------------------------------------------------------------------------------------------- |
+| `handler` | `function` | A function to be executed after the timer expires                                              |
+| `delay`   | `number`   | The time, in milliseconds that the timer should wait before the specified function is executed |
+| `...args` | `any[]`    | Additional arguments which are passed through to the function specified by handler             |
 
 ## Returns
 
 `PunctualTimerReturns` - Object with timer control properties.
 
-| Property | Type       | Description                                    |
-| -------- | ---------- | ---------------------------------------------- |
-| `clear`  | `function` | Clear the timer                                |
-| `count`  | `number`   | Number of times the handler has been executed  |
-| `timer`  | `number`   | The timer ID (can be used with clearTimeout)   |
+| Property | Type       | Description                                   |
+| -------- | ---------- | --------------------------------------------- |
+| `clear`  | `function` | Clear the timer                               |
+| `count`  | `number`   | Number of times the handler has been executed |
+| `timer`  | `number`   | The timer ID (can be used with clearTimeout)  |
 
 ## Examples
 

@@ -16,9 +16,9 @@ function arrayBufferToBlob(input: ArrayBuffer, mime?: string): Blob
 
 ## Parameters
 
-| Parameter | Type          | Description                  |
-| --------- | ------------- | ---------------------------- |
-| `input`   | `ArrayBuffer` | ArrayBuffer input            |
+| Parameter | Type          | Description                      |
+| --------- | ------------- | -------------------------------- |
+| `input`   | `ArrayBuffer` | ArrayBuffer input                |
 | `mime`    | `string`      | MIME type (default: 'image/png') |
 
 ## Returns
