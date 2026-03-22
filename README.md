@@ -159,6 +159,87 @@ import { randomString } from 'js-cool'
    osVersion()
    ```
 
+### Migration: `client` → `ua` (v6.x)
+
+The `client` module has been renamed to `ua` (User Agent) for better clarity. The old `client` API is deprecated and will be removed in v7.0.0.
+
+#### Quick Migration Guide
+
+```js
+// Old (deprecated)
+import { client } from 'js-cool'
+client.isMobile()
+client.info
+
+// New (recommended)
+import { ua } from 'js-cool'
+ua.isMobile()
+ua.info
+```
+
+#### API Changes
+
+| Old API (`client`)          | New API (`ua`)          | Notes                     |
+| --------------------------- | ----------------------- | ------------------------- |
+| `client`                    | `ua`                    | Module renamed            |
+| `client()`                  | `ua()` or `ua.info`     | Returns full info         |
+| `client.info`               | `ua.info`               | Unchanged                 |
+| `client.get('browser')`     | `ua.get('browser')`     | Unchanged                 |
+| `client.getMultiple([...])` | `ua.getMultiple([...])` | Unchanged                 |
+| `client.isMobile()`         | `ua.isMobile()`         | Unchanged                 |
+| `client.isWeChat()`         | `ua.isWeChat()`         | Unchanged                 |
+| `client.legacy()`           | `ua.legacy()`           | Deprecated, use `ua.info` |
+| `ClientDetector`            | `UADetector`            | Class renamed             |
+| `IClientDetector`           | `IUADetector`           | Interface renamed         |
+| `ClientInfo`                | `UAInfo`                | Type renamed              |
+| `ClientGetType`             | `UAGetType`             | Type renamed              |
+
+#### New Features in `ua`
+
+The `ua` module includes several new features not available in the old `client` module:
+
+```js
+// New device detection
+ua.device.phone // Is phone device
+ua.device.ipad // Is iPad
+ua.device.iphone // Is iPhone
+ua.device.androidPhone // Is Android phone
+ua.device.androidTablet // Is Android tablet
+
+// New OS detection
+ua.isHarmonyOS() // Detect HarmonyOS (鸿蒙)
+ua.isiPadOS() // Detect iPadOS
+
+// New environment detection (Chinese apps)
+ua.environment.wxwork // 企业微信
+ua.environment.dingtalk // 钉钉
+ua.environment.douyin // 抖音
+ua.environment.kuaishou // 快手
+ua.environment.baidu // 百度App
+ua.environment.xiaomi // 小米浏览器
+ua.environment.huawei // 华为浏览器
+ua.environment.miniProgram // 小程序
+ua.environment.miniGame // 小游戏
+
+// New utility methods
+ua.getNetwork() // Network info
+ua.getScreen() // Screen info
+ua.getTimezone() // Timezone
+ua.isDarkMode() // Dark mode check
+```
+
+#### Backward Compatibility
+
+The old `client` API remains available for backward compatibility:
+
+```js
+// This still works (deprecated)
+import { client, ClientDetector } from 'js-cool'
+
+const detector = new ClientDetector()
+client.isMobile()
+```
+
 ---
 
 ## Function Categories
@@ -172,7 +253,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                             |
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil`                                                     |
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                          |
-| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                         |
+| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                             |
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                       |
 | **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                  |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`      |
@@ -190,35 +271,69 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 
 ### Global
 
-#### client
+#### ua
 
-Browser detection utility.
+User Agent detection utility.
 
 ```js
-import { client } from 'js-cool'
+import { ua } from 'js-cool'
 
-// Get all browser info
-client.get(['device', 'browser', 'engine', 'os'])
-// { device: 'Mobile', browser: 'Chrome', os: 'Android', engine: 'Blink' }
+// Get all user agent info
+ua.info
+// { device: {...}, os: {...}, browser: {...}, environment: {...} }
 
 // Get single info
-client.get('browser') // { browser: 'Chrome' }
-client.get('device') // { device: 'Mobile' }
-client.get('os') // { os: 'Android' }
-client.get('engine') // { engine: 'Blink' }
+ua.get('browser') // { name: 'Chrome', version: '123.0.0.0', engine: 'Blink' }
+ua.get('device') // { type: 'mobile', mobile: true, tablet: false, ... }
+ua.get('os') // { name: 'Android', version: '14' }
+ua.get('engine') // { name: 'Blink' }
 
 // Get multiple info
-client.get(['browser', 'os'])
-// { browser: 'Chrome', os: 'Android' }
+ua.getMultiple(['device', 'os'])
+// { device: {...}, os: {...} }
+
+// Quick checks
+ua.isMobile() // true/false
+ua.isTablet() // true/false
+ua.isDesktop() // true/false
+ua.isiOS() // true/false
+ua.isAndroid() // true/false
+ua.isHarmonyOS() // true/false
+ua.isWeChat() // true/false
+ua.isQQ() // true/false
+ua.isMiniProgram() // true/false
+
+// Check if name in UA
+ua.has('Chrome') // true/false
 
 // Get language
-client.getLanguage() // 'en-US'
+ua.getLanguage() // 'en-US'
 
 // Get network info
-client.getNetwork() // { effectiveType: '4g', downlink: 10 }
+ua.getNetwork() // { online, type, effectiveType, downlink, rtt, saveData }
+
+// Get screen info
+ua.getScreen() // { width, height, pixelRatio, orientation, colorDepth }
 
 // Get orientation
-client.getOrientationStatus() // 'vertical' | 'horizontal'
+ua.getOrientationStatus() // 'portrait' | 'landscape'
+
+// Legacy API (deprecated)
+ua.legacy() // { ANDROID: true, IOS: false, ... }
+```
+
+#### client (deprecated)
+
+> ⚠️ **Deprecated**: Use `ua` instead. `client` will be removed in v7.0.0.
+
+```js
+// Old (deprecated)
+import { client } from 'js-cool'
+client.isMobile()
+
+// New (recommended)
+import { ua } from 'js-cool'
+ua.isMobile()
 ```
 
 #### pattern

@@ -27,7 +27,17 @@ export { default as clamp } from './clamp'
 export { default as cleanData } from './cleanData'
 export { default as clearAttr } from './clearAttr'
 export { default as clearHtml } from './clearHtml'
-export { default as client } from './client'
+/**
+ * @deprecated Use `ua` instead. Will be removed in v7.0.0
+ */
+export {
+	default as client,
+	ClientDetector,
+	Client,
+	type ClientInfo,
+	type ClientGetType,
+	type IClientDetector,
+} from './client'
 // ==================== Object 对象处理 ====================
 export { default as clone } from './clone'
 export { default as compareVersion } from './compareVersion'
@@ -39,8 +49,8 @@ export { default as CSVToJSON } from './CSVToJSON'
 export { default as cutCHSString } from './cutCHSString'
 export { default as darken } from './darken'
 export { default as dash2Camel } from './dash2Camel'
-
 export { default as dateDiff, type DateDiffResult } from './dateDiff'
+
 // ==================== Async Flow 异步流程 ====================
 export { default as debounce, type DebounceOptions } from './debounce'
 export { default as decodeBase64 } from './decodeBase64'
@@ -61,9 +71,9 @@ export {
 	type ExtendObjectData,
 } from './extend'
 export { default as fileToBase64 } from './fileToBase64'
-
 // ==================== Network 网络 ====================
 export { default as fillIPv6 } from './fillIPv6'
+
 export { default as fingerprint } from './fingerprint'
 export { default as fixNumber } from './fixNumber'
 export { flatten, flattenDeep } from './flatten'
@@ -77,13 +87,13 @@ export { default as getDaysInMonth } from './getDaysInMonth'
 export { type DirParamType, default as getDirParam } from './getDirParam'
 export { default as getFileType } from './getFileType'
 export { default as getNumber } from './getNumber'
-
 export { default as getProperty } from './getProperty'
+
 export { default as getQueryParam } from './getQueryParam'
 export { default as getQueryParams } from './getQueryParams'
 export { default as getScrollPosition } from './getScrollPosition'
-
 export { default as getSession } from './getSession'
+
 // ==================== Type Check 类型判断 ====================
 export { default as getType } from './getType'
 export { default as getUrlParam } from './getUrlParam'
@@ -102,8 +112,8 @@ export { default as intersect } from './intersect'
 export { default as isArray } from './isArray'
 export { default as isCreditCard } from './isCreditCard'
 export { default as isDarkMode } from './isDarkMode'
-
 export { default as isDate } from './isDate'
+
 export { default as isDigitals } from './isDigitals'
 // ==================== Validate 验证函数 ====================
 export { default as isEmail } from './isEmail'
@@ -117,8 +127,8 @@ export { default as isLightColor } from './isLightColor'
 export { default as isNil } from './isNil'
 export { default as isNumberBrowser } from './isNumberBrowser'
 export { default as isObject } from './isObject'
-
 export { default as isPhone } from './isPhone'
+
 export {
 	default as isPlainObject,
 	type JSONArray,
@@ -134,8 +144,8 @@ export { default as JSONToCSV } from './JSONToCSV'
 export { default as kebabCase } from './kebabCase'
 export { default as keyBy } from './keyBy'
 export { default as lighten } from './lighten'
-
 export { default as mapTemplate } from './mapTemplate'
+
 export { default as minus } from './minus'
 export { default as nextIndex } from './nextIndex'
 export { default as nextVersion, type Version } from './nextVersion'
@@ -147,8 +157,8 @@ export { default as pattern } from './pattern'
 export { default as pick } from './pick'
 export { default as preloader } from './preloader'
 export { default as promiseFactory } from './promiseFactory'
-
 export { default as punctualTimer, type PunctualTimerReturns } from './punctualTimer'
+
 export { default as randomColor } from './randomColor'
 export { default as randomNumber } from './randomNumber'
 export { default as randomNumbers } from './randomNumbers'
@@ -159,21 +169,21 @@ export {
 } from './randomString'
 export { default as relativeTime } from './relativeTime'
 export { default as removeEvent } from './removeEvent'
-
 export { default as retry, type RetryOptions } from './retry'
+
 export { default as RGBToHex } from './RGBToHex'
 export { type HSLColor, default as rgbToHSL } from './rgbToHSL'
 export { default as round } from './round'
 export { default as safeParse } from './safeParse'
-
 export { default as safeStringify } from './safeStringify'
+
 export { default as sample } from './sample'
 export { default as sampleSize } from './sampleSize'
 export { type SearchKeySet, default as searchObject } from './searchObject'
 // ==================== Storage 存储操作 ====================
 export { default as setCache } from './setCache'
-
 export { default as setCookie } from './setCookie'
+
 export { default as setProperty } from './setProperty'
 export { default as setSession } from './setSession'
 export { default as shuffle } from './shuffle'
@@ -187,9 +197,29 @@ export { default as sum } from './sum'
 export { default as svgToBlob } from './svgToBlob'
 export { default as throttle, type ThrottleOptions } from './throttle'
 export { default as toThousands } from './toThousands'
-
 export { default as trim } from './trim'
+
 export { default as truncate, type TruncateOptions } from './truncate'
+// ==================== URL & Browser URL与浏览器 ====================
+export {
+	default as ua,
+	UADetector,
+	UAParser,
+	type UAInfo,
+	type DeviceInfo,
+	type OSInfo,
+	type BrowserInfo,
+	type EnvironmentInfo,
+	type NetworkInfo,
+	type ScreenInfo,
+	type LegacyClientResult,
+	type UAGetType,
+	type IUADetector,
+	type OSName,
+	type BrowserName,
+	type EngineName,
+	type DeviceType,
+} from './ua/index'
 export { default as unescape } from './unescape'
 
 export { default as union } from './union'

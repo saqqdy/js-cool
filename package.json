@@ -21,6 +21,102 @@
 			},
 			"default": "./dist/index.js"
 		},
+		"./ua": {
+			"types": "./dist/ua/index.d.ts",
+			"require": {
+				"types": "./dist/ua/index.d.ts",
+				"default": "./dist/ua/index.js"
+			},
+			"import": {
+				"types": "./dist/ua/index.d.mts",
+				"default": "./dist/ua/index.mjs"
+			},
+			"default": "./dist/ua/index.js"
+		},
+		"./ua/device": {
+			"types": "./dist/ua/device.d.ts",
+			"require": {
+				"types": "./dist/ua/device.d.ts",
+				"default": "./dist/ua/device.js"
+			},
+			"import": {
+				"types": "./dist/ua/device.d.mts",
+				"default": "./dist/ua/device.mjs"
+			},
+			"default": "./dist/ua/device.js"
+		},
+		"./ua/os": {
+			"types": "./dist/ua/os.d.ts",
+			"require": {
+				"types": "./dist/ua/os.d.ts",
+				"default": "./dist/ua/os.js"
+			},
+			"import": {
+				"types": "./dist/ua/os.d.mts",
+				"default": "./dist/ua/os.mjs"
+			},
+			"default": "./dist/ua/os.js"
+		},
+		"./ua/browser": {
+			"types": "./dist/ua/browser.d.ts",
+			"require": {
+				"types": "./dist/ua/browser.d.ts",
+				"default": "./dist/ua/browser.js"
+			},
+			"import": {
+				"types": "./dist/ua/browser.d.mts",
+				"default": "./dist/ua/browser.mjs"
+			},
+			"default": "./dist/ua/browser.js"
+		},
+		"./ua/env": {
+			"types": "./dist/ua/env.d.ts",
+			"require": {
+				"types": "./dist/ua/env.d.ts",
+				"default": "./dist/ua/env.js"
+			},
+			"import": {
+				"types": "./dist/ua/env.d.mts",
+				"default": "./dist/ua/env.mjs"
+			},
+			"default": "./dist/ua/env.js"
+		},
+		"./ua/network": {
+			"types": "./dist/ua/network.d.ts",
+			"require": {
+				"types": "./dist/ua/network.d.ts",
+				"default": "./dist/ua/network.js"
+			},
+			"import": {
+				"types": "./dist/ua/network.d.mts",
+				"default": "./dist/ua/network.mjs"
+			},
+			"default": "./dist/ua/network.js"
+		},
+		"./ua/screen": {
+			"types": "./dist/ua/screen.d.ts",
+			"require": {
+				"types": "./dist/ua/screen.d.ts",
+				"default": "./dist/ua/screen.js"
+			},
+			"import": {
+				"types": "./dist/ua/screen.d.mts",
+				"default": "./dist/ua/screen.mjs"
+			},
+			"default": "./dist/ua/screen.js"
+		},
+		"./ua/types": {
+			"types": "./dist/ua/types.d.ts",
+			"require": {
+				"types": "./dist/ua/types.d.ts",
+				"default": "./dist/ua/types.js"
+			},
+			"import": {
+				"types": "./dist/ua/types.d.mts",
+				"default": "./dist/ua/types.mjs"
+			},
+			"default": "./dist/ua/types.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"directories": {

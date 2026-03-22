@@ -1,58 +1,38 @@
 /**
- * The client method returns a browser judgment result: `{ ANDROID: true, GECKO: true, GLSH_APP: false, IE: false, IOS: false, IPAD: false, IPHONE: false, MOBILE: true, MOBILEDEVICE. true, OPERA: false, QQ: false, QQBROWSER: false, TRIDENT: false, WEBKIT: true, WEIXIN: false }`
+ * @deprecated Use `ua` instead. Will be removed in v7.0.0
+ *
+ * This module is kept for backward compatibility only.
+ * Please migrate to the new `ua` module.
  *
  * @example
- * ```js
- * // Get all browser info
- * client()
- * // { IE: false, GECKO: true, WEBKIT: false, OPERA: false, TRIDENT: false, MOBILE: true, IOS: true, ANDROID: false, IPHONE: true, IPAD: false, QQBROWSER: false, WEIXIN: false, QQ: null }
+ * ```ts
+ * // Old (deprecated)
+ * import { client } from 'js-cool'
  *
- * // Check if WeChat browser
- * client('MicroMessenger')
- * // true (if in WeChat)
- *
- * // Check if QQ browser
- * client('QQBrowser')
- * // true (if in QQ Browser)
- *
- * // With custom userAgent
- * const ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15'
- * client('', ua)
- * // { IOS: true, IPHONE: true, ... }
+ * // New (recommended)
+ * import { ua } from 'js-cool'
  * ```
- * @deprecated Will be refactored for the next major release
- * @since 1.0.1
- * @param name - optional, e.g. pass in MicroMessenger to return whether it is the built-in browser of Weixin
- * @param userAgent - optional, pass in a custom ua, default takes the browser's navigator.userAgent
- * @returns - the common ua match table, if name is passed, then returns whether the terminal matches true/false
+ *
+ * @see {@link ua} for the new API
+ * @module client
  */
-const client = (
-	name = '',
-	userAgent = navigator.userAgent
-): boolean | Record<string, boolean | RegExpMatchArray | null> => {
-	const userAgentL = userAgent.toLowerCase()
 
-	if (name) {
-		return userAgent.includes(name)
-	} else {
-		return {
-			ANDROID: userAgent.includes('Android') || userAgent.includes('Adr'), // android or uc browser
-			GECKO: userAgentL.includes('gecko') && !userAgentL.includes('khtml'), // firefox
-			IE: userAgentL.includes('msie') && !userAgentL.includes('opera'),
-			// MOBILEDEVICE: !!userAgentL.match(/iphone|android|phone|mobile|wap|netfront|x11|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i),
-			IOS: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // ios
-			IPAD: userAgent.includes('iPad'), // iPad
-			IPHONE: userAgent.includes('iPhone'), // iPhone or QQ HD browser
-			MOBILE: !!userAgent.match(/AppleWebKit.*Mobile.*/),
-			OPERA: userAgentL.includes('opera') && userAgentL.includes('presto'), // opera
-			QQ: userAgent.match(/\sQQ/i), // QQ
-			// WEBAPP: !userAgent.indexOf('Safari') > -1, // webapp
-			QQBROWSER: userAgent.includes('QQBrowser'), // QQ browser
-			TRIDENT: userAgentL.includes('trident'), // IE
-			WEBKIT: userAgentL.includes('applewebkit'), // safari/chrome
-			WEIXIN: userAgent.includes('MicroMessenger'), // weixin
-		}
-	}
-}
+// Re-export everything from ua module for backward compatibility
+export { default, UADetector as ClientDetector, UADetector as Client } from './ua/index'
 
-export default client
+export type {
+	UAInfo as ClientInfo,
+	DeviceInfo,
+	OSInfo,
+	BrowserInfo,
+	EnvironmentInfo,
+	NetworkInfo,
+	ScreenInfo,
+	LegacyClientResult,
+	UAGetType as ClientGetType,
+	IUADetector as IClientDetector,
+	OSName,
+	BrowserName,
+	EngineName,
+	DeviceType,
+} from './ua/types'

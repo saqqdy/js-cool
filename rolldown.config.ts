@@ -15,6 +15,18 @@ const external = [
 	'os-lang',
 ]
 
+// UA subpath entries for tree-shaking
+const uaEntries = [
+	'ua/index',
+	'ua/device',
+	'ua/os',
+	'ua/browser',
+	'ua/env',
+	'ua/network',
+	'ua/screen',
+	'ua/types',
+]
+
 // 优雅的版本注入插件
 const versionPlugin = (): Plugin => ({
 	name: 'version-inject',
@@ -29,7 +41,7 @@ const versionPlugin = (): Plugin => ({
 })
 
 export default defineConfig([
-	// CJS
+	// Main entry - CJS
 	{
 		input: 'src/index.ts',
 		output: {
@@ -40,7 +52,7 @@ export default defineConfig([
 		external,
 		plugins: [versionPlugin()],
 	},
-	// ESM
+	// Main entry - ESM
 	{
 		input: 'src/index.ts',
 		output: {
@@ -78,4 +90,27 @@ export default defineConfig([
 		plugins: [versionPlugin()],
 		platform: 'browser',
 	},
+	// UA subpath entries - generate CJS and ESM for each
+	...uaEntries.flatMap(entry => [
+		{
+			input: `src/${entry}.ts`,
+			output: {
+				file: `dist/${entry}.js`,
+				format: 'cjs' as const,
+				exports: 'named' as const,
+			},
+			external,
+			plugins: [versionPlugin()],
+		},
+		{
+			input: `src/${entry}.ts`,
+			output: {
+				file: `dist/${entry}.mjs`,
+				format: 'esm' as const,
+				banner,
+			},
+			external,
+			plugins: [versionPlugin()],
+		},
+	]),
 ])
