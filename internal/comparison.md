@@ -641,3 +641,5 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 > 文档生成时间：2026-03-22
 >
 > 数据来源：各库官方文档、npm、GitHub
+>
+> **注意**: js-cool v6.x 将 `client` 模块重命名为 `ua` (User Agent)，`client` 作为别名保留以保持向后兼容。

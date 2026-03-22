@@ -12,11 +12,13 @@ import {
   ArrowForwardOutline,
   CopyOutline,
   LinkOutline,
+  RocketOutline,
 } from '@vicons/ionicons5'
 import FunctionCard from '@/components/FunctionCard.vue'
 import CodePreview from '@/components/CodePreview.vue'
 import { randomString, copy as copyText, uuid } from 'js-cool'
 import { useI18n } from '@/locales'
+import { changelog } from '@/data/changelog'
 
 const { t, locale } = useI18n()
 
@@ -117,6 +119,26 @@ const getCategoryDescription = (cat: typeof categories[0]) => {
         </n-card>
       </n-gi>
     </n-grid>
+
+    <!-- What's New -->
+    <router-link to="/changelog" style="text-decoration: none; color: inherit;">
+      <n-card
+        size="small"
+        hoverable
+        style="margin-bottom: 32px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border: 1px solid #667eea30; cursor: pointer;"
+      >
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <n-icon size="24" color="#667eea"><RocketOutline /></n-icon>
+            <div>
+              <div style="font-weight: 600; font-size: 15px;">{{ t.whatsNew }} <n-tag size="small" type="primary" round>v{{ changelog.version }}</n-tag></div>
+              <p style="font-size: 12px; color: #666; margin: 4px 0 0;">{{ locale === 'zh' ? changelog.summaryZh : changelog.summary }}</p>
+            </div>
+          </div>
+          <n-icon style="color: #667eea;"><ArrowForwardOutline /></n-icon>
+        </div>
+      </n-card>
+    </router-link>
 
     <!-- Quick Start -->
     <n-h2>{{ t.quickStart }}</n-h2>

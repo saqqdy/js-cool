@@ -29,6 +29,7 @@ import {
   LogoGithub,
   ChevronDownOutline,
   LanguageOutline,
+  RocketOutline,
 } from '@vicons/ionicons5'
 import { useI18n } from './locales'
 
@@ -71,6 +72,11 @@ const menuOptions: MenuOption[] = [
     label: () => h('a', { href: '/js-cool/', class: route.path === '/' ? 'n-menu-item-content--selected' : '' }, t.value.home),
     key: 'home',
     icon: renderIcon(HomeOutline),
+  },
+  {
+    label: () => h('a', { href: '/js-cool/changelog' }, t.value.categoriesDesc.Changelog || 'Changelog'),
+    key: 'changelog',
+    icon: renderIcon(RocketOutline),
   },
   { type: 'divider', key: 'd1' },
   ...categories.map(cat => ({

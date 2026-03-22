@@ -780,3 +780,5 @@ const lodashCompatPlugin: JsCoolPlugin = {
 > 文档生成时间：2026-03-22
 >
 > 基于 js-cool v6.0.0-beta.1 版本分析
+>
+> **注意**: `client` 模块已重命名为 `ua` (User Agent)，`client` 作为别名保留以保持向后兼容，将在 v7.0.0 移除。

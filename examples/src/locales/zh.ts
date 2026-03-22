@@ -27,6 +27,7 @@ export default {
   categoriesWord: '个分类',
   viewOnGithub: '在 GitHub 上查看',
   viewOnNpm: '在 npm 上查看',
+  whatsNew: '最新更新',
 
   // FunctionCard
   result: '结果',
@@ -34,6 +35,7 @@ export default {
 
   // Category descriptions
   categoriesDesc: {
+    Changelog: '最新版本更新和变更',
     String: '字符串处理工具',
     Array: '数组处理工具',
     Object: '对象处理工具',

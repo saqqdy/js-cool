@@ -24,6 +24,12 @@ const props = withDefaults(defineProps<Props>(), {
 const { t } = useI18n()
 const copied = ref(false)
 
+// Generate anchor ID from title (use first function name)
+const anchorId = computed(() => {
+  const firstName = props.title.split('/')[0].trim().split(' ')[0].trim()
+  return firstName.toLowerCase().replace(/[^a-z0-9]/g, '-')
+})
+
 const displayResult = computed(() => {
   if (props.result === null || props.result === undefined) return 'null'
   if (typeof props.result === 'object') return JSON.stringify(props.result, null, 2)
@@ -40,7 +46,7 @@ const copyCode = async () => {
 </script>
 
 <template>
-  <n-card :title="title" size="small" hoverable style="margin-bottom: 16px; overflow: hidden;">
+  <n-card :id="anchorId" :title="title" size="small" hoverable style="margin-bottom: 16px; overflow: hidden;">
     <template #header-extra>
       <n-tag v-if="since" size="small" type="success" style="margin-left: 4px;">
         v{{ since }}+

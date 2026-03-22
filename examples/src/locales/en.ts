@@ -27,6 +27,7 @@ export default {
   categoriesWord: 'categories',
   viewOnGithub: 'View on GitHub',
   viewOnNpm: 'View on npm',
+  whatsNew: "What's New",
 
   // FunctionCard
   result: 'Result',
@@ -34,6 +35,7 @@ export default {
 
   // Category descriptions
   categoriesDesc: {
+    Changelog: 'Latest version updates and changes',
     String: 'String manipulation utilities',
     Array: 'Array manipulation utilities',
     Object: 'Object manipulation utilities',
