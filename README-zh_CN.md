@@ -9,7 +9,7 @@
 [![Test coverage](https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square)](https://codecov.io/github/saqqdy/js-cool)
 ![typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/js-cool)](https://bundlephobia.com/package/js-cool)
-[![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)
+[![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **[更新日志](./CHANGELOG.md)** • **[English](./README.md)**
@@ -41,7 +41,7 @@ import { osVersion, copy, randomString } from 'js-cool'
 const { osVersion, copy, randomString } = require('js-cool')
 
 // CDN (浏览器)
-<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
 <script>
   jsCool.browserVersion()
 </script>
@@ -50,6 +50,108 @@ const { osVersion, copy, randomString } = require('js-cool')
 import copy from 'js-cool/copy'
 import { randomString } from 'js-cool'
 ```
+
+---
+
+## 从 v5.x 升级到 v6.x
+
+### 重大变更
+
+#### 1. 构建产物文件
+
+| v5.x | v6.x | 说明 |
+|------|------|------|
+| `dist/index.cjs.js` | `dist/index.js` | CJS 输出文件重命名 |
+| `dist/index.mjs` | `dist/index.mjs` | ESM 输出（无变化） |
+| `dist/index.esm-browser.js` | `dist/index.mjs` | 直接使用 ESM 输出 |
+| `dist/index.esm-browser.prod.js` | `dist/index.mjs` | 使用 ESM 输出（构建工具会压缩） |
+| `dist/index.global.js` | `dist/index.iife.js` | IIFE 输出文件重命名 |
+| `dist/index.global.prod.js` | `dist/index.iife.min.js` | IIFE 压缩版重命名 |
+
+#### 2. CDN 使用
+
+```html
+<!-- v5.x -->
+<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+<script>
+  const { copy } = window.JsCool
+</script>
+
+<!-- v6.x -->
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
+<script>
+  const { copy } = window.jsCool  // 注意：小写 'jsCool'
+</script>
+```
+
+#### 3. 已移除的废弃函数
+
+| 已移除 | 替代方案 |
+|--------|---------|
+| `getAppVersion()` | `appVersion()` |
+| `getOsVersion()` | `osVersion()` |
+
+#### 4. package.json 导出配置
+
+```json
+// v5.x
+{
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.mjs"
+}
+
+// v6.x
+{
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "import": { "types": "./dist/index.d.mts", "default": "./dist/index.mjs" }
+    }
+  }
+}
+```
+
+### 迁移步骤
+
+1. **更新导入路径**（如果使用直接文件导入）：
+   ```js
+   // v5.x
+   import jsCool from 'js-cool/dist/index.esm-browser.js'
+
+   // v6.x
+   import jsCool from 'js-cool'
+   ```
+
+2. **更新 CDN 链接**：
+   ```html
+   <!-- v5.x -->
+   <script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+
+   <!-- v6.x -->
+   <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
+   ```
+
+3. **更新全局变量**（CDN 用户）：
+   ```js
+   // v5.x
+   window.JsCool
+
+   // v6.x
+   window.jsCool
+   ```
+
+4. **替换废弃函数**：
+   ```js
+   // v5.x
+   getAppVersion('Chrome')
+   getOsVersion()
+
+   // v6.x
+   appVersion('Chrome')
+   osVersion()
+   ```
 
 ---
 

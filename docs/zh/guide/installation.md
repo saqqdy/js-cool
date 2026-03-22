@@ -29,16 +29,16 @@ bun add js-cool
 ::: code-group
 
 ```html [jsdelivr]
-<script src="https://cdn.jsdelivr.net/npm/js-cool/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cool/dist/index.iife.min.js"></script>
 <script>
-  const { camel2Dash, unique } = window.JsCool
+  const { camel2Dash, unique } = window.jsCool
 </script>
 ```
 
 ```html [unpkg]
-<script src="https://unpkg.com/js-cool/dist/index.global.js"></script>
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
 <script>
-  const { camel2Dash, unique } = window.JsCool
+  const { camel2Dash, unique } = window.jsCool
 </script>
 ```
 

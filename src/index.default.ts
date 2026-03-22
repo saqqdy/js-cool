@@ -1,6 +1,7 @@
 import { download } from 'use-downloads'
 
 import { awaitTo, loadSource, mountCss, mountImg, mountJs, mountStyle } from './'
+import { VERSION } from 'virtual:version'
 import addEvent from './addEvent'
 
 import all from './all'
@@ -256,7 +257,7 @@ export default {
 	upperFirst,
 	urlToBlob,
 	uuid,
-	version: '__VERSION__',
+	version: VERSION,
 	waiting,
 	windowSize,
 }

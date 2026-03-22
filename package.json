@@ -3,20 +3,25 @@
 	"description": "Collection of common JavaScript / TypeScript utilities",
 	"version": "6.0.0",
 	"packageManager": "pnpm@9.1.3",
-	"main": "dist/index.cjs.js",
-	"module": "dist/index.esm-bundler.js",
-	"browser": "dist/index.esm-browser.js",
-	"unpkg": "dist/index.global.prod.js",
-	"jsdelivr": "dist/index.global.prod.js",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"unpkg": "dist/index.iife.min.js",
+	"jsdelivr": "dist/index.iife.min.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
 			"types": "./dist/index.d.ts",
-			"module": "./dist/index.esm-bundler.js",
-			"require": "./dist/index.cjs.js",
-			"import": "./dist/index.mjs"
+			"default": "./dist/index.js"
 		},
-		"./*": "./*"
+		"./package.json": "./package.json"
 	},
 	"directories": {
 		"dist": "dist",
@@ -26,85 +31,64 @@
 		"dist"
 	],
 	"scripts": {
-		"gen:version": "tscjs scripts/version",
-		"tag:version": "tscjs scripts/tag",
+		"gen:version": "tsx scripts/version",
+		"tag:version": "tsx scripts/tag",
 		"build": "run-s clean build:{bundle,types}",
-		"build:bundle": "tscjs scripts/build",
-		"build:types": "tsc -p src/tsconfig.json && pnpm roll-types",
+		"build:bundle": "rolldown -c",
+		"build:types": "node scripts/fix-types.mjs",
 		"docs:dev": "vitepress dev docs",
 		"docs:build": "vitepress build docs",
 		"docs:preview": "vitepress preview docs",
 		"deploy": "sh scripts/deploy.sh",
-		"roll-types": "api-extractor run && rm-all temp",
 		"circular": "madge dist/ -c",
-		"watch": "pnpm build:bundle -w",
-		"pub": "tscjs scripts/publish",
-		"unpub": "tscjs scripts/unpublish",
-		"sync": "tscjs scripts/sync",
+		"watch": "rolldown -c -w",
+		"pub": "tsx scripts/publish",
+		"unpub": "tsx scripts/unpublish",
+		"sync": "tsx scripts/sync",
 		"workflow:publish-test": "zx scripts/workflow.mjs",
-		"clean": "rm-all dist es lib",
+		"clean": "rm-all dist es lib temp",
 		"dist": "run-s lint prettier build",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
 		"lint": "eslint --fix .",
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\"",
+		"typecheck": "attw --pack",
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
-		"await-to-done": "^1.1.1",
+		"await-to-done": "^1.2.0",
 		"load-source": "^1.2.0",
 		"mount-css": "^1.2.0",
 		"mount-image": "^1.2.0",
 		"mount-script": "^1.2.0",
 		"mount-style": "^1.2.0",
 		"os-lang": "^3.3.1",
-		"tslib": "^2.8.1",
 		"use-downloads": "^1.5.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.26.0",
-		"@babel/plugin-transform-runtime": "^7.25.9",
-		"@babel/preset-env": "^7.26.0",
-		"@babel/preset-typescript": "^7.26.0",
+		"@arethetypeswrong/cli": "^0.17.4",
 		"@eslint-sets/eslint-config": "^6.2.0",
-		"@microsoft/api-extractor": "^7.49.1",
-		"@rollup/plugin-alias": "^5.1.1",
-		"@rollup/plugin-babel": "^6.0.4",
-		"@rollup/plugin-commonjs": "^28.0.2",
-		"@rollup/plugin-json": "^6.1.0",
-		"@rollup/plugin-node-resolve": "^16.0.0",
-		"@rollup/plugin-replace": "^6.0.2",
-		"@rollup/plugin-terser": "^0.4.4",
-		"@rollup/plugin-typescript": "^12.1.2",
+		"@microsoft/api-extractor": "^7.57.7",
 		"@types/activex-excel": "^14.0.11",
-		"@types/babel__core": "^7.20.5",
-		"@types/node": "^18.19.130",
+		"@types/node": "^22.19.15",
 		"@vitest/coverage-istanbul": "^3.2.4",
 		"@vitest/coverage-v8": "3.2.4",
-		"babel-loader": "^9.2.1",
-		"core-js": "^3.40.0",
-		"cross-env": "^7.0.3",
-		"eslint": "^9.22.0",
+		"eslint": "^9.39.4",
 		"fast-glob": "^3.3.3",
-		"happy-dom": "^20.8.3",
+		"happy-dom": "^20.8.4",
 		"load-yml": "^1.4.0",
-		"madge": "^8.0.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.8.1",
 		"prettier-config-common": "^1.5.0",
 		"reinstaller": "^3.0.2",
 		"rm-all": "^1.1.1",
-		"rollup": "^4.30.1",
-		"rollup-plugin-cleanup": "^3.2.1",
-		"rollup-plugin-filesize": "^10.0.0",
-		"rollup-plugin-polyfill-node": "^0.13.0",
-		"rollup-plugin-visualizer": "^5.14.0",
-		"tsnd": "^1.1.0",
-		"typescript": "^5.7.3",
+		"rolldown": "1.0.0-rc.9",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3",
 		"vitepress": "^1.6.4",
 		"vitest": "^3.2.4",
-		"zx": "^8.3.0"
+		"zx": "^8.8.5"
 	},
 	"engines": {
 		"node": ">=12.20"
@@ -114,10 +98,7 @@
 		"peerDependencyRules": {
 			"ignoreMissing": [
 				"webpack"
-			],
-			"allowedVersions": {
-				"@types/node": "^18.0.0"
-			}
+			]
 		}
 	},
 	"keywords": [

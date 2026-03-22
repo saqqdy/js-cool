@@ -135,7 +135,7 @@ function browserVersion(ua?: string): BrowserVersion | null {
 			let version = (match[1] || '').replace(/_/g, '.')
 
 			if (key === '360SE') {
-				const VERSION_MAP = {
+				const VERSION_MAP: Record<string, string> = {
 					21: '6.3',
 					31: '7.0',
 					42: '8.0',
@@ -144,9 +144,9 @@ function browserVersion(ua?: string): BrowserVersion | null {
 					63: '10.0',
 				}
 
-				version = VERSION_MAP[version as keyof typeof VERSION_MAP] || version
+				version = VERSION_MAP[version] || version
 			} else if (key === '360EE') {
-				const VERSION_MAP = {
+				const VERSION_MAP: Record<string, string> = {
 					30: '7.5',
 					50: '8.7',
 					55: '9.0',
@@ -154,9 +154,9 @@ function browserVersion(ua?: string): BrowserVersion | null {
 					69: '11.0',
 				}
 
-				version = VERSION_MAP[version as keyof typeof VERSION_MAP] || version
-			} else if (['Liebao', 'LBBROWSER'].includes(key)) {
-				const VERSION_MAP = {
+				version = VERSION_MAP[version] || version
+			} else if (['Liebao', 'LBBROWSER'].includes(key as string)) {
+				const VERSION_MAP: Record<string, string> = {
 					21: '4.0',
 					29: '4.5',
 					34: '5.0',
@@ -167,11 +167,11 @@ function browserVersion(ua?: string): BrowserVersion | null {
 					57: '6.5',
 				}
 
-				version = VERSION_MAP[version as keyof typeof VERSION_MAP] || version
+				version = VERSION_MAP[version] || version
 			}
 
 			return {
-				name: key,
+				name: key as BrowserVersion['name'],
 				version,
 			}
 		}

@@ -51,7 +51,12 @@ export { default as encodeBase64 } from './encodeBase64'
 // ==================== Encode 编码解码 ====================
 export { default as encodeUtf8 } from './encodeUtf8'
 export { default as escape } from './escape'
-export { default as extend, ExtendArrayData, ExtendData, ExtendObjectData } from './extend'
+export {
+	default as extend,
+	type ExtendArrayData,
+	type ExtendData,
+	type ExtendObjectData,
+} from './extend'
 export { default as fileToBase64 } from './fileToBase64'
 
 // ==================== Network 网络 ====================
@@ -113,10 +118,10 @@ export { default as isObject } from './isObject'
 export { default as isPhone } from './isPhone'
 export {
 	default as isPlainObject,
-	JSONArray,
-	JSONValue,
-	PlainObject,
-	Primitive,
+	type JSONArray,
+	type JSONValue,
+	type PlainObject,
+	type Primitive,
 } from './isPlainObject'
 export { default as isRegExp } from './isRegExp'
 export { default as isToday } from './isToday'
@@ -203,4 +208,7 @@ export { default as mountJs } from 'mount-script'
 
 export { default as mountStyle } from 'mount-style'
 export { download } from 'use-downloads'
-export const version = '__VERSION__' as string
+// 从虚拟模块导入版本号（构建时注入）
+import { VERSION } from 'virtual:version'
+
+export const version = VERSION

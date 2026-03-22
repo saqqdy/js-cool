@@ -2,12 +2,72 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2026-03-17
+## [6.0.0] - 2025-03-22
 
-### Removed
+### ⚠️ BREAKING CHANGES
 
-- **BREAKING**: `getAppVersion` - use `appVersion` instead
-- **BREAKING**: `getOsVersion` - use `osVersion` instead
+- **Build System**: Migrated from Rollup to Rolldown
+  - Build output simplified from 7 files to 4 files
+  - Removed `index.esm-browser.js`, `index.esm-browser.prod.js` (use `index.mjs` instead)
+  - Removed `index.global.prod.js` (use `index.iife.min.js` instead)
+  - Output files: `index.js` (CJS), `index.mjs` (ESM), `index.iife.js`, `index.iife.min.js`
+
+- **Package Exports**: Updated exports configuration
+  ```json
+  {
+    "exports": {
+      ".": {
+        "require": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+        "import": { "types": "./dist/index.d.mts", "default": "./dist/index.mjs" }
+      }
+    }
+  }
+  ```
+
+- **Deprecated Functions Removed**:
+  - `getAppVersion` - use `appVersion` instead
+  - `getOsVersion` - use `osVersion` instead
+
+### 🚀 Features
+
+- **Rolldown Migration**: Faster build times (~110ms vs ~6-8s)
+- **Version Injection**: Clean version injection via virtual module
+- **Type Declarations**: Separate `.d.ts` and `.d.mts` for CJS/ESM compatibility
+
+### 🧹 Chores
+
+- **Dependencies Removed**:
+  - `rollup` (replaced by `rolldown`)
+  - `@rollup/plugin-commonjs`, `@rollup/plugin-json`, `@rollup/plugin-node-resolve`, `@rollup/plugin-typescript` (rolldown built-in)
+  - `@rollup/plugin-replace`, `@rollup/plugin-alias`, `@rollup/plugin-sucrase` (unused)
+  - `rollup-plugin-cleanup`, `rollup-plugin-polyfill-node` (unused)
+  - `@babel/core`, `@babel/plugin-transform-runtime`, `@babel/preset-env`, `@babel/preset-typescript`, `babel-loader` (removed)
+  - `core-js` (removed from devDependencies)
+
+### 📦 Build Output
+
+| File | Format | Size |
+|------|--------|------|
+| `index.js` | CJS | ~159KB |
+| `index.mjs` | ESM | ~154KB |
+| `index.iife.js` | IIFE | ~175KB |
+| `index.iife.min.js` | IIFE (minified) | ~47KB |
+
+### 🔄 Migration Guide
+
+```js
+// Before (v5.x)
+import jsCool from 'js-cool/dist/index.esm-browser.js'
+// After (v6.x)
+import jsCool from 'js-cool'
+```
+
+```html
+<!-- Before (v5.x) -->
+<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+<!-- After (v6.x) -->
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
+```
 
 ### Added
 

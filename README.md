@@ -9,7 +9,7 @@
 [![Test coverage](https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square)](https://codecov.io/github/saqqdy/js-cool)
 ![typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/js-cool)](https://bundlephobia.com/package/js-cool)
-[![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS)
+[![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **[Changelog](./CHANGELOG.md)** • **[简体中文](./README-zh_CN.md)**
@@ -41,7 +41,7 @@ import { osVersion, copy, randomString } from 'js-cool'
 const { osVersion, copy, randomString } = require('js-cool')
 
 // CDN (Browser)
-<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
 <script>
   jsCool.browserVersion()
 </script>
@@ -50,6 +50,108 @@ const { osVersion, copy, randomString } = require('js-cool')
 import copy from 'js-cool/copy'
 import { randomString } from 'js-cool'
 ```
+
+---
+
+## Migration from v5.x to v6.x
+
+### Breaking Changes
+
+#### 1. Build Output Files
+
+| v5.x | v6.x | Description |
+|------|------|-------------|
+| `dist/index.cjs.js` | `dist/index.js` | CJS output renamed |
+| `dist/index.mjs` | `dist/index.mjs` | ESM output (unchanged) |
+| `dist/index.esm-browser.js` | `dist/index.mjs` | Use ESM output directly |
+| `dist/index.esm-browser.prod.js` | `dist/index.mjs` | Use ESM output (build tools minify) |
+| `dist/index.global.js` | `dist/index.iife.js` | IIFE output renamed |
+| `dist/index.global.prod.js` | `dist/index.iife.min.js` | IIFE minified renamed |
+
+#### 2. CDN Usage
+
+```html
+<!-- v5.x -->
+<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+<script>
+  const { copy } = window.JsCool
+</script>
+
+<!-- v6.x -->
+<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
+<script>
+  const { copy } = window.jsCool  // Note: lowercase 'jsCool'
+</script>
+```
+
+#### 3. Deprecated Functions Removed
+
+| Removed | Replacement |
+|---------|-------------|
+| `getAppVersion()` | `appVersion()` |
+| `getOsVersion()` | `osVersion()` |
+
+#### 4. Package.json Exports
+
+```json
+// v5.x
+{
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.mjs"
+}
+
+// v6.x
+{
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "import": { "types": "./dist/index.d.mts", "default": "./dist/index.mjs" }
+    }
+  }
+}
+```
+
+### Migration Steps
+
+1. **Update import paths** (if using direct file imports):
+   ```js
+   // v5.x
+   import jsCool from 'js-cool/dist/index.esm-browser.js'
+
+   // v6.x
+   import jsCool from 'js-cool'
+   ```
+
+2. **Update CDN links**:
+   ```html
+   <!-- v5.x -->
+   <script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
+
+   <!-- v6.x -->
+   <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
+   ```
+
+3. **Update global variable** (CDN users):
+   ```js
+   // v5.x
+   window.JsCool
+
+   // v6.x
+   window.jsCool
+   ```
+
+4. **Replace deprecated functions**:
+   ```js
+   // v5.x
+   getAppVersion('Chrome')
+   getOsVersion()
+
+   // v6.x
+   appVersion('Chrome')
+   osVersion()
+   ```
 
 ---
 
