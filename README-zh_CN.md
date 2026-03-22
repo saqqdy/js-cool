@@ -6,11 +6,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/js-cool.svg?style=flat-square)](https://npmjs.org/package/js-cool)
 [![npm download](https://img.shields.io/npm/dm/js-cool.svg?style=flat-square)](https://npmjs.org/package/js-cool)
-[![Test coverage](https://img.shields.io/codecov/c/github/saqqdy/js-cool.svg?style=flat-square)](https://codecov.io/github/saqqdy/js-cool)
-![typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/js-cool)](https://bundlephobia.com/package/js-cool)
-[![gzip](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![gzip](https://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
 
 **[更新日志](./CHANGELOG.md)** • **[English](./README.md)**
 
