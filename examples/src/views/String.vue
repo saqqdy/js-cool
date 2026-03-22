@@ -44,6 +44,7 @@ const templateData = { name: 'John', count: 5 }
     <FunctionCard
       title="camel2Dash / dash2Camel"
       :description="t.string.camel2DashDesc"
+      since="1.0.0"
       :tags="[t.convert]"
       :code="`camel2Dash('backgroundColor') // '${camel2Dash(camelInput)}'\ndash2Camel('background-color') // '${dash2Camel(dashInput)}'`"
     >
@@ -66,6 +67,7 @@ const templateData = { name: 'John', count: 5 }
     <FunctionCard
       title="upperFirst"
       :description="t.string.upperFirstDesc"
+      since="1.0.0"
       :result="upperFirst(upperInput)"
       :code="`upperFirst('${upperInput}') // '${upperFirst(upperInput)}'`"
     >
@@ -81,6 +83,7 @@ const templateData = { name: 'John', count: 5 }
     <FunctionCard
       title="kebabCase / snakeCase"
       :description="t.string.kebabSnakeDesc"
+      since="1.0.0"
       :tags="[t.convert]"
       :code="`kebabCase('helloWorld') // '${kebabCase('helloWorld')}'\nsnakeCase('helloWorld') // '${snakeCase('helloWorld')}'`"
     >
@@ -101,6 +104,7 @@ const templateData = { name: 'John', count: 5 }
     <FunctionCard
       title="truncate"
       :description="t.string.truncateDesc"
+      since="1.0.0"
       :code="`truncate('hi-diddly-ho there, neighborino')
 // 'hi-diddly-ho there, neighbo...'
 
@@ -137,6 +141,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
     <FunctionCard
       title="trim"
       :description="t.string.trimDesc"
+      since="1.0.0"
       :code="`trim('${trimInput}') // '${trim(trimInput)}'`"
     >
       <template #input>
@@ -151,6 +156,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
     <FunctionCard
       title="clearHtml / clearAttr"
       :description="t.string.clearHtmlDesc"
+      since="1.0.0"
       :tags="[t.html]"
       :code="`clearHtml('${htmlInput}') // '${clearHtml(htmlInput)}'\nclearAttr('${htmlInput}') // '${clearAttr(htmlInput)}'`"
     >
@@ -174,6 +180,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
     <FunctionCard
       title="escape / unescape"
       :description="t.string.escapeDesc"
+      since="5.5.0"
       :tags="[t.html]"
       :code="`escape('${escapeInput}') // '${escape(escapeInput)}'`"
     >
@@ -197,6 +204,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
     <FunctionCard
       title="getCHSLength / cutCHSString"
       :description="t.string.chsDesc"
+      since="1.0.0"
       :tags="[t.chinese]"
       :code="`getCHSLength('${chsInput}') // ${getCHSLength(chsInput)}\ncutCHSString('${chsInput}', ${chsLen}) // '${cutCHSString(chsInput, chsLen)}'`"
     >
@@ -223,6 +231,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
     <FunctionCard
       title="mapTemplate"
       :description="t.string.mapTemplateDesc"
+      since="2.2.0"
       :result="mapTemplate(templateInput, templateData)"
       :code="`const data = ${JSON.stringify(templateData)}\nmapTemplate('${templateInput}', data) // '${mapTemplate(templateInput, templateData)}'`"
     >

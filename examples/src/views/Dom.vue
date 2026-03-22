@@ -55,6 +55,7 @@ const incrementBubble = () => { bubbleCount.value++ }
     <FunctionCard
       title="copy"
       description="Copy text to clipboard"
+      since="1.0.0"
       :code="`await copy('Hello World') // true`"
     >
       <template #input>
@@ -69,6 +70,7 @@ const incrementBubble = () => { bubbleCount.value++ }
     <FunctionCard
       title="windowSize"
       description="Get window dimensions"
+      since="1.0.0"
       :code="`windowSize() // { width: 1920, height: 1080 }`"
     >
       <template #result>
@@ -80,6 +82,7 @@ const incrementBubble = () => { bubbleCount.value++ }
     <FunctionCard
       title="stopBubble"
       description="Stop event bubbling"
+      since="1.0.0"
       :code="`stopBubble(e) // e.stopPropagation()`"
     >
       <template #result>
@@ -103,6 +106,7 @@ const incrementBubble = () => { bubbleCount.value++ }
     <FunctionCard
       title="stopDefault"
       description="Prevent default action"
+      since="1.0.0"
       :code="`stopDefault(e) // e.preventDefault()`"
     >
       <template #result>

@@ -26,7 +26,7 @@ const copyCode = async () => {
 </script>
 
 <template>
-  <div style="position: relative;">
+  <div style="position: relative; overflow-x: auto;">
     <n-button
       v-if="showCopy"
       text
@@ -41,6 +41,6 @@ const copyCode = async () => {
         </n-icon>
       </template>
     </n-button>
-    <n-code :code="code" :language="language" />
+    <n-code :code="code" :language="language" style="display: block; overflow-x: auto;" />
   </div>
 </template>

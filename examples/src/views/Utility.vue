@@ -92,6 +92,7 @@ onMounted(() => {
     <FunctionCard
       title="uuid"
       description="Generate UUID"
+      since="1.0.9"
       :result="uuidResult || 'Click to generate'"
       :code="`uuid() // '550e8400-e29b-41d4-a716-446655440000'`"
     >
@@ -104,6 +105,7 @@ onMounted(() => {
     <FunctionCard
       title="randomString"
       description="Generate random string with various options"
+      since="1.0.0"
       :code="`randomString() // default 32 chars
 randomString(16) // 16 chars
 randomString({ length: 6, charTypes: 'number' }) // '847291'
@@ -150,6 +152,7 @@ randomString({ length: 16, strict: true }) // must include all char types`"
     <FunctionCard
       title="nextIndex"
       description="Get next z-index (starting from 1000)"
+      since="1.0.0"
       :result="zIndex"
       :code="`nextIndex() // 1001
 nextIndex() // 1002`"
@@ -163,6 +166,7 @@ nextIndex() // 1002`"
     <FunctionCard
       title="getFileType"
       description="Detect file type from extension"
+      since="2.0.0"
       :result="getFileType(fileTypeInput)"
       :code="`getFileType('document.pdf') // 'pdf'
 getFileType('image.png') // 'image'`"
@@ -176,6 +180,7 @@ getFileType('image.png') // 'image'`"
     <FunctionCard
       title="fingerprint"
       description="Generate browser fingerprint"
+      since="2.0.0"
       :result="fingerprint()"
       :code="`fingerprint() // 'wc7sWJJA8'`"
     />
@@ -184,6 +189,7 @@ getFileType('image.png') // 'image'`"
     <FunctionCard
       title="Environment Detection"
       description="Check runtime environment"
+      since="1.0.0"
       :code="`inBrowser // true in browser
 inNodeJs // true in Node.js
 isDarkMode() // true if dark mode`"

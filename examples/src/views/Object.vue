@@ -23,6 +23,7 @@ const testObj = { a: BigInt(9007199254740993n), b: () => {} }
     <FunctionCard
       title="clone"
       description="Deep clone object"
+      since="1.0.0"
       :code="`clone({ a: { b: 1 } }) // { a: { b: 1 } }`"
     >
       <template #result>
@@ -36,6 +37,7 @@ const testObj = { a: BigInt(9007199254740993n), b: () => {} }
     <FunctionCard
       title="extend"
       description="Deep merge objects (pass true as first arg for deep merge)"
+      since="1.0.0"
       :code="`// Shallow merge
 extend({ a: 1 }, { b: 2 }) // { a: 1, b: 2 }
 
@@ -60,6 +62,7 @@ extend(true, {}, { a: { x: 1 } }, { a: { y: 2 } })
     <FunctionCard
       title="getProperty / setProperty"
       description="Get/set nested property by path"
+      since="2.0.0"
       :code="`getProperty({ a: { b: { c: 1 } } }, 'a.b.c') // 1
 setProperty(obj, 'a.b.c', 100) // sets nested value`"
     >
@@ -87,6 +90,7 @@ setProperty(obj, 'a.b.c', 100) // sets nested value`"
     <FunctionCard
       title="omit / pick"
       description="Filter object properties"
+      since="2.0.0"
       :tags="['filter']"
       :code="`omit({ a: 1, b: 2, c: 3 }, ['b', 'c']) // { a: 1 }\npick({ a: 1, b: 2, c: 3 }, ['a', 'b']) // { a: 1, b: 2 }`"
     >
@@ -139,6 +143,7 @@ safeStringify({ a: BigInt(1n) }) // handles BigInt`"
     <FunctionCard
       title="isEqual"
       description="Deep equality comparison"
+      since="2.0.0"
       :code="`isEqual({ a: 1 }, { a: 1 }) // true\nisEqual(NaN, NaN) // true`"
     >
       <template #result>

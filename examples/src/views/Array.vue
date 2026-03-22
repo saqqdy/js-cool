@@ -40,6 +40,7 @@ const pinyinInput = ref(['张三', '李四', '王五', '赵六'])
     <FunctionCard
       title="unique"
       :description="t.array.uniqueDesc"
+      since="1.0.0"
       :result="JSON.stringify(unique([1, 2, 2, 3, 3, 3, 4, 5]))"
       :code="`unique([1, 2, 2, 3, 3, 3, 4, 5]) // [1, 2, 3, 4, 5]`"
     />
@@ -47,6 +48,7 @@ const pinyinInput = ref(['张三', '李四', '王五', '赵六'])
     <FunctionCard
       title="shuffle"
       :description="t.array.shuffleDesc"
+      since="1.0.0"
       :code="`shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 2, 4]
 shuffle([1, 2, 3, 4, 5], 3) // [4, 1, 5] (3 elements)
 shuffle('hello') // 'lleho'
@@ -82,6 +84,7 @@ shuffle('hello', 3) // 'leh'`"
     <FunctionCard
       title="chunk"
       :description="t.array.chunkDesc"
+      since="1.0.0"
       :code="`chunk([1, 2, 3, 4, 5, 6, 7, 8], ${chunkSize}) // ${JSON.stringify(chunk(chunkInput, chunkSize))}`"
     >
       <template #input>
@@ -97,6 +100,7 @@ shuffle('hello', 3) // 'leh'`"
     <FunctionCard
       title="flatten"
       :description="t.array.flattenDesc"
+      since="2.0.0"
       :result="JSON.stringify(flatten([1, [2, 3], [4, [5, 6]]]))"
       :code="`flatten([1, [2, 3], [4, [5, 6]]]) // [1, 2, 3, 4, 5, 6]`"
     />
@@ -104,6 +108,7 @@ shuffle('hello', 3) // 'leh'`"
     <FunctionCard
       title="sample / sampleSize"
       :description="t.array.sampleDesc"
+      since="2.0.0"
       :code="`sample([1, 2, 3, 4, 5]) // 3 (single random element)
 sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     >
@@ -128,6 +133,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     <FunctionCard
       title="Set Operations"
       :description="t.array.setOpsDesc"
+      since="2.0.0"
       :tags="[t.set]"
       :code="`intersect([1, 2, 3], [2, 3, 4]) // [2, 3]\nunion([1, 2, 3], [2, 3, 4]) // [1, 2, 3, 4]`"
     >
@@ -162,6 +168,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     <FunctionCard
       title="contains / all / any"
       :description="t.array.checkDesc"
+      since="1.0.0"
       :tags="[t.predicate]"
       :code="`contains([1, 2, 3], 2) // true\nall([1, 2, 3], x => x > 0) // true`"
     >
@@ -186,6 +193,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     <FunctionCard
       title="groupBy"
       :description="t.array.groupByDesc"
+      since="2.0.0"
       :code="`groupBy([{ name: 'a', val: 1 }, { name: 'b', val: 2 }, { name: 'a', val: 3 }], 'name')`"
     >
       <template #result>
@@ -196,6 +204,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     <FunctionCard
       title="sortPinyin"
       :description="t.array.sortPinyinDesc"
+      since="1.0.0"
       :code="`['张三', '李四', '王五'].sort(sortPinyin) // ['李四', '王五', '张三']`"
     >
       <template #input>

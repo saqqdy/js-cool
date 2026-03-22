@@ -38,6 +38,7 @@ const patternResults = [
     <FunctionCard
       title="isEmail"
       description="Validate email address"
+      since="1.0.0"
       :code="`isEmail('test@example.com') // true
 isEmail('invalid-email') // false`"
     >
@@ -55,6 +56,7 @@ isEmail('invalid-email') // false`"
     <FunctionCard
       title="isPhone"
       description="Validate Chinese mobile phone number"
+      since="1.0.0"
       :code="`isPhone('13800138000') // true
 isPhone('12345678901') // false`"
     >
@@ -72,6 +74,7 @@ isPhone('12345678901') // false`"
     <FunctionCard
       title="isURL"
       description="Validate URL"
+      since="1.0.0"
       :code="`isURL('https://example.com') // true
 isURL('invalid-url') // false`"
     >
@@ -89,6 +92,7 @@ isURL('invalid-url') // false`"
     <FunctionCard
       title="isIDCard"
       description="Validate Chinese ID card number"
+      since="1.0.0"
       :code="`isIDCard('11010519491231002X') // true`"
     >
       <template #input>
@@ -105,6 +109,7 @@ isURL('invalid-url') // false`"
     <FunctionCard
       title="isCreditCard"
       description="Validate credit card number"
+      since="5.0.0"
       :code="`isCreditCard('4111111111111111') // true`"
     >
       <template #input>
@@ -121,6 +126,7 @@ isURL('invalid-url') // false`"
     <FunctionCard
       title="pattern"
       description="Common regex patterns collection"
+      since="1.0.0"
       :code="`pattern.email.test('test@example.com') // true
 pattern.mobile.test('13800138000') // true
 pattern.url.test('https://example.com') // true`"

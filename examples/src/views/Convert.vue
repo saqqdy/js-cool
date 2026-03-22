@@ -33,6 +33,7 @@ const createSvgBlob = () => {
     <FunctionCard
       title="encodeBase64 / decodeBase64"
       description="Encode and decode Base64 strings (supports Unicode)"
+      since="5.0.0"
       :code="`encodeBase64('Hello') // 'SGVsbG8='
 encodeBase64('你好') // '5L2g5aW9'
 decodeBase64('SGVsbG8=') // 'Hello'`"
@@ -60,6 +61,7 @@ decodeBase64('SGVsbG8=') // 'Hello'`"
     <FunctionCard
       title="blobToUrl"
       description="Create blob URL from data"
+      since="5.0.0"
       :code="`const blob = new Blob(['Hello'], { type: 'text/plain' })
 blobToUrl(blob) // 'blob:origin/uuid'`"
     >
@@ -84,6 +86,7 @@ blobToUrl(blob) // 'blob:origin/uuid'`"
     <FunctionCard
       title="svgToBlob"
       description="Convert SVG string to Blob"
+      since="5.0.0"
       :code="`svgToBlob('<svg>...</svg>') // Blob (image/svg+xml)`"
     >
       <template #input>
@@ -107,6 +110,7 @@ blobToUrl(blob) // 'blob:origin/uuid'`"
     <FunctionCard
       title="Available Functions"
       description="All conversion utilities"
+      since="5.0.0"
       :code="`// ArrayBuffer
 arrayBufferToBase64(buffer, mimeType?)
 arrayBufferToBlob(buffer, mimeType)

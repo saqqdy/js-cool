@@ -88,6 +88,7 @@ const fetchWithRetry = async () => {
     <FunctionCard
       title="debounce"
       description="Execute after delay, reset on each input. Supports: leading, trailing, maxWait, cancel(), flush(), pending()"
+      since="1.0.0"
       :code="`const handler = debounce(fn, 300)
 const handler = debounce(fn, 300, { leading: true })
 handler.cancel() // cancel pending
@@ -119,6 +120,7 @@ handler.flush() // execute immediately`"
     <FunctionCard
       title="throttle"
       description="Execute at most once per interval (1000ms)"
+      since="1.0.0"
       :code="`const handler = throttle((val) => {
   console.log(val)
 }, 1000)
@@ -182,6 +184,7 @@ console.log('Data:', data)`"
     <FunctionCard
       title="retry"
       description="Retry async function with configurable options: times, delay, shouldRetry, onRetry"
+      since="2.0.0"
       :code="`const result = await retry(fn, { times: 3, delay: 1000 })
 
 // With shouldRetry

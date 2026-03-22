@@ -18,6 +18,45 @@ code, pre {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
 }
 
+/* Fix code overflow on mobile */
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.n-code pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Fix n-tag overflow on mobile */
+.n-tag {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.n-tag__content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Fix n-space overflow */
+.n-space {
+  min-width: 0;
+}
+
+.n-space > * {
+  flex-shrink: 0;
+}
+
+.n-space > .n-tag {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
 /* Code inline style - supports dark mode */
 .code-inline {
   font-size: 12px;

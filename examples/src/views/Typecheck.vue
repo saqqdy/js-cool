@@ -37,6 +37,7 @@ const samples = [
     <FunctionCard
       title="getType"
       description="Get precise type of value"
+      since="1.0.0"
       :code="`getType([1, 2, 3]) // 'array'\ngetType(null) // 'null'\ngetType(new Date()) // 'date'`"
     >
       <template #result>
@@ -52,6 +53,7 @@ const samples = [
     <FunctionCard
       title="isArray / isObject / isPlainObject"
       description="Check if value is array, object, or plain object"
+      since="1.0.0"
       :code="`isArray([1, 2, 3]) // true\nisObject({}) // true\nisPlainObject({}) // true`"
     >
       <template #result>
@@ -75,6 +77,7 @@ const samples = [
     <FunctionCard
       title="isDate / isRegExp"
       description="Check if value is Date or RegExp"
+      since="1.0.0"
       :code="`isDate(new Date()) // true\nisRegExp(/test/) // true`"
     >
       <template #result>
@@ -98,6 +101,7 @@ const samples = [
     <FunctionCard
       title="isIterable"
       description="Check if value is iterable"
+      since="3.0.0"
       :code="`isIterable([1, 2, 3]) // true\nisIterable('string') // true\nisIterable({}) // false`"
     >
       <template #result>
@@ -121,6 +125,7 @@ const samples = [
     <FunctionCard
       title="isEmpty / isNil"
       description="Check if value is empty or nil"
+      since="2.0.0"
       :code="`isEmpty([]) // true\nisEmpty({}) // true\nisNil(null) // true`"
     >
       <template #result>

@@ -42,6 +42,7 @@ const getClientInfo = () => {
     <FunctionCard
       title="getUrlParams / getUrlParam"
       description="Parse URL parameters from search string"
+      since="1.0.0"
       :code="`getUrlParam('name', '?name=John&age=25')
 // 'John'
 
@@ -76,6 +77,7 @@ getUrlParams('?name=John&age=25')
     <FunctionCard
       title="parseUrlParam / spliceUrlParam"
       description="Parse and build URL parameters"
+      since="1.0.0"
       :code="`parseUrlParam('a=1&b=2&c=true')
 // { a: '1', b: '2', c: 'true' }
 
@@ -107,6 +109,7 @@ spliceUrlParam({ name: 'John', age: 25 })
     <FunctionCard
       title="getDirParam"
       description="Get directory-style URL params"
+      since="1.0.0"
       :code="`getDirParam('https://example.com/user/123/profile')
 // { 0: 'user', 1: '123', 2: 'profile' }`"
     >
@@ -122,6 +125,7 @@ spliceUrlParam({ name: 'John', age: 25 })
     <FunctionCard
       title="client"
       description="Browser detection utility"
+      since="1.0.0"
       :code="`client() // { ... }
 client.getBrowser() // { browser: 'Chrome' }
 client.getOS() // { os: 'Mac OS' }`"
@@ -138,6 +142,7 @@ client.getOS() // { os: 'Mac OS' }`"
     <FunctionCard
       title="browserVersion / osVersion / appVersion"
       description="Get browser and OS information"
+      since="1.0.0"
       :code="`browserVersion() // { name: 'Chrome', version: '123.0.0.0' }
 osVersion() // { name: 'Mac OS', version: '10.15.7' }
 appVersion('Chrome') // '123.0.0.0'`"
@@ -164,6 +169,7 @@ appVersion('Chrome') // '123.0.0.0'`"
     <FunctionCard
       title="compareVersion"
       description="Compare version numbers"
+      since="1.0.0"
       :code="`compareVersion('1.2.3', '1.2.4') // -1
 compareVersion('2.0.0', '1.9.9') // 1
 compareVersion('1.0.0', '1.0.0') // 0`"
@@ -185,6 +191,7 @@ compareVersion('1.0.0', '1.0.0') // 0`"
     <FunctionCard
       title="nextVersion"
       description="Get next version number"
+      since="1.0.0"
       :code="`nextVersion('1.2.3', 'major') // '2.0.0'
 nextVersion('1.2.3', 'minor') // '1.3.0'
 nextVersion('1.2.3', 'patch') // '1.2.4'`"

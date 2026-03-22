@@ -41,6 +41,7 @@ generatePresets()
     <FunctionCard
       title="hexToRGB"
       description="Convert hex color to RGB"
+      since="1.0.0"
       :code="`hexToRGB('#ff0000') // { r: 255, g: 0, b: 0 }`"
     >
       <template #input>
@@ -58,6 +59,7 @@ generatePresets()
     <FunctionCard
       title="RGBToHex"
       description="Convert RGB to hex color"
+      since="1.0.0"
       :code="`RGBToHex(255, 0, 0) // '#ff0000'`"
     >
       <template #input>
@@ -83,6 +85,7 @@ generatePresets()
     <FunctionCard
       title="rgbToHSL"
       description="Convert RGB to HSL"
+      since="5.0.0"
       :code="`rgbToHSL(255, 0, 0) // { h: 0, s: 100, l: 50 }`"
     >
       <template #result>
@@ -107,6 +110,7 @@ generatePresets()
     <FunctionCard
       title="lighten / darken"
       description="Lighten or darken a color"
+      since="5.0.0"
       :code="`lighten('#3b82f6', 20) // lighter shade
 darken('#3b82f6', 20) // darker shade`"
     >
@@ -140,6 +144,7 @@ darken('#3b82f6', 20) // darker shade`"
     <FunctionCard
       title="isLightColor"
       description="Check if color is light"
+      since="5.0.0"
       :code="`isLightColor('#ffffff') // true
 isLightColor('#000000') // false`"
     >
@@ -165,6 +170,7 @@ isLightColor('#000000') // false`"
     <FunctionCard
       title="randomColor"
       description="Generate random color with various options"
+      since="1.0.0"
       :code="`randomColor() // '#bf444b'
 randomColor(200) // all channels >= 200 (lighter)
 randomColor(200, 255) // all channels 200-255

@@ -10,6 +10,7 @@ interface Props {
   tags?: string[]
   result?: string | number | object | null
   code?: string
+  since?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -17,6 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   tags: () => [],
   result: null,
   code: '',
+  since: '',
 })
 
 const { t } = useI18n()
@@ -38,8 +40,11 @@ const copyCode = async () => {
 </script>
 
 <template>
-  <n-card :title="title" size="small" hoverable style="margin-bottom: 16px;">
+  <n-card :title="title" size="small" hoverable style="margin-bottom: 16px; overflow: hidden;">
     <template #header-extra>
+      <n-tag v-if="since" size="small" type="success" style="margin-left: 4px;">
+        v{{ since }}+
+      </n-tag>
       <n-tag v-for="tag in tags" :key="tag" size="small" type="info" style="margin-left: 4px;">
         {{ tag }}
       </n-tag>
@@ -50,23 +55,23 @@ const copyCode = async () => {
       <p v-if="description" style="color: #666; margin-bottom: 12px;">{{ description }}</p>
 
       <!-- Input Slot -->
-      <div v-if="$slots.input" style="margin-bottom: 12px;">
+      <div v-if="$slots.input" style="margin-bottom: 12px; overflow-x: auto;">
         <slot name="input" />
       </div>
 
       <!-- Result Display -->
-      <div v-if="result !== null" style="margin-bottom: 12px;">
+      <div v-if="result !== null" style="margin-bottom: 12px; overflow-x: auto;">
         <p style="font-size: 12px; color: #999; margin-bottom: 4px;">{{ t.result }}</p>
-        <n-code :code="displayResult" language="json" />
+        <n-code :code="displayResult" language="json" style="display: block; overflow-x: auto;" />
       </div>
 
       <!-- Result Slot -->
-      <div v-if="$slots.result" style="margin-bottom: 12px;">
+      <div v-if="$slots.result" style="margin-bottom: 12px; overflow-x: auto;">
         <slot name="result" />
       </div>
 
       <!-- Code Example -->
-      <div v-if="code" style="margin-top: 12px;">
+      <div v-if="code" style="margin-top: 12px; overflow-x: auto;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
           <span style="font-size: 12px; color: #999;">{{ t.example }}</span>
           <n-button text size="tiny" @click="copyCode">
@@ -78,7 +83,7 @@ const copyCode = async () => {
             </template>
           </n-button>
         </div>
-        <n-code :code="code" language="javascript" />
+        <n-code :code="code" language="javascript" style="display: block; overflow-x: auto;" />
       </div>
 
       <!-- Default Slot -->

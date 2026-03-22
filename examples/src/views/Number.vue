@@ -34,6 +34,7 @@ const randomNumSum = ref(100)
     <FunctionCard
       title="clamp"
       :description="t.number.clampDesc"
+      since="2.0.0"
       :code="`clamp(150, 0, 100) // 100
 clamp(-10, 0, 100) // 0`"
     >
@@ -57,6 +58,7 @@ clamp(-10, 0, 100) // 0`"
     <FunctionCard
       title="round"
       :description="t.number.roundDesc"
+      since="2.0.0"
       :code="`round(3.14159, 2) // 3.14`"
     >
       <template #input>
@@ -77,6 +79,7 @@ clamp(-10, 0, 100) // 0`"
     <FunctionCard
       title="sum / average"
       :description="t.number.sumAvgDesc"
+      since="2.0.0"
       :code="`sum([1, 2, 3, 4, 5]) // 15
 average([1, 2, 3, 4, 5]) // 3`"
     >
@@ -98,6 +101,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="inRange"
       :description="t.number.inRangeDesc"
+      since="2.0.0"
       :code="`inRange(5, 0, 10) // true`"
     >
       <template #input>
@@ -120,6 +124,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="toThousands"
       :description="t.number.toThousandsDesc"
+      since="1.0.0"
       :code="`toThousands(1234567.89) // '1,234,567.89'`"
     >
       <template #input>
@@ -134,6 +139,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="fixNumber"
       :description="t.number.fixNumberDesc"
+      since="2.0.0"
       :code="`fixNumber(3.14159, 2) // '3.14'`"
     >
       <template #input>
@@ -154,6 +160,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="getNumber"
       :description="t.number.getNumberDesc"
+      since="2.0.0"
       :code="`getNumber('Chrome123.45') // '123.45'`"
     >
       <template #input>
@@ -168,6 +175,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="randomNumber"
       :description="t.number.randomNumberDesc"
+      since="2.0.0"
       :code="`randomNumber(1, 100) // 42 (random)`"
     >
       <template #input>
@@ -188,6 +196,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <FunctionCard
       title="randomNumbers"
       :description="t.number.randomNumbersDesc"
+      since="2.0.0"
       :code="`randomNumbers(4, 100) // [25, 30, 20, 25]`"
     >
       <template #input>

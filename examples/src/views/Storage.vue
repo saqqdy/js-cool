@@ -59,6 +59,7 @@ const handleDelCookie = () => { delCookie(cookieKey.value); cookieResult.value =
     <FunctionCard
       title="localStorage"
       description="setCache / getCache / delCache - With optional expiration time (seconds)"
+      since="1.0.0"
       :tags="['local']"
       :code="`setCache('key', 'value', 3600) // expires in 1 hour
 getCache('key') // 'value'
@@ -90,6 +91,7 @@ delCache('key')`"
     <FunctionCard
       title="sessionStorage"
       description="setSession / getSession / delSession - Session storage with automatic JSON handling"
+      since="1.0.0"
       :tags="['session']"
       :code="`setSession('key', 'value')
 getSession('key') // 'value'
@@ -120,6 +122,7 @@ delSession('key')`"
     <FunctionCard
       title="Cookie"
       description="setCookie / getCookie / delCookie - Cookie management with expiration"
+      since="1.0.0"
       :tags="['cookie']"
       :code="`setCookie('key', 'value', 86400) // 1 day
 getCookie('key') // 'value'

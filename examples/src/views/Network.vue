@@ -24,6 +24,7 @@ const handleFillIPv6 = () => {
     <FunctionCard
       title="fillIPv6"
       description="Expand abbreviated IPv6 address to full format"
+      since="3.0.0"
       :code="`fillIPv6('::1')
 // '0000:0000:0000:0000:0000:0000:0000:0001'
 
