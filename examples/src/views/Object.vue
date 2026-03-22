@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NSpace, NInput, NTag, NCode } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { clone, extend, getProperty, setProperty, omit, pick, safeParse, safeStringify, isEqual } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const objInput = ref({ a: { b: { c: 1 } } })
 const pathInput = ref('a.b.c')
@@ -15,7 +18,7 @@ const testObj = { a: BigInt(9007199254740993n), b: () => {} }
 <template>
   <div>
     <n-h1>Object</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Object manipulation utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Object }}</p>
 
     <FunctionCard
       title="clone"

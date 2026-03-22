@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NSpace, NInputNumber, NTag, NCode, NButton } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { shuffle, unique, intersect, union, minus, complement, contains, all, any, chunk, flatten, groupBy, sample, sampleSize, sortPinyin } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const shuffleInput = ref([1, 2, 3, 4, 5])
 const shuffleSize = ref<number | undefined>(undefined)
@@ -32,18 +35,18 @@ const pinyinInput = ref(['张三', '李四', '王五', '赵六'])
 <template>
   <div>
     <n-h1>Array</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Array processing utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Array }}</p>
 
     <FunctionCard
       title="unique"
-      description="Remove duplicates from array"
+      :description="t.array.uniqueDesc"
       :result="JSON.stringify(unique([1, 2, 2, 3, 3, 3, 4, 5]))"
       :code="`unique([1, 2, 2, 3, 3, 3, 4, 5]) // [1, 2, 3, 4, 5]`"
     />
 
     <FunctionCard
       title="shuffle"
-      description="Shuffle array or string with optional size limit"
+      :description="t.array.shuffleDesc"
       :code="`shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 2, 4]
 shuffle([1, 2, 3, 4, 5], 3) // [4, 1, 5] (3 elements)
 shuffle('hello') // 'lleho'
@@ -78,7 +81,7 @@ shuffle('hello', 3) // 'leh'`"
 
     <FunctionCard
       title="chunk"
-      description="Split array into chunks"
+      :description="t.array.chunkDesc"
       :code="`chunk([1, 2, 3, 4, 5, 6, 7, 8], ${chunkSize}) // ${JSON.stringify(chunk(chunkInput, chunkSize))}`"
     >
       <template #input>
@@ -93,14 +96,14 @@ shuffle('hello', 3) // 'leh'`"
 
     <FunctionCard
       title="flatten"
-      description="Flatten nested array"
+      :description="t.array.flattenDesc"
       :result="JSON.stringify(flatten([1, [2, 3], [4, [5, 6]]]))"
       :code="`flatten([1, [2, 3], [4, [5, 6]]]) // [1, 2, 3, 4, 5, 6]`"
     />
 
     <FunctionCard
       title="sample / sampleSize"
-      description="Get random element(s) from array"
+      :description="t.array.sampleDesc"
       :code="`sample([1, 2, 3, 4, 5]) // 3 (single random element)
 sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
     >
@@ -110,12 +113,12 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
             <n-tag>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</n-tag>
           </n-space>
           <n-space align="center">
-            <n-button size="small" @click="doSample">Sample One</n-button>
+            <n-button size="small" @click="doSample">{{ t.array.sampleOne }}</n-button>
             <n-tag type="info" size="small">{{ sampleResult }}</n-tag>
           </n-space>
           <n-space align="center">
             <n-input-number v-model:value="sampleSizeCount" :min="1" :max="10" style="width: 70px;" />
-            <n-button size="small" @click="doSampleSize">Sample Size</n-button>
+            <n-button size="small" @click="doSampleSize">{{ t.array.sampleSize }}</n-button>
             <n-tag type="info" size="small">{{ JSON.stringify(sampleSizeResult) }}</n-tag>
           </n-space>
         </n-space>
@@ -124,8 +127,8 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 
     <FunctionCard
       title="Set Operations"
-      description="intersect, union, minus, complement"
-      :tags="['set']"
+      :description="t.array.setOpsDesc"
+      :tags="[t.set]"
       :code="`intersect([1, 2, 3], [2, 3, 4]) // [2, 3]\nunion([1, 2, 3], [2, 3, 4]) // [1, 2, 3, 4]`"
     >
       <template #input>
@@ -158,8 +161,8 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 
     <FunctionCard
       title="contains / all / any"
-      description="Check array elements"
-      :tags="['predicate']"
+      :description="t.array.checkDesc"
+      :tags="[t.predicate]"
       :code="`contains([1, 2, 3], 2) // true\nall([1, 2, 3], x => x > 0) // true`"
     >
       <template #result>
@@ -182,7 +185,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 
     <FunctionCard
       title="groupBy"
-      description="Group array items by key"
+      :description="t.array.groupByDesc"
       :code="`groupBy([{ name: 'a', val: 1 }, { name: 'b', val: 2 }, { name: 'a', val: 3 }], 'name')`"
     >
       <template #result>
@@ -192,7 +195,7 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 
     <FunctionCard
       title="sortPinyin"
-      description="Sort Chinese by pinyin"
+      :description="t.array.sortPinyinDesc"
       :code="`['张三', '李四', '王五'].sort(sortPinyin) // ['李四', '王五', '张三']`"
     >
       <template #input>

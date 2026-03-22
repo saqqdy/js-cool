@@ -13,6 +13,9 @@ import {
   isDarkMode,
 } from 'js-cool'
 import type { RandomStringCharType } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const uuidResult = ref('')
 const generateUuid = () => {
@@ -83,7 +86,7 @@ onMounted(() => {
 <template>
   <div>
     <n-h1>Utility</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">General utility functions</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Utility }}</p>
 
     <!-- uuid -->
     <FunctionCard

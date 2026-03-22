@@ -18,6 +18,9 @@ import {
   cutCHSString,
   mapTemplate,
 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const camelInput = ref('backgroundColor')
 const dashInput = ref('background-color')
@@ -36,12 +39,12 @@ const templateData = { name: 'John', count: 5 }
 <template>
   <div>
     <n-h1>String</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">String manipulation utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.String }}</p>
 
     <FunctionCard
       title="camel2Dash / dash2Camel"
-      description="Convert between camelCase and kebab-case"
-      :tags="['convert']"
+      :description="t.string.camel2DashDesc"
+      :tags="[t.convert]"
       :code="`camel2Dash('backgroundColor') // '${camel2Dash(camelInput)}'\ndash2Camel('background-color') // '${dash2Camel(dashInput)}'`"
     >
       <template #input>
@@ -62,7 +65,7 @@ const templateData = { name: 'John', count: 5 }
 
     <FunctionCard
       title="upperFirst"
-      description="Capitalize first letter"
+      :description="t.string.upperFirstDesc"
       :result="upperFirst(upperInput)"
       :code="`upperFirst('${upperInput}') // '${upperFirst(upperInput)}'`"
     >
@@ -77,8 +80,8 @@ const templateData = { name: 'John', count: 5 }
 
     <FunctionCard
       title="kebabCase / snakeCase"
-      description="Convert strings to kebab-case or snake_case"
-      :tags="['convert']"
+      :description="t.string.kebabSnakeDesc"
+      :tags="[t.convert]"
       :code="`kebabCase('helloWorld') // '${kebabCase('helloWorld')}'\nsnakeCase('helloWorld') // '${snakeCase('helloWorld')}'`"
     >
       <template #result>
@@ -97,7 +100,7 @@ const templateData = { name: 'John', count: 5 }
 
     <FunctionCard
       title="truncate"
-      description="Truncate string with multiple options"
+      :description="t.string.truncateDesc"
       :code="`truncate('hi-diddly-ho there, neighborino')
 // 'hi-diddly-ho there, neighbo...'
 
@@ -133,7 +136,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 
     <FunctionCard
       title="trim"
-      description="Remove whitespace from string ends"
+      :description="t.string.trimDesc"
       :code="`trim('${trimInput}') // '${trim(trimInput)}'`"
     >
       <template #input>
@@ -147,8 +150,8 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 
     <FunctionCard
       title="clearHtml / clearAttr"
-      description="Remove HTML tags or attributes"
-      :tags="['html']"
+      :description="t.string.clearHtmlDesc"
+      :tags="[t.html]"
       :code="`clearHtml('${htmlInput}') // '${clearHtml(htmlInput)}'\nclearAttr('${htmlInput}') // '${clearAttr(htmlInput)}'`"
     >
       <template #input>
@@ -170,8 +173,8 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 
     <FunctionCard
       title="escape / unescape"
-      description="Escape/unescape HTML special characters"
-      :tags="['html']"
+      :description="t.string.escapeDesc"
+      :tags="[t.html]"
       :code="`escape('${escapeInput}') // '${escape(escapeInput)}'`"
     >
       <template #input>
@@ -193,8 +196,8 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 
     <FunctionCard
       title="getCHSLength / cutCHSString"
-      description="Handle Chinese characters (Chinese = 2 bytes)"
-      :tags="['chinese']"
+      :description="t.string.chsDesc"
+      :tags="[t.chinese]"
       :code="`getCHSLength('${chsInput}') // ${getCHSLength(chsInput)}\ncutCHSString('${chsInput}', ${chsLen}) // '${cutCHSString(chsInput, chsLen)}'`"
     >
       <template #input>
@@ -205,7 +208,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
           </n-space>
           <n-space align="center">
             <n-input-number v-model:value="chsLen" :min="1" style="width: 80px;" />
-            <span style="color: #999;">bytes</span>
+            <span style="color: #999;">{{ t.string.bytes }}</span>
           </n-space>
         </n-space>
       </template>
@@ -219,7 +222,7 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 
     <FunctionCard
       title="mapTemplate"
-      description="Template string interpolation"
+      :description="t.string.mapTemplateDesc"
       :result="mapTemplate(templateInput, templateData)"
       :code="`const data = ${JSON.stringify(templateData)}\nmapTemplate('${templateInput}', data) // '${mapTemplate(templateInput, templateData)}'`"
     >

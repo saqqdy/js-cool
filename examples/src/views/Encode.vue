@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { encodeBase64, decodeBase64, encodeUtf8, decodeUtf8 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const base64Input = ref('Hello World')
 const base64Encoded = ref('')
@@ -40,7 +43,7 @@ const handleUtf8Decode = () => {
 <template>
   <div>
     <n-h1>Encode</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Encoding/decoding utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Encode }}</p>
 
     <!-- Base64 -->
     <FunctionCard

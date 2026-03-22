@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NSpace, NInputNumber, NButton } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { hexToRGB, rgbToHSL, RGBToHex, lighten, darken, isLightColor, randomColor } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const hexInput = ref('#ff0000')
 const rgbR = ref(255)
@@ -32,7 +35,7 @@ generatePresets()
 <template>
   <div>
     <n-h1>Color</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Color manipulation utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Color }}</p>
 
     <!-- hexToRGB -->
     <FunctionCard

@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { debounce, throttle, retry, awaitTo } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 // Debounce demo
 const debounceInput = ref('')
@@ -79,7 +82,7 @@ const fetchWithRetry = async () => {
 <template>
   <div>
     <n-h1>Async</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Async flow control</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Async }}</p>
 
     <!-- debounce -->
     <FunctionCard

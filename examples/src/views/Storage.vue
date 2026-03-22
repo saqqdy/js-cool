@@ -14,6 +14,9 @@ import {
   getCookies,
   delCookie,
 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 // localStorage
 const lsKey = ref('myKey')
@@ -50,7 +53,7 @@ const handleDelCookie = () => { delCookie(cookieKey.value); cookieResult.value =
 <template>
   <div>
     <n-h1>Storage</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Browser storage utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Storage }}</p>
 
     <!-- localStorage -->
     <FunctionCard

@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { isEmail, isPhone, isURL, isIDCard, isCreditCard, pattern } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const emailInput = ref('test@example.com')
 const phoneInput = ref('13800138000')
@@ -29,7 +32,7 @@ const patternResults = [
 <template>
   <div>
     <n-h1>Validate</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Validation functions</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Validate }}</p>
 
     <!-- isEmail -->
     <FunctionCard

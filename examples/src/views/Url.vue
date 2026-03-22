@@ -15,6 +15,9 @@ import {
   compareVersion,
   nextVersion,
 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const urlInput = ref('https://example.com?name=John&age=25&active=true')
 const paramKey = ref('name')
@@ -32,8 +35,8 @@ const getClientInfo = () => {
 
 <template>
   <div>
-    <n-h1>URL & Browser</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">URL parsing and browser detection</p>
+    <n-h1>Url</n-h1>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Url }}</p>
 
     <!-- getUrlParams / getUrlParam -->
     <FunctionCard

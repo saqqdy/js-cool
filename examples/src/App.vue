@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, h } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { darkTheme, NIcon } from 'naive-ui'
 import type { MenuOption } from 'naive-ui'
@@ -28,8 +28,9 @@ import {
   MoonOutline,
   LogoGithub,
   ChevronDownOutline,
+  LanguageOutline,
 } from '@vicons/ionicons5'
-import { h } from 'vue'
+import { useI18n } from './locales'
 
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('json', json)
@@ -40,6 +41,7 @@ const router = useRouter()
 const searchQuery = ref('')
 const sidebarCollapsed = ref(false)
 const isDark = ref(false)
+const { t, locale, toggleLocale } = useI18n()
 
 const renderIcon = (icon: any) => {
   return () => h(NIcon, null, { default: () => h(icon) })
@@ -49,10 +51,10 @@ const categories = [
   { name: 'String', path: 'string', icon: TextOutline },
   { name: 'Array', path: 'array', icon: LayersOutline },
   { name: 'Object', path: 'object', icon: CubeOutline },
-  { name: 'Type Check', path: 'typecheck', icon: SearchOutline },
+  { name: 'Typecheck', path: 'typecheck', icon: SearchOutline },
   { name: 'Validate', path: 'validate', icon: CheckmarkCircleOutline },
-  { name: 'URL & Browser', path: 'url', icon: GlobeOutline },
-  { name: 'DOM', path: 'dom', icon: FingerPrintOutline },
+  { name: 'Url', path: 'url', icon: GlobeOutline },
+  { name: 'Dom', path: 'dom', icon: FingerPrintOutline },
   { name: 'Storage', path: 'storage', icon: SaveOutline },
   { name: 'Convert', path: 'convert', icon: SyncOutline },
   { name: 'Number', path: 'number', icon: RemoveOutline },
@@ -66,13 +68,13 @@ const categories = [
 
 const menuOptions: MenuOption[] = [
   {
-    label: () => h('a', { href: '/js-cool/', class: route.path === '/' ? 'n-menu-item-content--selected' : '' }, 'Home'),
+    label: () => h('a', { href: '/js-cool/', class: route.path === '/' ? 'n-menu-item-content--selected' : '' }, t.value.home),
     key: 'home',
     icon: renderIcon(HomeOutline),
   },
   { type: 'divider', key: 'd1' },
   ...categories.map(cat => ({
-    label: () => h('a', { href: `/js-cool/${cat.path}` }, cat.name),
+    label: () => h('a', { href: `/js-cool/${cat.path}` }, t.value.categoriesDesc[cat.name as keyof typeof t.value.categoriesDesc] || cat.name),
     key: cat.path,
     icon: renderIcon(cat.icon),
   })),
@@ -129,7 +131,7 @@ onMounted(() => {
         :native-scrollbar="false"
       >
         <div class="p-4">
-          <n-input v-model:value="searchQuery" placeholder="Search..." size="small" clearable />
+          <n-input v-model:value="searchQuery" :placeholder="t.search" size="small" clearable />
         </div>
         <n-menu
           :options="filteredMenuOptions"
@@ -155,7 +157,7 @@ onMounted(() => {
               placement="bottom-start"
             >
               <n-button text>
-                Categories
+                {{ t.categories }}
                 <template #icon>
                   <n-icon><ChevronDownOutline /></n-icon>
                 </template>
@@ -164,6 +166,16 @@ onMounted(() => {
           </div>
 
           <div class="flex items-center gap-2">
+            <n-tooltip trigger="hover">
+              <template #trigger>
+                <n-button quaternary circle @click="toggleLocale">
+                  <template #icon>
+                    <n-icon><LanguageOutline /></n-icon>
+                  </template>
+                </n-button>
+              </template>
+              {{ locale === 'en' ? '中文' : 'English' }}
+            </n-tooltip>
             <n-button quaternary circle @click="toggleDark">
               <template #icon>
                 <n-icon><MoonOutline v-if="isDark" /><SunnyOutline v-else /></n-icon>

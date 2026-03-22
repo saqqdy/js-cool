@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NSpace, NInput, NTag, NCode } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { getType, isArray, isObject, isPlainObject, isDate, isRegExp, isIterable, isEmpty, isNil } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const testValue = ref('[1, 2, 3]')
 
@@ -28,8 +31,8 @@ const samples = [
 
 <template>
   <div>
-    <n-h1>Type Check</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Type checking utilities</p>
+    <n-h1>Typecheck</n-h1>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Typecheck }}</p>
 
     <FunctionCard
       title="getType"

@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { blobToUrl, svgToBlob, encodeBase64, decodeBase64 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const textInput = ref('Hello World')
 const svgInput = ref('<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="red"/></svg>')
@@ -24,7 +27,7 @@ const createSvgBlob = () => {
 <template>
   <div>
     <n-h1>Convert</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Format conversion utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Convert }}</p>
 
     <!-- Base64 encoding -->
     <FunctionCard

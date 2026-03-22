@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NSpace, NInputNumber } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { formatDate, dateDiff, relativeTime, isToday, getDaysInMonth } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t, locale } = useI18n()
 
 const formatPattern = ref('YYYY-MM-DD HH:mm:ss')
 const diffStart = ref('2024-01-01')
@@ -16,12 +19,12 @@ const yearInput = ref(new Date().getFullYear())
 <template>
   <div>
     <n-h1>Date</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Date processing utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Date }}</p>
 
     <!-- formatDate -->
     <FunctionCard
       title="formatDate"
-      description="Format date with pattern (supports: YYYY, YY, MM, M, DD, D, HH, H, hh, h, mm, m, ss, s, SSS, A/a)"
+      :description="t.date.formatDesc"
       :code="`formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
 formatDate(new Date(), 'YYYY年MM月DD日')
 formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
@@ -57,14 +60,14 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
     <!-- dateDiff -->
     <FunctionCard
       title="dateDiff"
-      description="Calculate difference between dates"
+      :description="t.date.diffDesc"
       :code="`dateDiff('2024-01-01', '2024-12-31')
 // { days: 365, months: 11, ... }`"
     >
       <template #input>
         <n-space align="center">
           <input v-model="diffStart" type="date" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 150px;" />
-          <span style="color: #666;">to</span>
+          <span style="color: #666;">{{ t.date.to }}</span>
           <input v-model="diffEnd" type="date" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 150px;" />
         </n-space>
       </template>
@@ -76,7 +79,7 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
     <!-- relativeTime -->
     <FunctionCard
       title="relativeTime"
-      description="Get relative time string (supports: en, zh locales)"
+      :description="t.date.relativeDesc"
       :code="`relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
 relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
     >
@@ -118,7 +121,7 @@ relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
     <!-- isToday -->
     <FunctionCard
       title="isToday"
-      description="Check if date is today"
+      :description="t.date.isTodayDesc"
       :code="`isToday(new Date()) // true`"
     >
       <template #input>
@@ -132,29 +135,29 @@ relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
     <!-- getDaysInMonth -->
     <FunctionCard
       title="getDaysInMonth"
-      description="Get number of days in month"
+      :description="t.date.daysInMonthDesc"
       :code="`getDaysInMonth(2024, 2) // 29 (leap year)
 getDaysInMonth(2023, 2) // 28`"
     >
       <template #input>
         <n-space align="center">
-          <code class="code-inline">Year:</code>
+          <code class="code-inline">{{ locale === 'zh' ? '年' : 'Year' }}:</code>
           <n-input-number v-model:value="yearInput" style="width: 100px;" />
-          <code class="code-inline">Month:</code>
+          <code class="code-inline">{{ locale === 'zh' ? '月' : 'Month' }}:</code>
           <n-input-number v-model:value="monthInput" style="width: 70px;" />
         </n-space>
       </template>
       <template #result>
         <n-space vertical>
-          <n-tag type="info" size="small" :bordered="false">{{ getDaysInMonth(yearInput, monthInput) }} days</n-tag>
+          <n-tag type="info" size="small" :bordered="false">{{ getDaysInMonth(yearInput, monthInput) }} {{ t.number.days }}</n-tag>
           <n-space>
             <n-space align="center">
               <code class="code-inline">getDaysInMonth(2024, 2)</code>
-              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2024, 2) }} days (leap year)</n-tag>
+              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2024, 2) }} {{ t.number.days }} ({{ t.number.leapYear }})</n-tag>
             </n-space>
             <n-space align="center">
               <code class="code-inline">getDaysInMonth(2023, 2)</code>
-              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2023, 2) }} days</n-tag>
+              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2023, 2) }} {{ t.number.days }}</n-tag>
             </n-space>
           </n-space>
         </n-space>

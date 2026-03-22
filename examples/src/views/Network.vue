@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { fillIPv6 } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const ipv6Input = ref('::1')
 const ipv6Result = ref('')
@@ -15,7 +18,7 @@ const handleFillIPv6 = () => {
 <template>
   <div>
     <n-h1>Network</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Network utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Network }}</p>
 
     <!-- fillIPv6 -->
     <FunctionCard

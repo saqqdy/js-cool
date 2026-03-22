@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { version } from 'js-cool'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { NCard, NH1, NH2, NTag, NButton, NIcon, NGrid, NGi, NSpace, NDivider } from 'naive-ui'
 import {
   LogoGithub,
@@ -16,24 +16,27 @@ import {
 import FunctionCard from '@/components/FunctionCard.vue'
 import CodePreview from '@/components/CodePreview.vue'
 import { randomString, copy as copyText, uuid } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t, locale } = useI18n()
 
 const categories = [
-  { name: 'String', path: 'string', count: 15, description: 'camel2Dash, dash2Camel, upperFirst...' },
-  { name: 'Array', path: 'array', count: 19, description: 'unique, shuffle, chunk, groupBy...' },
-  { name: 'Object', path: 'object', count: 12, description: 'clone, extend, getProperty...' },
-  { name: 'Type Check', path: 'typecheck', count: 13, description: 'isArray, isObject, isDate...' },
-  { name: 'Validate', path: 'validate', count: 5, description: 'isEmail, isPhone, isURL...' },
-  { name: 'URL & Browser', path: 'url', count: 13, description: 'getUrlParams, client, osVersion...' },
-  { name: 'DOM', path: 'dom', count: 14, description: 'copy, addEvent, windowSize...' },
-  { name: 'Storage', path: 'storage', count: 10, description: 'setCache, getCache, setCookie...' },
-  { name: 'Convert', path: 'convert', count: 12, description: 'base64ToBlob, fileToBase64...' },
-  { name: 'Number', path: 'number', count: 7, description: 'clamp, round, sum, average...' },
-  { name: 'Date', path: 'date', count: 5, description: 'formatDate, dateDiff, isToday...' },
-  { name: 'Color', path: 'color', count: 6, description: 'hexToRGB, RGBToHex, randomColor...' },
-  { name: 'Utility', path: 'utility', count: 15, description: 'uuid, randomString, delay...' },
-  { name: 'Async', path: 'async', count: 4, description: 'debounce, throttle, retry...' },
-  { name: 'Encode', path: 'encode', count: 4, description: 'encodeBase64, decodeBase64...' },
-  { name: 'Network', path: 'network', count: 1, description: 'fillIPv6...' },
+  { name: 'String', path: 'string', count: 15, descriptionEn: 'camel2Dash, dash2Camel, upperFirst...', descriptionZh: '驼峰转短横线、短横线转驼峰、首字母大写...' },
+  { name: 'Array', path: 'array', count: 19, descriptionEn: 'unique, shuffle, chunk, groupBy...', descriptionZh: '数组去重、随机排序、分块、分组...' },
+  { name: 'Object', path: 'object', count: 12, descriptionEn: 'clone, extend, getProperty...', descriptionZh: '对象克隆、扩展、获取属性...' },
+  { name: 'Typecheck', path: 'typecheck', count: 13, descriptionEn: 'isArray, isObject, isDate...', descriptionZh: '数组判断、对象判断、日期判断...' },
+  { name: 'Validate', path: 'validate', count: 5, descriptionEn: 'isEmail, isPhone, isURL...', descriptionZh: '邮箱验证、手机验证、URL验证...' },
+  { name: 'Url', path: 'url', count: 13, descriptionEn: 'getUrlParams, client, osVersion...', descriptionZh: '获取URL参数、客户端信息、系统版本...' },
+  { name: 'Dom', path: 'dom', count: 14, descriptionEn: 'copy, addEvent, windowSize...', descriptionZh: '复制、事件绑定、窗口尺寸...' },
+  { name: 'Storage', path: 'storage', count: 10, descriptionEn: 'setCache, getCache, setCookie...', descriptionZh: '设置缓存、获取缓存、设置Cookie...' },
+  { name: 'Convert', path: 'convert', count: 12, descriptionEn: 'base64ToBlob, fileToBase64...', descriptionZh: 'Base64转Blob、文件转Base64...' },
+  { name: 'Number', path: 'number', count: 7, descriptionEn: 'clamp, round, sum, average...', descriptionZh: '数值范围、四舍五入、求和、平均值...' },
+  { name: 'Date', path: 'date', count: 5, descriptionEn: 'formatDate, dateDiff, isToday...', descriptionZh: '格式化日期、日期差、判断今天...' },
+  { name: 'Color', path: 'color', count: 6, descriptionEn: 'hexToRGB, RGBToHex, randomColor...', descriptionZh: '十六进制转RGB、RGB转十六进制、随机颜色...' },
+  { name: 'Utility', path: 'utility', count: 15, descriptionEn: 'uuid, randomString, delay...', descriptionZh: 'UUID生成、随机字符串、延迟...' },
+  { name: 'Async', path: 'async', count: 4, descriptionEn: 'debounce, throttle, retry...', descriptionZh: '防抖、节流、重试...' },
+  { name: 'Encode', path: 'encode', count: 4, descriptionEn: 'encodeBase64, decodeBase64...', descriptionZh: 'Base64编码、Base64解码...' },
+  { name: 'Network', path: 'network', count: 1, descriptionEn: 'fillIPv6...', descriptionZh: 'IPv6补全...' },
 ]
 
 const totalFunctions = categories.reduce((sum, c) => sum + c.count, 0)
@@ -70,13 +73,17 @@ const cdnCode = `<script src="https://unpkg.com/js-cool/dist/index.iife.min.js">
   const { randomString, copy } = window.jsCool
 <\/script>`
 
-const features = [
-  { icon: CubeOutline, title: '140+ Utilities', description: 'String, array, object, date, and more' },
-  { icon: SparklesOutline, title: 'TypeScript Native', description: 'Full type definitions' },
-  { icon: LeafOutline, title: 'Tree Shaking', description: 'Import only what you need' },
-  { icon: FlashOutline, title: 'Zero Dependencies', description: 'Lightweight footprint' },
-  { icon: ShieldCheckmarkOutline, title: 'Well Tested', description: 'Comprehensive coverage' },
-]
+const features = computed(() => [
+  { icon: CubeOutline, title: t.value.features.utilities.title, description: t.value.features.utilities.description },
+  { icon: SparklesOutline, title: t.value.features.typescript.title, description: t.value.features.typescript.description },
+  { icon: LeafOutline, title: t.value.features.treeShaking.title, description: t.value.features.treeShaking.description },
+  { icon: FlashOutline, title: t.value.features.zeroDeps.title, description: t.value.features.zeroDeps.description },
+  { icon: ShieldCheckmarkOutline, title: t.value.features.tested.title, description: t.value.features.tested.description },
+])
+
+const getCategoryDescription = (cat: typeof categories[0]) => {
+  return locale.value === 'zh' ? cat.descriptionZh : cat.descriptionEn
+}
 </script>
 
 <template>
@@ -86,16 +93,16 @@ const features = [
       <n-tag type="primary" round style="margin-bottom: 16px;">v{{ version }}</n-tag>
       <n-h1 style="margin: 0;">js-cool</n-h1>
       <p style="font-size: 18px; color: #666; max-width: 600px; margin: 16px auto;">
-        Collection of common JavaScript / TypeScript utilities
+        {{ t.heroDescription }}
       </p>
       <n-space justify="center" style="margin-top: 24px;">
         <n-button tag="a" href="https://github.com/saqqdy/js-cool" target="_blank" secondary>
           <template #icon><n-icon><LogoGithub /></n-icon></template>
-          GitHub
+          {{ t.github }}
         </n-button>
         <n-button tag="a" href="https://stackblitz.com/github/saqqdy/js-cool/tree/master/examples?terminal=dev" target="_blank" type="primary">
           <template #icon><n-icon><FlashOutline /></n-icon></template>
-          Try in StackBlitz
+          {{ t.tryInStackblitz }}
         </n-button>
       </n-space>
     </div>
@@ -112,39 +119,39 @@ const features = [
     </n-grid>
 
     <!-- Quick Start -->
-    <n-h2>Quick Start</n-h2>
+    <n-h2>{{ t.quickStart }}</n-h2>
     <n-grid :cols="2" :x-gap="16" responsive="screen" item-responsive>
       <n-gi span="2 m:1">
-        <n-card title="Package Manager" size="small">
+        <n-card :title="t.packageManager" size="small">
           <code-preview :code="installCode" />
           <code-preview :code="importCode" style="margin-top: 12px;" />
         </n-card>
       </n-gi>
       <n-gi span="2 m:1">
-        <n-card title="CDN" size="small">
+        <n-card :title="t.cdn" size="small">
           <code-preview :code="cdnCode" />
         </n-card>
       </n-gi>
     </n-grid>
 
     <!-- Interactive Demos -->
-    <n-h2>Try it out</n-h2>
+    <n-h2>{{ t.tryItOut }}</n-h2>
     <n-grid :cols="2" :x-gap="16" responsive="screen" item-responsive>
       <n-gi span="2 m:1">
         <FunctionCard
           title="randomString"
-          description="Generate a random string with specified length"
+          :description="locale === 'zh' ? '生成指定长度的随机字符串' : 'Generate a random string with specified length'"
           :result="randomResult"
           :code="`randomString(${randomLen}) // '${randomResult}'`"
         >
           <template #input>
             <n-space>
               <n-input-number v-model:value="randomLen" :min="1" :max="64" style="width: 100px;" />
-              <span style="color: #999;">characters</span>
-              <n-button size="small" @click="generateRandom">Generate</n-button>
+              <span style="color: #999;">{{ t.characters }}</span>
+              <n-button size="small" @click="generateRandom">{{ t.generate }}</n-button>
               <n-button size="small" secondary @click="copyResult">
                 <template #icon><n-icon><CopyOutline /></n-icon></template>
-                Copy
+                {{ t.copy }}
               </n-button>
             </n-space>
           </template>
@@ -153,16 +160,16 @@ const features = [
       <n-gi span="2 m:1">
         <FunctionCard
           title="uuid"
-          description="Generate a UUID v4"
+          :description="locale === 'zh' ? '生成 UUID v4' : 'Generate a UUID v4'"
           :result="uuidResult"
           :code="`uuid() // '${uuidResult}'`"
         >
           <template #input>
             <n-space>
-              <n-button size="small" @click="generateUuid">Generate</n-button>
+              <n-button size="small" @click="generateUuid">{{ t.generate }}</n-button>
               <n-button size="small" secondary @click="copyUuid">
                 <template #icon><n-icon><CopyOutline /></n-icon></template>
-                Copy
+                {{ t.copy }}
               </n-button>
             </n-space>
           </template>
@@ -171,9 +178,9 @@ const features = [
     </n-grid>
 
     <!-- Categories -->
-    <n-h2>All Categories</n-h2>
+    <n-h2>{{ t.allCategories }}</n-h2>
     <p style="color: #666; margin-bottom: 16px;">
-      <strong>{{ totalFunctions }}+</strong> functions in <strong>{{ categories.length }}</strong> categories
+      <strong>{{ totalFunctions }}+</strong> {{ t.functionsIn }} <strong>{{ categories.length }}</strong> {{ t.categoriesWord }}
     </p>
     <n-grid :cols="4" :x-gap="12" :y-gap="12" responsive="screen" item-responsive>
       <n-gi v-for="cat in categories" :key="cat.path" span="4 s:2 m:1">
@@ -186,7 +193,7 @@ const features = [
               </div>
               <n-icon><ArrowForwardOutline /></n-icon>
             </div>
-            <p style="font-size: 12px; color: #999; margin: 4px 0 0;">{{ cat.description }}</p>
+            <p style="font-size: 12px; color: #999; margin: 4px 0 0;">{{ getCategoryDescription(cat) }}</p>
           </n-card>
         </router-link>
       </n-gi>
@@ -197,11 +204,11 @@ const features = [
     <n-space justify="center">
       <n-button tag="a" href="https://github.com/saqqdy/js-cool" target="_blank" secondary>
         <template #icon><n-icon><LogoGithub /></n-icon></template>
-        View on GitHub
+        {{ t.viewOnGithub }}
       </n-button>
       <n-button tag="a" href="https://www.npmjs.com/package/js-cool" target="_blank" secondary>
         <template #icon><n-icon><LinkOutline /></n-icon></template>
-        View on npm
+        {{ t.viewOnNpm }}
       </n-button>
     </n-space>
   </div>

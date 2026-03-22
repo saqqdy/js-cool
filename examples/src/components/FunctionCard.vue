@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { NCard, NTag, NButton, NIcon, NCode } from 'naive-ui'
 import { CopyOutline, CheckmarkOutline } from '@vicons/ionicons5'
+import { useI18n } from '@/locales'
 
 interface Props {
   title: string
@@ -18,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   code: '',
 })
 
+const { t } = useI18n()
 const copied = ref(false)
 
 const displayResult = computed(() => {
@@ -54,7 +56,7 @@ const copyCode = async () => {
 
       <!-- Result Display -->
       <div v-if="result !== null" style="margin-bottom: 12px;">
-        <p style="font-size: 12px; color: #999; margin-bottom: 4px;">Result</p>
+        <p style="font-size: 12px; color: #999; margin-bottom: 4px;">{{ t.result }}</p>
         <n-code :code="displayResult" language="json" />
       </div>
 
@@ -66,7 +68,7 @@ const copyCode = async () => {
       <!-- Code Example -->
       <div v-if="code" style="margin-top: 12px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-size: 12px; color: #999;">Example</span>
+          <span style="font-size: 12px; color: #999;">{{ t.example }}</span>
           <n-button text size="tiny" @click="copyCode">
             <template #icon>
               <n-icon>

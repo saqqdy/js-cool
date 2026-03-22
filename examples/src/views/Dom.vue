@@ -3,6 +3,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { NH1, NInput, NButton, NSpace, NCode } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { stopBubble, stopDefault, copy, windowSize } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const copied = ref(false)
 const size = ref({ width: 0, height: 0 })
@@ -45,8 +48,8 @@ const incrementBubble = () => { bubbleCount.value++ }
 
 <template>
   <div>
-    <n-h1>DOM</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">DOM manipulation helpers</p>
+    <n-h1>Dom</n-h1>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Dom }}</p>
 
     <!-- copy -->
     <FunctionCard

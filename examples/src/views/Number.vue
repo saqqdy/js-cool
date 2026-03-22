@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { NH1, NInput, NTag, NSpace, NInputNumber } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { clamp, round, sum, average, inRange, toThousands, fixNumber, getNumber, randomNumber, randomNumbers } from 'js-cool'
+import { useI18n } from '@/locales'
+
+const { t } = useI18n()
 
 const clampVal = ref(150)
 const clampMin = ref(0)
@@ -25,12 +28,12 @@ const randomNumSum = ref(100)
 <template>
   <div>
     <n-h1>Number</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">Number processing utilities</p>
+    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Number }}</p>
 
     <!-- clamp -->
     <FunctionCard
       title="clamp"
-      description="Clamp a number within a range"
+      :description="t.number.clampDesc"
       :code="`clamp(150, 0, 100) // 100
 clamp(-10, 0, 100) // 0`"
     >
@@ -53,7 +56,7 @@ clamp(-10, 0, 100) // 0`"
     <!-- round -->
     <FunctionCard
       title="round"
-      description="Round number to specified decimals"
+      :description="t.number.roundDesc"
       :code="`round(3.14159, 2) // 3.14`"
     >
       <template #input>
@@ -73,7 +76,7 @@ clamp(-10, 0, 100) // 0`"
     <!-- sum / average -->
     <FunctionCard
       title="sum / average"
-      description="Calculate sum and average of array"
+      :description="t.number.sumAvgDesc"
       :code="`sum([1, 2, 3, 4, 5]) // 15
 average([1, 2, 3, 4, 5]) // 3`"
     >
@@ -94,7 +97,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- inRange -->
     <FunctionCard
       title="inRange"
-      description="Check if number is within range"
+      :description="t.number.inRangeDesc"
       :code="`inRange(5, 0, 10) // true`"
     >
       <template #input>
@@ -116,7 +119,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- toThousands -->
     <FunctionCard
       title="toThousands"
-      description="Format number with thousands separator"
+      :description="t.number.toThousandsDesc"
       :code="`toThousands(1234567.89) // '1,234,567.89'`"
     >
       <template #input>
@@ -130,7 +133,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- fixNumber -->
     <FunctionCard
       title="fixNumber"
-      description="Fix number to decimals without trailing zeros"
+      :description="t.number.fixNumberDesc"
       :code="`fixNumber(3.14159, 2) // '3.14'`"
     >
       <template #input>
@@ -150,7 +153,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- getNumber -->
     <FunctionCard
       title="getNumber"
-      description="Extract number from string"
+      :description="t.number.getNumberDesc"
       :code="`getNumber('Chrome123.45') // '123.45'`"
     >
       <template #input>
@@ -164,7 +167,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- randomNumber -->
     <FunctionCard
       title="randomNumber"
-      description="Generate random number in range"
+      :description="t.number.randomNumberDesc"
       :code="`randomNumber(1, 100) // 42 (random)`"
     >
       <template #input>
@@ -184,7 +187,7 @@ average([1, 2, 3, 4, 5]) // 3`"
     <!-- randomNumbers -->
     <FunctionCard
       title="randomNumbers"
-      description="Generate random numbers with fixed sum"
+      :description="t.number.randomNumbersDesc"
       :code="`randomNumbers(4, 100) // [25, 30, 20, 25]`"
     >
       <template #input>
@@ -199,7 +202,7 @@ average([1, 2, 3, 4, 5]) // 3`"
       <template #result>
         <n-space align="center">
           <n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(randomNumbers(randomNumCount, randomNumSum)) }}</n-tag>
-          <span style="font-size: 12px; color: #666;">sum: {{ randomNumSum }}</span>
+          <span style="font-size: 12px; color: #666;">{{ t.number.sum }}: {{ randomNumSum }}</span>
         </n-space>
       </template>
     </FunctionCard>
