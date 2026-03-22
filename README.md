@@ -18,6 +18,14 @@
 
 ---
 
+## Online Playground
+
+Try js-cool directly in your browser with StackBlitz:
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/saqqdy/js-cool/tree/master/examples?terminal=dev)
+
+---
+
 ## Installation
 
 ```bash
@@ -26,9 +34,6 @@ pnpm add js-cool
 
 # npm
 npm install js-cool
-
-# yarn
-yarn add js-cool
 ```
 
 ## Usage

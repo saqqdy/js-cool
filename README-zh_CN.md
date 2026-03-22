@@ -26,9 +26,6 @@ pnpm add js-cool
 
 # npm
 npm install js-cool
-
-# yarn
-yarn add js-cool
 ```
 
 ## 使用
