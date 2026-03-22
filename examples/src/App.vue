@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { NConfigProvider, NLayout, NLayoutSider, NLayoutHeader, NLayoutContent, NMenu, NInput, NButton, NIcon, NDropdown, NTag, darkTheme } from 'naive-ui'
+import { darkTheme, NIcon } from 'naive-ui'
 import type { MenuOption } from 'naive-ui'
 import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'

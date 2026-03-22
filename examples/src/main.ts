@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import naive from 'naive-ui'
 import App from './App.vue'
 import './assets/index.css'
 
@@ -28,4 +27,4 @@ const router = createRouter({
   routes,
 })
 
-createApp(App).use(router).use(naive).mount('#app')
+createApp(App).use(router).mount('#app')
