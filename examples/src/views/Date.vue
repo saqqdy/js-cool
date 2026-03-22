@@ -17,156 +17,222 @@ const yearInput = ref(new Date().getFullYear())
 </script>
 
 <template>
-  <div>
-    <n-h1>Date</n-h1>
-    <p style="color: #666; margin-bottom: 24px;">{{ t.categoriesDesc.Date }}</p>
+	<div>
+		<n-h1>Date</n-h1>
+		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.Date }}</p>
 
-    <!-- formatDate -->
-    <FunctionCard
-      title="formatDate"
-      :description="t.date.formatDesc"
-      since="1.0.0"
-      :code="`formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+		<!-- formatDate -->
+		<FunctionCard
+			title="formatDate"
+			:description="t.date.formatDesc"
+			since="1.0.0"
+			:code="`formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
 formatDate(new Date(), 'YYYY年MM月DD日')
 formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
-    >
-      <template #input>
-        <n-space align="center">
-          <code class="code-inline">formatDate(new Date(), '</code>
-          <n-input v-model:value="formatPattern" style="width: 200px;" />
-          <code class="code-inline">')</code>
-        </n-space>
-      </template>
-      <template #result>
-        <n-space vertical>
-          <n-tag type="info" size="small" :bordered="false">{{ formatDate(new Date(), formatPattern) }}</n-tag>
-          <n-space wrap>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">YYYY-MM-DD</code>
-              <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'YYYY-MM-DD') }}</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">hh:mm A</code>
-              <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'hh:mm A') }}</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">YYYY/MM/DD</code>
-              <n-tag size="small" :bordered="false">{{ formatDate(new Date(), 'YYYY/MM/DD') }}</n-tag>
-            </n-space>
-          </n-space>
-        </n-space>
-      </template>
-    </FunctionCard>
+		>
+			<template #input>
+				<n-space align="center">
+					<code class="code-inline">formatDate(new Date(), '</code>
+					<n-input v-model:value="formatPattern" style="width: 200px" />
+					<code class="code-inline">')</code>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-tag type="info" size="small" :bordered="false">{{
+						formatDate(new Date(), formatPattern)
+					}}</n-tag>
+					<n-space wrap>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">YYYY-MM-DD</code>
+							<n-tag size="small" :bordered="false">{{
+								formatDate(new Date(), 'YYYY-MM-DD')
+							}}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">hh:mm A</code>
+							<n-tag size="small" :bordered="false">{{
+								formatDate(new Date(), 'hh:mm A')
+							}}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">YYYY/MM/DD</code>
+							<n-tag size="small" :bordered="false">{{
+								formatDate(new Date(), 'YYYY/MM/DD')
+							}}</n-tag>
+						</n-space>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
 
-    <!-- dateDiff -->
-    <FunctionCard
-      title="dateDiff"
-      :description="t.date.diffDesc"
-      since="1.0.0"
-      :code="`dateDiff('2024-01-01', '2024-12-31')
+		<!-- dateDiff -->
+		<FunctionCard
+			title="dateDiff"
+			:description="t.date.diffDesc"
+			since="1.0.0"
+			:code="`dateDiff('2024-01-01', '2024-12-31')
 // { days: 365, months: 11, ... }`"
-    >
-      <template #input>
-        <n-space align="center">
-          <input v-model="diffStart" type="date" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 150px;" />
-          <span style="color: #666;">{{ t.date.to }}</span>
-          <input v-model="diffEnd" type="date" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 150px;" />
-        </n-space>
-      </template>
-      <template #result>
-        <pre class="code-block">{{ JSON.stringify(dateDiff(diffStart, diffEnd), null, 2) }}</pre>
-      </template>
-    </FunctionCard>
+		>
+			<template #input>
+				<n-space align="center">
+					<input
+						v-model="diffStart"
+						type="date"
+						style="
+							padding: 4px 8px;
+							border: 1px solid #ddd;
+							border-radius: 4px;
+							width: 150px;
+						"
+					/>
+					<span style="color: #666">{{ t.date.to }}</span>
+					<input
+						v-model="diffEnd"
+						type="date"
+						style="
+							padding: 4px 8px;
+							border: 1px solid #ddd;
+							border-radius: 4px;
+							width: 150px;
+						"
+					/>
+				</n-space>
+			</template>
+			<template #result>
+				<pre class="code-block">{{
+					JSON.stringify(dateDiff(diffStart, diffEnd), null, 2)
+				}}</pre>
+			</template>
+		</FunctionCard>
 
-    <!-- relativeTime -->
-    <FunctionCard
-      title="relativeTime"
-      :description="t.date.relativeDesc"
-      since="5.0.0"
-      :code="`relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
+		<!-- relativeTime -->
+		<FunctionCard
+			title="relativeTime"
+			:description="t.date.relativeDesc"
+			since="5.0.0"
+			:code="`relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
 relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
-    >
-      <template #input>
-        <input v-model="relativeInput" type="datetime-local" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 200px;" />
-      </template>
-      <template #result>
-        <n-space vertical>
-          <n-space align="center">
-            <code class="code-inline">en</code>
-            <n-tag type="info" size="small" :bordered="false">{{ relativeTime(relativeInput) }}</n-tag>
-          </n-space>
-          <n-space align="center">
-            <code class="code-inline">zh</code>
-            <n-tag type="info" size="small" :bordered="false">{{ relativeTime(relativeInput, new Date(), 'zh') }}</n-tag>
-          </n-space>
-          <n-space wrap>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">now - 1min</code>
-              <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 60000)) }}</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">now - 1hr</code>
-              <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 3600000)) }}</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">now - 1day</code>
-              <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() - 86400000)) }}</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline" style="font-size: 11px;">now + 1hr</code>
-              <n-tag size="small" :bordered="false">{{ relativeTime(new Date(Date.now() + 3600000)) }}</n-tag>
-            </n-space>
-          </n-space>
-        </n-space>
-      </template>
-    </FunctionCard>
+		>
+			<template #input>
+				<input
+					v-model="relativeInput"
+					type="datetime-local"
+					style="
+						padding: 4px 8px;
+						border: 1px solid #ddd;
+						border-radius: 4px;
+						width: 200px;
+					"
+				/>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">en</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							relativeTime(relativeInput)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">zh</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							relativeTime(relativeInput, new Date(), 'zh')
+						}}</n-tag>
+					</n-space>
+					<n-space wrap>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">now - 1min</code>
+							<n-tag size="small" :bordered="false">{{
+								relativeTime(new Date(Date.now() - 60000))
+							}}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">now - 1hr</code>
+							<n-tag size="small" :bordered="false">{{
+								relativeTime(new Date(Date.now() - 3600000))
+							}}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">now - 1day</code>
+							<n-tag size="small" :bordered="false">{{
+								relativeTime(new Date(Date.now() - 86400000))
+							}}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline" style="font-size: 11px">now + 1hr</code>
+							<n-tag size="small" :bordered="false">{{
+								relativeTime(new Date(Date.now() + 3600000))
+							}}</n-tag>
+						</n-space>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
 
-    <!-- isToday -->
-    <FunctionCard
-      title="isToday"
-      :description="t.date.isTodayDesc"
-      since="1.0.0"
-      :code="`isToday(new Date()) // true`"
-    >
-      <template #input>
-        <input v-model="todayCheck" type="date" style="padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; width: 150px;" />
-      </template>
-      <template #result>
-        <n-tag size="small" :bordered="false">{{ isToday(todayCheck) }}</n-tag>
-      </template>
-    </FunctionCard>
+		<!-- isToday -->
+		<FunctionCard
+			title="isToday"
+			:description="t.date.isTodayDesc"
+			since="1.0.0"
+			:code="`isToday(new Date()) // true`"
+		>
+			<template #input>
+				<input
+					v-model="todayCheck"
+					type="date"
+					style="
+						padding: 4px 8px;
+						border: 1px solid #ddd;
+						border-radius: 4px;
+						width: 150px;
+					"
+				/>
+			</template>
+			<template #result>
+				<n-tag size="small" :bordered="false">{{ isToday(todayCheck) }}</n-tag>
+			</template>
+		</FunctionCard>
 
-    <!-- getDaysInMonth -->
-    <FunctionCard
-      title="getDaysInMonth"
-      :description="t.date.daysInMonthDesc"
-      since="2.0.0"
-      :code="`getDaysInMonth(2024, 2) // 29 (leap year)
+		<!-- getDaysInMonth -->
+		<FunctionCard
+			title="getDaysInMonth"
+			:description="t.date.daysInMonthDesc"
+			since="2.0.0"
+			:code="`getDaysInMonth(2024, 2) // 29 (leap year)
 getDaysInMonth(2023, 2) // 28`"
-    >
-      <template #input>
-        <n-space align="center">
-          <code class="code-inline">{{ locale === 'zh' ? '年' : 'Year' }}:</code>
-          <n-input-number v-model:value="yearInput" style="width: 100px;" />
-          <code class="code-inline">{{ locale === 'zh' ? '月' : 'Month' }}:</code>
-          <n-input-number v-model:value="monthInput" style="width: 70px;" />
-        </n-space>
-      </template>
-      <template #result>
-        <n-space vertical>
-          <n-tag type="info" size="small" :bordered="false">{{ getDaysInMonth(yearInput, monthInput) }} {{ t.number.days }}</n-tag>
-          <n-space>
-            <n-space align="center">
-              <code class="code-inline">getDaysInMonth(2024, 2)</code>
-              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2024, 2) }} {{ t.number.days }} ({{ t.number.leapYear }})</n-tag>
-            </n-space>
-            <n-space align="center">
-              <code class="code-inline">getDaysInMonth(2023, 2)</code>
-              <n-tag size="small" :bordered="false">{{ getDaysInMonth(2023, 2) }} {{ t.number.days }}</n-tag>
-            </n-space>
-          </n-space>
-        </n-space>
-      </template>
-    </FunctionCard>
-  </div>
+		>
+			<template #input>
+				<n-space align="center">
+					<code class="code-inline">{{ locale === 'zh' ? '年' : 'Year' }}:</code>
+					<n-input-number v-model:value="yearInput" style="width: 100px" />
+					<code class="code-inline">{{ locale === 'zh' ? '月' : 'Month' }}:</code>
+					<n-input-number v-model:value="monthInput" style="width: 70px" />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-tag type="info" size="small" :bordered="false"
+						>{{ getDaysInMonth(yearInput, monthInput) }} {{ t.number.days }}</n-tag
+					>
+					<n-space>
+						<n-space align="center">
+							<code class="code-inline">getDaysInMonth(2024, 2)</code>
+							<n-tag size="small" :bordered="false"
+								>{{ getDaysInMonth(2024, 2) }} {{ t.number.days }} ({{
+									t.number.leapYear
+								}})</n-tag
+							>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline">getDaysInMonth(2023, 2)</code>
+							<n-tag size="small" :bordered="false"
+								>{{ getDaysInMonth(2023, 2) }} {{ t.number.days }}</n-tag
+							>
+						</n-space>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+	</div>
 </template>

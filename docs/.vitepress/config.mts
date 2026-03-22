@@ -201,10 +201,22 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/api/convert/array-buffer-to-base64', text: 'arrayBufferToBase64' },
-								{ link: '/api/convert/base64-to-array-buffer', text: 'base64ToArrayBuffer' },
-								{ link: '/api/convert/array-buffer-to-blob', text: 'arrayBufferToBlob' },
-								{ link: '/api/convert/blob-to-array-buffer', text: 'blobToArrayBuffer' },
+								{
+									link: '/api/convert/array-buffer-to-base64',
+									text: 'arrayBufferToBase64',
+								},
+								{
+									link: '/api/convert/base64-to-array-buffer',
+									text: 'base64ToArrayBuffer',
+								},
+								{
+									link: '/api/convert/array-buffer-to-blob',
+									text: 'arrayBufferToBlob',
+								},
+								{
+									link: '/api/convert/blob-to-array-buffer',
+									text: 'blobToArrayBuffer',
+								},
 								{ link: '/api/convert/blob-to-base64', text: 'blobToBase64' },
 								{ link: '/api/convert/base64-to-blob', text: 'base64ToBlob' },
 								{ link: '/api/convert/file-to-base64', text: 'fileToBase64' },
@@ -450,8 +462,14 @@ export default defineConfig({
 								{ link: '/zh/api/object/is-equal', text: 'isEqual' },
 								{ link: '/zh/api/object/is-empty', text: 'isEmpty' },
 								{ link: '/zh/api/object/is-nil', text: 'isNil' },
-								{ link: '/zh/api/object/is-exits-function', text: 'isExitsFunction' },
-								{ link: '/zh/api/object/is-exits-variable', text: 'isExitsVariable' },
+								{
+									link: '/zh/api/object/is-exits-function',
+									text: 'isExitsFunction',
+								},
+								{
+									link: '/zh/api/object/is-exits-variable',
+									text: 'isExitsVariable',
+								},
 							],
 							text: '类型判断',
 						},
@@ -493,7 +511,10 @@ export default defineConfig({
 								{ link: '/zh/api/dom/stop-bubble', text: 'stopBubble' },
 								{ link: '/zh/api/dom/stop-default', text: 'stopDefault' },
 								{ link: '/zh/api/dom/copy', text: 'copy' },
-								{ link: '/zh/api/dom/get-scroll-position', text: 'getScrollPosition' },
+								{
+									link: '/zh/api/dom/get-scroll-position',
+									text: 'getScrollPosition',
+								},
 								{ link: '/zh/api/dom/window-size', text: 'windowSize' },
 								{ link: '/zh/api/dom/is-dark-mode', text: 'isDarkMode' },
 								{ link: '/zh/api/dom/in-browser', text: 'inBrowser' },
@@ -523,10 +544,22 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/zh/api/convert/array-buffer-to-base64', text: 'arrayBufferToBase64' },
-								{ link: '/zh/api/convert/base64-to-array-buffer', text: 'base64ToArrayBuffer' },
-								{ link: '/zh/api/convert/array-buffer-to-blob', text: 'arrayBufferToBlob' },
-								{ link: '/zh/api/convert/blob-to-array-buffer', text: 'blobToArrayBuffer' },
+								{
+									link: '/zh/api/convert/array-buffer-to-base64',
+									text: 'arrayBufferToBase64',
+								},
+								{
+									link: '/zh/api/convert/base64-to-array-buffer',
+									text: 'base64ToArrayBuffer',
+								},
+								{
+									link: '/zh/api/convert/array-buffer-to-blob',
+									text: 'arrayBufferToBlob',
+								},
+								{
+									link: '/zh/api/convert/blob-to-array-buffer',
+									text: 'blobToArrayBuffer',
+								},
 								{ link: '/zh/api/convert/blob-to-base64', text: 'blobToBase64' },
 								{ link: '/zh/api/convert/base64-to-blob', text: 'base64ToBlob' },
 								{ link: '/zh/api/convert/file-to-base64', text: 'fileToBase64' },
@@ -659,9 +692,7 @@ export default defineConfig({
 			provider: 'local',
 		},
 		siteTitle: 'js-cool',
-		socialLinks: [
-			{ icon: 'github', link: 'https://github.com/saqqdy/js-cool' },
-		],
+		socialLinks: [{ icon: 'github', link: 'https://github.com/saqqdy/js-cool' }],
 	},
 
 	title: 'js-cool',

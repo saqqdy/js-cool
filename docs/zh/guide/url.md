@@ -81,7 +81,51 @@ spliceUrlParam('https://example.com?name=John', { age: 30 })
 
 ## 浏览器信息
 
-### client
+### ua
+
+User-Agent 检测工具，用于浏览器、操作系统、设备和环境检测。
+
+```js
+// 完整导入
+import { ua } from 'js-cool'
+
+// 按需导入（推荐）
+import { isMobile, isTablet } from 'js-cool/ua/device'
+import { isWeChat, isQQ } from 'js-cool/ua/env'
+import { isiOS, isAndroid } from 'js-cool/ua/os'
+import { isChrome, isFirefox } from 'js-cool/ua/browser'
+
+// 快速检查
+ua.isMobile() // true/false
+ua.isTablet() // true/false
+ua.isiOS() // true/false
+ua.isAndroid() // true/false
+ua.isWeChat() // true/false
+ua.isQQ() // true/false
+ua.isMiniProgram() // true/false
+ua.isDarkMode() // true/false
+
+// 获取完整信息
+ua.info
+// { device: {...}, os: {...}, browser: {...}, environment: {...} }
+
+// 获取特定信息
+ua.get('browser') // { name: 'Chrome', version: '120.0', engine: 'Blink' }
+ua.get('os') // { name: 'Windows', version: '10' }
+ua.get('device') // { type: 'desktop', mobile: false, ... }
+
+// 网络和屏幕信息
+ua.getNetwork() // { online: true, type: 'wifi', effectiveType: '4g', ... }
+ua.getScreen() // { width: 1920, height: 1080, pixelRatio: 1, ... }
+```
+
+完整文档请参考 [ua API 参考](/zh/api/url/ua)。
+
+### client <Badge type="danger" text="已废弃" />
+
+::: warning 已废弃
+请使用 `ua` 代替。将在 v7.0.0 中移除
+:::
 
 获取浏览器/客户端信息。
 
@@ -89,20 +133,7 @@ spliceUrlParam('https://example.com?name=John', { age: 30 })
 import { client } from 'js-cool'
 
 client()
-// {
-//   IE: false,
-//   GECKO: true,
-//   WEBKIT: false,
-//   OPERA: false,
-//   TRIDENT: false,
-//   MOBILE: true,
-//   IOS: true,
-//   ANDROID: false,
-//   IPHONE: true,
-//   IPAD: false,
-//   WEIXIN: false,
-//   QQBROWSER: false
-// }
+// { IE: false, GECKO: true, WEBKIT: false, ... }
 
 // 检查特定浏览器
 client('MicroMessenger') // 微信浏览器返回 true

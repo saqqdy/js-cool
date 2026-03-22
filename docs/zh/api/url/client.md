@@ -1,7 +1,7 @@
 # client <Badge type="danger" text="已废弃" /> <Badge type="info" text="v1.0.1" />
 
 ::: warning 已废弃
-将在下一个主要版本中重构
+请使用 `ua` 代替。将在 v7.0.0 中移除
 :::
 
 获取浏览器/客户端信息。
@@ -55,4 +55,20 @@ client()
 // 检查特定浏览器
 client('MicroMessenger') // 是否微信浏览器
 client('Chrome') // 是否 Chrome
+```
+
+## 迁移
+
+请迁移到 [`ua`](/zh/api/url/ua) 以获得更好的 tree-shaking 和更多功能：
+
+```js
+// 旧
+import { client } from 'js-cool'
+const info = client()
+client('MicroMessenger')
+
+// 新
+import { ua } from 'js-cool'
+const info = ua.info
+ua.isWeChat()
 ```

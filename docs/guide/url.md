@@ -81,7 +81,51 @@ spliceUrlParam('https://example.com?name=John', { age: 30 })
 
 ## Browser Info
 
-### client
+### ua
+
+User-Agent detection utility for browser, OS, device, and environment detection.
+
+```js
+// Full import
+import { ua } from 'js-cool'
+
+// Tree-shaking import (recommended)
+import { isMobile, isTablet } from 'js-cool/ua/device'
+import { isWeChat, isQQ } from 'js-cool/ua/env'
+import { isiOS, isAndroid } from 'js-cool/ua/os'
+import { isChrome, isFirefox } from 'js-cool/ua/browser'
+
+// Quick checks
+ua.isMobile() // true/false
+ua.isTablet() // true/false
+ua.isiOS() // true/false
+ua.isAndroid() // true/false
+ua.isWeChat() // true/false
+ua.isQQ() // true/false
+ua.isMiniProgram() // true/false
+ua.isDarkMode() // true/false
+
+// Get full info
+ua.info
+// { device: {...}, os: {...}, browser: {...}, environment: {...} }
+
+// Get specific info
+ua.get('browser') // { name: 'Chrome', version: '120.0', engine: 'Blink' }
+ua.get('os') // { name: 'Windows', version: '10' }
+ua.get('device') // { type: 'desktop', mobile: false, ... }
+
+// Network and screen info
+ua.getNetwork() // { online: true, type: 'wifi', effectiveType: '4g', ... }
+ua.getScreen() // { width: 1920, height: 1080, pixelRatio: 1, ... }
+```
+
+See [ua API Reference](/api/url/ua) for complete documentation.
+
+### client <Badge type="danger" text="deprecated" />
+
+::: warning Deprecated
+Use `ua` instead. Will be removed in v7.0.0
+:::
 
 Get browser/client information.
 
@@ -89,20 +133,7 @@ Get browser/client information.
 import { client } from 'js-cool'
 
 client()
-// {
-//   IE: false,
-//   GECKO: true,
-//   WEBKIT: false,
-//   OPERA: false,
-//   TRIDENT: false,
-//   MOBILE: true,
-//   IOS: true,
-//   ANDROID: false,
-//   IPHONE: true,
-//   IPAD: false,
-//   WEIXIN: false,
-//   QQBROWSER: false
-// }
+// { IE: false, GECKO: true, WEBKIT: false, ... }
 
 // Check specific browser
 client('MicroMessenger') // true if WeChat browser

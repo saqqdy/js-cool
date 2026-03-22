@@ -157,18 +157,19 @@ DOM 操作工具函数 - 13 个
 
 ### URL与浏览器
 
-| 函数                                           | 描述            |
-| ---------------------------------------------- | --------------- |
-| [getUrlParams](/zh/api/url/get-url-params)     | 获取所有URL参数 |
-| [getUrlParam](/zh/api/url/get-url-param)       | 获取单个URL参数 |
-| [parseUrlParam](/zh/api/url/parse-url-param)   | 解析URL参数     |
-| [spliceUrlParam](/zh/api/url/splice-url-param) | 拼接URL参数     |
-| [getDirParam](/zh/api/url/get-dir-param)       | 获取目录参数    |
-| [client](/zh/api/url/client)                   | 客户端检测      |
-| [appVersion](/zh/api/url/app-version)          | APP版本         |
-| [browserVersion](/zh/api/url/browser-version)  | 浏览器版本      |
-| [compareVersion](/zh/api/url/compare-version)  | 版本比较        |
-| [nextVersion](/zh/api/url/next-version)        | 下一版本号      |
+| 函数                                           | 描述                 |
+| ---------------------------------------------- | -------------------- |
+| [getUrlParams](/zh/api/url/get-url-params)     | 获取所有URL参数      |
+| [getUrlParam](/zh/api/url/get-url-param)       | 获取单个URL参数      |
+| [parseUrlParam](/zh/api/url/parse-url-param)   | 解析URL参数          |
+| [spliceUrlParam](/zh/api/url/splice-url-param) | 拼接URL参数          |
+| [getDirParam](/zh/api/url/get-dir-param)       | 获取目录参数         |
+| [ua](/zh/api/url/ua)                           | User-Agent 检测      |
+| [client](/zh/api/url/client)                   | 客户端检测（已废弃） |
+| [appVersion](/zh/api/url/app-version)          | APP版本              |
+| [browserVersion](/zh/api/url/browser-version)  | 浏览器版本           |
+| [compareVersion](/zh/api/url/compare-version)  | 版本比较             |
+| [nextVersion](/zh/api/url/next-version)        | 下一版本号           |
 
 ### DOM
 

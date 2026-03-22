@@ -1,7 +1,7 @@
 # client <Badge type="danger" text="deprecated" /> <Badge type="info" text="since v1.0.1" />
 
 ::: warning Deprecated
-Will be refactored for the next major release
+Use `ua` instead. Will be removed in v7.0.0
 :::
 
 Get browser/client information.
@@ -55,4 +55,20 @@ client()
 // Check specific browser
 client('MicroMessenger') // true if WeChat browser
 client('Chrome') // true if Chrome
+```
+
+## Migration
+
+Migrate to [`ua`](/api/url/ua) for better tree-shaking and more features:
+
+```js
+// Old
+import { client } from 'js-cool'
+const info = client()
+client('MicroMessenger')
+
+// New
+import { ua } from 'js-cool'
+const info = ua.info
+ua.isWeChat()
 ```

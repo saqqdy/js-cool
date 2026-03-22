@@ -177,6 +177,32 @@ ua.isMobile()
 ua.info
 ```
 
+#### Tree-shaking with Subpath Imports
+
+For smaller bundle sizes, import only what you need:
+
+```js
+// Tree-shaking friendly imports
+import { isMobile, isTablet } from 'js-cool/ua/device'
+import { isWeChat, isQQ, isDingtalk } from 'js-cool/ua/env'
+import { isiOS, isAndroid, isHarmonyOS } from 'js-cool/ua/os'
+import { isChrome, isFirefox } from 'js-cool/ua/browser'
+import { isOnline, getNetworkInfo } from 'js-cool/ua/network'
+import { isDarkMode, getScreenInfo } from 'js-cool/ua/screen'
+import type { UAInfo, DeviceInfo } from 'js-cool/ua/types'
+```
+
+| Subpath              | Description                          | Size   |
+| -------------------- | ------------------------------------ | ------ |
+| `js-cool/ua`         | Full UA module                       | ~28KB  |
+| `js-cool/ua/device`  | Device detection                     | ~3.4KB |
+| `js-cool/ua/os`      | OS detection                         | ~3.5KB |
+| `js-cool/ua/browser` | Browser detection                    | ~5.8KB |
+| `js-cool/ua/env`     | Environment detection (Chinese apps) | ~5KB   |
+| `js-cool/ua/network` | Network info                         | ~2KB   |
+| `js-cool/ua/screen`  | Screen info                          | ~3.3KB |
+| `js-cool/ua/types`   | Type definitions                     | -      |
+
 #### API Changes
 
 | Old API (`client`)          | New API (`ua`)          | Notes                     |
