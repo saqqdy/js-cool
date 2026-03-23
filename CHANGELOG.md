@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file.
   - `getDirParam` - use `getDirParams` instead
   - `isDigitals` - removed, use `/^\d*$/.test(str)` instead
   - `pattern` - use `patterns.validation` instead
+  - `trim` - removed, use `String.prototype.trim()` instead
 
 - **Patterns Module Refactoring**: Use `patterns.validation` instead of `pattern`
   - Old: `pattern.email.test('user@example.com')`

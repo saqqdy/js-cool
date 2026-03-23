@@ -115,16 +115,6 @@ mapTemplate(template, { name: 'John', age: 25 })
 
 ## Other
 
-### trim
-
-Trim string (more powerful than native trim).
-
-```js
-import { trim } from 'js-cool'
-
-trim('  hello  ') // 'hello'
-```
-
 ### clearHtml
 
 Remove HTML tags from string.

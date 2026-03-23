@@ -121,7 +121,6 @@ import stopDefault from './stopDefault'
 import svgToBlob from './svgToBlob'
 import toThousands from './toThousands'
 // String extensions, array methods
-import trim from './trim'
 import unescape from './unescape'
 import union from './union'
 import unique from './unique'
@@ -247,7 +246,6 @@ export default {
 	stopDefault,
 	svgToBlob,
 	toThousands,
-	trim,
 	unescape,
 	union,
 	unique,

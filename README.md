@@ -93,7 +93,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 
 | Category          | Description                       | Functions                                                                                                                                                                                                |
 | ----------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                    |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                            |
 | **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
 | **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
@@ -205,19 +205,6 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 ---
 
 ### String
-
-#### trim
-
-Remove whitespace from string ends.
-
-```js
-import { trim } from 'js-cool'
-
-trim('  hello  ') // 'hello'
-trim('\nhello\n') // 'hello'
-trim('\thello\t') // 'hello'
-trim('  hello world  ') // 'hello world'
-```
 
 #### clearAttr
 

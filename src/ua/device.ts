@@ -16,7 +16,7 @@
  */
 
 import type { DeviceInfo, DeviceType } from './types'
-import { DEVICE_PATTERNS, getUserAgent } from './patterns'
+import { DEVICE_PATTERNS, getUserAgent } from '../patterns/ua'
 
 /**
  * Parse device information from user agent

@@ -59,7 +59,6 @@ export default defineConfig({
 								{ link: '/api/string/kebab-case', text: 'kebabCase' },
 								{ link: '/api/string/snake-case', text: 'snakeCase' },
 								{ link: '/api/string/truncate', text: 'truncate' },
-								{ link: '/api/string/trim', text: 'trim' },
 								{ link: '/api/string/clear-html', text: 'clearHtml' },
 								{ link: '/api/string/clear-attr', text: 'clearAttr' },
 								{ link: '/api/string/cut-chs-string', text: 'cutCHSString' },

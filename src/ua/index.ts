@@ -46,16 +46,16 @@ import { parseEnvironment } from './env'
 import { getNetworkInfo } from './network'
 import { parseOS } from './os'
 // Import for internal use
-import { getUserAgent } from './patterns'
+import { getUserAgent } from '../patterns/ua'
 import { isDarkMode as checkDarkMode, getOrientationStatus, getScreenInfo } from './screen'
 
+// Re-export sub-modules for direct import
+export * from '../patterns/ua'
 export * from './browser'
 export * from './device'
 export * from './env'
 export * from './network'
 export * from './os'
-// Re-export sub-modules for direct import
-export * from './patterns'
 export * from './screen'
 
 /**

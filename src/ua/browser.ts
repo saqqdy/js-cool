@@ -14,7 +14,7 @@
  */
 
 import type { BrowserInfo, BrowserName, EngineName } from './types'
-import { BROWSER_PATTERNS, ENGINE_PATTERNS, getUserAgent } from './patterns'
+import { BROWSER_PATTERNS, ENGINE_PATTERNS, getUserAgent } from '../patterns/ua'
 
 /**
  * Detect browser engine

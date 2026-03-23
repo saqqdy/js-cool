@@ -85,7 +85,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 
 | 类别            | 描述                | 函数                                                                                                                                                                                                     |
 | --------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **字符串**      | 字符串处理          | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                    |
+| **字符串**      | 字符串处理          | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                            |
 | **数组**        | 数组处理            | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
 | **对象**        | 对象处理            | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
 | **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
@@ -196,19 +196,6 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 ---
 
 ### 字符串
-
-#### trim
-
-去除字符串首尾空格。
-
-```js
-import { trim } from 'js-cool'
-
-trim('  hello  ') // 'hello'
-trim('\nhello\n') // 'hello'
-trim('\thello\t') // 'hello'
-trim('  hello world  ') // 'hello world'
-```
 
 #### clearAttr
 

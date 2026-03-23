@@ -60,7 +60,6 @@ export default {
 		upperFirstDesc: '首字母大写',
 		kebabSnakeDesc: '转换为短横线或下划线格式',
 		truncateDesc: '截断字符串（支持多种选项）',
-		trimDesc: '去除字符串两端空白',
 		clearHtmlDesc: '移除 HTML 标签或属性',
 		escapeDesc: '转义/反转义 HTML 特殊字符',
 		chsDesc: '处理中文字符（中文=2字节）',

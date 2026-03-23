@@ -9,7 +9,6 @@ import {
 	kebabCase,
 	snakeCase,
 	truncate,
-	trim,
 	clearHtml,
 	clearAttr,
 	escape,
@@ -27,7 +26,6 @@ const dashInput = ref('background-color')
 const upperInput = ref('hello')
 const truncateInput = ref('This is a long string that needs to be truncated')
 const truncateLen = ref(20)
-const trimInput = ref('  hello world  ')
 const htmlInput = ref('<div id="test">Hello <b>World</b></div>')
 const escapeInput = ref('<div>test & "quote"</div>')
 const chsInput = ref('hello世界')
@@ -154,21 +152,6 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 							truncate(truncateInput, { length: truncateLen, separator: ' ' })
 						}}</n-tag>
 					</n-space>
-				</n-space>
-			</template>
-		</FunctionCard>
-
-		<FunctionCard
-			title="trim"
-			:description="t.string.trimDesc"
-			since="1.0.0"
-			:code="`trim('${trimInput}') // '${trim(trimInput)}'`"
-		>
-			<template #input>
-				<n-space align="center">
-					<n-input v-model:value="trimInput" style="width: 200px" />
-					<span style="color: #999">→</span>
-					<n-tag type="info">"{{ trim(trimInput) }}"</n-tag>
 				</n-space>
 			</template>
 		</FunctionCard>

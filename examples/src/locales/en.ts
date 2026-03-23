@@ -63,7 +63,6 @@ export default {
 		upperFirstDesc: 'Capitalize first letter',
 		kebabSnakeDesc: 'Convert strings to kebab-case or snake_case',
 		truncateDesc: 'Truncate string with multiple options',
-		trimDesc: 'Remove whitespace from string ends',
 		clearHtmlDesc: 'Remove HTML tags or attributes',
 		escapeDesc: 'Escape/unescape HTML special characters',
 		chsDesc: 'Handle Chinese characters (Chinese = 2 bytes)',

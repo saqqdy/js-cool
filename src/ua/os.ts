@@ -15,7 +15,7 @@
  */
 
 import type { OSInfo, OSName } from './types'
-import { getUserAgent, OS_PATTERNS } from './patterns'
+import { getUserAgent, OS_PATTERNS } from '../patterns/ua'
 
 /**
  * Parse OS information from user agent

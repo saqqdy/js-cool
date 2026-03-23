@@ -80,7 +80,6 @@ Network utilities - 1 function
 | [kebabCase](/api/string/kebab-case)        | Convert to kebab-case           |
 | [snakeCase](/api/string/snake-case)        | Convert to snake_case           |
 | [truncate](/api/string/truncate)           | Truncate string                 |
-| [trim](/api/string/trim)                   | Trim whitespace                 |
 | [clearHtml](/api/string/clear-html)        | Remove HTML tags                |
 | [clearAttr](/api/string/clear-attr)        | Remove HTML attributes          |
 | [cutCHSString](/api/string/cut-chs-string) | Cut Chinese string              |

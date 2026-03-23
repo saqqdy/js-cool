@@ -8,7 +8,6 @@ export const versions: Record<string, string> = {
 	kebabCase: '1.0.0',
 	snakeCase: '1.0.0',
 	truncate: '1.0.0',
-	trim: '1.0.0',
 	clearHtml: '1.0.0',
 	clearAttr: '1.0.0',
 	escape: '5.5.0',

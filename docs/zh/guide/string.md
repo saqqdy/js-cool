@@ -115,16 +115,6 @@ mapTemplate(template, { name: '张三', age: 25 })
 
 ## 其他
 
-### trim
-
-字符串修剪（比原生 trim 更强大）。
-
-```js
-import { trim } from 'js-cool'
-
-trim('  hello  ') // 'hello'
-```
-
 ### clearHtml
 
 移除 HTML 标签。

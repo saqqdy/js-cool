@@ -15,7 +15,7 @@
  */
 
 import type { EnvironmentInfo } from './types'
-import { ENV_PATTERNS, getUserAgent } from './patterns'
+import { ENV_PATTERNS, getUserAgent } from '../patterns/ua'
 
 /**
  * Parse environment information from user agent

@@ -80,7 +80,6 @@ DOM 操作工具函数 - 13 个
 | [kebabCase](/zh/api/string/kebab-case)        | 转短横线命名   |
 | [snakeCase](/zh/api/string/snake-case)        | 转下划线命名   |
 | [truncate](/zh/api/string/truncate)           | 截断字符串     |
-| [trim](/zh/api/string/trim)                   | 去除空格       |
 | [clearHtml](/zh/api/string/clear-html)        | 清除HTML标签   |
 | [clearAttr](/zh/api/string/clear-attr)        | 清除HTML属性   |
 | [cutCHSString](/zh/api/string/cut-chs-string) | 截取中文字符串 |

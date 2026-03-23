@@ -203,7 +203,6 @@ export { default as sum } from './sum'
 export { default as svgToBlob } from './svgToBlob'
 export { default as throttle, type ThrottleOptions } from './throttle'
 export { default as toThousands } from './toThousands'
-export { default as trim } from './trim'
 
 export { default as truncate, type TruncateOptions } from './truncate'
 // ==================== URL & Browser URL与浏览器 ====================
