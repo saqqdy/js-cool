@@ -222,12 +222,13 @@ Network utilities - 1 function
 
 ### Utility
 
-| Function                                   | Description     |
-| ------------------------------------------ | --------------- |
-| [delay](/api/utility/delay)                | Delay execution |
-| [uuid](/api/utility/uuid)                  | Generate UUID   |
-| [randomString](/api/utility/random-string) | Random string   |
-| [randomNumber](/api/utility/random-number) | Random number   |
+| Function                                   | Description      |
+| ------------------------------------------ | ---------------- |
+| [delay](/api/utility/delay)                | Delay execution  |
+| [uuid](/api/utility/uuid)                  | Generate UUID    |
+| [randomString](/api/utility/random-string) | Random string    |
+| [randomNumber](/api/utility/random-number) | Random number    |
+| [getGlobal](/api/utility/get-global)       | Get global value |
 
 ### Async Flow
 

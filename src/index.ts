@@ -75,6 +75,7 @@ export { default as getCookies } from './getCookies'
 export { default as getDaysInMonth } from './getDaysInMonth'
 export { type DirParamType, default as getDirParam } from './getDirParam'
 export { default as getFileType } from './getFileType'
+export { default as getGlobal } from './getGlobal'
 export { default as getNumber } from './getNumber'
 export { default as getProperty } from './getProperty'
 

@@ -7,6 +7,7 @@ import {
 	randomString,
 	nextIndex,
 	getFileType,
+	getGlobal,
 	fingerprint,
 	inBrowser,
 	inNodeJs,
@@ -76,6 +77,16 @@ const getNextIndex = () => {
 }
 
 const fileTypeInput = ref('document.pdf')
+
+// getGlobal
+const globalPath = ref('JSON.parse')
+const globalResult = computed(() => {
+	const result = getGlobal(globalPath.value)
+	if (result === undefined) return 'undefined'
+	if (typeof result === 'function') return `ƒ ${result.name || 'anonymous'}()`
+	return JSON.stringify(result)
+})
+
 const darkMode = ref(false)
 const envInfo = ref({
 	inBrowser: false,
@@ -190,6 +201,29 @@ getFileType('image.png') // 'image'`"
 		>
 			<template #input>
 				<n-input v-model:value="fileTypeInput" style="width: 200px" />
+			</template>
+		</FunctionCard>
+
+		<!-- getGlobal -->
+		<FunctionCard
+			title="getGlobal"
+			description="Safely get a global value by path (CSP-compliant)"
+			since="6.0.0"
+			:code="`getGlobal('JSON.parse')  // ƒ parse()
+getGlobal('Number')      // ƒ Number()
+getGlobal('console.log') // ƒ log()
+getGlobal('nonExistent') // undefined`"
+		>
+			<template #input>
+				<n-input v-model:value="globalPath" style="width: 200px" placeholder="Enter path..." />
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">getGlobal('{{ globalPath }}')</code>
+						<n-tag type="info" size="small" :bordered="false">{{ globalResult }}</n-tag>
+					</n-space>
+				</n-space>
 			</template>
 		</FunctionCard>
 

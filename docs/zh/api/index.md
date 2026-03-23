@@ -222,12 +222,13 @@ DOM 操作工具函数 - 13 个
 
 ### 工具
 
-| 函数                                          | 描述       |
-| --------------------------------------------- | ---------- |
-| [delay](/zh/api/utility/delay)                | 延迟执行   |
-| [uuid](/zh/api/utility/uuid)                  | 生成UUID   |
-| [randomString](/zh/api/utility/random-string) | 随机字符串 |
-| [randomNumber](/zh/api/utility/random-number) | 随机数     |
+| 函数                                          | 描述         |
+| --------------------------------------------- | ------------ |
+| [delay](/zh/api/utility/delay)                | 延迟执行     |
+| [uuid](/zh/api/utility/uuid)                  | 生成UUID     |
+| [randomString](/zh/api/utility/random-string) | 随机字符串   |
+| [randomNumber](/zh/api/utility/random-number) | 随机数       |
+| [getGlobal](/zh/api/utility/get-global)       | 获取全局变量 |
 
 ### 异步流程
 

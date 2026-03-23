@@ -1,4 +1,4 @@
-import _eval from './_eval'
+import getGlobal from './getGlobal'
 
 /**
  * The presence or absence of the specified function
@@ -23,7 +23,7 @@ import _eval from './_eval'
  * @returns - true if function exists
  */
 function isExitsFunction(name: string): boolean {
-	return typeof _eval(name) === 'function'
+	return typeof getGlobal(name) === 'function'
 }
 
 export default isExitsFunction

@@ -8,15 +8,15 @@
 
 ### 1.1 方法概览
 
-| 方法 | 位置 | 功能 | 状态 |
-|------|------|------|------|
-| `getUrlParams` | `src/getUrlParams.ts` | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常 |
-| `getUrlParam` | `src/getUrlParam.ts` | 获取单个 URL 参数 | ✅ 正常 |
-| `parseUrlParam` | `src/parseUrlParam.ts` | 解析参数字符串为对象 | ✅ 正常 |
-| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串 | ✅ 正常 |
-| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后） | ✅ 正常 |
-| `getQueryParam` | `src/getQueryParam.ts` | 获取单个 hash 参数 | ✅ 正常 |
-| `getDirParam` | `src/getDirParam.ts` | 获取目录路径参数 | ⚠️ 已废弃 |
+| 方法             | 位置                    | 功能                                | 状态      |
+| ---------------- | ----------------------- | ----------------------------------- | --------- |
+| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常   |
+| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常   |
+| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常   |
+| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常   |
+| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常   |
+| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常   |
+| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ⚠️ 已废弃 |
 
 ### 1.2 依赖关系
 
@@ -48,9 +48,7 @@ function parseUrlParam(url: string, covert = false): Record<string, unknown> {
   }
 
   // 提取查询字符串
-  const searchStr = url.includes('?')
-    ? url.slice(url.lastIndexOf('?') + 1)
-    : url
+  const searchStr = url.includes('?') ? url.slice(url.lastIndexOf('?') + 1) : url
 
   // 优先使用原生 API
   if (typeof URLSearchParams !== 'undefined') {
@@ -71,12 +69,12 @@ function parseUrlParam(url: string, covert = false): Record<string, unknown> {
 // 类型转换辅助函数
 function convertValue(value: string): unknown {
   const VALUE_MAP: Record<string, unknown> = {
-    'true': true,
-    'false': false,
-    'null': null,
-    'undefined': undefined,
-    'NaN': Number.NaN,
-    'Infinity': Infinity,
+    true: true,
+    false: false,
+    null: null,
+    undefined: undefined,
+    NaN: Number.NaN,
+    Infinity: Infinity,
     '-Infinity': -Infinity,
   }
 
@@ -90,6 +88,7 @@ function convertValue(value: string): unknown {
 ### 2.2 `getDirParam` 重构为 `getDirParams`
 
 **问题**：
+
 1. 已标记 `@deprecated`
 2. 路径中包含 query string 时处理不正确
 3. 返回结构不够清晰
@@ -104,14 +103,14 @@ getDirParam('https://example.com/api/v1/users?id=123')
 
 **建议重构**：
 
-```typescript
+````typescript
 export interface DirParamsResult {
-  origin: string      // 协议+域名，如 'https://example.com'
-  host: string        // 仅域名，如 'example.com'
-  pathname: string    // 完整路径，如 '/api/v1/users'
-  segments: string[]  // 路径段，如 ['api', 'v1', 'users']
-  query: string       // 查询字符串，如 'id=123'
-  hash: string        // hash 值
+  origin: string // 协议+域名，如 'https://example.com'
+  host: string // 仅域名，如 'example.com'
+  pathname: string // 完整路径，如 '/api/v1/users'
+  segments: string[] // 路径段，如 ['api', 'v1', 'users']
+  query: string // 查询字符串，如 'id=123'
+  hash: string // hash 值
 }
 
 /**
@@ -161,13 +160,13 @@ function getDirParams(url: string): DirParamsResult {
 }
 
 export default getDirParams
-```
+````
 
 ### 2.3 新增 `UrlBuilder` 类
 
 **目的**：提供链式 URL 构建能力，提升开发体验。
 
-```typescript
+````typescript
 // src/UrlBuilder.ts
 
 export interface UrlBuilderOptions {
@@ -223,9 +222,7 @@ class UrlBuilder {
    * 追加路径
    */
   appendPath(...segments: string[]): this {
-    const current = this.url.pathname.endsWith('/')
-      ? this.url.pathname
-      : this.url.pathname + '/'
+    const current = this.url.pathname.endsWith('/') ? this.url.pathname : this.url.pathname + '/'
     this.url.pathname = current + segments.map(encodeURIComponent).join('/')
     return this
   }
@@ -310,7 +307,7 @@ class UrlBuilder {
 }
 
 export default UrlBuilder
-```
+````
 
 ### 2.4 支持 `URL` 对象输入
 
@@ -344,28 +341,23 @@ function getUrlParams(
   }
 
   // 处理字符串
-  const searchStr = url.includes('#')
-    ? url.slice(0, url.indexOf('#'))
-    : url
+  const searchStr = url.includes('#') ? url.slice(0, url.indexOf('#')) : url
 
-  return parseUrlParam(
-    searchStr.slice(searchStr.indexOf('?')),
-    covert
-  )
+  return parseUrlParam(searchStr.slice(searchStr.indexOf('?')), covert)
 }
 ```
 
 ### 2.5 API 命名优化建议
 
-| 当前方法 | 建议 | 原因 |
-|---------|------|------|
-| `parseUrlParam` | `parseQueryString` | 更语义化，明确处理的是 query string |
-| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作 |
-| `getDirParam` | `getDirParams` | 已废弃，新方法返回更多信息 |
+| 当前方法         | 建议               | 原因                                |
+| ---------------- | ------------------ | ----------------------------------- |
+| `parseUrlParam`  | `parseQueryString` | 更语义化，明确处理的是 query string |
+| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作            |
+| `getDirParam`    | `getDirParams`     | 已废弃，新方法返回更多信息          |
 
 **兼容性处理**：
 
-```typescript
+````typescript
 // src/parseQueryString.ts
 import parseUrlParam from './parseUrlParam'
 
@@ -386,15 +378,12 @@ export { parseUrlParam }
  * // { key1: '100', key2: 'true' }
  * ```
  */
-function parseQueryString(
-  str: string,
-  covert = false
-): Record<string, unknown> {
+function parseQueryString(str: string, covert = false): Record<string, unknown> {
   return parseUrlParam(str, covert)
 }
 
 export default parseQueryString
-```
+````
 
 ---
 
@@ -426,10 +415,10 @@ describe('parseUrlParam benchmark', () => {
 
 ### 3.2 性能对比预期
 
-| 方法 | 实现 | 性能 |
-|------|------|------|
-| `parseUrlParam` | 正则 replace | 基准 |
-| `URLSearchParams` | 原生 API | ~2-3x 更快 |
+| 方法              | 实现         | 性能       |
+| ----------------- | ------------ | ---------- |
+| `parseUrlParam`   | 正则 replace | 基准       |
+| `URLSearchParams` | 原生 API     | ~2-3x 更快 |
 
 ### 3.3 `getUrlParam` 单值获取优化
 
@@ -454,9 +443,7 @@ function getUrlParam(key: string, url?: string): string | undefined {
     }
     searchStr = location.search
   } else {
-    searchStr = url.includes('#')
-      ? url.slice(0, url.indexOf('#'))
-      : url
+    searchStr = url.includes('#') ? url.slice(0, url.indexOf('#')) : url
     searchStr = searchStr.slice(searchStr.indexOf('?'))
   }
 
@@ -536,28 +523,28 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### Phase 1: 新增功能（v6.1）
 
-| 任务 | 优先级 | 预估工时 |
-|------|--------|----------|
-| 新增 `UrlBuilder` 类 | P1 | 0.5 天 |
-| 新增 `getDirParams` 方法 | P1 | 0.5 天 |
-| 支持 `URL` 对象输入 | P2 | 0.5 天 |
+| 任务                     | 优先级 | 预估工时 |
+| ------------------------ | ------ | -------- |
+| 新增 `UrlBuilder` 类     | P1     | 0.5 天   |
+| 新增 `getDirParams` 方法 | P1     | 0.5 天   |
+| 支持 `URL` 对象输入      | P2     | 0.5 天   |
 
 ### Phase 2: 性能优化（v6.2）
 
-| 任务 | 优先级 | 预估工时 |
-|------|--------|----------|
-| 使用 `URLSearchParams` 优化 | P1 | 1 天 |
-| 单值获取方法优化 | P2 | 0.5 天 |
-| 性能基准测试 | P3 | 0.5 天 |
+| 任务                        | 优先级 | 预估工时 |
+| --------------------------- | ------ | -------- |
+| 使用 `URLSearchParams` 优化 | P1     | 1 天     |
+| 单值获取方法优化            | P2     | 0.5 天   |
+| 性能基准测试                | P3     | 0.5 天   |
 
 ### Phase 3: API 重命名（v7.0）
 
-| 任务 | 优先级 | 预估工时 |
-|------|--------|----------|
-| `parseUrlParam` → `parseQueryString` | P2 | 0.5 天 |
-| `spliceUrlParam` → `buildQueryString` | P2 | 0.5 天 |
-| 移除 `getDirParam` 废弃方法 | P3 | 0.5 天 |
-| 更新文档和迁移指南 | P2 | 1 天 |
+| 任务                                  | 优先级 | 预估工时 |
+| ------------------------------------- | ------ | -------- |
+| `parseUrlParam` → `parseQueryString`  | P2     | 0.5 天   |
+| `spliceUrlParam` → `buildQueryString` | P2     | 0.5 天   |
+| 移除 `getDirParam` 废弃方法           | P3     | 0.5 天   |
+| 更新文档和迁移指南                    | P2     | 1 天     |
 
 ---
 
@@ -579,16 +566,16 @@ import { getDirParam, parseUrlParam, spliceUrlParam } from 'js-cool'
 import { getDirParams, parseQueryString, buildQueryString } from 'js-cool'
 
 // getDirParam → getDirParams
-const { host, path } = getDirParam(url)      // 旧
+const { host, path } = getDirParam(url) // 旧
 const { origin, segments } = getDirParams(url) // 新
 
 // parseUrlParam → parseQueryString
-const params = parseUrlParam('?a=1&b=2')       // 旧
-const params = parseQueryString('?a=1&b=2')   // 新
+const params = parseUrlParam('?a=1&b=2') // 旧
+const params = parseQueryString('?a=1&b=2') // 新
 
 // spliceUrlParam → buildQueryString
-const str = spliceUrlParam({ a: 1 })          // 旧
-const str = buildQueryString({ a: 1 })        // 新
+const str = spliceUrlParam({ a: 1 }) // 旧
+const str = buildQueryString({ a: 1 }) // 新
 ```
 
 ---
