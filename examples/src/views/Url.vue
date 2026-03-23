@@ -7,7 +7,7 @@ import {
 	getUrlParam,
 	parseUrlParam,
 	spliceUrlParam,
-	getDirParam,
+	getDirParams,
 	appVersion,
 	browserVersion,
 	osVersion,
@@ -131,19 +131,26 @@ spliceUrlParam({ name: 'John', age: 25 })
 			</template>
 		</FunctionCard>
 
-		<!-- getDirParam -->
+		<!-- getDirParams -->
 		<FunctionCard
-			title="getDirParam"
-			description="Get directory-style URL params"
-			since="1.0.0"
-			:code="`getDirParam('https://example.com/user/123/profile')
-// { 0: 'user', 1: '123', 2: 'profile' }`"
+			title="getDirParams"
+			description="Parse URL path information into structured components"
+			since="6.0.0"
+			:code="`getDirParams('https://example.com/user/123/profile')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   pathname: '/user/123/profile',
+//   segments: ['user', '123', 'profile'],
+//   query: '',
+//   hash: ''
+// }`"
 		>
 			<template #input>
 				<n-input v-model:value="dirUrl" style="width: 100%" />
 			</template>
 			<template #result>
-				<pre class="code-block">{{ JSON.stringify(getDirParam(dirUrl), null, 2) }}</pre>
+				<pre class="code-block">{{ JSON.stringify(getDirParams(dirUrl), null, 2) }}</pre>
 			</template>
 		</FunctionCard>
 

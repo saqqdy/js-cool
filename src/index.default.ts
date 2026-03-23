@@ -55,7 +55,7 @@ import getCHSLength from './getCHSLength'
 import getCookie from './getCookie'
 import getCookies from './getCookies'
 
-import getDirParam from './getDirParam'
+import getDirParams from './getDirParams'
 import getFileType from './getFileType'
 import getNumber from './getNumber'
 import getProperty from './getProperty'
@@ -74,8 +74,6 @@ import intersect from './intersect'
 import isArray from './isArray'
 import isDarkMode from './isDarkMode'
 import isDate from './isDate'
-// Get the status of
-import isDigitals from './isDigitals'
 
 import isEqual from './isEqual'
 import isExitsFunction from './isExitsFunction'
@@ -185,7 +183,7 @@ export default {
 	getCHSLength,
 	getCookie,
 	getCookies,
-	getDirParam,
+	getDirParams,
 	getFileType,
 	getNumber,
 	getProperty,
@@ -202,7 +200,6 @@ export default {
 	isArray,
 	isDarkMode,
 	isDate,
-	isDigitals,
 	isEqual,
 	isExitsFunction,
 	isExitsVariable,

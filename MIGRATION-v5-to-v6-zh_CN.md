@@ -90,10 +90,11 @@ v6.x 使用正确的条件导出：
 
 ### 4. 移除废弃函数
 
-| 已移除            | 替代方案       |
-| ----------------- | -------------- |
-| `getAppVersion()` | `appVersion()` |
-| `getOsVersion()`  | `osVersion()`  |
+| 已移除            | 替代方案         |
+| ----------------- | ---------------- |
+| `getAppVersion()` | `appVersion()`   |
+| `getOsVersion()`  | `osVersion()`    |
+| `getDirParam()`   | `getDirParams()` |
 
 ### 5. 移除 `client` 模块
 
@@ -511,6 +512,90 @@ import type { ClientInfo } from 'js-cool'
 
 // 之后
 import type { UAInfo } from 'js-cool'
+```
+
+---
+
+## 迁移：`getDirParam` → `getDirParams`
+
+### 为什么要改？
+
+`getDirParam` 函数已被完全重写为 `getDirParams`，具有以下优势：
+
+- **更好的结构** - 返回结构化的 URL 组成部分，而非索引对象
+- **更多信息** - 包含 origin、host、hostname、pathname、query、hash
+- **正确处理 query/hash** - 正确分离查询字符串和 hash
+- **IE11 兼容** - 使用原生 URL API，不支持时自动降级到正则
+
+### API 对比
+
+```js
+// v5.x（已废弃）
+import { getDirParam } from 'js-cool'
+
+const result = getDirParam('https://example.com/user/123/profile')
+// { host: 'https://example.com', path: ['user', '123', 'profile'] }
+
+// v6.x
+import { getDirParams } from 'js-cool'
+
+const result = getDirParams('https://example.com/user/123/profile')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/user/123/profile',
+//   segments: ['user', '123', 'profile'],
+//   query: '',
+//   hash: ''
+// }
+```
+
+### 返回值映射
+
+| 旧 (`getDirParam`) | 新 (`getDirParams`) | 说明                 |
+| ------------------ | ------------------- | -------------------- |
+| `host`             | `origin`            | 现在包含协议         |
+| -                  | `host`              | 新增：主机名 + 端口  |
+| -                  | `hostname`          | 新增：仅主机名       |
+| -                  | `pathname`          | 新增：完整路径字符串 |
+| `path`             | `segments`          | 重命名               |
+| -                  | `query`             | 新增：查询字符串     |
+| -                  | `hash`              | 新增：hash 值        |
+
+### 迁移示例
+
+```js
+// v5.x - 获取路径段
+const { path } = getDirParam(url)
+const firstSegment = path[0]
+
+// v6.x - 获取路径段
+const { segments } = getDirParams(url)
+const firstSegment = segments[0]
+
+// v5.x - 获取主机
+const { host } = getDirParam(url)
+
+// v6.x - 获取 origin（包含协议）
+const { origin } = getDirParams(url)
+
+// v6.x - 新功能
+const { query, hash, hostname, pathname } = getDirParams(url)
+```
+
+### 修复的问题
+
+旧的 `getDirParam` 会错误地将 query string 混入最后一个路径段：
+
+```js
+// v5.x - Bug：query string 混入路径
+getDirParam('https://example.com/api/users?id=123')
+// { host: 'https://example.com', path: ['api', 'users?id=123'] }
+
+// v6.x - 已修复：query string 正确分离
+getDirParams('https://example.com/api/users?id=123')
+// { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
 ```
 
 ---

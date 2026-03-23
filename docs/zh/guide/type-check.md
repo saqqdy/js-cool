@@ -151,20 +151,6 @@ isEqual(NaN, NaN) // true
 isEqual(0, -0) // false
 ```
 
-## 字符串检查
-
-### isDigitals
-
-检查字符串是否只包含数字。
-
-```js
-import { isDigitals } from 'js-cool'
-
-isDigitals('12345') // true
-isDigitals('123.45') // false
-isDigitals('abc') // false
-```
-
 ## 正则模式
 
 js-cool 提供了常用正则模式对象：

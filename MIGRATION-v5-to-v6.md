@@ -515,6 +515,90 @@ import type { UAInfo } from 'js-cool'
 
 ---
 
+## Migration: `getDirParam` → `getDirParams`
+
+### Why the Change?
+
+The `getDirParam` function has been completely rewritten as `getDirParams` with:
+
+- **Better structure** - Returns structured URL components instead of indexed object
+- **More information** - Includes origin, host, hostname, pathname, query, hash
+- **Correct query/hash handling** - Properly separates query string and hash from path
+- **IE11 compatible** - Uses native URL API with regex fallback
+
+### API Comparison
+
+```js
+// v5.x (deprecated)
+import { getDirParam } from 'js-cool'
+
+const result = getDirParam('https://example.com/user/123/profile')
+// { host: 'https://example.com', path: ['user', '123', 'profile'] }
+
+// v6.x
+import { getDirParams } from 'js-cool'
+
+const result = getDirParams('https://example.com/user/123/profile')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/user/123/profile',
+//   segments: ['user', '123', 'profile'],
+//   query: '',
+//   hash: ''
+// }
+```
+
+### Return Value Mapping
+
+| Old (`getDirParam`) | New (`getDirParams`) | Notes                      |
+| ------------------- | -------------------- | -------------------------- |
+| `host`              | `origin`             | Now includes protocol      |
+| -                   | `host`               | New: hostname + port       |
+| -                   | `hostname`           | New: hostname only         |
+| -                   | `pathname`           | New: full path string      |
+| `path`              | `segments`           | Renamed                    |
+| -                   | `query`              | New: query string (no `?`) |
+| -                   | `hash`               | New: hash value (no `#`)   |
+
+### Migration Examples
+
+```js
+// v5.x - Getting path segments
+const { path } = getDirParam(url)
+const firstSegment = path[0]
+
+// v6.x - Getting path segments
+const { segments } = getDirParams(url)
+const firstSegment = segments[0]
+
+// v5.x - Getting host
+const { host } = getDirParam(url)
+
+// v6.x - Getting origin (includes protocol)
+const { origin } = getDirParams(url)
+
+// v6.x - New features
+const { query, hash, hostname, pathname } = getDirParams(url)
+```
+
+### Fixed Issues
+
+The old `getDirParam` incorrectly included query string in the last path segment:
+
+```js
+// v5.x - Bug: query string mixed into path
+getDirParam('https://example.com/api/users?id=123')
+// { host: 'https://example.com', path: ['api', 'users?id=123'] }
+
+// v6.x - Fixed: query string properly separated
+getDirParams('https://example.com/api/users?id=123')
+// { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
+```
+
+---
+
 ## Need Help?
 
 - **GitHub Issues:** [https://github.com/saqqdy/js-cool/issues](https://github.com/saqqdy/js-cool/issues)

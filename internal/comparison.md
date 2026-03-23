@@ -463,7 +463,6 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `isRegExp`      | 正则判断            | `_.isRegExp`      |
 | `isWindow`      | window 判断         | -                 |
 | `isIterable`    | 可迭代判断          | -                 |
-| `isDigitals`    | 数字字符串判断      | -                 |
 | `isEqual`       | 深度相等            | `_.isEqual`       |
 | `isEmpty`       | 空值判断            | `_.isEmpty`       |
 | `isNil`         | null/undefined 判断 | `_.isNil`         |

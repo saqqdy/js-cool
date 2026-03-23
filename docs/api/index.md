@@ -140,7 +140,6 @@ Network utilities - 1 function
 | [isRegExp](/api/object/is-reg-exp)           | Check if regexp         |
 | [isWindow](/api/object/is-window)            | Check if window         |
 | [isIterable](/api/object/is-iterable)        | Check if iterable       |
-| [isDigitals](/api/object/is-digitals)        | Check if digitals       |
 | [isEqual](/api/object/is-equal)              | Check if equal          |
 | [isEmpty](/api/object/is-empty)              | Check if empty          |
 | [isNil](/api/object/is-nil)                  | Check if null/undefined |
@@ -163,7 +162,7 @@ Network utilities - 1 function
 | [getUrlParam](/api/url/get-url-param)       | Get single URL param |
 | [parseUrlParam](/api/url/parse-url-param)   | Parse URL params     |
 | [spliceUrlParam](/api/url/splice-url-param) | Splice URL params    |
-| [getDirParam](/api/url/get-dir-param)       | Get directory params |
+| [getDirParams](/api/url/get-dir-params)     | Get directory params |
 | [ua](/api/url/ua)                           | User-Agent detection |
 | [appVersion](/api/url/app-version)          | App version          |
 | [browserVersion](/api/url/browser-version)  | Browser version      |

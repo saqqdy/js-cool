@@ -140,7 +140,6 @@ DOM 操作工具函数 - 13 个
 | [isRegExp](/zh/api/object/is-reg-exp)           | 是否正则           |
 | [isWindow](/zh/api/object/is-window)            | 是否window         |
 | [isIterable](/zh/api/object/is-iterable)        | 是否可迭代         |
-| [isDigitals](/zh/api/object/is-digitals)        | 是否数字串         |
 | [isEqual](/zh/api/object/is-equal)              | 是否相等           |
 | [isEmpty](/zh/api/object/is-empty)              | 是否为空           |
 | [isNil](/zh/api/object/is-nil)                  | 是否null/undefined |
@@ -163,7 +162,7 @@ DOM 操作工具函数 - 13 个
 | [getUrlParam](/zh/api/url/get-url-param)       | 获取单个URL参数 |
 | [parseUrlParam](/zh/api/url/parse-url-param)   | 解析URL参数     |
 | [spliceUrlParam](/zh/api/url/splice-url-param) | 拼接URL参数     |
-| [getDirParam](/zh/api/url/get-dir-param)       | 获取目录参数    |
+| [getDirParams](/zh/api/url/get-dir-params)     | 获取目录参数    |
 | [ua](/zh/api/url/ua)                           | User-Agent 检测 |
 | [appVersion](/zh/api/url/app-version)          | APP版本         |
 | [browserVersion](/zh/api/url/browser-version)  | 浏览器版本      |

@@ -96,9 +96,9 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                    |
 | **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
 | **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
-| **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil`                                                           |
+| **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
-| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                   |
+| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
 | **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
@@ -708,16 +708,7 @@ searchObject(tree, item => item.id > 2, {
 ### Type Checking
 
 ```js
-import {
-  isArray,
-  isDate,
-  isDigitals,
-  isIterable,
-  isObject,
-  isPlainObject,
-  isRegExp,
-  isWindow,
-} from 'js-cool'
+import { isArray, isDate, isIterable, isObject, isPlainObject, isRegExp, isWindow } from 'js-cool'
 
 // isArray
 isArray([1, 2, 3]) // true
@@ -757,12 +748,6 @@ isIterable(new Set()) // true
 isIterable(new Map()) // true
 isIterable({}) // false
 isIterable(null) // false
-
-// isDigitals
-isDigitals('12345') // true
-isDigitals('12.34') // true
-isDigitals('-123') // true
-isDigitals('12a34') // false
 ```
 
 ---
@@ -952,18 +937,46 @@ getQueryParams('#/?a=1&b=true', true)
 // { a: 1, b: true }
 ```
 
-#### getDirParam
+#### getDirParams
 
-Get directory-style URL params.
+Get directory-style URL params with structured result.
 
 ```js
-import { getDirParam } from 'js-cool'
+import { getDirParams } from 'js-cool'
 
-getDirParam('https://example.com/a/b/c')
-// { 0: 'a', 1: 'b', 2: 'c' }
+getDirParams('https://example.com/a/b/c')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/a/b/c',
+//   segments: ['a', 'b', 'c'],
+//   query: '',
+//   hash: ''
+// }
 
-getDirParam('/user/123/profile')
-// { 0: 'user', 1: '123', 2: 'profile' }
+getDirParams('/user/123/profile')
+// {
+//   origin: '',
+//   host: '',
+//   hostname: '',
+//   pathname: '/user/123/profile',
+//   segments: ['user', '123', 'profile'],
+//   query: '',
+//   hash: ''
+// }
+
+// With query and hash
+getDirParams('https://example.com/api/users?id=123#section')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/api/users',
+//   segments: ['api', 'users'],
+//   query: 'id=123',
+//   hash: 'section'
+// }
 ```
 
 ---

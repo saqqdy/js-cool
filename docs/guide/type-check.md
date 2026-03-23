@@ -151,20 +151,6 @@ isEqual(NaN, NaN) // true
 isEqual(0, -0) // false
 ```
 
-## String Checks
-
-### isDigitals
-
-Check if string contains only digits.
-
-```js
-import { isDigitals } from 'js-cool'
-
-isDigitals('12345') // true
-isDigitals('123.45') // false
-isDigitals('abc') // false
-```
-
 ## Pattern Matching
 
 js-cool provides a pattern object with common regex patterns:

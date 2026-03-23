@@ -72,7 +72,6 @@ export const versions: Record<string, string> = {
 	isURL: '1.0.0',
 	isIDCard: '1.0.0',
 	isCreditCard: '5.0.0',
-	isDigitals: '1.0.0',
 
 	// Url
 	getUrlParams: '1.0.0',

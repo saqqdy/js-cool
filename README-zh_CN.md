@@ -88,9 +88,9 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **字符串**      | 字符串处理          | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `trim`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                    |
 | **数组**        | 数组处理            | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
 | **对象**        | 对象处理            | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
-| **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil`                                                           |
+| **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
 | **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
-| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                   |
+| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
 | **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
@@ -699,16 +699,7 @@ searchObject(tree, item => item.id > 2, {
 ### 类型判断
 
 ```js
-import {
-  isArray,
-  isDate,
-  isDigitals,
-  isIterable,
-  isObject,
-  isPlainObject,
-  isRegExp,
-  isWindow,
-} from 'js-cool'
+import { isArray, isDate, isIterable, isObject, isPlainObject, isRegExp, isWindow } from 'js-cool'
 
 // isArray
 isArray([1, 2, 3]) // true
@@ -748,12 +739,6 @@ isIterable(new Set()) // true
 isIterable(new Map()) // true
 isIterable({}) // false
 isIterable(null) // false
-
-// isDigitals
-isDigitals('12345') // true
-isDigitals('12.34') // true
-isDigitals('-123') // true
-isDigitals('12a34') // false
 ```
 
 ---
@@ -943,18 +928,46 @@ getQueryParams('#/?a=1&b=true', true)
 // { a: 1, b: true }
 ```
 
-#### getDirParam
+#### getDirParams
 
-获取目录形式 URL 参数。
+获取目录形式 URL 参数，返回结构化结果。
 
 ```js
-import { getDirParam } from 'js-cool'
+import { getDirParams } from 'js-cool'
 
-getDirParam('https://example.com/a/b/c')
-// { 0: 'a', 1: 'b', 2: 'c' }
+getDirParams('https://example.com/a/b/c')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/a/b/c',
+//   segments: ['a', 'b', 'c'],
+//   query: '',
+//   hash: ''
+// }
 
-getDirParam('/user/123/profile')
-// { 0: 'user', 1: '123', 2: 'profile' }
+getDirParams('/user/123/profile')
+// {
+//   origin: '',
+//   host: '',
+//   hostname: '',
+//   pathname: '/user/123/profile',
+//   segments: ['user', '123', 'profile'],
+//   query: '',
+//   hash: ''
+// }
+
+// 带 query 和 hash
+getDirParams('https://example.com/api/users?id=123#section')
+// {
+//   origin: 'https://example.com',
+//   host: 'example.com',
+//   hostname: 'example.com',
+//   pathname: '/api/users',
+//   segments: ['api', 'users'],
+//   query: 'id=123',
+//   hash: 'section'
+// }
 ```
 
 ---

@@ -28,6 +28,8 @@ All notable changes to this project will be documented in this file.
 - **Deprecated Functions Removed**:
   - `getAppVersion` - use `appVersion` instead
   - `getOsVersion` - use `osVersion` instead
+  - `getDirParam` - use `getDirParams` instead
+  - `isDigitals` - removed, use `/^\d*$/.test(str)` instead
 
 ### 🚀 Features
 
@@ -110,6 +112,7 @@ import jsCool from 'js-cool'
   - `debounce` - Debounce function
   - `throttle` - Throttle function
   - `retry` - Retry async function
+  - `getDirParams` - Parse URL path info (replaces `getDirParam`)
 
 ### Changed
 
