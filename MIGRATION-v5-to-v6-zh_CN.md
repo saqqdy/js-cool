@@ -96,6 +96,24 @@ v6.x 使用正确的条件导出：
 | `getOsVersion()`  | `osVersion()`    |
 | `getDirParam()`   | `getDirParams()` |
 
+### 5. 移除 `pattern` 对象
+
+`pattern` 对象已被移除，替换为新的 `patterns` 模块。
+
+```js
+// v5.x（已移除）
+import { pattern } from 'js-cool'
+pattern.email.test('user@example.com')
+
+// v6.x
+import { patterns, validation } from 'js-cool'
+patterns.validation.email.test('user@example.com')
+// 或
+validation.email.test('user@example.com')
+```
+
+详见 [迁移：`pattern` → `patterns`](#迁移pattern--patterns)。
+
 ### 5. 移除 `client` 模块
 
 `client` 模块已被完全移除，替换为 `ua`。
@@ -596,6 +614,172 @@ getDirParam('https://example.com/api/users?id=123')
 // v6.x - 已修复：query string 正确分离
 getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
+```
+
+---
+
+## 迁移：`pattern` → `patterns`
+
+### 为什么要改？
+
+`pattern` 对象已被移除，替换为新的统一 `patterns` 模块：
+
+- **更好的组织** - 分离为 `validation` 和 `ua` 两个类别
+- **更多模式** - 新增 `idCard`、`hexColor`，改进 `mobile`、`qq`
+- **UA 模式** - 直接访问设备、浏览器、操作系统检测模式
+- **工具函数** - `getUserAgent`、`matchPattern`、`extractVersion`
+- **TypeScript 支持** - 完整的模式名称类型定义
+
+### API 对比
+
+```js
+// v5.x（已移除）
+import { pattern } from 'js-cool'
+
+pattern.email.test('user@example.com')
+pattern.mobile.test('13800138000')
+pattern.url.test('https://example.com')
+
+// v6.x
+import { patterns, validation } from 'js-cool'
+
+// 使用 patterns 对象
+patterns.validation.email.test('user@example.com')
+patterns.validation.mobile.test('13800138000')
+patterns.validation.url.test('https://example.com')
+
+// 或直接导入
+validation.email.test('user@example.com')
+validation.mobile.test('13800138000')
+```
+
+### 模式名称映射
+
+| 旧 (`pattern`) | 新 (`validation`) | 说明                    |
+| -------------- | ----------------- | ----------------------- |
+| `any`          | `any`             | 不变                    |
+| `email`        | `email`           | 不变                    |
+| `mobile`       | `mobile`          | 更新：支持 1[3-9]xxx... |
+| `url`          | `url`             | 不变                    |
+| `number`       | `number`          | 不变                    |
+| `chinese`      | `chinese`         | 不变                    |
+| `ip4`          | `ipv4`            | 重命名                  |
+| `ip4_pri`      | `ipv4Private`     | 重命名                  |
+| `mac`          | `mac`             | 不变                    |
+| `qq`           | `qq`              | 更新：支持 5-14 位      |
+| `pass`         | `password`        | 重命名                  |
+| `postcode`     | `postcode`        | 不变                    |
+| `username`     | `username`        | 不变                    |
+| `tel`          | `tel`             | 不变                    |
+| `json`         | `json`            | 不变                    |
+| `array`        | `array`           | 不变                    |
+| `arrjson`      | `arrjson`         | 不变                    |
+| `isjson`       | `jsonLike`        | 重命名                  |
+| `float`        | `float`           | 不变                    |
+| `string`       | `string`          | 不变                    |
+| `textarea`     | `textarea`        | 不变                    |
+| -              | `idCard`          | **新增**：中国身份证    |
+| -              | `hexColor`        | **新增**：十六进制颜色  |
+
+### 新功能
+
+#### UA 检测模式
+
+```js
+import { DEVICE_PATTERNS, BROWSER_PATTERNS, OS_PATTERNS, ENV_PATTERNS } from 'js-cool'
+
+// 设备检测
+DEVICE_PATTERNS.mobile.test(navigator.userAgent)
+DEVICE_PATTERNS.tablet.test(navigator.userAgent)
+DEVICE_PATTERNS.iphone.test(navigator.userAgent)
+
+// 浏览器检测
+BROWSER_PATTERNS.chrome.test(navigator.userAgent)
+BROWSER_PATTERNS.firefox.test(navigator.userAgent)
+BROWSER_PATTERNS.safari.test(navigator.userAgent)
+
+// 操作系统检测
+OS_PATTERNS.windows.test(navigator.userAgent)
+OS_PATTERNS.macOS.test(navigator.userAgent)
+OS_PATTERNS.harmonyOS.test(navigator.userAgent)
+
+// 环境检测（国产应用）
+ENV_PATTERNS.wechat.test(navigator.userAgent)
+ENV_PATTERNS.dingtalk.test(navigator.userAgent)
+ENV_PATTERNS.miniProgram.test(navigator.userAgent)
+```
+
+#### 工具函数
+
+```js
+import { getUA, matchPattern, extractVersion } from 'js-cool'
+
+// 安全获取 UA 字符串
+const ua = getUA()
+
+// 检查模式是否存在
+matchPattern(ua, /Chrome/i) // true/false
+
+// 提取版本号
+extractVersion(ua, /Chrome\/(\d+\.?\d*)/i) // '91.0'
+```
+
+### 迁移示例
+
+```js
+// v5.x - 邮箱验证
+if (pattern.email.test(email)) {
+  /* ... */
+}
+
+// v6.x - 邮箱验证
+if (validation.email.test(email)) {
+  /* ... */
+}
+
+// v5.x - 中国手机号
+if (pattern.mobile.test(phone)) {
+  /* ... */
+}
+
+// v6.x - 中国手机号（改进的正则）
+if (validation.mobile.test(phone)) {
+  /* ... */
+}
+
+// v5.x - IPv4
+if (pattern.ip4.test(ip)) {
+  /* ... */
+}
+
+// v6.x - IPv4（重命名）
+if (validation.ipv4.test(ip)) {
+  /* ... */
+}
+
+// v5.x - 密码
+if (pattern.pass.test(password)) {
+  /* ... */
+}
+
+// v6.x - 密码（重命名）
+if (validation.password.test(password)) {
+  /* ... */
+}
+```
+
+### TypeScript 类型
+
+```ts
+// v6.x - 新增类型导出
+import type {
+  ValidationPatternName,
+  DevicePatternName,
+  OSPatternName,
+  BrowserPatternName,
+  EnginePatternName,
+  EnvPatternName,
+} from 'js-cool'
 ```
 
 ---

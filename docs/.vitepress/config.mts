@@ -274,7 +274,7 @@ export default defineConfig({
 								{ link: '/api/utility/random-number', text: 'randomNumber' },
 								{ link: '/api/array/random-numbers', text: 'randomNumbers' },
 								{ link: '/api/utility/next-index', text: 'nextIndex' },
-								{ link: '/api/utility/pattern', text: 'pattern' },
+								{ link: '/api/utility/patterns', text: 'patterns' },
 								{ link: '/api/utility/promise-factory', text: 'promiseFactory' },
 								{ link: '/api/utility/punctual-timer', text: 'punctualTimer' },
 								{ link: '/api/utility/get-file-type', text: 'getFileType' },

@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2025-03-22
+## [6.0.0] - 2025-03-23
 
 ### ⚠️ BREAKING CHANGES
 
@@ -30,12 +30,62 @@ All notable changes to this project will be documented in this file.
   - `getOsVersion` - use `osVersion` instead
   - `getDirParam` - use `getDirParams` instead
   - `isDigitals` - removed, use `/^\d*$/.test(str)` instead
+  - `pattern` - use `patterns.validation` instead
+
+- **Patterns Module Refactoring**: Use `patterns.validation` instead of `pattern`
+  - Old: `pattern.email.test('user@example.com')`
+  - New: `patterns.validation.email.test('user@example.com')` or `validation.email.test('user@example.com')`
 
 ### 🚀 Features
+
+- **New `patterns` Module**: Unified patterns module combining validation and UA patterns
+  - `patterns.validation` - Validation patterns for common formats
+  - `patterns.ua.device` - Device detection patterns
+  - `patterns.ua.os` - OS detection patterns
+  - `patterns.ua.browser` - Browser detection patterns
+  - `patterns.ua.engine` - Engine detection patterns
+  - `patterns.ua.env` - Environment detection patterns
+  - `patterns.ua.getUserAgent()` - Get UA string safely
+  - `patterns.ua.matchPattern()` - Check if pattern exists
+  - `patterns.ua.extractVersion()` - Extract version from UA
+
+- **New Validation Patterns**:
+  - `validation.idCard` - Chinese ID card numbers (15 or 18 digits)
+  - `validation.hexColor` - Hexadecimal color codes
+
+- **Improved Patterns**:
+  - `validation.mobile` - Updated to support new Chinese mobile number prefixes (1[3-9])
+  - `validation.qq` - Updated to support 5-14 digit QQ numbers
+
+- **Named Exports**: All pattern groups are now available as named exports
+  - `validation`, `DEVICE_PATTERNS`, `OS_PATTERNS`, `BROWSER_PATTERNS`, `ENGINE_PATTERNS`, `ENV_PATTERNS`
+  - Type exports: `ValidationPatternName`, `DevicePatternName`, `OSPatternName`, `BrowserPatternName`, `EnginePatternName`, `EnvPatternName`
 
 - **Rolldown Migration**: Faster build times (~110ms vs ~6-8s)
 - **Version Injection**: Clean version injection via virtual module
 - **Type Declarations**: Separate `.d.ts` and `.d.mts` for CJS/ESM compatibility
+
+### 🆕 New Functions
+
+- New VitePress documentation site with bilingual support (English/Chinese)
+- **Array**: `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`
+- **Number**: `sum`, `average`, `clamp`, `round`, `inRange`
+- **String**: `kebabCase`, `snakeCase`, `truncate`
+- **Object**: `omit`, `pick`, `isEmpty`, `isNil`
+- **Validate**: `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`
+- **Color**: `isLightColor`, `hexToRGB`, `rgbToHSL`, `lighten`, `darken`
+- **Date**: `isToday`, `formatDate`, `dateDiff`, `relativeTime`, `getDaysInMonth`
+- **Async**: `debounce`, `throttle`, `retry`
+- **URL**: `getDirParams` - Parse URL path info (replaces `getDirParam`)
+
+### 📦 Build Output
+
+| File                | Format          | Size   |
+| ------------------- | --------------- | ------ |
+| `index.js`          | CJS             | ~159KB |
+| `index.mjs`         | ESM             | ~154KB |
+| `index.iife.js`     | IIFE            | ~175KB |
+| `index.iife.min.js` | IIFE (minified) | ~47KB  |
 
 ### 🧹 Chores
 
@@ -47,22 +97,35 @@ All notable changes to this project will be documented in this file.
   - `@babel/core`, `@babel/plugin-transform-runtime`, `@babel/preset-env`, `@babel/preset-typescript`, `babel-loader` (removed)
   - `core-js` (removed from devDependencies)
 
-### 📦 Build Output
+### 🔄 Changed
 
-| File                | Format          | Size   |
-| ------------------- | --------------- | ------ |
-| `index.js`          | CJS             | ~159KB |
-| `index.mjs`         | ESM             | ~154KB |
-| `index.iife.js`     | IIFE            | ~175KB |
-| `index.iife.min.js` | IIFE (minified) | ~47KB  |
+- Reorganized all 140+ functions into 16 categories
+- Updated documentation site from TypeDoc to VitePress
+- Improved test coverage with comprehensive unit tests
 
-### 🔄 Migration Guide
+### 🐛 Fixed
+
+- Fixed ESLint errors in source files
+- Fixed `isNaN` usage to `Number.isNaN`
+- Fixed missing return type annotations
+
+### 📖 Migration Guide
 
 ```js
 // Before (v5.x)
 import jsCool from 'js-cool/dist/index.esm-browser.js'
+import { pattern } from 'js-cool'
+pattern.email.test('user@example.com')
+
 // After (v6.x)
 import jsCool from 'js-cool'
+import { patterns, validation } from 'js-cool'
+patterns.validation.email.test('user@example.com')
+validation.email.test('user@example.com')
+
+// UA patterns
+import { DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
+DEVICE_PATTERNS.mobile.test(navigator.userAgent)
 ```
 
 ```html
@@ -71,60 +134,6 @@ import jsCool from 'js-cool'
 <!-- After (v6.x) -->
 <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
 ```
-
-### Added
-
-- New VitePress documentation site with bilingual support (English/Chinese)
-- New functions:
-  - `chunk` - Split array into chunks
-  - `flatten` - Flatten nested arrays
-  - `groupBy` - Group array by key
-  - `keyBy` - Create object mapping from array
-  - `sample` - Get random element from array
-  - `sampleSize` - Get N random elements from array
-  - `sum` - Sum array values
-  - `average` - Calculate average of array
-  - `clamp` - Clamp number within range
-  - `round` - Round number to precision
-  - `inRange` - Check if number in range
-  - `kebabCase` - Convert to kebab-case
-  - `snakeCase` - Convert to snake_case
-  - `truncate` - Truncate string with ellipsis
-  - `omit` - Omit object properties
-  - `pick` - Pick object properties
-  - `isEmpty` - Check if value is empty
-  - `isNil` - Check if value is null/undefined
-  - `isEmail` - Validate email address
-  - `isPhone` - Validate phone number
-  - `isURL` - Validate URL
-  - `isIDCard` - Validate Chinese ID card
-  - `isCreditCard` - Validate credit card number
-  - `isLightColor` - Check if color is light
-  - `isToday` - Check if date is today
-  - `formatDate` - Format date string
-  - `dateDiff` - Calculate date difference
-  - `relativeTime` - Get relative time string
-  - `getDaysInMonth` - Get days in month
-  - `hexToRGB` - Convert hex to RGB
-  - `rgbToHSL` - Convert RGB to HSL
-  - `lighten` - Lighten color
-  - `darken` - Darken color
-  - `debounce` - Debounce function
-  - `throttle` - Throttle function
-  - `retry` - Retry async function
-  - `getDirParams` - Parse URL path info (replaces `getDirParam`)
-
-### Changed
-
-- Reorganized all 140+ functions into 16 categories
-- Updated documentation site from TypeDoc to VitePress
-- Improved test coverage with comprehensive unit tests
-
-### Fixed
-
-- Fixed ESLint errors in source files
-- Fixed `isNaN` usage to `Number.isNaN`
-- Fixed missing return type annotations
 
 ## [5.23.2] - 2026-03-14
 

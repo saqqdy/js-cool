@@ -93,7 +93,7 @@ import nextVersion from './nextVersion'
 import openUrl from './openUrl'
 import osVersion from './osVersion'
 import parseUrlParam from './parseUrlParam'
-import pattern from './pattern'
+import { patterns } from './patterns'
 import preloader from './preloader'
 import promiseFactory from './promiseFactory'
 import punctualTimer from './punctualTimer'
@@ -222,7 +222,7 @@ export default {
 	openUrl,
 	osVersion,
 	parseUrlParam,
-	pattern,
+	patterns,
 	preloader,
 	promiseFactory,
 	punctualTimer,

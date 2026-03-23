@@ -12,6 +12,8 @@ import {
 	inBrowser,
 	inNodeJs,
 	isDarkMode,
+	patterns,
+	validation,
 } from 'js-cool'
 import type { RandomStringCharType } from 'js-cool'
 import { useI18n } from '@/locales'
@@ -235,6 +237,72 @@ getGlobal('nonExistent') // undefined`"
 			:result="fingerprint()"
 			:code="`fingerprint() // 'wc7sWJJA8'`"
 		/>
+
+		<!-- patterns - validation -->
+		<FunctionCard
+			title="patterns.validation"
+			description="Validation regex patterns (NEW in v6.0.0)"
+			since="6.0.0"
+			:code="`import { validation } from 'js-cool'
+
+validation.email.test('user@example.com') // true
+validation.mobile.test('13800138000') // true
+validation.url.test('https://example.com') // true
+validation.ipv4.test('192.168.1.1') // true
+validation.idCard.test('11010519491231002X') // true`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">validation.email.test('user@example.com')</code>
+						<n-tag size="small" :bordered="false">{{ validation.email.test('user@example.com') }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">validation.mobile.test('13800138000')</code>
+						<n-tag size="small" :bordered="false">{{ validation.mobile.test('13800138000') }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">validation.ipv4.test('192.168.1.1')</code>
+						<n-tag size="small" :bordered="false">{{ validation.ipv4.test('192.168.1.1') }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">validation.idCard.test('11010519491231002X')</code>
+						<n-tag size="small" :bordered="false">{{ validation.idCard.test('11010519491231002X') }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- patterns - UA detection -->
+		<FunctionCard
+			title="patterns.ua"
+			description="UA detection patterns (NEW in v6.0.0)"
+			since="6.0.0"
+			:code="`import { DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
+
+DEVICE_PATTERNS.mobile.test(navigator.userAgent)
+BROWSER_PATTERNS.chrome.test(navigator.userAgent)
+patterns.ua.getUserAgent()`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">patterns.ua.device.mobile.test(ua)</code>
+						<n-tag size="small" :bordered="false">{{ patterns.ua.device.mobile.test(patterns.ua.getUserAgent()) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">patterns.ua.browser.chrome.test(ua)</code>
+						<n-tag size="small" :bordered="false">{{ patterns.ua.browser.chrome.test(patterns.ua.getUserAgent()) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">patterns.ua.getUserAgent()</code>
+						<n-tag size="small" :bordered="false" style="max-width: 300px; overflow: hidden; text-overflow: ellipsis;">
+							{{ patterns.ua.getUserAgent().substring(0, 50) }}...
+						</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
 
 		<!-- Environment -->
 		<FunctionCard

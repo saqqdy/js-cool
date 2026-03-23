@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { NH1, NInput, NTag, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
-import { isEmail, isPhone, isURL, isIDCard, isCreditCard, pattern } from 'js-cool'
+import { isEmail, isPhone, isURL, isIDCard, isCreditCard, validation } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
@@ -14,18 +14,20 @@ const idCardInput = ref('11010519491231002X')
 const creditCardInput = ref('4111111111111111')
 
 const patternResults = [
-	{ name: 'email', test: 'test@example.com', result: pattern.email.test('test@example.com') },
-	{ name: 'mobile (CN)', test: '13800138000', result: pattern.mobile.test('13800138000') },
-	{ name: 'url', test: 'https://example.com', result: pattern.url.test('https://example.com') },
-	{ name: 'number', test: '123.45', result: pattern.number.test('123.45') },
-	{ name: 'chinese', test: '中文测试', result: pattern.chinese.test('中') },
-	{ name: 'qq', test: '123456789', result: pattern.qq.test('123456789') },
-	{ name: 'ip4', test: '192.168.1.1', result: pattern.ip4.test('192.168.1.1') },
-	{ name: 'ip4_pri', test: '192.168.1.1', result: pattern.ip4_pri.test('192.168.1.1') },
-	{ name: 'mac', test: '00:1A:2B:3C:4D:5E', result: pattern.mac.test('00:1A:2B:3C:4D:5E') },
-	{ name: 'postcode', test: '100000', result: pattern.postcode.test('100000') },
-	{ name: 'username', test: 'user_name-123', result: pattern.username.test('user_name-123') },
-	{ name: 'pass', test: 'abc123XYZ', result: pattern.pass.test('abc123XYZ') },
+	{ name: 'email', test: 'test@example.com', result: validation.email.test('test@example.com') },
+	{ name: 'mobile (CN)', test: '13800138000', result: validation.mobile.test('13800138000') },
+	{ name: 'url', test: 'https://example.com', result: validation.url.test('https://example.com') },
+	{ name: 'number', test: '123.45', result: validation.number.test('123.45') },
+	{ name: 'chinese', test: '中文测试', result: validation.chinese.test('中') },
+	{ name: 'qq', test: '123456789', result: validation.qq.test('123456789') },
+	{ name: 'ipv4', test: '192.168.1.1', result: validation.ipv4.test('192.168.1.1') },
+	{ name: 'ipv4Private', test: '192.168.1.1', result: validation.ipv4Private.test('192.168.1.1') },
+	{ name: 'mac', test: '00:1A:2B:3C:4D:5E', result: validation.mac.test('00:1A:2B:3C:4D:5E') },
+	{ name: 'postcode', test: '100000', result: validation.postcode.test('100000') },
+	{ name: 'username', test: 'user_name-123', result: validation.username.test('user_name-123') },
+	{ name: 'password', test: 'abc123XYZ', result: validation.password.test('abc123XYZ') },
+	{ name: 'idCard', test: '11010519491231002X', result: validation.idCard.test('11010519491231002X') },
+	{ name: 'hexColor', test: '#ffffff', result: validation.hexColor.test('#ffffff') },
 ]
 </script>
 
@@ -122,14 +124,18 @@ isURL('invalid-url') // false`"
 			</template>
 		</FunctionCard>
 
-		<!-- pattern -->
+		<!-- validation -->
 		<FunctionCard
-			title="pattern"
-			description="Common regex patterns collection"
-			since="1.0.0"
-			:code="`pattern.email.test('test@example.com') // true
-pattern.mobile.test('13800138000') // true
-pattern.url.test('https://example.com') // true`"
+			title="validation"
+			description="Validation regex patterns collection (NEW in v6.0.0)"
+			since="6.0.0"
+			:code="`import { validation } from 'js-cool'
+
+validation.email.test('test@example.com') // true
+validation.mobile.test('13800138000') // true
+validation.url.test('https://example.com') // true
+validation.ipv4.test('192.168.1.1') // true
+validation.idCard.test('11010519491231002X') // true`"
 		>
 			<template #result>
 				<div style="overflow-x: auto">
@@ -148,7 +154,7 @@ pattern.url.test('https://example.com') // true`"
 								style="border-bottom: 1px solid #eee"
 							>
 								<td style="padding: 8px">
-									<code>pattern.{{ item.name }}</code>
+									<code>validation.{{ item.name }}</code>
 								</td>
 								<td style="padding: 8px">
 									<code>{{ item.test }}</code>

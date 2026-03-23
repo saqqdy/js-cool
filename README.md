@@ -164,62 +164,42 @@ ua.getScreen() // { width, height, pixelRatio, orientation, colorDepth }
 ua.getOrientationStatus() // 'portrait' | 'landscape'
 ```
 
-#### pattern
+#### patterns
 
-Common regex patterns collection.
+Unified patterns module combining validation and UA patterns.
 
 ```js
-import { pattern } from 'js-cool'
+import { patterns, validation, DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
 
-// Email validation
-pattern.email.test('test@example.com') // true
-pattern.email.test('invalid-email') // false
+// Using patterns object
+patterns.validation.email.test('user@example.com') // true
+patterns.validation.mobile.test('13800138000') // true
+patterns.ua.device.mobile.test(navigator.userAgent) // true/false
+patterns.ua.browser.chrome.test(navigator.userAgent) // true/false
 
-// Chinese mobile phone
-pattern.mobile.test('13800138000') // true
-pattern.mobile.test('12345678901') // false
+// Or import directly
+validation.email.test('user@example.com') // true
+DEVICE_PATTERNS.mobile.test(navigator.userAgent) // true/false
+BROWSER_PATTERNS.chrome.test(navigator.userAgent) // true/false
 
-// URL validation
-pattern.url.test('https://example.com') // true
-pattern.url.test('ftp://files.server') // true
+// Utility functions
+patterns.ua.getUserAgent() // get UA string safely
+patterns.ua.matchPattern(ua, /Chrome/i) // check if pattern exists
+patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 
-// Number validation
-pattern.number.test('12345') // true
-pattern.number.test('12.34') // true
+// Available validation patterns:
+// validation.any, validation.email, validation.mobile, validation.url
+// validation.number, validation.chinese, validation.idCard, validation.qq
+// validation.ipv4, validation.ipv4Private, validation.mac, validation.hexColor
+// validation.password, validation.postcode, validation.username, validation.tel
+// validation.json, validation.array, validation.float, validation.string
 
-// Chinese characters
-pattern.chinese.test('中文测试') // true
-pattern.chinese.test('test123') // false
-
-// QQ number
-pattern.qq.test('123456789') // true
-
-// Telephone (landline)
-pattern.tel.test('010-12345678') // true
-pattern.tel.test('021-87654321') // true
-
-// Postcode (China)
-pattern.postcode.test('100000') // true
-
-// Username (alphanumeric + underscore, 4-16 chars)
-pattern.username.test('user_name') // true
-
-// Password (at least 6 chars with letter and number)
-pattern.pass.test('abc123') // true
-
-// JSON string
-pattern.json.test('{"a":1}') // true
-
-// MAC address
-pattern.mac.test('00:1A:2B:3C:4D:5E') // true
-
-// IPv4 address
-pattern.ip4.test('192.168.1.1') // true
-
-// Private IPv4
-pattern.ip4_pri.test('192.168.1.1') // true
-pattern.ip4_pri.test('10.0.0.1') // true
-pattern.ip4_pri.test('172.16.0.1') // true
+// Available UA patterns:
+// DEVICE_PATTERNS - mobile, tablet, phone, touch, iphone, ipad, androidPhone, androidTablet
+// OS_PATTERNS - windows, macOS, iOS, iPadOS, android, linux, chromeOS, harmonyOS
+// BROWSER_PATTERNS - chrome, firefox, safari, edge, opera, ie, samsung, uc, quark, vivaldi
+// ENGINE_PATTERNS - blink, gecko, webkit, trident, edgeHTML
+// ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu, miniProgram
 ```
 
 ---

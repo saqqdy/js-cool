@@ -153,17 +153,22 @@ isEqual(0, -0) // false
 
 ## Pattern Matching
 
-js-cool provides a pattern object with common regex patterns:
+js-cool provides validation patterns for common formats:
 
 ```js
-import { pattern } from 'js-cool'
+import { validation } from 'js-cool'
 
-pattern.email // Email pattern
-pattern.phone // Phone pattern
-pattern.url // URL pattern
-pattern.number // Number pattern
-pattern.chinese // Chinese character pattern
+validation.email // Email pattern
+validation.mobile // Chinese mobile phone pattern
+validation.url // URL pattern
+validation.number // Number pattern
+validation.chinese // Chinese character pattern
+validation.ipv4 // IPv4 address pattern
+validation.idCard // Chinese ID card pattern
+validation.hexColor // Hex color pattern
 ```
+
+See [patterns](/api/utility/patterns) for all available patterns.
 
 ## See Also
 

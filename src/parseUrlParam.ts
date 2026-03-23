@@ -1,4 +1,4 @@
-import pattern from './pattern'
+import { validation } from './patterns/validation'
 
 /**
  * parse url params
@@ -57,7 +57,7 @@ function parseUrlParam(url: string, covert = false): Record<string, unknown> {
 		result[key] = $2
 		if (covert) {
 			if ($2 in VALUE_MAP) result[key] = VALUE_MAP[$2 as keyof typeof VALUE_MAP]
-			else if (pattern.number.test($2)) result[key] = Number($2)
+			else if (validation.number.test($2)) result[key] = Number($2)
 		}
 
 		return rs

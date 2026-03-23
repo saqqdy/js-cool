@@ -90,10 +90,29 @@ v6.x uses proper conditional exports:
 
 ### 4. Deprecated Functions Removed
 
-| Removed           | Replacement    |
-| ----------------- | -------------- |
-| `getAppVersion()` | `appVersion()` |
-| `getOsVersion()`  | `osVersion()`  |
+| Removed           | Replacement      |
+| ----------------- | ---------------- |
+| `getAppVersion()` | `appVersion()`   |
+| `getOsVersion()`  | `osVersion()`    |
+| `getDirParam()`   | `getDirParams()` |
+
+### 5. `pattern` Object Removed
+
+The `pattern` object has been removed and replaced with the new `patterns` module.
+
+```js
+// v5.x (removed)
+import { pattern } from 'js-cool'
+pattern.email.test('user@example.com')
+
+// v6.x
+import { patterns, validation } from 'js-cool'
+patterns.validation.email.test('user@example.com')
+// or
+validation.email.test('user@example.com')
+```
+
+See [Migration: `pattern` → `patterns`](#migration-pattern--patterns) for details.
 
 ### 5. `client` Module Removed
 
@@ -595,6 +614,172 @@ getDirParam('https://example.com/api/users?id=123')
 // v6.x - Fixed: query string properly separated
 getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
+```
+
+---
+
+## Migration: `pattern` → `patterns`
+
+### Why the Change?
+
+The `pattern` object has been removed and replaced with a new unified `patterns` module with:
+
+- **Better organization** - Separated into `validation` and `ua` categories
+- **More patterns** - Added `idCard`, `hexColor`, and improved `mobile`, `qq`
+- **UA patterns** - Direct access to device, browser, OS detection patterns
+- **Utility functions** - `getUserAgent`, `matchPattern`, `extractVersion`
+- **TypeScript support** - Full type definitions for all pattern names
+
+### API Comparison
+
+```js
+// v5.x (removed)
+import { pattern } from 'js-cool'
+
+pattern.email.test('user@example.com')
+pattern.mobile.test('13800138000')
+pattern.url.test('https://example.com')
+
+// v6.x
+import { patterns, validation } from 'js-cool'
+
+// Using patterns object
+patterns.validation.email.test('user@example.com')
+patterns.validation.mobile.test('13800138000')
+patterns.validation.url.test('https://example.com')
+
+// Or import directly
+validation.email.test('user@example.com')
+validation.mobile.test('13800138000')
+```
+
+### Pattern Name Mapping
+
+| Old (`pattern`) | New (`validation`) | Notes                              |
+| --------------- | ------------------ | ---------------------------------- |
+| `any`           | `any`              | Unchanged                          |
+| `email`         | `email`            | Unchanged                          |
+| `mobile`        | `mobile`           | Updated: now supports 1[3-9]xxx... |
+| `url`           | `url`              | Unchanged                          |
+| `number`        | `number`           | Unchanged                          |
+| `chinese`       | `chinese`          | Unchanged                          |
+| `ip4`           | `ipv4`             | Renamed                            |
+| `ip4_pri`       | `ipv4Private`      | Renamed                            |
+| `mac`           | `mac`              | Unchanged                          |
+| `qq`            | `qq`               | Updated: now supports 5-14 digits  |
+| `pass`          | `password`         | Renamed                            |
+| `postcode`      | `postcode`         | Unchanged                          |
+| `username`      | `username`         | Unchanged                          |
+| `tel`           | `tel`              | Unchanged                          |
+| `json`          | `json`             | Unchanged                          |
+| `array`         | `array`            | Unchanged                          |
+| `arrjson`       | `arrjson`          | Unchanged                          |
+| `isjson`        | `jsonLike`         | Renamed                            |
+| `float`         | `float`            | Unchanged                          |
+| `string`        | `string`           | Unchanged                          |
+| `textarea`      | `textarea`         | Unchanged                          |
+| -               | `idCard`           | **NEW**: Chinese ID card           |
+| -               | `hexColor`         | **NEW**: Hex color codes           |
+
+### New Features
+
+#### UA Detection Patterns
+
+```js
+import { DEVICE_PATTERNS, BROWSER_PATTERNS, OS_PATTERNS, ENV_PATTERNS } from 'js-cool'
+
+// Device detection
+DEVICE_PATTERNS.mobile.test(navigator.userAgent)
+DEVICE_PATTERNS.tablet.test(navigator.userAgent)
+DEVICE_PATTERNS.iphone.test(navigator.userAgent)
+
+// Browser detection
+BROWSER_PATTERNS.chrome.test(navigator.userAgent)
+BROWSER_PATTERNS.firefox.test(navigator.userAgent)
+BROWSER_PATTERNS.safari.test(navigator.userAgent)
+
+// OS detection
+OS_PATTERNS.windows.test(navigator.userAgent)
+OS_PATTERNS.macOS.test(navigator.userAgent)
+OS_PATTERNS.harmonyOS.test(navigator.userAgent)
+
+// Environment detection (Chinese apps)
+ENV_PATTERNS.wechat.test(navigator.userAgent)
+ENV_PATTERNS.dingtalk.test(navigator.userAgent)
+ENV_PATTERNS.miniProgram.test(navigator.userAgent)
+```
+
+#### Utility Functions
+
+```js
+import { getUA, matchPattern, extractVersion } from 'js-cool'
+
+// Get UA string safely
+const ua = getUA()
+
+// Check if pattern exists
+matchPattern(ua, /Chrome/i) // true/false
+
+// Extract version
+extractVersion(ua, /Chrome\/(\d+\.?\d*)/i) // '91.0'
+```
+
+### Migration Examples
+
+```js
+// v5.x - Email validation
+if (pattern.email.test(email)) {
+  /* ... */
+}
+
+// v6.x - Email validation
+if (validation.email.test(email)) {
+  /* ... */
+}
+
+// v5.x - Chinese mobile
+if (pattern.mobile.test(phone)) {
+  /* ... */
+}
+
+// v6.x - Chinese mobile (improved pattern)
+if (validation.mobile.test(phone)) {
+  /* ... */
+}
+
+// v5.x - IPv4
+if (pattern.ip4.test(ip)) {
+  /* ... */
+}
+
+// v6.x - IPv4 (renamed)
+if (validation.ipv4.test(ip)) {
+  /* ... */
+}
+
+// v5.x - Password
+if (pattern.pass.test(password)) {
+  /* ... */
+}
+
+// v6.x - Password (renamed)
+if (validation.password.test(password)) {
+  /* ... */
+}
+```
+
+### TypeScript Types
+
+```ts
+// v6.x - New type exports
+import type {
+  ValidationPatternName,
+  DevicePatternName,
+  OSPatternName,
+  BrowserPatternName,
+  EnginePatternName,
+  EnvPatternName,
+} from 'js-cool'
 ```
 
 ---

@@ -1,4 +1,4 @@
-import pattern from './pattern'
+import { validation } from './patterns/validation'
 
 /**
  * Intercept the decimal places, do not fill in the missing 0
@@ -34,7 +34,7 @@ function fixNumber(number: string | number, n = 2): number {
 	const reg = new RegExp(`^(.*\\..{${n}}).*$`)
 
 	number = `${number}`
-	if (!pattern.number.test(number)) throw new Error('"number" is not a number')
+	if (!validation.number.test(number)) throw new Error('"number" is not a number')
 
 	return Number.parseFloat(number.replace(reg, '$1'))
 }

@@ -141,7 +141,25 @@ export { default as omit } from './omit'
 export { default as openUrl } from './openUrl'
 export { default as osVersion, type OsVersion } from './osVersion'
 export { default as parseUrlParam } from './parseUrlParam'
-export { default as pattern } from './pattern'
+// ==================== Patterns 正则模式 ====================
+export {
+	patterns,
+	validation,
+	DEVICE_PATTERNS,
+	OS_PATTERNS,
+	BROWSER_PATTERNS,
+	ENGINE_PATTERNS,
+	ENV_PATTERNS,
+	getUserAgent as getUA,
+	matchPattern,
+	extractVersion,
+	type ValidationPatternName,
+	type DevicePatternName,
+	type OSPatternName,
+	type BrowserPatternName,
+	type EnginePatternName,
+	type EnvPatternName,
+} from './patterns'
 export { default as pick } from './pick'
 export { default as preloader } from './preloader'
 export { default as promiseFactory } from './promiseFactory'

@@ -155,62 +155,42 @@ ua.getScreen() // { width, height, pixelRatio, orientation, colorDepth }
 ua.getOrientationStatus() // 'portrait' | 'landscape'
 ```
 
-#### pattern
+#### patterns
 
-常用正则表达式集合。
+统一的模式模块，整合验证和 UA 检测模式。
 
 ```js
-import { pattern } from 'js-cool'
+import { patterns, validation, DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
 
-// 邮箱验证
-pattern.email.test('test@example.com') // true
-pattern.email.test('invalid-email') // false
+// 使用 patterns 对象
+patterns.validation.email.test('user@example.com') // true
+patterns.validation.mobile.test('13800138000') // true
+patterns.ua.device.mobile.test(navigator.userAgent) // true/false
+patterns.ua.browser.chrome.test(navigator.userAgent) // true/false
 
-// 中国手机号
-pattern.mobile.test('13800138000') // true
-pattern.mobile.test('12345678901') // false
+// 或直接导入
+validation.email.test('user@example.com') // true
+DEVICE_PATTERNS.mobile.test(navigator.userAgent) // true/false
+BROWSER_PATTERNS.chrome.test(navigator.userAgent) // true/false
 
-// URL 验证
-pattern.url.test('https://example.com') // true
-pattern.url.test('ftp://files.server') // true
+// 工具函数
+patterns.ua.getUserAgent() // 安全获取 UA 字符串
+patterns.ua.matchPattern(ua, /Chrome/i) // 检查模式是否存在
+patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 
-// 数字验证
-pattern.number.test('12345') // true
-pattern.number.test('12.34') // true
+// 可用的验证模式:
+// validation.any, validation.email, validation.mobile, validation.url
+// validation.number, validation.chinese, validation.idCard, validation.qq
+// validation.ipv4, validation.ipv4Private, validation.mac, validation.hexColor
+// validation.password, validation.postcode, validation.username, validation.tel
+// validation.json, validation.array, validation.float, validation.string
 
-// 中文字符
-pattern.chinese.test('中文测试') // true
-pattern.chinese.test('test123') // false
-
-// QQ 号
-pattern.qq.test('123456789') // true
-
-// 固定电话
-pattern.tel.test('010-12345678') // true
-pattern.tel.test('021-87654321') // true
-
-// 邮编
-pattern.postcode.test('100000') // true
-
-// 用户名 (字母数字下划线, 4-16位)
-pattern.username.test('user_name') // true
-
-// 密码 (至少6位, 包含字母和数字)
-pattern.pass.test('abc123') // true
-
-// JSON 字符串
-pattern.json.test('{"a":1}') // true
-
-// MAC 地址
-pattern.mac.test('00:1A:2B:3C:4D:5E') // true
-
-// IPv4 地址
-pattern.ip4.test('192.168.1.1') // true
-
-// 私有 IPv4
-pattern.ip4_pri.test('192.168.1.1') // true
-pattern.ip4_pri.test('10.0.0.1') // true
-pattern.ip4_pri.test('172.16.0.1') // true
+// 可用的 UA 模式:
+// DEVICE_PATTERNS - mobile, tablet, phone, touch, iphone, ipad, androidPhone, androidTablet
+// OS_PATTERNS - windows, macOS, iOS, iPadOS, android, linux, chromeOS, harmonyOS
+// BROWSER_PATTERNS - chrome, firefox, safari, edge, opera, ie, samsung, uc, quark, vivaldi
+// ENGINE_PATTERNS - blink, gecko, webkit, trident, edgeHTML
+// ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu, miniProgram
 ```
 
 ---

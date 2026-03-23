@@ -153,17 +153,22 @@ isEqual(0, -0) // false
 
 ## 正则模式
 
-js-cool 提供了常用正则模式对象：
+js-cool 提供了常用验证正则模式：
 
 ```js
-import { pattern } from 'js-cool'
+import { validation } from 'js-cool'
 
-pattern.email // 邮箱正则
-pattern.phone // 手机号正则
-pattern.url // URL 正则
-pattern.number // 数字正则
-pattern.chinese // 中文字符正则
+validation.email // 邮箱正则
+validation.mobile // 中国手机号正则
+validation.url // URL 正则
+validation.number // 数字正则
+validation.chinese // 中文字符正则
+validation.ipv4 // IPv4 地址正则
+validation.idCard // 中国身份证正则
+validation.hexColor // 十六进制颜色正则
 ```
+
+详见 [patterns](/zh/api/utility/patterns) 查看所有可用模式。
 
 ## 相关
 

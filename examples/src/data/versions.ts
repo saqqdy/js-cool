@@ -161,7 +161,6 @@ export const versions: Record<string, string> = {
 	inBrowser: '1.0.0',
 	inNodeJs: '1.0.0',
 	isDarkMode: '5.0.0',
-	pattern: '1.0.0',
 	all: '3.0.0',
 	any: '3.0.0',
 	delay: '2.0.0',
