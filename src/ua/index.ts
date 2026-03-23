@@ -4,7 +4,7 @@
  * @example
  * ```ts
  * // Full import
- * import { ua, UADetector } from 'js-cool'
+ * import { ua, UAParser } from 'js-cool'
  *
  * // Get all user agent info
  * const info = ua.info
@@ -16,8 +16,8 @@
  * ua.isiOS()       // true/false
  *
  * // Custom UA string
- * const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
- * detector.isMobile()  // true
+ * const parser = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+ * parser.isMobile()  // true
  * ```
  *
  * @module ua
@@ -31,7 +31,7 @@ import type {
 	DeviceType,
 	EngineName,
 	EnvironmentInfo,
-	IUADetector,
+	IUAParser,
 	NetworkInfo,
 	OSInfo,
 	OSName,
@@ -59,21 +59,21 @@ export * from './os'
 export * from './screen'
 
 /**
- * User Agent detector class
+ * User Agent parser class
  *
  * @example
  * ```ts
- * import { UADetector } from 'js-cool'
+ * import { UAParser } from 'js-cool'
  *
- * // Create detector with custom UA
- * const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+ * // Create parser with custom UA
+ * const parser = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
  *
- * detector.isMobile()  // true
- * detector.isiOS()     // true
- * detector.browser.name // 'Safari'
+ * parser.isMobile()  // true
+ * parser.isiOS()     // true
+ * parser.browser.name // 'Safari'
  * ```
  */
-class UADetector implements IUADetector {
+class UAParser implements IUAParser {
 	private uaString: string
 	private cachedInfo: UAInfo | null = null
 
@@ -306,7 +306,7 @@ class UADetector implements IUADetector {
 }
 
 // Create singleton instance
-const uaInstance = new UADetector()
+const uaInstance = new UAParser()
 
 /**
  * User Agent detection utility
@@ -394,12 +394,12 @@ const ua = Object.assign(
 		},
 
 		// Expose class for custom instances
-		UADetector,
+		UAParser,
 	}
 )
 
 export default ua
-export { UADetector }
+export { UAParser }
 export type {
 	UAInfo,
 	DeviceInfo,
@@ -409,7 +409,7 @@ export type {
 	NetworkInfo,
 	ScreenInfo,
 	UAGetType,
-	IUADetector,
+	IUAParser,
 	OSName,
 	BrowserName,
 	EngineName,

@@ -409,15 +409,15 @@ getAvailWidth() // Available screen width
 getAvailHeight() // Available screen height
 ```
 
-## UADetector Class
+## UAParser Class
 
 For custom UA string parsing:
 
 ```js
-import { UADetector } from 'js-cool'
+import { UAParser } from 'js-cool'
 
 // Create detector with custom UA
-const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+const detector = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
 
 // Instance properties
 detector.info // Full info object
@@ -464,7 +464,7 @@ import type {
   NetworkInfo,
   ScreenInfo,
   UAGetType,
-  IUADetector,
+  IUAParser,
   OSName,
   BrowserName,
   EngineName,
@@ -568,148 +568,4 @@ if (isSlowConnection()) {
 The `client` module has been removed in v6.0.0. Please migrate to `ua`.
 :::
 
-### Import Changes
-
-```js
-// Before (v5.x)
-import { client, ClientDetector } from 'js-cool'
-
-// After (v6.x)
-import { ua, UADetector } from 'js-cool'
-
-// Or tree-shakeable imports (recommended)
-import { isMobile, isWeChat, isiOS } from 'js-cool/ua'
-```
-
-### API Migration Table
-
-| Before (`client`)           | After (`ua`)            | Notes                |
-| --------------------------- | ----------------------- | -------------------- |
-| `client()`                  | `ua()` or `ua.info`     | Get all info         |
-| `client.info`               | `ua.info`               | Same property access |
-| `client.get('browser')`     | `ua.get('browser')`     | Same method          |
-| `client.getMultiple([...])` | `ua.getMultiple([...])` | Same method          |
-| `client.isMobile()`         | `ua.isMobile()`         | Same method          |
-| `client.isWeChat()`         | `ua.isWeChat()`         | Same method          |
-| `client.has('Chrome')`      | `ua.has('Chrome')`      | Same method          |
-| `client.getNetwork()`       | `ua.getNetwork()`       | Same method          |
-| `client.getScreen()`        | `ua.getScreen()`        | Same method          |
-| `new ClientDetector(ua)`    | `new UADetector(ua)`    | Class renamed        |
-
-### Legacy Properties Migration
-
-The old `client` module had shortcut properties. Use the new method calls or property access:
-
-| Before (`client`) | After (`ua`)                                   | Notes                   |
-| ----------------- | ---------------------------------------------- | ----------------------- |
-| `client.mobile`   | `ua.isMobile()` or `ua.device.mobile`          | Method call or property |
-| `client.ios`      | `ua.isiOS()` or `ua.os.name === 'iOS'`         | Method call recommended |
-| `client.android`  | `ua.isAndroid()` or `ua.os.name === 'Android'` | Method call recommended |
-| `client.weixin`   | `ua.isWeChat()` or `ua.environment.wechat`     | Method call recommended |
-| `client.qq`       | `ua.isQQ()` or `ua.environment.qq`             | Method call recommended |
-| `client.iPad`     | `ua.device.ipad`                               | Property access         |
-| `client.iPhone`   | `ua.device.iphone`                             | Property access         |
-
-### Code Examples
-
-#### Before (v5.x)
-
-```js
-import { client, ClientDetector } from 'js-cool'
-
-// Get all info
-const info = client()
-
-// Quick checks
-if (client.mobile) {
-  // ...
-}
-
-if (client.weixin) {
-  // ...
-}
-
-// Custom UA
-const detector = new ClientDetector(customUA)
-if (detector.ios) {
-  // ...
-}
-```
-
-#### After (v6.x)
-
-```js
-import { ua, UADetector } from 'js-cool'
-// Or tree-shake: import { isMobile, isWeChat, isiOS } from 'js-cool/ua'
-
-// Get all info
-const info = ua()
-// or
-const info = ua.info
-
-// Quick checks
-if (ua.isMobile()) {
-  // ...
-}
-
-if (ua.isWeChat()) {
-  // ...
-}
-
-// Custom UA
-const detector = new UADetector(customUA)
-if (detector.isiOS()) {
-  // ...
-}
-```
-
-### New Features in `ua`
-
-The `ua` module includes several new features not available in the old `client` module:
-
-```js
-// New device detection
-ua.device.phone // Is phone device
-ua.device.ipad // Is iPad
-ua.device.iphone // Is iPhone
-ua.device.androidPhone // Is Android phone
-ua.device.androidTablet // Is Android tablet
-
-// New OS detection
-ua.isHarmonyOS() // Detect HarmonyOS (鸿蒙)
-ua.isiPadOS() // Detect iPadOS
-
-// New environment detection (Chinese apps)
-ua.environment.wxwork // WeChat Work (企业微信)
-ua.environment.dingtalk // DingTalk (钉钉)
-ua.environment.douyin // Douyin (抖音)
-ua.environment.kuaishou // Kuaishou (快手)
-ua.environment.baidu // Baidu App (百度App)
-ua.environment.xiaomi // Xiaomi Browser (小米浏览器)
-ua.environment.huawei // Huawei Browser (华为浏览器)
-ua.environment.miniProgram // Mini Program (小程序)
-ua.environment.miniGame // Mini Game (小游戏)
-
-// New utility methods
-ua.getNetwork() // Network info
-ua.getScreen() // Screen info
-ua.getTimezone() // Timezone
-ua.isDarkMode() // Dark mode check
-```
-
-### Type Migration
-
-```ts
-// Before (v5.x)
-import type { ClientInfo, IClientDetector } from 'js-cool'
-
-// After (v6.x)
-import type { UAInfo, IUADetector } from 'js-cool'
-```
-
-| Old Type          | New Type      |
-| ----------------- | ------------- |
-| `ClientInfo`      | `UAInfo`      |
-| `IClientDetector` | `IUADetector` |
-| `ClientGetType`   | `UAGetType`   |
-| `ClientDetector`  | `UADetector`  |
+See the [Migration Guide](../../guide/migration.md#client--ua) for complete migration details.

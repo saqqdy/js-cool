@@ -8,36 +8,7 @@ Unified patterns module combining validation and UA detection patterns.
 The `pattern` object from v5.x has been **removed** in v6.0.0. You must migrate to the new `patterns` module.
 :::
 
-### Quick Migration
-
-```js
-// v5.x (REMOVED)
-import { pattern } from 'js-cool'
-pattern.email.test('user@example.com')
-pattern.ip4.test('192.168.1.1')
-pattern.pass.test('abc123')
-
-// v6.x
-import { validation } from 'js-cool'
-validation.email.test('user@example.com')
-validation.ipv4.test('192.168.1.1') // renamed: ip4 → ipv4
-validation.password.test('abc123') // renamed: pass → password
-```
-
-### Pattern Name Changes
-
-| v5.x (`pattern`) | v6.x (`validation`) | Notes                             |
-| ---------------- | ------------------- | --------------------------------- |
-| `ip4`            | `ipv4`              | Renamed                           |
-| `ip4_pri`        | `ipv4Private`       | Renamed                           |
-| `pass`           | `password`          | Renamed                           |
-| `isjson`         | `jsonLike`          | Renamed                           |
-| `mobile`         | `mobile`            | Updated: now supports 1[3-9]      |
-| `qq`             | `qq`                | Updated: now supports 5-14 digits |
-| -                | `idCard`            | **NEW**: Chinese ID card          |
-| -                | `hexColor`          | **NEW**: Hex color codes          |
-
-See [Migration Guide](../../guide/migration.md) for complete details.
+See the [Migration Guide](../../guide/migration.md#pattern--patterns--validation) for complete migration details.
 
 ## Usage
 

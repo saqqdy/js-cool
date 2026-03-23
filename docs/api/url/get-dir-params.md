@@ -82,48 +82,8 @@ getDirParams()
 
 ## Migration from `getDirParam`
 
-`getDirParam` has been removed in v6.0.0. Migrate to `getDirParams` with the following changes:
+::: warning Breaking Change
+`getDirParam` has been **removed** in v6.0.0. Migrate to `getDirParams`.
+:::
 
-### Return Value Mapping
-
-| `getDirParam` (v5.x) | `getDirParams` (v6.x) | Notes                      |
-| -------------------- | --------------------- | -------------------------- |
-| `host`               | `origin`              | Now includes protocol      |
-| -                    | `host`                | New: hostname + port       |
-| -                    | `hostname`            | New: hostname only         |
-| -                    | `pathname`            | New: full path string      |
-| `path`               | `segments`            | Renamed                    |
-| -                    | `query`               | New: query string (no `?`) |
-| -                    | `hash`                | New: hash value (no `#`)   |
-
-### Migration Example
-
-```js
-// v5.x (deprecated)
-import { getDirParam } from 'js-cool'
-
-const { host, path } = getDirParam('https://example.com/user/123')
-// host: 'https://example.com'
-// path: ['user', '123']
-
-// v6.x
-import { getDirParams } from 'js-cool'
-
-const { origin, segments } = getDirParams('https://example.com/user/123')
-// origin: 'https://example.com'
-// segments: ['user', '123']
-```
-
-### Fixed Issue
-
-The old `getDirParam` incorrectly included query string in the last path segment:
-
-```js
-// v5.x - Bug: query mixed into path
-getDirParam('https://example.com/api/users?id=123')
-// { host: 'https://example.com', path: ['api', 'users?id=123'] }
-
-// v6.x - Fixed: query properly separated
-getDirParams('https://example.com/api/users?id=123')
-// { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
-```
+See the [Migration Guide](../../guide/migration.md#getdirparam--getdirparams) for complete migration details.

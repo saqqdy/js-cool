@@ -8,14 +8,14 @@
 
 ### 1.1 方法概览
 
-| 方法             | 位置                    | 功能                                | 状态      |
-| ---------------- | ----------------------- | ----------------------------------- | --------- |
-| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常   |
-| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常   |
-| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常   |
-| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常   |
-| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常   |
-| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常   |
+| 方法             | 位置                    | 功能                                | 状态                     |
+| ---------------- | ----------------------- | ----------------------------------- | ------------------------ |
+| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常                  |
+| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常                  |
+| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常                  |
+| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常                  |
+| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常                  |
+| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常                  |
 | `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams |
 
 ### 1.2 依赖关系
@@ -351,10 +351,10 @@ function getUrlParams(
 
 ### 2.5 API 命名优化建议
 
-| 当前方法         | 建议               | 原因                                | 状态     |
-| ---------------- | ------------------ | ----------------------------------- | -------- |
-| `parseUrlParam`  | `parseQueryString` | 更语义化，明确处理的是 query string | 待处理   |
-| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作            | 待处理   |
+| 当前方法         | 建议               | 原因                                | 状态      |
+| ---------------- | ------------------ | ----------------------------------- | --------- |
+| `parseUrlParam`  | `parseQueryString` | 更语义化，明确处理的是 query string | 待处理    |
+| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作            | 待处理    |
 | `getDirParam`    | `getDirParams`     | 已废弃，新方法返回更多信息          | ✅ 已完成 |
 
 **兼容性处理**：
@@ -525,11 +525,11 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### Phase 1: 新增功能（v6.1）
 
-| 任务                     | 优先级 | 预估工时 | 状态     |
-| ------------------------ | ------ | -------- | -------- |
-| 新增 `UrlBuilder` 类     | P1     | 0.5 天   | 待处理   |
+| 任务                     | 优先级 | 预估工时 | 状态      |
+| ------------------------ | ------ | -------- | --------- |
+| 新增 `UrlBuilder` 类     | P1     | 0.5 天   | 待处理    |
 | 新增 `getDirParams` 方法 | P1     | 0.5 天   | ✅ 已完成 |
-| 支持 `URL` 对象输入      | P2     | 0.5 天   | 待处理   |
+| 支持 `URL` 对象输入      | P2     | 0.5 天   | 待处理    |
 
 ### Phase 2: 性能优化（v6.2）
 

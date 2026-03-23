@@ -90,11 +90,12 @@ v6.x uses proper conditional exports:
 
 ### 4. Deprecated Functions Removed
 
-| Removed           | Replacement      |
-| ----------------- | ---------------- |
-| `getAppVersion()` | `appVersion()`   |
-| `getOsVersion()`  | `osVersion()`    |
-| `getDirParam()`   | `getDirParams()` |
+| Removed               | Replacement            |
+| --------------------- | ---------------------- |
+| `getAppVersion()`     | `appVersion()`         |
+| `getOsVersion()`      | `osVersion()`          |
+| `getDirParam()`       | `getDirParams()`       |
+| `getScrollPosition()` | `scroll.getPosition()` |
 
 ### 5. `pattern` Object Removed
 
@@ -117,6 +118,59 @@ See [Migration: `pattern` → `patterns`](#migration-pattern--patterns) for deta
 ### 5. `client` Module Removed
 
 The `client` module has been completely removed and replaced with `ua`.
+
+---
+
+## Build System Migration
+
+v6.0 migrates from Rollup to Rolldown, resulting in simplified build outputs and faster build times.
+
+### Build Performance
+
+| Metric       | v5.x (Rollup) | v6.x (Rolldown) |
+| ------------ | ------------- | --------------- |
+| Build time   | ~6-8s         | ~110ms          |
+| Config file  | ~190 lines    | ~65 lines       |
+| Dependencies | 10+ plugins   | Built-in        |
+
+---
+
+## Scroll Utilities Migration
+
+The `getScrollPosition` function has been replaced by a comprehensive `scroll` utility module:
+
+```js
+// v5.x
+import { getScrollPosition } from 'js-cool'
+const pos = getScrollPosition() // 'top' | 'bottom' | undefined
+
+// v6.x
+import { scroll } from 'js-cool'
+// or import scrollUtils from 'js-cool/scroll'
+
+scroll.getPosition() // 'top' | 'bottom' | undefined
+scroll.getProgress() // 0-100 (scroll progress percentage)
+scroll.createDirectionTracker() // Track scroll direction ('up' | 'down')
+scroll.isInViewport(el) // Check if element is in viewport
+scroll.scrollTo('#section') // Scroll to element
+scroll.scrollToTop() // Scroll to top
+scroll.scrollToBottom() // Scroll to bottom
+scroll.lock() // Lock scroll (for modals)
+scroll.unlock() // Unlock scroll
+scroll.getScrollbarWidth() // Get scrollbar width
+```
+
+### Enhanced Features
+
+| Method                       | Description                               |
+| ---------------------------- | ----------------------------------------- |
+| `getPosition(el, threshold)` | Now supports custom element and threshold |
+| `getProgress(el)`            | New: Get scroll progress (0-100)          |
+| `createDirectionTracker()`   | New: Track scroll direction               |
+| `isInViewport(el, opts)`     | New: Check element visibility             |
+| `scrollTo(target, opts)`     | New: Scroll to element/position           |
+| `lock()` / `unlock()`        | New: Lock/unlock scroll                   |
+| `getScrollbarWidth()`        | New: Get scrollbar width                  |
 
 ---
 
@@ -176,8 +230,8 @@ import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 | `client.isMobile()`         | `ua.isMobile()`         | Unchanged         |
 | `client.isWeChat()`         | `ua.isWeChat()`         | Unchanged         |
 | `client.isQQ()`             | `ua.isQQ()`             | Unchanged         |
-| `ClientDetector`            | `UADetector`            | Class renamed     |
-| `IClientDetector`           | `IUADetector`           | Interface renamed |
+| `ClientDetector`            | `UAParser`              | Class renamed     |
+| `IClientDetector`           | `IUAParser`             | Interface renamed |
 | `ClientInfo`                | `UAInfo`                | Type renamed      |
 | `ClientGetType`             | `UAGetType`             | Type renamed      |
 
@@ -267,10 +321,10 @@ ua.has('Chrome') // Check if string exists in UA
 #### Custom UA Detection
 
 ```js
-import { UADetector } from 'js-cool'
+import { UAParser } from 'js-cool'
 
-// Create detector with custom UA string
-const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+// Create parser with custom UA string
+const parser = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
 
 detector.isMobile() // true
 detector.isiOS() // true
@@ -321,7 +375,7 @@ const device = getDeviceInfo()
 import type { ClientInfo, ClientGetType, IClientDetector } from 'js-cool'
 
 // v6.x
-import type { UAInfo, UAGetType, IUADetector } from 'js-cool'
+import type { UAInfo, UAGetType, IUAParser } from 'js-cool'
 // or from subpath
 import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 ```
@@ -454,11 +508,11 @@ const isMobile = client.isMobile()
 const detector = new ClientDetector()
 
 // v6.x
-import { ua, UADetector } from 'js-cool'
+import { ua, UAParser } from 'js-cool'
 
 const info = ua()
 const isMobile = ua.isMobile()
-const detector = new UADetector()
+const parser = new UAParser()
 
 // Or use tree-shaking
 import { isMobile, getDeviceInfo } from 'js-cool/ua'
@@ -779,7 +833,123 @@ import type {
   BrowserPatternName,
   EnginePatternName,
   EnvPatternName,
+  URLPatternName,
 } from 'js-cool'
+```
+
+---
+
+## New: URL Utilities
+
+URL utilities with URLSearchParams-like API and a new chainable `Url` class:
+
+### Url Class (Chainable Builder)
+
+```js
+import { Url, url } from 'js-cool'
+
+// Create instance
+const u = new Url('https://example.com?id=123')
+
+// Get parameter
+u.get('id') // '123'
+
+// Chainable methods
+u.set('page', 2).delete('id').toString()
+// 'https://example.com?page=2'
+
+// URL building
+new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name,email')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name,email#section'
+
+// Property getters
+u.origin // 'https://example.com'
+u.host // 'example.com:8080' (with port)
+u.hostname // 'example.com'
+u.pathname // '/api/users'
+u.search // '?id=123'
+u.hash // '#section'
+
+// Iteration
+u.keys() // ['id', 'page']
+u.values() // ['123', '2']
+u.entries() // [['id', '123'], ['page', '2']]
+u.toParams() // { id: '123', page: '2' }
+```
+
+### url Namespace (Factory + Static)
+
+```js
+import { url } from 'js-cool'
+
+// Factory method
+url.from('https://example.com?id=123').get('id') // '123'
+url.from('https://example.com').set('page', 2).toString()
+
+// Static methods
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+
+// URLSearchParams-like (static)
+url.get('id', 'https://example.com?id=123') // '123'
+url.getAll('id', 'https://example.com?id=1&id=2') // ['1', '2']
+url.has('token', 'https://example.com?token=abc') // true
+url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+url.append('id', 3, 'https://example.com?id=1') // 'https://example.com/?id=1&id=3'
+url.delete('token', 'https://example.com?token=abc&id=1') // 'https://example.com/?id=1'
+
+// Iteration
+url.keys('https://example.com?a=1&b=2') // ['a', 'b']
+url.values('https://example.com?a=1&b=2') // ['1', '2']
+url.entries('https://example.com?a=1&b=2') // [['a', '1'], ['b', '2']]
+
+// URL property extraction
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+url.getHost('https://example.com:8080/path') // 'example.com:8080'
+url.getHostname('https://example.com:8080/path') // 'example.com'
+url.getPathname('https://example.com/api/users?id=1') // '/api/users'
+url.getSearch('https://example.com?key=value') // '?key=value'
+url.getHash('https://example.com/path#section') // '#section'
+
+// Constants
+url.PATTERNS // URL_PATTERNS
+url.VALUE_MAP // VALUE_MAP
+```
+
+### Direct Function Imports
+
+```js
+import {
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  deleteParam,
+  keys,
+  values,
+  entries,
+  getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+  parse,
+  stringify,
+  URL_PATTERNS,
+  VALUE_MAP,
+} from 'js-cool'
+
+// Same as url.* static methods
+get('id', 'https://example.com?id=123') // '123'
+set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 ```
 
 ---

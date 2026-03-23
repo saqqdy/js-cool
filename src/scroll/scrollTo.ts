@@ -21,7 +21,7 @@
  * scrollBy(200) // scroll down 200px
  * scrollBy(-100) // scroll up 100px
  * ```
- * @since 2.0.0
+ * @since 6.0.0
  */
 
 type ScrollBehavior = 'auto' | 'smooth' | 'instant'

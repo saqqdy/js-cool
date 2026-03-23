@@ -8,36 +8,7 @@
 v5.x 中的 `pattern` 对象在 v6.0.0 中已被**移除**。你必须迁移到新的 `patterns` 模块。
 :::
 
-### 快速迁移
-
-```js
-// v5.x（已移除）
-import { pattern } from 'js-cool'
-pattern.email.test('user@example.com')
-pattern.ip4.test('192.168.1.1')
-pattern.pass.test('abc123')
-
-// v6.x
-import { validation } from 'js-cool'
-validation.email.test('user@example.com')
-validation.ipv4.test('192.168.1.1') // 重命名：ip4 → ipv4
-validation.password.test('abc123') // 重命名：pass → password
-```
-
-### 模式名称变更
-
-| v5.x (`pattern`) | v6.x (`validation`) | 说明                     |
-| ---------------- | ------------------- | ------------------------ |
-| `ip4`            | `ipv4`              | 重命名                   |
-| `ip4_pri`        | `ipv4Private`       | 重命名                   |
-| `pass`           | `password`          | 重命名                   |
-| `isjson`         | `jsonLike`          | 重命名                   |
-| `mobile`         | `mobile`            | 更新：支持 1[3-9] 新号段 |
-| `qq`             | `qq`                | 更新：支持 5-14 位       |
-| -                | `idCard`            | **新增**：中国身份证     |
-| -                | `hexColor`          | **新增**：十六进制颜色   |
-
-详见 [迁移指南](../../guide/migration.md)。
+完整迁移说明请参考 [迁移指南](../../guide/migration.md#pattern--patterns--validation)。
 
 ## 用法
 

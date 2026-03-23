@@ -82,48 +82,8 @@ getDirParams()
 
 ## 从 `getDirParam` 迁移
 
-`getDirParam` 已在 v6.0.0 中移除。请按以下方式迁移到 `getDirParams`：
+::: warning 重大变更
+`getDirParam` 已在 v6.0.0 中**移除**。请迁移到 `getDirParams`。
+:::
 
-### 返回值映射
-
-| `getDirParam` (v5.x) | `getDirParams` (v6.x) | 说明                 |
-| -------------------- | --------------------- | -------------------- |
-| `host`               | `origin`              | 现在包含协议         |
-| -                    | `host`                | 新增：主机名 + 端口  |
-| -                    | `hostname`            | 新增：仅主机名       |
-| -                    | `pathname`            | 新增：完整路径字符串 |
-| `path`               | `segments`            | 重命名               |
-| -                    | `query`               | 新增：查询字符串     |
-| -                    | `hash`                | 新增：hash 值        |
-
-### 迁移示例
-
-```js
-// v5.x（已废弃）
-import { getDirParam } from 'js-cool'
-
-const { host, path } = getDirParam('https://example.com/user/123')
-// host: 'https://example.com'
-// path: ['user', '123']
-
-// v6.x
-import { getDirParams } from 'js-cool'
-
-const { origin, segments } = getDirParams('https://example.com/user/123')
-// origin: 'https://example.com'
-// segments: ['user', '123']
-```
-
-### 修复的问题
-
-旧的 `getDirParam` 会错误地将 query string 混入最后一个路径段：
-
-```js
-// v5.x - Bug：query 混入路径
-getDirParam('https://example.com/api/users?id=123')
-// { host: 'https://example.com', path: ['api', 'users?id=123'] }
-
-// v6.x - 已修复：query 正确分离
-getDirParams('https://example.com/api/users?id=123')
-// { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
-```
+完整迁移说明请参考 [迁移指南](../../guide/migration.md#getdirparam--getdirparams)。

@@ -204,6 +204,96 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 // ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu, miniProgram
 ```
 
+#### URL Utilities
+
+URLSearchParams-like API for URL parsing and building, plus a chainable `Url` class.
+
+```js
+import {
+  url,
+  Url,
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  deleteParam,
+  keys,
+  values,
+  entries,
+  getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+  parse,
+  stringify,
+  URL_PATTERNS,
+  VALUE_MAP,
+} from 'js-cool'
+
+// ============ Method 1: Url class (chainable) ============
+const u = new Url('https://example.com?id=123')
+u.get('id') // '123'
+u.set('page', 2).delete('id').toString()
+// 'https://example.com?page=2'
+
+// Chainable URL building
+new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name#section'
+
+// URL property getters
+u.origin // 'https://example.com'
+u.host // 'example.com:8080' (with port)
+u.hostname // 'example.com' (without port)
+u.pathname // '/api/users'
+u.search // '?id=123'
+u.hash // '#section'
+
+// ============ Method 2: url namespace (factory + static) ============
+url.from('https://example.com?id=123').get('id') // '123'
+url.from('https://example.com').set('page', 2).toString()
+
+// Static methods
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+
+// URLSearchParams-like (static)
+url.get('id', 'https://example.com?id=123') // '123'
+url.getAll('id', 'https://example.com?id=1&id=2') // ['1', '2']
+url.has('token', 'https://example.com?token=abc') // true
+url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+url.append('id', 3, 'https://example.com?id=1') // 'https://example.com/?id=1&id=3'
+url.delete('token', 'https://example.com?token=abc&id=1') // 'https://example.com/?id=1'
+
+// Iteration
+url.keys('https://example.com?a=1&b=2') // ['a', 'b']
+url.values('https://example.com?a=1&b=2') // ['1', '2']
+url.entries('https://example.com?a=1&b=2') // [['a', '1'], ['b', '2']]
+
+// URL property extraction (static)
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+url.getHost('https://example.com:8080/path') // 'example.com:8080'
+url.getHostname('https://example.com:8080/path') // 'example.com'
+url.getPathname('https://example.com/api/users?id=1') // '/api/users'
+url.getSearch('https://example.com?key=value') // '?key=value'
+url.getHash('https://example.com/path#section') // '#section'
+
+// ============ Method 3: Direct function imports ============
+import { get, set, parse, stringify } from 'js-cool'
+
+get('id', 'https://example.com?id=123') // '123'
+set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+parse('?key1=100&key2=true', { covert: true }) // { key1: 100, key2: true }
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
 ---
 
 ### String

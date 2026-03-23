@@ -90,11 +90,12 @@ v6.x 使用正确的条件导出：
 
 ### 4. 移除废弃函数
 
-| 已移除            | 替代方案         |
-| ----------------- | ---------------- |
-| `getAppVersion()` | `appVersion()`   |
-| `getOsVersion()`  | `osVersion()`    |
-| `getDirParam()`   | `getDirParams()` |
+| 已移除                | 替代方案               |
+| --------------------- | ---------------------- |
+| `getAppVersion()`     | `appVersion()`         |
+| `getOsVersion()`      | `osVersion()`          |
+| `getDirParam()`       | `getDirParams()`       |
+| `getScrollPosition()` | `scroll.getPosition()` |
 
 ### 5. 移除 `pattern` 对象
 
@@ -117,6 +118,59 @@ validation.email.test('user@example.com')
 ### 5. 移除 `client` 模块
 
 `client` 模块已被完全移除，替换为 `ua`。
+
+---
+
+## 构建系统迁移
+
+v6.0 从 Rollup 迁移到 Rolldown，简化了构建产物并提升了构建速度。
+
+### 构建性能对比
+
+| 指标     | v5.x (Rollup) | v6.x (Rolldown) |
+| -------- | ------------- | --------------- |
+| 构建时间 | ~6-8s         | ~110ms          |
+| 配置文件 | ~190 行       | ~65 行          |
+| 依赖     | 10+ 插件      | 内置            |
+
+---
+
+## 滚动工具迁移
+
+`getScrollPosition` 函数已被功能更全面的 `scroll` 工具模块替代：
+
+```js
+// v5.x
+import { getScrollPosition } from 'js-cool'
+const pos = getScrollPosition() // 'top' | 'bottom' | undefined
+
+// v6.x
+import { scroll } from 'js-cool'
+// 或 import scrollUtils from 'js-cool/scroll'
+
+scroll.getPosition() // 'top' | 'bottom' | undefined
+scroll.getProgress() // 0-100（滚动进度百分比）
+scroll.createDirectionTracker() // 追踪滚动方向（'up' | 'down'）
+scroll.isInViewport(el) // 检测元素是否在视口内
+scroll.scrollTo('#section') // 滚动到指定元素
+scroll.scrollToTop() // 滚动到顶部
+scroll.scrollToBottom() // 滚动到底部
+scroll.lock() // 锁定滚动（适用于弹窗）
+scroll.unlock() // 解锁滚动
+scroll.getScrollbarWidth() // 获取滚动条宽度
+```
+
+### 新增功能
+
+| 方法                         | 说明                        |
+| ---------------------------- | --------------------------- |
+| `getPosition(el, threshold)` | 支持自定义元素和阈值        |
+| `getProgress(el)`            | 新增：获取滚动进度（0-100） |
+| `createDirectionTracker()`   | 新增：追踪滚动方向          |
+| `isInViewport(el, opts)`     | 新增：检测元素是否在视口内  |
+| `scrollTo(target, opts)`     | 新增：滚动到元素/位置       |
+| `lock()` / `unlock()`        | 新增：锁定/解锁滚动         |
+| `getScrollbarWidth()`        | 新增：获取滚动条宽度        |
 
 ---
 
@@ -176,8 +230,8 @@ import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 | `client.isMobile()`         | `ua.isMobile()`         | 不变         |
 | `client.isWeChat()`         | `ua.isWeChat()`         | 不变         |
 | `client.isQQ()`             | `ua.isQQ()`             | 不变         |
-| `ClientDetector`            | `UADetector`            | 类重命名     |
-| `IClientDetector`           | `IUADetector`           | 接口重命名   |
+| `ClientDetector`            | `UAParser`              | 类重命名     |
+| `IClientDetector`           | `IUAParser`             | 接口重命名   |
 | `ClientInfo`                | `UAInfo`                | 类型重命名   |
 | `ClientGetType`             | `UAGetType`             | 类型重命名   |
 
@@ -267,10 +321,10 @@ ua.has('Chrome') // 检查 UA 字符串中是否包含指定内容
 #### 自定义 UA 检测
 
 ```js
-import { UADetector } from 'js-cool'
+import { UAParser } from 'js-cool'
 
-// 使用自定义 UA 字符串创建检测器
-const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+// 使用自定义 UA 字符串创建解析器
+const parser = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
 
 detector.isMobile() // true
 detector.isiOS() // true
@@ -321,7 +375,7 @@ const device = getDeviceInfo()
 import type { ClientInfo, ClientGetType, IClientDetector } from 'js-cool'
 
 // v6.x
-import type { UAInfo, UAGetType, IUADetector } from 'js-cool'
+import type { UAInfo, UAGetType, IUAParser } from 'js-cool'
 // 或从子路径导入
 import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 ```
@@ -454,11 +508,11 @@ const isMobile = client.isMobile()
 const detector = new ClientDetector()
 
 // v6.x
-import { ua, UADetector } from 'js-cool'
+import { ua, UAParser } from 'js-cool'
 
 const info = ua()
 const isMobile = ua.isMobile()
-const detector = new UADetector()
+const parser = new UAParser()
 
 // 或使用 tree-shaking
 import { isMobile, getDeviceInfo } from 'js-cool/ua'
@@ -779,6 +833,150 @@ import type {
   BrowserPatternName,
   EnginePatternName,
   EnvPatternName,
+  URLPatternName,
+} from 'js-cool'
+```
+
+---
+
+## 新增：URL 工具
+
+URL 工具提供类 URLSearchParams API 和新的链式 `Url` 类：
+
+### Url 类（链式构建器）
+
+```js
+import { Url, url } from 'js-cool'
+
+// 创建实例
+const u = new Url('https://example.com?id=123')
+
+// 获取参数
+u.get('id') // '123'
+
+// 链式方法
+u.set('page', 2).delete('id').toString()
+// 'https://example.com?page=2'
+
+// URL 构建
+new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name,email')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name,email#section'
+
+// 属性 getter
+u.origin // 'https://example.com'
+u.host // 'example.com:8080'（含端口）
+u.hostname // 'example.com'
+u.pathname // '/api/users'
+u.search // '?id=123'
+u.hash // '#section'
+
+// 迭代方法
+u.keys() // ['id', 'page']
+u.values() // ['123', '2']
+u.entries() // [['id', '123'], ['page', '2']]
+u.toParams() // { id: '123', page: '2' }
+```
+
+### url 命名空间（工厂 + 静态方法）
+
+```js
+import { url } from 'js-cool'
+
+// 工厂方法
+url.from('https://example.com?id=123').get('id') // '123'
+url.from('https://example.com').set('page', 2).toString()
+
+// 静态方法
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+
+// 类 URLSearchParams 方法（静态）
+url.get('id', 'https://example.com?id=123') // '123'
+url.getAll('id', 'https://example.com?id=1&id=2') // ['1', '2']
+url.has('token', 'https://example.com?token=abc') // true
+url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+url.append('id', 3, 'https://example.com?id=1') // 'https://example.com/?id=1&id=3'
+url.delete('token', 'https://example.com?token=abc&id=1') // 'https://example.com/?id=1'
+
+// 迭代方法
+url.keys('https://example.com?a=1&b=2') // ['a', 'b']
+url.values('https://example.com?a=1&b=2') // ['1', '2']
+url.entries('https://example.com?a=1&b=2') // [['a', '1'], ['b', '2']]
+
+// URL 属性提取
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+url.getHost('https://example.com:8080/path') // 'example.com:8080'
+url.getHostname('https://example.com:8080/path') // 'example.com'
+url.getPathname('https://example.com/api/users?id=1') // '/api/users'
+url.getSearch('https://example.com?key=value') // '?key=value'
+url.getHash('https://example.com/path#section') // '#section'
+
+// 常量
+url.PATTERNS // URL_PATTERNS
+url.VALUE_MAP // VALUE_MAP
+```
+
+### 直接导入函数
+
+```js
+import {
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  deleteParam,
+  keys,
+  values,
+  entries,
+  getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+  parse,
+  stringify,
+  URL_PATTERNS,
+  VALUE_MAP,
+} from 'js-cool'
+
+// 与 url.* 静态方法相同
+get('id', 'https://example.com?id=123') // '123'
+set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+### 命名导出
+
+所有函数也支持命名导出：
+
+```js
+import {
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  deleteParam,
+  keys,
+  values,
+  entries,
+  getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+  parse,
+  stringify,
+  URL_PATTERNS,
+  VALUE_MAP,
 } from 'js-cool'
 ```
 

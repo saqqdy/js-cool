@@ -195,6 +195,96 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 // ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu, miniProgram
 ```
 
+#### URL 工具
+
+类 URLSearchParams API 用于 URL 解析和构建，以及链式调用的 `Url` 类。
+
+```js
+import {
+  url,
+  Url,
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  deleteParam,
+  keys,
+  values,
+  entries,
+  getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+  parse,
+  stringify,
+  URL_PATTERNS,
+  VALUE_MAP,
+} from 'js-cool'
+
+// ============ 方式 1: Url 类 (链式调用) ============
+const u = new Url('https://example.com?id=123')
+u.get('id') // '123'
+u.set('page', 2).delete('id').toString()
+// 'https://example.com?page=2'
+
+// 链式构建 URL
+new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name#section'
+
+// URL 属性 getter
+u.origin // 'https://example.com'
+u.host // 'example.com:8080' (含端口)
+u.hostname // 'example.com' (不含端口)
+u.pathname // '/api/users'
+u.search // '?id=123'
+u.hash // '#section'
+
+// ============ 方式 2: url 命名空间 (工厂 + 静态方法) ============
+url.from('https://example.com?id=123').get('id') // '123'
+url.from('https://example.com').set('page', 2).toString()
+
+// 静态方法
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+
+// 类 URLSearchParams 方法 (静态)
+url.get('id', 'https://example.com?id=123') // '123'
+url.getAll('id', 'https://example.com?id=1&id=2') // ['1', '2']
+url.has('token', 'https://example.com?token=abc') // true
+url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+url.append('id', 3, 'https://example.com?id=1') // 'https://example.com/?id=1&id=3'
+url.delete('token', 'https://example.com?token=abc&id=1') // 'https://example.com/?id=1'
+
+// 迭代
+url.keys('https://example.com?a=1&b=2') // ['a', 'b']
+url.values('https://example.com?a=1&b=2') // ['1', '2']
+url.entries('https://example.com?a=1&b=2') // [['a', '1'], ['b', '2']]
+
+// URL 属性提取 (静态)
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+url.getHost('https://example.com:8080/path') // 'example.com:8080'
+url.getHostname('https://example.com:8080/path') // 'example.com'
+url.getPathname('https://example.com/api/users?id=1') // '/api/users'
+url.getSearch('https://example.com?key=value') // '?key=value'
+url.getHash('https://example.com/path#section') // '#section'
+
+// ============ 方式 3: 直接导入函数 ============
+import { get, set, parse, stringify } from 'js-cool'
+
+get('id', 'https://example.com?id=123') // '123'
+set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+parse('?key1=100&key2=true', { covert: true }) // { key1: 100, key2: true }
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
 ---
 
 ### 字符串

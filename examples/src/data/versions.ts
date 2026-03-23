@@ -77,7 +77,7 @@ export const versions: Record<string, string> = {
 	getUrlParam: '1.0.0',
 	parseUrlParam: '1.0.0',
 	spliceUrlParam: '1.0.0',
-	getDirParam: '1.0.0',
+	getDirParams: '6.0.0',
 	client: '1.0.0',
 	appVersion: '1.0.0',
 	browserVersion: '1.0.0',
@@ -85,6 +85,29 @@ export const versions: Record<string, string> = {
 	compareVersion: '1.0.0',
 	nextVersion: '1.0.0',
 	openUrl: '1.0.0',
+
+	// URL Utilities (v6.0.0)
+	Url: '6.0.0',
+	url: '6.0.0',
+	get: '6.0.0',
+	getAll: '6.0.0',
+	has: '6.0.0',
+	set: '6.0.0',
+	append: '6.0.0',
+	deleteParam: '6.0.0',
+	keys: '6.0.0',
+	values: '6.0.0',
+	entries: '6.0.0',
+	parse: '6.0.0',
+	stringify: '6.0.0',
+	getOrigin: '6.0.0',
+	getHost: '6.0.0',
+	getHostname: '6.0.0',
+	getPathname: '6.0.0',
+	getSearch: '6.0.0',
+	getHash: '6.0.0',
+	URL_PATTERNS: '6.0.0',
+	VALUE_MAP: '6.0.0',
 
 	// Dom
 	copy: '1.0.0',
@@ -95,6 +118,21 @@ export const versions: Record<string, string> = {
 	windowSize: '1.0.0',
 	getScrollPosition: '1.0.0',
 	preloader: '1.0.0',
+
+	// Scroll (v6.0.0)
+	scroll: '6.0.0',
+	scrollTo: '6.0.0',
+	scrollToTop: '6.0.0',
+	scrollToBottom: '6.0.0',
+	scrollBy: '6.0.0',
+	scrollLock: '6.0.0',
+	scrollUnlock: '6.0.0',
+	scrollToggle: '6.0.0',
+	getPosition: '6.0.0',
+	getProgress: '6.0.0',
+	getDirection: '6.0.0',
+	isInViewport: '6.0.0',
+	getScrollbarWidth: '6.0.0',
 
 	// Storage
 	setCache: '1.0.0',
@@ -164,6 +202,8 @@ export const versions: Record<string, string> = {
 	any: '3.0.0',
 	delay: '2.0.0',
 	waiting: '2.0.0',
+	getGlobal: '6.0.0',
+	patterns: '6.0.0',
 
 	// Async
 	debounce: '1.0.0',

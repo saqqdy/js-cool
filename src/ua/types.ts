@@ -196,9 +196,9 @@ export interface UAInfo {
 export type UAGetType = 'device' | 'os' | 'browser' | 'engine' | 'environment'
 
 /**
- * User Agent detector class interface
+ * User Agent parser class interface
  */
-export interface IUADetector {
+export interface IUAParser {
 	/** Get full user agent info */
 	readonly info: UAInfo
 	/** Get device info */

@@ -63,6 +63,15 @@ export const changelog: ChangelogData = {
 		},
 		{
 			type: 'new',
+			name: 'Url class & url namespace',
+			category: 'Url',
+			description:
+				'Chainable URL builder and URLSearchParams-like API for URL parsing and manipulation',
+			descriptionZh: '链式 URL 构建器和类 URLSearchParams API，用于 URL 解析和操作',
+			anchor: 'url',
+		},
+		{
+			type: 'new',
 			name: 'Chinese app detection',
 			category: 'Url',
 			description:

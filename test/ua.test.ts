@@ -2,7 +2,7 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it } from 'vitest'
-import ua, { UADetector } from '../src/ua/index'
+import ua, { UAParser } from '../src/ua/index'
 
 // Import sub-modules for comprehensive testing
 import {
@@ -182,23 +182,23 @@ beforeEach(() => {
 })
 
 describe('ua module', () => {
-	describe('UADetector class', () => {
+	describe('UAParser class', () => {
 		describe('constructor', () => {
 			it('should create instance with custom UA', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.userAgent).toBe(SAMPLE_UA.iphone)
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.userAgent).toBe(SAMPLE_UA.iphone)
 			})
 
 			it('should create instance without UA (uses default)', () => {
-				const detector = new UADetector()
-				expect(typeof detector.userAgent).toBe('string')
+				const parser = new UAParser()
+				expect(typeof parser.userAgent).toBe('string')
 			})
 		})
 
 		describe('info getter', () => {
 			it('should return complete info object', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				const info = detector.info
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				const info = parser.info
 
 				expect(info).toHaveProperty('device')
 				expect(info).toHaveProperty('os')
@@ -209,87 +209,87 @@ describe('ua module', () => {
 			})
 
 			it('should cache results', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				const info1 = detector.info
-				const info2 = detector.info
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				const info1 = parser.info
+				const info2 = parser.info
 				expect(info1).toBe(info2)
 			})
 		})
 
 		describe('device getter', () => {
 			it('should return device info', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.device.iphone).toBeTruthy()
-				expect(detector.device.mobile).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.device.iphone).toBeTruthy()
+				expect(parser.device.mobile).toBeTruthy()
 			})
 		})
 
 		describe('os getter', () => {
 			it('should return OS info', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.os.name).toBe('iOS')
-				expect(detector.os.version).toBe('17.2')
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.os.name).toBe('iOS')
+				expect(parser.os.version).toBe('17.2')
 			})
 		})
 
 		describe('browser getter', () => {
 			it('should return browser info', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.browser.name).toBe('Chrome')
-				expect(detector.browser.engine).toBe('Blink')
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.browser.name).toBe('Chrome')
+				expect(parser.browser.engine).toBe('Blink')
 			})
 		})
 
 		describe('environment getter', () => {
 			it('should return environment info', () => {
-				const detector = new UADetector(SAMPLE_UA.wechat)
-				expect(detector.environment.wechat).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.wechat)
+				expect(parser.environment.wechat).toBeTruthy()
 			})
 		})
 
 		describe('userAgent getter', () => {
 			it('should return UA string', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.userAgent).toBe(SAMPLE_UA.iphone)
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.userAgent).toBe(SAMPLE_UA.iphone)
 			})
 		})
 
 		describe('get method', () => {
 			it('should get device info', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.get('device').mobile).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.get('device').mobile).toBeTruthy()
 			})
 
 			it('should get OS info', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.get('os').name).toBe('iOS')
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.get('os').name).toBe('iOS')
 			})
 
 			it('should get browser info', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.get('browser').name).toBe('Chrome')
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.get('browser').name).toBe('Chrome')
 			})
 
 			it('should get engine info', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.get('engine').name).toBe('Blink')
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.get('engine').name).toBe('Blink')
 			})
 
 			it('should get environment info', () => {
-				const detector = new UADetector(SAMPLE_UA.wechat)
-				expect(detector.get('environment').wechat).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.wechat)
+				expect(parser.get('environment').wechat).toBeTruthy()
 			})
 
 			it('should return null for unknown type', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(detector.get('unknown' as any)).toBeNull()
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(parser.get('unknown' as any)).toBeNull()
 			})
 		})
 
 		describe('getMultiple method', () => {
 			it('should get multiple info types', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				const result = detector.getMultiple(['device', 'os', 'browser'])
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				const result = parser.getMultiple(['device', 'os', 'browser'])
 				expect(result.device).toBeDefined()
 				expect(result.os).toBeDefined()
 				expect(result.browser).toBeDefined()
@@ -298,117 +298,117 @@ describe('ua module', () => {
 
 		describe('has method', () => {
 			it('should return true if name exists in UA', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.has('Chrome')).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.has('Chrome')).toBeTruthy()
 			})
 
 			it('should return false if name does not exist', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.has('Firefox')).toBeFalsy()
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.has('Firefox')).toBeFalsy()
 			})
 
 			it('should be case insensitive', () => {
-				const detector = new UADetector(SAMPLE_UA.chromeWindows)
-				expect(detector.has('chrome')).toBeTruthy()
-				expect(detector.has('CHROME')).toBeTruthy()
+				const parser = new UAParser(SAMPLE_UA.chromeWindows)
+				expect(parser.has('chrome')).toBeTruthy()
+				expect(parser.has('CHROME')).toBeTruthy()
 			})
 		})
 
 		describe('utility methods', () => {
 			it('should get network info', () => {
-				const detector = new UADetector()
-				const network = detector.getNetwork()
+				const parser = new UAParser()
+				const network = parser.getNetwork()
 				expect(network).toHaveProperty('online')
 				expect(network).toHaveProperty('type')
 				expect(network).toHaveProperty('effectiveType')
 			})
 
 			it('should get screen info', () => {
-				const detector = new UADetector()
-				const screen = detector.getScreen()
+				const parser = new UAParser()
+				const screen = parser.getScreen()
 				expect(screen).toHaveProperty('width')
 				expect(screen).toHaveProperty('height')
 				expect(screen).toHaveProperty('pixelRatio')
 			})
 
 			it('should get language', () => {
-				const detector = new UADetector()
-				const lang = detector.getLanguage()
+				const parser = new UAParser()
+				const lang = parser.getLanguage()
 				expect(typeof lang).toBe('string')
 			})
 
 			it('should get timezone', () => {
-				const detector = new UADetector()
-				const tz = detector.getTimezone()
+				const parser = new UAParser()
+				const tz = parser.getTimezone()
 				expect(typeof tz).toBe('string')
 			})
 
 			it('should get orientation status', () => {
-				const detector = new UADetector()
-				const orientation = detector.getOrientationStatus()
+				const parser = new UAParser()
+				const orientation = parser.getOrientationStatus()
 				expect(['portrait', 'landscape']).toContain(orientation)
 			})
 
 			it('should check dark mode', () => {
-				const detector = new UADetector()
-				expect(typeof detector.isDarkMode()).toBe('boolean')
+				const parser = new UAParser()
+				expect(typeof parser.isDarkMode()).toBe('boolean')
 			})
 		})
 
 		describe('quick check methods', () => {
 			it('isMobile', () => {
-				expect(new UADetector(SAMPLE_UA.iphone).isMobile()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.chromeWindows).isMobile()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.iphone).isMobile()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.chromeWindows).isMobile()).toBeFalsy()
 			})
 
 			it('isTablet', () => {
-				expect(new UADetector(SAMPLE_UA.ipad).isTablet()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isTablet()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.ipad).isTablet()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isTablet()).toBeFalsy()
 			})
 
 			it('isDesktop', () => {
-				expect(new UADetector(SAMPLE_UA.chromeWindows).isDesktop()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isDesktop()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.chromeWindows).isDesktop()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isDesktop()).toBeFalsy()
 			})
 
 			it('isTouch', () => {
-				const detector = new UADetector(SAMPLE_UA.iphone)
-				expect(typeof detector.isTouch()).toBe('boolean')
+				const parser = new UAParser(SAMPLE_UA.iphone)
+				expect(typeof parser.isTouch()).toBe('boolean')
 			})
 
 			it('isiOS', () => {
-				expect(new UADetector(SAMPLE_UA.iphone).isiOS()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.androidPhone).isiOS()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.iphone).isiOS()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.androidPhone).isiOS()).toBeFalsy()
 			})
 
 			it('isiPadOS', () => {
-				expect(new UADetector(SAMPLE_UA.ipad).isiPadOS()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isiPadOS()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.ipad).isiPadOS()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isiPadOS()).toBeFalsy()
 			})
 
 			it('isAndroid', () => {
-				expect(new UADetector(SAMPLE_UA.androidPhone).isAndroid()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isAndroid()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.androidPhone).isAndroid()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isAndroid()).toBeFalsy()
 			})
 
 			it('isHarmonyOS', () => {
-				expect(new UADetector(SAMPLE_UA.harmonyOS).isHarmonyOS()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.androidPhone).isHarmonyOS()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.harmonyOS).isHarmonyOS()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.androidPhone).isHarmonyOS()).toBeFalsy()
 			})
 
 			it('isWeChat', () => {
-				expect(new UADetector(SAMPLE_UA.wechat).isWeChat()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isWeChat()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.wechat).isWeChat()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isWeChat()).toBeFalsy()
 			})
 
 			it('isQQ', () => {
-				expect(new UADetector(SAMPLE_UA.qq).isQQ()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isQQ()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.qq).isQQ()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isQQ()).toBeFalsy()
 			})
 
 			it('isMiniProgram', () => {
-				expect(new UADetector(SAMPLE_UA.wechatMiniProgram).isMiniProgram()).toBeTruthy()
-				expect(new UADetector(SAMPLE_UA.iphone).isMiniProgram()).toBeFalsy()
+				expect(new UAParser(SAMPLE_UA.wechatMiniProgram).isMiniProgram()).toBeTruthy()
+				expect(new UAParser(SAMPLE_UA.iphone).isMiniProgram()).toBeFalsy()
 			})
 		})
 	})
@@ -482,8 +482,8 @@ describe('ua module', () => {
 			expect(typeof ua.isMiniProgram()).toBe('boolean')
 		})
 
-		it('should expose UADetector class', () => {
-			expect(ua.UADetector).toBe(UADetector)
+		it('should expose UAParser class', () => {
+			expect(ua.UAParser).toBe(UAParser)
 		})
 	})
 })

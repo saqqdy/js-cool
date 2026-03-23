@@ -40,6 +40,14 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- **New `Url` class and `url` namespace**: Chainable URL builder with URLSearchParams-like API
+  - `url.from(url)` - Factory method to create Url instance
+  - `Url` class with chainable methods: `set()`, `append()`, `delete()`, `path()`, `setHash()`
+  - URL property getters: `origin`, `host`, `hostname`, `pathname`, `search`, `hash`
+  - URLSearchParams-like methods: `get()`, `getAll()`, `has()`, `keys()`, `values()`, `entries()`
+  - Parse & stringify: `parse()`, `stringify()`, `toParams()`
+  - Static utility methods: `getOrigin()`, `getHost()`, `getHostname()`, `getPathname()`, `getSearch()`, `getHash()`
+
 - **New `scroll` Module**: Comprehensive scroll utilities
   - `getPosition` - Get scroll position state ('top' | 'bottom' | undefined)
   - `getProgress` - Get scroll progress (0-100)

@@ -409,15 +409,15 @@ getAvailWidth() // 可用屏幕宽度
 getAvailHeight() // 可用屏幕高度
 ```
 
-## UADetector 类
+## UAParser 类
 
 用于自定义 UA 字符串解析：
 
 ```js
-import { UADetector } from 'js-cool'
+import { UAParser } from 'js-cool'
 
 // 使用自定义 UA 创建检测器
-const detector = new UADetector('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
+const detector = new UAParser('Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)')
 
 // 实例属性
 detector.info // 完整信息对象
@@ -464,7 +464,7 @@ import type {
   NetworkInfo,
   ScreenInfo,
   UAGetType,
-  IUADetector,
+  IUAParser,
   OSName,
   BrowserName,
   EngineName,
@@ -565,151 +565,7 @@ if (isSlowConnection()) {
 ## 从 `client` 迁移
 
 ::: warning
-`client` 模块已在 v6.0.0 中移除，请迁移到 `ua`。
+`client` 模块已在 v6.0.0 中**移除**，请迁移到 `ua`。
 :::
 
-### 导入方式变更
-
-```js
-// 旧写法（v5.x）
-import { client, ClientDetector } from 'js-cool'
-
-// 新写法（v6.x）
-import { ua, UADetector } from 'js-cool'
-
-// 或按需导入（推荐，支持 tree-shaking）
-import { isMobile, isWeChat, isiOS } from 'js-cool/ua'
-```
-
-### API 迁移对照表
-
-| 旧 API（`client`）          | 新 API（`ua`）          | 说明           |
-| --------------------------- | ----------------------- | -------------- |
-| `client()`                  | `ua()` 或 `ua.info`     | 获取所有信息   |
-| `client.info`               | `ua.info`               | 相同的属性访问 |
-| `client.get('browser')`     | `ua.get('browser')`     | 相同方法       |
-| `client.getMultiple([...])` | `ua.getMultiple([...])` | 相同方法       |
-| `client.isMobile()`         | `ua.isMobile()`         | 相同方法       |
-| `client.isWeChat()`         | `ua.isWeChat()`         | 相同方法       |
-| `client.has('Chrome')`      | `ua.has('Chrome')`      | 相同方法       |
-| `client.getNetwork()`       | `ua.getNetwork()`       | 相同方法       |
-| `client.getScreen()`        | `ua.getScreen()`        | 相同方法       |
-| `new ClientDetector(ua)`    | `new UADetector(ua)`    | 类名变更       |
-
-### 属性快捷访问迁移
-
-旧的 `client` 模块有快捷属性，新模块使用方法调用或属性访问：
-
-| 旧 API（`client`） | 新 API（`ua`）                                 | 说明         |
-| ------------------ | ---------------------------------------------- | ------------ |
-| `client.mobile`    | `ua.isMobile()` 或 `ua.device.mobile`          | 推荐方法调用 |
-| `client.ios`       | `ua.isiOS()` 或 `ua.os.name === 'iOS'`         | 推荐方法调用 |
-| `client.android`   | `ua.isAndroid()` 或 `ua.os.name === 'Android'` | 推荐方法调用 |
-| `client.weixin`    | `ua.isWeChat()` 或 `ua.environment.wechat`     | 推荐方法调用 |
-| `client.qq`        | `ua.isQQ()` 或 `ua.environment.qq`             | 推荐方法调用 |
-| `client.iPad`      | `ua.device.ipad`                               | 属性访问     |
-| `client.iPhone`    | `ua.device.iphone`                             | 属性访问     |
-
-### 代码示例对照
-
-#### 旧写法（v5.x）
-
-```js
-import { client, ClientDetector } from 'js-cool'
-
-// 获取所有信息
-const info = client()
-
-// 快速检查
-if (client.mobile) {
-  // ...
-}
-
-if (client.weixin) {
-  // ...
-}
-
-// 自定义 UA
-const detector = new ClientDetector(customUA)
-if (detector.ios) {
-  // ...
-}
-```
-
-#### 新写法（v6.x）
-
-```js
-import { ua, UADetector } from 'js-cool'
-// 或按需导入：import { isMobile, isWeChat, isiOS } from 'js-cool/ua'
-
-// 获取所有信息
-const info = ua()
-// 或
-const info = ua.info
-
-// 快速检查
-if (ua.isMobile()) {
-  // ...
-}
-
-if (ua.isWeChat()) {
-  // ...
-}
-
-// 自定义 UA
-const detector = new UADetector(customUA)
-if (detector.isiOS()) {
-  // ...
-}
-```
-
-### `ua` 模块新增功能
-
-`ua` 模块包含了许多旧 `client` 模块没有的新功能：
-
-```js
-// 新增设备检测
-ua.device.phone // 是否手机
-ua.device.ipad // 是否 iPad
-ua.device.iphone // 是否 iPhone
-ua.device.androidPhone // 是否 Android 手机
-ua.device.androidTablet // 是否 Android 平板
-
-// 新增操作系统检测
-ua.isHarmonyOS() // 检测鸿蒙系统
-ua.isiPadOS() // 检测 iPadOS
-
-// 新增环境检测（国产应用）
-ua.environment.wxwork // 企业微信
-ua.environment.dingtalk // 钉钉
-ua.environment.douyin // 抖音
-ua.environment.kuaishou // 快手
-ua.environment.baidu // 百度 App
-ua.environment.xiaomi // 小米浏览器
-ua.environment.huawei // 华为浏览器
-ua.environment.miniProgram // 小程序
-ua.environment.miniGame // 小游戏
-
-// 新增工具方法
-ua.getNetwork() // 网络信息
-ua.getScreen() // 屏幕信息
-ua.getTimezone() // 时区
-ua.isDarkMode() // 深色模式检测
-```
-
-### 类型迁移
-
-```ts
-// 旧写法（v5.x）
-import type { ClientInfo, IClientDetector } from 'js-cool'
-
-// 新写法（v6.x）
-import type { UAInfo, IUADetector } from 'js-cool'
-```
-
-| 旧类型            | 新类型        |
-| ----------------- | ------------- |
-| `ClientInfo`      | `UAInfo`      |
-| `IClientDetector` | `IUADetector` |
-| `ClientGetType`   | `UAGetType`   |
-| `ClientDetector`  | `UADetector`  |
+完整迁移说明请参考 [迁移指南](../../guide/migration.md#client--ua)。

@@ -13,6 +13,9 @@ import {
 	osVersion,
 	compareVersion,
 	nextVersion,
+	// URL utilities - class and namespace
+	url,
+	Url,
 } from 'js-cool'
 import { ua, type UAInfo } from 'js-cool'
 import { useI18n } from '@/locales'
@@ -27,6 +30,21 @@ const dirUrl = ref('https://example.com/user/123/profile')
 const compareA = ref('1.2.3')
 const compareB = ref('1.2.4')
 const versionInput = ref('1.2.3')
+
+// Url class examples
+const urlBuilderInput = ref('https://api.example.com')
+const urlBuilderOutput = computed(() => {
+	return new Url(urlBuilderInput.value)
+		.path('users', '123')
+		.set('fields', 'name,email')
+		.setHash('section')
+		.toString()
+})
+
+// url namespace examples
+const urlForPatterns = ref('https://example.com:8080/api/users?id=123&page=1#section')
+const urlParamName = ref('id')
+const urlParamValue = ref('2')
 
 // UA detection
 const uaInfo = computed(() => ua.info as UAInfo)
@@ -151,6 +169,118 @@ spliceUrlParam({ name: 'John', age: 25 })
 			</template>
 			<template #result>
 				<pre class="code-block">{{ JSON.stringify(getDirParams(dirUrl), null, 2) }}</pre>
+			</template>
+		</FunctionCard>
+
+		<!-- URL Utilities -->
+		<FunctionCard
+			title="Url class & url namespace"
+			description="Chainable URL builder and URLSearchParams-like API"
+			since="6.0.0"
+			:code="`import { url, Url } from 'js-cool'
+
+// Url class - chainable builder
+const u = new Url('https://example.com?id=123')
+u.get('id') // '123'
+u.set('page', 2).delete('id').toString()
+
+// url namespace - factory + static
+url.from('https://example.com?id=123').get('id')
+url.parse('?a=1&b=true', { covert: true })
+url.getOrigin('https://example.com:8080/path')`"
+		>
+			<template #input>
+				<n-space vertical style="width: 100%">
+					<n-input v-model:value="urlBuilderInput" style="width: 100%" placeholder="Enter base URL" />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">new Url(url).path('users', '123').set('fields', 'name,email').setHash('section')</code>
+					</n-space>
+					<n-tag type="info" size="small" :bordered="false" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis">{{
+						urlBuilderOutput
+					}}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- URL Static Methods -->
+		<FunctionCard
+			title="URL Static Methods"
+			description="URLSearchParams-like methods and URL property extraction"
+			since="6.0.0"
+			:code="`import { url } from 'js-cool'
+
+// URLSearchParams-like
+url.get('id', 'https://example.com?id=123') // '123'
+url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+
+// URL property extraction
+url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+url.getPathname('https://example.com/api/users') // '/api/users'`"
+		>
+			<template #input>
+				<n-space vertical style="width: 100%">
+					<n-input v-model:value="urlForPatterns" style="width: 100%" />
+					<n-space>
+						<n-input v-model:value="urlParamName" style="width: 80px" placeholder="param" />
+						<n-input v-model:value="urlParamValue" style="width: 80px" placeholder="value" />
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">url.get(name, url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							url.get(urlParamName, urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.has(name, url)</code>
+						<n-tag :type="url.has(urlParamName, urlForPatterns) ? 'success' : 'default'" size="small" :bordered="false">{{
+							url.has(urlParamName, urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.set(name, value, url)</code>
+						<n-tag type="info" size="small" :bordered="false" style="max-width: 300px; overflow: hidden; text-overflow: ellipsis">{{
+							url.set(urlParamName, urlParamValue, urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.getOrigin(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							url.getOrigin(urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.getHost(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							url.getHost(urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.getHostname(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							url.getHostname(urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.getPathname(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							url.getPathname(urlForPatterns)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">url.keys(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(url.keys(urlForPatterns))
+						}}</n-tag>
+					</n-space>
+				</n-space>
 			</template>
 		</FunctionCard>
 
