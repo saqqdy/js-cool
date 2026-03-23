@@ -29,6 +29,7 @@ All notable changes to this project will be documented in this file.
   - `getAppVersion` - use `appVersion` instead
   - `getOsVersion` - use `osVersion` instead
   - `getDirParam` - use `getDirParams` instead
+  - `getScrollPosition` - use `scroll.getPosition` instead
   - `isDigitals` - removed, use `/^\d*$/.test(str)` instead
   - `pattern` - use `patterns.validation` instead
   - `trim` - removed, use `String.prototype.trim()` instead
@@ -38,6 +39,17 @@ All notable changes to this project will be documented in this file.
   - New: `patterns.validation.email.test('user@example.com')` or `validation.email.test('user@example.com')`
 
 ### 🚀 Features
+
+- **New `scroll` Module**: Comprehensive scroll utilities
+  - `getPosition` - Get scroll position state ('top' | 'bottom' | undefined)
+  - `getProgress` - Get scroll progress (0-100)
+  - `createDirectionTracker` - Track scroll direction ('up' | 'down')
+  - `isInViewport` - Check if element is in viewport
+  - `scrollTo` - Scroll to element or position
+  - `scrollToTop` / `scrollToBottom` - Scroll to top/bottom
+  - `scrollBy` - Scroll by amount
+  - `lockScroll` / `unlockScroll` - Lock/unlock scroll
+  - `getScrollbarWidth` - Get scrollbar width
 
 - **New `patterns` Module**: Unified patterns module combining validation and UA patterns
   - `patterns.validation` - Validation patterns for common formats

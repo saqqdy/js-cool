@@ -169,7 +169,6 @@ export default defineConfig({
 								{ link: '/api/dom/stop-bubble', text: 'stopBubble' },
 								{ link: '/api/dom/stop-default', text: 'stopDefault' },
 								{ link: '/api/dom/copy', text: 'copy' },
-								{ link: '/api/dom/get-scroll-position', text: 'getScrollPosition' },
 								{ link: '/api/dom/window-size', text: 'windowSize' },
 								{ link: '/api/dom/is-dark-mode', text: 'isDarkMode' },
 								{ link: '/api/dom/in-browser', text: 'inBrowser' },
@@ -179,6 +178,11 @@ export default defineConfig({
 								{ link: '/api/dom/open-url', text: 'openUrl' },
 							],
 							text: 'DOM',
+						},
+						{
+							collapsed: true,
+							items: [{ link: '/api/scroll/', text: 'scroll' }],
+							text: 'Scroll',
 						},
 						{
 							collapsed: true,
@@ -508,10 +512,6 @@ export default defineConfig({
 								{ link: '/zh/api/dom/stop-bubble', text: 'stopBubble' },
 								{ link: '/zh/api/dom/stop-default', text: 'stopDefault' },
 								{ link: '/zh/api/dom/copy', text: 'copy' },
-								{
-									link: '/zh/api/dom/get-scroll-position',
-									text: 'getScrollPosition',
-								},
 								{ link: '/zh/api/dom/window-size', text: 'windowSize' },
 								{ link: '/zh/api/dom/is-dark-mode', text: 'isDarkMode' },
 								{ link: '/zh/api/dom/in-browser', text: 'inBrowser' },
@@ -521,6 +521,11 @@ export default defineConfig({
 								{ link: '/zh/api/dom/open-url', text: 'openUrl' },
 							],
 							text: 'DOM',
+						},
+						{
+							collapsed: true,
+							items: [{ link: '/zh/api/scroll/', text: 'scroll' }],
+							text: '滚动',
 						},
 						{
 							collapsed: true,

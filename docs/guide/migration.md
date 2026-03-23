@@ -49,20 +49,60 @@ import jsCool from 'js-cool'
 
 ### Deprecated Functions
 
-| v5.x (Deprecated) | v6.x (Replacement) |
-| ----------------- | ------------------ |
-| `getAppVersion()` | `appVersion()`     |
-| `getOsVersion()`  | `osVersion()`      |
+| v5.x (Deprecated)    | v6.x (Replacement)          |
+| -------------------- | --------------------------- |
+| `getAppVersion()`    | `appVersion()`              |
+| `getOsVersion()`     | `osVersion()`               |
+| `getScrollPosition()`| `scroll.getPosition()`      |
 
 ```js
 // v5.x
 const version = getAppVersion('Chrome')
 const os = getOsVersion()
+const pos = getScrollPosition()
 
 // v6.x
 const version = appVersion('Chrome')
 const os = osVersion()
+const pos = scroll.getPosition()
 ```
+
+### Scroll Utilities Migration
+
+The `getScrollPosition` function has been replaced by a comprehensive `scroll` utility module:
+
+```js
+// v5.x
+import { getScrollPosition } from 'js-cool'
+const pos = getScrollPosition() // 'top' | 'bottom' | undefined
+
+// v6.x
+import { scroll } from 'js-cool'
+// or import scrollUtils from 'js-cool/scroll'
+
+scroll.getPosition()           // 'top' | 'bottom' | undefined
+scroll.getProgress()           // 0-100 (scroll progress percentage)
+scroll.createDirectionTracker()// Track scroll direction ('up' | 'down')
+scroll.isInViewport(el)        // Check if element is in viewport
+scroll.scrollTo('#section')    // Scroll to element
+scroll.scrollToTop()           // Scroll to top
+scroll.scrollToBottom()        // Scroll to bottom
+scroll.lock()                  // Lock scroll (for modals)
+scroll.unlock()                // Unlock scroll
+scroll.getScrollbarWidth()     // Get scrollbar width
+```
+
+#### Enhanced Features
+
+| Method                     | Description                              |
+| -------------------------- | ---------------------------------------- |
+| `getPosition(el, threshold)` | Now supports custom element and threshold |
+| `getProgress(el)`          | New: Get scroll progress (0-100)         |
+| `createDirectionTracker()` | New: Track scroll direction              |
+| `isInViewport(el, opts)`   | New: Check element visibility            |
+| `scrollTo(target, opts)`   | New: Scroll to element/position          |
+| `lock()` / `unlock()`      | New: Lock/unlock scroll                  |
+| `getScrollbarWidth()`      | New: Get scrollbar width                 |
 
 ### Package Exports
 

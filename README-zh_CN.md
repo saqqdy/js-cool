@@ -59,8 +59,9 @@ import { randomString } from 'js-cool'
 | IIFE 输出         | `dist/index.global.prod.js` | `dist/index.iife.min.js` |
 | 全局变量          | `window.JsCool`             | `window.jsCool`          |
 | Client 模块       | `client`                    | `ua`                     |
-| `getAppVersion()` | ✅                          | ❌ 使用 `appVersion()`   |
-| `getOsVersion()`  | ✅                          | ❌ 使用 `osVersion()`    |
+| `getAppVersion()`    | ✅                          | ❌ 使用 `appVersion()`   |
+| `getOsVersion()`     | ✅                          | ❌ 使用 `osVersion()`    |
+| `getScrollPosition()`| ✅                          | ❌ 使用 `scroll.getPosition()` |
 
 ### `client` → `ua` 迁移
 
@@ -92,6 +93,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
 | **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
+| **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                      |
 | **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
@@ -1107,6 +1109,64 @@ addEvent(document.getElementById('list'), 'click', e => {
 ```
 
 ---
+
+### 滚动工具
+
+```js
+import {
+	scroll,
+	getPosition,
+	getProgress,
+	createDirectionTracker,
+	isInViewport,
+	scrollTo,
+	scrollToTop,
+	scrollToBottom,
+	scrollBy,
+	lockScroll,
+	unlockScroll,
+	getScrollbarWidth,
+} from 'js-cool'
+
+// 获取滚动位置状态
+getPosition() // 'top' | 'bottom' | undefined
+getPosition(element, 5) // 自定义元素和阈值
+
+// 获取滚动进度 (0-100)
+getProgress() // 0-100
+getProgress(element) // 自定义元素
+
+// 追踪滚动方向
+const tracker = createDirectionTracker()
+window.addEventListener('scroll', () => {
+	const dir = tracker() // 'up' | 'down' | null
+})
+
+// 检测元素是否在视口内
+isInViewport(element) // true | false
+isInViewport(element, { fully: false }) // 允许部分可见
+
+// 滚动到元素
+scrollTo('#section')
+scrollTo(element, { offset: -80, behavior: 'smooth' })
+
+// 滚动到顶部/底部
+scrollToTop()
+scrollToBottom()
+
+// 按量滚动
+scrollBy(200) // 向下滚动 200px
+scrollBy(-100) // 向上滚动 100px
+
+// 锁定/解锁滚动（适用于弹窗）
+lockScroll()
+unlockScroll()
+scroll.toggle() // 切换锁定状态
+scroll.isLocked() // 检查是否锁定
+
+// 获取滚动条宽度
+getScrollbarWidth() // 例如 15
+```
 
 ### 工具
 

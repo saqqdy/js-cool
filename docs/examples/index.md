@@ -153,6 +153,73 @@ function cleanupEvents(element) {
 }
 ```
 
+## Scroll Utilities
+
+```js
+import {
+  getPosition,
+  getProgress,
+  createDirectionTracker,
+  isInViewport,
+  scrollTo,
+  lockScroll,
+  unlockScroll,
+} from 'js-cool'
+
+// Infinite scroll
+const container = document.getElementById('list')
+window.addEventListener('scroll', async () => {
+  const pos = getPosition()
+  if (pos === 'bottom') {
+    await loadMoreItems()
+  }
+})
+
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+  const progress = getProgress()
+  progressBar.style.width = `${progress}%`
+})
+
+// Hide/show header on scroll
+const tracker = createDirectionTracker()
+window.addEventListener('scroll', () => {
+  const dir = tracker()
+  if (dir === 'down') {
+    header.classList.add('hidden')
+  } else if (dir === 'up') {
+    header.classList.remove('hidden')
+  }
+})
+
+// Lazy load images
+const images = document.querySelectorAll('img[data-src]')
+function checkImages() {
+  images.forEach(img => {
+    if (isInViewport(img, { fully: false })) {
+      img.src = img.dataset.src
+    }
+  })
+}
+window.addEventListener('scroll', checkImages)
+
+// Scroll to section
+document.querySelector('.nav-link').addEventListener('click', () => {
+  scrollTo('#section-2', { offset: -80 })
+})
+
+// Lock scroll when modal opens
+function openModal() {
+  lockScroll()
+  modal.classList.add('visible')
+}
+
+function closeModal() {
+  unlockScroll()
+  modal.classList.remove('visible')
+}
+```
+
 ## Object Manipulation
 
 ```js

@@ -30,6 +30,7 @@ import {
 	ChevronDownOutline,
 	LanguageOutline,
 	RocketOutline,
+	ArrowDownOutline,
 } from '@vicons/ionicons5'
 import { useI18n } from './locales'
 
@@ -56,6 +57,7 @@ const categories = [
 	{ name: 'Validate', path: 'validate', icon: CheckmarkCircleOutline },
 	{ name: 'Url', path: 'url', icon: GlobeOutline },
 	{ name: 'Dom', path: 'dom', icon: FingerPrintOutline },
+	{ name: 'Scroll', path: 'scroll', icon: ArrowDownOutline },
 	{ name: 'Storage', path: 'storage', icon: SaveOutline },
 	{ name: 'Convert', path: 'convert', icon: SyncOutline },
 	{ name: 'Number', path: 'number', icon: RemoveOutline },

@@ -61,8 +61,8 @@ import getNumber from './getNumber'
 import getProperty from './getProperty'
 import getQueryParam from './getQueryParam'
 import getQueryParams from './getQueryParams'
-import getScrollPosition from './getScrollPosition'
 import getSession from './getSession'
+import scrollUtils from './scroll'
 import getType from './getType'
 
 import getUrlParam from './getUrlParam'
@@ -188,8 +188,8 @@ export default {
 	getProperty,
 	getQueryParam,
 	getQueryParams,
-	getScrollPosition,
 	getSession,
+	scroll: scrollUtils,
 	getType,
 	getUrlParam,
 	getUrlParams,

@@ -153,6 +153,73 @@ function cleanupEvents(element) {
 }
 ```
 
+## 滚动工具
+
+```js
+import {
+  getPosition,
+  getProgress,
+  createDirectionTracker,
+  isInViewport,
+  scrollTo,
+  lockScroll,
+  unlockScroll,
+} from 'js-cool'
+
+// 无限滚动
+const container = document.getElementById('list')
+window.addEventListener('scroll', async () => {
+  const pos = getPosition()
+  if (pos === 'bottom') {
+    await loadMoreItems()
+  }
+})
+
+// 滚动进度指示器
+window.addEventListener('scroll', () => {
+  const progress = getProgress()
+  progressBar.style.width = `${progress}%`
+})
+
+// 滚动时隐藏/显示头部
+const tracker = createDirectionTracker()
+window.addEventListener('scroll', () => {
+  const dir = tracker()
+  if (dir === 'down') {
+    header.classList.add('hidden')
+  } else if (dir === 'up') {
+    header.classList.remove('hidden')
+  }
+})
+
+// 图片懒加载
+const images = document.querySelectorAll('img[data-src]')
+function checkImages() {
+  images.forEach(img => {
+    if (isInViewport(img, { fully: false })) {
+      img.src = img.dataset.src
+    }
+  })
+}
+window.addEventListener('scroll', checkImages)
+
+// 滚动到指定区块
+document.querySelector('.nav-link').addEventListener('click', () => {
+  scrollTo('#section-2', { offset: -80 })
+})
+
+// 弹窗打开时锁定滚动
+function openModal() {
+  lockScroll()
+  modal.classList.add('visible')
+}
+
+function closeModal() {
+  unlockScroll()
+  modal.classList.remove('visible')
+}
+```
+
 ## 对象操作
 
 ```js

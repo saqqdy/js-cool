@@ -81,11 +81,10 @@ export { default as getProperty } from './getProperty'
 
 export { default as getQueryParam } from './getQueryParam'
 export { default as getQueryParams } from './getQueryParams'
-export { default as getScrollPosition } from './getScrollPosition'
 export { default as getSession } from './getSession'
-
 // ==================== Type Check 类型判断 ====================
 export { default as getType } from './getType'
+
 export { default as getUrlParam } from './getUrlParam'
 // ==================== URL & Browser URL与浏览器 ====================
 export { default as getUrlParams } from './getUrlParams'
@@ -116,7 +115,6 @@ export { default as isNil } from './isNil'
 export { default as isNumberBrowser } from './isNumberBrowser'
 export { default as isObject } from './isObject'
 export { default as isPhone } from './isPhone'
-
 export {
 	default as isPlainObject,
 	type JSONArray,
@@ -124,6 +122,7 @@ export {
 	type PlainObject,
 	type Primitive,
 } from './isPlainObject'
+
 export { default as isRegExp } from './isRegExp'
 export { default as isToday } from './isToday'
 export { default as isURL } from './isURL'
@@ -133,8 +132,8 @@ export { default as kebabCase } from './kebabCase'
 export { default as keyBy } from './keyBy'
 export { default as lighten } from './lighten'
 export { default as mapTemplate } from './mapTemplate'
-
 export { default as minus } from './minus'
+
 export { default as nextIndex } from './nextIndex'
 export { default as nextVersion, type Version } from './nextVersion'
 export { default as omit } from './omit'
@@ -164,8 +163,8 @@ export { default as pick } from './pick'
 export { default as preloader } from './preloader'
 export { default as promiseFactory } from './promiseFactory'
 export { default as punctualTimer, type PunctualTimerReturns } from './punctualTimer'
-
 export { default as randomColor } from './randomColor'
+
 export { default as randomNumber } from './randomNumber'
 export { default as randomNumbers } from './randomNumbers'
 export {
@@ -176,15 +175,33 @@ export {
 export { default as relativeTime } from './relativeTime'
 export { default as removeEvent } from './removeEvent'
 export { default as retry, type RetryOptions } from './retry'
-
 export { default as RGBToHex } from './RGBToHex'
+
 export { type HSLColor, default as rgbToHSL } from './rgbToHSL'
 export { default as round } from './round'
 export { default as safeParse } from './safeParse'
 export { default as safeStringify } from './safeStringify'
-
 export { default as sample } from './sample'
+
 export { default as sampleSize } from './sampleSize'
+// ==================== Scroll 滚动工具 ====================
+export {
+	scrollUtils as scroll,
+	getPosition,
+	getProgress,
+	getDirection,
+	createDirectionTracker,
+	isInViewport,
+	scrollTo,
+	scrollToTop,
+	scrollToBottom,
+	scrollBy,
+	lockScroll,
+	unlockScroll,
+	toggleScroll,
+	isScrollLocked,
+	getScrollbarWidth,
+} from './scroll'
 export { type SearchKeySet, default as searchObject } from './searchObject'
 // ==================== Storage 存储操作 ====================
 export { default as setCache } from './setCache'

@@ -46,6 +46,7 @@ export default {
 		Validate: 'Validation utilities',
 		Url: 'URL and browser utilities',
 		Dom: 'DOM manipulation utilities',
+		Scroll: 'Scroll utilities for handling scroll-related operations',
 		Storage: 'Storage utilities',
 		Convert: 'Conversion utilities',
 		Number: 'Number utilities',
@@ -110,6 +111,19 @@ export default {
 		isTodayDesc: 'Check if date is today',
 		daysInMonthDesc: 'Get number of days in month',
 		to: 'to',
+	},
+
+	// Scroll functions
+	scroll: {
+		getPositionDesc: 'Get scroll position state (top, bottom, or undefined)',
+		getProgressDesc: 'Get scroll progress as percentage (0-100)',
+		directionDesc: 'Track scroll direction (up, down, or null)',
+		viewportDesc: 'Check if element is in viewport',
+		scrollToDesc: 'Scroll to element or position with offset',
+		topBottomDesc: 'Scroll to top or bottom of page',
+		scrollByDesc: 'Scroll by specified amount (positive = down, negative = up)',
+		lockDesc: 'Lock/unlock scroll (useful for modals)',
+		scrollbarWidthDesc: 'Get scrollbar width in pixels',
 	},
 
 	// Common
