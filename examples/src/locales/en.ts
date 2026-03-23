@@ -119,10 +119,10 @@ export default {
 		getProgressDesc: 'Get scroll progress as percentage (0-100)',
 		directionDesc: 'Track scroll direction (up, down, or null)',
 		viewportDesc: 'Check if element is in viewport',
-		scrollToDesc: 'Scroll to element or position with offset',
+		scrollToDesc: 'Scroll to element or position with offset and behavior options',
 		topBottomDesc: 'Scroll to top or bottom of page',
 		scrollByDesc: 'Scroll by specified amount (positive = down, negative = up)',
-		lockDesc: 'Lock/unlock scroll (useful for modals)',
+		lockDesc: 'Lock/unlock/toggle scroll (useful for modals)',
 		scrollbarWidthDesc: 'Get scrollbar width in pixels',
 	},
 

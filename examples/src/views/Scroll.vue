@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { NH1, NButton, NSpace, NSlider, NSwitch, NInputNumber, NCode, NAlert } from 'naive-ui'
+import { NH1, NButton, NSpace, NSlider, NSwitch, NInputNumber, NCode, NAlert, NSelect, NRadioGroup, NRadio } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
 	getPosition,
@@ -13,6 +13,7 @@ import {
 	scrollBy,
 	lockScroll,
 	unlockScroll,
+	toggleScroll,
 	isScrollLocked,
 	getScrollbarWidth,
 } from 'js-cool'
@@ -49,15 +50,20 @@ const updateDirection = () => {
 const viewportElement = ref<HTMLElement | null>(null)
 const isInViewportResult = ref(false)
 const fullyInViewport = ref(true)
+const viewportOffset = ref(0)
 
 const checkViewport = () => {
 	if (viewportElement.value) {
-		isInViewportResult.value = !!isInViewport(viewportElement.value, { fully: fullyInViewport.value })
+		isInViewportResult.value = !!isInViewport(viewportElement.value, {
+			fully: fullyInViewport.value,
+			offset: viewportOffset.value
+		})
 	}
 }
 
 // scrollTo
 const scrollOffset = ref(0)
+const scrollBehavior = ref<ScrollBehavior>('smooth')
 
 // scrollBy
 const scrollAmount = ref(200)
@@ -65,12 +71,18 @@ const scrollAmount = ref(200)
 // lockScroll
 const locked = ref(false)
 
-const toggleLock = () => {
-	if (locked.value) {
-		lockScroll()
-	} else {
-		unlockScroll()
-	}
+const handleLock = () => {
+	lockScroll()
+	locked.value = isScrollLocked()
+}
+
+const handleUnlock = () => {
+	unlockScroll()
+	locked.value = isScrollLocked()
+}
+
+const handleToggle = () => {
+	toggleScroll()
 	locked.value = isScrollLocked()
 }
 
@@ -174,7 +186,7 @@ window.addEventListener('scroll', () => {
 			title="isInViewport"
 			:description="t.scroll.viewportDesc"
 			since="6.0.0"
-			:code="`isInViewport(element, { fully: ${fullyInViewport} })
+			:code="`isInViewport(element, { fully: ${fullyInViewport}, offset: ${viewportOffset} })
 // true | false`"
 		>
 			<template #input>
@@ -182,6 +194,11 @@ window.addEventListener('scroll', () => {
 					<n-space align="center">
 						<span style="font-size: 14px">Fully in viewport:</span>
 						<n-switch v-model:value="fullyInViewport" @update:value="checkViewport" />
+					</n-space>
+					<n-space align="center">
+						<span style="font-size: 14px">Offset:</span>
+						<n-input-number v-model:value="viewportOffset" :min="-500" :max="500" size="small" style="width: 100px" @update:value="checkViewport" />
+						<span style="font-size: 12px; color: #999">px</span>
 					</n-space>
 				</n-space>
 			</template>
@@ -204,7 +221,7 @@ window.addEventListener('scroll', () => {
 			title="scrollTo"
 			:description="t.scroll.scrollToDesc"
 			since="6.0.0"
-			:code="`scrollTo('#target', { offset: ${scrollOffset} })`"
+			:code="`scrollTo('#target', { offset: ${scrollOffset}, behavior: '${scrollBehavior}' })`"
 		>
 			<template #input>
 				<n-space align="center" vertical>
@@ -213,8 +230,15 @@ window.addEventListener('scroll', () => {
 						<n-input-number v-model:value="scrollOffset" :min="-500" :max="500" size="small" style="width: 100px" />
 						<span style="font-size: 12px; color: #999">px</span>
 					</n-space>
+					<n-space align="center">
+						<span style="font-size: 14px">Behavior:</span>
+						<n-radio-group v-model:value="scrollBehavior" size="small">
+							<n-radio value="smooth">smooth</n-radio>
+							<n-radio value="auto">auto</n-radio>
+						</n-radio-group>
+					</n-space>
 					<n-space>
-						<n-button size="small" @click="scrollTo('#scroll-demo-target', { offset: scrollOffset })">
+						<n-button size="small" @click="scrollTo('#scroll-demo-target', { offset: scrollOffset, behavior: scrollBehavior })">
 							Scroll to Target
 						</n-button>
 					</n-space>
@@ -227,13 +251,13 @@ window.addEventListener('scroll', () => {
 			title="scrollToTop / scrollToBottom"
 			:description="t.scroll.topBottomDesc"
 			since="6.0.0"
-			:code="`scrollToTop()    // Scroll to top
-scrollToBottom() // Scroll to bottom`"
+			:code="`scrollToTop({ behavior: 'smooth' })    // Scroll to top
+scrollToBottom({ behavior: 'smooth' }) // Scroll to bottom`"
 		>
 			<template #input>
 				<n-space>
-					<n-button size="small" @click="scrollToTop()">Scroll to Top</n-button>
-					<n-button size="small" @click="scrollToBottom()">Scroll to Bottom</n-button>
+					<n-button size="small" @click="scrollToTop({ behavior: scrollBehavior })">Scroll to Top</n-button>
+					<n-button size="small" @click="scrollToBottom({ behavior: scrollBehavior })">Scroll to Bottom</n-button>
 				</n-space>
 			</template>
 		</FunctionCard>
@@ -243,7 +267,7 @@ scrollToBottom() // Scroll to bottom`"
 			title="scrollBy"
 			:description="t.scroll.scrollByDesc"
 			since="6.0.0"
-			:code="`scrollBy(${scrollAmount}) // Scroll down ${scrollAmount}px`"
+			:code="`scrollBy(${scrollAmount}, { behavior: '${scrollBehavior}' }) // Scroll down ${scrollAmount}px`"
 		>
 			<template #input>
 				<n-space align="center" vertical>
@@ -252,31 +276,36 @@ scrollToBottom() // Scroll to bottom`"
 						<n-input-number v-model:value="scrollAmount" :min="-1000" :max="1000" size="small" style="width: 100px" />
 						<span style="font-size: 12px; color: #999">px (negative = up)</span>
 					</n-space>
-					<n-button size="small" @click="scrollBy(scrollAmount)">
+					<n-button size="small" @click="scrollBy(scrollAmount, { behavior: scrollBehavior })">
 						Scroll {{ scrollAmount >= 0 ? 'Down' : 'Up' }} {{ Math.abs(scrollAmount) }}px
 					</n-button>
 				</n-space>
 			</template>
 		</FunctionCard>
 
-		<!-- lockScroll / unlockScroll -->
+		<!-- lockScroll / unlockScroll / toggleScroll -->
 		<FunctionCard
-			title="lockScroll / unlockScroll"
+			title="lockScroll / unlockScroll / toggleScroll"
 			:description="t.scroll.lockDesc"
 			since="6.0.0"
 			:code="`lockScroll()   // Lock scroll
 unlockScroll() // Unlock scroll
+toggleScroll() // Toggle lock state
 isScrollLocked() // Check status`"
 		>
 			<template #input>
-				<n-space align="center">
-					<n-button
-						:type="locked ? 'warning' : 'default'"
-						size="small"
-						@click="() => { locked = !locked; toggleLock() }"
-					>
-						{{ locked ? 'Unlock Scroll' : 'Lock Scroll' }}
-					</n-button>
+				<n-space align="center" vertical>
+					<n-space>
+						<n-button type="error" size="small" :disabled="locked" @click="handleLock">
+							Lock Scroll
+						</n-button>
+						<n-button type="success" size="small" :disabled="!locked" @click="handleUnlock">
+							Unlock Scroll
+						</n-button>
+						<n-button type="warning" size="small" @click="handleToggle">
+							Toggle Scroll
+						</n-button>
+					</n-space>
 					<span style="font-size: 12px; color: #999">
 						Status: {{ locked ? '🔒 Locked' : '🔓 Unlocked' }}
 					</span>
@@ -284,7 +313,7 @@ isScrollLocked() // Check status`"
 			</template>
 			<template #result>
 				<n-alert v-if="locked" type="warning" style="margin-top: 8px">
-					Scroll is locked! Click again to unlock.
+					Scroll is locked! Click Unlock to restore scrolling.
 				</n-alert>
 			</template>
 		</FunctionCard>
@@ -294,7 +323,7 @@ isScrollLocked() // Check status`"
 			title="getScrollbarWidth"
 			:description="t.scroll.scrollbarWidthDesc"
 			since="6.0.0"
-			:code="`getScrollbarWidth() // ${scrollbarWidth}`"
+			:code="`getScrollbarWidth() // ${scrollbarWidth}px`"
 		>
 			<template #result>
 				<n-code :code="JSON.stringify({ scrollbarWidth: `${scrollbarWidth}px` })" language="json" />
@@ -304,7 +333,7 @@ isScrollLocked() // Check status`"
 		<!-- Target element for scrollTo demo -->
 		<div id="scroll-demo-target" class="scroll-target">
 			<p>🎯 Scroll Target</p>
-			<p style="font-size: 12px; color: #999">This is the target element for scrollTo demo</p>
+			<p style="font-size: 12px; color: rgba(255,255,255,0.8)">This is the target element for scrollTo demo</p>
 		</div>
 	</div>
 </template>

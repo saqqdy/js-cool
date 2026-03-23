@@ -110,27 +110,16 @@ export default {
 		to: '至',
 	},
 
-	// Date functions
-	date: {
-		formatDesc:
-			'格式化日期（支持: YYYY, YY, MM, M, DD, D, HH, H, hh, h, mm, m, ss, s, SSS, A/a）',
-		diffDesc: '计算日期之间的差值',
-		relativeDesc: '获取相对时间字符串（支持: en, zh 语言）',
-		isTodayDesc: '检查日期是否为今天',
-		daysInMonthDesc: '获取月份的天数',
-		to: '至',
-	},
-
 	// Scroll functions
 	scroll: {
 		getPositionDesc: '获取滚动位置状态（顶部、底部或中间）',
 		getProgressDesc: '获取滚动进度百分比（0-100）',
 		directionDesc: '追踪滚动方向（向上、向下或无变化）',
-		viewportDesc: '检测元素是否在视口内',
-		scrollToDesc: '滚动到指定元素或位置（支持偏移量）',
+		viewportDesc: '检测元素是否在视口内（支持偏移量设置）',
+		scrollToDesc: '滚动到指定元素或位置（支持偏移量和滚动行为）',
 		topBottomDesc: '滚动到页面顶部或底部',
 		scrollByDesc: '按指定量滚动（正数向下，负数向上）',
-		lockDesc: '锁定/解锁滚动（适用于弹窗场景）',
+		lockDesc: '锁定/解锁/切换滚动状态（适用于弹窗场景）',
 		scrollbarWidthDesc: '获取滚动条宽度（像素）',
 	},
 
