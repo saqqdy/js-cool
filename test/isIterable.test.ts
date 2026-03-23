@@ -6,9 +6,9 @@ describe('isIterable', () => {
 		expect(isIterable([])).toBeTruthy()
 	})
 
-	it('should throw for string', () => {
-		// The current implementation throws for primitive types
-		expect(() => isIterable('hello')).toThrow()
+	it('should return true for string', () => {
+		// Strings are iterable in JavaScript
+		expect(isIterable('hello')).toBeTruthy()
 	})
 
 	it('should return true for typed array', () => {

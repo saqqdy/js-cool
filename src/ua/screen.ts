@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { getScreenInfo, isDarkMode, isLandscape } from 'js-cool/ua/screen'
+ * import { getScreenInfo, isDarkMode, isLandscape } from 'js-cool/ua'
  *
  * isDarkMode()          // true/false
  * isLandscape()         // true/false

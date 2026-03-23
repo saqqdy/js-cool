@@ -9,7 +9,7 @@
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/js-cool)](https://bundlephobia.com/package/js-cool)
 [![gzip](https://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
 
-**[更新日志](./CHANGELOG.md)** • **[English](./README.md)**
+**[更新日志](./CHANGELOG.md)** • **[迁移指南 v5→v6](./MIGRATION-v5-to-v6-zh_CN.md)** • **[English](./README.md)**
 
 </div>
 
@@ -49,107 +49,33 @@ import { randomString } from 'js-cool'
 
 ## 从 v5.x 升级到 v6.x
 
-### 重大变更
+> **📖 [完整迁移指南](./MIGRATION-v5-to-v6-zh_CN.md)** • **[English Migration Guide](./MIGRATION-v5-to-v6.md)**
 
-#### 1. 构建产物文件
+### 快速概览
 
-| v5.x                             | v6.x                     | 说明                            |
-| -------------------------------- | ------------------------ | ------------------------------- |
-| `dist/index.cjs.js`              | `dist/index.js`          | CJS 输出文件重命名              |
-| `dist/index.mjs`                 | `dist/index.mjs`         | ESM 输出（无变化）              |
-| `dist/index.esm-browser.js`      | `dist/index.mjs`         | 直接使用 ESM 输出               |
-| `dist/index.esm-browser.prod.js` | `dist/index.mjs`         | 使用 ESM 输出（构建工具会压缩） |
-| `dist/index.global.js`           | `dist/index.iife.js`     | IIFE 输出文件重命名             |
-| `dist/index.global.prod.js`      | `dist/index.iife.min.js` | IIFE 压缩版重命名               |
+| 变更              | v5.x                        | v6.x                     |
+| ----------------- | --------------------------- | ------------------------ |
+| CJS 输出          | `dist/index.cjs.js`         | `dist/index.js`          |
+| IIFE 输出         | `dist/index.global.prod.js` | `dist/index.iife.min.js` |
+| 全局变量          | `window.JsCool`             | `window.jsCool`          |
+| Client 模块       | `client`                    | `ua`                     |
+| `getAppVersion()` | ✅                          | ❌ 使用 `appVersion()`   |
+| `getOsVersion()`  | ✅                          | ❌ 使用 `osVersion()`    |
 
-#### 2. CDN 使用
+### `client` → `ua` 迁移
 
-```html
-<!-- v5.x -->
-<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
-<script>
-  const { copy } = window.JsCool
-</script>
-
-<!-- v6.x -->
-<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
-<script>
-  const { copy } = window.jsCool // 注意：小写 'jsCool'
-</script>
-```
-
-#### 3. 已移除的废弃函数
-
-| 已移除            | 替代方案       |
-| ----------------- | -------------- |
-| `getAppVersion()` | `appVersion()` |
-| `getOsVersion()`  | `osVersion()`  |
-
-#### 4. package.json 导出配置
-
-```json
+```js
 // v5.x
-{
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.mjs"
-}
+import { client } from 'js-cool'
+client.isMobile()
 
 // v6.x
-{
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "exports": {
-    ".": {
-      "require": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "import": { "types": "./dist/index.d.mts", "default": "./dist/index.mjs" }
-    }
-  }
-}
+import { ua } from 'js-cool'
+ua.isMobile()
+
+// 或按需导入
+import { isMobile, isWeChat } from 'js-cool/ua'
 ```
-
-### 迁移步骤
-
-1. **更新导入路径**（如果使用直接文件导入）：
-
-   ```js
-   // v5.x
-   import jsCool from 'js-cool/dist/index.esm-browser.js'
-
-   // v6.x
-   import jsCool from 'js-cool'
-   ```
-
-2. **更新 CDN 链接**：
-
-   ```html
-   <!-- v5.x -->
-   <script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
-
-   <!-- v6.x -->
-   <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
-   ```
-
-3. **更新全局变量**（CDN 用户）：
-
-   ```js
-   // v5.x
-   window.JsCool
-
-   // v6.x
-   window.jsCool
-   ```
-
-4. **替换废弃函数**：
-
-   ```js
-   // v5.x
-   getAppVersion('Chrome')
-   getOsVersion()
-
-   // v6.x
-   appVersion('Chrome')
-   osVersion()
-   ```
 
 ---
 
@@ -164,7 +90,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **对象**        | 对象处理            | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                             |
 | **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isDigitals`, `isEqual`, `isEmpty`, `isNil`                                                     |
 | **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                          |
-| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `client`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                         |
+| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParam`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                             |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                       |
 | **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                  |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`      |
@@ -182,35 +108,51 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 
 ### 全局
 
-#### client
+#### ua
 
-浏览器检测工具。
+User Agent 检测工具。
 
 ```js
-import { client } from 'js-cool'
+import { ua } from 'js-cool'
 
-// 获取所有浏览器信息
-client.get(['device', 'browser', 'engine', 'os'])
-// { device: 'Mobile', browser: 'Chrome', os: 'Android', engine: 'Blink' }
+// 获取所有信息
+ua.info
+// { device: {...}, os: {...}, browser: {...}, environment: {...} }
 
 // 获取单个信息
-client.get('browser') // { browser: 'Chrome' }
-client.get('device') // { device: 'Mobile' }
-client.get('os') // { os: 'Android' }
-client.get('engine') // { engine: 'Blink' }
+ua.get('browser') // { name: 'Chrome', version: '123.0.0.0', engine: 'Blink' }
+ua.get('device') // { type: 'mobile', mobile: true, tablet: false, ... }
+ua.get('os') // { name: 'Android', version: '14' }
 
 // 获取多个信息
-client.get(['browser', 'os'])
-// { browser: 'Chrome', os: 'Android' }
+ua.getMultiple(['device', 'os'])
+// { device: {...}, os: {...} }
+
+// 快捷检测
+ua.isMobile() // true/false
+ua.isTablet() // true/false
+ua.isDesktop() // true/false
+ua.isiOS() // true/false
+ua.isAndroid() // true/false
+ua.isHarmonyOS() // true/false
+ua.isWeChat() // true/false
+ua.isQQ() // true/false
+ua.isMiniProgram() // true/false
+
+// 检查 UA 中是否包含字符串
+ua.has('Chrome') // true/false
 
 // 获取语言
-client.getLanguage() // 'zh-CN'
+ua.getLanguage() // 'zh-CN'
 
 // 获取网络信息
-client.getNetwork() // { effectiveType: '4g', downlink: 10 }
+ua.getNetwork() // { online, type, effectiveType, downlink, rtt, saveData }
+
+// 获取屏幕信息
+ua.getScreen() // { width, height, pixelRatio, orientation, colorDepth }
 
 // 获取屏幕方向
-client.getOrientationStatus() // 'vertical' | 'horizontal'
+ua.getOrientationStatus() // 'portrait' | 'landscape'
 ```
 
 #### pattern

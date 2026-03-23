@@ -15,14 +15,16 @@ export interface ChangelogData {
 	date: string
 	summary: string
 	summaryZh: string
+	migrationGuide?: string
 	changes: ChangeItem[]
 }
 
 export const changelog: ChangelogData = {
 	version: version || '6.0.0-beta.1',
 	date: '2025-03',
-	summary: 'Major update: new UA detector module, 40+ new utilities, deprecated client module',
-	summaryZh: '重大更新：新增 UA 检测模块，40+ 新工具函数，废弃 client 模块',
+	summary: 'Major update: new UA detector module, 30+ new utilities, deprecated client module',
+	summaryZh: '重大更新：新增 UA 检测模块，30+ 新工具函数，废弃 client 模块',
+	migrationGuide: 'https://github.com/saqqdy/js-cool/blob/master/MIGRATION-v5-to-v6.md',
 	changes: [
 		// Breaking Changes
 		{
@@ -55,26 +57,25 @@ export const changelog: ChangelogData = {
 			name: 'ua',
 			category: 'Url',
 			description:
-				'New comprehensive User-Agent detector with browser, OS, device, network detection. Supports tree-shaking via subpath imports (ua/device, ua/browser, etc.)',
-			descriptionZh:
-				'全新的 User-Agent 检测器，支持浏览器、操作系统、设备、网络检测。支持通过子路径按需引入',
+				'New comprehensive User-Agent detector with browser, OS, device, network, screen detection',
+			descriptionZh: '全新的 User-Agent 检测器，支持浏览器、操作系统、设备、网络、屏幕检测',
 			anchor: 'ua',
 		},
 		{
 			type: 'new',
-			name: 'ua subpath imports',
+			name: 'Chinese app detection',
 			category: 'Url',
 			description:
-				'New modular imports: ua/device, ua/os, ua/browser, ua/env, ua/network, ua/screen, ua/types for tree-shaking',
+				'Detect WeChat, QQ, Weibo, Alipay, DingTalk, Douyin, Kuaishou, Baidu, Xiaomi, Huawei, Vivo, Oppo, UC, Quark',
 			descriptionZh:
-				'新增模块化导入：ua/device, ua/os, ua/browser, ua/env, ua/network, ua/screen, ua/types 支持按需引入',
+				'检测微信、QQ、微博、支付宝、钉钉、抖音、快手、百度、小米、华为、Vivo、Oppo、UC、夸克',
 		},
 		{
 			type: 'new',
-			name: 'dingtalk detection',
+			name: 'OS detection',
 			category: 'Url',
-			description: 'Added DingTalk (钉钉) environment detection',
-			descriptionZh: '新增钉钉环境检测',
+			description: 'HarmonyOS, iPadOS detection, improved iOS/Android detection',
+			descriptionZh: '鸿蒙、iPadOS 检测，改进的 iOS/Android 检测',
 		},
 
 		// New Features - String

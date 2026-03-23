@@ -90,10 +90,8 @@ User-Agent 检测工具，用于浏览器、操作系统、设备和环境检测
 import { ua } from 'js-cool'
 
 // 按需导入（推荐）
-import { isMobile, isTablet } from 'js-cool/ua/device'
-import { isWeChat, isQQ } from 'js-cool/ua/env'
-import { isiOS, isAndroid } from 'js-cool/ua/os'
-import { isChrome, isFirefox } from 'js-cool/ua/browser'
+import { isMobile, isTablet, isWeChat, isQQ } from 'js-cool/ua'
+import { isiOS, isAndroid, isChrome, isFirefox } from 'js-cool/ua'
 
 // 快速检查
 ua.isMobile() // true/false
@@ -120,24 +118,6 @@ ua.getScreen() // { width: 1920, height: 1080, pixelRatio: 1, ... }
 ```
 
 完整文档请参考 [ua API 参考](/zh/api/url/ua)。
-
-### client <Badge type="danger" text="已废弃" />
-
-::: warning 已废弃
-请使用 `ua` 代替。将在 v7.0.0 中移除
-:::
-
-获取浏览器/客户端信息。
-
-```js
-import { client } from 'js-cool'
-
-client()
-// { IE: false, GECKO: true, WEBKIT: false, ... }
-
-// 检查特定浏览器
-client('MicroMessenger') // 微信浏览器返回 true
-```
 
 ### appVersion
 

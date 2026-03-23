@@ -59,5 +59,4 @@ osVersion() // { name: 'Harmony', version: '4.0.0' }
 
 ## 相关
 
-- [getOsVersion](/api/url/get-os-version) - 获取特定 OS 版本（已弃用）
-- [client](/api/url/client) - 获取客户端信息
+- [ua](/zh/api/url/ua) - User-Agent 检测工具

@@ -27,17 +27,6 @@ export { default as clamp } from './clamp'
 export { default as cleanData } from './cleanData'
 export { default as clearAttr } from './clearAttr'
 export { default as clearHtml } from './clearHtml'
-/**
- * @deprecated Use `ua` instead. Will be removed in v7.0.0
- */
-export {
-	default as client,
-	ClientDetector,
-	Client,
-	type ClientInfo,
-	type ClientGetType,
-	type IClientDetector,
-} from './client'
 // ==================== Object 对象处理 ====================
 export { default as clone } from './clone'
 export { default as compareVersion } from './compareVersion'
@@ -204,7 +193,6 @@ export { default as truncate, type TruncateOptions } from './truncate'
 export {
 	default as ua,
 	UADetector,
-	UAParser,
 	type UAInfo,
 	type DeviceInfo,
 	type OSInfo,
@@ -212,7 +200,6 @@ export {
 	type EnvironmentInfo,
 	type NetworkInfo,
 	type ScreenInfo,
-	type LegacyClientResult,
 	type UAGetType,
 	type IUADetector,
 	type OSName,

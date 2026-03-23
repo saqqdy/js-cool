@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { isiOS, isAndroid, getOSInfo } from 'js-cool/ua/os'
+ * import { isiOS, isAndroid, getOSInfo } from 'js-cool/ua'
  *
  * isiOS()              // true/false
  * isAndroid()          // true/false

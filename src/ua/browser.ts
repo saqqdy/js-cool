@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { isChrome, isFirefox, getBrowserInfo } from 'js-cool/ua/browser'
+ * import { isChrome, isFirefox, getBrowserInfo } from 'js-cool/ua'
  *
  * isChrome()           // true/false
  * isFirefox()          // true/false

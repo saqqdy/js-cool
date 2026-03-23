@@ -191,39 +191,9 @@ export interface UAInfo {
 }
 
 /**
- * @deprecated Use `UAInfo` instead. Will be removed in v7.0.0
- */
-export type ClientInfo = UAInfo
-
-/**
- * Legacy client result (for backward compatibility)
- * @deprecated Use `ua.info` instead. Will be removed in v7.0.0
- */
-export interface LegacyClientResult {
-	ANDROID: boolean
-	GECKO: boolean
-	IE: boolean
-	IOS: boolean
-	IPAD: boolean
-	IPHONE: boolean
-	MOBILE: boolean
-	OPERA: boolean
-	QQ: boolean
-	QQBROWSER: boolean
-	TRIDENT: boolean
-	WEBKIT: boolean
-	WEIXIN: boolean
-}
-
-/**
  * User Agent getter type
  */
 export type UAGetType = 'device' | 'os' | 'browser' | 'engine' | 'environment'
-
-/**
- * @deprecated Use `UAGetType` instead. Will be removed in v7.0.0
- */
-export type ClientGetType = UAGetType
 
 /**
  * User Agent detector class interface
@@ -285,12 +255,4 @@ export interface IUADetector {
 	isQQ: () => boolean
 	/** Is mini program */
 	isMiniProgram: () => boolean
-
-	/** Legacy API (deprecated) */
-	legacy: () => LegacyClientResult
 }
-
-/**
- * @deprecated Use `IUADetector` instead. Will be removed in v7.0.0
- */
-export type IClientDetector = IUADetector

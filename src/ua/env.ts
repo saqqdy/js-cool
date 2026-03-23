@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { isWeChat, isQQ, getEnvInfo } from 'js-cool/ua/env'
+ * import { isWeChat, isQQ, getEnvInfo } from 'js-cool/ua'
  *
  * isWeChat()           // true/false
  * isQQ()               // true/false

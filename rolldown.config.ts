@@ -15,17 +15,8 @@ const external = [
 	'os-lang',
 ]
 
-// UA subpath entries for tree-shaking
-const uaEntries = [
-	'ua/index',
-	'ua/device',
-	'ua/os',
-	'ua/browser',
-	'ua/env',
-	'ua/network',
-	'ua/screen',
-	'ua/types',
-]
+// UA subpath entry for tree-shaking
+const uaEntries = ['ua/index']
 
 // 优雅的版本注入插件
 const versionPlugin = (): Plugin => ({

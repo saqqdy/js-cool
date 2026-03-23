@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NH1, NTag, NGrid, NGi, NSpace, NIcon } from 'naive-ui'
+import { NH1, NTag, NGrid, NGi, NIcon } from 'naive-ui'
 import {
 	AddCircleOutline,
 	BuildOutline,
@@ -11,7 +11,7 @@ import {
 import { changelog, getChangesByType } from '@/data/changelog'
 import { useI18n } from '@/locales'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const typeConfig = {
 	new: {
@@ -85,6 +85,25 @@ const getDescription = (item: (typeof changelog.changes)[0]) => {
 		<p class="text-muted" style="margin-bottom: 24px">
 			{{ locale === 'zh' ? changelog.summaryZh : changelog.summary }}
 		</p>
+
+		<!-- Migration Guide Link -->
+		<div v-if="changelog.migrationGuide" style="margin-bottom: 24px">
+			<a
+				:href="changelog.migrationGuide"
+				target="_blank"
+				style="
+					display: inline-flex;
+					align-items: center;
+					gap: 6px;
+					color: var(--primary-color, #2080f0);
+					text-decoration: none;
+					font-size: 14px;
+				"
+			>
+				<n-icon size="16" :component="ArrowForwardOutline" />
+				{{ locale === 'zh' ? '迁移指南 v5 → v6' : 'Migration Guide v5 → v6' }}
+			</a>
+		</div>
 
 		<!-- Changes by Type -->
 		<div v-for="group in groupedChanges" :key="group.type" style="margin-bottom: 32px">

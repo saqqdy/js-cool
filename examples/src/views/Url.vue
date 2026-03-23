@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
+import { ref, computed } from 'vue'
+import { NH1, NInput, NTag, NSpace, NTabs, NTabPane } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
 	getUrlParams,
@@ -8,13 +8,13 @@ import {
 	parseUrlParam,
 	spliceUrlParam,
 	getDirParam,
-	client,
 	appVersion,
 	browserVersion,
 	osVersion,
 	compareVersion,
 	nextVersion,
 } from 'js-cool'
+import { ua, type UAInfo } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
@@ -27,10 +27,24 @@ const dirUrl = ref('https://example.com/user/123/profile')
 const compareA = ref('1.2.3')
 const compareB = ref('1.2.4')
 const versionInput = ref('1.2.3')
-const clientInfo = ref<Record<string, unknown>>({})
-const getClientInfo = () => {
-	clientInfo.value = client() as Record<string, unknown>
-}
+
+// UA detection
+const uaInfo = computed(() => ua.info as UAInfo)
+const uaQuickChecks = computed(() => ({
+	isMobile: ua.isMobile(),
+	isTablet: ua.isTablet(),
+	isDesktop: ua.isDesktop(),
+	isTouch: ua.isTouch(),
+	isiOS: ua.isiOS(),
+	isAndroid: ua.isAndroid(),
+	isHarmonyOS: ua.isHarmonyOS(),
+	isWeChat: ua.isWeChat(),
+	isQQ: ua.isQQ(),
+	isMiniProgram: ua.isMiniProgram(),
+	isDarkMode: ua.isDarkMode(),
+}))
+const uaNetwork = computed(() => ua.getNetwork())
+const uaScreen = computed(() => ua.getScreen())
 </script>
 
 <template>
@@ -133,20 +147,94 @@ spliceUrlParam({ name: 'John', age: 25 })
 			</template>
 		</FunctionCard>
 
-		<!-- client -->
+		<!-- UA Detection -->
 		<FunctionCard
-			title="client"
-			description="Browser detection utility"
-			since="1.0.0"
-			:code="`client() // { ... }
-client.getBrowser() // { browser: 'Chrome' }
-client.getOS() // { os: 'Mac OS' }`"
+			title="ua (User Agent Detection)"
+			description="Comprehensive user agent detection - device, OS, browser, environment"
+			since="6.0.0"
+			:code="`import { ua } from 'js-cool'
+
+ua.info        // { device, os, browser, environment }
+ua.isMobile()  // true/false
+ua.isWeChat()  // true/false
+ua.isiOS()     // true/false
+ua.device      // DeviceInfo
+ua.os          // OSInfo
+ua.browser     // BrowserInfo`"
 		>
-			<template #input>
-				<n-button size="small" @click="getClientInfo">Get Client Info</n-button>
+			<template #default>
+				<n-tabs type="line" size="small">
+					<n-tab-pane name="quick" tab="Quick Checks">
+						<div class="ua-checks">
+							<n-tag
+								v-for="(value, key) in uaQuickChecks"
+								:key="key"
+								:type="value ? 'success' : 'default'"
+								size="small"
+							>
+								{{ key }}: {{ value }}
+							</n-tag>
+						</div>
+					</n-tab-pane>
+					<n-tab-pane name="device" tab="Device">
+						<pre class="code-block">{{ JSON.stringify(uaInfo.device, null, 2) }}</pre>
+					</n-tab-pane>
+					<n-tab-pane name="os" tab="OS">
+						<pre class="code-block">{{ JSON.stringify(uaInfo.os, null, 2) }}</pre>
+					</n-tab-pane>
+					<n-tab-pane name="browser" tab="Browser">
+						<pre class="code-block">{{ JSON.stringify(uaInfo.browser, null, 2) }}</pre>
+					</n-tab-pane>
+					<n-tab-pane name="env" tab="Environment">
+						<pre class="code-block">{{
+							JSON.stringify(uaInfo.environment, null, 2)
+						}}</pre>
+					</n-tab-pane>
+					<n-tab-pane name="network" tab="Network">
+						<pre class="code-block">{{ JSON.stringify(uaNetwork, null, 2) }}</pre>
+					</n-tab-pane>
+					<n-tab-pane name="screen" tab="Screen">
+						<pre class="code-block">{{ JSON.stringify(uaScreen, null, 2) }}</pre>
+					</n-tab-pane>
+				</n-tabs>
 			</template>
+		</FunctionCard>
+
+		<!-- Tree-shaking example -->
+		<FunctionCard
+			title="ua properties"
+			description="Access device, OS, browser, environment info directly"
+			since="6.0.0"
+			:code="`// Access info directly
+ua.device      // { type, mobile, tablet, desktop, touch, ... }
+ua.os          // { name: 'macOS', version: '14.0' }
+ua.browser     // { name: 'Chrome', version: '123.0', engine: 'Blink' }
+ua.environment // { wechat, qq, miniProgram, ... }
+ua.userAgent   // Full UA string`"
+		>
 			<template #result>
-				<pre class="code-block">{{ JSON.stringify(clientInfo, null, 2) }}</pre>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">ua.isMobile()</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							ua.isMobile()
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">ua.isWeChat()</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							ua.isWeChat()
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">ua.isiOS()</code>
+						<n-tag type="info" size="small" :bordered="false">{{ ua.isiOS() }}</n-tag>
+					</n-space>
+					<div>
+						<code class="code-inline">ua.device</code>
+						<pre class="code-block">{{ JSON.stringify(ua.device, null, 2) }}</pre>
+					</div>
+				</n-space>
 			</template>
 		</FunctionCard>
 
@@ -248,3 +336,12 @@ nextVersion('1.2.3', 'patch') // '1.2.4'`"
 		</FunctionCard>
 	</div>
 </template>
+
+<style scoped>
+.ua-checks {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 12px 0;
+}
+</style>

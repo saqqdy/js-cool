@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { getNetworkInfo, isOnline } from 'js-cool/ua/network'
+ * import { getNetworkInfo, isOnline } from 'js-cool/ua'
  *
  * isOnline()            // true/false
  * getNetworkInfo()      // { online, type, effectiveType, downlink, rtt, saveData }

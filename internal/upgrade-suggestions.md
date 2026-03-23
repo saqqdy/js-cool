@@ -593,7 +593,7 @@ import { camel2Dash, dash2Camel } from 'js-cool/string'
 
 ### 4.1 测试覆盖率提升
 
-**现状**：135 个测试文件（覆盖大部分函数）
+**现状**：150+ 个测试文件（覆盖大部分函数）
 
 **目标**：达到 95%+ 代码覆盖率
 
@@ -715,6 +715,8 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 **时间**：2-3 周
 
+> **已完成（v6.0）**: `ua` 模块重构完成，支持 HarmonyOS、iPadOS、钉钉、抖音等检测
+
 | 任务                             | 优先级 | 预估工时 |
 | -------------------------------- | ------ | -------- |
 | 新增 `take`、`drop`、`findIndex` | 高     | 2天      |
@@ -783,8 +785,8 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-> 文档生成时间：2026-03-22
+> 文档生成时间：2025-03-23
 >
-> 基于 js-cool v6.0.0-beta.1 版本分析
+> 基于 js-cool v6.0.0 版本分析
 >
-> **注意**: `client` 模块已重命名为 `ua` (User Agent)，`client` 作为别名保留以保持向后兼容，将在 v7.0.0 移除。
+> **注意**: v6.0.0 已将 `client` 模块重命名为 `ua` (User Agent)，提供更强大的浏览器/设备/环境检测功能，包括 HarmonyOS、iPadOS、钉钉、抖音等检测支持。

@@ -3,7 +3,7 @@
  *
  * @example
  * ```ts
- * import { isMobile, isTablet, getDeviceInfo } from 'js-cool/ua/device'
+ * import { isMobile, isTablet, getDeviceInfo } from 'js-cool/ua'
  *
  * isMobile()           // true/false
  * isTablet()           // true/false

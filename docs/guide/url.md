@@ -90,10 +90,8 @@ User-Agent detection utility for browser, OS, device, and environment detection.
 import { ua } from 'js-cool'
 
 // Tree-shaking import (recommended)
-import { isMobile, isTablet } from 'js-cool/ua/device'
-import { isWeChat, isQQ } from 'js-cool/ua/env'
-import { isiOS, isAndroid } from 'js-cool/ua/os'
-import { isChrome, isFirefox } from 'js-cool/ua/browser'
+import { isMobile, isTablet, isWeChat, isQQ } from 'js-cool/ua'
+import { isiOS, isAndroid, isChrome, isFirefox } from 'js-cool/ua'
 
 // Quick checks
 ua.isMobile() // true/false
@@ -120,24 +118,6 @@ ua.getScreen() // { width: 1920, height: 1080, pixelRatio: 1, ... }
 ```
 
 See [ua API Reference](/api/url/ua) for complete documentation.
-
-### client <Badge type="danger" text="deprecated" />
-
-::: warning Deprecated
-Use `ua` instead. Will be removed in v7.0.0
-:::
-
-Get browser/client information.
-
-```js
-import { client } from 'js-cool'
-
-client()
-// { IE: false, GECKO: true, WEBKIT: false, ... }
-
-// Check specific browser
-client('MicroMessenger') // true if WeChat browser
-```
 
 ### appVersion
 

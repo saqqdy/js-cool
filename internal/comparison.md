@@ -56,7 +56,7 @@
 
 | 库名称           | 方法数量 | 分类数量 | 覆盖范围         |
 | ---------------- | -------- | -------- | ---------------- |
-| **js-cool**      | **140+** | 16       | 全面覆盖常见场景 |
+| **js-cool**      | **160+** | 17       | 全面覆盖常见场景 |
 | **Lodash**       | 300+     | 12       | 非常全面         |
 | **Underscore**   | 120+     | 8        | 基础覆盖         |
 | **Ramda**        | 250+     | 15       | 函数式全覆盖     |
@@ -65,24 +65,24 @@
 
 ### 3.2 js-cool 功能分类详解
 
-| 分类              | 方法数 | 典型方法                                                    | 对比 Lodash   |
-| ----------------- | ------ | ----------------------------------------------------------- | ------------- |
-| **String**        | 16     | `camel2Dash`, `dash2Camel`, `truncate`, `escape`            | ✅ 覆盖核心   |
-| **Array**         | 22     | `unique`, `shuffle`, `chunk`, `flatten`, `groupBy`          | ✅ 常用全覆盖 |
-| **Object**        | 11     | `clone`, `extend`, `omit`, `pick`, `getProperty`            | ✅ 核心覆盖   |
-| **Type Check**    | 15     | `isArray`, `isObject`, `isDate`, `isEmpty`, `isEqual`       | ✅ 核心覆盖   |
-| **Validate**      | 5      | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`   | ➕ Lodash 无  |
-| **URL & Browser** | 12     | `getUrlParams`, `parseUrlParam`, `client`, `browserVersion` | ➕ Lodash 无  |
-| **DOM**           | 6      | `addEvent`, `copy`, `windowSize`                            | ➕ Lodash 无  |
-| **Storage**       | 10     | `setCache`, `getCache`, `setCookie`, `getCookie`            | ➕ Lodash 无  |
-| **Convert**       | 13     | `arrayBufferToBase64`, `base64ToBlob`, `fileToBase64`       | ➕ Lodash 无  |
-| **Number**        | 5      | `clamp`, `round`, `sum`, `average`                          | ✅ 核心覆盖   |
-| **Date**          | 5      | `formatDate`, `dateDiff`, `relativeTime`, `isToday`         | ➕ 需 dayjs   |
-| **Color**         | 7      | `hexToRGB`, `rgbToHSL`, `lighten`, `darken`                 | ➕ Lodash 无  |
-| **Utility**       | 15     | `uuid`, `randomString`, `delay`, `fingerprint`              | ⚠️ 部分覆盖   |
-| **Async Flow**    | 4      | `debounce`, `throttle`, `retry`, `awaitTo`                  | ✅ 核心覆盖   |
-| **Encode**        | 4      | `encodeBase64`, `decodeBase64`, `encodeUtf8`                | ➕ Lodash 无  |
-| **Network**       | 1      | `fillIPv6`                                                  | ➕ Lodash 无  |
+| 分类              | 方法数 | 典型方法                                                  | 对比 Lodash   |
+| ----------------- | ------ | --------------------------------------------------------- | ------------- |
+| **String**        | 16     | `camel2Dash`, `dash2Camel`, `truncate`, `escape`          | ✅ 覆盖核心   |
+| **Array**         | 22     | `unique`, `shuffle`, `chunk`, `flatten`, `groupBy`        | ✅ 常用全覆盖 |
+| **Object**        | 11     | `clone`, `extend`, `omit`, `pick`, `getProperty`          | ✅ 核心覆盖   |
+| **Type Check**    | 15     | `isArray`, `isObject`, `isDate`, `isEmpty`, `isEqual`     | ✅ 核心覆盖   |
+| **Validate**      | 5      | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard` | ➕ Lodash 无  |
+| **URL & Browser** | 12     | `getUrlParams`, `parseUrlParam`, `ua`, `browserVersion`   | ➕ Lodash 无  |
+| **DOM**           | 6      | `addEvent`, `copy`, `windowSize`                          | ➕ Lodash 无  |
+| **Storage**       | 10     | `setCache`, `getCache`, `setCookie`, `getCookie`          | ➕ Lodash 无  |
+| **Convert**       | 13     | `arrayBufferToBase64`, `base64ToBlob`, `fileToBase64`     | ➕ Lodash 无  |
+| **Number**        | 5      | `clamp`, `round`, `sum`, `average`                        | ✅ 核心覆盖   |
+| **Date**          | 5      | `formatDate`, `dateDiff`, `relativeTime`, `isToday`       | ➕ 需 dayjs   |
+| **Color**         | 7      | `hexToRGB`, `rgbToHSL`, `lighten`, `darken`               | ➕ Lodash 无  |
+| **Utility**       | 15     | `uuid`, `randomString`, `delay`, `fingerprint`            | ⚠️ 部分覆盖   |
+| **Async Flow**    | 4      | `debounce`, `throttle`, `retry`, `awaitTo`                | ✅ 核心覆盖   |
+| **Encode**        | 4      | `encodeBase64`, `decodeBase64`, `encodeUtf8`              | ➕ Lodash 无  |
+| **Network**       | 1      | `fillIPv6`                                                | ➕ Lodash 无  |
 
 ### 3.3 功能覆盖对比矩阵
 
@@ -480,20 +480,20 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### URL & Browser URL和浏览器 (12)
 
-| 方法             | 描述               |
-| ---------------- | ------------------ |
-| `getUrlParams`   | 获取所有 URL 参数  |
-| `getUrlParam`    | 获取单个 URL 参数  |
-| `parseUrlParam`  | 解析参数字符串     |
-| `spliceUrlParam` | 拼接参数字符串     |
-| `getDirParam`    | 获取目录参数       |
-| `client`         | 浏览器检测对象     |
-| `appVersion`     | 应用版本检测       |
-| `browserVersion` | 浏览器版本检测     |
-| `compareVersion` | 版本比较           |
-| `nextVersion`    | 版本递增           |
-| `getQueryParam`  | 获取 hash 参数     |
-| `getQueryParams` | 获取所有 hash 参数 |
+| 方法             | 描述                            |
+| ---------------- | ------------------------------- |
+| `getUrlParams`   | 获取所有 URL 参数               |
+| `getUrlParam`    | 获取单个 URL 参数               |
+| `parseUrlParam`  | 解析参数字符串                  |
+| `spliceUrlParam` | 拼接参数字符串                  |
+| `getDirParam`    | 获取目录参数                    |
+| `ua`             | 浏览器/设备/环境检测（v6 新增） |
+| `appVersion`     | 应用版本检测                    |
+| `browserVersion` | 浏览器版本检测                  |
+| `compareVersion` | 版本比较                        |
+| `nextVersion`    | 版本递增                        |
+| `getQueryParam`  | 获取 hash 参数                  |
+| `getQueryParams` | 获取所有 hash 参数              |
 
 #### DOM 操作 (6)
 
@@ -668,8 +668,8 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 ---
 
-> 文档生成时间：2026-03-22
+> 文档生成时间：2025-03-23
 >
 > 数据来源：各库官方文档、npm、GitHub
 >
-> **注意**: js-cool v6.x 将 `client` 模块重命名为 `ua` (User Agent)，`client` 作为别名保留以保持向后兼容。
+> **注意**: js-cool v6.x 已将 `client` 模块重命名为 `ua` (User Agent)，提供更强大的浏览器/设备/环境检测功能。

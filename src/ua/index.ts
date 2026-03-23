@@ -32,7 +32,6 @@ import type {
 	EngineName,
 	EnvironmentInfo,
 	IUADetector,
-	LegacyClientResult,
 	NetworkInfo,
 	OSInfo,
 	OSName,
@@ -304,30 +303,6 @@ class UADetector implements IUADetector {
 	isMiniProgram(): boolean {
 		return this.info.environment.miniProgram
 	}
-
-	/**
-	 * Legacy API for backward compatibility
-	 * @deprecated Use `ua.info` instead. Will be removed in v7.0.0
-	 */
-	legacy(): LegacyClientResult {
-		const { info } = this
-
-		return {
-			ANDROID: info.os.name === 'Android',
-			GECKO: info.browser.engine === 'Gecko',
-			IE: info.browser.name === 'IE',
-			IOS: info.os.name === 'iOS' || info.os.name === 'iPadOS',
-			IPAD: info.device.ipad,
-			IPHONE: info.device.iphone,
-			MOBILE: info.device.mobile,
-			OPERA: info.browser.name === 'Opera',
-			QQ: info.environment.qq,
-			QQBROWSER: info.environment.qqBrowser,
-			TRIDENT: info.browser.engine === 'Trident',
-			WEBKIT: info.browser.engine === 'WebKit',
-			WEIXIN: info.environment.wechat,
-		}
-	}
 }
 
 // Create singleton instance
@@ -397,7 +372,6 @@ const ua = Object.assign(
 		isWeChat: () => uaInstance.isWeChat(),
 		isQQ: () => uaInstance.isQQ(),
 		isMiniProgram: () => uaInstance.isMiniProgram(),
-		legacy: () => uaInstance.legacy(),
 
 		// Expose info getter
 		get info() {
@@ -425,7 +399,7 @@ const ua = Object.assign(
 )
 
 export default ua
-export { UADetector, UADetector as UAParser }
+export { UADetector }
 export type {
 	UAInfo,
 	DeviceInfo,
@@ -434,7 +408,6 @@ export type {
 	EnvironmentInfo,
 	NetworkInfo,
 	ScreenInfo,
-	LegacyClientResult,
 	UAGetType,
 	IUADetector,
 	OSName,
@@ -442,11 +415,3 @@ export type {
 	EngineName,
 	DeviceType,
 }
-
-// Deprecated aliases (will be removed in v7.0.0)
-/** @deprecated Use `UAInfo` instead */
-export type ClientInfo = UAInfo
-/** @deprecated Use `UAGetType` instead */
-export type ClientGetType = UAGetType
-/** @deprecated Use `IUADetector` instead */
-export type IClientDetector = IUADetector

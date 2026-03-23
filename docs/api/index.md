@@ -157,19 +157,18 @@ Network utilities - 1 function
 
 ### URL & Browser
 
-| Function                                    | Description                   |
-| ------------------------------------------- | ----------------------------- |
-| [getUrlParams](/api/url/get-url-params)     | Get all URL params            |
-| [getUrlParam](/api/url/get-url-param)       | Get single URL param          |
-| [parseUrlParam](/api/url/parse-url-param)   | Parse URL params              |
-| [spliceUrlParam](/api/url/splice-url-param) | Splice URL params             |
-| [getDirParam](/api/url/get-dir-param)       | Get directory params          |
-| [ua](/api/url/ua)                           | User-Agent detection          |
-| [client](/api/url/client)                   | Client detection (deprecated) |
-| [appVersion](/api/url/app-version)          | App version                   |
-| [browserVersion](/api/url/browser-version)  | Browser version               |
-| [compareVersion](/api/url/compare-version)  | Compare versions              |
-| [nextVersion](/api/url/next-version)        | Get next version              |
+| Function                                    | Description          |
+| ------------------------------------------- | -------------------- |
+| [getUrlParams](/api/url/get-url-params)     | Get all URL params   |
+| [getUrlParam](/api/url/get-url-param)       | Get single URL param |
+| [parseUrlParam](/api/url/parse-url-param)   | Parse URL params     |
+| [spliceUrlParam](/api/url/splice-url-param) | Splice URL params    |
+| [getDirParam](/api/url/get-dir-param)       | Get directory params |
+| [ua](/api/url/ua)                           | User-Agent detection |
+| [appVersion](/api/url/app-version)          | App version          |
+| [browserVersion](/api/url/browser-version)  | Browser version      |
+| [compareVersion](/api/url/compare-version)  | Compare versions     |
+| [nextVersion](/api/url/next-version)        | Get next version     |
 
 ### DOM
 

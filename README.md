@@ -9,7 +9,7 @@
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/js-cool)](https://bundlephobia.com/package/js-cool)
 [![gzip](https://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)](http://img.badgesize.io/https://unpkg.com/js-cool/dist/index.iife.min.js?compression=gzip&label=gzip%20size:%20JS)
 
-**[Changelog](./CHANGELOG.md)** • **[简体中文](./README-zh_CN.md)**
+**[Changelog](./CHANGELOG.md)** • **[Migration Guide v5→v6](./MIGRATION-v5-to-v6.md)** • **[简体中文](./README-zh_CN.md)**
 
 </div>
 
@@ -57,213 +57,32 @@ import { randomString } from 'js-cool'
 
 ## Migration from v5.x to v6.x
 
-### Breaking Changes
+> **📖 [Full Migration Guide](./MIGRATION-v5-to-v6.md)** • **[中文迁移指南](./MIGRATION-v5-to-v6-zh_CN.md)**
 
-#### 1. Build Output Files
+### Quick Summary
 
-| v5.x                             | v6.x                     | Description                         |
-| -------------------------------- | ------------------------ | ----------------------------------- |
-| `dist/index.cjs.js`              | `dist/index.js`          | CJS output renamed                  |
-| `dist/index.mjs`                 | `dist/index.mjs`         | ESM output (unchanged)              |
-| `dist/index.esm-browser.js`      | `dist/index.mjs`         | Use ESM output directly             |
-| `dist/index.esm-browser.prod.js` | `dist/index.mjs`         | Use ESM output (build tools minify) |
-| `dist/index.global.js`           | `dist/index.iife.js`     | IIFE output renamed                 |
-| `dist/index.global.prod.js`      | `dist/index.iife.min.js` | IIFE minified renamed               |
+| Change            | v5.x                        | v6.x                     |
+| ----------------- | --------------------------- | ------------------------ |
+| CJS output        | `dist/index.cjs.js`         | `dist/index.js`          |
+| IIFE output       | `dist/index.global.prod.js` | `dist/index.iife.min.js` |
+| Global variable   | `window.JsCool`             | `window.jsCool`          |
+| Client module     | `client`                    | `ua`                     |
+| `getAppVersion()` | ✅                          | ❌ Use `appVersion()`    |
+| `getOsVersion()`  | ✅                          | ❌ Use `osVersion()`     |
 
-#### 2. CDN Usage
-
-```html
-<!-- v5.x -->
-<script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
-<script>
-  const { copy } = window.JsCool
-</script>
-
-<!-- v6.x -->
-<script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
-<script>
-  const { copy } = window.jsCool // Note: lowercase 'jsCool'
-</script>
-```
-
-#### 3. Deprecated Functions Removed
-
-| Removed           | Replacement    |
-| ----------------- | -------------- |
-| `getAppVersion()` | `appVersion()` |
-| `getOsVersion()`  | `osVersion()`  |
-
-#### 4. Package.json Exports
-
-```json
-// v5.x
-{
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.mjs"
-}
-
-// v6.x
-{
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "exports": {
-    ".": {
-      "require": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "import": { "types": "./dist/index.d.mts", "default": "./dist/index.mjs" }
-    }
-  }
-}
-```
-
-### Migration Steps
-
-1. **Update import paths** (if using direct file imports):
-
-   ```js
-   // v5.x
-   import jsCool from 'js-cool/dist/index.esm-browser.js'
-
-   // v6.x
-   import jsCool from 'js-cool'
-   ```
-
-2. **Update CDN links**:
-
-   ```html
-   <!-- v5.x -->
-   <script src="https://unpkg.com/js-cool/dist/index.global.prod.js"></script>
-
-   <!-- v6.x -->
-   <script src="https://unpkg.com/js-cool/dist/index.iife.min.js"></script>
-   ```
-
-3. **Update global variable** (CDN users):
-
-   ```js
-   // v5.x
-   window.JsCool
-
-   // v6.x
-   window.jsCool
-   ```
-
-4. **Replace deprecated functions**:
-
-   ```js
-   // v5.x
-   getAppVersion('Chrome')
-   getOsVersion()
-
-   // v6.x
-   appVersion('Chrome')
-   osVersion()
-   ```
-
-### Migration: `client` → `ua` (v6.x)
-
-The `client` module has been renamed to `ua` (User Agent) for better clarity. The old `client` API is deprecated and will be removed in v7.0.0.
-
-#### Quick Migration Guide
+### `client` → `ua` Migration
 
 ```js
-// Old (deprecated)
+// v5.x
 import { client } from 'js-cool'
 client.isMobile()
-client.info
 
-// New (recommended)
+// v6.x
 import { ua } from 'js-cool'
 ua.isMobile()
-ua.info
-```
 
-#### Tree-shaking with Subpath Imports
-
-For smaller bundle sizes, import only what you need:
-
-```js
-// Tree-shaking friendly imports
-import { isMobile, isTablet } from 'js-cool/ua/device'
-import { isWeChat, isQQ, isDingtalk } from 'js-cool/ua/env'
-import { isiOS, isAndroid, isHarmonyOS } from 'js-cool/ua/os'
-import { isChrome, isFirefox } from 'js-cool/ua/browser'
-import { isOnline, getNetworkInfo } from 'js-cool/ua/network'
-import { isDarkMode, getScreenInfo } from 'js-cool/ua/screen'
-import type { UAInfo, DeviceInfo } from 'js-cool/ua/types'
-```
-
-| Subpath              | Description                          | Size   |
-| -------------------- | ------------------------------------ | ------ |
-| `js-cool/ua`         | Full UA module                       | ~28KB  |
-| `js-cool/ua/device`  | Device detection                     | ~3.4KB |
-| `js-cool/ua/os`      | OS detection                         | ~3.5KB |
-| `js-cool/ua/browser` | Browser detection                    | ~5.8KB |
-| `js-cool/ua/env`     | Environment detection (Chinese apps) | ~5KB   |
-| `js-cool/ua/network` | Network info                         | ~2KB   |
-| `js-cool/ua/screen`  | Screen info                          | ~3.3KB |
-| `js-cool/ua/types`   | Type definitions                     | -      |
-
-#### API Changes
-
-| Old API (`client`)          | New API (`ua`)          | Notes                     |
-| --------------------------- | ----------------------- | ------------------------- |
-| `client`                    | `ua`                    | Module renamed            |
-| `client()`                  | `ua()` or `ua.info`     | Returns full info         |
-| `client.info`               | `ua.info`               | Unchanged                 |
-| `client.get('browser')`     | `ua.get('browser')`     | Unchanged                 |
-| `client.getMultiple([...])` | `ua.getMultiple([...])` | Unchanged                 |
-| `client.isMobile()`         | `ua.isMobile()`         | Unchanged                 |
-| `client.isWeChat()`         | `ua.isWeChat()`         | Unchanged                 |
-| `client.legacy()`           | `ua.legacy()`           | Deprecated, use `ua.info` |
-| `ClientDetector`            | `UADetector`            | Class renamed             |
-| `IClientDetector`           | `IUADetector`           | Interface renamed         |
-| `ClientInfo`                | `UAInfo`                | Type renamed              |
-| `ClientGetType`             | `UAGetType`             | Type renamed              |
-
-#### New Features in `ua`
-
-The `ua` module includes several new features not available in the old `client` module:
-
-```js
-// New device detection
-ua.device.phone // Is phone device
-ua.device.ipad // Is iPad
-ua.device.iphone // Is iPhone
-ua.device.androidPhone // Is Android phone
-ua.device.androidTablet // Is Android tablet
-
-// New OS detection
-ua.isHarmonyOS() // Detect HarmonyOS (鸿蒙)
-ua.isiPadOS() // Detect iPadOS
-
-// New environment detection (Chinese apps)
-ua.environment.wxwork // 企业微信
-ua.environment.dingtalk // 钉钉
-ua.environment.douyin // 抖音
-ua.environment.kuaishou // 快手
-ua.environment.baidu // 百度App
-ua.environment.xiaomi // 小米浏览器
-ua.environment.huawei // 华为浏览器
-ua.environment.miniProgram // 小程序
-ua.environment.miniGame // 小游戏
-
-// New utility methods
-ua.getNetwork() // Network info
-ua.getScreen() // Screen info
-ua.getTimezone() // Timezone
-ua.isDarkMode() // Dark mode check
-```
-
-#### Backward Compatibility
-
-The old `client` API remains available for backward compatibility:
-
-```js
-// This still works (deprecated)
-import { client, ClientDetector } from 'js-cool'
-
-const detector = new ClientDetector()
-client.isMobile()
+// Or tree-shake
+import { isMobile, isWeChat } from 'js-cool/ua'
 ```
 
 ---
@@ -343,23 +162,6 @@ ua.getScreen() // { width, height, pixelRatio, orientation, colorDepth }
 
 // Get orientation
 ua.getOrientationStatus() // 'portrait' | 'landscape'
-
-// Legacy API (deprecated)
-ua.legacy() // { ANDROID: true, IOS: false, ... }
-```
-
-#### client (deprecated)
-
-> ⚠️ **Deprecated**: Use `ua` instead. `client` will be removed in v7.0.0.
-
-```js
-// Old (deprecated)
-import { client } from 'js-cool'
-client.isMobile()
-
-// New (recommended)
-import { ua } from 'js-cool'
-ua.isMobile()
 ```
 
 #### pattern

@@ -24,7 +24,7 @@ import clearAttr from './clearAttr'
 import clearHtml from './clearHtml'
 
 // Global Parameters
-import client from './client'
+import ua from './ua/index'
 import clone from './clone'
 import compareVersion from './compareVersion'
 import complement from './complement'
@@ -156,7 +156,7 @@ export default {
 	cleanData,
 	clearAttr,
 	clearHtml,
-	client,
+	ua,
 	clone,
 	compareVersion,
 	complement,

@@ -59,5 +59,4 @@ osVersion() // { name: 'Harmony', version: '4.0.0' }
 
 ## Related
 
-- [getOsVersion](/api/url/get-os-version) - Get specific OS version (deprecated)
-- [client](/api/url/client) - Get client information
+- [ua](/api/url/ua) - User-Agent detection utility
