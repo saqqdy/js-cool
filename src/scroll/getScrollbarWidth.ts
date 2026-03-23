@@ -1,3 +1,6 @@
+// Cache storage
+let cached: number | undefined
+
 /**
  * Get scrollbar width
  *
@@ -15,13 +18,14 @@
  */
 function getScrollbarWidth(): number {
 	// Check cached value
-	if (getScrollbarWidth.cached !== undefined) {
-		return getScrollbarWidth.cached
+	if (cached !== undefined) {
+		return cached
 	}
 
 	// Create temporary elements to measure
 	const outer = document.createElement('div')
-	outer.style.cssText = 'visibility:hidden;overflow:scroll;position:absolute;top:-9999px;width:100px'
+	outer.style.cssText =
+		'visibility:hidden;overflow:scroll;position:absolute;top:-9999px;width:100px'
 	document.body.appendChild(outer)
 
 	const inner = document.createElement('div')
@@ -33,14 +37,9 @@ function getScrollbarWidth(): number {
 	document.body.removeChild(outer)
 
 	// Cache the value
-	getScrollbarWidth.cached = scrollbarWidth
+	cached = scrollbarWidth
 
 	return scrollbarWidth
-}
-
-// Cache storage
-namespace getScrollbarWidth {
-	export let cached: number | undefined
 }
 
 export default getScrollbarWidth

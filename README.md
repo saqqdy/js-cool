@@ -61,15 +61,15 @@ import { randomString } from 'js-cool'
 
 ### Quick Summary
 
-| Change            | v5.x                        | v6.x                     |
-| ----------------- | --------------------------- | ------------------------ |
-| CJS output        | `dist/index.cjs.js`         | `dist/index.js`          |
-| IIFE output       | `dist/index.global.prod.js` | `dist/index.iife.min.js` |
-| Global variable   | `window.JsCool`             | `window.jsCool`          |
-| Client module     | `client`                    | `ua`                     |
-| `getAppVersion()`    | ✅                          | ❌ Use `appVersion()`    |
-| `getOsVersion()`     | ✅                          | ❌ Use `osVersion()`     |
-| `getScrollPosition()`| ✅                          | ❌ Use `scroll.getPosition()` |
+| Change                | v5.x                        | v6.x                          |
+| --------------------- | --------------------------- | ----------------------------- |
+| CJS output            | `dist/index.cjs.js`         | `dist/index.js`               |
+| IIFE output           | `dist/index.global.prod.js` | `dist/index.iife.min.js`      |
+| Global variable       | `window.JsCool`             | `window.jsCool`               |
+| Client module         | `client`                    | `ua`                          |
+| `getAppVersion()`     | ✅                          | ❌ Use `appVersion()`         |
+| `getOsVersion()`      | ✅                          | ❌ Use `osVersion()`          |
+| `getScrollPosition()` | ✅                          | ❌ Use `scroll.getPosition()` |
 
 ### `client` → `ua` Migration
 
@@ -101,7 +101,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
-| **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                      |
+| **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                       |
 | **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
@@ -1123,18 +1123,18 @@ addEvent(document.getElementById('list'), 'click', e => {
 
 ```js
 import {
-	scroll,
-	getPosition,
-	getProgress,
-	createDirectionTracker,
-	isInViewport,
-	scrollTo,
-	scrollToTop,
-	scrollToBottom,
-	scrollBy,
-	lockScroll,
-	unlockScroll,
-	getScrollbarWidth,
+  scroll,
+  getPosition,
+  getProgress,
+  createDirectionTracker,
+  isInViewport,
+  scrollTo,
+  scrollToTop,
+  scrollToBottom,
+  scrollBy,
+  lockScroll,
+  unlockScroll,
+  getScrollbarWidth,
 } from 'js-cool'
 
 // Get scroll position state
@@ -1148,7 +1148,7 @@ getProgress(element) // custom element
 // Track scroll direction
 const tracker = createDirectionTracker()
 window.addEventListener('scroll', () => {
-	const dir = tracker() // 'up' | 'down' | null
+  const dir = tracker() // 'up' | 'down' | null
 })
 
 // Check if element is in viewport

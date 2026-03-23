@@ -16,17 +16,29 @@ const creditCardInput = ref('4111111111111111')
 const patternResults = [
 	{ name: 'email', test: 'test@example.com', result: validation.email.test('test@example.com') },
 	{ name: 'mobile (CN)', test: '13800138000', result: validation.mobile.test('13800138000') },
-	{ name: 'url', test: 'https://example.com', result: validation.url.test('https://example.com') },
+	{
+		name: 'url',
+		test: 'https://example.com',
+		result: validation.url.test('https://example.com'),
+	},
 	{ name: 'number', test: '123.45', result: validation.number.test('123.45') },
 	{ name: 'chinese', test: '中文测试', result: validation.chinese.test('中') },
 	{ name: 'qq', test: '123456789', result: validation.qq.test('123456789') },
 	{ name: 'ipv4', test: '192.168.1.1', result: validation.ipv4.test('192.168.1.1') },
-	{ name: 'ipv4Private', test: '192.168.1.1', result: validation.ipv4Private.test('192.168.1.1') },
+	{
+		name: 'ipv4Private',
+		test: '192.168.1.1',
+		result: validation.ipv4Private.test('192.168.1.1'),
+	},
 	{ name: 'mac', test: '00:1A:2B:3C:4D:5E', result: validation.mac.test('00:1A:2B:3C:4D:5E') },
 	{ name: 'postcode', test: '100000', result: validation.postcode.test('100000') },
 	{ name: 'username', test: 'user_name-123', result: validation.username.test('user_name-123') },
 	{ name: 'password', test: 'abc123XYZ', result: validation.password.test('abc123XYZ') },
-	{ name: 'idCard', test: '11010519491231002X', result: validation.idCard.test('11010519491231002X') },
+	{
+		name: 'idCard',
+		test: '11010519491231002X',
+		result: validation.idCard.test('11010519491231002X'),
+	},
 	{ name: 'hexColor', test: '#ffffff', result: validation.hexColor.test('#ffffff') },
 ]
 </script>

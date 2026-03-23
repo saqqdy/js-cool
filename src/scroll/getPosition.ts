@@ -24,15 +24,10 @@
  * @param threshold - Threshold for bottom detection (default 1px for float precision)
  * @returns - 'top', 'bottom', or undefined
  */
-function getPosition(
-	el: Window | Element = window,
-	threshold = 1
-): 'top' | 'bottom' | undefined {
+function getPosition(el: Window | Element = window, threshold = 1): 'top' | 'bottom' | undefined {
 	const isWindow = el === window
 
-	let scrollTop: number,
-	 clientHeight: number,
-	 scrollHeight: number
+	let scrollTop: number, clientHeight: number, scrollHeight: number
 
 	if (isWindow) {
 		scrollTop = window.scrollY

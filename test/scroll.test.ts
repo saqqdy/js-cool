@@ -7,7 +7,13 @@ import getProgress from '../src/scroll/getProgress'
 import { createDirectionTracker } from '../src/scroll/getDirection'
 import isInViewport from '../src/scroll/isInViewport'
 import { scrollToTop } from '../src/scroll/scrollTo'
-import { getScrollbarWidth, isScrollLocked, lockScroll, toggleScroll, unlockScroll } from '../src/scroll/lockScroll'
+import {
+	getScrollbarWidth,
+	isScrollLocked,
+	lockScroll,
+	toggleScroll,
+	unlockScroll,
+} from '../src/scroll/lockScroll'
 
 describe('scroll utilities', () => {
 	describe('getPosition', () => {

@@ -21,6 +21,7 @@ function getPosition(el?: Window | Element, threshold?: number): 'top' | 'bottom
 ```
 
 **参数：**
+
 - `el` - 目标元素，默认为 `window`
 - `threshold` - 底部检测阈值（默认：1px）
 
@@ -65,11 +66,14 @@ function createDirectionTracker(): () => 'up' | 'down' | null
 ```js
 const tracker = scroll.createDirectionTracker()
 
-window.addEventListener('scroll', throttle(() => {
-  const dir = tracker() // 'up' | 'down' | null
-  if (dir === 'down') header.classList.add('hidden')
-  else if (dir === 'up') header.classList.remove('hidden')
-}, 100))
+window.addEventListener(
+  'scroll',
+  throttle(() => {
+    const dir = tracker() // 'up' | 'down' | null
+    if (dir === 'down') header.classList.add('hidden')
+    else if (dir === 'up') header.classList.remove('hidden')
+  }, 100)
+)
 ```
 
 ---
@@ -79,10 +83,14 @@ window.addEventListener('scroll', throttle(() => {
 检测元素是否在视口内。
 
 ```typescript
-function isInViewport(el: Element, options?: { fully?: boolean; offset?: number }): boolean | 'partial'
+function isInViewport(
+  el: Element,
+  options?: { fully?: boolean; offset?: number }
+): boolean | 'partial'
 ```
 
 **参数：**
+
 - `el` - 目标元素
 - `options.fully` - 是否检测完全可见（默认：`true`）
 - `options.offset` - 距离视口边缘的偏移量（默认：`0`）
@@ -101,7 +109,10 @@ if (scroll.isInViewport(el)) {
 滚动到元素或位置。
 
 ```typescript
-function scrollTo(target: Element | string, options?: { offset?: number; behavior?: 'smooth' | 'auto' }): void
+function scrollTo(
+  target: Element | string,
+  options?: { offset?: number; behavior?: 'smooth' | 'auto' }
+): void
 ```
 
 ```js
@@ -150,7 +161,7 @@ function scrollBy(amount: number, options?: { behavior?: 'smooth' | 'auto' }): v
 ```
 
 ```js
-scroll.scrollBy(200)  // 向下滚动 200px
+scroll.scrollBy(200) // 向下滚动 200px
 scroll.scrollBy(-100) // 向上滚动 100px
 ```
 

@@ -22,9 +22,7 @@
 function getProgress(el: Window | Element = window): number {
 	const isWindow = el === window
 
-	let scrollTop: number,
-	 clientHeight: number,
-	 scrollHeight: number
+	let scrollTop: number, clientHeight: number, scrollHeight: number
 
 	if (isWindow) {
 		scrollTop = window.scrollY

@@ -16,7 +16,7 @@
 | `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常   |
 | `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常   |
 | `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常   |
-| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ⚠️ 已废弃 |
+| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams |
 
 ### 1.2 依赖关系
 
@@ -85,15 +85,17 @@ function convertValue(value: string): unknown {
 }
 ```
 
-### 2.2 `getDirParam` 重构为 `getDirParams`
+### 2.2 `getDirParam` 重构为 `getDirParams` ✅
 
-**问题**：
+> **状态**：已完成，新增 `getDirParams` 方法
+
+**原问题**：
 
 1. 已标记 `@deprecated`
 2. 路径中包含 query string 时处理不正确
 3. 返回结构不够清晰
 
-**当前实现问题**：
+**原实现问题**：
 
 ```typescript
 getDirParam('https://example.com/api/v1/users?id=123')
@@ -101,7 +103,7 @@ getDirParam('https://example.com/api/v1/users?id=123')
 // 问题：'users?id=123' 应该分离
 ```
 
-**建议重构**：
+**已实现方案**：
 
 ````typescript
 export interface DirParamsResult {
@@ -349,11 +351,11 @@ function getUrlParams(
 
 ### 2.5 API 命名优化建议
 
-| 当前方法         | 建议               | 原因                                |
-| ---------------- | ------------------ | ----------------------------------- |
-| `parseUrlParam`  | `parseQueryString` | 更语义化，明确处理的是 query string |
-| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作            |
-| `getDirParam`    | `getDirParams`     | 已废弃，新方法返回更多信息          |
+| 当前方法         | 建议               | 原因                                | 状态     |
+| ---------------- | ------------------ | ----------------------------------- | -------- |
+| `parseUrlParam`  | `parseQueryString` | 更语义化，明确处理的是 query string | 待处理   |
+| `spliceUrlParam` | `buildQueryString` | 更语义化，明确是构建操作            | 待处理   |
+| `getDirParam`    | `getDirParams`     | 已废弃，新方法返回更多信息          | ✅ 已完成 |
 
 **兼容性处理**：
 
@@ -523,11 +525,11 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### Phase 1: 新增功能（v6.1）
 
-| 任务                     | 优先级 | 预估工时 |
-| ------------------------ | ------ | -------- |
-| 新增 `UrlBuilder` 类     | P1     | 0.5 天   |
-| 新增 `getDirParams` 方法 | P1     | 0.5 天   |
-| 支持 `URL` 对象输入      | P2     | 0.5 天   |
+| 任务                     | 优先级 | 预估工时 | 状态     |
+| ------------------------ | ------ | -------- | -------- |
+| 新增 `UrlBuilder` 类     | P1     | 0.5 天   | 待处理   |
+| 新增 `getDirParams` 方法 | P1     | 0.5 天   | ✅ 已完成 |
+| 支持 `URL` 对象输入      | P2     | 0.5 天   | 待处理   |
 
 ### Phase 2: 性能优化（v6.2）
 
@@ -552,7 +554,7 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### v7.0 计划移除
 
-1. `getDirParam` - 使用 `getDirParams` 替代
+1. ~~`getDirParam` - 使用 `getDirParams` 替代~~ ✅ 已完成
 2. `parseUrlParam` 别名 - 使用 `parseQueryString`
 3. `spliceUrlParam` 别名 - 使用 `buildQueryString`
 
@@ -581,5 +583,7 @@ const str = buildQueryString({ a: 1 }) // 新
 ---
 
 > 文档生成时间：2025-03-23
+>
+> 最后更新：2026-03-23（getDirParam 已重构为 getDirParams）
 >
 > 基于 js-cool v6.0.0 版本分析

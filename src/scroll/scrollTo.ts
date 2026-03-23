@@ -24,6 +24,8 @@
  * @since 2.0.0
  */
 
+type ScrollBehavior = 'auto' | 'smooth' | 'instant'
+
 interface ScrollToOptions {
 	/** Offset from target position (default: 0) */
 	offset?: number
@@ -99,4 +101,5 @@ function scrollBy(amount: number, options: Omit<ScrollToOptions, 'offset'> = {})
 }
 
 export { scrollTo, scrollToTop, scrollToBottom, scrollBy }
+export type { ScrollToOptions, ScrollBehavior }
 export default scrollTo

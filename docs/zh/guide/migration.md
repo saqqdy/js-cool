@@ -49,11 +49,11 @@ import jsCool from 'js-cool'
 
 ### 废弃函数替换
 
-| v5.x（已废弃）       | v6.x（替代方案）           |
-| -------------------- | -------------------------- |
-| `getAppVersion()`    | `appVersion()`             |
-| `getOsVersion()`     | `osVersion()`              |
-| `getScrollPosition()`| `scroll.getPosition()`     |
+| v5.x（已废弃）        | v6.x（替代方案）       |
+| --------------------- | ---------------------- |
+| `getAppVersion()`     | `appVersion()`         |
+| `getOsVersion()`      | `osVersion()`          |
+| `getScrollPosition()` | `scroll.getPosition()` |
 
 ```js
 // v5.x
@@ -80,29 +80,29 @@ const pos = getScrollPosition() // 'top' | 'bottom' | undefined
 import { scroll } from 'js-cool'
 // 或 import scrollUtils from 'js-cool/scroll'
 
-scroll.getPosition()            // 'top' | 'bottom' | undefined
-scroll.getProgress()            // 0-100（滚动进度百分比）
+scroll.getPosition() // 'top' | 'bottom' | undefined
+scroll.getProgress() // 0-100（滚动进度百分比）
 scroll.createDirectionTracker() // 追踪滚动方向（'up' | 'down'）
-scroll.isInViewport(el)         // 检测元素是否在视口内
-scroll.scrollTo('#section')     // 滚动到指定元素
-scroll.scrollToTop()            // 滚动到顶部
-scroll.scrollToBottom()         // 滚动到底部
-scroll.lock()                   // 锁定滚动（适用于弹窗）
-scroll.unlock()                 // 解锁滚动
-scroll.getScrollbarWidth()      // 获取滚动条宽度
+scroll.isInViewport(el) // 检测元素是否在视口内
+scroll.scrollTo('#section') // 滚动到指定元素
+scroll.scrollToTop() // 滚动到顶部
+scroll.scrollToBottom() // 滚动到底部
+scroll.lock() // 锁定滚动（适用于弹窗）
+scroll.unlock() // 解锁滚动
+scroll.getScrollbarWidth() // 获取滚动条宽度
 ```
 
 #### 新增功能
 
-| 方法                       | 说明                               |
-| -------------------------- | ---------------------------------- |
-| `getPosition(el, threshold)` | 支持自定义元素和阈值               |
-| `getProgress(el)`          | 新增：获取滚动进度（0-100）        |
-| `createDirectionTracker()` | 新增：追踪滚动方向                 |
-| `isInViewport(el, opts)`   | 新增：检测元素是否在视口内         |
-| `scrollTo(target, opts)`   | 新增：滚动到元素/位置              |
-| `lock()` / `unlock()`      | 新增：锁定/解锁滚动                |
-| `getScrollbarWidth()`      | 新增：获取滚动条宽度               |
+| 方法                         | 说明                        |
+| ---------------------------- | --------------------------- |
+| `getPosition(el, threshold)` | 支持自定义元素和阈值        |
+| `getProgress(el)`            | 新增：获取滚动进度（0-100） |
+| `createDirectionTracker()`   | 新增：追踪滚动方向          |
+| `isInViewport(el, opts)`     | 新增：检测元素是否在视口内  |
+| `scrollTo(target, opts)`     | 新增：滚动到元素/位置       |
+| `lock()` / `unlock()`        | 新增：锁定/解锁滚动         |
+| `getScrollbarWidth()`        | 新增：获取滚动条宽度        |
 
 ### 包导出配置
 

@@ -21,9 +21,7 @@
  * ```
  * @since 2.0.0
  * @param el - Target element
- * @param options - Options object
- * @param options.fully - If true, check if fully in viewport (default: true)
- * @param options.offset - Offset from viewport edges (default: 0)
+ * @param options - Options object with `fully` (if true, check if fully in viewport) and `offset` (offset from viewport edges)
  * @returns - true, false, or 'partial' if partially visible
  */
 function isInViewport(
@@ -36,10 +34,8 @@ function isInViewport(
 	const windowHeight = window.innerHeight || document.documentElement.clientHeight
 	const windowWidth = window.innerWidth || document.documentElement.clientWidth
 
-	const vertInView =
-		rect.top <= windowHeight - offset && rect.top + rect.height >= offset
-	const horInView =
-		rect.left <= windowWidth - offset && rect.left + rect.width >= offset
+	const vertInView = rect.top <= windowHeight - offset && rect.top + rect.height >= offset
+	const horInView = rect.left <= windowWidth - offset && rect.left + rect.width >= offset
 
 	if (!vertInView || !horInView) return false
 

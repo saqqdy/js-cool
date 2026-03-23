@@ -185,8 +185,8 @@ export { default as sample } from './sample'
 
 export { default as sampleSize } from './sampleSize'
 // ==================== Scroll 滚动工具 ====================
+export { default as scroll } from './scroll'
 export {
-	scrollUtils as scroll,
 	getPosition,
 	getProgress,
 	getDirection,
@@ -202,6 +202,7 @@ export {
 	isScrollLocked,
 	getScrollbarWidth,
 } from './scroll'
+export type { ScrollToOptions, ScrollBehavior } from './scroll'
 export { type SearchKeySet, default as searchObject } from './searchObject'
 // ==================== Storage 存储操作 ====================
 export { default as setCache } from './setCache'

@@ -17,19 +17,17 @@
  * @since 2.0.0
  * @returns - 'up', 'down', or null (if no previous scroll or at top)
  */
+let lastScrollY = window.scrollY
+
 function getDirection(): 'up' | 'down' | null {
-	let lastScrollY = window.scrollY
+	const currentScrollY = window.scrollY
 
-	return (): 'up' | 'down' | null => {
-		const currentScrollY = window.scrollY
+	if (currentScrollY === lastScrollY) return null
 
-		if (currentScrollY === lastScrollY) return null
+	const direction = currentScrollY > lastScrollY ? 'down' : 'up'
+	lastScrollY = currentScrollY
 
-		const direction = currentScrollY > lastScrollY ? 'down' : 'up'
-		lastScrollY = currentScrollY
-
-		return direction
-	}
+	return direction
 }
 
 /**

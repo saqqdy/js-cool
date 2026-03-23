@@ -19,8 +19,8 @@
  */
 
 let scrollLockCount = 0,
- originalOverflow = '',
- originalPaddingRight = ''
+	originalOverflow = '',
+	originalPaddingRight = ''
 
 /**
  * Get scrollbar width

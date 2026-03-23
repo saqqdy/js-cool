@@ -217,7 +217,11 @@ getGlobal('console.log') // ƒ log()
 getGlobal('nonExistent') // undefined`"
 		>
 			<template #input>
-				<n-input v-model:value="globalPath" style="width: 200px" placeholder="Enter path..." />
+				<n-input
+					v-model:value="globalPath"
+					style="width: 200px"
+					placeholder="Enter path..."
+				/>
 			</template>
 			<template #result>
 				<n-space vertical>
@@ -255,19 +259,29 @@ validation.idCard.test('11010519491231002X') // true`"
 				<n-space vertical>
 					<n-space align="center">
 						<code class="code-inline">validation.email.test('user@example.com')</code>
-						<n-tag size="small" :bordered="false">{{ validation.email.test('user@example.com') }}</n-tag>
+						<n-tag size="small" :bordered="false">{{
+							validation.email.test('user@example.com')
+						}}</n-tag>
 					</n-space>
 					<n-space align="center">
 						<code class="code-inline">validation.mobile.test('13800138000')</code>
-						<n-tag size="small" :bordered="false">{{ validation.mobile.test('13800138000') }}</n-tag>
+						<n-tag size="small" :bordered="false">{{
+							validation.mobile.test('13800138000')
+						}}</n-tag>
 					</n-space>
 					<n-space align="center">
 						<code class="code-inline">validation.ipv4.test('192.168.1.1')</code>
-						<n-tag size="small" :bordered="false">{{ validation.ipv4.test('192.168.1.1') }}</n-tag>
+						<n-tag size="small" :bordered="false">{{
+							validation.ipv4.test('192.168.1.1')
+						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">validation.idCard.test('11010519491231002X')</code>
-						<n-tag size="small" :bordered="false">{{ validation.idCard.test('11010519491231002X') }}</n-tag>
+						<code class="code-inline"
+							>validation.idCard.test('11010519491231002X')</code
+						>
+						<n-tag size="small" :bordered="false">{{
+							validation.idCard.test('11010519491231002X')
+						}}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
@@ -288,15 +302,23 @@ patterns.ua.getUserAgent()`"
 				<n-space vertical>
 					<n-space align="center">
 						<code class="code-inline">patterns.ua.device.mobile.test(ua)</code>
-						<n-tag size="small" :bordered="false">{{ patterns.ua.device.mobile.test(patterns.ua.getUserAgent()) }}</n-tag>
+						<n-tag size="small" :bordered="false">{{
+							patterns.ua.device.mobile.test(patterns.ua.getUserAgent())
+						}}</n-tag>
 					</n-space>
 					<n-space align="center">
 						<code class="code-inline">patterns.ua.browser.chrome.test(ua)</code>
-						<n-tag size="small" :bordered="false">{{ patterns.ua.browser.chrome.test(patterns.ua.getUserAgent()) }}</n-tag>
+						<n-tag size="small" :bordered="false">{{
+							patterns.ua.browser.chrome.test(patterns.ua.getUserAgent())
+						}}</n-tag>
 					</n-space>
 					<n-space align="center">
 						<code class="code-inline">patterns.ua.getUserAgent()</code>
-						<n-tag size="small" :bordered="false" style="max-width: 300px; overflow: hidden; text-overflow: ellipsis;">
+						<n-tag
+							size="small"
+							:bordered="false"
+							style="max-width: 300px; overflow: hidden; text-overflow: ellipsis"
+						>
 							{{ patterns.ua.getUserAgent().substring(0, 50) }}...
 						</n-tag>
 					</n-space>

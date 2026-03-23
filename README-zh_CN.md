@@ -53,15 +53,15 @@ import { randomString } from 'js-cool'
 
 ### 快速概览
 
-| 变更              | v5.x                        | v6.x                     |
-| ----------------- | --------------------------- | ------------------------ |
-| CJS 输出          | `dist/index.cjs.js`         | `dist/index.js`          |
-| IIFE 输出         | `dist/index.global.prod.js` | `dist/index.iife.min.js` |
-| 全局变量          | `window.JsCool`             | `window.jsCool`          |
-| Client 模块       | `client`                    | `ua`                     |
-| `getAppVersion()`    | ✅                          | ❌ 使用 `appVersion()`   |
-| `getOsVersion()`     | ✅                          | ❌ 使用 `osVersion()`    |
-| `getScrollPosition()`| ✅                          | ❌ 使用 `scroll.getPosition()` |
+| 变更                  | v5.x                        | v6.x                           |
+| --------------------- | --------------------------- | ------------------------------ |
+| CJS 输出              | `dist/index.cjs.js`         | `dist/index.js`                |
+| IIFE 输出             | `dist/index.global.prod.js` | `dist/index.iife.min.js`       |
+| 全局变量              | `window.JsCool`             | `window.jsCool`                |
+| Client 模块           | `client`                    | `ua`                           |
+| `getAppVersion()`     | ✅                          | ❌ 使用 `appVersion()`         |
+| `getOsVersion()`      | ✅                          | ❌ 使用 `osVersion()`          |
+| `getScrollPosition()` | ✅                          | ❌ 使用 `scroll.getPosition()` |
 
 ### `client` → `ua` 迁移
 
@@ -93,7 +93,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
 | **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
-| **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                      |
+| **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                       |
 | **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
@@ -1114,18 +1114,18 @@ addEvent(document.getElementById('list'), 'click', e => {
 
 ```js
 import {
-	scroll,
-	getPosition,
-	getProgress,
-	createDirectionTracker,
-	isInViewport,
-	scrollTo,
-	scrollToTop,
-	scrollToBottom,
-	scrollBy,
-	lockScroll,
-	unlockScroll,
-	getScrollbarWidth,
+  scroll,
+  getPosition,
+  getProgress,
+  createDirectionTracker,
+  isInViewport,
+  scrollTo,
+  scrollToTop,
+  scrollToBottom,
+  scrollBy,
+  lockScroll,
+  unlockScroll,
+  getScrollbarWidth,
 } from 'js-cool'
 
 // 获取滚动位置状态
@@ -1139,7 +1139,7 @@ getProgress(element) // 自定义元素
 // 追踪滚动方向
 const tracker = createDirectionTracker()
 window.addEventListener('scroll', () => {
-	const dir = tracker() // 'up' | 'down' | null
+  const dir = tracker() // 'up' | 'down' | null
 })
 
 // 检测元素是否在视口内
