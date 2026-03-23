@@ -251,9 +251,8 @@ export const changelog: ChangelogData = {
 			type: 'new',
 			name: 'getGlobal',
 			category: 'Utility',
-			description:
-				'Safely get global values by path (CSP-compliant, replaces internal _eval)',
-			descriptionZh: '安全地通过路径获取全局变量（CSP 兼容，替代内部 _eval）',
+			description: 'Safely get global values by path (CSP-compliant)',
+			descriptionZh: '安全地通过路径获取全局变量（CSP 兼容）',
 			anchor: 'getglobal',
 		},
 		{

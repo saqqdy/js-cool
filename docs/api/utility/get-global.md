@@ -96,17 +96,3 @@ const localStorage = getGlobal('window.localStorage')
 // Node.js environment
 const env = getGlobal('process.env')
 ```
-
-## Migration from `_eval`
-
-`_eval` was an internal function that used dynamic code execution. `getGlobal` is the safer replacement:
-
-```js
-// Before (unsafe)
-import _eval from 'js-cool/_eval'
-const fn = _eval('JSON.parse')
-
-// After (safe)
-import { getGlobal } from 'js-cool'
-const fn = getGlobal('JSON.parse')
-```

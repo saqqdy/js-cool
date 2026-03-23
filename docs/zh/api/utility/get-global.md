@@ -96,17 +96,3 @@ const localStorage = getGlobal('window.localStorage')
 // Node.js 环境
 const env = getGlobal('process.env')
 ```
-
-## 从 `_eval` 迁移
-
-`_eval` 是一个使用动态代码执行的内部函数。`getGlobal` 是更安全的替代方案：
-
-```js
-// 之前（不安全）
-import _eval from 'js-cool/_eval'
-const fn = _eval('JSON.parse')
-
-// 之后（安全）
-import { getGlobal } from 'js-cool'
-const fn = getGlobal('JSON.parse')
-```
