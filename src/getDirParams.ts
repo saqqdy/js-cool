@@ -48,7 +48,7 @@ function parseWithRegex(url: string): DirParamsResult {
 	let pathPart = originMatch ? url.slice(originMatch[1].length) : url
 
 	// 处理相对路径（无 origin 的情况）
-	if (!originMatch && !pathPart.startsWith('/')) {
+	if (!originMatch && pathPart.indexOf('/') !== 0) {
 		pathPart = `/${pathPart}`
 	}
 
@@ -136,7 +136,7 @@ function getDirParams(url?: string): DirParamsResult {
 		try {
 			// 处理相对路径
 			let urlObj: URL
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				urlObj = new URL(url)
 			} else {
 				// 相对路径需要基于当前 origin

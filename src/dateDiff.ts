@@ -1,3 +1,5 @@
+import { isNumberNaN } from './_compat'
+
 export interface DateDiffResult {
 	days: number
 	hours: number
@@ -34,7 +36,7 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 	const d1 = new Date(date1)
 	const d2 = new Date(date2)
 
-	if (Number.isNaN(d1.getTime()) || Number.isNaN(d2.getTime())) {
+	if (isNumberNaN(d1.getTime()) || isNumberNaN(d2.getTime())) {
 		return {
 			days: 0,
 			hours: 0,

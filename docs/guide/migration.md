@@ -177,6 +177,27 @@ This ensures:
 | Config file  | ~190 lines    | ~65 lines       |
 | Dependencies | 10+ plugins   | Built-in        |
 
+### IE11 Compatibility
+
+v6.x includes built-in IE11 compatibility without requiring external polyfills. This is achieved through an internal `_compat.ts` module that provides IE11-compatible alternatives to ES6+ features.
+
+#### Key Changes for IE11
+
+| Function | Change |
+|----------|--------|
+| `base64ToFile()` | Return type changed from `File` to `File \| Blob` |
+| All methods | Now use internal compatibility layer |
+
+#### Functions with Graceful Degradation
+
+| Function | IE11 Behavior |
+|----------|---------------|
+| `isURL()` | Falls back to regex validation |
+| `getDirParams()` | Uses regex parsing |
+| `urlToBlob()` | Uses XHR instead of fetch |
+| `isDarkMode()` | Returns `false` |
+| `base64ToFile()` | Returns Blob with name property |
+
 ## Module Migrations
 
 ### `client` → `ua`

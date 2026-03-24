@@ -24,7 +24,7 @@
  * @returns boolean
  */
 function contains(arr: unknown[], item: unknown): boolean {
-	return arr.includes(item)
+	return arr.indexOf(item) !== -1
 }
 
 export default contains

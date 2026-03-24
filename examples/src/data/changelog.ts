@@ -20,10 +20,10 @@ export interface ChangelogData {
 }
 
 export const changelog: ChangelogData = {
-	version: version || '6.0.0-beta.1',
-	date: '2025-03',
-	summary: 'Major update: new UA detector module, 30+ new utilities, deprecated client module',
-	summaryZh: '重大更新：新增 UA 检测模块，30+ 新工具函数，废弃 client 模块',
+	version: version || '6.0.0',
+	date: '2025-03-24',
+	summary: 'Major update: IE11 built-in support, new UA detector module, 30+ new utilities, deprecated client module',
+	summaryZh: '重大更新：内置 IE11 支持、新增 UA 检测模块、30+ 新工具函数、废弃 client 模块',
 	migrationGuide: 'https://github.com/saqqdy/js-cool/blob/master/MIGRATION-v5-to-v6.md',
 	changes: [
 		// Breaking Changes
@@ -49,6 +49,23 @@ export const changelog: ChangelogData = {
 			category: 'Url',
 			description: 'Removed deprecated functions. Use appVersion and osVersion instead',
 			descriptionZh: '移除废弃函数。请使用 appVersion 和 osVersion',
+		},
+
+		// IE11 Compatibility
+		{
+			type: 'new',
+			name: 'IE11 Compatibility',
+			category: 'Core',
+			description: 'Built-in IE11 support without external polyfills. All methods work in IE11 through internal compatibility layer',
+			descriptionZh: '内置 IE11 支持，无需外部 polyfill。所有方法通过内部兼容层在 IE11 中运行',
+		},
+		{
+			type: 'update',
+			name: 'base64ToFile',
+			category: 'Convert',
+			description: 'Return type changed from File to File | Blob (IE11 returns Blob with name property)',
+			descriptionZh: '返回类型从 File 改为 File | Blob（IE11 返回带 name 属性的 Blob）',
+			anchor: 'base64tofile',
 		},
 
 		// New Features - UA Detector

@@ -1,4 +1,5 @@
 import encodeUtf8 from './encodeUtf8'
+import { isNumberNaN } from './_compat'
 
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 
@@ -47,9 +48,9 @@ function encodeBase64(input: string): string {
 		enc2 = ((chr1 & 3) << 4) | (chr2 >> 4)
 		enc3 = ((chr2 & 15) << 2) | (chr3 >> 6)
 		enc4 = chr3 & 63
-		if (Number.isNaN(chr2)) {
+		if (isNumberNaN(chr2)) {
 			enc3 = enc4 = 64
-		} else if (Number.isNaN(chr3)) {
+		} else if (isNumberNaN(chr3)) {
 			enc4 = 64
 		}
 		output =

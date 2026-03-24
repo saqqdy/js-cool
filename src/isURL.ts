@@ -27,12 +27,19 @@ function isURL(value: string): boolean {
 	if (typeof value !== 'string') {
 		return false
 	}
-	try {
-		const url = new URL(value)
-		return ['http:', 'https:', 'ftp:', 'ftps:'].includes(url.protocol)
-	} catch {
-		return false
+
+	// Use native URL API if available (IE11 doesn't support it in all cases)
+	if (typeof URL !== 'undefined') {
+		try {
+			const url = new URL(value)
+			return ['http:', 'https:', 'ftp:', 'ftps:'].indexOf(url.protocol) !== -1
+		} catch {
+			return false
+		}
 	}
+
+	// Fallback: regex validation for IE11
+	return /^(https?|ftp|ftps):\/\/[^\s/$.?#].[^\s]*$/i.test(value)
 }
 
 export default isURL

@@ -35,8 +35,8 @@ describe('isIterable', () => {
 		expect(isIterable({})).toBeFalsy()
 	})
 
-	it('should throw for number', () => {
-		// The current implementation throws for primitive types
-		expect(() => isIterable(123 as any)).toThrow()
+	it('should return false for number', () => {
+		// Numbers are not iterable
+		expect(isIterable(123 as any)).toBeFalsy()
 	})
 })

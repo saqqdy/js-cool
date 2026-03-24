@@ -1,4 +1,5 @@
 import base64ToArrayBuffer from './base64ToArrayBuffer'
+import { createFile } from './_compat'
 
 /**
  * base64 to file
@@ -21,9 +22,9 @@ import base64ToArrayBuffer from './base64ToArrayBuffer'
  * @since 5.13.0
  * @param input - base64 string
  * @param fileName - file name
- * @returns - file object
+ * @returns - file object (File in modern browsers, Blob in IE11)
  */
-function base64ToFile(input: string, fileName: string): File {
+function base64ToFile(input: string, fileName: string): File | Blob {
 	const [pre] = input.split(',')
 
 	if (!pre) throw new Error('Not a valid base64')
@@ -32,7 +33,7 @@ function base64ToFile(input: string, fileName: string): File {
 	const arrayBuffer = base64ToArrayBuffer(input)
 
 	// eslint-disable-next-line no-undef
-	return new File([arrayBuffer as BlobPart], fileName, { type: mime })
+	return createFile([arrayBuffer as BlobPart], fileName, { type: mime })
 }
 
 export default base64ToFile

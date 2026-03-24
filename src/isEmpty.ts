@@ -52,8 +52,11 @@ function isEmpty(value: unknown): boolean {
 		return value.length === 0
 	}
 
-	// Map or Set
-	if (value instanceof Map || value instanceof Set) {
+	// Map or Set (IE11 may not support)
+	if (typeof Map !== 'undefined' && value instanceof Map) {
+		return value.size === 0
+	}
+	if (typeof Set !== 'undefined' && value instanceof Set) {
 		return value.size === 0
 	}
 

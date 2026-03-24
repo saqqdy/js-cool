@@ -1,3 +1,5 @@
+import { getGlobalObject } from './_compat'
+
 /**
  * Safely get a global value by path
  *
@@ -26,15 +28,8 @@
  * @returns The value at the path, or undefined if not found
  */
 function getGlobal<T = unknown>(path: string): T | undefined {
-	// Get the global object (works in browser, Node.js, and other environments)
-	const globalObj =
-		typeof globalThis !== 'undefined'
-			? globalThis
-			: typeof window !== 'undefined'
-				? window
-				: typeof global !== 'undefined'
-					? global
-					: {}
+	// Get the global object (IE11-compatible)
+	const globalObj = getGlobalObject()
 
 	// Split path and traverse
 	const parts = path.split('.')

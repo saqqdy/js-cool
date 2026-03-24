@@ -1,3 +1,4 @@
+import { padEnd, padStart } from './_compat'
 import randomNumber from './randomNumber'
 
 /**
@@ -27,7 +28,7 @@ function randomColor(
 	max?: number | [number, number, number]
 ): string {
 	if (!max && !min && min !== 0)
-		return `#${Math.random().toString(16).slice(2, 8).padEnd(6, '0')}`
+		return `#${padEnd(Math.random().toString(16).slice(2, 8), 6, '0')}`
 
 	let min1, min2, min3, max1, max2, max3
 
@@ -39,7 +40,7 @@ function randomColor(
 	else if (typeof max === 'number') max1 = max2 = max3 = max
 	else [max1, max2, max3] = max
 
-	return `#${randomNumber(min1, max1).toString(16).padStart(2, '0')}${randomNumber(min2, max2).toString(16).padStart(2, '0')}${randomNumber(min3, max3).toString(16).padStart(2, '0')}`
+	return `#${padStart(randomNumber(min1, max1).toString(16), 2, '0')}${padStart(randomNumber(min2, max2).toString(16), 2, '0')}${padStart(randomNumber(min3, max3).toString(16), 2, '0')}`
 }
 
 export default randomColor

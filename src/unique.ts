@@ -29,7 +29,13 @@
  * @returns - new array with unique values
  */
 function unique<T = unknown>(arr: T[]): T[] {
-	return [...new Set(arr)]
+	const result: T[] = []
+	for (const item of arr) {
+		if (result.indexOf(item) === -1) {
+			result.push(item)
+		}
+	}
+	return result
 }
 
 export default unique

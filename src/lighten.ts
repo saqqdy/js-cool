@@ -1,3 +1,5 @@
+import { padStart } from './_compat'
+
 /**
  * Lightens a color by a percentage.
  *
@@ -22,7 +24,7 @@ function lighten(color: string, percent: number): string {
 	let r: number, g: number, b: number
 
 	// Parse hex color
-	if (color.startsWith('#')) {
+	if (color.indexOf('#') === 0) {
 		let hex = color.slice(1)
 		if (hex.length === 3) {
 			hex = hex
@@ -35,7 +37,7 @@ function lighten(color: string, percent: number): string {
 		b = Number.parseInt(hex.slice(4, 6), 16)
 	}
 	// Parse rgb color
-	else if (color.startsWith('rgb')) {
+	else if (color.indexOf('rgb') === 0) {
 		const match = color.match(/\d+/g)
 		if (!match || match.length < 3) {
 			return color
@@ -53,7 +55,7 @@ function lighten(color: string, percent: number): string {
 	g = Math.min(255, g + amount)
 	b = Math.min(255, b + amount)
 
-	return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
+	return `#${[r, g, b].map(x => padStart(x.toString(16), 2, '0')).join('')}`
 }
 
 export default lighten

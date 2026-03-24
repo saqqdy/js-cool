@@ -24,7 +24,7 @@ function isLightColor(color: string): boolean {
 	let r: number, g: number, b: number
 
 	// Parse hex color
-	if (color.startsWith('#')) {
+	if (color.indexOf('#') === 0) {
 		let hex = color.slice(1)
 		if (hex.length === 3) {
 			hex = hex
@@ -37,7 +37,7 @@ function isLightColor(color: string): boolean {
 		b = Number.parseInt(hex.slice(4, 6), 16)
 	}
 	// Parse rgb color
-	else if (color.startsWith('rgb')) {
+	else if (color.indexOf('rgb') === 0) {
 		const match = color.match(/\d+/g)
 		if (!match || match.length < 3) {
 			return true

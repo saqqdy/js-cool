@@ -40,7 +40,43 @@ js-cool 支持所有现代浏览器和 Node.js >= 18。
 | Firefox | ✅       |
 | Safari  | ✅       |
 | Edge    | ✅       |
+| IE11    | ✅       |
 | Node.js | ✅ >= 18 |
+
+### IE11 兼容性
+
+js-cool v6.x 内置 IE11 兼容性支持，无需引入外部 polyfill。所有方法通过内部兼容层在 IE11 中无缝运行。
+
+库内置 `_compat.ts` 模块，提供 ES6+ 特性的 IE11 兼容替代方案：
+
+| ES6+ 特性 | IE11 兼容替代 |
+|-----------|---------------|
+| `Array.includes()` | `arrayIncludes()` |
+| `String.includes()` | `strIncludes()` |
+| `String.startsWith()` | `strStartsWith()` |
+| `String.endsWith()` | `strEndsWith()` |
+| `String.padStart()` | `padStart()` |
+| `String.padEnd()` | `padEnd()` |
+| `Number.isNaN()` | `isNumberNaN()` |
+| `Number.isFinite()` | `isNumberFinite()` |
+| `Number.isInteger()` | `isNumberInteger()` |
+| `Object.assign()` | `objectAssign()` |
+| `Object.values()` | `objectValues()` |
+| `Object.entries()` | `objectEntries()` |
+| `Object.fromEntries()` | `objectFromEntries()` |
+| `globalThis` | `getGlobalObject()` |
+| `new File()` | `createFile()`（降级为 Blob） |
+| `Symbol.iterator` | `isIterableCompat()` |
+
+部分函数内置优雅降级机制：
+
+| 函数 | IE11 行为 |
+|------|-----------|
+| `isURL()` | `URL` API 不可用时降级为正则验证 |
+| `getDirParams()` | `URL` API 不可用时使用正则解析 |
+| `urlToBlob()` | `fetch` 不可用时使用 XHR |
+| `isDarkMode()` | 返回 `false`（媒体查询不支持） |
+| `base64ToFile()` | 返回带 `name` 属性的 `Blob` 而非 `File` |
 
 ## 开源协议
 

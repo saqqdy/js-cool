@@ -93,7 +93,7 @@ function parseVersion(version: string): Version {
 	const [mainVer, subVer = ''] = version.split('-')
 
 	;[ver.major = 0, ver.minor = 0, ver.patch = 0] = mainVer.split('.').map(el => +el)
-	if (subVer.includes('.'))
+	if (subVer.indexOf('.') !== -1)
 		[ver.preid, ver.release] = subVer.split('.').map((el, i) => (i > 0 ? +el : el)) as [
 			string,
 			number,

@@ -37,7 +37,7 @@ export function getScreenInfo(): ScreenInfo {
 		width: screen.width,
 		height: screen.height,
 		pixelRatio: typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1,
-		orientation: orientation.includes('portrait') ? 'portrait' : 'landscape',
+		orientation: orientation.indexOf('portrait') !== -1 ? 'portrait' : 'landscape',
 		colorDepth: screen.colorDepth,
 		availWidth: screen.availWidth,
 		availHeight: screen.availHeight,
@@ -96,7 +96,7 @@ export function getOrientationStatus(): 'portrait' | 'landscape' {
 	if (typeof window === 'undefined') return 'portrait'
 
 	if (screen?.orientation) {
-		return screen.orientation.type.includes('portrait') ? 'portrait' : 'landscape'
+		return screen.orientation.type.indexOf('portrait') !== -1 ? 'portrait' : 'landscape'
 	}
 
 	// Fallback for older browsers

@@ -1,3 +1,5 @@
+import { isIterableCompat } from './_compat'
+
 /**
  * Determine if it is iterable
  *
@@ -28,12 +30,7 @@
  * @returns - true if target is iterable
  */
 function isIterable<T = any>(target: T | Iterable<T>): target is Iterable<T> {
-	if (target === null || target === undefined) return false
-
-	// String primitives are iterable but `in` operator doesn't work on them
-	if (typeof target === 'string') return true
-
-	return Symbol.iterator in (target as Iterable<T>)
+	return isIterableCompat(target)
 }
 
 export default isIterable

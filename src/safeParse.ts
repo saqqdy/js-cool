@@ -1,3 +1,5 @@
+import { isSafeInteger } from './_compat'
+
 /**
  * Secure parsing of JSON strings
  *
@@ -16,19 +18,20 @@
 function safeParse(data: string, covert = true): any {
 	const VALUE_MAP = {
 		'-Infinity': -Infinity,
-		Infinity,
-		NaN: Number.NaN,
-		undefined,
+		'Infinity': Infinity,
+		'NaN': NaN,
+		'undefined': undefined,
 	}
+	const SPECIAL_VALUES = ['Infinity', '-Infinity', 'undefined', 'NaN']
 
 	try {
 		return JSON.parse(data, (key, val) => {
-			if (covert && ['Infinity', '-Infinity', 'undefined', 'NaN'].includes(val))
+			if (covert && SPECIAL_VALUES.indexOf(val) !== -1)
 				return VALUE_MAP[val as keyof typeof VALUE_MAP]
 			else if (
 				typeof val === 'string' &&
 				/^(-|\+)?\d+(\.\d+)?$/.test(val) &&
-				!Number.isSafeInteger(+val)
+				!isSafeInteger(+val)
 			)
 				return BigInt(val)
 

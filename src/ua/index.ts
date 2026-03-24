@@ -175,7 +175,7 @@ class UAParser implements IUAParser {
 	 * @param name - The name to search for
 	 */
 	has(name: string): boolean {
-		return this.uaString.toLowerCase().includes(name.toLowerCase())
+		return this.uaString.toLowerCase().indexOf(name.toLowerCase()) !== -1
 	}
 
 	/**
@@ -345,58 +345,73 @@ const uaInstance = new UAParser()
  * ua.getScreen()   // { width, height, pixelRatio, orientation, colorDepth }
  * ```
  */
-const ua = Object.assign(
-	/**
-	 * Get full user agent info
-	 */
-	(): UAInfo => uaInstance.info,
-	{
-		// Expose instance methods
-		get: (type: UAGetType) => uaInstance.get(type),
-		getMultiple: (types: UAGetType[]) => uaInstance.getMultiple(types),
-		has: (name: string) => uaInstance.has(name),
-		getNetwork: () => uaInstance.getNetwork(),
-		getScreen: () => uaInstance.getScreen(),
-		getLanguage: () => uaInstance.getLanguage(),
-		getTimezone: () => uaInstance.getTimezone(),
-		getOrientationStatus: () => uaInstance.getOrientationStatus(),
-		isDarkMode: () => uaInstance.isDarkMode(),
-		isMobile: () => uaInstance.isMobile(),
-		isTablet: () => uaInstance.isTablet(),
-		isDesktop: () => uaInstance.isDesktop(),
-		isTouch: () => uaInstance.isTouch(),
-		isiOS: () => uaInstance.isiOS(),
-		isiPadOS: () => uaInstance.isiPadOS(),
-		isAndroid: () => uaInstance.isAndroid(),
-		isHarmonyOS: () => uaInstance.isHarmonyOS(),
-		isWeChat: () => uaInstance.isWeChat(),
-		isQQ: () => uaInstance.isQQ(),
-		isMiniProgram: () => uaInstance.isMiniProgram(),
 
-		// Expose info getter
-		get info() {
-			return uaInstance.info
-		},
-		get device() {
-			return uaInstance.device
-		},
-		get os() {
-			return uaInstance.os
-		},
-		get browser() {
-			return uaInstance.browser
-		},
-		get environment() {
-			return uaInstance.environment
-		},
-		get userAgent() {
-			return uaInstance.userAgent
-		},
+// IE11-compatible: manual assignment instead of Object.assign
+interface UA {
+	(): UAInfo
+	get: (type: UAGetType) => any
+	getMultiple: (types: UAGetType[]) => Record<string, any>
+	has: (name: string) => boolean
+	getNetwork: () => NetworkInfo
+	getScreen: () => ScreenInfo
+	getLanguage: () => string
+	getTimezone: () => string
+	getOrientationStatus: () => 'portrait' | 'landscape'
+	isDarkMode: () => boolean
+	isMobile: () => boolean
+	isTablet: () => boolean
+	isDesktop: () => boolean
+	isTouch: () => boolean
+	isiOS: () => boolean
+	isiPadOS: () => boolean
+	isAndroid: () => boolean
+	isHarmonyOS: () => boolean
+	isWeChat: () => boolean
+	isQQ: () => boolean
+	isMiniProgram: () => boolean
+	readonly info: UAInfo
+	readonly device: DeviceInfo
+	readonly os: OSInfo
+	readonly browser: BrowserInfo
+	readonly environment: EnvironmentInfo
+	readonly userAgent: string
+	UAParser: typeof UAParser
+}
 
-		// Expose class for custom instances
-		UAParser,
-	}
-)
+function ua(): UAInfo {
+	return uaInstance.info
+}
+
+// IE11-compatible: manual property assignment
+ua.get = (type: UAGetType) => uaInstance.get(type)
+ua.getMultiple = (types: UAGetType[]) => uaInstance.getMultiple(types)
+ua.has = (name: string) => uaInstance.has(name)
+ua.getNetwork = () => uaInstance.getNetwork()
+ua.getScreen = () => uaInstance.getScreen()
+ua.getLanguage = () => uaInstance.getLanguage()
+ua.getTimezone = () => uaInstance.getTimezone()
+ua.getOrientationStatus = () => uaInstance.getOrientationStatus()
+ua.isDarkMode = () => uaInstance.isDarkMode()
+ua.isMobile = () => uaInstance.isMobile()
+ua.isTablet = () => uaInstance.isTablet()
+ua.isDesktop = () => uaInstance.isDesktop()
+ua.isTouch = () => uaInstance.isTouch()
+ua.isiOS = () => uaInstance.isiOS()
+ua.isiPadOS = () => uaInstance.isiPadOS()
+ua.isAndroid = () => uaInstance.isAndroid()
+ua.isHarmonyOS = () => uaInstance.isHarmonyOS()
+ua.isWeChat = () => uaInstance.isWeChat()
+ua.isQQ = () => uaInstance.isQQ()
+ua.isMiniProgram = () => uaInstance.isMiniProgram()
+ua.UAParser = UAParser
+
+// IE11-compatible: use Object.defineProperty for getters
+Object.defineProperty(ua, 'info', { get: () => uaInstance.info, enumerable: true })
+Object.defineProperty(ua, 'device', { get: () => uaInstance.device, enumerable: true })
+Object.defineProperty(ua, 'os', { get: () => uaInstance.os, enumerable: true })
+Object.defineProperty(ua, 'browser', { get: () => uaInstance.browser, enumerable: true })
+Object.defineProperty(ua, 'environment', { get: () => uaInstance.environment, enumerable: true })
+Object.defineProperty(ua, 'userAgent', { get: () => uaInstance.userAgent, enumerable: true })
 
 export default ua
 export { UAParser }

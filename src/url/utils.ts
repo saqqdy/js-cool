@@ -89,7 +89,7 @@ export function parse(
 	const covert = typeof options === 'boolean' ? options : (options.covert ?? false)
 
 	// Remove ? prefix if exists
-	const searchStr = str.startsWith('?') ? str.slice(1) : str
+	const searchStr = str.indexOf('?') === 0 ? str.slice(1) : str
 
 	// Use native URLSearchParams if available
 	if (typeof URLSearchParams !== 'undefined') {
@@ -168,9 +168,12 @@ export function stringify(params: Record<string, unknown>, options: StringifyOpt
 	if (typeof URLSearchParams !== 'undefined') {
 		const searchParams = new URLSearchParams()
 
-		for (const [key, value] of Object.entries(params)) {
-			const strValue = covert ? String(value ?? '') : String(value)
-			searchParams.set(key, encode ? decodeURIComponent(strValue) : strValue)
+		for (const key in params) {
+			if (Object.prototype.hasOwnProperty.call(params, key)) {
+				const value = params[key]
+				const strValue = covert ? String(value ?? '') : String(value)
+				searchParams.set(key, encode ? decodeURIComponent(strValue) : strValue)
+			}
 		}
 
 		const result = searchParams.toString()
@@ -181,9 +184,12 @@ export function stringify(params: Record<string, unknown>, options: StringifyOpt
 	// Fallback
 	const pairs: string[] = []
 
-	for (const [key, value] of Object.entries(params)) {
-		const strValue = covert ? String(value ?? '') : String(value)
-		pairs.push(`${key}=${encode ? encodeURIComponent(strValue) : strValue}`)
+	for (const key in params) {
+		if (Object.prototype.hasOwnProperty.call(params, key)) {
+			const value = params[key]
+			const strValue = covert ? String(value ?? '') : String(value)
+			pairs.push(`${key}=${encode ? encodeURIComponent(strValue) : strValue}`)
+		}
 	}
 
 	const result = pairs.join('&')
@@ -322,7 +328,7 @@ export function set(name: string, value: string | number | boolean, url?: string
 	}
 
 	try {
-		if (baseUrl.startsWith('http://') || baseUrl.startsWith('https://')) {
+		if (baseUrl.indexOf('http://') === 0 || baseUrl.indexOf('https://') === 0) {
 			urlObj = new URL(baseUrl)
 		} else if (typeof location !== 'undefined') {
 			urlObj = new URL(baseUrl, location.origin)
@@ -373,7 +379,7 @@ export function append(name: string, value: string | number | boolean, url?: str
 	}
 
 	try {
-		if (baseUrl.startsWith('http://') || baseUrl.startsWith('https://')) {
+		if (baseUrl.indexOf('http://') === 0 || baseUrl.indexOf('https://') === 0) {
 			urlObj = new URL(baseUrl)
 		} else if (typeof location !== 'undefined') {
 			urlObj = new URL(baseUrl, location.origin)
@@ -423,7 +429,7 @@ export function deleteParam(name: string, url?: string): string {
 	}
 
 	try {
-		if (baseUrl.startsWith('http://') || baseUrl.startsWith('https://')) {
+		if (baseUrl.indexOf('http://') === 0 || baseUrl.indexOf('https://') === 0) {
 			urlObj = new URL(baseUrl)
 		} else if (typeof location !== 'undefined') {
 			urlObj = new URL(baseUrl, location.origin)
@@ -490,7 +496,15 @@ export function values(url?: URLInput): string[] {
 		return [...new URLSearchParams(searchStr.slice(1)).values()]
 	}
 
-	return Object.values(parse(searchStr)) as string[]
+	// IE11 fallback: manually extract values
+	const parsed = parse(searchStr)
+	const result: string[] = []
+	for (const key in parsed) {
+		if (Object.prototype.hasOwnProperty.call(parsed, key)) {
+			result.push(String(parsed[key]))
+		}
+	}
+	return result
 }
 
 /**
@@ -513,7 +527,15 @@ export function entries(url?: URLInput): [string, string][] {
 		return [...new URLSearchParams(searchStr.slice(1)).entries()]
 	}
 
-	return Object.entries(parse(searchStr)) as [string, string][]
+	// IE11 fallback: manually extract entries
+	const parsed = parse(searchStr)
+	const result: [string, string][] = []
+	for (const key in parsed) {
+		if (Object.prototype.hasOwnProperty.call(parsed, key)) {
+			result.push([key, String(parsed[key])])
+		}
+	}
+	return result
 }
 
 // ============================================
@@ -538,7 +560,7 @@ export function getOrigin(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).origin
 			}
 		} catch {
@@ -568,7 +590,7 @@ export function getHost(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).host
 			}
 		} catch {
@@ -601,7 +623,7 @@ export function getHostname(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).hostname
 			}
 		} catch {
@@ -631,7 +653,7 @@ export function getPathname(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).pathname
 			}
 			// Relative path
@@ -670,7 +692,7 @@ export function getSearch(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).search
 			}
 		} catch {
@@ -700,7 +722,7 @@ export function getHash(url: string): string {
 	// Use native URL if available
 	if (typeof URL !== 'undefined') {
 		try {
-			if (url.startsWith('http://') || url.startsWith('https://')) {
+			if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
 				return new URL(url).hash
 			}
 		} catch {

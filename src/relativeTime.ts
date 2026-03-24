@@ -1,3 +1,5 @@
+import { isNumberNaN } from './_compat'
+
 /**
  * Get relative time string (e.g., "3 minutes ago", "in 2 hours")
  *
@@ -23,7 +25,7 @@ function relativeTime(date: Date | string | number, now = new Date(), locale = '
 	const d = new Date(date)
 	const nowDate = new Date(now)
 
-	if (Number.isNaN(d.getTime()) || Number.isNaN(nowDate.getTime())) {
+	if (isNumberNaN(d.getTime()) || isNumberNaN(nowDate.getTime())) {
 		return ''
 	}
 

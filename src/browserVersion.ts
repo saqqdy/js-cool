@@ -155,7 +155,7 @@ function browserVersion(ua?: string): BrowserVersion | null {
 				}
 
 				version = VERSION_MAP[version] || version
-			} else if (['Liebao', 'LBBROWSER'].includes(key as string)) {
+			} else if (['Liebao', 'LBBROWSER'].indexOf(key as string) !== -1) {
 				const VERSION_MAP: Record<string, string> = {
 					21: '4.0',
 					29: '4.5',

@@ -21,6 +21,11 @@
  * @since 5.13.0
  * @returns boolean - true if running in Node.js
  */
-const inNodeJs = typeof globalThis !== 'undefined'
+
+// IE11-compatible way to check for Node.js environment
+const inNodeJs =
+	typeof process !== 'undefined' &&
+	process.versions != null &&
+	process.versions.node != null
 
 export default inNodeJs

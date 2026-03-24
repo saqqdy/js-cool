@@ -25,11 +25,12 @@
 function getCookies(): Record<string, string> {
 	const cookies: Record<string, string> = {}
 	const cookieArr = decodeURIComponent(document.cookie).split('; ')
+	const nullValues = ['null', 'undefined', 'NaN']
 
 	for (let i = cookieArr.length - 1; i >= 0; i--) {
 		const valPair = cookieArr[i].split('=')
 
-		if (['null', 'undefined', 'NaN'].includes(valPair[1])) valPair[1] = ''
+		if (nullValues.indexOf(valPair[1]) !== -1) valPair[1] = ''
 		cookies[valPair[0]] = valPair[1]
 	}
 

@@ -26,23 +26,15 @@
  * @param max - maximum zIndex value (default: 10000)
  * @returns - next available zIndex number
  */
-// function nextIndex(min = 0, max?: number): number {
-// 	const doms = [min]
-// 	Array.prototype.forEach.call(document.querySelectorAll('body > *'), e => {
-// 		const n = ['SCRIPT', 'META', 'STYLE', 'LINK'].includes(e.tagName)
-// 			? 0
-// 			: +window.getComputedStyle(e).zIndex || 0
-// 		n > min && doms.push(n)
-// 	})
-// 	// doms.sort((a, b) => b - a)
-// 	const index = Math.max(...doms) + 1
-// 	return !max || index < max ? index : max
-// }
+
+// IE11-compatible: inline indexOf instead of includes
+const SKIP_TAGS = ['SCRIPT', 'META', 'STYLE', 'LINK']
+
 function nextIndex(min = 5000, max = 10000): number {
 	const doms = [min]
 
-	Array.prototype.forEach.call(document.querySelectorAll('body > *'), e => {
-		const n = ['SCRIPT', 'META', 'STYLE', 'LINK'].includes(e.tagName)
+	Array.prototype.forEach.call(document.querySelectorAll('body > *'), (e: Element) => {
+		const n = SKIP_TAGS.indexOf(e.tagName) !== -1
 			? 0
 			: +window.getComputedStyle(e).zIndex || 0
 

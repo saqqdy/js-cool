@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2025-03-23
+## [6.0.0] - 2025-03-24
 
 ### ⚠️ BREAKING CHANGES
 
@@ -38,6 +38,10 @@ All notable changes to this project will be documented in this file.
 - **Patterns Module Refactoring**: Use `patterns.validation` instead of `pattern`
   - Old: `pattern.email.test('user@example.com')`
   - New: `patterns.validation.email.test('user@example.com')` or `validation.email.test('user@example.com')`
+
+- **Type Change**: `base64ToFile()` now returns `File | Blob` instead of `File`
+  - In IE11, returns a Blob with `name` property attached
+  - In modern browsers, returns a proper File object
 
 ### 🚀 Features
 
@@ -115,6 +119,11 @@ All notable changes to this project will be documented in this file.
 - **Rolldown Migration**: Faster build times (~110ms vs ~6-8s)
 - **Version Injection**: Clean version injection via virtual module
 - **Type Declarations**: Separate `.d.ts` and `.d.mts` for CJS/ESM compatibility
+- **IE11 Compatibility**: Internal compatibility layer without external polyfills
+  - New `_compat.ts` module provides IE11-compatible alternatives to ES6+ features
+  - All methods now work in IE11 without requiring external polyfills
+  - Automatic feature detection and graceful degradation
+  - Compatibility functions: `arrayIncludes`, `strIncludes`, `strStartsWith`, `strEndsWith`, `padStart`, `padEnd`, `isNumberNaN`, `isNumberFinite`, `isNumberInteger`, `isSafeInteger`, `objectAssign`, `objectValues`, `objectEntries`, `objectFromEntries`, `getGlobalObject`, `isIterableCompat`, `createFile`, `arrayUnique`
 
 ### 🆕 New Functions
 

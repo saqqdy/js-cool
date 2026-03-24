@@ -23,7 +23,7 @@
  * @returns - target is Array
  */
 function isArray(target: any): target is any[] {
-	return Object.prototype.toString.call(target).includes('Array')
+	return Object.prototype.toString.call(target) === '[object Array]'
 }
 
 export default isArray

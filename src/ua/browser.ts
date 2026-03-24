@@ -72,13 +72,13 @@ export function parseBrowser(ua: string): BrowserInfo {
 
 	// Chrome (must check before Safari)
 	const chromeMatch = ua.match(BROWSER_PATTERNS.chrome)
-	if (chromeMatch && !ua.includes('Edge') && !ua.includes('OPR')) {
+	if (chromeMatch && ua.indexOf('Edge') === -1 && ua.indexOf('OPR') === -1) {
 		return { name: 'Chrome', version: chromeMatch[1] || '', engine: 'Blink' }
 	}
 
 	// Safari (must check after Chrome)
 	const safariMatch = ua.match(BROWSER_PATTERNS.safari)
-	if (safariMatch && !ua.includes('Chrome')) {
+	if (safariMatch && ua.indexOf('Chrome') === -1) {
 		return { name: 'Safari', version: safariMatch[1] || '', engine: 'WebKit' }
 	}
 

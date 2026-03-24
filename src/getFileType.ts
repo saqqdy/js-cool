@@ -39,7 +39,7 @@ function getFileType(url: string): {
 	if (!url) throw new Error('"url" is required')
 
 	const _arr = url.split('.')
-	const suffix: string = _arr[_arr.length - 1].toLocaleLowerCase()
+	const suffix: string = _arr[_arr.length - 1].toLowerCase()
 	let type:
 		| 'image'
 		| 'txt'
@@ -52,16 +52,16 @@ function getFileType(url: string): {
 		| 'audio'
 		| 'other' = 'other'
 
-	if (['png', 'jpg', 'jpeg', 'bmp', 'gif', 'webp', 'tiff', 'tif'].includes(suffix)) type = 'image'
-	else if (['txt'].includes(suffix)) type = 'txt'
-	else if (['xls', 'xlsx'].includes(suffix)) type = 'excel'
-	else if (['doc', 'docx'].includes(suffix)) type = 'word'
-	else if (['pdf'].includes(suffix)) type = 'pdf'
-	else if (['ppt', 'pptx'].includes(suffix)) type = 'ppt'
-	else if (['rar', 'zip', '7z'].includes(suffix)) type = 'zip'
-	else if (['mp4', 'm2v', 'mkv', 'rmvb', 'wmv', 'avi', 'flv', 'mov', 'm4v'].includes(suffix))
+	if (['png', 'jpg', 'jpeg', 'bmp', 'gif', 'webp', 'tiff', 'tif'].indexOf(suffix) !== -1) type = 'image'
+	else if (['txt'].indexOf(suffix) !== -1) type = 'txt'
+	else if (['xls', 'xlsx'].indexOf(suffix) !== -1) type = 'excel'
+	else if (['doc', 'docx'].indexOf(suffix) !== -1) type = 'word'
+	else if (['pdf'].indexOf(suffix) !== -1) type = 'pdf'
+	else if (['ppt', 'pptx'].indexOf(suffix) !== -1) type = 'ppt'
+	else if (['rar', 'zip', '7z'].indexOf(suffix) !== -1) type = 'zip'
+	else if (['mp4', 'm2v', 'mkv', 'rmvb', 'wmv', 'avi', 'flv', 'mov', 'm4v'].indexOf(suffix) !== -1)
 		type = 'video'
-	else if (['mp3', 'wav', 'wmv'].includes(suffix)) type = 'audio'
+	else if (['mp3', 'wav', 'wmv'].indexOf(suffix) !== -1) type = 'audio'
 
 	return {
 		suffix,
