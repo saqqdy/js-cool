@@ -1,3 +1,4 @@
+import { transformSync } from '@swc/core'
 import { defineConfig, type Plugin } from 'rolldown'
 import pkg from './package.json' with { type: 'json' }
 
@@ -18,7 +19,7 @@ const external = [
 // UA subpath entry for tree-shaking
 const uaEntries = ['ua/index']
 
-// 优雅的版本注入插件
+// Version injection plugin
 const versionPlugin = (): Plugin => ({
 	name: 'version-inject',
 	resolveId(id) {
@@ -28,6 +29,35 @@ const versionPlugin = (): Plugin => ({
 		if (id === '\0virtual:version') {
 			return `export const VERSION = ${JSON.stringify(pkg.version)}`
 		}
+	},
+})
+
+// ES5 transpilation plugin for IE11 support
+// Uses SWC to transpile IIFE output to ES5
+const es5Plugin = (): Plugin => ({
+	name: 'es5-transpile',
+	renderChunk(code, chunk) {
+		// Only transpile IIFE chunks
+		if (chunk.fileName.includes('.iife.')) {
+			const result = transformSync(code, {
+				jsc: {
+					target: 'es5',
+					parser: {
+						syntax: 'ecmascript',
+					},
+					minify: {
+						compress: false,
+						mangle: false,
+					},
+				},
+				sourceMaps: true,
+			})
+			return {
+				code: result.code,
+				map: result.map,
+			}
+		}
+		return null
 	},
 })
 
@@ -54,7 +84,7 @@ export default defineConfig([
 		external,
 		plugins: [versionPlugin()],
 	},
-	// IIFE (CDN)
+	// IIFE (CDN) - ES5 for IE11 compatibility
 	{
 		input: 'src/index.ts',
 		output: {
@@ -65,10 +95,10 @@ export default defineConfig([
 			exports: 'named',
 			sourcemap: true,
 		},
-		plugins: [versionPlugin()],
+		plugins: [versionPlugin(), es5Plugin()],
 		platform: 'browser',
 	},
-	// IIFE minified (CDN)
+	// IIFE minified (CDN) - ES5 for IE11 compatibility
 	{
 		input: 'src/index.ts',
 		output: {
@@ -79,7 +109,7 @@ export default defineConfig([
 			minify: true,
 			exports: 'named',
 		},
-		plugins: [versionPlugin()],
+		plugins: [versionPlugin(), es5Plugin()],
 		platform: 'browser',
 	},
 	// UA subpath entries - generate CJS and ESM for each
