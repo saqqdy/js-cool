@@ -1,4 +1,4 @@
-# hexToRGB
+# hexToRGB <Badge type="info" text="since v6.0.0" />
 
 将十六进制颜色转换为 RGB 对象。
 

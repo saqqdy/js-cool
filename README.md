@@ -159,7 +159,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
-| **Date**          | Date processing                   | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth`                                                                                                                                    |
+| **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
 | **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                   |
 | **Utility**       | General utilities                 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
 | **Async Flow**    | Async flow control                | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                               |
@@ -270,26 +270,44 @@ URLSearchParams-like API for URL parsing and building, plus a chainable `Url` cl
 import {
   url,
   Url,
-  get,
-  getAll,
-  has,
-  set,
-  append,
+  // Query string parsing & building (descriptive names)
+  parseQueryString,
+  stringifyQueryString,
+  // URLSearchParams-like methods (descriptive names)
+  getQueryParamValue,
+  getAllQueryParamValues,
+  hasQueryParam,
+  setQueryParam,
+  appendQueryParam,
   deleteParam,
-  keys,
-  values,
-  entries,
+  getQueryParamKeys,
+  getQueryParamValues,
+  getQueryParamEntries,
+  // URL property extraction
   getOrigin,
   getHost,
   getHostname,
   getPathname,
   getSearch,
   getHash,
-  parse,
-  stringify,
+  // Constants
   URL_PATTERNS,
   VALUE_MAP,
 } from 'js-cool'
+
+// Or use short names directly
+import {
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  keys,
+  values,
+  entries,
+  parse,
+  stringify,
+} from 'js-cool/url'
 
 // ============ Method 1: Url class (chainable) ============
 const u = new Url('https://example.com?id=123')
@@ -886,6 +904,178 @@ isDarkMode() // true if user prefers dark mode
 // windowSize - get window dimensions
 windowSize() // { width: 1920, height: 1080 }
 windowSize() // { width: 375, height: 667 } (mobile)
+```
+
+---
+
+### Date
+
+js-cool provides a comprehensive date module with chainable API.
+
+#### date namespace
+
+```js
+import { date, DateParser } from 'js-cool'
+
+// Create DateParser instance
+const parser = date() // now
+const parser = date('2024-01-15') // from string
+const parser = date(1705286400000) // from timestamp
+
+// Chainable API
+date('2024-01-15')
+  .add(1, 'day')
+  .format('YYYY-MM-DD') // '2024-01-16'
+
+date()
+  .startOf('month')
+  .format() // First day of month at 00:00:00
+
+// Date properties
+parser.year // 2024
+parser.month // 1-12
+parser.day // 1-31
+parser.hours // 0-23
+parser.minutes // 0-59
+parser.seconds // 0-59
+parser.dayOfWeek // 0-6 (Sunday = 0)
+
+// Comparison methods
+parser.isToday()
+parser.isYesterday()
+parser.isTomorrow()
+parser.isWeekend()
+parser.isWeekday()
+parser.isLeapYear()
+parser.isBefore('2024-02-01')
+parser.isAfter('2024-01-01')
+parser.isSame('2024-01-15', 'day')
+
+// Manipulation (returns new instance)
+parser.add(1, 'day') // Add 1 day
+parser.subtract(1, 'week') // Subtract 1 week
+parser.startOf('month') // Start of month
+parser.endOf('day') // End of day (23:59:59)
+
+// Getters
+parser.getQuarter() // 1-4
+parser.getWeekOfYear() // 1-52
+parser.getDayOfYear() // 1-366
+parser.getDaysInMonth() // Days in current month
+
+// Difference
+const diff = date('2024-01-01').diff('2024-01-03')
+// { days: 2, hours: 0, minutes: 0, ... }
+
+// Relative time
+date(Date.now() - 3600000).relativeTime() // '1 hour(s) ago'
+date(Date.now() - 3600000).relativeTime(undefined, 'zh') // '1小时前'
+
+// Static methods on date namespace
+date.format(new Date(), 'YYYY-MM-DD')
+date.diff('2024-01-01', '2024-01-03')
+date.isToday(new Date())
+date.isLeapYear(2024) // true
+date.getDaysInMonth(2024, 1) // 29 (February in leap year)
+date.getQuarter('2024-06-15') // 2
+date.compare('2024-01-01', '2024-01-02') // -1
+date.min('2024-01-01', '2024-01-02').format() // '2024-01-01'
+date.max('2024-01-01', '2024-01-02').format() // '2024-01-02'
+```
+
+#### formatDate
+
+```js
+import { formatDate } from 'js-cool'
+
+formatDate(new Date('2024-01-15T10:30:45'), 'YYYY-MM-DD HH:mm:ss')
+// '2024-01-15 10:30:45'
+
+formatDate(new Date(), 'YYYY年MM月DD日')
+// '2024年01月15日'
+
+formatDate(new Date('2024-01-15T14:30:45'), 'hh:mm A')
+// '02:30 PM'
+
+// Format tokens: YYYY, YY, MM, M, DD, D, HH, H, hh, h, mm, m, ss, s, SSS, A, a
+```
+
+#### dateDiff
+
+```js
+import { dateDiff } from 'js-cool'
+
+const diff = dateDiff('2024-01-01', '2024-01-03')
+// {
+//   days: 2,
+//   hours: 0,
+//   minutes: 0,
+//   seconds: 0,
+//   milliseconds: 0,
+//   total: { days: 2, hours: 48, minutes: 2880, ... }
+// }
+```
+
+#### relativeTime
+
+```js
+import { relativeTime } from 'js-cool'
+
+relativeTime(new Date(Date.now() - 5000)) // '5 seconds ago'
+relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
+relativeTime(new Date(Date.now() + 3600000)) // 'in 1 hour(s)'
+
+// Chinese locale
+relativeTime(new Date(Date.now() - 3600000), undefined, 'zh') // '1小时前'
+```
+
+#### Other date functions
+
+```js
+import {
+  isToday,
+  isYesterday,
+  isTomorrow,
+  isWeekend,
+  isLeapYear,
+  isBefore,
+  isAfter,
+  isSame,
+  getDaysInMonth,
+  getQuarter,
+  getDayOfYear,
+  getWeekOfYear,
+  addDate as add,
+  subtractDate as subtract,
+  startOf,
+  endOf,
+} from 'js-cool'
+
+isToday(new Date()) // true
+isYesterday(new Date(Date.now() - 86400000)) // true
+isTomorrow(new Date(Date.now() + 86400000)) // true
+isWeekend(new Date('2024-03-16')) // true (Saturday)
+isLeapYear(2024) // true
+
+getDaysInMonth(2024, 1) // 29 (February in leap year)
+getQuarter('2024-06-15') // 2
+getDayOfYear('2024-12-31') // 366 (leap year)
+getWeekOfYear('2024-01-01') // 1
+
+// Date manipulation
+const tomorrow = add(new Date(), 1, 'day')
+const yesterday = subtract(new Date(), 1, 'day')
+const start = startOf(new Date(), 'month')
+const end = endOf(new Date(), 'day')
+```
+
+#### Tree-shaking with subpath import
+
+```js
+// Import only what you need
+import { date, DateParser } from 'js-cool/date'
+import { formatDate, relativeTime } from 'js-cool/date'
+import { isToday, isLeapYear } from 'js-cool/date'
 ```
 
 ---

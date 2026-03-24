@@ -17,7 +17,7 @@ const external = [
 ]
 
 // Subpath entries for tree-shaking
-const subpathEntries = ['ua/index', 'patterns/index']
+const subpathEntries = ['ua/index', 'patterns/index', 'date/index', 'url/index']
 
 // Version injection plugin
 const versionPlugin = (): Plugin => ({

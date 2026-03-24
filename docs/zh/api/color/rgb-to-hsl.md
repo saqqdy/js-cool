@@ -1,4 +1,4 @@
-# rgbToHSL
+# rgbToHSL <Badge type="info" text="since v6.0.0" />
 
 将 RGB 转换为 HSL。
 

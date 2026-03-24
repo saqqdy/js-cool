@@ -33,6 +33,8 @@ All notable changes to this project will be documented in this file.
 - **New `url` Module**: Chainable URL builder with URLSearchParams-like API
   - `Url` class: `new Url(url).set('key', value).toString()`
   - Static methods: `get()`, `set()`, `parse()`, `stringify()`, etc.
+  - Descriptive function aliases: `parseQueryString`, `stringifyQueryString`, `getQueryParamValue`, `setQueryParam`, etc.
+  - URL property extraction: `getOrigin()`, `getHost()`, `getHostname()`, `getPathname()`, `getSearch()`, `getHash()`
 
 - **New `scroll` Module**: `getPosition()`, `getProgress()`, `scrollTo()`, `lock()`, `unlock()`, etc.
 

@@ -1,4 +1,4 @@
-# isIDCard
+# isIDCard <Badge type="info" text="since v6.0.0" />
 
 Check if string is a valid Chinese ID card number (18-digit).
 

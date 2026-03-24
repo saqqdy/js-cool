@@ -14,8 +14,14 @@ pnpm add js-cool
 // 从主入口完整导入
 import { url, Url } from 'js-cool'
 
-// 或导入特定函数
-import { get, set, parse, stringify, getOrigin } from 'js-cool'
+// 或导入特定函数（使用描述性名称）
+import {
+  parseQueryString,
+  stringifyQueryString,
+  getQueryParamValue,
+  setQueryParam,
+  getOrigin
+} from 'js-cool'
 ```
 
 ## 三种使用方式
@@ -71,20 +77,20 @@ url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
 
 ```js
 import {
-  get,
-  set,
-  has,
-  append,
+  getQueryParamValue,
+  setQueryParam,
+  hasQueryParam,
+  appendQueryParam,
   deleteParam,
-  parse,
-  stringify,
+  parseQueryString,
+  stringifyQueryString,
   getOrigin,
   getHost,
   getHostname,
 } from 'js-cool'
 
-get('id', 'https://example.com?id=123') // '123'
-set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+getQueryParamValue('id', 'https://example.com?id=123') // '123'
+setQueryParam('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 ```
 
 ## Url 类 API

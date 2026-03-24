@@ -1,4 +1,4 @@
-# hexToRGB
+# hexToRGB <Badge type="info" text="since v6.0.0" />
 
 Converts hex color to RGB object.
 

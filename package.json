@@ -57,6 +57,30 @@
 			},
 			"default": "./dist/date/index.js"
 		},
+		"./url": {
+			"types": "./dist/url/index.d.ts",
+			"require": {
+				"types": "./dist/url/index.d.ts",
+				"default": "./dist/url/index.js"
+			},
+			"import": {
+				"types": "./dist/url/index.d.mts",
+				"default": "./dist/url/index.mjs"
+			},
+			"default": "./dist/url/index.js"
+		},
+		"./scroll": {
+			"types": "./dist/scroll/index.d.ts",
+			"require": {
+				"types": "./dist/scroll/index.d.ts",
+				"default": "./dist/scroll/index.js"
+			},
+			"import": {
+				"types": "./dist/scroll/index.d.mts",
+				"default": "./dist/scroll/index.mjs"
+			},
+			"default": "./dist/scroll/index.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"directories": {

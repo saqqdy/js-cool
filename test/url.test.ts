@@ -22,6 +22,25 @@ import {
 	VALUE_MAP,
 	values,
 } from '../src/url/index'
+import {
+	parseQueryString,
+	stringifyQueryString,
+	getQueryParamValue,
+	getAllQueryParamValues,
+	hasQueryParam,
+	setQueryParam,
+	appendQueryParam,
+	deleteParam as deleteQueryParam,
+	getQueryParamKeys,
+	getQueryParamValues,
+	getQueryParamEntries,
+	getOrigin as getURLOrigin,
+	getHost as getURLHost,
+	getHostname as getURLHostname,
+	getPathname as getURLPathname,
+	getSearch as getURLSearch,
+	getHash as getURLHash,
+} from '../src/index'
 
 describe('URL patterns', () => {
 	it('should have url patterns', () => {
@@ -478,6 +497,73 @@ describe('url namespace', () => {
 
 		it('should have VALUE_MAP constant', () => {
 			expect(url.VALUE_MAP).toBe(VALUE_MAP)
+		})
+	})
+})
+
+// ============================================
+// Alias Export Tests
+// ============================================
+
+describe('URL alias exports', () => {
+	describe('parseQueryString / stringifyQueryString', () => {
+		it('should work as parse/stringify aliases', () => {
+			expect(parseQueryString('?a=1&b=2')).toEqual({ a: '1', b: '2' })
+			expect(parseQueryString('?a=1&b=true', { covert: true })).toEqual({ a: 1, b: true })
+			expect(stringifyQueryString({ a: 1, b: 2 })).toBe('?a=1&b=2')
+			expect(stringifyQueryString({ a: 1 }, { withQuestionMark: false })).toBe('a=1')
+		})
+	})
+
+	describe('getQueryParamValue / getAllQueryParamValues', () => {
+		it('should work as get/getAll aliases', () => {
+			expect(getQueryParamValue('id', 'https://example.com?id=123')).toBe('123')
+			expect(getQueryParamValue('missing', 'https://example.com?id=123')).toBeNull()
+			expect(getAllQueryParamValues('id', 'https://example.com?id=1&id=2')).toEqual(['1', '2'])
+		})
+	})
+
+	describe('hasQueryParam', () => {
+		it('should work as has alias', () => {
+			expect(hasQueryParam('id', 'https://example.com?id=123')).toBeTruthy()
+			expect(hasQueryParam('missing', 'https://example.com?id=123')).toBeFalsy()
+		})
+	})
+
+	describe('setQueryParam / appendQueryParam', () => {
+		it('should work as set/append aliases', () => {
+			expect(setQueryParam('page', 2, 'https://example.com')).toBe('https://example.com/?page=2')
+			expect(appendQueryParam('id', 2, 'https://example.com?id=1')).toBe('https://example.com/?id=1&id=2')
+		})
+	})
+
+	describe('deleteQueryParam', () => {
+		it('should work as deleteParam alias', () => {
+			expect(deleteQueryParam('token', 'https://example.com?token=abc&id=1')).toBe(
+				'https://example.com/?id=1'
+			)
+		})
+	})
+
+	describe('getQueryParamKeys / getQueryParamValues / getQueryParamEntries', () => {
+		it('should work as keys/values/entries aliases', () => {
+			expect(getQueryParamKeys('https://example.com?a=1&b=2')).toEqual(['a', 'b'])
+			expect(getQueryParamValues('https://example.com?a=1&b=2')).toEqual(['1', '2'])
+			expect(getQueryParamEntries('https://example.com?a=1&b=2')).toEqual([
+				['a', '1'],
+				['b', '2'],
+			])
+		})
+	})
+
+	describe('URL property extraction aliases', () => {
+		it('should work as expected', () => {
+			expect(getURLOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
+			expect(getURLHost('https://example.com:8080/path')).toBe('example.com:8080')
+			expect(getURLHostname('https://example.com:8080/path')).toBe('example.com')
+			expect(getURLPathname('https://example.com/api/users?id=1')).toBe('/api/users')
+			expect(getURLSearch('https://example.com?key=value')).toBe('?key=value')
+			expect(getURLHash('https://example.com/path#section')).toBe('#section')
 		})
 	})
 })

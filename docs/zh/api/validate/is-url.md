@@ -1,4 +1,4 @@
-# isURL
+# isURL <Badge type="info" text="since v6.0.0" />
 
 检查字符串是否为有效的 URL。
 

@@ -16,6 +16,18 @@ import {
 	// URL utilities - class and namespace
 	url,
 	Url,
+	// URL utilities - descriptive aliases (v6.0.0)
+	parseQueryString,
+	stringifyQueryString,
+	getQueryParamValue,
+	setQueryParam,
+	hasQueryParam,
+	getOrigin,
+	getHost,
+	getHostname,
+	getPathname,
+	getSearch,
+	getHash,
 } from 'js-cool'
 import { ua, type UAInfo } from 'js-cool'
 import { useI18n } from '@/locales'

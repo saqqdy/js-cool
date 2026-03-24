@@ -1,4 +1,4 @@
-# isIDCard
+# isIDCard <Badge type="info" text="since v6.0.0" />
 
 检查字符串是否为有效的中国身份证号码（18位）。
 

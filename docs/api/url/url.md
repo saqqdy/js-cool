@@ -14,8 +14,14 @@ pnpm add js-cool
 // Full import from main entry
 import { url, Url } from 'js-cool'
 
-// Or import specific functions
-import { get, set, parse, stringify, getOrigin } from 'js-cool'
+// Or import specific functions (with descriptive names)
+import {
+  parseQueryString,
+  stringifyQueryString,
+  getQueryParamValue,
+  setQueryParam,
+  getOrigin
+} from 'js-cool'
 ```
 
 ## Three Ways to Use
@@ -71,20 +77,20 @@ Import specific functions for smaller bundle sizes.
 
 ```js
 import {
-  get,
-  set,
-  has,
-  append,
+  getQueryParamValue,
+  setQueryParam,
+  hasQueryParam,
+  appendQueryParam,
   deleteParam,
-  parse,
-  stringify,
+  parseQueryString,
+  stringifyQueryString,
   getOrigin,
   getHost,
   getHostname,
 } from 'js-cool'
 
-get('id', 'https://example.com?id=123') // '123'
-set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+getQueryParamValue('id', 'https://example.com?id=123') // '123'
+setQueryParam('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 ```
 
 ## Url Class API

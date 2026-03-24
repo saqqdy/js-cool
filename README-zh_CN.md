@@ -151,7 +151,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
-| **日期**        | 日期处理            | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `getDaysInMonth`                                                                                                                                    |
+| **日期**        | 日期处理            | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
 | **颜色**        | 颜色处理            | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                   |
 | **工具**        | 通用工具            | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
 | **异步流程**    | 异步流程控制        | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                               |
@@ -261,26 +261,44 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 import {
   url,
   Url,
-  get,
-  getAll,
-  has,
-  set,
-  append,
+  // 查询字符串解析与构建（描述性名称）
+  parseQueryString,
+  stringifyQueryString,
+  // 类 URLSearchParams 方法（描述性名称）
+  getQueryParamValue,
+  getAllQueryParamValues,
+  hasQueryParam,
+  setQueryParam,
+  appendQueryParam,
   deleteParam,
-  keys,
-  values,
-  entries,
+  getQueryParamKeys,
+  getQueryParamValues,
+  getQueryParamEntries,
+  // URL 属性提取
   getOrigin,
   getHost,
   getHostname,
   getPathname,
   getSearch,
   getHash,
-  parse,
-  stringify,
+  // 常量
   URL_PATTERNS,
   VALUE_MAP,
 } from 'js-cool'
+
+// 或直接使用短名称
+import {
+  get,
+  getAll,
+  has,
+  set,
+  append,
+  keys,
+  values,
+  entries,
+  parse,
+  stringify,
+} from 'js-cool/url'
 
 // ============ 方式 1: Url 类 (链式调用) ============
 const u = new Url('https://example.com?id=123')

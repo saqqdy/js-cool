@@ -414,6 +414,85 @@ url.get('id', '?id=123')
 new Url('?id=123').get('id')
 ```
 
+#### New Features
+
+**Three usage patterns:**
+
+```js
+import { url, Url } from 'js-cool'
+
+// 1. Url class - chainable builder
+const apiUrl = new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name#section'
+
+// 2. url namespace - factory + static methods
+url.from('https://example.com?id=123').get('id') // '123'
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+
+// 3. Direct function imports (tree-shaking friendly)
+import { getQueryParamValue, setQueryParam, parseQueryString } from 'js-cool'
+getQueryParamValue('id', 'https://example.com?id=123') // '123'
+```
+
+#### Descriptive Function Names
+
+v6.0.0 provides descriptive aliases for better code readability:
+
+| Alias Name | Original | Description |
+|------------|----------|-------------|
+| `parseQueryString` | `parse` | Parse query string to object |
+| `stringifyQueryString` | `stringify` | Build query string from object |
+| `getQueryParamValue` | `get` | Get single parameter value |
+| `getAllQueryParamValues` | `getAll` | Get all values for parameter |
+| `hasQueryParam` | `has` | Check if parameter exists |
+| `setQueryParam` | `set` | Set parameter value |
+| `appendQueryParam` | `append` | Append parameter value |
+| `deleteParam` | `deleteParam` | Delete parameter |
+| `getQueryParamKeys` | `keys` | Get all parameter names |
+| `getQueryParamValues` | `values` | Get all parameter values |
+| `getQueryParamEntries` | `entries` | Get all key-value pairs |
+
+```js
+// Using descriptive names
+import { parseQueryString, getQueryParamValue, setQueryParam } from 'js-cool'
+
+const params = parseQueryString('?page=1&size=20&active=true', { covert: true })
+// { page: 1, size: 20, active: true }
+
+const page = getQueryParamValue('page', 'https://example.com?page=2')
+// '2'
+
+const newUrl = setQueryParam('page', 3, 'https://example.com?page=1')
+// 'https://example.com/?page=3'
+```
+
+#### URL Property Extraction
+
+New functions to extract URL components:
+
+```js
+import { getOrigin, getHost, getHostname, getPathname, getSearch, getHash } from 'js-cool'
+
+getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+getHost('https://example.com:8080/path') // 'example.com:8080'
+getHostname('https://example.com:8080/path') // 'example.com'
+getPathname('https://example.com/api/users?id=1') // '/api/users'
+getSearch('https://example.com?key=value') // '?key=value'
+getHash('https://example.com/path#section') // '#section'
+```
+
+#### Subpath Import
+
+```js
+// Import from subpath for better tree-shaking
+import { url, Url, parseQueryString, stringifyQueryString } from 'js-cool/url'
+```
+
 ## TypeScript Migration
 
 ### Type Renames

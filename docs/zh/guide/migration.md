@@ -414,6 +414,85 @@ url.get('id', '?id=123')
 new Url('?id=123').get('id')
 ```
 
+#### 新增功能
+
+**三种使用方式：**
+
+```js
+import { url, Url } from 'js-cool'
+
+// 1. Url 类 - 链式构建器
+const apiUrl = new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name')
+  .setHash('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name#section'
+
+// 2. url 命名空间 - 工厂 + 静态方法
+url.from('https://example.com?id=123').get('id') // '123'
+url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+
+// 3. 直接导入函数（支持 tree-shaking）
+import { getQueryParamValue, setQueryParam, parseQueryString } from 'js-cool'
+getQueryParamValue('id', 'https://example.com?id=123') // '123'
+```
+
+#### 描述性函数名称
+
+v6.0.0 提供了描述性别名，提高代码可读性：
+
+| 别名 | 原名称 | 描述 |
+|------|--------|------|
+| `parseQueryString` | `parse` | 解析查询字符串为对象 |
+| `stringifyQueryString` | `stringify` | 构建查询字符串 |
+| `getQueryParamValue` | `get` | 获取单个参数值 |
+| `getAllQueryParamValues` | `getAll` | 获取同名参数所有值 |
+| `hasQueryParam` | `has` | 检查参数是否存在 |
+| `setQueryParam` | `set` | 设置参数值 |
+| `appendQueryParam` | `append` | 追加参数值 |
+| `deleteParam` | `deleteParam` | 删除参数 |
+| `getQueryParamKeys` | `keys` | 获取所有参数名 |
+| `getQueryParamValues` | `values` | 获取所有参数值 |
+| `getQueryParamEntries` | `entries` | 获取所有键值对 |
+
+```js
+// 使用描述性名称
+import { parseQueryString, getQueryParamValue, setQueryParam } from 'js-cool'
+
+const params = parseQueryString('?page=1&size=20&active=true', { covert: true })
+// { page: 1, size: 20, active: true }
+
+const page = getQueryParamValue('page', 'https://example.com?page=2')
+// '2'
+
+const newUrl = setQueryParam('page', 3, 'https://example.com?page=1')
+// 'https://example.com/?page=3'
+```
+
+#### URL 属性提取
+
+新增提取 URL 组成部分的函数：
+
+```js
+import { getOrigin, getHost, getHostname, getPathname, getSearch, getHash } from 'js-cool'
+
+getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+getHost('https://example.com:8080/path') // 'example.com:8080'
+getHostname('https://example.com:8080/path') // 'example.com'
+getPathname('https://example.com/api/users?id=1') // '/api/users'
+getSearch('https://example.com?key=value') // '?key=value'
+getHash('https://example.com/path#section') // '#section'
+```
+
+#### 子路径导入
+
+```js
+// 从子路径导入以获得更好的 tree-shaking
+import { url, Url, parseQueryString, stringifyQueryString } from 'js-cool/url'
+```
+
 ## TypeScript 迁移
 
 ### 类型重命名

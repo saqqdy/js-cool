@@ -173,20 +173,20 @@ export const versions: Record<string, string> = {
 	toThousands: '1.0.0',
 
 	// Date
-	formatDate: '1.0.0',
-	dateDiff: '1.0.0',
-	isToday: '1.0.0',
-	getDaysInMonth: '2.0.0',
-	relativeTime: '5.0.0',
+	formatDate: '6.0.0',
+	dateDiff: '6.0.0',
+	isToday: '6.0.0',
+	getDaysInMonth: '6.0.0',
+	relativeTime: '6.0.0',
 
 	// Color
-	hexToRGB: '1.0.0',
-	RGBToHex: '1.0.0',
-	rgbToHSL: '5.0.0',
-	randomColor: '1.0.0',
-	darken: '5.0.0',
-	lighten: '5.0.0',
-	isLightColor: '5.0.0',
+	hexToRGB: '6.0.0',
+	RGBToHex: '1.0.9',
+	rgbToHSL: '6.0.0',
+	randomColor: '5.5.0',
+	darken: '6.0.0',
+	lighten: '6.0.0',
+	isLightColor: '6.0.0',
 
 	// Utility
 	uuid: '1.0.9',
