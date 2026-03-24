@@ -72,7 +72,7 @@ export const validation = {
 	 * validation.ipv4.test('192.168.1.1') // true
 	 * validation.ipv4.test('256.1.1.1') // false
 	 */
-	ipv4: /^(([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5]).){3}([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])$/,
+	ipv4: /^(([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])$/,
 
 	/**
 	 * Matches private IPv4 addresses (10.x.x.x, 172.16-31.x.x, 192.168.x.x)

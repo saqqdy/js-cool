@@ -21,25 +21,25 @@ import { url } from 'js-cool'
 const fullUrl = 'http://a.com/fae?id=10&bar=eee#/about?name=test&code=3'
 
 // ✅ search 部分可以解析
-url.get('id', fullUrl)    // '10'
-url.get('bar', fullUrl)   // 'eee'
-url.parse(fullUrl)        // { id: '10', bar: 'eee' }
+url.get('id', fullUrl) // '10'
+url.get('bar', fullUrl) // 'eee'
+url.parse(fullUrl) // { id: '10', bar: 'eee' }
 
 // ❌ hash 内参数无法直接解析
-url.get('name', fullUrl)  // null
-url.get('code', fullUrl)  // null
+url.get('name', fullUrl) // null
+url.get('code', fullUrl) // null
 ```
 
 ---
 
 ## 方案对比
 
-| 方案 | 优点 | 缺点 | 推荐度 |
-|------|------|------|--------|
-| 方案一：新增 `getHashParams` / `getHashParam` | 简单直观，与现有 API 风格一致 | 新增方法较多 | ⭐⭐⭐⭐⭐ |
-| 方案二：扩展 `parse` / `get` 支持 `part` 参数 | 不增加新方法，API 简洁 | 改变现有 API 语义，可能影响现有用户 | ⭐⭐⭐ |
-| 方案三：新增 `hash` 命名空间 | 结构清晰，可扩展性强 | 需要新增命名空间 | ⭐⭐⭐⭐ |
-| 方案四：`Url` 类新增 `hashParams` 属性 | 面向对象，链式调用友好 | 只在类实例上可用 | ⭐⭐⭐⭐ |
+| 方案                                          | 优点                          | 缺点                                | 推荐度     |
+| --------------------------------------------- | ----------------------------- | ----------------------------------- | ---------- |
+| 方案一：新增 `getHashParams` / `getHashParam` | 简单直观，与现有 API 风格一致 | 新增方法较多                        | ⭐⭐⭐⭐⭐ |
+| 方案二：扩展 `parse` / `get` 支持 `part` 参数 | 不增加新方法，API 简洁        | 改变现有 API 语义，可能影响现有用户 | ⭐⭐⭐     |
+| 方案三：新增 `hash` 命名空间                  | 结构清晰，可扩展性强          | 需要新增命名空间                    | ⭐⭐⭐⭐   |
+| 方案四：`Url` 类新增 `hashParams` 属性        | 面向对象，链式调用友好        | 只在类实例上可用                    | ⭐⭐⭐⭐   |
 
 ---
 
@@ -64,8 +64,8 @@ import { url } from 'js-cool'
 const fullUrl = 'http://a.com/fae?id=10&bar=eee#/about?name=test&code=3'
 
 // 获取单个 hash 参数
-url.getHashParam('name', fullUrl)  // 'test'
-url.getHashParam('code', fullUrl)  // '3'
+url.getHashParam('name', fullUrl) // 'test'
+url.getHashParam('code', fullUrl) // '3'
 
 // 获取所有 hash 参数
 url.getHashParams(fullUrl)
@@ -76,7 +76,7 @@ url.getHashParams(fullUrl, true)
 // { name: 'test', code: 3 }
 
 // 检查存在
-url.hasHashParam('name', fullUrl)  // true
+url.hasHashParam('name', fullUrl) // true
 
 // 设置 hash 参数
 url.setHashParam('page', 2, fullUrl)
@@ -213,12 +213,12 @@ import { url } from 'js-cool'
 const fullUrl = 'http://a.com/fae?id=10&bar=eee#/about?name=test&code=3'
 
 // 默认行为不变（search 部分）
-url.get('id', fullUrl)              // '10'
-url.get('name', fullUrl)            // null
+url.get('id', fullUrl) // '10'
+url.get('name', fullUrl) // null
 
 // 指定解析 hash 部分
-url.get('name', fullUrl, 'hash')    // 'test'
-url.get('code', fullUrl, 'hash')    // '3'
+url.get('name', fullUrl, 'hash') // 'test'
+url.get('code', fullUrl, 'hash') // '3'
 
 // 解析所有参数
 url.parse(fullUrl, { part: 'all' })
@@ -232,10 +232,12 @@ url.parse(fullUrl, { part: 'hash' })
 ### 优缺点
 
 **优点：**
+
 - 不增加新方法名
 - API 简洁
 
 **缺点：**
+
 - 改变现有方法签名，可能影响现有用户
 - `part: 'all'` 时参数名可能冲突
 
@@ -263,12 +265,12 @@ import { url } from 'js-cool'
 const fullUrl = 'http://a.com/fae?id=10#/about?name=test&code=3'
 
 // search 参数（现有功能）
-url.get('id', fullUrl)           // '10'
+url.get('id', fullUrl) // '10'
 
 // hash 参数（新命名空间）
-url.hash.get('name', fullUrl)    // 'test'
-url.hash.parse(fullUrl)          // { name: 'test', code: '3' }
-url.hash.has('code', fullUrl)    // true
+url.hash.get('name', fullUrl) // 'test'
+url.hash.parse(fullUrl) // { name: 'test', code: '3' }
+url.hash.has('code', fullUrl) // true
 
 // 链式操作
 url.hash.set('page', 2, fullUrl)
@@ -327,19 +329,17 @@ import { Url } from 'js-cool'
 const u = new Url('http://a.com/fae?id=10#/about?name=test&code=3')
 
 // 现有功能
-u.get('id')        // '10'
-u.search           // '?id=10'
-u.hash             // '#/about?name=test&code=3'
+u.get('id') // '10'
+u.search // '?id=10'
+u.hash // '#/about?name=test&code=3'
 
 // 新增功能
-u.searchParams     // { id: '10' }
-u.hashParams       // { name: 'test', code: '3' }
-u.getFromHash('name')  // 'test'
+u.searchParams // { id: '10' }
+u.hashParams // { name: 'test', code: '3' }
+u.getFromHash('name') // 'test'
 
 // 链式操作
-u.setHashParam('page', 2)
- .delete('id')
- .toString()
+u.setHashParam('page', 2).delete('id').toString()
 // 'http://a.com/fae?#/about?name=test&code=3&page=2'
 ```
 
@@ -375,9 +375,9 @@ new Url(url).deleteHashParam(...) // 链式删除
 
 ## 与旧函数的关系
 
-| 旧函数 | 功能 | 新替代方案 |
-|--------|------|-----------|
-| `getQueryParam` | 获取 hash 内单个参数 | `url.getHashParam()` |
+| 旧函数           | 功能                 | 新替代方案            |
+| ---------------- | -------------------- | --------------------- |
+| `getQueryParam`  | 获取 hash 内单个参数 | `url.getHashParam()`  |
 | `getQueryParams` | 获取 hash 内所有参数 | `url.getHashParams()` |
 
 迁移示例：

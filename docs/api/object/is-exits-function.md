@@ -46,7 +46,4 @@ isExitsFunction('document.querySelector') // true
 - Supports nested function names with dot notation
 - Uses a safe evaluation method to check function existence
 - Returns `false` if the function throws an error during evaluation
-
-## Related
-
-- [isExitsVariable](./is-exits-variable.md) - Check if a variable exists
+- To check if a global variable exists, use `getGlobal(name) !== undefined`

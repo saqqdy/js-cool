@@ -88,6 +88,23 @@ const os = osVersion()
 const pos = scroll.getPosition()
 ```
 
+### Removed Functions
+
+The following functions have been removed due to bugs or lack of usefulness:
+
+| Function            | Reason                                           | Alternative                   |
+| ------------------- | ------------------------------------------------ | ----------------------------- |
+| `isExitsVariable()` | Always returned `true` due to implementation bug | Use `getGlobal(name) != null` |
+
+```js
+// v5.x (removed - was broken)
+isExitsVariable('someVar') // always returned true
+
+// v6.x - use getGlobal instead
+import { getGlobal } from 'js-cool'
+getGlobal('someVar') !== undefined // check if global variable exists
+```
+
 ### Scroll Utilities Migration
 
 The `getScrollPosition` function has been replaced by a comprehensive `scroll` utility module:

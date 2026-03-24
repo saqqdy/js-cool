@@ -118,17 +118,6 @@ isExitsFunction('JSON.parse') // true
 isExitsFunction('nonExistent') // false
 ```
 
-### isExitsVariable
-
-Check if a variable exists.
-
-```js
-import { isExitsVariable } from 'js-cool'
-
-isExitsVariable('window') // true in browser
-isExitsVariable('nonExistentVar') // false
-```
-
 ## Comparison
 
 ### isEqual

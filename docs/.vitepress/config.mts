@@ -127,7 +127,6 @@ export default defineConfig({
 								{ link: '/api/object/is-empty', text: 'isEmpty' },
 								{ link: '/api/object/is-nil', text: 'isNil' },
 								{ link: '/api/object/is-exits-function', text: 'isExitsFunction' },
-								{ link: '/api/object/is-exits-variable', text: 'isExitsVariable' },
 							],
 							text: 'Type Check',
 						},
@@ -466,10 +465,6 @@ export default defineConfig({
 								{
 									link: '/zh/api/object/is-exits-function',
 									text: 'isExitsFunction',
-								},
-								{
-									link: '/zh/api/object/is-exits-variable',
-									text: 'isExitsVariable',
 								},
 							],
 							text: '类型判断',

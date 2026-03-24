@@ -118,17 +118,6 @@ isExitsFunction('JSON.parse') // true
 isExitsFunction('nonExistent') // false
 ```
 
-### isExitsVariable
-
-检查变量是否存在。
-
-```js
-import { isExitsVariable } from 'js-cool'
-
-isExitsVariable('window') // 浏览器中为 true
-isExitsVariable('nonExistentVar') // false
-```
-
 ## 比较
 
 ### isEqual

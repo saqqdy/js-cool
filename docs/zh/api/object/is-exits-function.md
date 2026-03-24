@@ -46,7 +46,4 @@ isExitsFunction('document.querySelector') // true
 - 支持使用点表示法的嵌套函数名
 - 使用安全的求值方法检查函数是否存在
 - 如果函数在求值过程中抛出错误，返回 `false`
-
-## 相关
-
-- [isExitsVariable](./is-exits-variable.md) - 检查变量是否存在
+- 如需检查全局变量是否存在，可使用 `getGlobal(name) !== undefined`

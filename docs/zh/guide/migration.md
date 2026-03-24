@@ -88,6 +88,23 @@ const os = osVersion()
 const pos = scroll.getPosition()
 ```
 
+### 已移除函数
+
+以下函数由于存在 bug 或缺乏实用性已被移除：
+
+| 函数                | 原因                        | 替代方案                       |
+| ------------------- | --------------------------- | ------------------------------ |
+| `isExitsVariable()` | 实现有 bug，始终返回 `true` | 使用 `getGlobal(name) != null` |
+
+```js
+// v5.x（已移除 - 存在 bug）
+isExitsVariable('someVar') // 始终返回 true
+
+// v6.x - 使用 getGlobal 替代
+import { getGlobal } from 'js-cool'
+getGlobal('someVar') !== undefined // 检查全局变量是否存在
+```
+
 ### 滚动工具迁移
 
 `getScrollPosition` 函数已被功能更全面的 `scroll` 工具模块替代：
