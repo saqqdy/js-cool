@@ -142,6 +142,88 @@ describe('validation patterns', () => {
 		expect(validation.tel.test('021-87654321')).toBeTruthy()
 		expect(validation.tel.test('12345678')).toBeTruthy()
 	})
+
+	// New validation patterns
+	it('should match ipv6', () => {
+		expect(validation.ipv6.test('2001:0db8:85a3:0000:0000:8a2e:0370:7334')).toBeTruthy()
+		expect(validation.ipv6.test('::1')).toBeTruthy()
+		expect(validation.ipv6.test('::')).toBeTruthy()
+		expect(validation.ipv6.test('invalid')).toBeFalsy()
+	})
+
+	it('should match uuid', () => {
+		expect(validation.uuid.test('550e8400-e29b-41d4-a716-446655440000')).toBeTruthy()
+		expect(validation.uuid.test('6ba7b810-9dad-11d1-80b4-00c04fd430c8')).toBeTruthy()
+		expect(validation.uuid.test('invalid-uuid')).toBeFalsy()
+	})
+
+	it('should match semver', () => {
+		expect(validation.semver.test('1.2.3')).toBeTruthy()
+		expect(validation.semver.test('1.2.3-beta.1')).toBeTruthy()
+		expect(validation.semver.test('1.2.3-alpha.1+build.2')).toBeTruthy()
+		expect(validation.semver.test('1')).toBeFalsy()
+	})
+
+	it('should match base64', () => {
+		expect(validation.base64.test('SGVsbG8gV29ybGQ=')).toBeTruthy()
+		expect(validation.base64.test('YWJjZA==')).toBeTruthy()
+		expect(validation.base64.test('invalid base64!')).toBeFalsy()
+	})
+
+	it('should match slug', () => {
+		expect(validation.slug.test('hello-world')).toBeTruthy()
+		expect(validation.slug.test('hello-world-123')).toBeTruthy()
+		expect(validation.slug.test('Hello-World')).toBeFalsy()
+		expect(validation.slug.test('hello_world')).toBeFalsy()
+	})
+
+	it('should match bankCard', () => {
+		expect(validation.bankCard.test('6222021234567890123')).toBeTruthy()
+		expect(validation.bankCard.test('6217001234567890')).toBeTruthy()
+		expect(validation.bankCard.test('123456789012345')).toBeFalsy() // too short
+	})
+
+	it('should match creditCard', () => {
+		expect(validation.creditCard.test('4111111111111111')).toBeTruthy() // Visa
+		expect(validation.creditCard.test('5500000000000004')).toBeTruthy() // MasterCard
+		expect(validation.creditCard.test('378282246310005')).toBeTruthy() // Amex
+		expect(validation.creditCard.test('1234567890123456')).toBeFalsy()
+	})
+
+	it('should match time', () => {
+		expect(validation.time.test('23:59:59')).toBeTruthy()
+		expect(validation.time.test('00:00:00')).toBeTruthy()
+		expect(validation.time.test('12:30:45')).toBeTruthy()
+		expect(validation.time.test('24:00:00')).toBeFalsy()
+		expect(validation.time.test('12:60:00')).toBeFalsy()
+	})
+
+	it('should match date', () => {
+		expect(validation.date.test('2024-01-15')).toBeTruthy()
+		expect(validation.date.test('2024-12-31')).toBeTruthy()
+		expect(validation.date.test('2024-13-01')).toBeFalsy()
+		expect(validation.date.test('2024-01-32')).toBeFalsy()
+	})
+
+	it('should match datetime', () => {
+		expect(validation.datetime.test('2024-01-15 12:30:00')).toBeTruthy()
+		expect(validation.datetime.test('2024-12-31 23:59:59')).toBeTruthy()
+		expect(validation.datetime.test('2024-01-15 24:00:00')).toBeFalsy()
+	})
+
+	it('should match float correctly', () => {
+		expect(validation.float.test('123.45')).toBeTruthy()
+		expect(validation.float.test('123')).toBeTruthy()
+		expect(validation.float.test('123.')).toBeFalsy() // Fixed bug
+		expect(validation.float.test('123.456')).toBeFalsy()
+	})
+
+	it('should match username with special char restrictions', () => {
+		expect(validation.username.test('user_name')).toBeTruthy()
+		expect(validation.username.test('user-name')).toBeTruthy()
+		expect(validation.username.test('.username')).toBeFalsy() // Cannot start with .
+		expect(validation.username.test('username-')).toBeFalsy() // Cannot end with -
+	})
 })
 
 describe('UA device patterns', () => {
@@ -216,6 +298,23 @@ describe('UA browser patterns', () => {
 			'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59'
 		expect(BROWSER_PATTERNS.edge.test(ua)).toBeTruthy()
 	})
+
+	// New browser patterns
+	it('should detect Arc', () => {
+		const ua =
+			'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36 Arc/1.0.0'
+		expect(BROWSER_PATTERNS.arc.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Brave', () => {
+		const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Brave/1.50.0'
+		expect(BROWSER_PATTERNS.brave.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Yandex', () => {
+		const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 YaBrowser/23.0.0.0'
+		expect(BROWSER_PATTERNS.yandex.test(ua)).toBeTruthy()
+	})
 })
 
 describe('UA engine patterns', () => {
@@ -259,6 +358,47 @@ describe('UA environment patterns', () => {
 	it('should detect mini program', () => {
 		const ua = 'Mozilla/5.0 miniprogram'
 		expect(ENV_PATTERNS.miniProgram.test(ua)).toBeTruthy()
+	})
+
+	// New environment patterns
+	it('should detect XiaoHongShu', () => {
+		const ua = 'Mozilla/5.0 xiaohongshu/8.0.0'
+		expect(ENV_PATTERNS.xiaohongshu.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Meituan', () => {
+		const ua = 'Mozilla/5.0 Meituan/12.0.0'
+		expect(ENV_PATTERNS.meituan.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Dianping', () => {
+		const ua = 'Mozilla/5.0 dianping/10.0.0'
+		expect(ENV_PATTERNS.dianping.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Taobao', () => {
+		const ua = 'Mozilla/5.0 AliApp(TB/10.0.0)'
+		expect(ENV_PATTERNS.taobao.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Tmall', () => {
+		const ua = 'Mozilla/5.0 AliApp(TM/10.0.0)'
+		expect(ENV_PATTERNS.tmall.test(ua)).toBeTruthy()
+	})
+
+	it('should detect JD', () => {
+		const ua = 'Mozilla/5.0 jdapp/12.0.0'
+		expect(ENV_PATTERNS.jd.test(ua)).toBeTruthy()
+	})
+
+	it('should detect Pinduoduo', () => {
+		const ua = 'Mozilla/5.0 pinduoduo/6.0.0'
+		expect(ENV_PATTERNS.pinduoduo.test(ua)).toBeTruthy()
+	})
+
+	it('should detect mini game', () => {
+		const ua = 'Mozilla/5.0 minigame'
+		expect(ENV_PATTERNS.miniGame.test(ua)).toBeTruthy()
 	})
 })
 

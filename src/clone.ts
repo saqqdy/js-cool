@@ -77,9 +77,11 @@ function clone<T = any>(parent: T): T {
 		parents.push(parent)
 		children.push(child)
 
-		for (const i in parent) {
-			// recursive
-			child[i] = _clone(parent[i])
+		for (const key in parent) {
+			// Only clone own properties, not inherited ones
+			if (Object.prototype.hasOwnProperty.call(parent, key)) {
+				child[key] = _clone(parent[key])
+			}
 		}
 
 		return child

@@ -709,31 +709,41 @@ validation.mobile.test('13800138000')
 
 ### Pattern Name Mapping
 
-| Old (`pattern`) | New (`validation`) | Notes                              |
-| --------------- | ------------------ | ---------------------------------- |
-| `any`           | `any`              | Unchanged                          |
-| `email`         | `email`            | Unchanged                          |
-| `mobile`        | `mobile`           | Updated: now supports 1[3-9]xxx... |
-| `url`           | `url`              | Unchanged                          |
-| `number`        | `number`           | Unchanged                          |
-| `chinese`       | `chinese`          | Unchanged                          |
-| `ip4`           | `ipv4`             | Renamed                            |
-| `ip4_pri`       | `ipv4Private`      | Renamed                            |
-| `mac`           | `mac`              | Unchanged                          |
-| `qq`            | `qq`               | Updated: now supports 5-14 digits  |
-| `pass`          | `password`         | Renamed                            |
-| `postcode`      | `postcode`         | Unchanged                          |
-| `username`      | `username`         | Unchanged                          |
-| `tel`           | `tel`              | Unchanged                          |
-| `json`          | `json`             | Unchanged                          |
-| `array`         | `array`            | Unchanged                          |
-| `arrjson`       | `arrjson`          | Unchanged                          |
-| `isjson`        | `jsonLike`         | Renamed                            |
-| `float`         | `float`            | Unchanged                          |
-| `string`        | `string`           | Unchanged                          |
-| `textarea`      | `textarea`         | Unchanged                          |
-| -               | `idCard`           | **NEW**: Chinese ID card           |
-| -               | `hexColor`         | **NEW**: Hex color codes           |
+| Old (`pattern`) | New (`validation`) | Notes                                        |
+| --------------- | ------------------ | -------------------------------------------- |
+| `any`           | `any`              | Unchanged                                    |
+| `email`         | `email`            | Updated: more standard validation            |
+| `mobile`        | `mobile`           | Updated: now supports 1[3-9]xxx...           |
+| `url`           | `url`              | Updated: stricter validation                 |
+| `number`        | `number`           | Unchanged                                    |
+| `chinese`       | `chinese`          | Unchanged                                    |
+| `ip4`           | `ipv4`             | Renamed                                      |
+| `ip4_pri`       | `ipv4Private`      | Renamed                                      |
+| `mac`           | `mac`              | Unchanged                                    |
+| `qq`            | `qq`               | Updated: now supports 5-14 digits            |
+| `pass`          | `password`         | Renamed                                      |
+| `postcode`      | `postcode`         | Unchanged                                    |
+| `username`      | `username`         | Updated: cannot start/end with special chars |
+| `tel`           | `tel`              | Unchanged                                    |
+| `json`          | `json`             | Unchanged                                    |
+| `array`         | `array`            | Unchanged                                    |
+| `arrjson`       | `arrjson`          | Unchanged                                    |
+| `isjson`        | `jsonLike`         | Renamed                                      |
+| `float`         | `float`            | Fixed: no longer matches `123.`              |
+| `string`        | `string`           | Unchanged                                    |
+| `textarea`      | `textarea`         | Unchanged                                    |
+| -               | `idCard`           | **NEW**: Chinese ID card                     |
+| -               | `hexColor`         | **NEW**: Hex color codes                     |
+| -               | `ipv6`             | **NEW**: IPv6 addresses                      |
+| -               | `uuid`             | **NEW**: UUID v1-v5                          |
+| -               | `semver`           | **NEW**: Semantic versioning                 |
+| -               | `base64`           | **NEW**: Base64 encoded strings              |
+| -               | `slug`             | **NEW**: URL slug                            |
+| -               | `bankCard`         | **NEW**: Bank card number                    |
+| -               | `creditCard`       | **NEW**: Credit card number                  |
+| -               | `date`             | **NEW**: Date format YYYY-MM-DD              |
+| -               | `time`             | **NEW**: Time format HH:mm:ss                |
+| -               | `datetime`         | **NEW**: Datetime format                     |
 
 ### New Features
 

@@ -25,6 +25,7 @@ const patternResults = [
 	{ name: 'chinese', test: '中文测试', result: validation.chinese.test('中') },
 	{ name: 'qq', test: '123456789', result: validation.qq.test('123456789') },
 	{ name: 'ipv4', test: '192.168.1.1', result: validation.ipv4.test('192.168.1.1') },
+	{ name: 'ipv6', test: '2001:db8::1', result: validation.ipv6.test('2001:db8::1') },
 	{
 		name: 'ipv4Private',
 		test: '192.168.1.1',
@@ -40,6 +41,15 @@ const patternResults = [
 		result: validation.idCard.test('11010519491231002X'),
 	},
 	{ name: 'hexColor', test: '#ffffff', result: validation.hexColor.test('#ffffff') },
+	{ name: 'uuid', test: '550e8400-e29b-41d4-a716-446655440000', result: validation.uuid.test('550e8400-e29b-41d4-a716-446655440000') },
+	{ name: 'semver', test: '1.2.3-beta.1', result: validation.semver.test('1.2.3-beta.1') },
+	{ name: 'base64', test: 'SGVsbG8gV29ybGQ=', result: validation.base64.test('SGVsbG8gV29ybGQ=') },
+	{ name: 'slug', test: 'hello-world-123', result: validation.slug.test('hello-world-123') },
+	{ name: 'bankCard', test: '6222021234567890', result: validation.bankCard.test('6222021234567890') },
+	{ name: 'creditCard', test: '4111111111111111', result: validation.creditCard.test('4111111111111111') },
+	{ name: 'date', test: '2024-01-15', result: validation.date.test('2024-01-15') },
+	{ name: 'time', test: '23:59:59', result: validation.time.test('23:59:59') },
+	{ name: 'datetime', test: '2024-01-15 12:30:00', result: validation.datetime.test('2024-01-15 12:30:00') },
 ]
 </script>
 

@@ -1,3 +1,5 @@
+import { validation } from './patterns'
+
 /**
  * Check if string is a valid phone number (Chinese mobile)
  *
@@ -24,8 +26,7 @@ function isPhone(value: string): boolean {
 	if (typeof value !== 'string') {
 		return false
 	}
-	const phoneRegex = /^1[3-9]\d{9}$/
-	return phoneRegex.test(value)
+	return validation.mobile.test(value)
 }
 
 export default isPhone

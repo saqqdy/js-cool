@@ -183,16 +183,20 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 // 可用的验证模式:
 // validation.any, validation.email, validation.mobile, validation.url
 // validation.number, validation.chinese, validation.idCard, validation.qq
-// validation.ipv4, validation.ipv4Private, validation.mac, validation.hexColor
+// validation.ipv4, validation.ipv6, validation.ipv4Private, validation.mac
+// validation.uuid, validation.semver, validation.base64, validation.slug
+// validation.bankCard, validation.creditCard, validation.hexColor
 // validation.password, validation.postcode, validation.username, validation.tel
 // validation.json, validation.array, validation.float, validation.string
+// validation.date, validation.time, validation.datetime
 
 // 可用的 UA 模式:
 // DEVICE_PATTERNS - mobile, tablet, phone, touch, iphone, ipad, androidPhone, androidTablet
 // OS_PATTERNS - windows, macOS, iOS, iPadOS, android, linux, chromeOS, harmonyOS
-// BROWSER_PATTERNS - chrome, firefox, safari, edge, opera, ie, samsung, uc, quark, vivaldi
+// BROWSER_PATTERNS - chrome, firefox, safari, edge, opera, ie, samsung, uc, quark, vivaldi, arc, brave, yandex
 // ENGINE_PATTERNS - blink, gecko, webkit, trident, edgeHTML
-// ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu, miniProgram
+// ENV_PATTERNS - wechat, wxwork, dingtalk, qq, qqBrowser, weibo, alipay, douyin, kuaishou, baidu
+//                xiaohongshu, meituan, dianping, taobao, tmall, jd, pinduoduo, miniProgram, miniGame
 ```
 
 #### URL 工具

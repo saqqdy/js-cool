@@ -23,12 +23,8 @@
  * @param item - the target to find
  * @returns boolean
  */
-function contains(arr: any[], item: any): boolean {
-	for (const el of arr) {
-		if (el === item) return true
-	}
-
-	return false
+function contains(arr: unknown[], item: unknown): boolean {
+	return arr.includes(item)
 }
 
 export default contains

@@ -10,6 +10,7 @@
 		"paths": {
 			"#lib/*": ["./src/*"]
 		},
+		"types": ["node"],
 		"resolveJsonModule": true,
 		"strict": true,
 		"noImplicitOverride": true,

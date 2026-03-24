@@ -1,5 +1,3 @@
-import contains from './contains'
-
 /**
  * Array de-duplication
  *
@@ -31,13 +29,7 @@ import contains from './contains'
  * @returns - new array with unique values
  */
 function unique<T = unknown>(arr: T[]): T[] {
-	const newArray: T[] = []
-
-	for (const el of arr) {
-		if (!contains(newArray, el)) newArray.push(el)
-	}
-
-	return newArray
+	return [...new Set(arr)]
 }
 
 export default unique

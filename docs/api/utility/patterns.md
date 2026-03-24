@@ -37,27 +37,37 @@ patterns.validation.email.test('user@example.com')
 
 ### Available Patterns
 
-| Pattern       | Description                                 | Example                   |
-| ------------- | ------------------------------------------- | ------------------------- |
-| `any`         | Matches any non-empty string                | `'hello'` ✓               |
-| `email`       | Email addresses                             | `'user@example.com'` ✓    |
-| `mobile`      | Chinese mobile numbers (1[3-9]xxxxxxxxx)    | `'13800138000'` ✓         |
-| `url`         | URLs                                        | `'https://example.com'` ✓ |
-| `number`      | Numbers (int, float, with sign)             | `'-123.45'` ✓             |
-| `chinese`     | Single Chinese character                    | `'中'` ✓                  |
-| `idCard`      | Chinese ID card (15 or 18 digits)           | `'11010519491231002X'` ✓  |
-| `qq`          | QQ numbers (5-14 digits)                    | `'12345678'` ✓            |
-| `ipv4`        | IPv4 addresses                              | `'192.168.1.1'` ✓         |
-| `ipv4Private` | Private IPv4 (10.x, 172.16-31.x, 192.168.x) | `'192.168.1.1'` ✓         |
-| `mac`         | MAC addresses                               | `'00:1A:2B:3C:4D:5E'` ✓   |
-| `hexColor`    | Hex color codes                             | `'#ffffff'` ✓             |
-| `password`    | Password (6-16 chars, letter + number)      | `'abc123'` ✓              |
-| `postcode`    | Chinese postal codes (6 digits)             | `'100000'` ✓              |
-| `username`    | Username (3-15 chars, alphanumeric)         | `'user_name'` ✓           |
-| `tel`         | Chinese telephone numbers                   | `'010-12345678'` ✓        |
-| `json`        | JSON object string                          | `'{"key":"value"}'` ✓     |
-| `array`       | JSON array string                           | `'[1, 2, 3]'` ✓           |
-| `float`       | Decimal numbers (max 2 places)              | `'123.45'` ✓              |
+| Pattern       | Description                                 | Example                      |
+| ------------- | ------------------------------------------- | ---------------------------- |
+| `any`         | Matches any non-empty string                | `'hello'` ✓                  |
+| `email`       | Email addresses                             | `'user@example.com'` ✓       |
+| `mobile`      | Chinese mobile numbers (1[3-9]xxxxxxxxx)    | `'13800138000'` ✓            |
+| `url`         | URLs                                        | `'https://example.com'` ✓    |
+| `number`      | Numbers (int, float, with sign)             | `'-123.45'` ✓                |
+| `chinese`     | Single Chinese character                    | `'中'` ✓                     |
+| `idCard`      | Chinese ID card (15 or 18 digits)           | `'11010519491231002X'` ✓     |
+| `qq`          | QQ numbers (5-14 digits)                    | `'12345678'` ✓               |
+| `ipv4`        | IPv4 addresses                              | `'192.168.1.1'` ✓            |
+| `ipv6`        | IPv6 addresses                              | `'2001:db8::1'` ✓            |
+| `ipv4Private` | Private IPv4 (10.x, 172.16-31.x, 192.168.x) | `'192.168.1.1'` ✓            |
+| `mac`         | MAC addresses                               | `'00:1A:2B:3C:4D:5E'` ✓      |
+| `hexColor`    | Hex color codes                             | `'#ffffff'` ✓                |
+| `uuid`        | UUID v1-v5                                  | `'550e8400-e29b-41d4-...'` ✓ |
+| `semver`      | Semantic versioning                         | `'1.2.3-beta.1'` ✓           |
+| `base64`      | Base64 encoded strings                      | `'SGVsbG8gV29ybGQ='` ✓       |
+| `slug`        | URL slug                                    | `'hello-world-123'` ✓        |
+| `bankCard`    | Bank card number (16-19 digits)             | `'6222021234567890'` ✓       |
+| `creditCard`  | Credit card (Visa, MC, Amex, Discover)      | `'4111111111111111'` ✓       |
+| `date`        | Date format YYYY-MM-DD                      | `'2024-01-15'` ✓             |
+| `time`        | Time format HH:mm:ss                        | `'23:59:59'` ✓               |
+| `datetime`    | Datetime format                             | `'2024-01-15 12:30:00'` ✓    |
+| `password`    | Password (6-16 chars, letter + number)      | `'abc123'` ✓                 |
+| `postcode`    | Chinese postal codes (6 digits)             | `'100000'` ✓                 |
+| `username`    | Username (3-15 chars, alphanumeric)         | `'user_name'` ✓              |
+| `tel`         | Chinese telephone numbers                   | `'010-12345678'` ✓           |
+| `json`        | JSON object string                          | `'{"key":"value"}'` ✓        |
+| `array`       | JSON array string                           | `'[1, 2, 3]'` ✓              |
+| `float`       | Decimal numbers (max 2 places)              | `'123.45'` ✓                 |
 
 ## UA Patterns
 
@@ -107,6 +117,9 @@ BROWSER_PATTERNS.samsung.test(ua) // Samsung Browser
 BROWSER_PATTERNS.uc.test(ua) // UC Browser
 BROWSER_PATTERNS.quark.test(ua) // Quark Browser
 BROWSER_PATTERNS.vivaldi.test(ua) // Vivaldi
+BROWSER_PATTERNS.arc.test(ua) // Arc Browser (NEW)
+BROWSER_PATTERNS.brave.test(ua) // Brave Browser (NEW)
+BROWSER_PATTERNS.yandex.test(ua) // Yandex Browser (NEW)
 ```
 
 ### Engine Detection
@@ -136,6 +149,13 @@ ENV_PATTERNS.alipay.test(ua) // Alipay
 ENV_PATTERNS.douyin.test(ua) // Douyin / TikTok
 ENV_PATTERNS.kuaishou.test(ua) // Kuaishou
 ENV_PATTERNS.baidu.test(ua) // Baidu App
+ENV_PATTERNS.xiaohongshu.test(ua) // XiaoHongShu (NEW)
+ENV_PATTERNS.meituan.test(ua) // Meituan (NEW)
+ENV_PATTERNS.dianping.test(ua) // Dianping (NEW)
+ENV_PATTERNS.taobao.test(ua) // Taobao (NEW)
+ENV_PATTERNS.tmall.test(ua) // Tmall (NEW)
+ENV_PATTERNS.jd.test(ua) // JD.com (NEW)
+ENV_PATTERNS.pinduoduo.test(ua) // Pinduoduo (NEW)
 ENV_PATTERNS.miniProgram.test(ua) // Mini Program
 ENV_PATTERNS.miniGame.test(ua) // Mini Game
 ```

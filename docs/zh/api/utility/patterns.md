@@ -37,27 +37,37 @@ patterns.validation.email.test('user@example.com')
 
 ### 可用模式
 
-| 模式          | 描述                                     | 示例                      |
-| ------------- | ---------------------------------------- | ------------------------- |
-| `any`         | 匹配任意非空字符串                       | `'hello'` ✓               |
-| `email`       | 邮箱地址                                 | `'user@example.com'` ✓    |
-| `mobile`      | 中国手机号 (1[3-9]xxxxxxxxx)             | `'13800138000'` ✓         |
-| `url`         | URL 地址                                 | `'https://example.com'` ✓ |
-| `number`      | 数字（整数、浮点、带符号）               | `'-123.45'` ✓             |
-| `chinese`     | 单个中文字符                             | `'中'` ✓                  |
-| `idCard`      | 中国身份证（15 或 18 位）                | `'11010519491231002X'` ✓  |
-| `qq`          | QQ 号（5-14 位）                         | `'12345678'` ✓            |
-| `ipv4`        | IPv4 地址                                | `'192.168.1.1'` ✓         |
-| `ipv4Private` | 私有 IPv4 (10.x, 172.16-31.x, 192.168.x) | `'192.168.1.1'` ✓         |
-| `mac`         | MAC 地址                                 | `'00:1A:2B:3C:4D:5E'` ✓   |
-| `hexColor`    | 十六进制颜色                             | `'#ffffff'` ✓             |
-| `password`    | 密码（6-16 位，字母+数字）               | `'abc123'` ✓              |
-| `postcode`    | 中国邮编（6 位）                         | `'100000'` ✓              |
-| `username`    | 用户名（3-15 位，字母数字）              | `'user_name'` ✓           |
-| `tel`         | 中国固定电话                             | `'010-12345678'` ✓        |
-| `json`        | JSON 对象字符串                          | `'{"key":"value"}'` ✓     |
-| `array`       | JSON 数组字符串                          | `'[1, 2, 3]'` ✓           |
-| `float`       | 浮点数（最多 2 位小数）                  | `'123.45'` ✓              |
+| 模式          | 描述                                     | 示例                         |
+| ------------- | ---------------------------------------- | ---------------------------- |
+| `any`         | 匹配任意非空字符串                       | `'hello'` ✓                  |
+| `email`       | 邮箱地址                                 | `'user@example.com'` ✓       |
+| `mobile`      | 中国手机号 (1[3-9]xxxxxxxxx)             | `'13800138000'` ✓            |
+| `url`         | URL 地址                                 | `'https://example.com'` ✓    |
+| `number`      | 数字（整数、浮点、带符号）               | `'-123.45'` ✓                |
+| `chinese`     | 单个中文字符                             | `'中'` ✓                     |
+| `idCard`      | 中国身份证（15 或 18 位）                | `'11010519491231002X'` ✓     |
+| `qq`          | QQ 号（5-14 位）                         | `'12345678'` ✓               |
+| `ipv4`        | IPv4 地址                                | `'192.168.1.1'` ✓            |
+| `ipv6`        | IPv6 地址                                | `'2001:db8::1'` ✓            |
+| `ipv4Private` | 私有 IPv4 (10.x, 172.16-31.x, 192.168.x) | `'192.168.1.1'` ✓            |
+| `mac`         | MAC 地址                                 | `'00:1A:2B:3C:4D:5E'` ✓      |
+| `hexColor`    | 十六进制颜色                             | `'#ffffff'` ✓                |
+| `uuid`        | UUID v1-v5                               | `'550e8400-e29b-41d4-...'` ✓ |
+| `semver`      | 语义化版本号                             | `'1.2.3-beta.1'` ✓           |
+| `base64`      | Base64 编码字符串                        | `'SGVsbG8gV29ybGQ='` ✓       |
+| `slug`        | URL Slug                                 | `'hello-world-123'` ✓        |
+| `bankCard`    | 银行卡号（16-19 位）                     | `'6222021234567890'` ✓       |
+| `creditCard`  | 信用卡（Visa、MC、Amex、Discover）       | `'4111111111111111'` ✓       |
+| `date`        | 日期格式 YYYY-MM-DD                      | `'2024-01-15'` ✓             |
+| `time`        | 时间格式 HH:mm:ss                        | `'23:59:59'` ✓               |
+| `datetime`    | 日期时间格式                             | `'2024-01-15 12:30:00'` ✓    |
+| `password`    | 密码（6-16 位，字母+数字）               | `'abc123'` ✓                 |
+| `postcode`    | 中国邮编（6 位）                         | `'100000'` ✓                 |
+| `username`    | 用户名（3-15 位，字母数字）              | `'user_name'` ✓              |
+| `tel`         | 中国固定电话                             | `'010-12345678'` ✓           |
+| `json`        | JSON 对象字符串                          | `'{"key":"value"}'` ✓        |
+| `array`       | JSON 数组字符串                          | `'[1, 2, 3]'` ✓              |
+| `float`       | 浮点数（最多 2 位小数）                  | `'123.45'` ✓                 |
 
 ## UA 模式
 
@@ -107,6 +117,9 @@ BROWSER_PATTERNS.samsung.test(ua) // 三星浏览器
 BROWSER_PATTERNS.uc.test(ua) // UC 浏览器
 BROWSER_PATTERNS.quark.test(ua) // 夸克浏览器
 BROWSER_PATTERNS.vivaldi.test(ua) // Vivaldi
+BROWSER_PATTERNS.arc.test(ua) // Arc 浏览器 (新增)
+BROWSER_PATTERNS.brave.test(ua) // Brave 浏览器 (新增)
+BROWSER_PATTERNS.yandex.test(ua) // Yandex 浏览器 (新增)
 ```
 
 ### 内核检测
@@ -136,6 +149,13 @@ ENV_PATTERNS.alipay.test(ua) // 支付宝
 ENV_PATTERNS.douyin.test(ua) // 抖音
 ENV_PATTERNS.kuaishou.test(ua) // 快手
 ENV_PATTERNS.baidu.test(ua) // 百度 App
+ENV_PATTERNS.xiaohongshu.test(ua) // 小红书 (新增)
+ENV_PATTERNS.meituan.test(ua) // 美团 (新增)
+ENV_PATTERNS.dianping.test(ua) // 大众点评 (新增)
+ENV_PATTERNS.taobao.test(ua) // 淘宝 (新增)
+ENV_PATTERNS.tmall.test(ua) // 天猫 (新增)
+ENV_PATTERNS.jd.test(ua) // 京东 (新增)
+ENV_PATTERNS.pinduoduo.test(ua) // 拼多多 (新增)
 ENV_PATTERNS.miniProgram.test(ua) // 小程序
 ENV_PATTERNS.miniGame.test(ua) // 小游戏
 ```

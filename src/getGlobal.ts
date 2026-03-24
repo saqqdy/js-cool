@@ -32,8 +32,8 @@ function getGlobal<T = unknown>(path: string): T | undefined {
 			? globalThis
 			: typeof window !== 'undefined'
 				? window
-				: typeof globalThis !== 'undefined'
-					? globalThis
+				: typeof global !== 'undefined'
+					? global
 					: {}
 
 	// Split path and traverse

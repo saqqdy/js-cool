@@ -17,6 +17,7 @@ export default eslintConfig({
 		'perfectionist/sort-objects': 'off',
 		'perfectionist/sort-imports': 'off',
 		'perfectionist/sort-exports': 'off',
+		'no-restricted-globals': 'off',
 		'jsonc/sort-keys': 'off',
 	},
 	stylistic: false,

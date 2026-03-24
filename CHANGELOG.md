@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
   - `isDigitals` - removed, use `/^\d*$/.test(str)` instead
   - `pattern` - use `patterns.validation` instead
   - `trim` - removed, use `String.prototype.trim()` instead
+  - `isExitsVariable` - removed, use `isExistsFunction` instead
 
 - **Patterns Module Refactoring**: Use `patterns.validation` instead of `pattern`
   - Old: `pattern.email.test('user@example.com')`
@@ -73,8 +74,37 @@ All notable changes to this project will be documented in this file.
 - **New Validation Patterns**:
   - `validation.idCard` - Chinese ID card numbers (15 or 18 digits)
   - `validation.hexColor` - Hexadecimal color codes
+  - `validation.ipv6` - IPv6 addresses
+  - `validation.uuid` - UUID v1-v5
+  - `validation.semver` - Semantic versioning
+  - `validation.base64` - Base64 encoded strings
+  - `validation.slug` - URL slug
+  - `validation.bankCard` - Bank card number (16-19 digits)
+  - `validation.creditCard` - Credit card number (Visa, MasterCard, Amex, Discover)
+  - `validation.time` - Time format HH:mm:ss
+  - `validation.date` - Date format YYYY-MM-DD
+  - `validation.datetime` - Datetime format YYYY-MM-DD HH:mm:ss
+
+- **New Browser Detection Patterns**:
+  - `BROWSER_PATTERNS.arc` - Arc browser
+  - `BROWSER_PATTERNS.brave` - Brave browser
+  - `BROWSER_PATTERNS.yandex` - Yandex browser
+
+- **New Environment Detection Patterns**:
+  - `ENV_PATTERNS.xiaohongshu` - XiaoHongShu (Little Red Book)
+  - `ENV_PATTERNS.meituan` - Meituan
+  - `ENV_PATTERNS.dianping` - Dianping
+  - `ENV_PATTERNS.zhifubao` - Alipay
+  - `ENV_PATTERNS.taobao` - Taobao
+  - `ENV_PATTERNS.tmall` - Tmall
+  - `ENV_PATTERNS.jd` - JD.com
+  - `ENV_PATTERNS.pinduoduo` - Pinduoduo
 
 - **Improved Patterns**:
+  - `validation.email` - More standard email validation
+  - `validation.url` - Stricter URL validation
+  - `validation.username` - Cannot start/end with special characters
+  - `validation.float` - Fixed bug where `123.` would match
   - `validation.mobile` - Updated to support new Chinese mobile number prefixes (1[3-9])
   - `validation.qq` - Updated to support 5-14 digit QQ numbers
 

@@ -47,15 +47,17 @@ export const validation = {
 	 * validation.email.test('user\@example.com') // true
 	 * validation.email.test('invalid') // false
 	 */
-	email: /^([a-zA-Z0-9]+[_|.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/,
+	email: /^[\w.!#$%&'*+/=?^`{|}~-]+@\w(?:[\w-]{0,61}\w)?(?:\.\w(?:[\w-]{0,61}\w)?)*$/,
 
 	/**
 	 * Matches decimal numbers with up to 2 decimal places
 	 * @example
 	 * validation.float.test('123.45') // true
+	 * validation.float.test('123') // true
 	 * validation.float.test('123.456') // false
+	 * validation.float.test('123.') // false
 	 */
-	float: /^\d+\.?\d{0,2}$/,
+	float: /^\d+(\.\d{1,2})?$/,
 
 	/**
 	 * Matches hexadecimal color codes
@@ -73,6 +75,79 @@ export const validation = {
 	 * validation.ipv4.test('256.1.1.1') // false
 	 */
 	ipv4: /^(([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])$/,
+
+	/**
+	 * Matches IPv6 addresses
+	 * @example
+	 * validation.ipv6.test('2001:0db8:85a3:0000:0000:8a2e:0370:7334') // true
+	 * validation.ipv6.test('::1') // true
+	 * validation.ipv6.test('::') // true (unspecified address)
+	 */
+	ipv6: /^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$|^::(?:[0-9a-fA-F]{1,4}:){0,6}[0-9a-fA-F]{1,4}$|^(?:[0-9a-fA-F]{1,4}:){1,7}:$|^::$|^(?:[0-9a-fA-F]{1,4}:){0,6}::(?:[0-9a-fA-F]{1,4}:){0,5}[0-9a-fA-F]{1,4}$/,
+
+	/**
+	 * Matches UUID v1-v5
+	 * @example
+	 * validation.uuid.test('550e8400-e29b-41d4-a716-446655440000') // true
+	 */
+	uuid: /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+
+	/**
+	 * Matches semantic versioning (semver)
+	 * @example
+	 * validation.semver.test('1.2.3') // true
+	 * validation.semver.test('1.2.3-beta.1') // true
+	 */
+	semver: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?$/i,
+
+	/**
+	 * Matches Base64 encoded strings
+	 * @example
+	 * validation.base64.test('SGVsbG8gV29ybGQ=') // true
+	 */
+	base64: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/,
+
+	/**
+	 * Matches URL slug (lowercase letters, numbers, hyphens)
+	 * @example
+	 * validation.slug.test('hello-world-123') // true
+	 */
+	slug: /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+
+	/**
+	 * Matches bank card number (16-19 digits)
+	 * @example
+	 * validation.bankCard.test('6222021234567890123') // true
+	 */
+	bankCard: /^[1-9]\d{15,18}$/,
+
+	/**
+	 * Matches credit card number (Visa, MasterCard, Amex, Discover)
+	 * @example
+	 * validation.creditCard.test('4111111111111111') // true (Visa)
+	 */
+	creditCard: /^(?:4\d{12}(?:\d{3})?|5[1-5]\d{14}|3[47]\d{13}|6(?:011|5\d{2})\d{12})$/,
+
+	/**
+	 * Matches time format HH:mm:ss
+	 * @example
+	 * validation.time.test('23:59:59') // true
+	 */
+	time: /^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/,
+
+	/**
+	 * Matches date format YYYY-MM-DD
+	 * @example
+	 * validation.date.test('2024-01-15') // true
+	 */
+	date: /^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/,
+
+	/**
+	 * Matches datetime format YYYY-MM-DD HH:mm:ss
+	 * @example
+	 * validation.datetime.test('2024-01-15 12:30:00') // true
+	 */
+	datetime: /^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01]) ([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/,
 
 	/**
 	 * Matches private IPv4 addresses (10.x.x.x, 172.16-31.x.x, 192.168.x.x)
@@ -175,15 +250,16 @@ export const validation = {
 	 * validation.url.test('https://example.com') // true
 	 * validation.url.test('example.com') // true
 	 */
-	url: /^(\w+:\/\/)?\w+(\.\w+)+.*$/,
+	url: /^(https?:\/\/)?(?:[\w-]+\.)+[\w-]+(?:\/[\w\-./?%&=]*)?$/,
 
 	/**
 	 * Matches username (3-15 chars, alphanumeric, underscore, hyphen, dot)
+	 * Cannot start or end with special characters
 	 * @example
 	 * validation.username.test('user_name') // true
 	 * validation.username.test('ab') // false (too short)
 	 */
-	username: /^[\w\-.]{3,15}$/,
+	username: /^(?![-.])(?!.*[.-]$)[\w.-]{3,15}$/,
 
 	/**
 	 * Matches Chinese ID card numbers (15 or 18 digits)
