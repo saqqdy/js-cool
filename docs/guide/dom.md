@@ -80,6 +80,73 @@ document.getElementById('copyBtn').addEventListener('click', () => {
 })
 ```
 
+## File Download
+
+### download
+
+Download files with various methods. Supports multiple download types: anchor download, open in new tab, navigate directly, or XHR request.
+
+```js
+import { download } from 'js-cool'
+
+// Basic download (anchor element)
+download('https://example.com/file.pdf', 'document.pdf')
+
+// Open in new tab
+download('https://example.com/file.pdf', 'document.pdf', 'open')
+
+// Navigate directly
+download('https://example.com/file.pdf', 'document.pdf', 'href')
+
+// Use XHR for authenticated downloads
+download('https://api.example.com/download', 'data.json', 'request')
+
+// Filename is optional - extracted from URL
+download('https://example.com/report.pdf')
+```
+
+### saveFile
+
+Save data directly as a file. Supports string, Blob, and ArrayBuffer.
+
+```js
+import { saveFile } from 'js-cool'
+
+// Save text
+saveFile('Hello World', 'hello.txt')
+
+// Save JSON
+saveFile(JSON.stringify(data), 'data.json')
+
+// Save Blob
+const blob = new Blob(['content'], { type: 'text/plain' })
+saveFile(blob, 'file.txt')
+
+// Save ArrayBuffer
+const buffer = new ArrayBuffer(10)
+saveFile(buffer, 'data.bin')
+```
+
+### downloadFile
+
+Download file using anchor element.
+
+```js
+import { downloadFile } from 'js-cool'
+
+downloadFile('https://example.com/file.pdf', 'document.pdf')
+```
+
+### downloadUrlFile
+
+Download file from URL via XMLHttpRequest (useful for authenticated downloads).
+
+```js
+import { downloadUrlFile } from 'js-cool'
+
+downloadUrlFile('https://api.example.com/download', 'data.json')
+```
+
 ## Scrolling
 
 ### getScrollPosition

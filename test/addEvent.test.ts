@@ -69,3 +69,162 @@ describe('addEvent', () => {
 		expect(element.events.click).toBeDefined()
 	})
 })
+
+describe('addEvent legacy mode - handleEvent', () => {
+	it('should call handleEvent when event is triggered in legacy mode', () => {
+		const element = {
+			events: {},
+		} as any
+		delete element.addEventListener
+
+		const handler = vi.fn()
+		addEvent(element, 'click', handler)
+
+		// Trigger the onclick handler (which is handleEvent)
+		const event = { type: 'click' }
+		element.onclick(event)
+
+		expect(handler).toHaveBeenCalledWith(event)
+	})
+
+	it('should return true when handler does not return false', () => {
+		const element = {
+			events: {},
+		} as any
+		delete element.addEventListener
+
+		const handler = vi.fn()
+		addEvent(element, 'click', handler)
+
+		const event = { type: 'click' }
+		const result = element.onclick(event)
+
+		expect(result).toBeTruthy()
+	})
+
+	it('should return false when handler returns false', () => {
+		const element = {
+			events: {},
+		} as any
+		delete element.addEventListener
+
+		const handler = vi.fn().mockReturnValue(false)
+		addEvent(element, 'click', handler)
+
+		const event = { type: 'click' }
+		const result = element.onclick(event)
+
+		expect(result).toBeFalsy()
+	})
+
+	it('should call multiple handlers in legacy mode', () => {
+		const element = {
+			events: {},
+		} as any
+		delete element.addEventListener
+
+		const handler1 = vi.fn()
+		const handler2 = vi.fn()
+		addEvent(element, 'click', handler1)
+		addEvent(element, 'click', handler2)
+
+		const event = { type: 'click' }
+		element.onclick(event)
+
+		expect(handler1).toHaveBeenCalled()
+		expect(handler2).toHaveBeenCalled()
+	})
+
+	it('should use window.event when event is undefined', () => {
+		const element = {
+			events: {},
+			ownerDocument: {
+				parentWindow: {
+					event: { type: 'click', testProp: 'fromWindow' },
+				},
+			},
+		} as any
+		delete element.addEventListener
+
+		const handler = vi.fn()
+		addEvent(element, 'click', handler)
+
+		// Call without event argument (IE style)
+		element.onclick()
+
+		expect(handler).toHaveBeenCalled()
+	})
+
+	it('should use document.parentWindow when ownerDocument is not available', () => {
+		const element = {
+			events: {},
+			document: {
+				parentWindow: {
+					event: { type: 'click' },
+				},
+			},
+		} as any
+		delete element.addEventListener
+
+		const handler = vi.fn()
+		addEvent(element, 'click', handler)
+
+		element.onclick()
+
+		expect(handler).toHaveBeenCalled()
+	})
+})
+
+describe('addEvent legacy mode - fixEvent', () => {
+	it('should add preventDefault method to event when no event passed', () => {
+		const element = {
+			events: {},
+			ownerDocument: {
+				parentWindow: {
+					event: { type: 'click' },
+				},
+			},
+		} as any
+		delete element.addEventListener
+
+		let capturedEvent: any
+		const handler = vi.fn((event: any) => {
+			capturedEvent = event
+			event.preventDefault()
+		})
+		addEvent(element, 'click', handler)
+
+		// Call without event argument to trigger fixEvent
+		element.onclick()
+
+		expect(handler).toHaveBeenCalled()
+		expect(capturedEvent.preventDefault).toBeDefined()
+		expect(capturedEvent.returnValue).toBeFalsy()
+	})
+
+	it('should add stopPropagation method to event when no event passed', () => {
+		const element = {
+			events: {},
+			ownerDocument: {
+				parentWindow: {
+					event: { type: 'click' },
+				},
+			},
+		} as any
+		delete element.addEventListener
+
+		let capturedEvent: any
+		const handler = vi.fn((event: any) => {
+			capturedEvent = event
+			event.stopPropagation()
+		})
+		addEvent(element, 'click', handler)
+
+		// Call without event argument to trigger fixEvent
+		element.onclick()
+
+		expect(handler).toHaveBeenCalled()
+		expect(capturedEvent.stopPropagation).toBeDefined()
+		expect(capturedEvent.cancelBubble).toBeTruthy()
+	})
+})

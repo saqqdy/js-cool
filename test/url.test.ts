@@ -1,46 +1,45 @@
 import { describe, expect, it } from 'vitest'
 import {
 	append,
+	append as appendQueryParam,
 	deleteParam,
+	deleteParam as deleteQueryParam,
 	entries,
 	get,
 	getAll,
+	getAll as getAllQueryParamValues,
 	getHash,
 	getHost,
 	getHostname,
 	getOrigin,
 	getPathname,
+	entries as getQueryParamEntries,
+	keys as getQueryParamKeys,
+	get as getQueryParamValue,
+	values as getQueryParamValues,
 	getSearch,
+	getHash as getURLHash,
+	getHost as getURLHost,
+	getHostname as getURLHostname,
+	getOrigin as getURLOrigin,
+	getPathname as getURLPathname,
+	getSearch as getURLSearch,
 	has,
+	has as hasQueryParam,
 	keys,
 	parse,
+	// Alias exports
+	parse as parseQueryString,
 	set,
+	set as setQueryParam,
 	stringify,
+	stringify as stringifyQueryString,
 	url,
 	Url,
 	URL_PATTERNS,
 	VALUE_MAP,
 	values,
 } from '../src/url/index'
-import {
-	parseQueryString,
-	stringifyQueryString,
-	getQueryParamValue,
-	getAllQueryParamValues,
-	hasQueryParam,
-	setQueryParam,
-	appendQueryParam,
-	deleteParam as deleteQueryParam,
-	getQueryParamKeys,
-	getQueryParamValues,
-	getQueryParamEntries,
-	getOrigin as getURLOrigin,
-	getHost as getURLHost,
-	getHostname as getURLHostname,
-	getPathname as getURLPathname,
-	getSearch as getURLSearch,
-	getHash as getURLHash,
-} from '../src/index'
 
 describe('URL patterns', () => {
 	it('should have url patterns', () => {
@@ -519,7 +518,10 @@ describe('URL alias exports', () => {
 		it('should work as get/getAll aliases', () => {
 			expect(getQueryParamValue('id', 'https://example.com?id=123')).toBe('123')
 			expect(getQueryParamValue('missing', 'https://example.com?id=123')).toBeNull()
-			expect(getAllQueryParamValues('id', 'https://example.com?id=1&id=2')).toEqual(['1', '2'])
+			expect(getAllQueryParamValues('id', 'https://example.com?id=1&id=2')).toEqual([
+				'1',
+				'2',
+			])
 		})
 	})
 
@@ -532,8 +534,12 @@ describe('URL alias exports', () => {
 
 	describe('setQueryParam / appendQueryParam', () => {
 		it('should work as set/append aliases', () => {
-			expect(setQueryParam('page', 2, 'https://example.com')).toBe('https://example.com/?page=2')
-			expect(appendQueryParam('id', 2, 'https://example.com?id=1')).toBe('https://example.com/?id=1&id=2')
+			expect(setQueryParam('page', 2, 'https://example.com')).toBe(
+				'https://example.com/?page=2'
+			)
+			expect(appendQueryParam('id', 2, 'https://example.com?id=1')).toBe(
+				'https://example.com/?id=1&id=2'
+			)
 		})
 	})
 

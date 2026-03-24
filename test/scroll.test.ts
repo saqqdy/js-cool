@@ -6,7 +6,7 @@ import getPosition from '../src/scroll/getPosition'
 import getProgress from '../src/scroll/getProgress'
 import { createDirectionTracker } from '../src/scroll/getDirection'
 import isInViewport from '../src/scroll/isInViewport'
-import { scrollToTop } from '../src/scroll/scrollTo'
+import scrollTo, { scrollBy, scrollToBottom, scrollToTop } from '../src/scroll/scrollTo'
 import {
 	getScrollbarWidth,
 	isScrollLocked,
@@ -14,6 +14,7 @@ import {
 	toggleScroll,
 	unlockScroll,
 } from '../src/scroll/lockScroll'
+import scrollUtils from '../src/scroll/index'
 
 describe('scroll utilities', () => {
 	describe('getPosition', () => {
@@ -214,7 +215,7 @@ describe('scroll utilities', () => {
 		})
 	})
 
-	describe('scrollTo', () => {
+	describe('scrollToTop', () => {
 		it('should call window.scrollTo for window container', () => {
 			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
 
@@ -278,6 +279,167 @@ describe('scroll utilities', () => {
 			const width1 = getScrollbarWidth()
 			const width2 = getScrollbarWidth()
 			expect(width1).toBe(width2)
+		})
+	})
+
+	describe('scrollTo', () => {
+		it('should call window.scrollTo with element selector', () => {
+			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+			// Mock querySelector to return an element
+			const mockElement = document.createElement('div')
+			vi.spyOn(document, 'querySelector').mockReturnValue(mockElement)
+			mockElement.getBoundingClientRect = () => ({ top: 100 }) as DOMRect
+
+			scrollTo('#section')
+
+			expect(scrollToSpy).toHaveBeenCalled()
+
+			scrollToSpy.mockRestore()
+		})
+
+		it('should handle element target', () => {
+			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+			const mockElement = document.createElement('div')
+			mockElement.getBoundingClientRect = () => ({ top: 100 }) as DOMRect
+
+			scrollTo(mockElement)
+
+			expect(scrollToSpy).toHaveBeenCalled()
+
+			scrollToSpy.mockRestore()
+		})
+
+		it('should handle non-existent selector', () => {
+			vi.spyOn(document, 'querySelector').mockReturnValue(null)
+
+			// Should not throw
+			expect(() => scrollTo('#nonexistent')).not.toThrow()
+		})
+
+		it('should scroll to container', () => {
+			const mockContainer = {
+				scrollTo: vi.fn(),
+				scrollTop: 0,
+				getBoundingClientRect: () => ({ top: 0 }) as DOMRect,
+			} as unknown as Element
+
+			const mockElement = document.createElement('div')
+			mockElement.getBoundingClientRect = () => ({ top: 100 }) as DOMRect
+
+			scrollTo(mockElement, { container: mockContainer })
+
+			expect(mockContainer.scrollTo).toHaveBeenCalled()
+		})
+
+		it('should use auto behavior', () => {
+			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+			const mockElement = document.createElement('div')
+			mockElement.getBoundingClientRect = () => ({ top: 100 }) as DOMRect
+
+			scrollTo(mockElement, { behavior: 'auto' })
+
+			expect(scrollToSpy).toHaveBeenCalledWith(expect.objectContaining({ behavior: 'auto' }))
+
+			scrollToSpy.mockRestore()
+		})
+
+		it('should use offset', () => {
+			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+			const mockElement = document.createElement('div')
+			mockElement.getBoundingClientRect = () => ({ top: 100 }) as DOMRect
+
+			scrollTo(mockElement, { offset: -50 })
+
+			expect(scrollToSpy).toHaveBeenCalled()
+
+			scrollToSpy.mockRestore()
+		})
+	})
+
+	describe('scrollToBottom', () => {
+		it('should call window.scrollTo with scrollHeight', () => {
+			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+			Object.defineProperty(document.documentElement, 'scrollHeight', {
+				configurable: true,
+				value: 2000,
+				writable: true,
+			})
+
+			scrollToBottom()
+
+			expect(scrollToSpy).toHaveBeenCalledWith(expect.objectContaining({ top: 2000 }))
+
+			scrollToSpy.mockRestore()
+		})
+
+		it('should scroll container to bottom', () => {
+			const mockContainer = {
+				scrollTo: vi.fn(),
+				scrollHeight: 1000,
+			} as unknown as Element
+
+			scrollToBottom({ container: mockContainer })
+
+			expect(mockContainer.scrollTo).toHaveBeenCalledWith(
+				expect.objectContaining({ top: 1000 })
+			)
+		})
+	})
+
+	describe('scrollBy', () => {
+		it('should call window.scrollBy', () => {
+			const scrollBySpy = vi.spyOn(window, 'scrollBy').mockImplementation(() => {})
+
+			scrollBy(200)
+
+			expect(scrollBySpy).toHaveBeenCalledWith({ top: 200, behavior: 'smooth' })
+
+			scrollBySpy.mockRestore()
+		})
+
+		it('should scroll container by amount', () => {
+			const mockContainer = {
+				scrollBy: vi.fn(),
+			} as unknown as Element
+
+			scrollBy(200, { container: mockContainer })
+
+			expect(mockContainer.scrollBy).toHaveBeenCalledWith(
+				expect.objectContaining({ top: 200 })
+			)
+		})
+
+		it('should use auto behavior', () => {
+			const scrollBySpy = vi.spyOn(window, 'scrollBy').mockImplementation(() => {})
+
+			scrollBy(200, { behavior: 'auto' })
+
+			expect(scrollBySpy).toHaveBeenCalledWith(expect.objectContaining({ behavior: 'auto' }))
+
+			scrollBySpy.mockRestore()
+		})
+	})
+
+	describe('scrollUtils', () => {
+		it('should export all scroll utilities', () => {
+			expect(scrollUtils.getPosition).toBe(getPosition)
+			expect(scrollUtils.getProgress).toBe(getProgress)
+			expect(scrollUtils.createDirectionTracker).toBe(createDirectionTracker)
+			expect(scrollUtils.isInViewport).toBe(isInViewport)
+			expect(scrollUtils.scrollTo).toBe(scrollTo)
+			expect(scrollUtils.scrollToTop).toBe(scrollToTop)
+			expect(scrollUtils.scrollToBottom).toBe(scrollToBottom)
+			expect(scrollUtils.scrollBy).toBe(scrollBy)
+			expect(scrollUtils.lock).toBe(lockScroll)
+			expect(scrollUtils.unlock).toBe(unlockScroll)
+			expect(scrollUtils.toggle).toBe(toggleScroll)
+			expect(scrollUtils.isLocked).toBe(isScrollLocked)
+			expect(scrollUtils.getScrollbarWidth).toBe(getScrollbarWidth)
 		})
 	})
 })

@@ -441,26 +441,26 @@ import { formatDate, isToday, isLeapYear, add, startOf } from 'js-cool'
 
 #### 新增函数
 
-| 函数                              | 说明                             |
-| --------------------------------- | -------------------------------- |
-| `isYesterday(date)`               | 检查日期是否为昨天               |
-| `isTomorrow(date)`                | 检查日期是否为明天               |
-| `isWeekend(date)`                 | 检查日期是否为周末               |
-| `isLeapYear(year)`                | 检查年份是否为闰年               |
-| `isBefore(date1, date2)`          | 检查日期是否在另一个日期之前     |
-| `isAfter(date1, date2)`           | 检查日期是否在另一个日期之后     |
-| `isSame(date1, date2, unit)`      | 检查两个日期是否相同（可按单位） |
-| `isBetween(date, start, end)`     | 检查日期是否在范围内             |
-| `compare(date1, date2)`           | 比较两个日期（返回 -1/0/1）      |
-| `min(...dates)`                   | 获取最小日期                     |
-| `max(...dates)`                   | 获取最大日期                     |
-| `getQuarter(date)`                | 获取季度（1-4）                  |
-| `getDayOfYear(date)`              | 获取年中第几天（1-366）          |
-| `getWeekOfYear(date)`             | 获取年中第几周                   |
+| 函数                          | 说明                             |
+| ----------------------------- | -------------------------------- |
+| `isYesterday(date)`           | 检查日期是否为昨天               |
+| `isTomorrow(date)`            | 检查日期是否为明天               |
+| `isWeekend(date)`             | 检查日期是否为周末               |
+| `isLeapYear(year)`            | 检查年份是否为闰年               |
+| `isBefore(date1, date2)`      | 检查日期是否在另一个日期之前     |
+| `isAfter(date1, date2)`       | 检查日期是否在另一个日期之后     |
+| `isSame(date1, date2, unit)`  | 检查两个日期是否相同（可按单位） |
+| `isBetween(date, start, end)` | 检查日期是否在范围内             |
+| `compare(date1, date2)`       | 比较两个日期（返回 -1/0/1）      |
+| `min(...dates)`               | 获取最小日期                     |
+| `max(...dates)`               | 获取最大日期                     |
+| `getQuarter(date)`            | 获取季度（1-4）                  |
+| `getDayOfYear(date)`          | 获取年中第几天（1-366）          |
+| `getWeekOfYear(date)`         | 获取年中第几周                   |
 | `add(date, value, unit)`      | 添加时间                         |
 | `subtract(date, value, unit)` | 减去时间                         |
-| `startOf(date, unit)`             | 获取时间段开始                   |
-| `endOf(date, unit)`               | 获取时间段结束                   |
+| `startOf(date, unit)`         | 获取时间段开始                   |
+| `endOf(date, unit)`           | 获取时间段结束                   |
 
 #### 子路径导入
 

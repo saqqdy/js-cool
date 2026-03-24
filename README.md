@@ -154,7 +154,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
-| **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                                                                      |
+| **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`, `download`, `saveFile`, `downloadFile`, `downloadUrlFile`                                                                                                           |
 | **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
 | **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                                                                 |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
@@ -1538,16 +1538,27 @@ console.log(result ? 'Success' : 'Failed')
 #### download
 
 ```js
-import { download } from 'js-cool'
+import { download, saveFile, downloadFile, downloadUrlFile } from 'js-cool'
 
-// Download with URL
-download('https://example.com/file.pdf')
+// Download with URL (multiple types)
+download('https://example.com/file.pdf') // default: anchor download
+download('https://example.com/file.pdf', 'document.pdf', 'open') // open in new tab
+download('https://example.com/file.pdf', 'document.pdf', 'href') // navigate directly
+download('https://example.com/file.pdf', 'document.pdf', 'request') // XHR download
 
-// Download with custom filename
-download('https://example.com/file.pdf', 'document.pdf')
+// Save data directly as file
+saveFile('Hello World', 'hello.txt')
+saveFile(JSON.stringify(data), 'data.json')
 
-// Download data URL
-download('data:text/plain,Hello World', 'hello.txt')
+// Save Blob or ArrayBuffer
+const blob = new Blob(['content'], { type: 'text/plain' })
+saveFile(blob, 'file.txt')
+
+// Download file using anchor element
+downloadFile('https://example.com/file.pdf', 'document.pdf')
+
+// Download via XHR (for authenticated downloads)
+downloadUrlFile('https://api.example.com/download', 'data.json')
 ```
 
 #### openUrl

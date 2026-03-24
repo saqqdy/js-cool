@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { NH1, NInput, NButton, NSpace, NCode, NTag } from 'naive-ui'
+import { NH1, NInput, NButton, NSpace, NCode, NTag, NSelect } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
-import { stopBubble, stopDefault, copy, windowSize, addEvent, removeEvent } from 'js-cool'
-import download from 'use-downloads'
+import { stopBubble, stopDefault, copy, windowSize, addEvent, removeEvent, download } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
@@ -73,12 +72,20 @@ const detachEvent = () => {
 	}
 }
 
-// download demo - use download.saveFile for Blob/data
+// download demo
 const downloadContent = ref('Hello, this is a test file!')
 const downloadFilename = ref('test.txt')
+const downloadType = ref<'download' | 'open' | 'href' | 'request'>('download')
+
+const downloadTypeOptions = [
+	{ label: 'download (anchor)', value: 'download' },
+	{ label: 'open (new tab)', value: 'open' },
+	{ label: 'href (navigate)', value: 'href' },
+	{ label: 'request (XHR)', value: 'request' },
+]
 
 const handleDownload = () => {
-	// For data/content, use saveFile
+	// Save text content as file
 	download.saveFile(downloadContent.value, downloadFilename.value)
 }
 
@@ -194,17 +201,19 @@ removeEvent(element, 'click', handler)`"
 		<!-- download -->
 		<FunctionCard
 			title="download"
-			description="Download content as file (supports string, Blob, URL)"
-			since="5.0.0"
-			:code="`// Download string
-download('Hello World', 'hello.txt')
+			description="Download content as file (supports string, Blob, ArrayBuffer, URL)"
+			since="1.1.0"
+			:code="`// Save data as file
+download.saveFile('Hello World', 'hello.txt')
 
 // Download Blob
 const blob = new Blob(['content'], { type: 'text/plain' })
-download(blob, 'file.txt')
+download.saveFile(blob, 'file.txt')
 
-// Download from URL
-download('https://example.com/file.pdf', 'document.pdf')`"
+// Download from URL with different types
+download('https://example.com/file.pdf', 'document.pdf')
+download('https://example.com/file.pdf', 'document.pdf', 'open')
+download('https://example.com/file.pdf', 'document.pdf', 'request')`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -214,10 +223,10 @@ download('https://example.com/file.pdf', 'document.pdf')`"
 					</n-space>
 					<n-space>
 						<n-button size="small" type="primary" @click="handleDownload">
-							Download String
+							Save String
 						</n-button>
 						<n-button size="small" @click="handleDownloadBlob">
-							Download Blob
+							Save Blob
 						</n-button>
 					</n-space>
 				</n-space>

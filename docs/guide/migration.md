@@ -441,26 +441,26 @@ import { formatDate, isToday, isLeapYear, add, startOf } from 'js-cool'
 
 #### New Functions
 
-| Function                         | Description                           |
-| -------------------------------- | ------------------------------------- |
-| `isYesterday(date)`              | Check if date is yesterday            |
-| `isTomorrow(date)`               | Check if date is tomorrow             |
-| `isWeekend(date)`                | Check if date is weekend              |
-| `isLeapYear(year)`               | Check if year is leap year            |
-| `isBefore(date1, date2)`         | Check if date is before another       |
-| `isAfter(date1, date2)`          | Check if date is after another        |
-| `isSame(date1, date2, unit)`     | Check if two dates are same           |
-| `isBetween(date, start, end)`    | Check if date is in range             |
-| `compare(date1, date2)`          | Compare two dates (returns -1/0/1)    |
-| `min(...dates)`                  | Get minimum date                      |
-| `max(...dates)`                  | Get maximum date                      |
-| `getQuarter(date)`               | Get quarter (1-4)                     |
-| `getDayOfYear(date)`             | Get day of year (1-366)               |
-| `getWeekOfYear(date)`            | Get week of year                      |
-| `add(date, value, unit)`         | Add time to date                      |
-| `subtract(date, value, unit)`    | Subtract time from date               |
-| `startOf(date, unit)`            | Get start of time period              |
-| `endOf(date, unit)`              | Get end of time period                |
+| Function                      | Description                        |
+| ----------------------------- | ---------------------------------- |
+| `isYesterday(date)`           | Check if date is yesterday         |
+| `isTomorrow(date)`            | Check if date is tomorrow          |
+| `isWeekend(date)`             | Check if date is weekend           |
+| `isLeapYear(year)`            | Check if year is leap year         |
+| `isBefore(date1, date2)`      | Check if date is before another    |
+| `isAfter(date1, date2)`       | Check if date is after another     |
+| `isSame(date1, date2, unit)`  | Check if two dates are same        |
+| `isBetween(date, start, end)` | Check if date is in range          |
+| `compare(date1, date2)`       | Compare two dates (returns -1/0/1) |
+| `min(...dates)`               | Get minimum date                   |
+| `max(...dates)`               | Get maximum date                   |
+| `getQuarter(date)`            | Get quarter (1-4)                  |
+| `getDayOfYear(date)`          | Get day of year (1-366)            |
+| `getWeekOfYear(date)`         | Get week of year                   |
+| `add(date, value, unit)`      | Add time to date                   |
+| `subtract(date, value, unit)` | Subtract time from date            |
+| `startOf(date, unit)`         | Get start of time period           |
+| `endOf(date, unit)`           | Get end of time period             |
 
 #### Subpath Import
 

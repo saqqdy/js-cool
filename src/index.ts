@@ -103,11 +103,17 @@ export {
 // ==================== DOM DOM操作 ====================
 export { default as addEvent } from './addEvent'
 export { default as copy } from './copy'
-export { default as download } from 'use-downloads'
 export { default as removeEvent } from './removeEvent'
 export { default as stopBubble } from './stopBubble'
 export { default as stopDefault } from './stopDefault'
 export { default as windowSize, type WindowSizeObj } from './windowSize'
+export {
+	default as download,
+	saveFile,
+	downloadFile,
+	downloadUrlFile,
+	type DownloadType,
+} from './download'
 
 // ==================== Encode 编码解码 ====================
 export { default as decodeBase64 } from './decodeBase64'

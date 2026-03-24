@@ -80,6 +80,73 @@ document.getElementById('copyBtn').addEventListener('click', () => {
 })
 ```
 
+## 文件下载
+
+### download
+
+使用多种方式下载文件。支持多种下载类型：锚点下载、新标签页打开、直接导航或 XHR 请求。
+
+```js
+import { download } from 'js-cool'
+
+// 基本下载（锚点元素）
+download('https://example.com/file.pdf', 'document.pdf')
+
+// 在新标签页打开
+download('https://example.com/file.pdf', 'document.pdf', 'open')
+
+// 直接导航
+download('https://example.com/file.pdf', 'document.pdf', 'href')
+
+// 使用 XHR 进行认证下载
+download('https://api.example.com/download', 'data.json', 'request')
+
+// 文件名可选 - 从 URL 中提取
+download('https://example.com/report.pdf')
+```
+
+### saveFile
+
+直接将数据保存为文件。支持字符串、Blob 和 ArrayBuffer。
+
+```js
+import { saveFile } from 'js-cool'
+
+// 保存文本
+saveFile('Hello World', 'hello.txt')
+
+// 保存 JSON
+saveFile(JSON.stringify(data), 'data.json')
+
+// 保存 Blob
+const blob = new Blob(['content'], { type: 'text/plain' })
+saveFile(blob, 'file.txt')
+
+// 保存 ArrayBuffer
+const buffer = new ArrayBuffer(10)
+saveFile(buffer, 'data.bin')
+```
+
+### downloadFile
+
+使用锚点元素下载文件。
+
+```js
+import { downloadFile } from 'js-cool'
+
+downloadFile('https://example.com/file.pdf', 'document.pdf')
+```
+
+### downloadUrlFile
+
+通过 XMLHttpRequest 从 URL 下载文件（适用于需要认证的下载）。
+
+```js
+import { downloadUrlFile } from 'js-cool'
+
+downloadUrlFile('https://api.example.com/download', 'data.json')
+```
+
 ## 滚动
 
 ### getScrollPosition
