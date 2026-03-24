@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import formatDate from '../src/formatDate'
+import { formatDate } from '../src/date/format'
 
 describe('formatDate', () => {
 	it('should format date with default format', () => {

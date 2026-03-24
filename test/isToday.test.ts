@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import isToday from '../src/isToday'
+import { isToday } from '../src/date/compare'
 
 describe('isToday', () => {
 	it('should return true for today', () => {

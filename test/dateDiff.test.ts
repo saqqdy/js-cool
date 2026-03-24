@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import dateDiff from '../src/dateDiff'
+import { dateDiff } from '../src/date/diff'
 
 describe('dateDiff', () => {
 	it('should calculate difference between two dates', () => {

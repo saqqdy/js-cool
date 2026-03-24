@@ -2,8 +2,8 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { execSync } from 'node:child_process'
 import { dirname } from 'node:path'
 
-// UA subpath entries
-const uaEntries = [
+// Subpath entries
+const subpathEntries = [
 	'ua/index',
 	'ua/device',
 	'ua/os',
@@ -12,6 +12,16 @@ const uaEntries = [
 	'ua/network',
 	'ua/screen',
 	'ua/types',
+	'patterns/index',
+	'date/index',
+	'date/types',
+	'date/format',
+	'date/diff',
+	'date/compare',
+	'date/manipulate',
+	'date/parse',
+	'url/index',
+	'url/utils',
 ]
 
 // Step 1: Run tsc to generate declarations for all files
@@ -32,9 +42,9 @@ const esmTypes = cleaned
 writeFileSync('dist/index.d.ts', `${cjsTypes}\n`)
 writeFileSync('dist/index.d.mts', `${esmTypes}\n`)
 
-// Step 4: Generate types for UA subpath entries
+// Step 4: Generate types for subpath entries
 // Create simple re-export files for type consistency
-for (const entry of uaEntries) {
+for (const entry of subpathEntries) {
 	// Create directory if needed
 	const dir = dirname(`dist/${entry}.d.ts`)
 	if (!existsSync(dir)) {

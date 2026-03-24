@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import relativeTime from '../src/relativeTime'
+import { relativeTime } from '../src/date/format'
 
 describe('relativeTime', () => {
 	it('should return "just now" for very recent time', () => {

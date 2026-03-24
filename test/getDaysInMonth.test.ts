@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import getDaysInMonth from '../src/getDaysInMonth'
+import { getDaysInMonth } from '../src/date/manipulate'
 
 describe('getDaysInMonth', () => {
 	it('should return 31 for January', () => {
