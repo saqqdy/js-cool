@@ -56,6 +56,10 @@ DOM 操作工具函数 - 13 个
 
 通用工具函数 - 14 个
 
+### [滚动](/zh/api/scroll)
+
+滚动工具函数 - 9 个
+
 ### [异步流程](/zh/api/async/debounce)
 
 异步流程控制 - 3 个
@@ -227,6 +231,21 @@ DOM 操作工具函数 - 13 个
 | [randomString](/zh/api/utility/random-string) | 随机字符串   |
 | [randomNumber](/zh/api/utility/random-number) | 随机数       |
 | [getGlobal](/zh/api/utility/get-global)       | 获取全局变量 |
+
+### 滚动
+
+| 函数                                | 描述           |
+| ----------------------------------- | -------------- |
+| [scroll](/zh/api/scroll)            | 滚动工具集合   |
+| [getPosition](/zh/api/scroll)       | 获取滚动位置   |
+| [getProgress](/zh/api/scroll)       | 获取滚动进度   |
+| [scrollTo](/zh/api/scroll)          | 滚动到元素     |
+| [scrollToTop](/zh/api/scroll)       | 滚动到顶部     |
+| [scrollToBottom](/zh/api/scroll)    | 滚动到底部     |
+| [scrollBy](/zh/api/scroll)          | 按量滚动       |
+| [lockScroll](/zh/api/scroll)        | 锁定滚动       |
+| [unlockScroll](/zh/api/scroll)      | 解锁滚动       |
+| [isInViewport](/zh/api/scroll)      | 检测是否在视口 |
 
 ### 异步流程
 

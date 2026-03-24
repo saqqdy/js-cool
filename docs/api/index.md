@@ -56,6 +56,10 @@ Color manipulation utilities - 5 functions
 
 General utility functions - 14 functions
 
+### [Scroll](/api/scroll)
+
+Scroll utilities - 9 functions
+
 ### [Async Flow](/api/async/debounce)
 
 Async flow control - 3 functions
@@ -227,6 +231,21 @@ Network utilities - 1 function
 | [randomString](/api/utility/random-string) | Random string    |
 | [randomNumber](/api/utility/random-number) | Random number    |
 | [getGlobal](/api/utility/get-global)       | Get global value |
+
+### Scroll
+
+| Function                      | Description              |
+| ----------------------------- | ------------------------ |
+| [scroll](/api/scroll)         | Scroll utilities         |
+| [getPosition](/api/scroll)    | Get scroll position      |
+| [getProgress](/api/scroll)    | Get scroll progress      |
+| [scrollTo](/api/scroll)       | Scroll to element        |
+| [scrollToTop](/api/scroll)    | Scroll to top            |
+| [scrollToBottom](/api/scroll) | Scroll to bottom         |
+| [scrollBy](/api/scroll)       | Scroll by amount         |
+| [lockScroll](/api/scroll)     | Lock scroll              |
+| [unlockScroll](/api/scroll)   | Unlock scroll            |
+| [isInViewport](/api/scroll)   | Check if in viewport     |
 
 ### Async Flow
 
