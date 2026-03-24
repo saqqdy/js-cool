@@ -24,8 +24,6 @@
 
 // IE11-compatible way to check for Node.js environment
 const inNodeJs =
-	typeof process !== 'undefined' &&
-	process.versions != null &&
-	process.versions.node != null
+	typeof process !== 'undefined' && process.versions != null && process.versions.node != null
 
 export default inNodeJs

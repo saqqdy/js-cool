@@ -45,7 +45,7 @@ function getNumber(string: string): string {
 	const beforeDot = extracted.slice(0, firstDotIndex)
 	const afterDot = extracted.slice(firstDotIndex + 1).replace(/\./g, '')
 
-	return `${beforeDot  }.${  afterDot}`
+	return `${beforeDot}.${afterDot}`
 }
 
 export default getNumber

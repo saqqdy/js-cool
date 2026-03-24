@@ -52,14 +52,17 @@ function getFileType(url: string): {
 		| 'audio'
 		| 'other' = 'other'
 
-	if (['png', 'jpg', 'jpeg', 'bmp', 'gif', 'webp', 'tiff', 'tif'].indexOf(suffix) !== -1) type = 'image'
+	if (['png', 'jpg', 'jpeg', 'bmp', 'gif', 'webp', 'tiff', 'tif'].indexOf(suffix) !== -1)
+		type = 'image'
 	else if (['txt'].indexOf(suffix) !== -1) type = 'txt'
 	else if (['xls', 'xlsx'].indexOf(suffix) !== -1) type = 'excel'
 	else if (['doc', 'docx'].indexOf(suffix) !== -1) type = 'word'
 	else if (['pdf'].indexOf(suffix) !== -1) type = 'pdf'
 	else if (['ppt', 'pptx'].indexOf(suffix) !== -1) type = 'ppt'
 	else if (['rar', 'zip', '7z'].indexOf(suffix) !== -1) type = 'zip'
-	else if (['mp4', 'm2v', 'mkv', 'rmvb', 'wmv', 'avi', 'flv', 'mov', 'm4v'].indexOf(suffix) !== -1)
+	else if (
+		['mp4', 'm2v', 'mkv', 'rmvb', 'wmv', 'avi', 'flv', 'mov', 'm4v'].indexOf(suffix) !== -1
+	)
 		type = 'video'
 	else if (['mp3', 'wav', 'wmv'].indexOf(suffix) !== -1) type = 'audio'
 

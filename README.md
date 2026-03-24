@@ -96,37 +96,37 @@ js-cool v6.x includes built-in IE11 compatibility without requiring external pol
 
 The library includes an internal `_compat.ts` module that provides IE11-compatible alternatives to ES6+ features:
 
-| ES6+ Feature | IE11 Compatible Alternative |
-|--------------|----------------------------|
-| `Array.includes()` | `arrayIncludes()` |
-| `String.includes()` | `strIncludes()` |
-| `String.startsWith()` | `strStartsWith()` |
-| `String.endsWith()` | `strEndsWith()` |
-| `String.padStart()` | `padStart()` |
-| `String.padEnd()` | `padEnd()` |
-| `Number.isNaN()` | `isNumberNaN()` |
-| `Number.isFinite()` | `isNumberFinite()` |
-| `Number.isInteger()` | `isNumberInteger()` |
-| `Object.assign()` | `objectAssign()` |
-| `Object.values()` | `objectValues()` |
-| `Object.entries()` | `objectEntries()` |
-| `Object.fromEntries()` | `objectFromEntries()` |
-| `globalThis` | `getGlobalObject()` |
-| `new File()` | `createFile()` (falls back to Blob) |
-| `Symbol.iterator` | `isIterableCompat()` |
-| `[...new Set(arr)]` | `arrayUnique()` |
+| ES6+ Feature           | IE11 Compatible Alternative         |
+| ---------------------- | ----------------------------------- |
+| `Array.includes()`     | `arrayIncludes()`                   |
+| `String.includes()`    | `strIncludes()`                     |
+| `String.startsWith()`  | `strStartsWith()`                   |
+| `String.endsWith()`    | `strEndsWith()`                     |
+| `String.padStart()`    | `padStart()`                        |
+| `String.padEnd()`      | `padEnd()`                          |
+| `Number.isNaN()`       | `isNumberNaN()`                     |
+| `Number.isFinite()`    | `isNumberFinite()`                  |
+| `Number.isInteger()`   | `isNumberInteger()`                 |
+| `Object.assign()`      | `objectAssign()`                    |
+| `Object.values()`      | `objectValues()`                    |
+| `Object.entries()`     | `objectEntries()`                   |
+| `Object.fromEntries()` | `objectFromEntries()`               |
+| `globalThis`           | `getGlobalObject()`                 |
+| `new File()`           | `createFile()` (falls back to Blob) |
+| `Symbol.iterator`      | `isIterableCompat()`                |
+| `[...new Set(arr)]`    | `arrayUnique()`                     |
 
 ### Functions with IE11 Fallbacks
 
 Some functions have built-in graceful degradation:
 
-| Function | IE11 Behavior |
-|----------|---------------|
-| `isURL()` | Falls back to regex validation when `URL` API unavailable |
-| `getDirParams()` | Uses regex parsing when `URL` API unavailable |
-| `urlToBlob()` | Uses XHR when `fetch` unavailable |
-| `isDarkMode()` | Returns `false` (media query not supported) |
-| `base64ToFile()` | Returns `Blob` with `name` property instead of `File` |
+| Function         | IE11 Behavior                                             |
+| ---------------- | --------------------------------------------------------- |
+| `isURL()`        | Falls back to regex validation when `URL` API unavailable |
+| `getDirParams()` | Uses regex parsing when `URL` API unavailable             |
+| `urlToBlob()`    | Uses XHR when `fetch` unavailable                         |
+| `isDarkMode()`   | Returns `false` (media query not supported)               |
+| `base64ToFile()` | Returns `Blob` with `name` property instead of `File`     |
 
 ### Type Considerations
 

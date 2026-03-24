@@ -183,19 +183,19 @@ v6.x includes built-in IE11 compatibility without requiring external polyfills. 
 
 #### Key Changes for IE11
 
-| Function | Change |
-|----------|--------|
+| Function         | Change                                            |
+| ---------------- | ------------------------------------------------- |
 | `base64ToFile()` | Return type changed from `File` to `File \| Blob` |
-| All methods | Now use internal compatibility layer |
+| All methods      | Now use internal compatibility layer              |
 
 #### Functions with Graceful Degradation
 
-| Function | IE11 Behavior |
-|----------|---------------|
-| `isURL()` | Falls back to regex validation |
-| `getDirParams()` | Uses regex parsing |
-| `urlToBlob()` | Uses XHR instead of fetch |
-| `isDarkMode()` | Returns `false` |
+| Function         | IE11 Behavior                   |
+| ---------------- | ------------------------------- |
+| `isURL()`        | Falls back to regex validation  |
+| `getDirParams()` | Uses regex parsing              |
+| `urlToBlob()`    | Uses XHR instead of fetch       |
+| `isDarkMode()`   | Returns `false`                 |
 | `base64ToFile()` | Returns Blob with name property |
 
 ## Module Migrations

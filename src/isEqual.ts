@@ -22,7 +22,7 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]): boolean {
 		case '[object Number]':
 			// `NaN`s are equivalent, but non-reflexive.
 			// Object(NaN) is equivalent to NaN
-			// eslint-disable-next-line no-self-compare
+
 			if (+a !== +a) return +b !== +b
 
 			// An `egal` comparison is performed for other numeric values.

@@ -416,6 +416,7 @@ Object.defineProperty(ua, 'userAgent', { get: () => uaInstance.userAgent, enumer
 export default ua
 export { UAParser }
 export type {
+	UA,
 	UAInfo,
 	DeviceInfo,
 	OSInfo,

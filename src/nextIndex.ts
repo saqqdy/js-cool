@@ -34,9 +34,7 @@ function nextIndex(min = 5000, max = 10000): number {
 	const doms = [min]
 
 	Array.prototype.forEach.call(document.querySelectorAll('body > *'), (e: Element) => {
-		const n = SKIP_TAGS.indexOf(e.tagName) !== -1
-			? 0
-			: +window.getComputedStyle(e).zIndex || 0
+		const n = SKIP_TAGS.indexOf(e.tagName) !== -1 ? 0 : +window.getComputedStyle(e).zIndex || 0
 
 		n > min && n < max && doms.push(n)
 	})
