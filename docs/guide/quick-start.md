@@ -127,9 +127,64 @@ setCookie('token', 'abc123', 86400)
 getCookie('token') // 'abc123'
 ```
 
+### Date Utilities
+
+```js
+import { date, formatDate, dateDiff, isToday } from 'js-cool'
+
+// Chainable API
+date('2024-01-15').add(1, 'day').format('YYYY-MM-DD')
+// '2024-01-16'
+
+// Format
+formatDate(new Date(), 'YYYY-MM-DD')
+// '2024-01-15'
+
+// Date difference
+dateDiff('2024-01-01', '2024-01-03')
+// { days: 2, hours: 0, ... }
+
+// Check
+isToday(new Date()) // true
+```
+
+### Scroll Utilities
+
+```js
+import { scroll } from 'js-cool'
+
+// Get scroll progress
+scroll.getProgress() // 0-100
+
+// Scroll to element
+scroll.scrollTo('#section-2')
+
+// Lock scroll (for modals)
+scroll.lock()
+scroll.unlock()
+```
+
+### UA Detection
+
+```js
+import { ua } from 'js-cool'
+
+// Quick checks
+ua.isMobile()    // Mobile device
+ua.isWeChat()    // WeChat
+ua.isiOS()       // iOS
+ua.isHarmonyOS() // HarmonyOS
+
+// Get detailed info
+ua.browser // { name: 'Chrome', version: '120.0' }
+ua.os      // { name: 'Windows', version: '10' }
+```
+
 ## Next Steps
 
 - [String Utilities](/guide/string) - Learn more about string functions
 - [Array Utilities](/guide/array) - Learn more about array functions
 - [Object Utilities](/guide/object) - Learn more about object functions
+- [Type Check](/guide/type-check) - Type checking functions
+- [URL Utilities](/guide/url) - URL handling functions
 - [API Reference](/api/) - Full API documentation

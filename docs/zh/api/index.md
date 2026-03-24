@@ -44,9 +44,9 @@ DOM 操作工具函数 - 13 个
 
 数字处理工具函数 - 7 个
 
-### [日期](/zh/api/date/format-date)
+### [日期](/zh/api/date)
 
-日期处理工具函数 - 5 个
+日期处理工具函数 - 20+ 个
 
 ### [颜色](/zh/api/color/hex-to-rgb)
 
@@ -206,12 +206,30 @@ DOM 操作工具函数 - 13 个
 
 ### 日期
 
-| 函数                                       | 描述       |
-| ------------------------------------------ | ---------- |
-| [formatDate](/zh/api/date/format-date)     | 格式化日期 |
-| [dateDiff](/zh/api/date/date-diff)         | 日期差值   |
-| [relativeTime](/zh/api/date/relative-time) | 相对时间   |
-| [isToday](/zh/api/date/is-today)           | 是否今天   |
+| 函数                                           | 描述             |
+| ---------------------------------------------- | ---------------- |
+| [date](/zh/api/date)                           | 日期模块入口     |
+| [DateParser](/zh/api/date)                     | 链式日期操作类   |
+| [formatDate](/zh/api/date/format-date)         | 格式化日期       |
+| [dateDiff](/zh/api/date/date-diff)             | 日期差值         |
+| [relativeTime](/zh/api/date/relative-time)     | 相对时间         |
+| [isToday](/zh/api/date/is-today)               | 是否今天         |
+| [isYesterday](/zh/api/date)                    | 是否昨天         |
+| [isTomorrow](/zh/api/date)                     | 是否明天         |
+| [isWeekend](/zh/api/date)                      | 是否周末         |
+| [isLeapYear](/zh/api/date)                     | 是否闰年         |
+| [isBefore](/zh/api/date)                       | 是否在之前       |
+| [isAfter](/zh/api/date)                        | 是否在之后       |
+| [isSame](/zh/api/date)                         | 是否相同         |
+| [isBetween](/zh/api/date)                      | 是否在范围内     |
+| [getDaysInMonth](/zh/api/date/get-days-in-month) | 获取月份天数   |
+| [getQuarter](/zh/api/date)                     | 获取季度         |
+| [getWeekOfYear](/zh/api/date)                  | 获取年中周数     |
+| [getDayOfYear](/zh/api/date)                   | 获取年中天数     |
+| [addDate](/zh/api/date)                        | 添加时间         |
+| [subtractDate](/zh/api/date)                   | 减去时间         |
+| [startOf](/zh/api/date)                        | 时间段开始       |
+| [endOf](/zh/api/date)                          | 时间段结束       |
 
 ### 颜色
 

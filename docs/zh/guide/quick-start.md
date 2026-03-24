@@ -127,9 +127,64 @@ setCookie('token', 'abc123', 86400)
 getCookie('token') // 'abc123'
 ```
 
+### 日期工具
+
+```js
+import { date, formatDate, dateDiff, isToday } from 'js-cool'
+
+// 链式 API
+date('2024-01-15').add(1, 'day').format('YYYY-MM-DD')
+// '2024-01-16'
+
+// 格式化
+formatDate(new Date(), 'YYYY年MM月DD日')
+// '2024年01月15日'
+
+// 日期差值
+dateDiff('2024-01-01', '2024-01-03')
+// { days: 2, hours: 0, ... }
+
+// 检查
+isToday(new Date()) // true
+```
+
+### 滚动工具
+
+```js
+import { scroll } from 'js-cool'
+
+// 获取滚动进度
+scroll.getProgress() // 0-100
+
+// 滚动到元素
+scroll.scrollTo('#section-2')
+
+// 锁定滚动（弹窗场景）
+scroll.lock()
+scroll.unlock()
+```
+
+### UA 检测
+
+```js
+import { ua } from 'js-cool'
+
+// 快速检测
+ua.isMobile()    // 是否移动设备
+ua.isWeChat()    // 是否微信
+ua.isiOS()       // 是否 iOS
+ua.isHarmonyOS() // 是否鸿蒙
+
+// 获取详细信息
+ua.browser // { name: 'Chrome', version: '120.0' }
+ua.os      // { name: 'Windows', version: '10' }
+```
+
 ## 下一步
 
 - [字符串工具](/zh/guide/string) - 了解更多字符串函数
 - [数组工具](/zh/guide/array) - 了解更多数组函数
 - [对象工具](/zh/guide/object) - 了解更多对象函数
+- [类型判断](/zh/guide/type-check) - 类型判断函数
+- [URL 工具](/zh/guide/url) - URL 处理函数
 - [API 参考](/zh/api/) - 完整 API 文档

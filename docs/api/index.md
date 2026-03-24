@@ -44,9 +44,9 @@ Format conversion utilities - 12 functions
 
 Number processing utilities - 7 functions
 
-### [Date](/api/date/format-date)
+### [Date](/api/date)
 
-Date processing utilities - 5 functions
+Date processing utilities - 20+ functions
 
 ### [Color](/api/color/hex-to-rgb)
 
@@ -206,12 +206,30 @@ Network utilities - 1 function
 
 ### Date
 
-| Function                                | Description     |
-| --------------------------------------- | --------------- |
-| [formatDate](/api/date/format-date)     | Format date     |
-| [dateDiff](/api/date/date-diff)         | Date difference |
-| [relativeTime](/api/date/relative-time) | Relative time   |
-| [isToday](/api/date/is-today)           | Check if today  |
+| Function                                      | Description              |
+| --------------------------------------------- | ------------------------ |
+| [date](/api/date)                             | Date module entry        |
+| [DateParser](/api/date)                       | Chainable date class     |
+| [formatDate](/api/date/format-date)           | Format date              |
+| [dateDiff](/api/date/date-diff)               | Date difference          |
+| [relativeTime](/api/date/relative-time)       | Relative time            |
+| [isToday](/api/date/is-today)                 | Check if today           |
+| [isYesterday](/api/date)                      | Check if yesterday       |
+| [isTomorrow](/api/date)                       | Check if tomorrow        |
+| [isWeekend](/api/date)                        | Check if weekend         |
+| [isLeapYear](/api/date)                       | Check if leap year       |
+| [isBefore](/api/date)                         | Check if before          |
+| [isAfter](/api/date)                          | Check if after           |
+| [isSame](/api/date)                           | Check if same            |
+| [isBetween](/api/date)                        | Check if between         |
+| [getDaysInMonth](/api/date/get-days-in-month) | Get days in month        |
+| [getQuarter](/api/date)                       | Get quarter              |
+| [getWeekOfYear](/api/date)                    | Get week of year         |
+| [getDayOfYear](/api/date)                     | Get day of year          |
+| [addDate](/api/date)                          | Add time                 |
+| [subtractDate](/api/date)                     | Subtract time            |
+| [startOf](/api/date)                          | Get start of period      |
+| [endOf](/api/date)                            | Get end of period        |
 
 ### Color
 
