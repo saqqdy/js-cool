@@ -33,6 +33,30 @@
 			},
 			"default": "./dist/ua/index.js"
 		},
+		"./patterns": {
+			"types": "./dist/patterns/index.d.ts",
+			"require": {
+				"types": "./dist/patterns/index.d.ts",
+				"default": "./dist/patterns/index.js"
+			},
+			"import": {
+				"types": "./dist/patterns/index.d.mts",
+				"default": "./dist/patterns/index.mjs"
+			},
+			"default": "./dist/patterns/index.js"
+		},
+		"./date": {
+			"types": "./dist/date/index.d.ts",
+			"require": {
+				"types": "./dist/date/index.d.ts",
+				"default": "./dist/date/index.js"
+			},
+			"import": {
+				"types": "./dist/date/index.d.mts",
+				"default": "./dist/date/index.mjs"
+			},
+			"default": "./dist/date/index.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"directories": {

@@ -1,3 +1,5 @@
+import { URL_PATTERNS } from './url/utils'
+
 export interface DirParamsResult {
 	/** 完整 origin，如 'https://example.com' */
 	origin: string
@@ -32,15 +34,15 @@ function parseWithRegex(url: string): DirParamsResult {
 	if (!url) return result
 
 	// 解析 origin 和 host
-	const originMatch = url.match(/^(https?:\/\/[^/?#]+)/)
+	const originMatch = url.match(URL_PATTERNS.origin)
 	if (originMatch) {
 		result.origin = originMatch[1]
 		// 提取 host（去掉协议）
-		const hostMatch = originMatch[1].match(/^https?:\/\/([^/]+)/)
+		const hostMatch = originMatch[1].match(URL_PATTERNS.host)
 		if (hostMatch) {
 			result.host = hostMatch[1]
 			// 提取 hostname（去掉端口）
-			result.hostname = hostMatch[1].replace(/:\d+$/, '')
+			result.hostname = hostMatch[1].replace(URL_PATTERNS.port, '')
 		}
 	}
 

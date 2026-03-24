@@ -25,7 +25,7 @@ const yearInput = ref(new Date().getFullYear())
 		<FunctionCard
 			title="formatDate"
 			:description="t.date.formatDesc"
-			since="1.0.0"
+			since="6.0.0"
 			:code="`formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
 formatDate(new Date(), 'YYYY年MM月DD日')
 formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
@@ -70,7 +70,7 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
 		<FunctionCard
 			title="dateDiff"
 			:description="t.date.diffDesc"
-			since="1.0.0"
+			since="6.0.0"
 			:code="`dateDiff('2024-01-01', '2024-12-31')
 // { days: 365, months: 11, ... }`"
 		>
@@ -110,7 +110,7 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
 		<FunctionCard
 			title="relativeTime"
 			:description="t.date.relativeDesc"
-			since="5.0.0"
+			since="6.0.0"
 			:code="`relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
 relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
 		>
@@ -174,7 +174,7 @@ relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
 		<FunctionCard
 			title="isToday"
 			:description="t.date.isTodayDesc"
-			since="1.0.0"
+			since="6.0.0"
 			:code="`isToday(new Date()) // true`"
 		>
 			<template #input>
@@ -198,7 +198,7 @@ relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
 		<FunctionCard
 			title="getDaysInMonth"
 			:description="t.date.daysInMonthDesc"
-			since="2.0.0"
+			since="6.0.0"
 			:code="`getDaysInMonth(2024, 2) // 29 (leap year)
 getDaysInMonth(2023, 2) // 28`"
 		>

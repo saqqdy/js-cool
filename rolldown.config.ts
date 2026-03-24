@@ -16,8 +16,8 @@ const external = [
 	'os-lang',
 ]
 
-// UA subpath entry for tree-shaking
-const uaEntries = ['ua/index']
+// Subpath entries for tree-shaking
+const subpathEntries = ['ua/index', 'patterns/index']
 
 // Version injection plugin
 const versionPlugin = (): Plugin => ({
@@ -112,8 +112,8 @@ export default defineConfig([
 		plugins: [versionPlugin(), es5Plugin()],
 		platform: 'browser',
 	},
-	// UA subpath entries - generate CJS and ESM for each
-	...uaEntries.flatMap(entry => [
+	// Subpath entries - generate CJS and ESM for each
+	...subpathEntries.flatMap(entry => [
 		{
 			input: `src/${entry}.ts`,
 			output: {

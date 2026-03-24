@@ -5,9 +5,10 @@
  * @since 6.0.0
  */
 
-// Re-export validation patterns
-// Import for unified patterns object
+// Import validation patterns
 import { validation } from './validation'
+
+// Import UA patterns from sub-module
 import {
 	BROWSER_PATTERNS,
 	DEVICE_PATTERNS,
@@ -19,7 +20,10 @@ import {
 	OS_PATTERNS,
 } from './ua'
 
-// Re-export UA patterns
+// Re-export validation patterns
+export { validation, type ValidationPatternName } from './validation'
+
+// Re-export UA patterns from sub-module
 export {
 	DEVICE_PATTERNS,
 	OS_PATTERNS,
@@ -35,8 +39,6 @@ export {
 	type EnginePatternName,
 	type EnvPatternName,
 } from './ua'
-
-export { validation, type ValidationPatternName } from './validation'
 
 /**
  * Unified patterns object combining validation and UA patterns

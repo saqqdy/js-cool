@@ -5,6 +5,8 @@
  * @since 6.0.0
  */
 
+import { validation } from '../patterns/validation'
+
 /**
  * Value conversion map for query string parsing
  */
@@ -100,7 +102,7 @@ export function parse(
 			if (covert) {
 				if (value in VALUE_MAP) {
 					result[key] = VALUE_MAP[value as keyof typeof VALUE_MAP]
-				} else if (/^(-|\+)?(0|[1-9]\d*)(\.\d+)?$/.test(value)) {
+				} else if (validation.number.test(value)) {
 					result[key] = Number(value)
 				} else {
 					result[key] = value
@@ -123,7 +125,7 @@ export function parse(
 		if (covert) {
 			if (decodedValue in VALUE_MAP) {
 				result[decodedKey] = VALUE_MAP[decodedValue as keyof typeof VALUE_MAP]
-			} else if (/^(-|\+)?(0|[1-9]\d*)(\.\d+)?$/.test(decodedValue)) {
+			} else if (validation.number.test(decodedValue)) {
 				result[decodedKey] = Number(decodedValue)
 			} else {
 				result[decodedKey] = decodedValue
