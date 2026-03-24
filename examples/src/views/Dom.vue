@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { NH1, NInput, NButton, NSpace, NCode, NTag, NSelect } from 'naive-ui'
+import { NH1, NInput, NButton, NSpace, NCode, NTag } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { stopBubble, stopDefault, copy, windowSize, addEvent, removeEvent, download } from 'js-cool'
 import { useI18n } from '@/locales'
@@ -75,14 +75,6 @@ const detachEvent = () => {
 // download demo
 const downloadContent = ref('Hello, this is a test file!')
 const downloadFilename = ref('test.txt')
-const downloadType = ref<'download' | 'open' | 'href' | 'request'>('download')
-
-const downloadTypeOptions = [
-	{ label: 'download (anchor)', value: 'download' },
-	{ label: 'open (new tab)', value: 'open' },
-	{ label: 'href (navigate)', value: 'href' },
-	{ label: 'request (XHR)', value: 'request' },
-]
 
 const handleDownload = () => {
 	// Save text content as file
