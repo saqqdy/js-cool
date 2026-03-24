@@ -1,19 +1,15 @@
-import { isNumberNaN } from './_compat'
+/**
+ * Date difference calculation
+ *
+ * @module date
+ * @since 6.0.0
+ */
 
-export interface DateDiffResult {
-	days: number
-	hours: number
-	milliseconds: number
-	minutes: number
-	seconds: number
-	total: {
-		days: number
-		hours: number
-		minutes: number
-		seconds: number
-		milliseconds: number
-	}
-}
+import { isNumberNaN } from '../_compat'
+import type { DateInput, DateDiffResult } from './types'
+
+// Re-export DateDiffResult type
+export type { DateDiffResult } from './types'
 
 /**
  * Calculate the difference between two dates
@@ -26,13 +22,8 @@ export interface DateDiffResult {
  * const diff = dateDiff(new Date('2024-01-01'), new Date('2024-01-02 12:30:00'))
  * // => { days: 1, hours: 12, minutes: 30, seconds: 0, milliseconds: 0, ... }
  * ```
- *
- * @since 6.0.0
- * @param date1 - The first date
- * @param date2 - The second date
- * @returns - Returns the difference object
  */
-function dateDiff(date1: Date | string | number, date2: Date | string | number): DateDiffResult {
+export function dateDiff(date1: DateInput, date2: DateInput): DateDiffResult {
 	const d1 = new Date(date1)
 	const d2 = new Date(date2)
 
@@ -77,4 +68,37 @@ function dateDiff(date1: Date | string | number, date2: Date | string | number):
 	}
 }
 
-export default dateDiff
+/**
+ * Get difference in specific unit
+ *
+ * @example
+ * ```ts
+ * diffIn('2024-01-01', '2024-01-03', 'day')  // 2
+ * diffIn('2024-01-01', '2024-01-01 12:00', 'hour')  // 12
+ * ```
+ */
+export function diffIn(date1: DateInput, date2: DateInput, unit: 'day' | 'hour' | 'minute' | 'second' | 'millisecond'): number {
+	const d1 = new Date(date1)
+	const d2 = new Date(date2)
+
+	if (isNumberNaN(d1.getTime()) || isNumberNaN(d2.getTime())) {
+		return 0
+	}
+
+	const diff = d2.getTime() - d1.getTime()
+
+	switch (unit) {
+		case 'day':
+			return Math.floor(diff / (24 * 60 * 60 * 1000))
+		case 'hour':
+			return Math.floor(diff / (60 * 60 * 1000))
+		case 'minute':
+			return Math.floor(diff / (60 * 1000))
+		case 'second':
+			return Math.floor(diff / 1000)
+		case 'millisecond':
+			return diff
+		default:
+			return diff
+	}
+}

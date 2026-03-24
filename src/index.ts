@@ -63,11 +63,42 @@ export { default as svgToBlob } from './svgToBlob'
 export { default as urlToBlob } from './urlToBlob'
 
 // ==================== Date 日期处理 ====================
-export { default as dateDiff, type DateDiffResult } from './dateDiff'
-export { default as formatDate } from './formatDate'
-export { default as getDaysInMonth } from './getDaysInMonth'
-export { default as isToday } from './isToday'
-export { default as relativeTime } from './relativeTime'
+// New date module with namespace API
+export {
+	default as date,
+	DateParser,
+	// Types
+	type DateAPI,
+	type IDateParser,
+	type DateInput,
+	type DateUnit,
+	type RelativeTimeLocale,
+	// Functions
+	formatDate,
+	relativeTime,
+	dateDiff,
+	type DateDiffResult,
+	isToday,
+	isYesterday,
+	isTomorrow,
+	isWeekend,
+	isLeapYear,
+	isBefore,
+	isAfter,
+	isSame,
+	isBetween,
+	compare as compareDate,
+	min as minDate,
+	max as maxDate,
+	getDaysInMonth,
+	getQuarter,
+	getDayOfYear,
+	getWeekOfYear,
+	add as addDate,
+	subtract as subtractDate,
+	startOf,
+	endOf,
+} from './date/index'
 
 // ==================== DOM DOM操作 ====================
 export { default as addEvent } from './addEvent'
@@ -256,23 +287,27 @@ export {
 	Url,
 	URL_PATTERNS,
 	VALUE_MAP,
-	parse,
-	stringify,
-	get,
-	getAll,
-	has,
-	set,
-	append,
+	// Query string parsing & building
+	parse as parseQueryString,
+	stringify as stringifyQueryString,
+	// URLSearchParams-like methods
+	get as getQueryParamValue,
+	getAll as getAllQueryParamValues,
+	has as hasQueryParam,
+	set as setQueryParam,
+	append as appendQueryParam,
 	deleteParam,
-	keys,
-	values,
-	entries,
+	keys as getQueryParamKeys,
+	values as getQueryParamValues,
+	entries as getQueryParamEntries,
+	// URL property extraction
 	getOrigin,
 	getHost,
 	getHostname,
 	getPathname,
 	getSearch,
 	getHash,
+	// Types
 	type URLPatternName,
 	type URLInput,
 	type ParseOptions,
