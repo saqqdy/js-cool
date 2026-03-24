@@ -382,7 +382,17 @@ function ua(): UAInfo {
 	return uaInstance.info
 }
 
-// IE11-compatible: manual property assignment
+// Define getters as properties (for both TypeScript inference and runtime)
+Object.defineProperties(ua, {
+	info: { get: () => uaInstance.info, enumerable: true },
+	device: { get: () => uaInstance.device, enumerable: true },
+	os: { get: () => uaInstance.os, enumerable: true },
+	browser: { get: () => uaInstance.browser, enumerable: true },
+	environment: { get: () => uaInstance.environment, enumerable: true },
+	userAgent: { get: () => uaInstance.userAgent, enumerable: true },
+})
+
+// Define methods
 ua.get = (type: UAGetType) => uaInstance.get(type)
 ua.getMultiple = (types: UAGetType[]) => uaInstance.getMultiple(types)
 ua.has = (name: string) => uaInstance.has(name)
@@ -405,13 +415,16 @@ ua.isQQ = () => uaInstance.isQQ()
 ua.isMiniProgram = () => uaInstance.isMiniProgram()
 ua.UAParser = UAParser
 
-// IE11-compatible: use Object.defineProperty for getters
-Object.defineProperty(ua, 'info', { get: () => uaInstance.info, enumerable: true })
-Object.defineProperty(ua, 'device', { get: () => uaInstance.device, enumerable: true })
-Object.defineProperty(ua, 'os', { get: () => uaInstance.os, enumerable: true })
-Object.defineProperty(ua, 'browser', { get: () => uaInstance.browser, enumerable: true })
-Object.defineProperty(ua, 'environment', { get: () => uaInstance.environment, enumerable: true })
-Object.defineProperty(ua, 'userAgent', { get: () => uaInstance.userAgent, enumerable: true })
+// Declare namespace for getter properties (TypeScript needs this for proper type inference)
+// eslint-disable-next-line ts/no-namespace
+declare namespace ua {
+	let info: UAInfo,
+		device: DeviceInfo,
+		os: OSInfo,
+		browser: BrowserInfo,
+		environment: EnvironmentInfo,
+		userAgent: string
+}
 
 export default ua
 export { UAParser }

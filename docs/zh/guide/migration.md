@@ -314,6 +314,7 @@ import type { UAInfo, IUAParser } from 'js-cool'
 | `IClientDetector` | `IUAParser` |
 | `ClientGetType`   | `UAGetType` |
 | `ClientDetector`  | `UAParser`  |
+| -                 | `UA` (新增) |
 
 ### `pattern` → `patterns` / `validation`
 
@@ -422,14 +423,46 @@ new Url('?id=123').get('id')
 import type { ClientInfo, ClientGetType, IClientDetector } from 'js-cool'
 
 // v6.x
-import type { UAInfo, UAGetType, IUAParser } from 'js-cool'
+import type { UA, UAInfo, UAGetType, IUAParser } from 'js-cool'
 // 或从子路径导入
-import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
+import type { UA, UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 ```
 
 ### 新增类型
 
 ```ts
+// UA 工具类型（带属性的可调用函数）
+interface UA {
+  (): UAInfo
+  get: (type: UAGetType) => any
+  getMultiple: (types: UAGetType[]) => Record<string, any>
+  has: (name: string) => boolean
+  getNetwork: () => NetworkInfo
+  getScreen: () => ScreenInfo
+  getLanguage: () => string
+  getTimezone: () => string
+  getOrientationStatus: () => 'portrait' | 'landscape'
+  isDarkMode: () => boolean
+  isMobile: () => boolean
+  isTablet: () => boolean
+  isDesktop: () => boolean
+  isTouch: () => boolean
+  isiOS: () => boolean
+  isiPadOS: () => boolean
+  isAndroid: () => boolean
+  isHarmonyOS: () => boolean
+  isWeChat: () => boolean
+  isQQ: () => boolean
+  isMiniProgram: () => boolean
+  readonly info: UAInfo
+  readonly device: DeviceInfo
+  readonly os: OSInfo
+  readonly browser: BrowserInfo
+  readonly environment: EnvironmentInfo
+  readonly userAgent: string
+  UAParser: typeof UAParser
+}
+
 // 设备信息类型
 interface DeviceInfo {
   type: 'mobile' | 'tablet' | 'desktop'

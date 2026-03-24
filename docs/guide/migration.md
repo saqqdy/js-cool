@@ -314,6 +314,7 @@ import type { UAInfo, IUAParser } from 'js-cool'
 | `IClientDetector` | `IUAParser` |
 | `ClientGetType`   | `UAGetType` |
 | `ClientDetector`  | `UAParser`  |
+| -                 | `UA` (new)  |
 
 ### `pattern` → `patterns` / `validation`
 
@@ -422,14 +423,46 @@ new Url('?id=123').get('id')
 import type { ClientInfo, ClientGetType, IClientDetector } from 'js-cool'
 
 // v6.x
-import type { UAInfo, UAGetType, IUAParser } from 'js-cool'
+import type { UA, UAInfo, UAGetType, IUAParser } from 'js-cool'
 // or from subpath
-import type { UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
+import type { UA, UAInfo, DeviceInfo, OSInfo, BrowserInfo } from 'js-cool/ua'
 ```
 
 ### New Types
 
 ```ts
+// UA utility type (the callable function with properties)
+interface UA {
+  (): UAInfo
+  get: (type: UAGetType) => any
+  getMultiple: (types: UAGetType[]) => Record<string, any>
+  has: (name: string) => boolean
+  getNetwork: () => NetworkInfo
+  getScreen: () => ScreenInfo
+  getLanguage: () => string
+  getTimezone: () => string
+  getOrientationStatus: () => 'portrait' | 'landscape'
+  isDarkMode: () => boolean
+  isMobile: () => boolean
+  isTablet: () => boolean
+  isDesktop: () => boolean
+  isTouch: () => boolean
+  isiOS: () => boolean
+  isiPadOS: () => boolean
+  isAndroid: () => boolean
+  isHarmonyOS: () => boolean
+  isWeChat: () => boolean
+  isQQ: () => boolean
+  isMiniProgram: () => boolean
+  readonly info: UAInfo
+  readonly device: DeviceInfo
+  readonly os: OSInfo
+  readonly browser: BrowserInfo
+  readonly environment: EnvironmentInfo
+  readonly userAgent: string
+  UAParser: typeof UAParser
+}
+
 // Device info type
 interface DeviceInfo {
   type: 'mobile' | 'tablet' | 'desktop'

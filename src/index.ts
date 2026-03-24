@@ -234,6 +234,7 @@ export { default as spliceUrlParam, type SpliceUrlParamOptions } from './spliceU
 export {
 	default as ua,
 	UAParser,
+	type UA,
 	type UAInfo,
 	type DeviceInfo,
 	type OSInfo,

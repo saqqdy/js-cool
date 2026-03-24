@@ -63,6 +63,7 @@ export default defineConfig([
 			name: 'jsCool',
 			banner,
 			exports: 'named',
+			sourcemap: true,
 		},
 		plugins: [versionPlugin()],
 		platform: 'browser',

@@ -18,9 +18,9 @@ import { isSafeInteger } from './_compat'
 function safeParse(data: string, covert = true): any {
 	const VALUE_MAP = {
 		'-Infinity': -Infinity,
-		'Infinity': Infinity,
-		'NaN': NaN,
-		'undefined': undefined,
+		Infinity,
+		NaN,
+		undefined,
 	}
 	const SPECIAL_VALUES = ['Infinity', '-Infinity', 'undefined', 'NaN']
 
