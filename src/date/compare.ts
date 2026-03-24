@@ -120,7 +120,11 @@ export function isAfter(date1: DateInput, date2: DateInput): boolean {
 /**
  * Check if two dates are the same (by unit)
  */
-export function isSame(date1: DateInput, date2: DateInput, unit: 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second' = 'day'): boolean {
+export function isSame(
+	date1: DateInput,
+	date2: DateInput,
+	unit: 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second' = 'day'
+): boolean {
 	const d1 = new Date(date1)
 	const d2 = new Date(date2)
 
@@ -132,10 +136,7 @@ export function isSame(date1: DateInput, date2: DateInput, unit: 'year' | 'month
 		case 'year':
 			return d1.getFullYear() === d2.getFullYear()
 		case 'month':
-			return (
-				d1.getFullYear() === d2.getFullYear() &&
-				d1.getMonth() === d2.getMonth()
-			)
+			return d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth()
 		case 'day':
 			return (
 				d1.getFullYear() === d2.getFullYear() &&
@@ -174,7 +175,12 @@ export function isSame(date1: DateInput, date2: DateInput, unit: 'year' | 'month
 /**
  * Check if date is between two dates
  */
-export function isBetween(date: DateInput, start: DateInput, end: DateInput, inclusive = true): boolean {
+export function isBetween(
+	date: DateInput,
+	start: DateInput,
+	end: DateInput,
+	inclusive = true
+): boolean {
 	const d = new Date(date)
 	const s = new Date(start)
 	const e = new Date(end)
@@ -192,7 +198,7 @@ export function isBetween(date: DateInput, start: DateInput, end: DateInput, inc
 
 /**
  * Compare two dates
- * Returns -1 if date1 < date2, 0 if equal, 1 if date1 > date2
+ * Returns -1 if date1 \< date2, 0 if equal, 1 if date1 \> date2
  */
 export function compare(date1: DateInput, date2: DateInput): -1 | 0 | 1 {
 	const d1 = new Date(date1)

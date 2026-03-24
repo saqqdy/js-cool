@@ -146,25 +146,25 @@ const file = base64ToFile(base64String, 'image.png')
 
 js-cool provides **140+ utility functions** organized into **16 categories**:
 
-| Category          | Description                       | Functions                                                                                                                                                                                                |
-| ----------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                            |
-| **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
-| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
-| **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
-| **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
-| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
-| **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
-| **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                       |
-| **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
-| **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
-| **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
+| Category          | Description                       | Functions                                                                                                                                                                                                                                         |
+| ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                                                     |
+| **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`                                                |
+| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                                                            |
+| **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
+| **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
+| **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
+| **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                                                                      |
+| **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
+| **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                                                                 |
+| **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
+| **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
-| **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                   |
-| **Utility**       | General utilities                 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
-| **Async Flow**    | Async flow control                | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                               |
-| **Encode**        | Encoding/decoding                 | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                               |
-| **Network**       | Network utilities                 | `fillIPv6`                                                                                                                                                                                               |
+| **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                                                            |
+| **Utility**       | General utilities                 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint`                                          |
+| **Async Flow**    | Async flow control                | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                                                                        |
+| **Encode**        | Encoding/decoding                 | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                                                                        |
+| **Network**       | Network utilities                 | `fillIPv6`                                                                                                                                                                                                                                        |
 
 ---
 
@@ -296,18 +296,7 @@ import {
 } from 'js-cool'
 
 // Or use short names directly
-import {
-  get,
-  getAll,
-  has,
-  set,
-  append,
-  keys,
-  values,
-  entries,
-  parse,
-  stringify,
-} from 'js-cool/url'
+import { get, getAll, has, set, append, keys, values, entries, parse, stringify } from 'js-cool/url'
 
 // ============ Method 1: Url class (chainable) ============
 const u = new Url('https://example.com?id=123')
@@ -923,13 +912,9 @@ const parser = date('2024-01-15') // from string
 const parser = date(1705286400000) // from timestamp
 
 // Chainable API
-date('2024-01-15')
-  .add(1, 'day')
-  .format('YYYY-MM-DD') // '2024-01-16'
+date('2024-01-15').add(1, 'day').format('YYYY-MM-DD') // '2024-01-16'
 
-date()
-  .startOf('month')
-  .format() // First day of month at 00:00:00
+date().startOf('month').format() // First day of month at 00:00:00
 
 // Date properties
 parser.year // 2024

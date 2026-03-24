@@ -138,25 +138,25 @@ const file = base64ToFile(base64String, 'image.png')
 
 js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 
-| 类别            | 描述                | 函数                                                                                                                                                                                                     |
-| --------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **字符串**      | 字符串处理          | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                            |
-| **数组**        | 数组处理            | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`       |
-| **对象**        | 对象处理            | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                   |
-| **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                         |
-| **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                |
-| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                  |
-| **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                             |
-| **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                       |
-| **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                        |
-| **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`            |
-| **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                            |
+| 类别            | 描述                | 函数                                                                                                                                                                                                                                              |
+| --------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **字符串**      | 字符串处理          | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                                                     |
+| **数组**        | 数组处理            | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`                                                |
+| **对象**        | 对象处理            | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                                                            |
+| **类型判断**    | 类型检查            | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
+| **验证函数**    | 验证函数            | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
+| **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
+| **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                                                                      |
+| **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
+| **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                                                                 |
+| **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
+| **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **日期**        | 日期处理            | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
-| **颜色**        | 颜色处理            | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                   |
-| **工具**        | 通用工具            | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint` |
-| **异步流程**    | 异步流程控制        | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                               |
-| **编码解码**    | 编码解码            | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                               |
-| **网络**        | 网络工具            | `fillIPv6`                                                                                                                                                                                               |
+| **颜色**        | 颜色处理            | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                                                            |
+| **工具**        | 通用工具            | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint`                                          |
+| **异步流程**    | 异步流程控制        | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                                                                        |
+| **编码解码**    | 编码解码            | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                                                                        |
+| **网络**        | 网络工具            | `fillIPv6`                                                                                                                                                                                                                                        |
 
 ---
 
@@ -287,18 +287,7 @@ import {
 } from 'js-cool'
 
 // 或直接使用短名称
-import {
-  get,
-  getAll,
-  has,
-  set,
-  append,
-  keys,
-  values,
-  entries,
-  parse,
-  stringify,
-} from 'js-cool/url'
+import { get, getAll, has, set, append, keys, values, entries, parse, stringify } from 'js-cool/url'
 
 // ============ 方式 1: Url 类 (链式调用) ============
 const u = new Url('https://example.com?id=123')

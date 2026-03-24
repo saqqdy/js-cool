@@ -140,11 +140,12 @@ export function startOf(date: DateInput, unit: DateUnit): Date {
 		case 'day':
 			result.setHours(0, 0, 0, 0)
 			break
-		case 'week':
+		case 'week': {
 			const day = result.getDay()
 			result.setDate(result.getDate() - day)
 			result.setHours(0, 0, 0, 0)
 			break
+		}
 		case 'month':
 			result.setDate(1)
 			result.setHours(0, 0, 0, 0)
@@ -186,11 +187,12 @@ export function endOf(date: DateInput, unit: DateUnit): Date {
 		case 'day':
 			result.setHours(23, 59, 59, 999)
 			break
-		case 'week':
+		case 'week': {
 			const day = result.getDay()
 			result.setDate(result.getDate() + (6 - day))
 			result.setHours(23, 59, 59, 999)
 			break
+		}
 		case 'month':
 			result.setMonth(result.getMonth() + 1, 0) // Last day of month
 			result.setHours(23, 59, 59, 999)

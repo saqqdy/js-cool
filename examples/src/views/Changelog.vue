@@ -57,6 +57,7 @@ const categoryPaths: Record<string, string> = {
 	Validate: 'validate',
 	Url: 'url',
 	Dom: 'dom',
+	Scroll: 'scroll',
 	Storage: 'storage',
 	Convert: 'convert',
 	Number: 'number',
@@ -66,6 +67,7 @@ const categoryPaths: Record<string, string> = {
 	Async: 'async',
 	Encode: 'encode',
 	Network: 'network',
+	Patterns: 'utility',
 	Core: '',
 }
 

@@ -23,8 +23,8 @@ export const changelog: ChangelogData = {
 	version: version || '6.0.0',
 	date: '2025-03-24',
 	summary:
-		'Major update: IE11 built-in support, new UA detector module, 30+ new utilities, deprecated client module',
-	summaryZh: '重大更新：内置 IE11 支持、新增 UA 检测模块、30+ 新工具函数、废弃 client 模块',
+		'Major update: IE11 built-in support, new UA detector module, 40+ new utilities, deprecated client module',
+	summaryZh: '重大更新：内置 IE11 支持、新增 UA 检测模块、40+ 新工具函数、废弃 client 模块',
 	migrationGuide: 'https://github.com/saqqdy/js-cool/blob/master/MIGRATION-v5-to-v6.md',
 	changes: [
 		// Breaking Changes
@@ -169,6 +169,22 @@ export const changelog: ChangelogData = {
 			descriptionZh: '创建省略或选取指定键的对象',
 			anchor: 'omit',
 		},
+		{
+			type: 'new',
+			name: 'cleanData',
+			category: 'Object',
+			description: 'Remove undefined, null, empty strings and specified keys from object',
+			descriptionZh: '移除对象中的 undefined、null、空字符串和指定键',
+			anchor: 'cleandata',
+		},
+		{
+			type: 'new',
+			name: 'searchObject',
+			category: 'Object',
+			description: 'Deep search object for matching keys or values',
+			descriptionZh: '深度搜索对象中匹配的键或值',
+			anchor: 'searchobject',
+		},
 
 		// New Features - Typecheck
 		{
@@ -186,6 +202,22 @@ export const changelog: ChangelogData = {
 			description: 'Check if value is null or undefined',
 			descriptionZh: '检查值是否为 null 或 undefined',
 			anchor: 'isnil',
+		},
+		{
+			type: 'new',
+			name: 'isWindow',
+			category: 'Typecheck',
+			description: 'Check if value is a Window object',
+			descriptionZh: '检查值是否为 Window 对象',
+			anchor: 'iswindow',
+		},
+		{
+			type: 'new',
+			name: 'isExitsFunction',
+			category: 'Typecheck',
+			description: 'Check if a function exists in global scope by path',
+			descriptionZh: '检查全局作用域中是否存在指定路径的函数',
+			anchor: 'isexitsfunction',
 		},
 
 		// New Features - Validate
@@ -249,6 +281,30 @@ export const changelog: ChangelogData = {
 			descriptionZh: '计算日期差值、获取月份天数、检查是否为今天',
 			anchor: 'datediff',
 		},
+		{
+			type: 'new',
+			name: 'isYesterday / isTomorrow / isWeekend',
+			category: 'Date',
+			description: 'Check if date is yesterday, tomorrow, or weekend',
+			descriptionZh: '检查日期是否为昨天、明天或周末',
+			anchor: 'isyesterday',
+		},
+		{
+			type: 'new',
+			name: 'isLeapYear / isBefore / isAfter / isSame / isBetween',
+			category: 'Date',
+			description: 'Leap year check, date comparison, and range check',
+			descriptionZh: '闰年检查、日期比较和范围检查',
+			anchor: 'isleapyear',
+		},
+		{
+			type: 'new',
+			name: 'getQuarter / getDayOfYear / getWeekOfYear',
+			category: 'Date',
+			description: 'Get quarter, day of year, week of year',
+			descriptionZh: '获取季度、年度第几天、年度第几周',
+			anchor: 'getquarter',
+		},
 
 		// New Features - Color
 		{
@@ -266,6 +322,33 @@ export const changelog: ChangelogData = {
 			description: 'Lighten or darken color, check if color is light',
 			descriptionZh: '变亮或变暗颜色，检查颜色是否为浅色',
 			anchor: 'lighten',
+		},
+
+		// New Features - Scroll
+		{
+			type: 'new',
+			name: 'scroll module',
+			category: 'Scroll',
+			description:
+				'Comprehensive scroll utilities: getPosition, getProgress, createDirectionTracker, isInViewport',
+			descriptionZh: '全面滚动工具：获取位置、进度、方向追踪、视口检测',
+			anchor: 'scroll',
+		},
+		{
+			type: 'new',
+			name: 'scrollTo / scrollToTop / scrollToBottom / scrollBy',
+			category: 'Scroll',
+			description: 'Scroll navigation functions with smooth behavior support',
+			descriptionZh: '滚动导航函数，支持平滑滚动',
+			anchor: 'scrollto',
+		},
+		{
+			type: 'new',
+			name: 'lockScroll / unlockScroll / toggleScroll',
+			category: 'Scroll',
+			description: 'Lock scroll for modals and overlays',
+			descriptionZh: '锁定滚动，适用于模态框和覆盖层',
+			anchor: 'lockscroll',
 		},
 
 		// New Features - Utility
@@ -292,6 +375,38 @@ export const changelog: ChangelogData = {
 			description: 'Retry async function with configurable attempts',
 			descriptionZh: '可配置重试次数的异步函数重试',
 			anchor: 'retry',
+		},
+		{
+			type: 'new',
+			name: 'delay',
+			category: 'Async',
+			description: 'Promise-based setTimeout for async/await',
+			descriptionZh: '基于 Promise 的 setTimeout，支持 async/await',
+			anchor: 'delay',
+		},
+		{
+			type: 'new',
+			name: 'waiting',
+			category: 'Async',
+			description: 'Wait until a condition is true (polling-based)',
+			descriptionZh: '等待条件成立（基于轮询）',
+			anchor: 'waiting',
+		},
+		{
+			type: 'new',
+			name: 'promiseFactory',
+			category: 'Async',
+			description: 'Create a promise with external resolve/reject control',
+			descriptionZh: '创建可外部控制 resolve/reject 的 Promise',
+			anchor: 'promisefactory',
+		},
+		{
+			type: 'new',
+			name: 'punctualTimer',
+			category: 'Async',
+			description: 'Execute callback at precise intervals (second, minute, hour)',
+			descriptionZh: '在精确的时间间隔执行回调（秒、分、时）',
+			anchor: 'punctualtimer',
 		},
 	],
 }

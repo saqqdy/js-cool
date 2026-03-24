@@ -206,30 +206,30 @@ Network utilities - 1 function
 
 ### Date
 
-| Function                                      | Description              |
-| --------------------------------------------- | ------------------------ |
-| [date](/api/date)                             | Date module entry        |
-| [DateParser](/api/date)                       | Chainable date class     |
-| [formatDate](/api/date/format-date)           | Format date              |
-| [dateDiff](/api/date/date-diff)               | Date difference          |
-| [relativeTime](/api/date/relative-time)       | Relative time            |
-| [isToday](/api/date/is-today)                 | Check if today           |
-| [isYesterday](/api/date)                      | Check if yesterday       |
-| [isTomorrow](/api/date)                       | Check if tomorrow        |
-| [isWeekend](/api/date)                        | Check if weekend         |
-| [isLeapYear](/api/date)                       | Check if leap year       |
-| [isBefore](/api/date)                         | Check if before          |
-| [isAfter](/api/date)                          | Check if after           |
-| [isSame](/api/date)                           | Check if same            |
-| [isBetween](/api/date)                        | Check if between         |
-| [getDaysInMonth](/api/date/get-days-in-month) | Get days in month        |
-| [getQuarter](/api/date)                       | Get quarter              |
-| [getWeekOfYear](/api/date)                    | Get week of year         |
-| [getDayOfYear](/api/date)                     | Get day of year          |
-| [addDate](/api/date)                          | Add time                 |
-| [subtractDate](/api/date)                     | Subtract time            |
-| [startOf](/api/date)                          | Get start of period      |
-| [endOf](/api/date)                            | Get end of period        |
+| Function                                      | Description          |
+| --------------------------------------------- | -------------------- |
+| [date](/api/date)                             | Date module entry    |
+| [DateParser](/api/date)                       | Chainable date class |
+| [formatDate](/api/date/format-date)           | Format date          |
+| [dateDiff](/api/date/date-diff)               | Date difference      |
+| [relativeTime](/api/date/relative-time)       | Relative time        |
+| [isToday](/api/date/is-today)                 | Check if today       |
+| [isYesterday](/api/date)                      | Check if yesterday   |
+| [isTomorrow](/api/date)                       | Check if tomorrow    |
+| [isWeekend](/api/date)                        | Check if weekend     |
+| [isLeapYear](/api/date)                       | Check if leap year   |
+| [isBefore](/api/date)                         | Check if before      |
+| [isAfter](/api/date)                          | Check if after       |
+| [isSame](/api/date)                           | Check if same        |
+| [isBetween](/api/date)                        | Check if between     |
+| [getDaysInMonth](/api/date/get-days-in-month) | Get days in month    |
+| [getQuarter](/api/date)                       | Get quarter          |
+| [getWeekOfYear](/api/date)                    | Get week of year     |
+| [getDayOfYear](/api/date)                     | Get day of year      |
+| [addDate](/api/date)                          | Add time             |
+| [subtractDate](/api/date)                     | Subtract time        |
+| [startOf](/api/date)                          | Get start of period  |
+| [endOf](/api/date)                            | Get end of period    |
 
 ### Color
 
@@ -252,18 +252,18 @@ Network utilities - 1 function
 
 ### Scroll
 
-| Function                      | Description              |
-| ----------------------------- | ------------------------ |
-| [scroll](/api/scroll)         | Scroll utilities         |
-| [getPosition](/api/scroll)    | Get scroll position      |
-| [getProgress](/api/scroll)    | Get scroll progress      |
-| [scrollTo](/api/scroll)       | Scroll to element        |
-| [scrollToTop](/api/scroll)    | Scroll to top            |
-| [scrollToBottom](/api/scroll) | Scroll to bottom         |
-| [scrollBy](/api/scroll)       | Scroll by amount         |
-| [lockScroll](/api/scroll)     | Lock scroll              |
-| [unlockScroll](/api/scroll)   | Unlock scroll            |
-| [isInViewport](/api/scroll)   | Check if in viewport     |
+| Function                      | Description          |
+| ----------------------------- | -------------------- |
+| [scroll](/api/scroll)         | Scroll utilities     |
+| [getPosition](/api/scroll)    | Get scroll position  |
+| [getProgress](/api/scroll)    | Get scroll progress  |
+| [scrollTo](/api/scroll)       | Scroll to element    |
+| [scrollToTop](/api/scroll)    | Scroll to top        |
+| [scrollToBottom](/api/scroll) | Scroll to bottom     |
+| [scrollBy](/api/scroll)       | Scroll by amount     |
+| [lockScroll](/api/scroll)     | Lock scroll          |
+| [unlockScroll](/api/scroll)   | Unlock scroll        |
+| [isInViewport](/api/scroll)   | Check if in viewport |
 
 ### Async Flow
 

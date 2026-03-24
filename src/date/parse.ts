@@ -51,7 +51,14 @@ export function parseDateWithFormat(dateStr: string, format: string): Date | nul
 
 	for (let i = 0; i < format.length; i++) {
 		const char = format[i]
-		if (char === 'Y' || char === 'M' || char === 'D' || char === 'H' || char === 'm' || char === 's') {
+		if (
+			char === 'Y' ||
+			char === 'M' ||
+			char === 'D' ||
+			char === 'H' ||
+			char === 'm' ||
+			char === 's'
+		) {
 			if (formatMap[char] === undefined) {
 				formatMap[char] = idx
 				idx++
@@ -69,8 +76,9 @@ export function parseDateWithFormat(dateStr: string, format: string): Date | nul
 	if (!yearMatch) return null
 
 	const year = parseInt(yearMatch[1], 10)
-	let month = 0 // Default January
-	let day = 1 // Default 1st
+	// eslint-disable-next-line one-var
+	let month = 0, // Default January
+		day = 1 // Default 1st
 
 	if (monthMatch) {
 		month = parseInt(monthMatch[1], 10) - 1 // 0-indexed

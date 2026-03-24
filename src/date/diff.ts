@@ -6,7 +6,7 @@
  */
 
 import { isNumberNaN } from '../_compat'
-import type { DateInput, DateDiffResult } from './types'
+import type { DateDiffResult, DateInput } from './types'
 
 // Re-export DateDiffResult type
 export type { DateDiffResult } from './types'
@@ -77,7 +77,11 @@ export function dateDiff(date1: DateInput, date2: DateInput): DateDiffResult {
  * diffIn('2024-01-01', '2024-01-01 12:00', 'hour')  // 12
  * ```
  */
-export function diffIn(date1: DateInput, date2: DateInput, unit: 'day' | 'hour' | 'minute' | 'second' | 'millisecond'): number {
+export function diffIn(
+	date1: DateInput,
+	date2: DateInput,
+	unit: 'day' | 'hour' | 'minute' | 'second' | 'millisecond'
+): number {
 	const d1 = new Date(date1)
 	const d2 = new Date(date2)
 

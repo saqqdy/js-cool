@@ -170,14 +170,14 @@ scroll.unlock()
 import { ua } from 'js-cool'
 
 // 快速检测
-ua.isMobile()    // 是否移动设备
-ua.isWeChat()    // 是否微信
-ua.isiOS()       // 是否 iOS
+ua.isMobile() // 是否移动设备
+ua.isWeChat() // 是否微信
+ua.isiOS() // 是否 iOS
 ua.isHarmonyOS() // 是否鸿蒙
 
 // 获取详细信息
 ua.browser // { name: 'Chrome', version: '120.0' }
-ua.os      // { name: 'Windows', version: '10' }
+ua.os // { name: 'Windows', version: '10' }
 ```
 
 ## 下一步

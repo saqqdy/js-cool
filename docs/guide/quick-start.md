@@ -170,14 +170,14 @@ scroll.unlock()
 import { ua } from 'js-cool'
 
 // Quick checks
-ua.isMobile()    // Mobile device
-ua.isWeChat()    // WeChat
-ua.isiOS()       // iOS
+ua.isMobile() // Mobile device
+ua.isWeChat() // WeChat
+ua.isiOS() // iOS
 ua.isHarmonyOS() // HarmonyOS
 
 // Get detailed info
 ua.browser // { name: 'Chrome', version: '120.0' }
-ua.os      // { name: 'Windows', version: '10' }
+ua.os // { name: 'Windows', version: '10' }
 ```
 
 ## Next Steps

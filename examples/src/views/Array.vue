@@ -18,6 +18,8 @@ import {
 	sample,
 	sampleSize,
 	sortPinyin,
+	sorter,
+	keyBy,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -46,6 +48,13 @@ const chunkSize = ref(3)
 const setA = ref([1, 2, 3])
 const setB = ref([2, 3, 4])
 const pinyinInput = ref(['张三', '李四', '王五', '赵六'])
+
+// keyBy demo
+const keyByInput = ref([
+	{ id: 1, name: 'Alice' },
+	{ id: 2, name: 'Bob' },
+	{ id: 3, name: 'Charlie' },
+])
 </script>
 
 <template>
@@ -266,6 +275,63 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 					<n-tag type="info">{{
 						JSON.stringify([...pinyinInput].sort(sortPinyin))
 					}}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- sorter -->
+		<FunctionCard
+			title="sorter"
+			:description="t.array.sorterDesc || 'Create sort function for locale-aware string sorting'"
+			since="5.14.0"
+			:code="`const items = ['b', 'a', 'c']
+items.sort(sorter('en'))  // ['a', 'b', 'c']
+
+// Chinese sorting
+['啊我', '波拉', '阿吧'].sort(sorter('zh-Hans-CN'))
+
+// Numeric sorting
+['10', '2', '1'].sort(sorter('en', { numeric: true }))  // ['1', '2', '10']`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">['b', 'a', 'c'].sort(sorter('en'))</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(['b', 'a', 'c'].sort(sorter('en')))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">['10', '2', '1'].sort(sorter('en', { numeric: true }))</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(['10', '2', '1'].sort(sorter('en', { numeric: true })))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">['啊我', '波拉', '阿吧'].sort(sorter('zh-Hans-CN'))</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(['啊我', '波拉', '阿吧'].sort(sorter('zh-Hans-CN')))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- keyBy -->
+		<FunctionCard
+			title="keyBy"
+			:description="t.array.keyByDesc || 'Convert array to object keyed by property'"
+			since="6.0.0"
+			:code="`const data = [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }]
+keyBy(data, 'id')
+// { '1': { id: 1, name: 'Alice' }, '2': { id: 2, name: 'Bob' } }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<code class="code-inline">keyBy(data, 'id')</code>
+					<pre class="code-block" style="font-size: 11px">{{
+						JSON.stringify(keyBy(keyByInput, 'id'), null, 2)
+					}}</pre>
 				</n-space>
 			</template>
 		</FunctionCard>

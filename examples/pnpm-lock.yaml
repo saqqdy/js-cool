@@ -20,6 +20,9 @@ importers:
       naive-ui:
         specifier: ^2.44.1
         version: 2.44.1(vue@3.5.30(typescript@5.9.3))
+      use-downloads:
+        specifier: ^1.5.1
+        version: 1.5.1
       vue:
         specifier: ^3.5.13
         version: 3.5.30(typescript@5.9.3)
@@ -904,6 +907,9 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  use-downloads@1.5.1:
+    resolution: {integrity: sha512-DOAlnvDzbXJLo2D+jMQ87qKhNBiV7p0RzDjDHLCmlyTOA6iVytQuyvVDcTK4UYz7U907YJkaOieWxXHGWy6+tg==}
+
   vdirs@0.1.8:
     resolution: {integrity: sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==}
     peerDependencies:
@@ -1694,6 +1700,8 @@ snapshots:
       browserslist: 4.28.1
       escalade: 3.2.0
       picocolors: 1.1.1
+
+  use-downloads@1.5.1: {}
 
   vdirs@0.1.8(vue@3.5.30(typescript@5.9.3)):
     dependencies:

@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-import { objectEntries, padStart, isNumberNaN } from '../_compat'
-import type { DateInput, RelativeTimeLocale, DateDiffResult } from './types'
+import { isNumberNaN, objectEntries, padStart } from '../_compat'
+import type { DateDiffResult, DateInput, RelativeTimeLocale } from './types'
 import { relativeTimeLocales } from './utils'
 
 // Cached sorted token keys
@@ -82,7 +82,11 @@ export function formatDate(date: DateInput, format = 'YYYY-MM-DD HH:mm:ss'): str
  * // => '7 days ago'
  * ```
  */
-export function relativeTime(date: DateInput, now: DateInput = new Date(), locale: RelativeTimeLocale = 'en'): string {
+export function relativeTime(
+	date: DateInput,
+	now: DateInput = new Date(),
+	locale: RelativeTimeLocale = 'en'
+): string {
 	const d = new Date(date)
 	const nowDate = new Date(now)
 

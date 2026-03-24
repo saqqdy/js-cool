@@ -13,7 +13,15 @@ export type DateInput = Date | string | number
 /**
  * Date unit for operations
  */
-export type DateUnit = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute' | 'second' | 'millisecond'
+export type DateUnit =
+	| 'year'
+	| 'month'
+	| 'week'
+	| 'day'
+	| 'hour'
+	| 'minute'
+	| 'second'
+	| 'millisecond'
 
 /**
  * Format token type

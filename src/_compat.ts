@@ -270,7 +270,7 @@ function _arrayUnique<T>(arr: T[]): T[] {
 }
 
 export const arrayUnique: <T>(arr: T[]) => T[] =
-	typeof Set === 'function' ? (arr) => [...new Set(arr)] : _arrayUnique
+	typeof Set === 'function' ? arr => [...new Set(arr)] : _arrayUnique
 
 // ==================== Iterable Check ====================
 

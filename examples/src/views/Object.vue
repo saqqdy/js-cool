@@ -12,6 +12,8 @@ import {
 	safeParse,
 	safeStringify,
 	isEqual,
+	cleanData,
+	searchObject,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -23,6 +25,39 @@ const sourceObj = ref({ a: 1, b: 2, c: 3, d: 4 })
 
 const testJson = '{"a":1}'
 const testObj = { a: BigInt(9007199254740993n), b: () => {} }
+
+// cleanData demo
+const dirtyObj = ref({
+	name: 'John',
+	age: 25,
+	password: 'secret',
+	confirmPassword: 'secret',
+	undefined: undefined,
+	nullValue: null,
+	emptyString: '',
+})
+
+// searchObject demo
+const searchTarget = ref({
+	user: {
+		name: 'John',
+		email: 'john@example.com',
+		address: {
+			city: 'New York',
+			zip: '10001',
+		},
+	},
+	orders: [
+		{ id: 1, product: 'Laptop' },
+		{ id: 2, product: 'Phone' },
+	],
+})
+const searchKeyword = ref('john')
+const searchResult = ref<any>(null)
+
+const doSearch = () => {
+	searchResult.value = searchObject(searchTarget.value, searchKeyword.value, { childName: 'children', keyName: 'name' })
+}
 </script>
 
 <template>
@@ -192,6 +227,53 @@ safeStringify({ a: BigInt(1n) }) // handles BigInt`"
 						<n-code code="isEqual(NaN, NaN)" language="javascript" />
 						<n-tag type="info">{{ isEqual(NaN, NaN) }}</n-tag>
 					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="cleanData"
+			description="Remove undefined, null, empty strings and specified keys from object"
+			since="2.0.0"
+			:code="`cleanData(obj, ['password']) // Remove password + falsy values
+cleanData(obj, [], { removeNull: true, removeEmpty: true })`"
+		>
+			<template #input>
+				<n-space vertical>
+					<span style="font-size: 12px; color: #666">Input object:</span>
+					<pre class="code-block" style="font-size: 11px">{{ JSON.stringify(dirtyObj, null, 2) }}</pre>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">cleanData(obj, ['password', 'confirmPassword'])</code>
+					</n-space>
+					<pre class="code-block" style="font-size: 11px">{{
+						JSON.stringify(cleanData(dirtyObj, ['password', 'confirmPassword']), null, 2)
+					}}</pre>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="searchObject"
+			description="Deep search object for matching keys or values"
+			since="2.0.0"
+			:code="`searchObject(obj, 'john', { childName: 'children', keyName: 'name' }) // Find all matches
+searchObject(obj, node => node.name.includes('john'), { childName: 'children', keyName: 'name' })`"
+		>
+			<template #input>
+				<n-space vertical>
+					<n-space align="center">
+						<n-input v-model:value="searchKeyword" style="width: 200px" placeholder="Search keyword" />
+						<n-tag size="small" @click="doSearch" style="cursor: pointer">Search</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<pre class="code-block" style="font-size: 11px">{{ JSON.stringify(searchResult || searchObject(searchTarget, searchKeyword, { childName: 'children', keyName: 'name' }), null, 2) }}</pre>
 				</n-space>
 			</template>
 		</FunctionCard>

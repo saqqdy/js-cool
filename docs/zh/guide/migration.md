@@ -399,6 +399,122 @@ getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
 ```
 
+### 日期工具
+
+`date` 命名空间和 `DateParser` 类是 v6.0.0 新增功能，提供链式 API 和丰富的日期操作。
+
+#### 原有函数（仍然有效）
+
+```js
+// v5.x（仍然有效）
+import { formatDate, dateDiff, relativeTime, isToday, getDaysInMonth } from 'js-cool'
+
+formatDate(new Date(), 'YYYY-MM-DD')
+dateDiff('2024-01-01', '2024-01-03')
+relativeTime(new Date(Date.now() - 3600000))
+isToday(new Date())
+getDaysInMonth(2024, 1) // 29
+```
+
+#### 新增功能
+
+**三种使用方式：**
+
+```js
+import { date, DateParser } from 'js-cool'
+
+// 1. DateParser 类 - 链式 API
+const d = new DateParser('2024-01-15')
+d.add(1, 'day').format('YYYY-MM-DD') // '2024-01-16'
+d.startOf('month').format() // '2024-01-01 00:00:00'
+
+// 2. date 命名空间 - 工厂 + 静态方法
+date('2024-01-15').add(1, 'day').format()
+date.format(new Date(), 'YYYY-MM-DD')
+date.diff('2024-01-01', '2024-01-03')
+date.isToday(new Date())
+date.getDaysInMonth(2024, 1)
+
+// 3. 直接导入函数（支持 tree-shaking）
+import { formatDate, isToday, isLeapYear, add, startOf } from 'js-cool'
+```
+
+#### 新增函数
+
+| 函数                              | 说明                             |
+| --------------------------------- | -------------------------------- |
+| `isYesterday(date)`               | 检查日期是否为昨天               |
+| `isTomorrow(date)`                | 检查日期是否为明天               |
+| `isWeekend(date)`                 | 检查日期是否为周末               |
+| `isLeapYear(year)`                | 检查年份是否为闰年               |
+| `isBefore(date1, date2)`          | 检查日期是否在另一个日期之前     |
+| `isAfter(date1, date2)`           | 检查日期是否在另一个日期之后     |
+| `isSame(date1, date2, unit)`      | 检查两个日期是否相同（可按单位） |
+| `isBetween(date, start, end)`     | 检查日期是否在范围内             |
+| `compare(date1, date2)`           | 比较两个日期（返回 -1/0/1）      |
+| `min(...dates)`                   | 获取最小日期                     |
+| `max(...dates)`                   | 获取最大日期                     |
+| `getQuarter(date)`                | 获取季度（1-4）                  |
+| `getDayOfYear(date)`              | 获取年中第几天（1-366）          |
+| `getWeekOfYear(date)`             | 获取年中第几周                   |
+| `add(date, value, unit)`      | 添加时间                         |
+| `subtract(date, value, unit)` | 减去时间                         |
+| `startOf(date, unit)`             | 获取时间段开始                   |
+| `endOf(date, unit)`               | 获取时间段结束                   |
+
+#### 子路径导入
+
+```js
+// 从子路径导入以获得更好的 tree-shaking
+import { date, DateParser, formatDate, isToday } from 'js-cool/date'
+```
+
+#### DateParser 类属性和方法
+
+```js
+const d = new DateParser('2024-03-15T14:30:45')
+
+// 属性
+d.year // 2024
+d.month // 3 (1-12)
+d.day // 15
+d.hours // 14
+d.minutes // 30
+d.seconds // 45
+d.dayOfWeek // 5 (周五)
+d.timestamp // 毫秒时间戳
+d.isValid // 是否有效日期
+
+// 格式化
+d.format('YYYY-MM-DD HH:mm:ss')
+d.toISOString()
+d.toDateString() // '2024-03-15'
+d.toTimeString() // '14:30:45'
+
+// 比较
+d.isBefore('2024-04-01')
+d.isAfter('2024-03-01')
+d.isSame('2024-03-15', 'day')
+d.isToday()
+d.isYesterday()
+d.isTomorrow()
+d.isWeekend()
+d.isLeapYear()
+
+// 操作（返回新实例）
+d.add(1, 'day') // 加一天
+d.subtract(1, 'week') // 减一周
+d.startOf('month') // 本月开始
+d.endOf('day') // 今天结束
+
+// 其他
+d.diff('2024-03-20') // 计算差值
+d.relativeTime() // 相对时间字符串
+d.getQuarter() // 季度
+d.getWeekOfYear() // 年中周数
+d.getDayOfYear() // 年中天数
+```
+
 ### URL 工具
 
 `url` 命名空间和 `Url` 类是 v6.0.0 新增功能。现有函数如 `getUrlParam`、`parseUrlParam` 等无需迁移，继续正常工作。
@@ -443,19 +559,19 @@ getQueryParamValue('id', 'https://example.com?id=123') // '123'
 
 v6.0.0 提供了描述性别名，提高代码可读性：
 
-| 别名 | 原名称 | 描述 |
-|------|--------|------|
-| `parseQueryString` | `parse` | 解析查询字符串为对象 |
-| `stringifyQueryString` | `stringify` | 构建查询字符串 |
-| `getQueryParamValue` | `get` | 获取单个参数值 |
-| `getAllQueryParamValues` | `getAll` | 获取同名参数所有值 |
-| `hasQueryParam` | `has` | 检查参数是否存在 |
-| `setQueryParam` | `set` | 设置参数值 |
-| `appendQueryParam` | `append` | 追加参数值 |
-| `deleteParam` | `deleteParam` | 删除参数 |
-| `getQueryParamKeys` | `keys` | 获取所有参数名 |
-| `getQueryParamValues` | `values` | 获取所有参数值 |
-| `getQueryParamEntries` | `entries` | 获取所有键值对 |
+| 别名                     | 原名称        | 描述                 |
+| ------------------------ | ------------- | -------------------- |
+| `parseQueryString`       | `parse`       | 解析查询字符串为对象 |
+| `stringifyQueryString`   | `stringify`   | 构建查询字符串       |
+| `getQueryParamValue`     | `get`         | 获取单个参数值       |
+| `getAllQueryParamValues` | `getAll`      | 获取同名参数所有值   |
+| `hasQueryParam`          | `has`         | 检查参数是否存在     |
+| `setQueryParam`          | `set`         | 设置参数值           |
+| `appendQueryParam`       | `append`      | 追加参数值           |
+| `deleteParam`            | `deleteParam` | 删除参数             |
+| `getQueryParamKeys`      | `keys`        | 获取所有参数名       |
+| `getQueryParamValues`    | `values`      | 获取所有参数值       |
+| `getQueryParamEntries`   | `entries`     | 获取所有键值对       |
 
 ```js
 // 使用描述性名称
@@ -770,3 +886,130 @@ validation.email.test(email)
 - **GitHub Issues:** [https://github.com/saqqdy/js-cool/issues](https://github.com/saqqdy/js-cool/issues)
 - **更新日志:** [CHANGELOG.md](https://github.com/saqqdy/js-cool/blob/master/CHANGELOG.md)
 - **文档:** [README.md](https://github.com/saqqdy/js-cool/blob/master/README.md)
+
+## v6.x 新增功能
+
+### 日期工具
+
+v6.x 引入了全面的日期处理函数，提供三种使用方式：
+
+```js
+// 1. DateParser 类 - 链式 API
+import { DateParser } from 'js-cool'
+const d = new DateParser('2024-01-15')
+d.add(1, 'day').format('YYYY-MM-DD') // '2024-01-16'
+d.startOf('month').format() // '2024-01-01 00:00:00'
+
+// 2. date 命名空间 - 工厂 + 静态方法
+import { date } from 'js-cool'
+date('2024-01-15').add(1, 'day').format()
+date.format(new Date(), 'YYYY-MM-DD')
+date.diff('2024-01-01', '2024-12-31')
+date.isToday(new Date())
+
+// 3. 直接导入函数
+import {
+  formatDate,
+  dateDiff,
+  relativeTime,
+  isToday,
+  isYesterday,
+  isTomorrow,
+  isWeekend,
+  isLeapYear,
+  isBefore,
+  isAfter,
+  isSame,
+  isBetween,
+  getDaysInMonth,
+  getQuarter,
+  getDayOfYear,
+  getWeekOfYear,
+  add,
+  subtract,
+  startOf,
+  endOf,
+} from 'js-cool'
+
+// 格式化日期
+formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+formatDate(new Date(), 'YYYY年MM月DD日')
+
+// 日期比较
+isBefore('2024-01-01', '2024-12-31') // true
+isAfter('2024-12-31', '2024-01-01') // true
+isBetween('2024-06-15', '2024-01-01', '2024-12-31') // true
+
+// 日期信息
+getQuarter(new Date()) // 1-4
+getDayOfYear(new Date()) // 1-366
+getWeekOfYear(new Date()) // 1-53
+
+// 日期操作
+add(new Date(), 1, 'day') // 明天
+subtract(new Date(), 1, 'week') // 上周
+startOf(new Date(), 'month') // 本月第一天
+endOf(new Date(), 'day') // 今天结束
+```
+
+### 异步工具
+
+新的异步工具提供更好的控制流：
+
+```js
+import { delay, waiting, promiseFactory, punctualTimer } from 'js-cool'
+
+// 延迟执行
+await delay(1000) // 等待 1 秒
+
+// 等待条件成立
+await waiting(() => document.querySelector('#element'), { interval: 100, timeout: 5000 })
+
+// 外部 Promise 控制
+const promise = promiseFactory((resolve, reject) => {
+  // 外部决定何时 resolve
+  setTimeout(() => resolve('done'), 1000)
+})
+
+// 精确定时器
+const timer = punctualTimer('second', () => {
+  console.log('在秒边界执行')
+})
+timer.stop() // 停止定时器
+```
+
+### 对象工具
+
+新的对象处理函数：
+
+```js
+import { cleanData, searchObject } from 'js-cool'
+
+// 清理对象
+const obj = { a: 1, b: null, c: '', d: undefined, password: 'secret' }
+cleanData(obj, ['password'])
+// { a: 1 }
+
+// 搜索对象
+const data = {
+  user: { name: 'John', email: 'john@example.com' },
+  orders: [{ id: 1, product: 'Laptop' }],
+}
+searchObject(data, 'john')
+// [{ key: 'user.name', value: 'John' }, { key: 'user.email', value: 'john@example.com' }]
+```
+
+### 类型检查工具
+
+新的类型检查函数：
+
+```js
+import { isWindow, isExitsFunction } from 'js-cool'
+
+// 检查是否为 Window 对象
+isWindow(window) // 浏览器中返回 true
+
+// 检查函数是否存在
+isExitsFunction('JSON.parse') // true
+isExitsFunction('nonExistent.function') // false
+```

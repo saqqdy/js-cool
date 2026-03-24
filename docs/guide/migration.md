@@ -399,6 +399,122 @@ getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
 ```
 
+### Date Utilities
+
+The `date` namespace and `DateParser` class are new in v6.0.0, providing chainable API and rich date operations.
+
+#### Existing Functions (Still Work)
+
+```js
+// v5.x (still works)
+import { formatDate, dateDiff, relativeTime, isToday, getDaysInMonth } from 'js-cool'
+
+formatDate(new Date(), 'YYYY-MM-DD')
+dateDiff('2024-01-01', '2024-01-03')
+relativeTime(new Date(Date.now() - 3600000))
+isToday(new Date())
+getDaysInMonth(2024, 1) // 29
+```
+
+#### New Features
+
+**Three usage patterns:**
+
+```js
+import { date, DateParser } from 'js-cool'
+
+// 1. DateParser class - chainable API
+const d = new DateParser('2024-01-15')
+d.add(1, 'day').format('YYYY-MM-DD') // '2024-01-16'
+d.startOf('month').format() // '2024-01-01 00:00:00'
+
+// 2. date namespace - factory + static methods
+date('2024-01-15').add(1, 'day').format()
+date.format(new Date(), 'YYYY-MM-DD')
+date.diff('2024-01-01', '2024-01-03')
+date.isToday(new Date())
+date.getDaysInMonth(2024, 1)
+
+// 3. Direct function imports (tree-shaking friendly)
+import { formatDate, isToday, isLeapYear, add, startOf } from 'js-cool'
+```
+
+#### New Functions
+
+| Function                         | Description                           |
+| -------------------------------- | ------------------------------------- |
+| `isYesterday(date)`              | Check if date is yesterday            |
+| `isTomorrow(date)`               | Check if date is tomorrow             |
+| `isWeekend(date)`                | Check if date is weekend              |
+| `isLeapYear(year)`               | Check if year is leap year            |
+| `isBefore(date1, date2)`         | Check if date is before another       |
+| `isAfter(date1, date2)`          | Check if date is after another        |
+| `isSame(date1, date2, unit)`     | Check if two dates are same           |
+| `isBetween(date, start, end)`    | Check if date is in range             |
+| `compare(date1, date2)`          | Compare two dates (returns -1/0/1)    |
+| `min(...dates)`                  | Get minimum date                      |
+| `max(...dates)`                  | Get maximum date                      |
+| `getQuarter(date)`               | Get quarter (1-4)                     |
+| `getDayOfYear(date)`             | Get day of year (1-366)               |
+| `getWeekOfYear(date)`            | Get week of year                      |
+| `add(date, value, unit)`         | Add time to date                      |
+| `subtract(date, value, unit)`    | Subtract time from date               |
+| `startOf(date, unit)`            | Get start of time period              |
+| `endOf(date, unit)`              | Get end of time period                |
+
+#### Subpath Import
+
+```js
+// Import from subpath for better tree-shaking
+import { date, DateParser, formatDate, isToday } from 'js-cool/date'
+```
+
+#### DateParser Class Properties and Methods
+
+```js
+const d = new DateParser('2024-03-15T14:30:45')
+
+// Properties
+d.year // 2024
+d.month // 3 (1-12)
+d.day // 15
+d.hours // 14
+d.minutes // 30
+d.seconds // 45
+d.dayOfWeek // 5 (Friday)
+d.timestamp // millisecond timestamp
+d.isValid // if valid date
+
+// Formatting
+d.format('YYYY-MM-DD HH:mm:ss')
+d.toISOString()
+d.toDateString() // '2024-03-15'
+d.toTimeString() // '14:30:45'
+
+// Comparison
+d.isBefore('2024-04-01')
+d.isAfter('2024-03-01')
+d.isSame('2024-03-15', 'day')
+d.isToday()
+d.isYesterday()
+d.isTomorrow()
+d.isWeekend()
+d.isLeapYear()
+
+// Manipulation (returns new instance)
+d.add(1, 'day') // add one day
+d.subtract(1, 'week') // subtract one week
+d.startOf('month') // start of month
+d.endOf('day') // end of day
+
+// Other
+d.diff('2024-03-20') // calculate difference
+d.relativeTime() // relative time string
+d.getQuarter() // quarter
+d.getWeekOfYear() // week of year
+d.getDayOfYear() // day of year
+```
+
 ### URL Utilities
 
 The `url` namespace and `Url` class are new in v6.0.0. No migration needed for existing functions like `getUrlParam`, `parseUrlParam`, etc. - they continue to work as before.
@@ -443,19 +559,19 @@ getQueryParamValue('id', 'https://example.com?id=123') // '123'
 
 v6.0.0 provides descriptive aliases for better code readability:
 
-| Alias Name | Original | Description |
-|------------|----------|-------------|
-| `parseQueryString` | `parse` | Parse query string to object |
-| `stringifyQueryString` | `stringify` | Build query string from object |
-| `getQueryParamValue` | `get` | Get single parameter value |
-| `getAllQueryParamValues` | `getAll` | Get all values for parameter |
-| `hasQueryParam` | `has` | Check if parameter exists |
-| `setQueryParam` | `set` | Set parameter value |
-| `appendQueryParam` | `append` | Append parameter value |
-| `deleteParam` | `deleteParam` | Delete parameter |
-| `getQueryParamKeys` | `keys` | Get all parameter names |
-| `getQueryParamValues` | `values` | Get all parameter values |
-| `getQueryParamEntries` | `entries` | Get all key-value pairs |
+| Alias Name               | Original      | Description                    |
+| ------------------------ | ------------- | ------------------------------ |
+| `parseQueryString`       | `parse`       | Parse query string to object   |
+| `stringifyQueryString`   | `stringify`   | Build query string from object |
+| `getQueryParamValue`     | `get`         | Get single parameter value     |
+| `getAllQueryParamValues` | `getAll`      | Get all values for parameter   |
+| `hasQueryParam`          | `has`         | Check if parameter exists      |
+| `setQueryParam`          | `set`         | Set parameter value            |
+| `appendQueryParam`       | `append`      | Append parameter value         |
+| `deleteParam`            | `deleteParam` | Delete parameter               |
+| `getQueryParamKeys`      | `keys`        | Get all parameter names        |
+| `getQueryParamValues`    | `values`      | Get all parameter values       |
+| `getQueryParamEntries`   | `entries`     | Get all key-value pairs        |
 
 ```js
 // Using descriptive names
@@ -770,3 +886,130 @@ validation.email.test(email)
 - **GitHub Issues:** [https://github.com/saqqdy/js-cool/issues](https://github.com/saqqdy/js-cool/issues)
 - **Changelog:** [CHANGELOG.md](https://github.com/saqqdy/js-cool/blob/master/CHANGELOG.md)
 - **Documentation:** [README.md](https://github.com/saqqdy/js-cool/blob/master/README.md)
+
+## New Features in v6.x
+
+### Date Utilities
+
+v6.x introduces comprehensive date manipulation functions with three usage patterns:
+
+```js
+// 1. DateParser class - chainable API
+import { DateParser } from 'js-cool'
+const d = new DateParser('2024-01-15')
+d.add(1, 'day').format('YYYY-MM-DD') // '2024-01-16'
+d.startOf('month').format() // '2024-01-01 00:00:00'
+
+// 2. date namespace - factory + static methods
+import { date } from 'js-cool'
+date('2024-01-15').add(1, 'day').format()
+date.format(new Date(), 'YYYY-MM-DD')
+date.diff('2024-01-01', '2024-12-31')
+date.isToday(new Date())
+
+// 3. Direct function imports
+import {
+  formatDate,
+  dateDiff,
+  relativeTime,
+  isToday,
+  isYesterday,
+  isTomorrow,
+  isWeekend,
+  isLeapYear,
+  isBefore,
+  isAfter,
+  isSame,
+  isBetween,
+  getDaysInMonth,
+  getQuarter,
+  getDayOfYear,
+  getWeekOfYear,
+  add,
+  subtract,
+  startOf,
+  endOf,
+} from 'js-cool'
+
+// Format date
+formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+formatDate(new Date(), 'YYYY年MM月DD日')
+
+// Date comparison
+isBefore('2024-01-01', '2024-12-31') // true
+isAfter('2024-12-31', '2024-01-01') // true
+isBetween('2024-06-15', '2024-01-01', '2024-12-31') // true
+
+// Date info
+getQuarter(new Date()) // 1-4
+getDayOfYear(new Date()) // 1-366
+getWeekOfYear(new Date()) // 1-53
+
+// Date manipulation
+add(new Date(), 1, 'day') // tomorrow
+subtract(new Date(), 1, 'week') // last week
+startOf(new Date(), 'month') // first day of month
+endOf(new Date(), 'day') // end of today
+```
+
+### Async Utilities
+
+New async utilities for better control flow:
+
+```js
+import { delay, waiting, promiseFactory, punctualTimer } from 'js-cool'
+
+// Delay execution
+await delay(1000) // Wait 1 second
+
+// Wait for condition
+await waiting(() => document.querySelector('#element'), { interval: 100, timeout: 5000 })
+
+// External promise control
+const promise = promiseFactory((resolve, reject) => {
+  // Resolve from outside
+  setTimeout(() => resolve('done'), 1000)
+})
+
+// Precise timer
+const timer = punctualTimer('second', () => {
+  console.log('Executed at second boundary')
+})
+timer.stop() // Stop the timer
+```
+
+### Object Utilities
+
+New object manipulation functions:
+
+```js
+import { cleanData, searchObject } from 'js-cool'
+
+// Clean object
+const obj = { a: 1, b: null, c: '', d: undefined, password: 'secret' }
+cleanData(obj, ['password'])
+// { a: 1 }
+
+// Search object
+const data = {
+  user: { name: 'John', email: 'john@example.com' },
+  orders: [{ id: 1, product: 'Laptop' }],
+}
+searchObject(data, 'john')
+// [{ key: 'user.name', value: 'John' }, { key: 'user.email', value: 'john@example.com' }]
+```
+
+### Type Check Utilities
+
+New type checking functions:
+
+```js
+import { isWindow, isExitsFunction } from 'js-cool'
+
+// Check if Window object
+isWindow(window) // true in browser
+
+// Check if function exists
+isExitsFunction('JSON.parse') // true
+isExitsFunction('nonExistent.function') // false
+```

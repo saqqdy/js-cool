@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
+import { NH1, NInput, NTag, NButton, NSpace, NInputNumber } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
-import { debounce, throttle, retry, awaitTo } from 'js-cool'
+import { debounce, throttle, retry, awaitTo, waiting, promiseFactory, punctualTimer } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
@@ -76,6 +76,80 @@ const fetchWithRetry = async () => {
 	)
 
 	retryResult.value = result
+}
+
+// delay demo - delay() is a factory for debouncing/throttling
+const delayMs = ref(1000)
+const delayResult = ref('')
+const delayRunning = ref(false)
+
+const runDelay = async () => {
+	delayRunning.value = true
+	delayResult.value = 'Waiting...'
+	const start = Date.now()
+
+	// Use waiting() for simple sleep
+	await waiting(delayMs.value)
+	delayResult.value = `Waited ${Date.now() - start}ms`
+	delayRunning.value = false
+}
+
+// waiting demo - simple sleep function
+const waitingResult = ref('')
+const waitingRunning = ref(false)
+
+const runWaiting = async () => {
+	waitingRunning.value = true
+	waitingResult.value = 'Waiting 2 seconds...'
+	await waiting(2000)
+	waitingResult.value = 'Done!'
+	waitingRunning.value = false
+}
+
+// promiseFactory demo
+const factoryResult = ref('')
+const factoryRunning = ref(false)
+
+const runPromiseFactory = async () => {
+	factoryRunning.value = true
+	factoryResult.value = ''
+
+	const stats = { value: 'initial' }
+	const factory = promiseFactory(stats, () =>
+		new Promise<typeof stats>(resolve => {
+			setTimeout(() => {
+				stats.value = 'Promise factory result!'
+				resolve(stats)
+			}, 1000)
+		})
+	)
+
+	await factory
+	factoryResult.value = factory.value
+	factoryRunning.value = false
+}
+
+// punctualTimer demo
+const timerResult = ref<string[]>([])
+const timerRunning = ref(false)
+let timer: ReturnType<typeof punctualTimer> | null = null
+
+const startTimer = () => {
+	timerRunning.value = true
+	timerResult.value = []
+
+	timer = punctualTimer(() => {
+		timerResult.value.push(new Date().toLocaleTimeString())
+		if (timerResult.value.length >= 5) {
+			timer?.clear()
+			timerRunning.value = false
+		}
+	}, 1000)
+}
+
+const stopTimer = () => {
+	timer?.clear()
+	timerRunning.value = false
 }
 </script>
 
@@ -221,6 +295,91 @@ retry(fn, { onRetry: (err, attempt) => console.log(attempt) })`"
 				<n-tag v-if="retryResult" type="info" size="small" :bordered="false">{{
 					retryResult
 				}}</n-tag>
+			</template>
+		</FunctionCard>
+
+		<!-- waiting -->
+		<FunctionCard
+			title="waiting"
+			description="Sleep for specified milliseconds (Promise-based setTimeout)"
+			since="1.0.0"
+			:code="`await waiting(1000) // Wait 1 second
+await waiting(500) // Wait 500ms
+await waiting(5000, true) // Throw on timeout`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-input-number v-model:value="delayMs" :min="100" :max="5000" :step="100" style="width: 100px" />
+					<span style="font-size: 12px; color: #666">ms</span>
+					<n-button size="small" :disabled="delayRunning" @click="runDelay">Wait</n-button>
+				</n-space>
+			</template>
+			<template #result>
+				<n-tag type="info" size="small" :bordered="false">{{ delayResult || '-' }}</n-tag>
+			</template>
+		</FunctionCard>
+
+		<!-- waiting simple -->
+		<FunctionCard
+			title="waiting (simple delay)"
+			description="Simple delay function for waiting"
+			since="5.5.0"
+			:code="`await waiting(2000) // Wait 2 seconds`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-button size="small" :disabled="waitingRunning" @click="runWaiting">Wait 2 seconds</n-button>
+				</n-space>
+			</template>
+			<template #result>
+				<n-tag type="info" size="small" :bordered="false">{{ waitingResult || '-' }}</n-tag>
+			</template>
+		</FunctionCard>
+
+		<!-- promiseFactory -->
+		<FunctionCard
+			title="promiseFactory"
+			description="Create a promise with external resolve/reject control"
+			since="1.0.0"
+			:code="`const promise = promiseFactory((resolve, reject) => {
+  // Do something async
+  setTimeout(() => resolve('done'), 1000)
+})
+await promise // 'done'`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-button size="small" :disabled="factoryRunning" @click="runPromiseFactory">Run Factory</n-button>
+				</n-space>
+			</template>
+			<template #result>
+				<n-tag type="info" size="small" :bordered="false">{{ factoryResult || '-' }}</n-tag>
+			</template>
+		</FunctionCard>
+
+		<!-- punctualTimer -->
+		<FunctionCard
+			title="punctualTimer"
+			description="Execute callback at precise intervals (second, minute, hour)"
+			since="2.0.0"
+			:code="`const timer = punctualTimer('second', callback)
+const timer = punctualTimer('minute', callback)
+const timer = punctualTimer('hour', callback)
+timer.stop() // Stop the timer`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-button size="small" type="primary" :disabled="timerRunning" @click="startTimer">Start Timer</n-button>
+					<n-button size="small" :disabled="!timerRunning" @click="stopTimer">Stop Timer</n-button>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<span style="font-size: 12px; color: #666">Triggers (max 5):</span>
+					<n-space wrap>
+						<n-tag v-for="(time, i) in timerResult" :key="i" size="small" :bordered="false">{{ time }}</n-tag>
+					</n-space>
+				</n-space>
 			</template>
 		</FunctionCard>
 	</div>

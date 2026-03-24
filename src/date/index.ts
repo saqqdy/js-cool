@@ -21,13 +21,50 @@
  * @since 6.0.0
  */
 
-import type { DateInput, DateUnit, DateDiffResult, RelativeTimeLocale, IDateParser } from './types'
+import type { DateDiffResult, DateInput, DateUnit, IDateParser, RelativeTimeLocale } from './types'
 
 // Import sub-modules
 import { parseDate } from './parse'
-import { formatDate, relativeTime as calcRelativeTime } from './format'
+import { relativeTime as calcRelativeTime, formatDate } from './format'
 import { dateDiff } from './diff'
 import {
+	compare,
+	isAfter,
+	isBefore,
+	isLeapYear,
+	isSame,
+	isToday,
+	isTomorrow,
+	isWeekend,
+	isYesterday,
+	max,
+	min,
+} from './compare'
+import {
+	add,
+	endOf,
+	getDayOfYear,
+	getDaysInMonth,
+	getQuarter,
+	getWeekOfYear,
+	startOf,
+	subtract,
+} from './manipulate'
+
+// Re-export types
+export type {
+	DateAPI,
+	DateDiffResult,
+	DateInput,
+	DateUnit,
+	IDateParser,
+	RelativeTimeLocale,
+} from './types'
+
+// Re-export functions for direct import
+export { formatDate, relativeTime } from './format'
+export { dateDiff } from './diff'
+export {
 	isToday,
 	isYesterday,
 	isTomorrow,
@@ -36,11 +73,12 @@ import {
 	isBefore,
 	isAfter,
 	isSame,
+	isBetween,
 	compare,
 	min,
 	max,
 } from './compare'
-import {
+export {
 	getDaysInMonth,
 	getQuarter,
 	getDayOfYear,
@@ -50,14 +88,6 @@ import {
 	startOf,
 	endOf,
 } from './manipulate'
-
-// Re-export sub-modules for direct import
-export * from './types'
-export * from './parse'
-export * from './format'
-export * from './diff'
-export * from './compare'
-export * from './manipulate'
 
 /**
  * Date parser class for chainable date operations
@@ -280,7 +310,8 @@ date.now = () => new DateParser()
 date.parse = (input?: DateInput) => new DateParser(input)
 date.format = (d: DateInput, pattern?: string) => formatDate(d, pattern)
 date.diff = (d1: DateInput, d2: DateInput) => dateDiff(d1, d2)
-date.relativeTime = (d: DateInput, now?: DateInput, locale?: RelativeTimeLocale) => calcRelativeTime(d, now, locale)
+date.relativeTime = (d: DateInput, now?: DateInput, locale?: RelativeTimeLocale) =>
+	calcRelativeTime(d, now, locale)
 date.isToday = (d: DateInput) => isToday(d)
 date.isYesterday = (d: DateInput) => isYesterday(d)
 date.isTomorrow = (d: DateInput) => isTomorrow(d)
@@ -294,29 +325,6 @@ date.compare = (d1: DateInput, d2: DateInput) => compare(d1, d2)
 date.min = (...dates: DateInput[]) => new DateParser(min(...dates))
 date.max = (...dates: DateInput[]) => new DateParser(max(...dates))
 date.DateParser = DateParser
-
-// Declare namespace for TypeScript
-// eslint-disable-next-line ts/no-namespace
-declare namespace date {
-	let now: () => IDateParser
-	let parse: (input?: DateInput) => IDateParser
-	let format: (date: DateInput, pattern?: string) => string
-	let diff: (date1: DateInput, date2: DateInput) => DateDiffResult
-	let relativeTime: (date: DateInput, now?: DateInput, locale?: RelativeTimeLocale) => string
-	let isToday: (date: DateInput) => boolean
-	let isYesterday: (date: DateInput) => boolean
-	let isTomorrow: (date: DateInput) => boolean
-	let isWeekend: (date: DateInput) => boolean
-	let isLeapYear: (year: number) => boolean
-	let getDaysInMonth: (year: number, month: number) => number
-	let getQuarter: (date: DateInput) => number
-	let getWeekOfYear: (date: DateInput) => number
-	let getDayOfYear: (date: DateInput) => number
-	let compare: (date1: DateInput, date2: DateInput) => -1 | 0 | 1
-	let min: (...dates: DateInput[]) => IDateParser
-	let max: (...dates: DateInput[]) => IDateParser
-	let DateParser: typeof DateParser
-}
 
 export default date
 export { DateParser }

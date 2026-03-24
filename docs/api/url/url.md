@@ -20,7 +20,7 @@ import {
   stringifyQueryString,
   getQueryParamValue,
   setQueryParam,
-  getOrigin
+  getOrigin,
 } from 'js-cool'
 ```
 

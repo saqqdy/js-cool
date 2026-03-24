@@ -47,9 +47,9 @@ d.startOf('month').format()
 // '2024-01-01 00:00:00'
 
 // 获取属性
-d.year    // 2024
-d.month   // 1
-d.day     // 15
+d.year // 2024
+d.month // 1
+d.day // 15
 ```
 
 ### 2. date 命名空间（工厂 + 静态方法）
@@ -60,21 +60,21 @@ d.day     // 15
 import { date } from 'js-cool'
 
 // 工厂方法 - 创建 DateParser 实例
-date()                     // 当前时间
-date('2024-01-15')         // 指定日期
-date.now()                 // 当前时间
-date.parse('2024-01-15')   // 解析日期
+date() // 当前时间
+date('2024-01-15') // 指定日期
+date.now() // 当前时间
+date.parse('2024-01-15') // 解析日期
 
 // 静态方法
 date.format(new Date(), 'YYYY-MM-DD')
 date.diff('2024-01-01', '2024-12-31')
 date.isToday(new Date())
-date.getDaysInMonth(2024, 2)  // 29（闰年二月）
+date.getDaysInMonth(2024, 2) // 29（闰年二月）
 
 // 比较
-date.compare('2024-01-01', '2024-01-02')  // -1
-date.min('2024-01-01', '2024-01-02')      // 返回较早的日期
-date.max('2024-01-01', '2024-01-02')      // 返回较晚的日期
+date.compare('2024-01-01', '2024-01-02') // -1
+date.min('2024-01-01', '2024-01-02') // 返回较早的日期
+date.max('2024-01-01', '2024-01-02') // 返回较晚的日期
 ```
 
 ### 3. 直接导入函数
@@ -82,17 +82,12 @@ date.max('2024-01-01', '2024-01-02')      // 返回较晚的日期
 导入特定函数以获得更小的打包体积：
 
 ```js
-import {
-  formatDate,
-  dateDiff,
-  isToday,
-  isLeapYear,
-} from 'js-cool'
+import { formatDate, dateDiff, isToday, isLeapYear } from 'js-cool'
 
 formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
 dateDiff('2024-01-01', '2024-01-03')
 isToday(new Date())
-isLeapYear(2024)  // true
+isLeapYear(2024) // true
 ```
 
 ## DateParser 类 API
@@ -100,10 +95,10 @@ isLeapYear(2024)  // true
 ### 构造函数
 
 ```js
-const d = new DateParser()                 // 当前时间
-const d = new DateParser('2024-01-15')     // 字符串
-const d = new DateParser(1705276800000)    // 时间戳
-const d = new DateParser(new Date())       // Date 对象
+const d = new DateParser() // 当前时间
+const d = new DateParser('2024-01-15') // 字符串
+const d = new DateParser(1705276800000) // 时间戳
+const d = new DateParser(new Date()) // Date 对象
 ```
 
 ### 属性
@@ -111,16 +106,16 @@ const d = new DateParser(new Date())       // Date 对象
 ```js
 const d = new DateParser('2024-01-15 10:30:45')
 
-d.date         // Date 对象
-d.isValid      // true（日期是否有效）
-d.timestamp    // 1705276800000（毫秒时间戳）
-d.year         // 2024
-d.month        // 1（1-12）
-d.day          // 15（1-31）
-d.dayOfWeek    // 1（0-6，0 是周日）
-d.hours        // 10（0-23）
-d.minutes      // 30（0-59）
-d.seconds      // 45（0-59）
+d.date // Date 对象
+d.isValid // true（日期是否有效）
+d.timestamp // 1705276800000（毫秒时间戳）
+d.year // 2024
+d.month // 1（1-12）
+d.day // 15（1-31）
+d.dayOfWeek // 1（0-6，0 是周日）
+d.hours // 10（0-23）
+d.minutes // 30（0-59）
+d.seconds // 45（0-59）
 d.milliseconds // 0（0-999）
 ```
 
@@ -129,12 +124,12 @@ d.milliseconds // 0（0-999）
 ```js
 const d = new DateParser('2024-01-15 14:30:45')
 
-d.format()                    // '2024-01-15 14:30:45'
-d.format('YYYY/MM/DD')        // '2024/01/15'
-d.format('YYYY年MM月DD日')     // '2024年01月15日'
-d.toISOString()               // '2024-01-15T06:30:45.000Z'
-d.toDateString()              // '2024-01-15'
-d.toTimeString()              // '14:30:45'
+d.format() // '2024-01-15 14:30:45'
+d.format('YYYY/MM/DD') // '2024/01/15'
+d.format('YYYY年MM月DD日') // '2024年01月15日'
+d.toISOString() // '2024-01-15T06:30:45.000Z'
+d.toDateString() // '2024-01-15'
+d.toTimeString() // '14:30:45'
 ```
 
 ### 比较方法
@@ -142,16 +137,16 @@ d.toTimeString()              // '14:30:45'
 ```js
 const d = new DateParser('2024-01-15')
 
-d.isBefore('2024-01-20')      // true
-d.isAfter('2024-01-10')       // true
-d.isSame('2024-01-15')        // true
+d.isBefore('2024-01-20') // true
+d.isAfter('2024-01-10') // true
+d.isSame('2024-01-15') // true
 d.isSame('2024-01-15', 'month') // true（同月）
-d.isToday()                   // false
-d.isYesterday()               // false
-d.isTomorrow()                // false
-d.isWeekend()                 // false
-d.isWeekday()                 // true
-d.isLeapYear()                // true（2024 是闰年）
+d.isToday() // false
+d.isYesterday() // false
+d.isTomorrow() // false
+d.isWeekend() // false
+d.isWeekday() // true
+d.isLeapYear() // true（2024 是闰年）
 ```
 
 ### 操作方法（返回新实例）
@@ -160,23 +155,23 @@ d.isLeapYear()                // true（2024 是闰年）
 const d = new DateParser('2024-01-15')
 
 // 添加时间
-d.add(1, 'day').format()      // '2024-01-16'
-d.add(2, 'week').format()     // '2024-01-29'
-d.add(1, 'month').format()    // '2024-02-15'
-d.add(1, 'year').format()     // '2025-01-15'
+d.add(1, 'day').format() // '2024-01-16'
+d.add(2, 'week').format() // '2024-01-29'
+d.add(1, 'month').format() // '2024-02-15'
+d.add(1, 'year').format() // '2025-01-15'
 
 // 减去时间
 d.subtract(1, 'day').format() // '2024-01-14'
 
 // 时间段开始
-d.startOf('day').format()     // '2024-01-15 00:00:00'
-d.startOf('week').format()    // 本周日 00:00:00
-d.startOf('month').format()   // '2024-01-01 00:00:00'
-d.startOf('year').format()    // '2024-01-01 00:00:00'
+d.startOf('day').format() // '2024-01-15 00:00:00'
+d.startOf('week').format() // 本周日 00:00:00
+d.startOf('month').format() // '2024-01-01 00:00:00'
+d.startOf('year').format() // '2024-01-01 00:00:00'
 
 // 时间段结束
-d.endOf('day').format()       // '2024-01-15 23:59:59'
-d.endOf('month').format()     // '2024-01-31 23:59:59'
+d.endOf('day').format() // '2024-01-15 23:59:59'
+d.endOf('month').format() // '2024-01-31 23:59:59'
 ```
 
 ### 其他方法
@@ -189,18 +184,18 @@ d.diff('2024-01-20')
 // { days: 5, hours: 0, minutes: 0, ... }
 
 // 相对时间
-d.relativeTime()              // '5 天前'
+d.relativeTime() // '5 天前'
 
 // 获取值
-d.get('year')                 // 2024
-d.get('month')                // 1
-d.get('week')                 // 第几周
+d.get('year') // 2024
+d.get('month') // 1
+d.get('week') // 第几周
 
 // 获取信息
-d.getDaysInMonth()            // 31
-d.getQuarter()                // 1
-d.getWeekOfYear()             // 3
-d.getDayOfYear()              // 15
+d.getDaysInMonth() // 31
+d.getQuarter() // 1
+d.getWeekOfYear() // 3
+d.getDayOfYear() // 15
 ```
 
 ## date 命名空间 API
@@ -209,10 +204,10 @@ d.getDayOfYear()              // 15
 
 ```js
 // 创建 DateParser 实例
-date()                        // 当前时间
-date('2024-01-15')            // 指定日期
-date.now()                    // 当前时间
-date.parse('2024-01-15')      // 解析日期
+date() // 当前时间
+date('2024-01-15') // 指定日期
+date.now() // 当前时间
+date.parse('2024-01-15') // 解析日期
 ```
 
 ### 格式化函数
@@ -229,16 +224,16 @@ date.format(new Date(), 'YYYY年MM月DD日')
 
 ```js
 // 检查函数
-date.isToday(new Date())      // true
+date.isToday(new Date()) // true
 date.isYesterday('2024-01-14') // 取决于当前日期
-date.isTomorrow('2024-01-16')  // 取决于当前日期
-date.isWeekend('2024-01-20')   // true（周六）
-date.isLeapYear(2024)          // true
+date.isTomorrow('2024-01-16') // 取决于当前日期
+date.isWeekend('2024-01-20') // true（周六）
+date.isLeapYear(2024) // true
 
 // 比较
-date.compare('2024-01-01', '2024-01-02')  // -1（第一个更早）
-date.compare('2024-01-02', '2024-01-01')  // 1（第一个更晚）
-date.compare('2024-01-01', '2024-01-01')  // 0（相同）
+date.compare('2024-01-01', '2024-01-02') // -1（第一个更早）
+date.compare('2024-01-02', '2024-01-01') // 1（第一个更晚）
+date.compare('2024-01-01', '2024-01-01') // 0（相同）
 
 // 取值
 date.min('2024-01-01', '2024-06-01', '2024-03-01')
@@ -260,10 +255,10 @@ date.relativeTime(new Date(Date.now() - 3600000))
 // '1 小时前'
 
 // 获取信息
-date.getDaysInMonth(2024, 2)   // 29（闰年二月）
-date.getQuarter('2024-04-15')  // 2
-date.getWeekOfYear('2024-01-15')  // 3
-date.getDayOfYear('2024-02-01')   // 32
+date.getDaysInMonth(2024, 2) // 29（闰年二月）
+date.getQuarter('2024-04-15') // 2
+date.getWeekOfYear('2024-01-15') // 3
+date.getDayOfYear('2024-02-01') // 32
 ```
 
 ## 独立函数 API
@@ -341,8 +336,8 @@ relativeTime(new Date(Date.now() + 86400000))
 // '1 天后'
 
 // 支持多语言
-relativeTime(date, null, 'en')  // English
-relativeTime(date, null, 'ja')  // Japanese
+relativeTime(date, null, 'en') // English
+relativeTime(date, null, 'ja') // Japanese
 ```
 
 ### isToday / isYesterday / isTomorrow
@@ -352,9 +347,9 @@ relativeTime(date, null, 'ja')  // Japanese
 ```js
 import { isToday, isYesterday, isTomorrow } from 'js-cool'
 
-isToday(new Date())       // true
+isToday(new Date()) // true
 isYesterday('2024-01-14') // 取决于当前日期
-isTomorrow('2024-01-16')  // 取决于当前日期
+isTomorrow('2024-01-16') // 取决于当前日期
 ```
 
 ### isWeekend / isLeapYear
@@ -364,11 +359,11 @@ isTomorrow('2024-01-16')  // 取决于当前日期
 ```js
 import { isWeekend, isLeapYear } from 'js-cool'
 
-isWeekend('2024-01-20')  // true（周六）
-isWeekend('2024-01-15')  // false（周一）
+isWeekend('2024-01-20') // true（周六）
+isWeekend('2024-01-15') // false（周一）
 
-isLeapYear(2024)  // true
-isLeapYear(2023)  // false
+isLeapYear(2024) // true
+isLeapYear(2023) // false
 ```
 
 ### isBefore / isAfter / isSame / isBetween
@@ -378,13 +373,13 @@ isLeapYear(2023)  // false
 ```js
 import { isBefore, isAfter, isSame, isBetween } from 'js-cool'
 
-isBefore('2024-01-01', '2024-01-02')  // true
-isAfter('2024-01-02', '2024-01-01')    // true
-isSame('2024-01-15', '2024-01-15')     // true
-isSame('2024-01-15 10:00', '2024-01-15 12:00', 'day')  // true（同一天）
+isBefore('2024-01-01', '2024-01-02') // true
+isAfter('2024-01-02', '2024-01-01') // true
+isSame('2024-01-15', '2024-01-15') // true
+isSame('2024-01-15 10:00', '2024-01-15 12:00', 'day') // true（同一天）
 
-isBetween('2024-01-15', '2024-01-01', '2024-01-31')  // true
-isBetween('2024-01-15', '2024-01-01', '2024-01-10')  // false
+isBetween('2024-01-15', '2024-01-01', '2024-01-31') // true
+isBetween('2024-01-15', '2024-01-01', '2024-01-10') // false
 ```
 
 ### getDaysInMonth / getQuarter / getWeekOfYear / getDayOfYear
@@ -394,11 +389,11 @@ isBetween('2024-01-15', '2024-01-01', '2024-01-10')  // false
 ```js
 import { getDaysInMonth, getQuarter, getWeekOfYear, getDayOfYear } from 'js-cool'
 
-getDaysInMonth(2024, 1)      // 29（闰年二月）
-getDaysInMonth(2024, 0)      // 31（一月）
-getQuarter('2024-04-15')     // 2
-getWeekOfYear('2024-01-15')  // 3
-getDayOfYear('2024-02-01')   // 32
+getDaysInMonth(2024, 1) // 29（闰年二月）
+getDaysInMonth(2024, 0) // 31（一月）
+getQuarter('2024-04-15') // 2
+getWeekOfYear('2024-01-15') // 3
+getDayOfYear('2024-02-01') // 32
 ```
 
 ### add / subtract / startOf / endOf
@@ -409,21 +404,21 @@ getDayOfYear('2024-02-01')   // 32
 import { addDate, subtractDate, startOf, endOf } from 'js-cool'
 
 // 添加时间
-addDate(new Date(), 1, 'day')      // 明天
-addDate(new Date(), 2, 'week')     // 两周后
-addDate(new Date(), 1, 'month')    // 一个月后
+addDate(new Date(), 1, 'day') // 明天
+addDate(new Date(), 2, 'week') // 两周后
+addDate(new Date(), 1, 'month') // 一个月后
 
 // 减去时间
 subtractDate(new Date(), 1, 'day') // 昨天
 
 // 时间段开始
-startOf(new Date(), 'day')         // 今天 00:00:00
-startOf(new Date(), 'month')       // 本月第一天 00:00:00
-startOf(new Date(), 'year')        // 今年第一天 00:00:00
+startOf(new Date(), 'day') // 今天 00:00:00
+startOf(new Date(), 'month') // 本月第一天 00:00:00
+startOf(new Date(), 'year') // 今年第一天 00:00:00
 
 // 时间段结束
-endOf(new Date(), 'day')           // 今天 23:59:59.999
-endOf(new Date(), 'month')         // 本月最后一天 23:59:59.999
+endOf(new Date(), 'day') // 今天 23:59:59.999
+endOf(new Date(), 'month') // 本月最后一天 23:59:59.999
 ```
 
 ## 类型定义

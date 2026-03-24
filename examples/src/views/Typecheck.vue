@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { NH1, NSpace, NInput, NTag, NCode } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
@@ -12,6 +12,8 @@ import {
 	isIterable,
 	isEmpty,
 	isNil,
+	isWindow,
+	isExitsFunction,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -37,6 +39,32 @@ const samples = [
 	{ label: 'RegExp', value: /test/g },
 	{ label: 'Map', value: new Map() },
 ]
+
+// isWindow demo
+const windowCheckResult = ref(false)
+const windowCheckInput = ref('window')
+
+const checkWindow = () => {
+	try {
+		const obj = windowCheckInput.value === 'window' ? window : JSON.parse(windowCheckInput.value)
+		windowCheckResult.value = isWindow(obj)
+	} catch {
+		windowCheckResult.value = false
+	}
+}
+
+// isExitsFunction demo
+const funcNameInput = ref('JSON.parse')
+const funcExistsResult = ref(false)
+
+const checkFunction = () => {
+	funcExistsResult.value = isExitsFunction(funcNameInput.value)
+}
+
+onMounted(() => {
+	checkWindow()
+	checkFunction()
+})
 </script>
 
 <template>
@@ -185,6 +213,62 @@ const samples = [
 					<n-space align="center">
 						<n-code code="isEmpty" language="javascript" />
 						<n-tag type="info">{{ isEmpty(getTestValue()) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="isWindow"
+			description="Check if value is a Window object"
+			since="1.0.0"
+			:code="`isWindow(window) // true in browser\nisWindow({}) // false`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-input v-model:value="windowCheckInput" style="width: 200px" @update:value="checkWindow" />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<n-code :code="`isWindow(${windowCheckInput})`" language="javascript" />
+						<n-tag type="info">{{ windowCheckResult }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="isExitsFunction"
+			description="Check if a function exists in global scope by path"
+			since="1.0.0"
+			:code="`isExitsFunction('JSON.parse') // true\nisExitsFunction('nonExistent') // false`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-input v-model:value="funcNameInput" style="width: 200px" @update:value="checkFunction" placeholder="Function path" />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<n-code :code="`isExitsFunction('${funcNameInput}')`" language="javascript" />
+						<n-tag :type="funcExistsResult ? 'success' : 'default'">{{ funcExistsResult }}</n-tag>
+					</n-space>
+					<n-space wrap>
+						<n-space align="center">
+							<code class="code-inline">JSON.parse</code>
+							<n-tag size="small" :bordered="false">{{ isExitsFunction('JSON.parse') }}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline">console.log</code>
+							<n-tag size="small" :bordered="false">{{ isExitsFunction('console.log') }}</n-tag>
+						</n-space>
+						<n-space align="center">
+							<code class="code-inline">nonExistent</code>
+							<n-tag size="small" :bordered="false">{{ isExitsFunction('nonExistent') }}</n-tag>
+						</n-space>
 					</n-space>
 				</n-space>
 			</template>
