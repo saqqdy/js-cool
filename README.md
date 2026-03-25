@@ -270,6 +270,7 @@ URLSearchParams-like API for URL parsing and building, plus a chainable `Url` cl
 import {
   url,
   Url,
+  URLParams,
   // Query string parsing & building (descriptive names)
   parseQueryString,
   stringifyQueryString,
@@ -357,6 +358,56 @@ get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 parse('?key1=100&key2=true', { covert: true }) // { key1: 100, key2: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+#### URLParams
+
+Enhanced URLSearchParams that parses both search and hash parameters.
+
+```js
+import { URLParams } from 'js-cool'
+
+// Basic usage - auto search from both scopes (hash priority)
+const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+
+params.get('ss') // '1' (from search)
+params.get('bb') // '343' (from hash)
+params.has('ss') // true
+params.keys() // ['ss', 'bb']
+
+// Specify scope
+params.get('ss', 'search') // '1'
+params.get('ss', 'hash') // null
+params.get('ss', 'all') // '1' (default, hash priority)
+
+// Get all params
+params.toObject() // { ss: '1', bb: '343' }
+params.toObject('search') // { ss: '1' }
+params.toObject('hash') // { bb: '343' }
+
+// Detailed info (with source)
+params.toDetailObject()
+// {
+//   search: { ss: '1' },
+//   hash: { bb: '343' },
+//   all: { ss: '1', bb: '343' },
+//   source: { ss: 'search', bb: 'hash' }
+// }
+
+// Chainable modifications
+params.set('token', 'abc').set('page', 1).delete('ss')
+params.toString() // '?token=abc&page=1'
+
+// Operate on hash params
+params.set('bb', '999', 'hash')
+params.toString('hash') // 'bb=999'
+
+// Build full URL
+params.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
+
+// Static methods
+URLParams.current() // From current page URL
+URLParams.fromQueryString('a=1&b=2') // From query string only
 ```
 
 ---

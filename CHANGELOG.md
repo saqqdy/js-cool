@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2025-03-24
+## [6.0.0] - 2026-03-25
 
 ### ⚠️ BREAKING CHANGES
 
@@ -19,6 +19,12 @@ All notable changes to this project will be documented in this file.
   - `pattern` → `validation`
   - `trim` → `String.prototype.trim()`
   - `isExitsVariable` → `getGlobal(name) != null`
+  - `getQueryParam` → `url.get()` or `new URLParams(url).get()`
+  - `getQueryParams` → `url.parse()` or `new URLParams(url).toObject()`
+  - `getUrlParam` → `url.get()` or `new URLParams(url).get()`
+  - `getUrlParams` → `url.parse()` or `new URLParams(url).toObject()`
+  - `parseUrlParam` → `url.parse()`
+  - `spliceUrlParam` → `url.set()` or `new URLParams(url).set().toURL()`
 
 - **Module Renamed**: `client` → `ua`
 - **Type Change**: `base64ToFile()` returns `File | Blob` (IE11 returns Blob)
@@ -32,6 +38,7 @@ All notable changes to this project will be documented in this file.
 
 - **New `url` Module**: Chainable URL builder with URLSearchParams-like API
   - `Url` class: `new Url(url).set('key', value).toString()`
+  - `URLParams` class: Enhanced URLSearchParams that parses both search and hash parameters
   - Static methods: `get()`, `set()`, `parse()`, `stringify()`, etc.
   - Descriptive function aliases: `parseQueryString`, `stringifyQueryString`, `getQueryParamValue`, `setQueryParam`, etc.
   - URL property extraction: `getOrigin()`, `getHost()`, `getHostname()`, `getPathname()`, `getSearch()`, `getHash()`
