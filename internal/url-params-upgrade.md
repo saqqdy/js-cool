@@ -8,15 +8,16 @@
 
 ### 1.1 方法概览
 
-| 方法             | 位置                    | 功能                                | 状态                     |
-| ---------------- | ----------------------- | ----------------------------------- | ------------------------ |
-| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常                  |
-| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常                  |
-| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常                  |
-| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常                  |
-| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常                  |
-| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常                  |
-| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams |
+| 方法             | 位置                    | 功能                                | 状态                       |
+| ---------------- | ----------------------- | ----------------------------------- | -------------------------- |
+| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常                    |
+| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常                    |
+| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常                    |
+| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常                    |
+| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常                    |
+| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常                    |
+| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams   |
+| `URLParams`      | 待新增                  | 增强版 URLSearchParams 类           | 📝 计划中（推荐）          |
 
 ### 1.2 依赖关系
 
@@ -25,6 +26,10 @@ getUrlParams ──┐
 getUrlParam ───┼──► parseUrlParam
 getQueryParams ─┤
 getQueryParam ──┘
+
+URLParams ──────┴──► URLSearchParams + URL API
+                     ├── _search: URLSearchParams (# 前参数)
+                     └── _hash: URLSearchParams (# 后参数)
 
 parseUrlParam ──► pattern.number (正则)
 ```
@@ -525,19 +530,21 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### Phase 1: 新增功能（v6.1）
 
-| 任务                     | 优先级 | 预估工时 | 状态      |
-| ------------------------ | ------ | -------- | --------- |
-| 新增 `UrlBuilder` 类     | P1     | 0.5 天   | 待处理    |
-| 新增 `getDirParams` 方法 | P1     | 0.5 天   | ✅ 已完成 |
-| 支持 `URL` 对象输入      | P2     | 0.5 天   | 待处理    |
+| 任务                         | 优先级 | 预估工时 | 状态      |
+| ---------------------------- | ------ | -------- | --------- |
+| 新增 `URLParams` 类          | P1     | 1 天     | 待处理    |
+| 新增 `getDirParams` 方法     | P1     | 0.5 天   | ✅ 已完成 |
+| 新增 `UrlBuilder` 类         | P2     | 0.5 天   | 待处理    |
+| 支持 `URL` 对象输入          | P2     | 0.5 天   | 待处理    |
+| 现有方法复用 `URLParams`     | P2     | 0.5 天   | 待处理    |
 
 ### Phase 2: 性能优化（v6.2）
 
-| 任务                        | 优先级 | 预估工时 |
-| --------------------------- | ------ | -------- |
-| 使用 `URLSearchParams` 优化 | P1     | 1 天     |
-| 单值获取方法优化            | P2     | 0.5 天   |
-| 性能基准测试                | P3     | 0.5 天   |
+| 任务                                     | 优先级 | 预估工时 | 状态   |
+| ---------------------------------------- | ------ | -------- | ------ |
+| 使用 `URLSearchParams` 优化 `parseUrlParam` | P1     | 1 天     | 待处理 |
+| 单值获取方法优化                         | P2     | 0.5 天   | 待处理 |
+| 性能基准测试                             | P3     | 0.5 天   | 待处理 |
 
 ### Phase 3: API 重命名（v7.0）
 
@@ -580,10 +587,417 @@ const str = spliceUrlParam({ a: 1 }) // 旧
 const str = buildQueryString({ a: 1 }) // 新
 ```
 
+## 七、复杂 URL 场景处理（# 前后都有参数）
+
+### 7.1 问题场景
+
+**典型 URL**：`https://a.cn/?ss=1#/path?bb=343`
+
+| 参数位置 | 示例 | 说明 |
+|---------|------|------|
+| search params（`#` 前） | `ss=1` | `location.search` 或 `URL.search` |
+| hash params（`#` 后） | `bb=343` | hash 内部的查询参数 |
+
+**当前方法行为**：
+
+```typescript
+// # 前参数
+getUrlParams('https://a.cn/?ss=1#/path?bb=343')
+// { ss: '1' } ✅
+
+// # 后参数
+getQueryParams('https://a.cn/?ss=1#/path?bb=343')
+// { bb: '343' } ✅
+
+// 问题：无法一次性获取所有参数
+```
+
+### 7.2 原生 URL 类分析
+
+```javascript
+const url = new URL('https://a.cn/?ss=1#/path?bb=343')
+
+url.href         // 'https://a.cn/?ss=1#/path?bb=343'
+url.origin       // 'https://a.cn'
+url.pathname     // '/'
+url.search       // '?ss=1'
+url.searchParams // URLSearchParams { 'ss' → '1' }  ← 只能获取 # 前参数
+url.hash         // '#/path?bb=343'  ← 原生无法解析 hash 内参数
+```
+
+**原生 URL 的局限**：无法直接获取 hash 内的查询参数。
+
+### 7.3 推荐方案：URLParams 类
+
+**设计理念**：参考原生 `URLSearchParams`，提供统一 API，通过 `scope` 参数区分参数来源。
+
+````typescript
+// src/URLParams.ts
+
+type ParamScope = 'search' | 'hash' | 'all'
+
+/**
+ * URL 参数处理器 - 同时支持 search 和 hash 参数
+ *
+ * @description 增强版 URLSearchParams，解决原生 URL 无法解析 hash 内参数的问题。
+ *
+ * @example
+ * ```js
+ * // 基础用法
+ * const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+ *
+ * // 自动从 search + hash 查找（hash 优先）
+ * params.get('ss')     // '1'  (from search)
+ * params.get('bb')     // '343' (from hash)
+ * params.has('ss')     // true
+ * params.keys()        // ['ss', 'bb']
+ *
+ * // 指定范围操作
+ * params.get('ss', 'search')  // '1'
+ * params.get('ss', 'hash')    // null
+ * params.get('ss', 'all')     // '1' (默认，hash 优先)
+ *
+ * // 获取所有参数
+ * params.toObject()           // { ss: '1', bb: '343' }
+ * params.toObject('search')   // { ss: '1' }
+ * params.toObject('hash')     // { bb: '343' }
+ *
+ * // 详细信息（区分来源）
+ * params.toDetailObject()
+ * // {
+ * //   search: { ss: '1' },
+ * //   hash: { bb: '343' },
+ * //   all: { ss: '1', bb: '343' },
+ * //   source: { ss: 'search', bb: 'hash' }
+ * // }
+ *
+ * // 链式修改
+ * params.set('token', 'abc').set('page', 1).delete('ss')
+ * params.toString()           // '?token=abc&page=1'
+ *
+ * // 操作 hash 参数
+ * params.set('bb', '999', 'hash')
+ * params.toString('hash')     // 'bb=999'
+ *
+ * // 构建完整 URL
+ * params.toURL()              // 'https://a.cn/?token=abc&page=1#/path?bb=999'
+ * ```
+ */
+class URLParams {
+  private _search: URLSearchParams
+  private _hash: URLSearchParams
+  private _url: URL | null
+
+  constructor(url?: string | URL) {
+    // 无参数时使用当前页面 URL
+    if (!url && typeof location !== 'undefined') {
+      url = location.href
+    }
+
+    if (url instanceof URL) {
+      this._url = url
+      this._search = url.searchParams
+      this._hash = this._parseHashParams(url.hash)
+    } else if (typeof url === 'string') {
+      this._url = this._createURL(url)
+      this._search = this._url.searchParams
+      this._hash = this._parseHashParams(this._url.hash)
+    } else {
+      this._search = new URLSearchParams()
+      this._hash = new URLSearchParams()
+      this._url = null
+    }
+  }
+
+  // ==================== 读取操作 ====================
+
+  /**
+   * 获取参数值
+   * @param name - 参数名
+   * @param scope - 范围：'search'(#前) | 'hash'(#后) | 'all'(全部，默认)
+   */
+  get(name: string, scope?: ParamScope): string | null {
+    if (scope === 'search') return this._search.get(name)
+    if (scope === 'hash') return this._hash.get(name)
+    // scope === 'all': hash 优先
+    return this._hash.get(name) ?? this._search.get(name)
+  }
+
+  /**
+   * 获取所有同名参数值
+   */
+  getAll(name: string, scope?: ParamScope): string[] {
+    if (scope === 'search') return this._search.getAll(name)
+    if (scope === 'hash') return this._hash.getAll(name)
+    return [...this._search.getAll(name), ...this._hash.getAll(name)]
+  }
+
+  /**
+   * 检查参数是否存在
+   */
+  has(name: string, scope?: ParamScope): boolean {
+    if (scope === 'search') return this._search.has(name)
+    if (scope === 'hash') return this._hash.has(name)
+    return this._search.has(name) || this._hash.has(name)
+  }
+
+  /**
+   * 获取所有参数名
+   */
+  keys(scope?: ParamScope): string[] {
+    if (scope === 'search') return [...this._search.keys()]
+    if (scope === 'hash') return [...this._hash.keys()]
+    return [...new Set([...this._search.keys(), ...this._hash.keys()])]
+  }
+
+  /**
+   * 获取所有参数值
+   */
+  values(scope?: ParamScope): string[] {
+    if (scope !== 'all') {
+      const params = scope === 'search' ? this._search : this._hash
+      return [...params.values()]
+    }
+    return this.keys().map(k => this.get(k)!).filter(v => v !== null)
+  }
+
+  /**
+   * 获取所有键值对
+   */
+  entries(scope?: ParamScope): [string, string][] {
+    if (scope !== 'all') {
+      const params = scope === 'search' ? this._search : this._hash
+      return [...params.entries()]
+    }
+    return this.keys().map(k => [k, this.get(k)!] as [string, string])
+  }
+
+  // ==================== 写入操作 ====================
+
+  /**
+   * 设置参数（覆盖）
+   * @param scope - 默认 'search'
+   */
+  set(name: string, value: string | number | boolean, scope?: 'search' | 'hash'): this {
+    const params = scope === 'hash' ? this._hash : this._search
+    params.set(name, String(value))
+    return this
+  }
+
+  /**
+   * 追加参数
+   */
+  append(name: string, value: string | number | boolean, scope?: 'search' | 'hash'): this {
+    const params = scope === 'hash' ? this._hash : this._search
+    params.append(name, String(value))
+    return this
+  }
+
+  /**
+   * 删除参数
+   */
+  delete(name: string, scope?: ParamScope): this {
+    if (scope === 'all' || !scope) {
+      this._search.delete(name)
+      this._hash.delete(name)
+    } else {
+      const params = scope === 'hash' ? this._hash : this._search
+      params.delete(name)
+    }
+    return this
+  }
+
+  /**
+   * 清空所有参数
+   */
+  clear(scope?: ParamScope): this {
+    if (scope === 'hash' || scope === 'search') {
+      const params = scope === 'hash' ? this._hash : this._search
+      for (const key of params.keys()) {
+        params.delete(key)
+      }
+    } else {
+      this._search = new URLSearchParams()
+      this._hash = new URLSearchParams()
+    }
+    return this
+  }
+
+  // ==================== 转换操作 ====================
+
+  /**
+   * 转为对象
+   */
+  toObject(scope?: ParamScope): Record<string, string> {
+    const result: Record<string, string> = {}
+    for (const [k, v] of this.entries(scope)) {
+      result[k] = v
+    }
+    return result
+  }
+
+  /**
+   * 转为详细对象（区分来源）
+   */
+  toDetailObject(): {
+    search: Record<string, string>
+    hash: Record<string, string>
+    all: Record<string, string>
+    source: Record<string, 'search' | 'hash' | 'both'>
+  } {
+    const search = this.toObject('search')
+    const hash = this.toObject('hash')
+    const source: Record<string, 'search' | 'hash' | 'both'> = {}
+
+    for (const k of Object.keys(search)) source[k] = 'search'
+    for (const k of Object.keys(hash)) {
+      source[k] = k in source ? 'both' : 'hash'
+    }
+
+    return { search, hash, all: this.toObject(), source }
+  }
+
+  /**
+   * 转为字符串
+   * @param scope - 默认 'search'
+   */
+  toString(scope?: 'search' | 'hash'): string {
+    const params = scope === 'hash' ? this._hash : this._search
+    return params.toString()
+  }
+
+  /**
+   * 构建完整 URL
+   */
+  toURL(): string {
+    const search = this._search.toString()
+    const hash = this._hash.toString()
+
+    if (!this._url) {
+      let result = '/'
+      if (search) result += `?${search}`
+      if (hash) result += `#${hash}`
+      return result
+    }
+
+    // 提取 hash 路径（如果有）
+    let hashPath = ''
+    if (this._url.hash) {
+      const hashContent = this._url.hash.slice(1)
+      const idx = hashContent.indexOf('?')
+      hashPath = idx > -1 ? hashContent.slice(0, idx) : hashContent
+    }
+
+    let result = this._url.origin + this._url.pathname
+    if (search) result += `?${search}`
+    if (hashPath || hash) {
+      result += '#'
+      if (hashPath) result += hashPath
+      if (hash) result += `?${hash}`
+    }
+
+    return result
+  }
+
+  // ==================== 私有方法 ====================
+
+  private _createURL(url: string): URL {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return new URL(url)
+    }
+    if (typeof location !== 'undefined') {
+      return new URL(url, location.origin)
+    }
+    return new URL(`http://localhost${url.startsWith('/') ? '' : '/'}${url}`)
+  }
+
+  private _parseHashParams(hash: string): URLSearchParams {
+    if (!hash || hash === '#') return new URLSearchParams()
+    const content = hash.slice(1)
+    const idx = content.indexOf('?')
+    if (idx === -1) return new URLSearchParams()
+    return new URLSearchParams(content.slice(idx + 1))
+  }
+}
+
+export default URLParams
+````
+
+### 7.4 与原生 API 对比
+
+| 功能 | 原生 URLSearchParams | URLParams |
+|------|---------------------|-----------|
+| 获取 search 参数 | `url.searchParams.get('key')` | `params.get('key', 'search')` |
+| 获取 hash 参数 | ❌ 不支持 | `params.get('key', 'hash')` |
+| 获取全部参数 | ❌ 不支持 | `params.get('key')` 或 `params.get('key', 'all')` |
+| 区分参数来源 | ❌ 不支持 | `params.toDetailObject().source` |
+| 链式调用 | ❌ 不支持 | `params.set('a', 1).set('b', 2)` |
+| 构建完整 URL | ❌ 不支持 | `params.toURL()` |
+
+### 7.5 现有方法复用 URLParams
+
+现有方法可以基于 `URLParams` 简化实现：
+
+```typescript
+// getUrlParams.ts
+import URLParams from './URLParams'
+
+function getUrlParams(url?: string | boolean, covert?: boolean) {
+  if (typeof url === 'boolean') {
+    covert = url
+    url = undefined
+  }
+  const params = new URLParams(url)
+  return params.toObject('search')
+}
+
+// getQueryParams.ts
+function getQueryParams(url?: string | boolean, covert?: boolean) {
+  if (typeof url === 'boolean') {
+    covert = url
+    url = undefined
+  }
+  const params = new URLParams(url)
+  return params.toObject('hash')
+}
+
+// getUrlParam.ts
+function getUrlParam(key: string, url?: string) {
+  return new URLParams(url).get(key, 'search') ?? undefined
+}
+
+// getQueryParam.ts
+function getQueryParam(key: string, url?: string) {
+  return new URLParams(url).get(key, 'hash') ?? undefined
+}
+```
+
+### 7.6 API 总结
+
+| 方法/类 | 功能 | 返回值 |
+|---------|------|--------|
+| `getUrlParams` | 获取 search 参数（# 前） | `{ key: value }` |
+| `getQueryParams` | 获取 hash 参数（# 后） | `{ key: value }` |
+| `URLParams` **新增** | 统一的参数处理器 | `URLParams` 实例 |
+
+**URLParams 核心 API**：
+
+| 方法 | 说明 |
+|------|------|
+| `get(name, scope?)` | 获取单个参数，scope 默认 'all' |
+| `getAll(name, scope?)` | 获取所有同名参数 |
+| `has(name, scope?)` | 检查参数是否存在 |
+| `set(name, value, scope?)` | 设置参数，scope 默认 'search' |
+| `append(name, value, scope?)` | 追加参数 |
+| `delete(name, scope?)` | 删除参数 |
+| `toObject(scope?)` | 转为对象 |
+| `toDetailObject()` | 转为详细对象（含来源信息） |
+| `toURL()` | 构建完整 URL |
+
 ---
 
 > 文档生成时间：2025-03-23
 >
-> 最后更新：2026-03-23（getDirParam 已重构为 getDirParams）
+> 最后更新：2026-03-25（新增 URLParams 类方案，参考原生 URLSearchParams 设计）
 >
 > 基于 js-cool v6.0.0 版本分析

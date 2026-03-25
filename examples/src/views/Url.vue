@@ -3,10 +3,6 @@ import { ref, computed } from 'vue'
 import { NH1, NInput, NTag, NSpace, NTabs, NTabPane } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
-	getUrlParams,
-	getUrlParam,
-	parseUrlParam,
-	spliceUrlParam,
 	getDirParams,
 	appVersion,
 	browserVersion,
@@ -16,6 +12,8 @@ import {
 	// URL utilities - class and namespace
 	url,
 	Url,
+	// URLParams class
+	URLParams,
 } from 'js-cool'
 import { ua, type UAInfo } from 'js-cool'
 import { useI18n } from '@/locales'
@@ -46,6 +44,36 @@ const urlForPatterns = ref('https://example.com:8080/api/users?id=123&page=1#sec
 const urlParamName = ref('id')
 const urlParamValue = ref('2')
 
+// URLParams examples
+const urlParamsInput = ref('https://a.cn/?ss=1#/path?bb=343')
+const urlParamsKey = ref('ss')
+const urlParamsScope = ref<'search' | 'hash' | 'all'>('all')
+
+const urlParamsResult = computed(() => {
+	const params = new URLParams(urlParamsInput.value)
+	return {
+		get: params.get(urlParamsKey.value, urlParamsScope.value),
+		has: params.has(urlParamsKey.value, urlParamsScope.value),
+		keys: params.keys(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
+		toObject: params.toObject(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
+		toDetailObject: params.toDetailObject(),
+	}
+})
+
+// URLParams builder
+const urlParamsBuilderInput = ref('https://api.example.com')
+const urlParamsBuilderOutput = computed(() => {
+	return new URLParams(urlParamsBuilderInput.value)
+		.set('token', 'abc123')
+		.set('page', 1)
+		.set('tab', 'profile', 'hash')
+		.setHashPath('/user/settings')
+		.toURL()
+})
+
+// getQueryParams / getQueryParam
+const hashUrlInput = ref('https://example.com#/profile?tab=settings&mode=dark')
+
 // UA detection
 const uaInfo = computed(() => ua.info as UAInfo)
 const uaQuickChecks = computed(() => ({
@@ -70,16 +98,21 @@ const uaScreen = computed(() => ua.getScreen())
 		<n-h1>Url</n-h1>
 		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.Url }}</p>
 
-		<!-- getUrlParams / getUrlParam -->
+		<!-- url.get / url.parse -->
 		<FunctionCard
-			title="getUrlParams / getUrlParam"
-			description="Parse URL parameters from search string"
-			since="1.0.0"
-			:code="`getUrlParam('name', '?name=John&age=25')
+			title="url.get / url.parse"
+			description="Parse URL search parameters (before #) using url namespace"
+			since="6.0.0"
+			:code="`import { url } from 'js-cool'
+
+url.get('name', '?name=John&age=25')
 // 'John'
 
-getUrlParams('?name=John&age=25')
-// { name: 'John', age: '25' }`"
+url.parse('?name=John&age=25')
+// { name: 'John', age: '25' }
+
+url.parse('?count=100&active=true', { covert: true })
+// { count: 100, active: true }`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -88,7 +121,7 @@ getUrlParams('?name=John&age=25')
 						<n-input v-model:value="paramKey" style="width: 120px" />
 						<span style="color: #666">→</span>
 						<n-tag type="info" size="small" :bordered="false">{{
-							getUrlParam(paramKey, urlInput)
+							url.get(paramKey, urlInput)
 						}}</n-tag>
 					</n-space>
 				</n-space>
@@ -96,31 +129,196 @@ getUrlParams('?name=John&age=25')
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">getUrlParams(url)</code>
+						<code class="code-inline">url.parse(url)</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(getUrlParams(urlInput))
+							JSON.stringify(url.parse(urlInput))
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">getUrlParams(url, true)</code>
+						<code class="code-inline">url.parse(url, { covert: true })</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(getUrlParams(urlInput, true))
+							JSON.stringify(url.parse(urlInput, { covert: true }))
 						}}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>
 
-		<!-- parseUrlParam / spliceUrlParam -->
+		<!-- URLParams hash params -->
 		<FunctionCard
-			title="parseUrlParam / spliceUrlParam"
-			description="Parse and build URL parameters"
-			since="1.0.0"
-			:code="`parseUrlParam('a=1&b=2&c=true')
+			title="URLParams (hash params)"
+			description="Parse URL parameters from hash string (after #) using URLParams class"
+			since="6.1.0"
+			:code="`import { URLParams } from 'js-cool'
+
+const params = new URLParams('https://example.com#/profile?tab=settings')
+params.get('tab', 'hash')
+// 'settings'
+
+params.toObject('hash')
+// { tab: 'settings' }`"
+		>
+			<template #input>
+				<n-space vertical>
+					<n-input v-model:value="hashUrlInput" style="width: 100%" />
+					<n-space align="center">
+						<n-input v-model:value="paramKey" style="width: 120px" />
+						<span style="color: #666">→</span>
+						<n-tag type="info" size="small" :bordered="false">{{
+							new URLParams(hashUrlInput).get(paramKey, 'hash') ?? 'null'
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">params.toObject('hash')</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(new URLParams(hashUrlInput).toObject('hash'))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- URLParams class -->
+		<FunctionCard
+			title="URLParams class"
+			description="Enhanced URLSearchParams that handles both search (#前) and hash (#后) params"
+			since="6.1.0"
+			:code="`import { URLParams } from 'js-cool'
+
+const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+
+// Auto find from search + hash (hash priority)
+params.get('ss')     // '1' (from search)
+params.get('bb')     // '343' (from hash)
+
+// Specify scope
+params.get('ss', 'search')  // '1'
+params.get('ss', 'hash')    // null
+params.get('ss', 'all')     // '1' (default)
+
+// Get all params
+params.toObject()           // { ss: '1', bb: '343' }
+params.toDetailObject()     // { search, hash, all, source }`"
+		>
+			<template #input>
+				<n-space vertical style="width: 100%">
+					<n-input v-model:value="urlParamsInput" style="width: 100%" placeholder="URL with search and hash params" />
+					<n-space align="center">
+						<n-input v-model:value="urlParamsKey" style="width: 100px" placeholder="key" />
+						<n-space>
+							<n-tag
+								v-for="scope in ['search', 'hash', 'all'] as const"
+								:key="scope"
+								:type="urlParamsScope === scope ? 'primary' : 'default'"
+								style="cursor: pointer"
+								@click="urlParamsScope = scope"
+							>
+								{{ scope }}
+							</n-tag>
+						</n-space>
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">params.get('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							urlParamsResult.get ?? 'null'
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">params.has('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
+						<n-tag :type="urlParamsResult.has ? 'success' : 'default'" size="small" :bordered="false">{{
+							urlParamsResult.has
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">params.keys('{{ urlParamsScope }}')</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(urlParamsResult.keys)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">params.toObject('{{ urlParamsScope }}')</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							JSON.stringify(urlParamsResult.toObject)
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- URLParams detail -->
+		<FunctionCard
+			title="URLParams.toDetailObject()"
+			description="Get detailed params info with source tracking"
+			since="6.1.0"
+			:code="`params.toDetailObject()
+// {
+//   search: { ss: '1' },
+//   hash: { bb: '343' },
+//   all: { ss: '1', bb: '343' },
+//   source: { ss: 'search', bb: 'hash' }
+// }
+
+// Duplicate key tracking
+new URLParams('https://example.com?token=old#/path?token=new')
+  .toDetailObject()
+// { ..., source: { token: 'both' } }`"
+		>
+			<template #result>
+				<pre class="code-block">{{ JSON.stringify(urlParamsResult.toDetailObject, null, 2) }}</pre>
+			</template>
+		</FunctionCard>
+
+		<!-- URLParams builder -->
+		<FunctionCard
+			title="URLParams chaining"
+			description="Build URLs with chainable methods"
+			since="6.1.0"
+			:code="`import { URLParams } from 'js-cool'
+
+const params = new URLParams('https://api.example.com')
+  .set('token', 'abc123')
+  .set('page', 1)
+  .set('tab', 'profile', 'hash')  // set hash param
+  .setHashPath('/user/settings')   // set hash path
+  .toURL()
+// 'https://api.example.com/?token=abc123&page=1#/user/settings?tab=profile'`"
+		>
+			<template #input>
+				<n-input v-model:value="urlParamsBuilderInput" style="width: 100%" placeholder="Base URL" />
+			</template>
+			<template #result>
+				<n-space vertical>
+					<code class="code-inline">.set('token', 'abc123').set('page', 1).set('tab', 'profile', 'hash').setHashPath('/user/settings')</code>
+					<n-tag type="info" size="small" :bordered="false" style="max-width: 100%; overflow-wrap: break-word">{{
+						urlParamsBuilderOutput
+					}}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- url.parse / url.stringify -->
+		<FunctionCard
+			title="url.parse / url.stringify"
+			description="Parse and build URL query strings using url namespace"
+			since="6.0.0"
+			:code="`import { url } from 'js-cool'
+
+url.parse('a=1&b=2&c=true')
 // { a: '1', b: '2', c: 'true' }
 
-spliceUrlParam({ name: 'John', age: 25 })
-// 'name=John&age=25'`"
+url.parse('a=1&b=2&c=true', { covert: true })
+// { a: 1, b: 2, c: true }
+
+url.stringify({ name: 'John', age: 25 })
+// '?name=John&age=25'`"
 		>
 			<template #input>
 				<n-input v-model:value="paramStr" style="width: 300px" />
@@ -128,21 +326,21 @@ spliceUrlParam({ name: 'John', age: 25 })
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">parseUrlParam(str)</code>
+						<code class="code-inline">url.parse(str)</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(parseUrlParam(paramStr))
+							JSON.stringify(url.parse(paramStr))
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">parseUrlParam(str, true)</code>
+						<code class="code-inline">url.parse(str, { covert: true })</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(parseUrlParam(paramStr, true))
+							JSON.stringify(url.parse(paramStr, { covert: true }))
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">spliceUrlParam</code>
+						<code class="code-inline">url.stringify(obj)</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							spliceUrlParam(paramObj)
+							url.stringify(paramObj)
 						}}</n-tag>
 					</n-space>
 				</n-space>
