@@ -6,6 +6,9 @@
  */
 
 import { validation } from '../patterns/validation'
+import type { ParamScope } from '../URLParams'
+
+export type { ParamScope } from '../URLParams'
 
 /**
  * Value conversion map for query string parsing
@@ -19,6 +22,17 @@ export const VALUE_MAP = {
 	true: true,
 	undefined,
 } as const
+
+/**
+ * Convert string value to appropriate type
+ * @param value - String value to convert
+ * @returns Converted value
+ */
+export function convertValue(value: string): unknown {
+	if (value in VALUE_MAP) return VALUE_MAP[value as keyof typeof VALUE_MAP]
+	if (validation.number.test(value)) return Number(value)
+	return value
+}
 
 /**
  * URL parsing patterns
@@ -224,29 +238,85 @@ function getSearchStr(url?: URLInput): string {
 }
 
 /**
+ * Extract hash params string from URL input
+ * @example
+ * getHashParamStr('https://example.com#/path?a=1&b=2') // 'a=1&b=2'
+ */
+function getHashParamStr(url?: URLInput): string {
+	if (!url) {
+		if (typeof location === 'undefined') {
+			return ''
+		}
+		return location.hash
+	}
+
+	if (url instanceof URL) {
+		return url.hash
+	}
+
+	// Extract hash params: #/path?a=1&b=2 or #?a=1&b=2 or #a=1&b=2
+	const hashMatch = url.match(/#(.*)$/)
+	if (!hashMatch) return ''
+
+	const hashContent = hashMatch[1]
+	// Find ? in hash content
+	const queryIdx = hashContent.indexOf('?')
+	if (queryIdx === -1) return ''
+
+	return hashContent.slice(queryIdx + 1)
+}
+
+/**
+ * Get parameter string based on scope
+ */
+function getParamStrByScope(url: URLInput | undefined, scope: ParamScope): string {
+	if (scope === 'search') {
+		const search = getSearchStr(url)
+		return search ? search.slice(1) : ''
+	}
+
+	if (scope === 'hash') {
+		return getHashParamStr(url)
+	}
+
+	// scope === 'all': merge with hash priority
+	const searchParams = new URLSearchParams(getSearchStr(url).slice(1))
+	const hashParams = new URLSearchParams(getHashParamStr(url))
+
+	// Hash overwrites search
+	for (const [key, value] of hashParams) {
+		searchParams.set(key, value)
+	}
+
+	return searchParams.toString()
+}
+
+/**
  * Get the first value associated with a given search parameter (like URLSearchParams.get)
  *
  * @param name - Parameter name
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns Parameter value or null if not found
  *
  * @example
  * ```js
  * get('id', 'https://example.com?id=123') // '123'
- * get('missing', 'https://example.com?id=123') // null
+ * get('id', 'https://example.com#/home?id=200', 'hash') // '200'
+ * get('id', 'https://example.com?id=100#/home?id=200', 'all') // '200' (hash优先)
  * ```
  */
-export function get(name: string, url?: URLInput): string | null {
+export function get(name: string, url?: URLInput, scope: ParamScope = 'search'): string | null {
 	if (!name) return null
 
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return null
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return null
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return new URLSearchParams(searchStr.slice(1)).get(name)
+		return new URLSearchParams(paramStr).get(name)
 	}
 
-	return (parse(searchStr)[name] as string) ?? null
+	return (parse(paramStr)[name] as string) ?? null
 }
 
 /**
@@ -254,6 +324,7 @@ export function get(name: string, url?: URLInput): string | null {
  *
  * @param name - Parameter name
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns Array of parameter values
  *
  * @example
@@ -262,18 +333,18 @@ export function get(name: string, url?: URLInput): string | null {
  * // ['1', '2', '3']
  * ```
  */
-export function getAll(name: string, url?: URLInput): string[] {
+export function getAll(name: string, url?: URLInput, scope: ParamScope = 'search'): string[] {
 	if (!name) return []
 
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return []
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return []
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return new URLSearchParams(searchStr.slice(1)).getAll(name)
+		return new URLSearchParams(paramStr).getAll(name)
 	}
 
 	// Fallback: only returns single value
-	const value = parse(searchStr)[name]
+	const value = parse(paramStr)[name]
 	return value !== undefined ? [String(value)] : []
 }
 
@@ -282,24 +353,26 @@ export function getAll(name: string, url?: URLInput): string[] {
  *
  * @param name - Parameter name
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns True if parameter exists
  *
  * @example
  * ```js
  * has('token', 'https://example.com?token=abc') // true
+ * has('id', 'https://example.com#/home?id=1', 'hash') // true
  * ```
  */
-export function has(name: string, url?: URLInput): boolean {
+export function has(name: string, url?: URLInput, scope: ParamScope = 'search'): boolean {
 	if (!name) return false
 
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return false
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return false
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return new URLSearchParams(searchStr.slice(1)).has(name)
+		return new URLSearchParams(paramStr).has(name)
 	}
 
-	return name in parse(searchStr)
+	return name in parse(paramStr)
 }
 
 /**
@@ -459,29 +532,33 @@ export function deleteParam(name: string, url?: string): string {
  * Get all parameter names (like URLSearchParams.keys)
  *
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns Array of parameter names
  *
  * @example
  * ```js
  * keys('https://example.com?a=1&b=2')
  * // ['a', 'b']
+ * keys('https://example.com?a=1#/home?b=2', 'hash')
+ * // ['b']
  * ```
  */
-export function keys(url?: URLInput): string[] {
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return []
+export function keys(url?: URLInput, scope: ParamScope = 'search'): string[] {
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return []
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return [...new URLSearchParams(searchStr.slice(1)).keys()]
+		return [...new URLSearchParams(paramStr).keys()]
 	}
 
-	return Object.keys(parse(searchStr))
+	return Object.keys(parse(paramStr))
 }
 
 /**
  * Get all parameter values (like URLSearchParams.values)
  *
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns Array of parameter values
  *
  * @example
@@ -490,16 +567,16 @@ export function keys(url?: URLInput): string[] {
  * // ['1', '2', '3']
  * ```
  */
-export function values(url?: URLInput): string[] {
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return []
+export function values(url?: URLInput, scope: ParamScope = 'search'): string[] {
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return []
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return [...new URLSearchParams(searchStr.slice(1)).values()]
+		return [...new URLSearchParams(paramStr).values()]
 	}
 
 	// IE11 fallback: manually extract values
-	const parsed = parse(searchStr)
+	const parsed = parse(paramStr)
 	const result: string[] = []
 	for (const key in parsed) {
 		if (Object.prototype.hasOwnProperty.call(parsed, key)) {
@@ -513,6 +590,7 @@ export function values(url?: URLInput): string[] {
  * Get all parameter entries (like URLSearchParams.entries)
  *
  * @param url - URL string, URL object, or undefined to use current location
+ * @param scope - Parameter scope: 'search' | 'hash' | 'all' (default: 'search')
  * @returns Array of [key, value] pairs
  *
  * @example
@@ -521,16 +599,16 @@ export function values(url?: URLInput): string[] {
  * // [['a', '1'], ['b', '2']]
  * ```
  */
-export function entries(url?: URLInput): [string, string][] {
-	const searchStr = getSearchStr(url)
-	if (!searchStr) return []
+export function entries(url?: URLInput, scope: ParamScope = 'search'): [string, string][] {
+	const paramStr = getParamStrByScope(url, scope)
+	if (!paramStr) return []
 
 	if (typeof URLSearchParams !== 'undefined') {
-		return [...new URLSearchParams(searchStr.slice(1)).entries()]
+		return [...new URLSearchParams(paramStr).entries()]
 	}
 
 	// IE11 fallback: manually extract entries
-	const parsed = parse(searchStr)
+	const parsed = parse(paramStr)
 	const result: [string, string][] = []
 	for (const key in parsed) {
 		if (Object.prototype.hasOwnProperty.call(parsed, key)) {

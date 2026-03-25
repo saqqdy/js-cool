@@ -28,7 +28,7 @@ const subpathEntries = [
 execSync('tsc -p src/tsconfig.json', { stdio: 'inherit' })
 
 // Step 2: Run api-extractor to bundle d.ts for main entry
-execSync('api-extractor run', { stdio: 'inherit' })
+execSync('api-extractor run --local', { stdio: 'inherit' })
 
 // Step 3: Process main entry types
 const mainDts = readFileSync('dist/index.d.ts', 'utf-8')

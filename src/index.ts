@@ -264,16 +264,11 @@ export { default as appVersion } from './appVersion'
 export { default as browserVersion, type BrowserVersion } from './browserVersion'
 export { default as compareVersion } from './compareVersion'
 export { type DirParamsResult, default as getDirParams } from './getDirParams'
-export { default as getQueryParam } from './getQueryParam'
-export { default as getQueryParams } from './getQueryParams'
-export { default as getUrlParam } from './getUrlParam'
-export { default as getUrlParams } from './getUrlParams'
 export { default as isNumberBrowser } from './isNumberBrowser'
 export { default as nextVersion, type Version } from './nextVersion'
 export { default as openUrl } from './openUrl'
 export { default as osVersion, type OsVersion } from './osVersion'
-export { default as parseUrlParam } from './parseUrlParam'
-export { default as spliceUrlParam, type SpliceUrlParamOptions } from './spliceUrlParam'
+export { default as URLParams, type ParamScope } from './URLParams'
 export {
 	default as ua,
 	UAParser,
@@ -299,6 +294,7 @@ export {
 	Url,
 	URL_PATTERNS,
 	VALUE_MAP,
+	convertValue,
 	// Query string parsing & building
 	parse as parseQueryString,
 	stringify as stringifyQueryString,

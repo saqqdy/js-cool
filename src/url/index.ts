@@ -5,6 +5,7 @@
  * @since 6.0.0
  */
 
+import URLParams, { type ParamScope } from '../URLParams'
 import {
 	append,
 	deleteParam,
@@ -31,8 +32,11 @@ import {
 } from './utils'
 import { get as getParam } from './utils'
 
+// Re-export ParamScope type
+export type { ParamScope }
+
 /**
- * URL class - chainable URL builder
+ * URL class - chainable URL builder with full hash parameter support
  *
  * @example
  * ```ts
@@ -40,54 +44,67 @@ import { get as getParam } from './utils'
  * u.get('id') // '123'
  * u.set('page', 2).toString()
  * // 'https://example.com?id=123&page=2'
+ *
+ * // Hash parameter support (v6.1.0+)
+ * const u2 = new Url('https://example.com?token=old#/page?token=new')
+ * u2.get('token', 'search') // 'old'
+ * u2.get('token', 'hash')   // 'new'
+ * u2.get('token', 'all')    // 'new' (hash priority)
  * ```
  */
 export class Url {
+	private _params: URLParams
 	private _url: string
 
 	constructor(url?: string) {
 		this._url = url ?? ''
+		this._params = new URLParams(this._url)
 	}
 
 	// ============================================
-	// URLSearchParams-like methods
+	// URLSearchParams-like methods (支持 scope)
 	// ============================================
 
 	/**
 	 * Get parameter value
 	 * @param name - Parameter name
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Parameter value or null if not found
 	 */
-	get(name: string): string | null {
-		return getParam(name, this._url)
+	get(name: string, scope: ParamScope = 'search'): string | null {
+		return this._params.get(name, scope)
 	}
 
 	/**
 	 * Get all values for parameter
 	 * @param name - Parameter name
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Array of parameter values
 	 */
-	getAll(name: string): string[] {
-		return getAll(name, this._url)
+	getAll(name: string, scope: ParamScope = 'search'): string[] {
+		return this._params.getAll(name, scope)
 	}
 
 	/**
 	 * Check if parameter exists
 	 * @param name - Parameter name
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns True if parameter exists
 	 */
-	has(name: string): boolean {
-		return has(name, this._url)
+	has(name: string, scope: ParamScope = 'search'): boolean {
+		return this._params.has(name, scope)
 	}
 
 	/**
 	 * Set parameter value (chainable)
 	 * @param name - Parameter name
 	 * @param value - Parameter value
+	 * @param scope - 'search' | 'hash' (default: 'search')
 	 * @returns this
 	 */
-	set(name: string, value: string | number | boolean): this {
-		this._url = set(name, value, this._url)
+	set(name: string, value: string | number | boolean, scope: 'search' | 'hash' = 'search'): this {
+		this._params.set(name, value, scope)
+		this._url = this._params.toURL()
 		return this
 	}
 
@@ -95,45 +112,56 @@ export class Url {
 	 * Append parameter value (chainable)
 	 * @param name - Parameter name
 	 * @param value - Parameter value
+	 * @param scope - 'search' | 'hash' (default: 'search')
 	 * @returns this
 	 */
-	append(name: string, value: string | number | boolean): this {
-		this._url = append(name, value, this._url)
+	append(
+		name: string,
+		value: string | number | boolean,
+		scope: 'search' | 'hash' = 'search'
+	): this {
+		this._params.append(name, value, scope)
+		this._url = this._params.toURL()
 		return this
 	}
 
 	/**
 	 * Delete parameter (chainable)
 	 * @param name - Parameter name
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'all')
 	 * @returns this
 	 */
-	delete(name: string): this {
-		this._url = deleteParam(name, this._url)
+	delete(name: string, scope: ParamScope = 'all'): this {
+		this._params.delete(name, scope)
+		this._url = this._params.toURL()
 		return this
 	}
 
 	/**
 	 * Get all parameter names
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Array of parameter names
 	 */
-	keys(): string[] {
-		return keys(this._url)
+	keys(scope: ParamScope = 'search'): string[] {
+		return this._params.keys(scope)
 	}
 
 	/**
 	 * Get all parameter values
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Array of parameter values
 	 */
-	values(): string[] {
-		return values(this._url)
+	values(scope: ParamScope = 'search'): string[] {
+		return this._params.values(scope)
 	}
 
 	/**
 	 * Get all parameter entries
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Array of [key, value] pairs
 	 */
-	entries(): [string, string][] {
-		return entries(this._url)
+	entries(scope: ParamScope = 'search'): [string, string][] {
+		return this._params.entries(scope)
 	}
 
 	// ============================================
@@ -189,6 +217,26 @@ export class Url {
 	}
 
 	// ============================================
+	// Hash path operations (new in v6.1.0)
+	// ============================================
+
+	/**
+	 * Get hash path (e.g., '/path/to/page' from '#/path/to/page?a=1')
+	 */
+	getHashPath(): string {
+		return this._params.getHashPath()
+	}
+
+	/**
+	 * Set hash path (chainable)
+	 */
+	setHashPath(path: string): this {
+		this._params.setHashPath(path)
+		this._url = this._params.toURL()
+		return this
+	}
+
+	// ============================================
 	// Path manipulation (chainable)
 	// ============================================
 
@@ -214,6 +262,7 @@ export class Url {
 		const pathStr = normalizedSegments.length > 0 ? `/${normalizedSegments.join('/')}` : ''
 
 		this._url = `${origin}${pathStr}${search}${hash}`
+		this._params = new URLParams(this._url)
 		return this
 	}
 
@@ -229,6 +278,7 @@ export class Url {
 		} else {
 			this._url = `${this._url}#${hash}`
 		}
+		this._params = new URLParams(this._url)
 		return this
 	}
 
@@ -255,10 +305,23 @@ export class Url {
 
 	/**
 	 * Get params as object
+	 * @param scope - 'search' | 'hash' | 'all' (default: 'search')
 	 * @returns Object with all parameters
 	 */
-	toParams(): Record<string, string> {
-		return Object.fromEntries(this.entries())
+	toParams(scope: ParamScope = 'search'): Record<string, string> {
+		return this._params.toObject(scope)
+	}
+
+	/**
+	 * Get detailed parameter info with source tracking
+	 */
+	toDetailObject(): {
+		search: Record<string, string>
+		hash: Record<string, string>
+		all: Record<string, string>
+		source: Record<string, 'search' | 'hash' | 'both'>
+	} {
+		return this._params.toDetailObject()
 	}
 }
 
@@ -274,6 +337,9 @@ export class Url {
  * url.parse('?a=1&b=2') // { a: '1', b: '2' }
  * url.stringify({ a: 1 }) // '?a=1'
  * url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+ *
+ * // Hash parameter support (v6.1.0+)
+ * url.get('id', 'https://example.com?id=100#/home?id=200', 'hash') // '200'
  * ```
  */
 export const url = {
@@ -329,6 +395,7 @@ export type { URLPatternName, URLInput, ParseOptions, StringifyOptions }
 export {
 	URL_PATTERNS,
 	VALUE_MAP,
+	convertValue,
 	parse,
 	stringify,
 	get,

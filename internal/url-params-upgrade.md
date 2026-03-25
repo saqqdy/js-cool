@@ -8,16 +8,16 @@
 
 ### 1.1 方法概览
 
-| 方法             | 位置                    | 功能                                | 状态                       |
-| ---------------- | ----------------------- | ----------------------------------- | -------------------------- |
-| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常                    |
-| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常                    |
-| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常                    |
-| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常                    |
-| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常                    |
-| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常                    |
-| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams   |
-| `URLParams`      | 待新增                  | 增强版 URLSearchParams 类           | 📝 计划中（推荐）          |
+| 方法             | 位置                    | 功能                                | 状态                     |
+| ---------------- | ----------------------- | ----------------------------------- | ------------------------ |
+| `getUrlParams`   | `src/getUrlParams.ts`   | 获取所有 URL 参数（`?` 后，`#` 前） | ✅ 正常                  |
+| `getUrlParam`    | `src/getUrlParam.ts`    | 获取单个 URL 参数                   | ✅ 正常                  |
+| `parseUrlParam`  | `src/parseUrlParam.ts`  | 解析参数字符串为对象                | ✅ 正常                  |
+| `spliceUrlParam` | `src/spliceUrlParam.ts` | 对象转参数字符串                    | ✅ 正常                  |
+| `getQueryParams` | `src/getQueryParams.ts` | 获取所有 hash 参数（`#` 后）        | ✅ 正常                  |
+| `getQueryParam`  | `src/getQueryParam.ts`  | 获取单个 hash 参数                  | ✅ 正常                  |
+| `getDirParam`    | `src/getDirParam.ts`    | 获取目录路径参数                    | ✅ 已重构为 getDirParams |
+| `URLParams`      | 待新增                  | 增强版 URLSearchParams 类           | 📝 计划中（推荐）        |
 
 ### 1.2 依赖关系
 
@@ -530,21 +530,21 @@ const params = parseUrlParam<SearchParams>('?page=1&size=20&keyword=test', true)
 
 ### Phase 1: 新增功能（v6.1）
 
-| 任务                         | 优先级 | 预估工时 | 状态      |
-| ---------------------------- | ------ | -------- | --------- |
-| 新增 `URLParams` 类          | P1     | 1 天     | 待处理    |
-| 新增 `getDirParams` 方法     | P1     | 0.5 天   | ✅ 已完成 |
-| 新增 `UrlBuilder` 类         | P2     | 0.5 天   | 待处理    |
-| 支持 `URL` 对象输入          | P2     | 0.5 天   | 待处理    |
-| 现有方法复用 `URLParams`     | P2     | 0.5 天   | 待处理    |
+| 任务                     | 优先级 | 预估工时 | 状态      |
+| ------------------------ | ------ | -------- | --------- |
+| 新增 `URLParams` 类      | P1     | 1 天     | 待处理    |
+| 新增 `getDirParams` 方法 | P1     | 0.5 天   | ✅ 已完成 |
+| 新增 `UrlBuilder` 类     | P2     | 0.5 天   | 待处理    |
+| 支持 `URL` 对象输入      | P2     | 0.5 天   | 待处理    |
+| 现有方法复用 `URLParams` | P2     | 0.5 天   | 待处理    |
 
 ### Phase 2: 性能优化（v6.2）
 
-| 任务                                     | 优先级 | 预估工时 | 状态   |
-| ---------------------------------------- | ------ | -------- | ------ |
+| 任务                                        | 优先级 | 预估工时 | 状态   |
+| ------------------------------------------- | ------ | -------- | ------ |
 | 使用 `URLSearchParams` 优化 `parseUrlParam` | P1     | 1 天     | 待处理 |
-| 单值获取方法优化                         | P2     | 0.5 天   | 待处理 |
-| 性能基准测试                             | P3     | 0.5 天   | 待处理 |
+| 单值获取方法优化                            | P2     | 0.5 天   | 待处理 |
+| 性能基准测试                                | P3     | 0.5 天   | 待处理 |
 
 ### Phase 3: API 重命名（v7.0）
 
@@ -593,10 +593,10 @@ const str = buildQueryString({ a: 1 }) // 新
 
 **典型 URL**：`https://a.cn/?ss=1#/path?bb=343`
 
-| 参数位置 | 示例 | 说明 |
-|---------|------|------|
-| search params（`#` 前） | `ss=1` | `location.search` 或 `URL.search` |
-| hash params（`#` 后） | `bb=343` | hash 内部的查询参数 |
+| 参数位置                | 示例     | 说明                              |
+| ----------------------- | -------- | --------------------------------- |
+| search params（`#` 前） | `ss=1`   | `location.search` 或 `URL.search` |
+| hash params（`#` 后）   | `bb=343` | hash 内部的查询参数               |
 
 **当前方法行为**：
 
@@ -617,12 +617,12 @@ getQueryParams('https://a.cn/?ss=1#/path?bb=343')
 ```javascript
 const url = new URL('https://a.cn/?ss=1#/path?bb=343')
 
-url.href         // 'https://a.cn/?ss=1#/path?bb=343'
-url.origin       // 'https://a.cn'
-url.pathname     // '/'
-url.search       // '?ss=1'
+url.href // 'https://a.cn/?ss=1#/path?bb=343'
+url.origin // 'https://a.cn'
+url.pathname // '/'
+url.search // '?ss=1'
 url.searchParams // URLSearchParams { 'ss' → '1' }  ← 只能获取 # 前参数
-url.hash         // '#/path?bb=343'  ← 原生无法解析 hash 内参数
+url.hash // '#/path?bb=343'  ← 原生无法解析 hash 内参数
 ```
 
 **原生 URL 的局限**：无法直接获取 hash 内的查询参数。
@@ -758,7 +758,9 @@ class URLParams {
       const params = scope === 'search' ? this._search : this._hash
       return [...params.values()]
     }
-    return this.keys().map(k => this.get(k)!).filter(v => v !== null)
+    return this.keys()
+      .map(k => this.get(k)!)
+      .filter(v => v !== null)
   }
 
   /**
@@ -925,14 +927,14 @@ export default URLParams
 
 ### 7.4 与原生 API 对比
 
-| 功能 | 原生 URLSearchParams | URLParams |
-|------|---------------------|-----------|
-| 获取 search 参数 | `url.searchParams.get('key')` | `params.get('key', 'search')` |
-| 获取 hash 参数 | ❌ 不支持 | `params.get('key', 'hash')` |
-| 获取全部参数 | ❌ 不支持 | `params.get('key')` 或 `params.get('key', 'all')` |
-| 区分参数来源 | ❌ 不支持 | `params.toDetailObject().source` |
-| 链式调用 | ❌ 不支持 | `params.set('a', 1).set('b', 2)` |
-| 构建完整 URL | ❌ 不支持 | `params.toURL()` |
+| 功能             | 原生 URLSearchParams          | URLParams                                         |
+| ---------------- | ----------------------------- | ------------------------------------------------- |
+| 获取 search 参数 | `url.searchParams.get('key')` | `params.get('key', 'search')`                     |
+| 获取 hash 参数   | ❌ 不支持                     | `params.get('key', 'hash')`                       |
+| 获取全部参数     | ❌ 不支持                     | `params.get('key')` 或 `params.get('key', 'all')` |
+| 区分参数来源     | ❌ 不支持                     | `params.toDetailObject().source`                  |
+| 链式调用         | ❌ 不支持                     | `params.set('a', 1).set('b', 2)`                  |
+| 构建完整 URL     | ❌ 不支持                     | `params.toURL()`                                  |
 
 ### 7.5 现有方法复用 URLParams
 
@@ -974,25 +976,25 @@ function getQueryParam(key: string, url?: string) {
 
 ### 7.6 API 总结
 
-| 方法/类 | 功能 | 返回值 |
-|---------|------|--------|
-| `getUrlParams` | 获取 search 参数（# 前） | `{ key: value }` |
-| `getQueryParams` | 获取 hash 参数（# 后） | `{ key: value }` |
-| `URLParams` **新增** | 统一的参数处理器 | `URLParams` 实例 |
+| 方法/类              | 功能                     | 返回值           |
+| -------------------- | ------------------------ | ---------------- |
+| `getUrlParams`       | 获取 search 参数（# 前） | `{ key: value }` |
+| `getQueryParams`     | 获取 hash 参数（# 后）   | `{ key: value }` |
+| `URLParams` **新增** | 统一的参数处理器         | `URLParams` 实例 |
 
 **URLParams 核心 API**：
 
-| 方法 | 说明 |
-|------|------|
-| `get(name, scope?)` | 获取单个参数，scope 默认 'all' |
-| `getAll(name, scope?)` | 获取所有同名参数 |
-| `has(name, scope?)` | 检查参数是否存在 |
-| `set(name, value, scope?)` | 设置参数，scope 默认 'search' |
-| `append(name, value, scope?)` | 追加参数 |
-| `delete(name, scope?)` | 删除参数 |
-| `toObject(scope?)` | 转为对象 |
-| `toDetailObject()` | 转为详细对象（含来源信息） |
-| `toURL()` | 构建完整 URL |
+| 方法                          | 说明                           |
+| ----------------------------- | ------------------------------ |
+| `get(name, scope?)`           | 获取单个参数，scope 默认 'all' |
+| `getAll(name, scope?)`        | 获取所有同名参数               |
+| `has(name, scope?)`           | 检查参数是否存在               |
+| `set(name, value, scope?)`    | 设置参数，scope 默认 'search'  |
+| `append(name, value, scope?)` | 追加参数                       |
+| `delete(name, scope?)`        | 删除参数                       |
+| `toObject(scope?)`            | 转为对象                       |
+| `toDetailObject()`            | 转为详细对象（含来源信息）     |
+| `toURL()`                     | 构建完整 URL                   |
 
 ---
 

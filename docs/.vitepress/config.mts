@@ -144,13 +144,9 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/api/url/get-url-params', text: 'getUrlParams' },
-								{ link: '/api/url/get-url-param', text: 'getUrlParam' },
-								{ link: '/api/url/parse-url-param', text: 'parseUrlParam' },
-								{ link: '/api/url/splice-url-param', text: 'spliceUrlParam' },
-								{ link: '/api/url/get-dir-param', text: 'getDirParam' },
-								{ link: '/api/url/get-query-param', text: 'getQueryParam' },
-								{ link: '/api/url/get-query-params', text: 'getQueryParams' },
+								{ link: '/api/url/url-params', text: 'URLParams' },
+								{ link: '/api/url/url', text: 'url' },
+								{ link: '/api/url/get-dir-params', text: 'getDirParams' },
 								{ link: '/api/url/ua', text: 'ua' },
 								{ link: '/api/url/app-version', text: 'appVersion' },
 								{ link: '/api/url/browser-version', text: 'browserVersion' },
@@ -483,13 +479,9 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/zh/api/url/get-url-params', text: 'getUrlParams' },
-								{ link: '/zh/api/url/get-url-param', text: 'getUrlParam' },
-								{ link: '/zh/api/url/parse-url-param', text: 'parseUrlParam' },
-								{ link: '/zh/api/url/splice-url-param', text: 'spliceUrlParam' },
-								{ link: '/zh/api/url/get-dir-param', text: 'getDirParam' },
-								{ link: '/zh/api/url/get-query-param', text: 'getQueryParam' },
-								{ link: '/zh/api/url/get-query-params', text: 'getQueryParams' },
+								{ link: '/zh/api/url/url-params', text: 'URLParams' },
+								{ link: '/zh/api/url/url', text: 'url' },
+								{ link: '/zh/api/url/get-dir-params', text: 'getDirParams' },
 								{ link: '/zh/api/url/ua', text: 'ua' },
 								{ link: '/zh/api/url/app-version', text: 'appVersion' },
 								{ link: '/zh/api/url/browser-version', text: 'browserVersion' },
