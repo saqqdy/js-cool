@@ -31,4 +31,4 @@ export type OmitPartial<T, K extends keyof T> = {
 	[P in K]: T[P]
 } & Omit<Partial<T>, K>
 
-export type MaybePromiseOrGetter<T> = Promise<T> | (<T>() => Promise<T>)
+export type MaybePromiseOrGetter<T> = Promise<T> | (() => T | Promise<T>)

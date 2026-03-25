@@ -24,6 +24,11 @@ export type DateUnit =
 	| 'millisecond'
 
 /**
+ * Date unit for comparison operations
+ */
+export type DateComparisonUnit = 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second'
+
+/**
  * Format token type
  */
 export type FormatToken =
@@ -122,7 +127,7 @@ export interface IDateParser {
 	/** Check if after another date */
 	isAfter: (date: DateInput) => boolean
 	/** Check if same as another date (optionally by unit) */
-	isSame: (date: DateInput, unit?: DateUnit) => boolean
+	isSame: (date: DateInput, unit?: DateComparisonUnit) => boolean
 	/** Check if today */
 	isToday: () => boolean
 	/** Check if yesterday */

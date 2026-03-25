@@ -32,7 +32,12 @@ export { default as debounce, type DebounceOptions } from './debounce'
 export { default as delay } from './delay'
 export { default as promiseFactory } from './promiseFactory'
 export { default as punctualTimer, type PunctualTimerReturns } from './punctualTimer'
-export { default as retry, type RetryOptions } from './retry'
+export {
+	default as retry,
+	type RetryOptions,
+	RetryTimeoutError,
+	RetryAbortError,
+} from './retry'
 export { default as throttle, type ThrottleOptions } from './throttle'
 export { default as waiting } from './waiting'
 
@@ -72,6 +77,7 @@ export {
 	type IDateParser,
 	type DateInput,
 	type DateUnit,
+	type DateComparisonUnit,
 	type RelativeTimeLocale,
 	// Functions
 	formatDate,
@@ -113,6 +119,10 @@ export {
 	downloadFile,
 	downloadUrlFile,
 	type DownloadType,
+	type DownloadOptions,
+	type DownloadUrlOptions,
+	type DownloadErrorCallback,
+	type DownloadSuccessCallback,
 } from './download'
 
 // ==================== Encode 编码解码 ====================
@@ -213,11 +223,15 @@ export type { ScrollToOptions, ScrollBehavior } from './scroll'
 export { default as delCache } from './delCache'
 export { default as delCookie } from './delCookie'
 export { default as delSession } from './delSession'
-export { default as getCache } from './getCache'
+export { default as getCache, type CacheData } from './getCache'
 export { default as getCookie } from './getCookie'
 export { default as getCookies } from './getCookies'
 export { default as getSession } from './getSession'
-export { default as setCache } from './setCache'
+export {
+	default as setCache,
+	StorageQuotaError,
+	StorageUnavailableError,
+} from './setCache'
 export { default as setCookie } from './setCookie'
 export { default as setSession } from './setSession'
 

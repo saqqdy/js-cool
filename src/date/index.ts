@@ -21,7 +21,7 @@
  * @since 6.0.0
  */
 
-import type { DateDiffResult, DateInput, DateUnit, IDateParser, RelativeTimeLocale } from './types'
+import type { DateComparisonUnit, DateDiffResult, DateInput, DateUnit, IDateParser, RelativeTimeLocale } from './types'
 
 // Import sub-modules
 import { parseDate } from './parse'
@@ -54,6 +54,7 @@ import {
 // Re-export types
 export type {
 	DateAPI,
+	DateComparisonUnit,
 	DateDiffResult,
 	DateInput,
 	DateUnit,
@@ -181,8 +182,8 @@ class DateParser implements IDateParser {
 		return isAfter(this._date, date)
 	}
 
-	isSame(date: DateInput, unit?: DateUnit): boolean {
-		return isSame(this._date, date, unit as any)
+	isSame(date: DateInput, unit?: DateComparisonUnit): boolean {
+		return isSame(this._date, date, unit)
 	}
 
 	isToday(): boolean {

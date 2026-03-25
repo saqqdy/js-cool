@@ -1,37 +1,47 @@
+/**
+ * Deep equality comparison module
+ *
+ * @module isEqual
+ * @since 5.12.0
+ */
+
 import isArray from './isArray'
 
-// @see https://underscorejs.org/#isEqual
-// Internal recursive comparison function for `isEqual`.
-const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]): boolean {
+/**
+ * Internal recursive comparison function
+ *
+ * Uses Map for O(1) circular reference detection.
+ * Adapted from Underscore.js isEqual implementation.
+ *
+ * @see https://underscorejs.org/#isEqual
+ */
+const eq = function (a: any, b: any, aMap: Map<any, any>, bMap: Map<any, any>): boolean {
 	// Identical objects are equal. `0 === -0`, but they aren't identical.
 	// See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
 	if (a === b) return a !== 0 || 1 / a === 1 / b
+
 	// A strict comparison is necessary because `null == undefined`.
 	if (a == null || b == null) return a === b
+
 	// Compare `[[Class]]` names.
 	const className = toString.call(a)
-
 	if (className !== toString.call(b)) return false
+
 	switch (className) {
-		// Strings, numbers, regular expressions, dates, and booleans are compared by value.
-		case '[object RegExp]': // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
+		case '[object RegExp]':
 		case '[object String]':
-			// Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
-			// equivalent to `new String("5")`.
+			// Primitives and their object wrappers are equivalent
 			return `${a}` === `${b}`
+
 		case '[object Number]':
-			// `NaN`s are equivalent, but non-reflexive.
-			// Object(NaN) is equivalent to NaN
-
+			// NaN equals NaN, but is non-reflexive
 			if (+a !== +a) return +b !== +b
-
-			// An `egal` comparison is performed for other numeric values.
+			// An egal comparison for other numeric values
 			return +a === 0 ? 1 / +a === 1 / (b as unknown as number) : +a === +b
+
 		case '[object Date]':
 		case '[object Boolean]':
-			// Coerce dates and booleans to numeric primitive values. Dates are compared by their
-			// millisecond representations. Note that invalid dates with millisecond representations
-			// of `NaN` are not equivalent.
+			// Coerce dates and booleans to numeric primitive values
 			return +a === +b
 	}
 
@@ -40,8 +50,8 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]): boolean {
 	if (!areArrays) {
 		if (typeof a != 'object' || typeof b != 'object') return false
 
-		// Objects with different constructors are not equivalent, but `Object`s or `Array`s
-		// from different frames are.
+		// Objects with different constructors are not equivalent
+		// (except Object/Array from different frames)
 		const aCtor = a.constructor
 		const bCtor = b.constructor
 
@@ -59,95 +69,97 @@ const eq = function (a: any, b: any, aStack?: any[], bStack?: any[]): boolean {
 			return false
 		}
 	}
-	// Assume equality for cyclic structures. The algorithm for detecting cyclic
-	// structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
 
-	// Initializing stack of traversed objects.
-	// It's done here since we only need them for objects and arrays comparison.
-	aStack = aStack || []
-	bStack = bStack || []
-	let length = aStack.length
+	// Handle circular references
+	if (aMap.has(a)) return bMap.has(b) && aMap.get(a) === b
+	if (bMap.has(b)) return false
 
-	while (length--) {
-		// Linear search. Performance is inversely proportional to the number of
-		// unique nested structures.
-		if (aStack[length] === a) return bStack[length] === b
-	}
+	// Track objects for circular reference detection
+	aMap.set(a, b)
+	bMap.set(b, a)
 
-	// Add the first object to the stack of traversed objects.
-	aStack.push(a)
-	bStack.push(b)
-
-	// Recursively compare objects and arrays.
+	// Recursively compare objects and arrays
 	if (areArrays) {
-		// Compare array lengths to determine if a deep comparison is necessary.
-		length = a.length
+		// Compare array lengths first
+		const length = a.length
 		if (length !== b.length) return false
-		// Deep compare the contents, ignoring non-numeric properties.
-		while (length--) {
-			if (!eq(a[length], b[length], aStack, bStack)) return false
+
+		// Deep compare contents
+		for (let i = 0; i < length; i++) {
+			if (!eq(a[i], b[i], aMap, bMap)) return false
 		}
 	} else {
-		// Deep compare objects.
+		// Deep compare objects
 		const keys = Object.keys(a)
-		let key: keyof typeof a
 
-		length = keys.length
-		// Ensure that both objects contain the same number of properties before comparing deep equality.
-		if (Object.keys(b).length !== length) return false
-		while (length--) {
-			// Deep compare each member
-			key = keys[length] as never
-			if (!(key in b && eq(a[key], b[key], aStack, bStack))) return false
+		// Ensure same number of properties
+		if (Object.keys(b).length !== keys.length) return false
+
+		// Compare each property
+		for (let i = 0; i < keys.length; i++) {
+			const key = keys[i]
+			if (!(key in b && eq(a[key], b[key], aMap, bMap))) return false
 		}
 	}
-	// Remove the first object from the stack of traversed objects.
-	aStack.pop()
-	bStack.pop()
+
+	// Clean up after comparison
+	aMap.delete(a)
+	bMap.delete(b)
 
 	return true
 }
 
 /**
- * Determine if 2 objects are equal (deep comparison)
+ * Perform deep equality comparison between two values
+ *
+ * Supports comparison of:
+ * - Primitives (number, string, boolean, null, undefined)
+ * - Objects (deep property comparison)
+ * - Arrays (order-sensitive)
+ * - Date objects (by timestamp)
+ * - RegExp objects (by source and flags)
+ * - Circular references
+ * - NaN (NaN equals NaN)
  *
  * @example
- * ```js
- * // Objects with same properties
- * isEqual({ a: 22, b: {} }, { b: {}, a: 22 })
- * // true
+ * ```ts
+ * // Primitives
+ * isEqual(1, 1)                    // true
+ * isEqual('a', 'a')                // true
+ * isEqual(NaN, NaN)                // true
+ * isEqual(0, -0)                   // false (distinguishes +0 and -0)
  *
- * // Arrays with different order
- * isEqual([1, 2], [2, 1])
- * // false
+ * // Objects
+ * isEqual({ a: 1 }, { a: 1 })      // true
+ * isEqual({ a: 1 }, { a: 1, b: 2 }) // false
  *
- * // NaN equals NaN
- * isEqual(NaN, NaN)
- * // true
+ * // Arrays (order-sensitive)
+ * isEqual([1, 2], [1, 2])          // true
+ * isEqual([1, 2], [2, 1])          // false
  *
- * // Deep comparison
- * isEqual({ a: { b: 1 } }, { a: { b: 1 } })
- * // true
+ * // Dates
+ * isEqual(new Date(2020, 0, 1), new Date(2020, 0, 1)) // true
  *
- * // Different types
- * isEqual('1', 1)
- * // false
+ * // RegExp
+ * isEqual(/test/gi, /test/gi)      // true
+ * isEqual(/test/g, /test/i)        // false
  *
- * // Date objects
- * isEqual(new Date('2020-01-01'), new Date('2020-01-01'))
- * // true
- *
- * // RegExp objects
- * isEqual(/test/gi, /test/gi)
- * // true
+ * // Circular references
+ * const a: any = { x: 1 }
+ * a.self = a
+ * const b: any = { x: 1 }
+ * b.self = b
+ * isEqual(a, b)                    // true
  * ```
- * @since 5.12.0
- * @param a - source
- * @param b - compare
- * @returns - true if a equals b
+ *
+ * @template T - Type of first value
+ * @template P - Type of second value
+ * @param a - First value to compare
+ * @param b - Second value to compare
+ * @returns true if values are deeply equal, false otherwise
  */
 function isEqual<T, P>(a: T, b: P): boolean {
-	return eq(a, b)
+	return eq(a, b, new Map(), new Map())
 }
 
 export default isEqual
