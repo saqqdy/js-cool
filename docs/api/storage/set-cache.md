@@ -16,11 +16,11 @@ function setCache<T>(key: string, value: T, seconds?: number | string): void
 
 ## Parameters
 
-| Parameter | Type                | Description                                    |
-| --------- | ------------------- | ---------------------------------------------- |
-| `key`     | `string`            | The key to set                                 |
-| `value`   | `T`                 | The value to store (JSON serializable)         |
-| `seconds` | `number \| string`  | Expiration time in seconds (optional)          |
+| Parameter | Type               | Description                            |
+| --------- | ------------------ | -------------------------------------- |
+| `key`     | `string`           | The key to set                         |
+| `value`   | `T`                | The value to store (JSON serializable) |
+| `seconds` | `number \| string` | Expiration time in seconds (optional)  |
 
 ## Examples
 
@@ -59,10 +59,10 @@ try {
 
 ## Throws
 
-| Error                        | Condition                              |
-| ---------------------------- | -------------------------------------- |
-| `StorageUnavailableError`    | localStorage is not available          |
-| `StorageQuotaError`          | Storage quota is exceeded              |
+| Error                     | Condition                     |
+| ------------------------- | ----------------------------- |
+| `StorageUnavailableError` | localStorage is not available |
+| `StorageQuotaError`       | Storage quota is exceeded     |
 
 ## Notes
 

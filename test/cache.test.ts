@@ -121,7 +121,7 @@ describe('setCache & getCache & delCache', () => {
 			// Set expired cache manually
 			const expiredData = {
 				expires: Date.now() - 1000, // 1 second ago
-				value: 'expired'
+				value: 'expired',
 			}
 			localStorage.setItem('expired', JSON.stringify(expiredData))
 
@@ -133,7 +133,7 @@ describe('setCache & getCache & delCache', () => {
 			// Set cache with future expiration
 			const futureData = {
 				expires: Date.now() + 10000, // 10 seconds from now
-				value: 'valid'
+				value: 'valid',
 			}
 			localStorage.setItem('valid', JSON.stringify(futureData))
 
@@ -142,7 +142,7 @@ describe('setCache & getCache & delCache', () => {
 
 		it('should handle cache without expiration', () => {
 			const data = {
-				value: 'no-expiry'
+				value: 'no-expiry',
 			}
 			localStorage.setItem('no-expiry', JSON.stringify(data))
 

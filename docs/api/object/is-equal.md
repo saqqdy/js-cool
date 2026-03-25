@@ -40,27 +40,27 @@ function isEqual<T, P>(a: T, b: P): boolean
 ### Primitives
 
 ```ts
-isEqual(1, 1)           // true
-isEqual('a', 'a')       // true
-isEqual(true, true)     // true
-isEqual(NaN, NaN)       // true
-isEqual(0, -0)          // false (distinguishes +0 and -0)
+isEqual(1, 1) // true
+isEqual('a', 'a') // true
+isEqual(true, true) // true
+isEqual(NaN, NaN) // true
+isEqual(0, -0) // false (distinguishes +0 and -0)
 ```
 
 ### Objects
 
 ```ts
-isEqual({ a: 1 }, { a: 1 })               // true
-isEqual({ a: 1, b: 2 }, { b: 2, a: 1 })   // true (property order doesn't matter)
+isEqual({ a: 1 }, { a: 1 }) // true
+isEqual({ a: 1, b: 2 }, { b: 2, a: 1 }) // true (property order doesn't matter)
 isEqual({ a: { b: 1 } }, { a: { b: 1 } }) // true (deep comparison)
-isEqual({ a: 1 }, { a: 1, b: 2 })         // false
+isEqual({ a: 1 }, { a: 1, b: 2 }) // false
 ```
 
 ### Arrays
 
 ```ts
-isEqual([1, 2, 3], [1, 2, 3])   // true
-isEqual([1, 2], [2, 1])         // false (order matters)
+isEqual([1, 2, 3], [1, 2, 3]) // true
+isEqual([1, 2], [2, 1]) // false (order matters)
 isEqual([[1], [2]], [[1], [2]]) // true (nested arrays)
 ```
 
@@ -69,14 +69,14 @@ isEqual([[1], [2]], [[1], [2]]) // true (nested arrays)
 ```ts
 const date1 = new Date('2024-01-01')
 const date2 = new Date('2024-01-01')
-isEqual(date1, date2)  // true
+isEqual(date1, date2) // true
 ```
 
 ### RegExp
 
 ```ts
-isEqual(/test/gi, /test/gi)  // true
-isEqual(/test/g, /test/i)    // false
+isEqual(/test/gi, /test/gi) // true
+isEqual(/test/g, /test/i) // false
 ```
 
 ### Circular References
@@ -86,7 +86,7 @@ const a: any = { x: 1 }
 a.self = a
 const b: any = { x: 1 }
 b.self = b
-isEqual(a, b)  // true
+isEqual(a, b) // true
 ```
 
 ## Notes

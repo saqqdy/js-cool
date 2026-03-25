@@ -32,14 +32,14 @@ interface RetryOptions {
 
 ### RetryOptions
 
-| Property      | Type                                         | Default | Description                                                      |
-| ------------- | -------------------------------------------- | ------- | ---------------------------------------------------------------- |
-| `times`       | `number`                                     | `3`     | Number of retry attempts                                         |
-| `delay`       | `number`                                     | `0`     | Delay between retries in milliseconds                            |
-| `timeout`     | `number`                                     | -       | Timeout for each attempt in milliseconds                         |
-| `onRetry`     | `(error: Error, attempt: number) => void`    | -       | Callback for each retry attempt                                  |
-| `shouldRetry` | `(error: Error, attempt: number) => boolean` | -       | Predicate to determine if retry should continue                  |
-| `signal`      | `AbortSignal`                                | -       | AbortSignal to cancel the retry operation                        |
+| Property      | Type                                         | Default | Description                                     |
+| ------------- | -------------------------------------------- | ------- | ----------------------------------------------- |
+| `times`       | `number`                                     | `3`     | Number of retry attempts                        |
+| `delay`       | `number`                                     | `0`     | Delay between retries in milliseconds           |
+| `timeout`     | `number`                                     | -       | Timeout for each attempt in milliseconds        |
+| `onRetry`     | `(error: Error, attempt: number) => void`    | -       | Callback for each retry attempt                 |
+| `shouldRetry` | `(error: Error, attempt: number) => boolean` | -       | Predicate to determine if retry should continue |
+| `signal`      | `AbortSignal`                                | -       | AbortSignal to cancel the retry operation       |
 
 ## Returns
 
@@ -47,11 +47,11 @@ interface RetryOptions {
 
 ## Throws
 
-| Error                | Condition                           |
-| -------------------- | ----------------------------------- |
-| `RetryTimeoutError`  | Timeout is reached for an attempt   |
-| `RetryAbortError`    | Operation is aborted via signal     |
-| `Error`              | The last error if all retries fail  |
+| Error               | Condition                          |
+| ------------------- | ---------------------------------- |
+| `RetryTimeoutError` | Timeout is reached for an attempt  |
+| `RetryAbortError`   | Operation is aborted via signal    |
+| `Error`             | The last error if all retries fail |
 
 ## Examples
 
@@ -74,7 +74,7 @@ const data = await retry(() => fetchData(), {
 // Only retry on network errors
 const data = await retry(() => fetchData(), {
   times: 5,
-  shouldRetry: (error) => error.message.includes('network'),
+  shouldRetry: error => error.message.includes('network'),
 })
 ```
 
