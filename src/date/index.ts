@@ -21,7 +21,14 @@
  * @since 6.0.0
  */
 
-import type { DateComparisonUnit, DateDiffResult, DateInput, DateUnit, IDateParser, RelativeTimeLocale } from './types'
+import type {
+	DateComparisonUnit,
+	DateDiffResult,
+	DateInput,
+	DateUnit,
+	IDateParser,
+	RelativeTimeLocale,
+} from './types'
 
 // Import sub-modules
 import { parseDate } from './parse'

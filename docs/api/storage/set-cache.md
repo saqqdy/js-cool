@@ -4,42 +4,72 @@ Set an item in localStorage with optional expiration.
 
 ## Usage
 
-```js
-import { setCache } from 'js-cool'
+```ts
+import { setCache, StorageQuotaError, StorageUnavailableError } from 'js-cool'
 ```
 
 ## Signature
 
 ```typescript
-function setCache(key: string, value: any, seconds?: number): void
+function setCache<T>(key: string, value: T, seconds?: number | string): void
 ```
 
 ## Parameters
 
-| Parameter | Type     | Description                           |
-| --------- | -------- | ------------------------------------- |
-| `key`     | `string` | The key to set                        |
-| `value`   | `any`    | The value to store                    |
-| `seconds` | `number` | Expiration time in seconds (optional) |
+| Parameter | Type                | Description                                    |
+| --------- | ------------------- | ---------------------------------------------- |
+| `key`     | `string`            | The key to set                                 |
+| `value`   | `T`                 | The value to store (JSON serializable)         |
+| `seconds` | `number \| string`  | Expiration time in seconds (optional)          |
 
 ## Examples
 
-```js
+### Basic Usage
+
+```ts
 // Set without expiration
-setCache('user', { name: 'John' })
+setCache('user', { name: 'John', age: 30 })
 
 // Set with expiration (1 hour)
 setCache('token', 'abc123', 3600)
 
-// Set with expiration (24 hours)
-setCache('settings', { theme: 'dark' }, 86400)
+// Set with type inference
+interface User {
+  name: string
+  age: number
+}
+setCache<User>('user', { name: 'John', age: 30 })
 ```
+
+### Error Handling
+
+```ts
+import { setCache, StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  setCache('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.warn('Storage is full')
+  } else if (e instanceof StorageUnavailableError) {
+    console.warn('localStorage not available')
+  }
+}
+```
+
+## Throws
+
+| Error                        | Condition                              |
+| ---------------------------- | -------------------------------------- |
+| `StorageUnavailableError`    | localStorage is not available          |
+| `StorageQuotaError`          | Storage quota is exceeded              |
 
 ## Notes
 
 - Value is serialized as JSON
 - Expiration time is stored alongside the value
 - Overwrites existing values
+- String seconds parameter is supported for legacy compatibility
 
 ## Related
 

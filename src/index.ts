@@ -32,12 +32,7 @@ export { default as debounce, type DebounceOptions } from './debounce'
 export { default as delay } from './delay'
 export { default as promiseFactory } from './promiseFactory'
 export { default as punctualTimer, type PunctualTimerReturns } from './punctualTimer'
-export {
-	default as retry,
-	type RetryOptions,
-	RetryTimeoutError,
-	RetryAbortError,
-} from './retry'
+export { default as retry, type RetryOptions, RetryTimeoutError, RetryAbortError } from './retry'
 export { default as throttle, type ThrottleOptions } from './throttle'
 export { default as waiting } from './waiting'
 
@@ -115,6 +110,7 @@ export { default as stopDefault } from './stopDefault'
 export { default as windowSize, type WindowSizeObj } from './windowSize'
 export {
 	default as download,
+	downloadImpl,
 	saveFile,
 	downloadFile,
 	downloadUrlFile,
@@ -227,11 +223,7 @@ export { default as getCache, type CacheData } from './getCache'
 export { default as getCookie } from './getCookie'
 export { default as getCookies } from './getCookies'
 export { default as getSession } from './getSession'
-export {
-	default as setCache,
-	StorageQuotaError,
-	StorageUnavailableError,
-} from './setCache'
+export { default as setCache, StorageQuotaError, StorageUnavailableError } from './setCache'
 export { default as setCookie } from './setCookie'
 export { default as setSession } from './setSession'
 

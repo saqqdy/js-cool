@@ -1,17 +1,17 @@
 # getCache <Badge type="info" text="since v1.0.2" />
 
-Get an item from localStorage.
+Get an item from localStorage with type inference.
 
 ## Usage
 
-```js
+```ts
 import { getCache } from 'js-cool'
 ```
 
 ## Signature
 
 ```typescript
-function getCache<T = any>(key: string): T | null
+function getCache<T = unknown>(key: string): T | null
 ```
 
 ## Parameters
@@ -22,33 +22,64 @@ function getCache<T = any>(key: string): T | null
 
 ## Returns
 
-`T | null` - The cached value, or `null` if not found or expired.
+`T | null` - The cached value, or `null` if not found, expired, or unavailable.
 
 ## Examples
 
-```js
-// Get cached value
+### Basic Usage
+
+```ts
+// Set and get
+setCache('user', { name: 'John' })
 const user = getCache('user') // { name: 'John' }
 
-// Get with type
+// Get with type inference
 interface User {
   name: string
   age: number
 }
-const typedUser = getCache<User>('user')
+const typedUser = getCache<User>('user') // User | null
 
-// Returns null if expired
-setCache('token', 'abc', 1) // 1 second
+// Non-existent key
+getCache('nonexistent') // null
+```
+
+### With Expiration
+
+```ts
+// Set with 1 second expiration
+setCache('token', 'abc123', 1)
+
+getCache('token') // 'abc123' (immediately)
+
 setTimeout(() => {
-  getCache('token') // null (expired)
+  getCache('token') // null (expired, auto-removed)
 }, 2000)
+```
+
+### Different Data Types
+
+```ts
+// Number
+setCache('count', 42)
+getCache<number>('count') // 42
+
+// Array
+setCache('items', [1, 2, 3])
+getCache<number[]>('items') // [1, 2, 3]
+
+// Null value
+setCache('empty', null)
+getCache('empty') // null
 ```
 
 ## Notes
 
 - Returns `null` if key doesn't exist
-- Returns `null` if item has expired (also removes it)
+- Returns `null` if localStorage is unavailable (private browsing, SSR)
+- Returns `null` if item has expired (also removes expired item)
 - Automatically parses JSON
+- Supports legacy raw JSON data (without CacheData wrapper)
 
 ## Related
 

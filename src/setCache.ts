@@ -68,8 +68,8 @@ function isStorageAvailable(): boolean {
  * @param name - cache key name
  * @param value - value to cache (any type, will be JSON serialized)
  * @param seconds - optional expiration time in seconds
- * @throws {StorageUnavailableError} if localStorage is not available
- * @throws {StorageQuotaError} if storage quota is exceeded
+ * @throws StorageUnavailableError if localStorage is not available
+ * @throws StorageQuotaError if storage quota is exceeded
  */
 function setCache<T = unknown>(name: string, value: T, seconds?: number | string): void {
 	if (!isStorageAvailable()) {
@@ -88,7 +88,10 @@ function setCache<T = unknown>(name: string, value: T, seconds?: number | string
 	try {
 		localStorage.setItem(name, JSON.stringify(data))
 	} catch (e) {
-		if (e instanceof DOMException && (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED')) {
+		if (
+			e instanceof DOMException &&
+			(e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED')
+		) {
 			throw new StorageQuotaError(`localStorage quota exceeded for key "${name}"`)
 		}
 		throw e

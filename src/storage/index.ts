@@ -29,10 +29,6 @@ export { default as getCache, type CacheData } from '../getCache'
 export { default as getCookie } from '../getCookie'
 export { default as getCookies } from '../getCookies'
 export { default as getSession } from '../getSession'
-export {
-	default as setCache,
-	StorageQuotaError,
-	StorageUnavailableError,
-} from '../setCache'
+export { default as setCache, StorageQuotaError, StorageUnavailableError } from '../setCache'
 export { default as setCookie } from '../setCookie'
 export { default as setSession } from '../setSession'

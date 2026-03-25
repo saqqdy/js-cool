@@ -124,11 +124,7 @@ export function saveFile(
  * @param filename - Save as filename
  * @param options - Download options
  */
-export function downloadUrlFile(
-	url: string,
-	filename: string,
-	options?: DownloadUrlOptions
-): void {
+export function downloadUrlFile(url: string, filename: string, options?: DownloadUrlOptions): void {
 	const { onError, onSuccess, timeout } = options || {}
 
 	const xhr = new XMLHttpRequest()
@@ -231,15 +227,15 @@ function extractFilename(url: string): string {
  * @param filename - Optional filename (extracted from URL if not provided)
  * @param options - Download options or type string (deprecated)
  */
-function downloadImpl(
+export function downloadImpl(
 	url: string,
 	filename?: string | DownloadOptions | DownloadType,
 	options?: DownloadOptions | DownloadType
 ): void {
 	// Normalize arguments
-	let type: DownloadType = 'download'
-	let downloadOptions: DownloadOptions = {}
-	let finalFilename: string | undefined
+	let type: DownloadType = 'download',
+		downloadOptions: DownloadOptions = {},
+		finalFilename: string | undefined
 
 	// Handle overloaded signatures
 	if (typeof filename === 'string') {

@@ -265,9 +265,7 @@ export function isBetween(
 	const startTime = s.getTime()
 	const endTime = e.getTime()
 
-	return inclusive
-		? time >= startTime && time <= endTime
-		: time > startTime && time < endTime
+	return inclusive ? time >= startTime && time <= endTime : time > startTime && time < endTime
 }
 
 /**
@@ -280,7 +278,7 @@ export function isBetween(
  * compare('2024-01-01', '2024-01-01')  // 0 (equal)
  * ```
  *
- * @returns -1 if date1 < date2, 0 if equal, 1 if date1 > date2
+ * @returns -1 if date1 \< date2, 0 if equal, 1 if date1 \> date2
  */
 export function compare(date1: DateInput, date2: DateInput): -1 | 0 | 1 {
 	const d1 = new Date(date1)

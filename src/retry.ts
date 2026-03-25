@@ -136,8 +136,8 @@ function withTimeout<T>(promise: Promise<T>, timeout: number, signal?: AbortSign
  * @param fn - Function to retry (sync or async)
  * @param options - Retry options
  * @returns Promise resolving to the function result
- * @throws {RetryTimeoutError} if timeout is reached
- * @throws {RetryAbortError} if aborted via signal
+ * @throws RetryTimeoutError if timeout is reached
+ * @throws RetryAbortError if aborted via signal
  * @throws The last error if all retries fail
  */
 async function retry<T>(fn: () => T | Promise<T>, options: RetryOptions = {}): Promise<T> {

@@ -139,7 +139,9 @@ class UAParser implements IUAParser {
 	 * Get info by type
 	 * @param type - The type of info to get: 'device' | 'os' | 'browser' | 'engine' | 'environment'
 	 */
-	get(type: UAGetType): DeviceInfo | OSInfo | BrowserInfo | { name: string } | EnvironmentInfo | null {
+	get(
+		type: UAGetType
+	): DeviceInfo | OSInfo | BrowserInfo | { name: string } | EnvironmentInfo | null {
 		const info = this.info
 
 		switch (type) {
