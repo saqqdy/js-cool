@@ -11,9 +11,7 @@ const external = [
 	'mount-image',
 	'mount-style',
 	'load-source',
-	'use-downloads',
 	'await-to-done',
-	'os-lang',
 ]
 
 // Subpath entries for tree-shaking
