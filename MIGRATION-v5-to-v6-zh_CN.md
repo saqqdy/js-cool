@@ -90,12 +90,18 @@ v6.x 使用正确的条件导出：
 
 ### 4. 移除废弃函数
 
-| 已移除                | 替代方案               |
-| --------------------- | ---------------------- |
-| `getAppVersion()`     | `appVersion()`         |
-| `getOsVersion()`      | `osVersion()`          |
-| `getDirParam()`       | `getDirParams()`       |
-| `getScrollPosition()` | `scroll.getPosition()` |
+| 已移除                | 替代方案                                           |
+| --------------------- | -------------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                     |
+| `getOsVersion()`      | `osVersion()`                                      |
+| `getDirParam()`       | `getDirParams()`                                   |
+| `getScrollPosition()` | `scroll.getPosition()`                             |
+| `getQueryParam()`     | `url.get()` 或 `new URLParams(url).get()`          |
+| `getQueryParams()`    | `url.parse()` 或 `new URLParams(url).toObject()`   |
+| `getUrlParam()`       | `url.get()` 或 `new URLParams(url).get()`          |
+| `getUrlParams()`      | `url.parse()` 或 `new URLParams(url).toObject()`   |
+| `parseUrlParam()`     | `url.parse()`                                      |
+| `spliceUrlParam()`    | `url.set()` 或 `new URLParams(url).set().toURL()`  |
 
 ### 5. 移除 `pattern` 对象
 
@@ -842,6 +848,56 @@ import type {
 ## 新增：URL 工具
 
 URL 工具提供类 URLSearchParams API 和新的链式 `Url` 类：
+
+### URLParams 类
+
+增强版 URLSearchParams，同时解析 search 和 hash 参数：
+
+```js
+import { URLParams } from 'js-cool'
+
+// 基础用法 - 自动从 search + hash 查找（hash 优先）
+const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+
+params.get('ss') // '1' (来自 search)
+params.get('bb') // '343' (来自 hash)
+params.has('ss') // true
+params.keys() // ['ss', 'bb']
+
+// 指定范围
+params.get('ss', 'search') // '1'
+params.get('ss', 'hash') // null
+params.get('ss', 'all') // '1' (默认，hash 优先)
+
+// 获取所有参数
+params.toObject() // { ss: '1', bb: '343' }
+params.toObject('search') // { ss: '1' }
+params.toObject('hash') // { bb: '343' }
+
+// 详细信息（区分来源）
+params.toDetailObject()
+// {
+//   search: { ss: '1' },
+//   hash: { bb: '343' },
+//   all: { ss: '1', bb: '343' },
+//   source: { ss: 'search', bb: 'hash' }
+// }
+
+// 链式修改
+params.set('token', 'abc').set('page', 1).delete('ss')
+params.toString() // '?token=abc&page=1'
+
+// 操作 hash 参数
+params.set('bb', '999', 'hash')
+params.toString('hash') // 'bb=999'
+
+// 构建完整 URL
+params.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
+
+// 静态方法
+URLParams.current() // 从当前页面 URL 创建
+URLParams.fromQueryString('a=1&b=2') // 从查询字符串创建
+```
 
 ### Url 类（链式构建器）
 

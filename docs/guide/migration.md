@@ -70,22 +70,32 @@ import jsCool from 'js-cool'
 
 ### Deprecated Functions
 
-| v5.x (Deprecated)     | v6.x (Replacement)     |
-| --------------------- | ---------------------- |
-| `getAppVersion()`     | `appVersion()`         |
-| `getOsVersion()`      | `osVersion()`          |
-| `getScrollPosition()` | `scroll.getPosition()` |
+| v5.x (Deprecated)     | v6.x (Replacement)                                 |
+| --------------------- | -------------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                     |
+| `getOsVersion()`      | `osVersion()`                                      |
+| `getScrollPosition()` | `scroll.getPosition()`                             |
+| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`          |
+| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`   |
+| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`          |
+| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`   |
+| `parseUrlParam()`     | `url.parse()`                                      |
+| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()`  |
 
 ```js
 // v5.x
 const version = getAppVersion('Chrome')
 const os = getOsVersion()
 const pos = getScrollPosition()
+const id = getUrlParam('id', url)
+const params = getUrlParams(url)
 
 // v6.x
 const version = appVersion('Chrome')
 const os = osVersion()
 const pos = scroll.getPosition()
+const id = url.get('id', url) // or new URLParams(url).get('id')
+const params = url.parse(url) // or new URLParams(url).toObject()
 ```
 
 ### Removed Functions

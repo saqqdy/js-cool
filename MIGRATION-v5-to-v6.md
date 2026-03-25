@@ -90,12 +90,18 @@ v6.x uses proper conditional exports:
 
 ### 4. Deprecated Functions Removed
 
-| Removed               | Replacement            |
-| --------------------- | ---------------------- |
-| `getAppVersion()`     | `appVersion()`         |
-| `getOsVersion()`      | `osVersion()`          |
-| `getDirParam()`       | `getDirParams()`       |
-| `getScrollPosition()` | `scroll.getPosition()` |
+| Removed               | Replacement                                       |
+| --------------------- | ------------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                    |
+| `getOsVersion()`      | `osVersion()`                                     |
+| `getDirParam()`       | `getDirParams()`                                  |
+| `getScrollPosition()` | `scroll.getPosition()`                            |
+| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`         |
+| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`  |
+| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`         |
+| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`  |
+| `parseUrlParam()`     | `url.parse()`                                     |
+| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()` |
 
 ### 5. `pattern` Object Removed
 
@@ -852,6 +858,56 @@ import type {
 ## New: URL Utilities
 
 URL utilities with URLSearchParams-like API and a new chainable `Url` class:
+
+### URLParams Class
+
+Enhanced URLSearchParams that parses both search (#前) and hash (#后) parameters:
+
+```js
+import { URLParams } from 'js-cool'
+
+// Basic usage - auto search from both scopes (hash priority)
+const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+
+params.get('ss') // '1' (from search)
+params.get('bb') // '343' (from hash)
+params.has('ss') // true
+params.keys() // ['ss', 'bb']
+
+// Specify scope
+params.get('ss', 'search') // '1'
+params.get('ss', 'hash') // null
+params.get('ss', 'all') // '1' (default, hash priority)
+
+// Get all params
+params.toObject() // { ss: '1', bb: '343' }
+params.toObject('search') // { ss: '1' }
+params.toObject('hash') // { bb: '343' }
+
+// Detailed info (with source)
+params.toDetailObject()
+// {
+//   search: { ss: '1' },
+//   hash: { bb: '343' },
+//   all: { ss: '1', bb: '343' },
+//   source: { ss: 'search', bb: 'hash' }
+// }
+
+// Chainable modifications
+params.set('token', 'abc').set('page', 1).delete('ss')
+params.toString() // '?token=abc&page=1'
+
+// Operate on hash params
+params.set('bb', '999', 'hash')
+params.toString('hash') // 'bb=999'
+
+// Build full URL
+params.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
+
+// Static methods
+URLParams.current() // From current page URL
+URLParams.fromQueryString('a=1&b=2') // From query string only
+```
 
 ### Url Class (Chainable Builder)
 
