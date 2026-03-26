@@ -12,6 +12,7 @@ export default eslintConfig({
 		camelcase: 'off',
 		'n/no-unsupported-features/es-syntax': 'off',
 		'n/no-unsupported-features/node-builtins': 'off',
+		'n/no-unsupported-features/es-builtins': 'off',
 		'perfectionist/sort-interfaces': 'off',
 		'perfectionist/sort-named-exports': 'off',
 		'perfectionist/sort-objects': 'off',

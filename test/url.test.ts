@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import {
-	Url,
-	parse,
-	stringify,
-	getOrigin,
+	getHash,
 	getHost,
 	getHostname,
+	getOrigin,
 	getPathname,
 	getSearch,
-	getHash,
+	parse,
+	stringify,
+	Url,
 } from '../src/url/index'
 
 // ============================================

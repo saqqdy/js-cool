@@ -9,19 +9,22 @@ import {
 	osVersion,
 	compareVersion,
 	nextVersion,
-	// URL utilities - class and namespace
-	url,
+	// URL utilities - class and functions
 	Url,
-	// URLParams class
-	URLParams,
+	parse,
+	stringify,
+	getOrigin,
+	getHost,
+	getHostname,
+	getPathname,
+	getSearch,
+	getHash,
 } from 'js-cool'
 import { ua, type UAInfo } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
 
-const urlInput = ref('https://example.com?name=John&age=25&active=true')
-const paramKey = ref('name')
 const paramStr = ref('a=1&b=2&c=true&d=null')
 const paramObj = ref({ name: 'John', age: 25, active: true })
 const dirUrl = ref('https://example.com/user/123/profile')
@@ -29,41 +32,40 @@ const compareA = ref('1.2.3')
 const compareB = ref('1.2.4')
 const versionInput = ref('1.2.3')
 
-// Url class examples
+// Url class examples - 链式构建
 const urlBuilderInput = ref('https://api.example.com')
 const urlBuilderOutput = computed(() => {
 	return new Url(urlBuilderInput.value)
 		.path('users', '123')
 		.set('fields', 'name,email')
-		.setHash('section')
+		.setHashPath('section')
 		.toString()
 })
 
-// url namespace examples
-const urlForPatterns = ref('https://example.com:8080/api/users?id=123&page=1#section')
-const urlParamName = ref('id')
-const urlParamValue = ref('2')
+// Url 实例示例
+const urlInstanceInput = ref('https://example.com:8080/api/users?id=123&page=1#section')
+const urlInstance = computed(() => new Url(urlInstanceInput.value))
 
-// URLParams examples
+// Url 参数操作示例
 const urlParamsInput = ref('https://a.cn/?ss=1#/path?bb=343')
 const urlParamsKey = ref('ss')
 const urlParamsScope = ref<'search' | 'hash' | 'all'>('all')
 
 const urlParamsResult = computed(() => {
-	const params = new URLParams(urlParamsInput.value)
+	const u = new Url(urlParamsInput.value)
 	return {
-		get: params.get(urlParamsKey.value, urlParamsScope.value),
-		has: params.has(urlParamsKey.value, urlParamsScope.value),
-		keys: params.keys(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
-		toObject: params.toObject(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
-		toDetailObject: params.toDetailObject(),
+		get: u.get(urlParamsKey.value, urlParamsScope.value),
+		has: u.has(urlParamsKey.value, urlParamsScope.value),
+		keys: u.keys(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
+		toObject: u.toObject(urlParamsScope.value === 'all' ? undefined : urlParamsScope.value),
+		toDetailObject: u.toDetailObject(),
 	}
 })
 
-// URLParams builder
-const urlParamsBuilderInput = ref('https://api.example.com')
-const urlParamsBuilderOutput = computed(() => {
-	return new URLParams(urlParamsBuilderInput.value)
+// Url builder 示例
+const urlBuilderInput2 = ref('https://api.example.com')
+const urlBuilderOutput2 = computed(() => {
+	return new Url(urlBuilderInput2.value)
 		.set('token', 'abc123')
 		.set('page', 1)
 		.set('tab', 'profile', 'hash')
@@ -71,8 +73,9 @@ const urlParamsBuilderOutput = computed(() => {
 		.toURL()
 })
 
-// getQueryParams / getQueryParam
+// Hash params 示例
 const hashUrlInput = ref('https://example.com#/profile?tab=settings&mode=dark')
+const hashUrlInstance = computed(() => new Url(hashUrlInput.value))
 
 // UA detection
 const uaInfo = computed(() => ua.info as UAInfo)
@@ -98,111 +101,114 @@ const uaScreen = computed(() => ua.getScreen())
 		<n-h1>Url</n-h1>
 		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.Url }}</p>
 
-		<!-- url.get / url.parse -->
+		<!-- Url 类 - 链式构建 -->
 		<FunctionCard
-			title="url.get / url.parse"
-			description="Parse URL search parameters (before #) using url namespace"
+			title="Url class - 链式构建"
+			description="使用 Url 类链式构建 URL，支持参数操作、路径设置、hash 操作"
 			since="6.0.0"
-			:code="`import { url } from 'js-cool'
+			:code="`import { Url } from 'js-cool'
 
-url.get('name', '?name=John&age=25')
-// 'John'
+// 链式构建 URL
+const url = new Url('https://api.example.com')
+  .path('users', '123')
+  .set('fields', 'name,email')
+  .setHashPath('section')
+  .toString()
+// 'https://api.example.com/users/123?fields=name,email#section'
 
-url.parse('?name=John&age=25')
-// { name: 'John', age: '25' }
-
-url.parse('?count=100&active=true', { covert: true })
-// { count: 100, active: true }`"
+// 参数操作
+const u = new Url('https://example.com?id=123&token=abc')
+u.get('id')           // '123'
+u.set('page', 2)      // 链式
+u.delete('token')     // 链式
+u.toString()          // 'https://example.com/?id=123&page=2'`"
 		>
 			<template #input>
-				<n-space vertical>
-					<n-input v-model:value="urlInput" style="width: 100%" />
-					<n-space align="center">
-						<n-input v-model:value="paramKey" style="width: 120px" />
-						<span style="color: #666">→</span>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.get(paramKey, urlInput)
-						}}</n-tag>
-					</n-space>
+				<n-space vertical style="width: 100%">
+					<n-input v-model:value="urlBuilderInput" style="width: 100%" placeholder="Enter base URL" />
 				</n-space>
 			</template>
 			<template #result>
 				<n-space vertical>
+					<code class="code-inline">.path('users', '123').set('fields', 'name,email').setHashPath('section')</code>
+					<n-tag type="info" size="small" :bordered="false" style="max-width: 100%; overflow-wrap: break-word">{{
+						urlBuilderOutput
+					}}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- Url 类 - URL 属性访问 -->
+		<FunctionCard
+			title="Url 类 - URL 属性访问"
+			description="获取 URL 的各个组成部分（origin, host, hostname, pathname, search, hash）"
+			since="6.0.0"
+			:code="`import { Url } from 'js-cool'
+
+const u = new Url('https://example.com:8080/api/users?id=123#section')
+
+u.origin    // 'https://example.com:8080'
+u.host      // 'example.com:8080'
+u.hostname  // 'example.com'
+u.pathname  // '/api/users'
+u.search    // '?id=123'
+u.hash      // '#section'`"
+		>
+			<template #input>
+				<n-input v-model:value="urlInstanceInput" style="width: 100%" />
+			</template>
+			<template #result>
+				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">url.parse(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(url.parse(urlInput))
-						}}</n-tag>
+						<code class="code-inline">.origin</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.origin }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">url.parse(url, { covert: true })</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(url.parse(urlInput, { covert: true }))
-						}}</n-tag>
+						<code class="code-inline">.host</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.host }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">.hostname</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.hostname }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">.pathname</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.pathname }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">.search</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.search }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">.hash</code>
+						<n-tag type="info" size="small" :bordered="false">{{ urlInstance.hash }}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>
 
-		<!-- URLParams hash params -->
+		<!-- Url 类 - search/hash 参数操作 -->
 		<FunctionCard
-			title="URLParams (hash params)"
-			description="Parse URL parameters from hash string (after #) using URLParams class"
+			title="Url 类 - search/hash 参数操作"
+			description="同时操作 search（#前）和 hash（#后）参数，支持 scope 控制"
 			since="6.0.0"
-			:code="`import { URLParams } from 'js-cool'
+			:code="`import { Url } from 'js-cool'
 
-const params = new URLParams('https://example.com#/profile?tab=settings')
-params.get('tab', 'hash')
-// 'settings'
+const u = new Url('https://a.cn/?ss=1#/path?bb=343')
 
-params.toObject('hash')
-// { tab: 'settings' }`"
-		>
-			<template #input>
-				<n-space vertical>
-					<n-input v-model:value="hashUrlInput" style="width: 100%" />
-					<n-space align="center">
-						<n-input v-model:value="paramKey" style="width: 120px" />
-						<span style="color: #666">→</span>
-						<n-tag type="info" size="small" :bordered="false">{{
-							new URLParams(hashUrlInput).get(paramKey, 'hash') ?? 'null'
-						}}</n-tag>
-					</n-space>
-				</n-space>
-			</template>
-			<template #result>
-				<n-space vertical>
-					<n-space align="center">
-						<code class="code-inline">params.toObject('hash')</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(new URLParams(hashUrlInput).toObject('hash'))
-						}}</n-tag>
-					</n-space>
-				</n-space>
-			</template>
-		</FunctionCard>
+// 自动从 search + hash 查找（hash 优先）
+u.get('ss')              // '1' (from search)
+u.get('bb')              // '343' (from hash)
 
-		<!-- URLParams class -->
-		<FunctionCard
-			title="URLParams class"
-			description="Enhanced URLSearchParams that handles both search (#前) and hash (#后) params"
-			since="6.0.0"
-			:code="`import { URLParams } from 'js-cool'
+// 指定范围
+u.get('ss', 'search')    // '1'
+u.get('ss', 'hash')      // null
+u.get('ss', 'all')       // '1' (默认，hash 优先)
 
-const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
-
-// Auto find from search + hash (hash priority)
-params.get('ss')     // '1' (from search)
-params.get('bb')     // '343' (from hash)
-
-// Specify scope
-params.get('ss', 'search')  // '1'
-params.get('ss', 'hash')    // null
-params.get('ss', 'all')     // '1' (default)
-
-// Get all params
-params.toObject()           // { ss: '1', bb: '343' }
-params.toDetailObject()     // { search, hash, all, source }`"
+// 获取所有参数
+u.toObject()             // { ss: '1', bb: '343' }
+u.toObject('search')     // { ss: '1' }
+u.toObject('hash')       // { bb: '343' }`"
 		>
 			<template #input>
 				<n-space vertical style="width: 100%">
@@ -226,25 +232,25 @@ params.toDetailObject()     // { search, hash, all, source }`"
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">params.get('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
+						<code class="code-inline">.get('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
 						<n-tag type="info" size="small" :bordered="false">{{
 							urlParamsResult.get ?? 'null'
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">params.has('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
+						<code class="code-inline">.has('{{ urlParamsKey }}', '{{ urlParamsScope }}')</code>
 						<n-tag :type="urlParamsResult.has ? 'success' : 'default'" size="small" :bordered="false">{{
 							urlParamsResult.has
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">params.keys('{{ urlParamsScope }}')</code>
+						<code class="code-inline">.keys('{{ urlParamsScope }}')</code>
 						<n-tag type="info" size="small" :bordered="false">{{
 							JSON.stringify(urlParamsResult.keys)
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">params.toObject('{{ urlParamsScope }}')</code>
+						<code class="code-inline">.toObject('{{ urlParamsScope }}')</code>
 						<n-tag type="info" size="small" :bordered="false">{{
 							JSON.stringify(urlParamsResult.toObject)
 						}}</n-tag>
@@ -253,12 +259,13 @@ params.toDetailObject()     // { search, hash, all, source }`"
 			</template>
 		</FunctionCard>
 
-		<!-- URLParams detail -->
+		<!-- Url.toDetailObject() -->
 		<FunctionCard
-			title="URLParams.toDetailObject()"
-			description="Get detailed params info with source tracking"
+			title="Url.toDetailObject()"
+			description="获取详细的参数信息，区分参数来源（search/hash/both）"
 			since="6.0.0"
-			:code="`params.toDetailObject()
+			:code="`const u = new Url('https://a.cn/?ss=1#/path?bb=343')
+u.toDetailObject()
 // {
 //   search: { ss: '1' },
 //   hash: { bb: '343' },
@@ -266,8 +273,8 @@ params.toDetailObject()     // { search, hash, all, source }`"
 //   source: { ss: 'search', bb: 'hash' }
 // }
 
-// Duplicate key tracking
-new URLParams('https://example.com?token=old#/path?token=new')
+// 重复 key 追踪
+new Url('https://example.com?token=old#/path?token=new')
   .toDetailObject()
 // { ..., source: { token: 'both' } }`"
 		>
@@ -276,49 +283,94 @@ new URLParams('https://example.com?token=old#/path?token=new')
 			</template>
 		</FunctionCard>
 
-		<!-- URLParams builder -->
+		<!-- Url 链式修改 -->
 		<FunctionCard
-			title="URLParams chaining"
-			description="Build URLs with chainable methods"
+			title="Url 链式修改"
+			description="链式修改 URL 参数、路径、hash"
 			since="6.0.0"
-			:code="`import { URLParams } from 'js-cool'
+			:code="`import { Url } from 'js-cool'
 
-const params = new URLParams('https://api.example.com')
+const url = new Url('https://api.example.com')
   .set('token', 'abc123')
   .set('page', 1)
-  .set('tab', 'profile', 'hash')  // set hash param
-  .setHashPath('/user/settings')   // set hash path
+  .set('tab', 'profile', 'hash')  // 设置 hash 参数
+  .setHashPath('/user/settings')   // 设置 hash 路径
   .toURL()
 // 'https://api.example.com/?token=abc123&page=1#/user/settings?tab=profile'`"
 		>
 			<template #input>
-				<n-input v-model:value="urlParamsBuilderInput" style="width: 100%" placeholder="Base URL" />
+				<n-input v-model:value="urlBuilderInput2" style="width: 100%" placeholder="Base URL" />
 			</template>
 			<template #result>
 				<n-space vertical>
 					<code class="code-inline">.set('token', 'abc123').set('page', 1).set('tab', 'profile', 'hash').setHashPath('/user/settings')</code>
 					<n-tag type="info" size="small" :bordered="false" style="max-width: 100%; overflow-wrap: break-word">{{
-						urlParamsBuilderOutput
+						urlBuilderOutput2
 					}}</n-tag>
 				</n-space>
 			</template>
 		</FunctionCard>
 
-		<!-- url.parse / url.stringify -->
+		<!-- Hash 参数处理 -->
 		<FunctionCard
-			title="url.parse / url.stringify"
-			description="Parse and build URL query strings using url namespace"
+			title="Hash 参数处理"
+			description="专门处理 hash（#后）参数的场景"
 			since="6.0.0"
-			:code="`import { url } from 'js-cool'
+			:code="`import { Url } from 'js-cool'
 
-url.parse('a=1&b=2&c=true')
+const u = new Url('https://example.com#/profile?tab=settings&mode=dark')
+
+// 获取 hash 参数
+u.get('tab', 'hash')      // 'settings'
+u.get('mode', 'hash')     // 'dark'
+
+// 获取 hash 路径
+u.getHashPath()           // '/profile'
+
+// 获取 hash 下所有参数
+u.toObject('hash')        // { tab: 'settings', mode: 'dark' }`"
+		>
+			<template #input>
+				<n-input v-model:value="hashUrlInput" style="width: 100%" />
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">.getHashPath()</code>
+						<n-tag type="info" size="small" :bordered="false">{{ hashUrlInstance.getHashPath() }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">.toObject('hash')</code>
+						<n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(hashUrlInstance.toObject('hash')) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- 静态方法 - parse / stringify -->
+		<FunctionCard
+			title="Url.parse() / Url.stringify()"
+			description="解析和构建查询字符串（静态方法或独立函数）"
+			since="6.0.0"
+			:code="`import { Url, parse, stringify } from 'js-cool'
+
+// 解析查询字符串
+Url.parse('a=1&b=2&c=true')
 // { a: '1', b: '2', c: 'true' }
 
-url.parse('a=1&b=2&c=true', { covert: true })
-// { a: 1, b: 2, c: true }
+Url.parse('a=1&b=2&c=true', { convert: true })
+// { a: 1, b: 2, c: true }  // 自动转换类型
 
-url.stringify({ name: 'John', age: 25 })
-// '?name=John&age=25'`"
+// 构建查询字符串
+Url.stringify({ name: 'John', age: 25 })
+// '?name=John&age=25'
+
+// 独立函数（推荐）
+parse('?a=1&b=true', { convert: true })
+// { a: 1, b: true }
+
+stringify({ name: 'John' }, { withQuestionMark: false })
+// 'name=John'`"
 		>
 			<template #input>
 				<n-input v-model:value="paramStr" style="width: 300px" />
@@ -326,22 +378,80 @@ url.stringify({ name: 'John', age: 25 })
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">url.parse(str)</code>
+						<code class="code-inline">parse(str)</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(url.parse(paramStr))
+							JSON.stringify(parse(paramStr))
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">url.parse(str, { covert: true })</code>
+						<code class="code-inline">parse(str, { convert: true })</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(url.parse(paramStr, { covert: true }))
+							JSON.stringify(parse(paramStr, { convert: true }))
 						}}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">url.stringify(obj)</code>
+						<code class="code-inline">stringify(obj)</code>
 						<n-tag type="info" size="small" :bordered="false">{{
-							url.stringify(paramObj)
+							stringify(paramObj)
 						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- 静态方法 - URL 属性提取 -->
+		<FunctionCard
+			title="URL 属性提取函数"
+			description="从 URL 字符串中提取各个组成部分"
+			since="6.0.0"
+			:code="`import { getOrigin, getHost, getHostname, getPathname, getSearch, getHash } from 'js-cool'
+
+getOrigin('https://example.com:8080/path')
+// 'https://example.com:8080'
+
+getHost('https://example.com:8080/path')
+// 'example.com:8080'
+
+getHostname('https://example.com:8080/path')
+// 'example.com'
+
+getPathname('https://example.com/api/users?id=1')
+// '/api/users'
+
+getSearch('https://example.com?key=value')
+// '?key=value'
+
+getHash('https://example.com#section')
+// '#section'`"
+		>
+			<template #input>
+				<n-input v-model:value="urlInstanceInput" style="width: 100%" />
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">getOrigin(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getOrigin(urlInstanceInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getHost(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getHost(urlInstanceInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getHostname(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getHostname(urlInstanceInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getPathname(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getPathname(urlInstanceInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getSearch(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getSearch(urlInstanceInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getHash(url)</code>
+						<n-tag type="info" size="small" :bordered="false">{{ getHash(urlInstanceInput) }}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
@@ -350,12 +460,15 @@ url.stringify({ name: 'John', age: 25 })
 		<!-- getDirParams -->
 		<FunctionCard
 			title="getDirParams"
-			description="Parse URL path information into structured components"
+			description="解析 URL 路径信息，返回结构化的组成部分"
 			since="6.0.0"
-			:code="`getDirParams('https://example.com/user/123/profile')
+			:code="`import { getDirParams } from 'js-cool'
+
+getDirParams('https://example.com/user/123/profile')
 // {
 //   origin: 'https://example.com',
 //   host: 'example.com',
+//   hostname: 'example.com',
 //   pathname: '/user/123/profile',
 //   segments: ['user', '123', 'profile'],
 //   query: '',
@@ -370,113 +483,29 @@ url.stringify({ name: 'John', age: 25 })
 			</template>
 		</FunctionCard>
 
-		<!-- URL Utilities -->
+		<!-- Url 静态工厂方法 -->
 		<FunctionCard
-			title="Url class & url namespace"
-			description="Chainable URL builder and URLSearchParams-like API"
+			title="Url 静态工厂方法"
+			description="从当前页面 URL 或查询字符串创建 Url 实例"
 			since="6.0.0"
-			:code="`import { url, Url } from 'js-cool'
+			:code="`import { Url } from 'js-cool'
 
-// Url class - chainable builder
-const u = new Url('https://example.com?id=123')
-u.get('id') // '123'
-u.set('page', 2).delete('id').toString()
+// 从当前页面 URL 创建（浏览器环境）
+const currentUrl = Url.current()
 
-// url namespace - factory + static
-url.from('https://example.com?id=123').get('id')
-url.parse('?a=1&b=true', { covert: true })
-url.getOrigin('https://example.com:8080/path')`"
+// 从查询字符串创建
+const params = Url.fromQueryString('a=1&b=2')
+params.toObject()  // { a: '1', b: '2' }`"
 		>
-			<template #input>
-				<n-space vertical style="width: 100%">
-					<n-input v-model:value="urlBuilderInput" style="width: 100%" placeholder="Enter base URL" />
-				</n-space>
-			</template>
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">new Url(url).path('users', '123').set('fields', 'name,email').setHash('section')</code>
-					</n-space>
-					<n-tag type="info" size="small" :bordered="false" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis">{{
-						urlBuilderOutput
-					}}</n-tag>
-				</n-space>
-			</template>
-		</FunctionCard>
-
-		<!-- URL Static Methods -->
-		<FunctionCard
-			title="URL Static Methods"
-			description="URLSearchParams-like methods and URL property extraction"
-			since="6.0.0"
-			:code="`import { url } from 'js-cool'
-
-// URLSearchParams-like
-url.get('id', 'https://example.com?id=123') // '123'
-url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
-
-// URL property extraction
-url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
-url.getPathname('https://example.com/api/users') // '/api/users'`"
-		>
-			<template #input>
-				<n-space vertical style="width: 100%">
-					<n-input v-model:value="urlForPatterns" style="width: 100%" />
-					<n-space>
-						<n-input v-model:value="urlParamName" style="width: 80px" placeholder="param" />
-						<n-input v-model:value="urlParamValue" style="width: 80px" placeholder="value" />
-					</n-space>
-				</n-space>
-			</template>
-			<template #result>
-				<n-space vertical>
-					<n-space align="center">
-						<code class="code-inline">url.get(name, url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.get(urlParamName, urlForPatterns)
-						}}</n-tag>
+						<code class="code-inline">Url.current()</code>
+						<n-tag type="info" size="small" :bordered="false">{{ Url.current()?.toString() ?? 'null (非浏览器环境)' }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">url.has(name, url)</code>
-						<n-tag :type="url.has(urlParamName, urlForPatterns) ? 'success' : 'default'" size="small" :bordered="false">{{
-							url.has(urlParamName, urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.set(name, value, url)</code>
-						<n-tag type="info" size="small" :bordered="false" style="max-width: 300px; overflow: hidden; text-overflow: ellipsis">{{
-							url.set(urlParamName, urlParamValue, urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.getOrigin(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.getOrigin(urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.getHost(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.getHost(urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.getHostname(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.getHostname(urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.getPathname(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							url.getPathname(urlForPatterns)
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">url.keys(url)</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							JSON.stringify(url.keys(urlForPatterns))
-						}}</n-tag>
+						<code class="code-inline">Url.fromQueryString('a=1&b=2').toObject()</code>
+						<n-tag type="info" size="small" :bordered="false">{{ JSON.stringify(Url.fromQueryString('a=1&b=2').toObject()) }}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
@@ -485,7 +514,7 @@ url.getPathname('https://example.com/api/users') // '/api/users'`"
 		<!-- UA Detection -->
 		<FunctionCard
 			title="ua (User Agent Detection)"
-			description="Comprehensive user agent detection - device, OS, browser, environment"
+			description="全面的 User Agent 检测 - 设备、系统、浏览器、环境"
 			since="6.0.0"
 			:code="`import { ua } from 'js-cool'
 
@@ -535,48 +564,10 @@ ua.browser     // BrowserInfo`"
 			</template>
 		</FunctionCard>
 
-		<!-- Tree-shaking example -->
-		<FunctionCard
-			title="ua properties"
-			description="Access device, OS, browser, environment info directly"
-			since="6.0.0"
-			:code="`// Access info directly
-ua.device      // { type, mobile, tablet, desktop, touch, ... }
-ua.os          // { name: 'macOS', version: '14.0' }
-ua.browser     // { name: 'Chrome', version: '123.0', engine: 'Blink' }
-ua.environment // { wechat, qq, miniProgram, ... }
-ua.userAgent   // Full UA string`"
-		>
-			<template #result>
-				<n-space vertical>
-					<n-space align="center">
-						<code class="code-inline">ua.isMobile()</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							ua.isMobile()
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">ua.isWeChat()</code>
-						<n-tag type="info" size="small" :bordered="false">{{
-							ua.isWeChat()
-						}}</n-tag>
-					</n-space>
-					<n-space align="center">
-						<code class="code-inline">ua.isiOS()</code>
-						<n-tag type="info" size="small" :bordered="false">{{ ua.isiOS() }}</n-tag>
-					</n-space>
-					<div>
-						<code class="code-inline">ua.device</code>
-						<pre class="code-block">{{ JSON.stringify(ua.device, null, 2) }}</pre>
-					</div>
-				</n-space>
-			</template>
-		</FunctionCard>
-
 		<!-- browserVersion / osVersion -->
 		<FunctionCard
 			title="browserVersion / osVersion / appVersion"
-			description="Get browser and OS information"
+			description="获取浏览器和系统信息"
 			since="1.0.0"
 			:code="`browserVersion() // { name: 'Chrome', version: '123.0.0.0' }
 osVersion() // { name: 'Mac OS', version: '10.15.7' }
@@ -607,7 +598,7 @@ appVersion('Chrome') // '123.0.0.0'`"
 		<!-- compareVersion -->
 		<FunctionCard
 			title="compareVersion"
-			description="Compare version numbers"
+			description="比较版本号"
 			since="1.0.0"
 			:code="`compareVersion('1.2.3', '1.2.4') // -1
 compareVersion('2.0.0', '1.9.9') // 1
@@ -637,7 +628,7 @@ compareVersion('1.0.0', '1.0.0') // 0`"
 		<!-- nextVersion -->
 		<FunctionCard
 			title="nextVersion"
-			description="Get next version number"
+			description="获取下一个版本号"
 			since="1.0.0"
 			:code="`nextVersion('1.2.3', 'major') // '2.0.0'
 nextVersion('1.2.3', 'minor') // '1.3.0'

@@ -1,3 +1,4 @@
+import { hasOwn } from '../_compat'
 import inBrowser from '../inBrowser'
 
 export type ParamScope = 'search' | 'hash' | 'all'
@@ -17,11 +18,11 @@ export interface StringifyOptions {
 const VALUE_MAP: Record<string, unknown> = {
 	'-Infinity': -Infinity,
 	false: false,
-	Infinity: Infinity,
+	Infinity,
 	NaN: Number.NaN,
 	null: null,
 	true: true,
-	undefined: undefined,
+	undefined,
 }
 
 /** 转换字符串值为适当类型 */
@@ -315,7 +316,7 @@ export class Url {
 			if (hashParams) hash += `?${hashParams}`
 		}
 
-		return `${base}${search ? '?' + search : ''}${hash}`
+		return `${base}${search ? `?${search}` : ''}${hash}`
 	}
 
 	// ============ 迭代器 ============
@@ -349,7 +350,7 @@ export class Url {
 	 */
 	static parse(str: string, options?: ParseOptions | boolean): Record<string, unknown> {
 		if (!str) return {}
-		const convert = typeof options === 'boolean' ? options : options?.convert ?? false
+		const convert = typeof options === 'boolean' ? options : (options?.convert ?? false)
 		const result: Record<string, unknown> = {}
 		for (const [k, v] of new URLSearchParams(str.replace(/^\?/, ''))) {
 			result[k] = convert ? convertValue(v) : v
@@ -371,7 +372,7 @@ export class Url {
 		const { convert = false, encode = false, withQuestionMark = true } = options ?? {}
 		const sp = new URLSearchParams()
 		for (const k in params) {
-			if (Object.hasOwn(params, k)) {
+			if (hasOwn(params, k)) {
 				const v = convert ? String(params[k] ?? '') : String(params[k])
 				sp.set(k, encode ? decodeURIComponent(v) : v)
 			}

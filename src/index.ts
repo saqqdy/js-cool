@@ -293,6 +293,8 @@ export {
 export {
 	Url,
 	// Query string parsing & building
+	parse,
+	stringify,
 	parse as parseQueryString,
 	stringify as stringifyQueryString,
 	// URL property extraction

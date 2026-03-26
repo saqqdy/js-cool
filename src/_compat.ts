@@ -230,6 +230,17 @@ function _objectFromEntries<T>(entries: Iterable<[string, T]>): Record<string, T
 export const objectFromEntries: <T>(entries: Iterable<[string, T]>) => Record<string, T> =
 	typeof Object.fromEntries === 'function' ? Object.fromEntries : _objectFromEntries
 
+/**
+ * IE11-compatible alternative to Object.hasOwn()
+ * Uses native method when available for better performance.
+ */
+function _hasOwn(obj: object, prop: string | symbol): boolean {
+	return Object.prototype.hasOwnProperty.call(obj, prop)
+}
+
+export const hasOwn: (obj: object, prop: string | symbol) => boolean =
+	typeof Object.hasOwn === 'function' ? Object.hasOwn : _hasOwn
+
 // ==================== Global ====================
 
 /**
