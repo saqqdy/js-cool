@@ -148,7 +148,7 @@ url.parse('?count=100&active=true', { covert: true })
 		<FunctionCard
 			title="URLParams (hash params)"
 			description="Parse URL parameters from hash string (after #) using URLParams class"
-			since="6.1.0"
+			since="6.0.0"
 			:code="`import { URLParams } from 'js-cool'
 
 const params = new URLParams('https://example.com#/profile?tab=settings')
@@ -186,7 +186,7 @@ params.toObject('hash')
 		<FunctionCard
 			title="URLParams class"
 			description="Enhanced URLSearchParams that handles both search (#前) and hash (#后) params"
-			since="6.1.0"
+			since="6.0.0"
 			:code="`import { URLParams } from 'js-cool'
 
 const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
@@ -257,7 +257,7 @@ params.toDetailObject()     // { search, hash, all, source }`"
 		<FunctionCard
 			title="URLParams.toDetailObject()"
 			description="Get detailed params info with source tracking"
-			since="6.1.0"
+			since="6.0.0"
 			:code="`params.toDetailObject()
 // {
 //   search: { ss: '1' },
@@ -280,7 +280,7 @@ new URLParams('https://example.com?token=old#/path?token=new')
 		<FunctionCard
 			title="URLParams chaining"
 			description="Build URLs with chainable methods"
-			since="6.1.0"
+			since="6.0.0"
 			:code="`import { URLParams } from 'js-cool'
 
 const params = new URLParams('https://api.example.com')

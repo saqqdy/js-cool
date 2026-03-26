@@ -49,7 +49,7 @@ export type ParamScope = 'search' | 'hash' | 'all'
  * params.toURL()              // 'https://a.cn/?token=abc&page=1#/path?bb=999'
  * ```
  *
- * @since 6.1.0
+ * @since 6.0.0
  */
 class URLParams {
 	private _search: URLSearchParams

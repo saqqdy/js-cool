@@ -45,7 +45,7 @@ export type { ParamScope }
  * u.set('page', 2).toString()
  * // 'https://example.com?id=123&page=2'
  *
- * // Hash parameter support (v6.1.0+)
+ * // Hash parameter support (v6.0.0+)
  * const u2 = new Url('https://example.com?token=old#/page?token=new')
  * u2.get('token', 'search') // 'old'
  * u2.get('token', 'hash')   // 'new'
@@ -217,7 +217,7 @@ export class Url {
 	}
 
 	// ============================================
-	// Hash path operations (new in v6.1.0)
+	// Hash path operations (new in v6.0.0)
 	// ============================================
 
 	/**
@@ -338,7 +338,7 @@ export class Url {
  * url.stringify({ a: 1 }) // '?a=1'
  * url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
  *
- * // Hash parameter support (v6.1.0+)
+ * // Hash parameter support (v6.0.0+)
  * url.get('id', 'https://example.com?id=100#/home?id=200', 'hash') // '200'
  * ```
  */
