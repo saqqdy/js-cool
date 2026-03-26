@@ -20,6 +20,3 @@ export const getHostname = Url.getHostname
 export const getPathname = Url.getPathname
 export const getSearch = Url.getSearch
 export const getHash = Url.getHash
-
-// 兼容旧名称
-export { Url as URLParams } from './Url'

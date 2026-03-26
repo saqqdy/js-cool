@@ -376,14 +376,3 @@ describe('Url iterator', () => {
 		])
 	})
 })
-
-// ============================================
-// URLParams Alias Tests
-// ============================================
-
-describe('URLParams alias', () => {
-	it('should be Url class', async () => {
-		const { URLParams } = await import('../src/url/index')
-		expect(URLParams).toBe(Url)
-	})
-})

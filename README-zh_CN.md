@@ -262,7 +262,6 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 import {
   url,
   Url,
-  URLParams,
   // 查询字符串解析与构建（描述性名称）
   parseQueryString,
   stringifyQueryString,
@@ -283,9 +282,6 @@ import {
   getPathname,
   getSearch,
   getHash,
-  // 常量
-  URL_PATTERNS,
-  VALUE_MAP,
 } from 'js-cool'
 
 // 或直接使用短名称
@@ -313,12 +309,17 @@ u.pathname // '/api/users'
 u.search // '?id=123'
 u.hash // '#section'
 
-// ============ 方式 2: url 命名空间 (工厂 + 静态方法) ============
-url.from('https://example.com?id=123').get('id') // '123'
-url.from('https://example.com').set('page', 2).toString()
+// Hash 参数支持
+const u2 = new Url('https://a.cn/?ss=1#/path?bb=343')
+u2.get('ss') // '1' (来自 search)
+u2.get('bb') // '343' (来自 hash)
+u2.get('ss', 'search') // '1' - 指定范围
+u2.get('bb', 'hash') // '343' - 指定范围
+u2.toObject() // { ss: '1', bb: '343' }
+u2.toDetailObject() // { search: {...}, hash: {...}, all: {...}, source: {...} }
 
-// 静态方法
-url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+// ============ 方式 2: url 命名空间 (静态方法) ============
+url.parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
 
@@ -348,58 +349,8 @@ import { get, set, parse, stringify } from 'js-cool'
 
 get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
-parse('?key1=100&key2=true', { covert: true }) // { key1: 100, key2: true }
+parse('?key1=100&key2=true', { convert: true }) // { key1: 100, key2: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
-```
-
-#### URLParams
-
-增强版 URLSearchParams，同时解析 search 和 hash 参数。
-
-```js
-import { URLParams } from 'js-cool'
-
-// 基础用法 - 自动从 search + hash 查找（hash 优先）
-const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
-
-params.get('ss') // '1' (来自 search)
-params.get('bb') // '343' (来自 hash)
-params.has('ss') // true
-params.keys() // ['ss', 'bb']
-
-// 指定范围
-params.get('ss', 'search') // '1'
-params.get('ss', 'hash') // null
-params.get('ss', 'all') // '1' (默认，hash 优先)
-
-// 获取所有参数
-params.toObject() // { ss: '1', bb: '343' }
-params.toObject('search') // { ss: '1' }
-params.toObject('hash') // { bb: '343' }
-
-// 详细信息（区分来源）
-params.toDetailObject()
-// {
-//   search: { ss: '1' },
-//   hash: { bb: '343' },
-//   all: { ss: '1', bb: '343' },
-//   source: { ss: 'search', bb: 'hash' }
-// }
-
-// 链式修改
-params.set('token', 'abc').set('page', 1).delete('ss')
-params.toString() // '?token=abc&page=1'
-
-// 操作 hash 参数
-params.set('bb', '999', 'hash')
-params.toString('hash') // 'bb=999'
-
-// 构建完整 URL
-params.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
-
-// 静态方法
-URLParams.current() // 从当前页面 URL 创建
-URLParams.fromQueryString('a=1&b=2') // 从查询字符串创建
 ```
 
 ---

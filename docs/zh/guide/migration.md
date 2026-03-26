@@ -70,17 +70,17 @@ import jsCool from 'js-cool'
 
 ### 废弃函数替换
 
-| v5.x（已废弃）        | v6.x（替代方案）                                  |
-| --------------------- | ------------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                                    |
-| `getOsVersion()`      | `osVersion()`                                     |
-| `getScrollPosition()` | `scroll.getPosition()`                            |
-| `getQueryParam()`     | `url.get()` 或 `new URLParams(url).get()`         |
-| `getQueryParams()`    | `url.parse()` 或 `new URLParams(url).toObject()`  |
-| `getUrlParam()`       | `url.get()` 或 `new URLParams(url).get()`         |
-| `getUrlParams()`      | `url.parse()` 或 `new URLParams(url).toObject()`  |
-| `parseUrlParam()`     | `url.parse()`                                     |
-| `spliceUrlParam()`    | `url.set()` 或 `new URLParams(url).set().toURL()` |
+| v5.x（已废弃）        | v6.x（替代方案）                              |
+| --------------------- | --------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                |
+| `getOsVersion()`      | `osVersion()`                                 |
+| `getScrollPosition()` | `scroll.getPosition()`                        |
+| `getQueryParam()`     | `url.get()` 或 `new Url(url).get()`           |
+| `getQueryParams()`    | `url.parse()` 或 `new Url(url).toObject()`    |
+| `getUrlParam()`       | `url.get()` 或 `new Url(url).get()`           |
+| `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()`    |
+| `parseUrlParam()`     | `url.parse()`                                 |
+| `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`     |
 
 ```js
 // v5.x
@@ -94,8 +94,8 @@ const params = getUrlParams(url)
 const version = appVersion('Chrome')
 const os = osVersion()
 const pos = scroll.getPosition()
-const id = url.get('id', url) // 或 new URLParams(url).get('id')
-const params = url.parse(url) // 或 new URLParams(url).toObject()
+const id = url.get('id', url) // 或 new Url(url).get('id')
+const params = url.parse(url) // 或 new Url(url).toObject()
 ```
 
 ### 已移除函数
@@ -557,7 +557,7 @@ const apiUrl = new Url('https://api.example.com')
 
 // 2. url 命名空间 - 工厂 + 静态方法
 url.from('https://example.com?id=123').get('id') // '123'
-url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 
 // 3. 直接导入函数（支持 tree-shaking）
@@ -587,7 +587,7 @@ v6.0.0 提供了描述性别名，提高代码可读性：
 // 使用描述性名称
 import { parseQueryString, getQueryParamValue, setQueryParam } from 'js-cool'
 
-const params = parseQueryString('?page=1&size=20&active=true', { covert: true })
+const params = parseQueryString('?page=1&size=20&active=true', { convert: true })
 // { page: 1, size: 20, active: true }
 
 const page = getQueryParamValue('page', 'https://example.com?page=2')
@@ -621,30 +621,29 @@ import { url, Url, parseQueryString, stringifyQueryString } from 'js-cool/url'
 
 ### URL 参数方法迁移指南
 
-v6.0.0 引入了新的 `url` 命名空间和 `URLParams` 类，可以替代现有的多个 URL 参数处理方法。以下是完整的迁移指南。
+v6.0.0 引入了新的 `url` 命名空间和 `Url` 类，可以替代现有的多个 URL 参数处理方法。以下是完整的迁移指南。
 
 ::: warning v6.0.0 重大变更
 以下函数已在 v6.0.0 中**移除**：
 
-- `getUrlParams` - 使用 `url.parse()` 或 `URLParams.toObject('search')`
-- `getUrlParam` - 使用 `url.get()` 或 `URLParams.get(name, 'search')`
-- `parseUrlParam` - 使用带 `{ covert: true }` 选项的 `url.parse()`
+- `getUrlParams` - 使用 `url.parse()` 或 `new Url(url).toObject()`
+- `getUrlParam` - 使用 `url.get()` 或 `new Url(url).get(name)`
+- `parseUrlParam` - 使用带 `{ convert: true }` 选项的 `url.parse()`
 - `spliceUrlParam` - 使用 `url.stringify()`
-- `getQueryParam` - 使用 `URLParams.get(name, 'hash')`
-- `getQueryParams` - 使用 `URLParams.toObject('hash')`
+- `getQueryParam` - 使用 `new Url(url).get(name, 'hash')`
+- `getQueryParams` - 使用 `new Url(url).toObject('hash')`
   :::
 
 #### 替代关系对照表
 
-| 原方法           | 可被 `url` 替代 | 可被 `URLParams` 替代 | 状态   | 说明                       |
-| ---------------- | --------------- | --------------------- | ------ | -------------------------- |
-| `getUrlParams`   | ✅              | ✅                    | 已移除 | 都只处理 search 参数       |
-| `getUrlParam`    | ✅              | ✅                    | 已移除 | 都只处理 search 参数       |
-| `parseUrlParam`  | ✅              | ✅                    | 已移除 | 都只处理 search 参数       |
-| `spliceUrlParam` | ✅              | ✅                    | 已移除 | 参数拼接                   |
-| `getQueryParam`  | ❌              | ✅                    | 已移除 | `url` 模块不支持 hash 参数 |
-| `getQueryParams` | ❌              | ✅                    | 已移除 | `url` 模块不支持 hash 参数 |
-| `getDirParams`   | ❌              | ❌                    | 可用   | 功能不同（路径解析）       |
+| 原方法           | 可被 `url` 替代 | 可被 `Url` 替代 | 状态   | 说明                       |
+| ---------------- | --------------- | --------------- | ------ | -------------------------- |
+| `getUrlParams`   | ✅              | ✅              | 已移除 | 都只处理 search 参数       |
+| `getUrlParam`    | ✅              | ✅              | 已移除 | 都只处理 search 参数       |
+| `parseUrlParam`  | ✅              | ✅              | 已移除 | 都只处理 search 参数       |
+| `spliceUrlParam` | ✅              | ✅              | 已移除 | 参数拼接                   |
+| `getQueryParam`  | ❌              | ✅              | 已移除 | `url` 模块不支持 hash 参数 |
+| `getQueryParams` | ❌              | ✅              | 已移除 | `url` 模块不支持 hash 参数 |
 
 #### `getUrlParams` 迁移
 
@@ -663,9 +662,9 @@ url.parse('?a=1&b=2')
 url.from('https://example.com?a=1&b=2').toParams()
 // { a: '1', b: '2' }
 
-// 替代方式 3: URLParams
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?a=1&b=2').toObject('search')
+// 替代方式 3: Url
+import { Url } from 'js-cool'
+new Url('https://example.com?a=1&b=2').toObject()
 // { a: '1', b: '2' }
 ```
 
@@ -686,9 +685,9 @@ url.get('id', 'https://example.com?id=123')
 url.from('https://example.com?id=123').get('id')
 // '123'
 
-// 替代方式 3: URLParams
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?id=123').get('id', 'search')
+// 替代方式 3: Url
+import { Url } from 'js-cool'
+new Url('https://example.com?id=123').get('id')
 // '123'
 ```
 
@@ -702,7 +701,7 @@ parseUrlParam('?count=100&active=true', true)
 
 // 替代方式: url.parse (带 covert 选项)
 import { url } from 'js-cool'
-url.parse('?count=100&active=true', { covert: true })
+url.parse('?count=100&active=true', { convert: true })
 // { count: 100, active: true }
 ```
 
@@ -727,7 +726,7 @@ url.stringify({ a: 1, name: '测试' }, { encode: true })
 #### `getQueryParam` / `getQueryParams` 迁移
 
 ::: warning 重要
-`url` 模块**不支持** hash 参数，必须使用 `URLParams` 类替代。
+`url` 模块**不支持** hash 参数，必须使用 `Url` 类替代。
 :::
 
 ```js
@@ -739,12 +738,12 @@ getQueryParam('id', 'https://example.com?id=100#/home?id=200')
 getQueryParams('https://example.com?id=100#/home?id=200')
 // { id: '200' }
 
-// 替代方式: URLParams（指定 scope='hash'）
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?id=100#/home?id=200').get('id', 'hash')
+// 替代方式: Url（指定 scope='hash'）
+import { Url } from 'js-cool'
+new Url('https://example.com?id=100#/home?id=200').get('id', 'hash')
 // '200'
 
-new URLParams('https://example.com?id=100#/home?id=200').toObject('hash')
+new Url('https://example.com?id=100#/home?id=200').toObject('hash')
 // { id: '200' }
 
 // 注意: url 模块只获取 search 参数
@@ -752,14 +751,14 @@ url.get('id', 'https://example.com?id=100#/home?id=200')
 // '100' (只获取 search 参数，不符合预期)
 ```
 
-#### `URLParams` 高级用法
+#### `Url` 高级用法
 
-`URLParams` 是最完整的解决方案，支持同时处理 search 和 hash 参数：
+`Url` 是最完整的解决方案，支持同时处理 search 和 hash 参数：
 
 ```js
-import { URLParams } from 'js-cool'
+import { Url } from 'js-cool'
 
-const params = new URLParams('https://example.com?token=old#/page?token=new')
+const params = new Url('https://example.com?token=old#/page?token=new')
 
 // 区分参数来源
 params.get('token', 'search') // 'old' - search 参数
@@ -783,13 +782,13 @@ params.toURL()
 
 #### 选择建议
 
-| 场景                           | 推荐使用                    |
-| ------------------------------ | --------------------------- |
-| 只处理 search 参数（简单场景） | `url` 模块（API 更简洁）    |
-| 需要处理 hash 参数             | `URLParams` 类（唯一选择）  |
-| 需要同时处理 search 和 hash    | `URLParams` 类              |
+| 场景                           | 推荐使用                   |
+| ------------------------------ | -------------------------- |
+| 只处理 search 参数（简单场景） | `url` 模块（API 更简洁）   |
+| 需要处理 hash 参数             | `Url` 类（唯一选择）       |
+| 需要同时处理 search 和 hash    | `Url` 类                   |
 | 需要 URL 属性解析              | `url` 模块或 `getDirParams` |
-| 需要链式构建 URL               | `Url` 类或 `URLParams` 类   |
+| 需要链式构建 URL               | `Url` 类                   |
 
 ## TypeScript 迁移
 

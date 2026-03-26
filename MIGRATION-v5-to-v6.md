@@ -90,18 +90,18 @@ v6.x uses proper conditional exports:
 
 ### 4. Deprecated Functions Removed
 
-| Removed               | Replacement                                       |
-| --------------------- | ------------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                                    |
-| `getOsVersion()`      | `osVersion()`                                     |
-| `getDirParam()`       | `getDirParams()`                                  |
-| `getScrollPosition()` | `scroll.getPosition()`                            |
-| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`         |
-| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`  |
-| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`         |
-| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`  |
-| `parseUrlParam()`     | `url.parse()`                                     |
-| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()` |
+| Removed               | Replacement                                  |
+| --------------------- | -------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                               |
+| `getOsVersion()`      | `osVersion()`                                |
+| `getDirParam()`       | `getDirParams()`                             |
+| `getScrollPosition()` | `scroll.getPosition()`                       |
+| `getQueryParam()`     | `url.get()` or `new Url(url).get()`          |
+| `getQueryParams()`    | `url.parse()` or `new Url(url).toObject()`   |
+| `getUrlParam()`       | `url.get()` or `new Url(url).get()`          |
+| `getUrlParams()`      | `url.parse()` or `new Url(url).toObject()`   |
+| `parseUrlParam()`     | `url.parse()`                                |
+| `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`    |
 
 ### 5. `pattern` Object Removed
 
@@ -859,33 +859,33 @@ import type {
 
 URL utilities with URLSearchParams-like API and a new chainable `Url` class:
 
-### URLParams Class
+### Url Class
 
-Enhanced URLSearchParams that parses both search (#前) and hash (#后) parameters:
+Enhanced URL builder that parses both search and hash parameters:
 
 ```js
-import { URLParams } from 'js-cool'
+import { Url } from 'js-cool'
 
 // Basic usage - auto search from both scopes (hash priority)
-const params = new URLParams('https://a.cn/?ss=1#/path?bb=343')
+const u = new Url('https://a.cn/?ss=1#/path?bb=343')
 
-params.get('ss') // '1' (from search)
-params.get('bb') // '343' (from hash)
-params.has('ss') // true
-params.keys() // ['ss', 'bb']
+u.get('ss') // '1' (from search)
+u.get('bb') // '343' (from hash)
+u.has('ss') // true
+u.keys() // ['ss', 'bb']
 
 // Specify scope
-params.get('ss', 'search') // '1'
-params.get('ss', 'hash') // null
-params.get('ss', 'all') // '1' (default, hash priority)
+u.get('ss', 'search') // '1'
+u.get('ss', 'hash') // null
+u.get('ss', 'all') // '1' (default, hash priority)
 
 // Get all params
-params.toObject() // { ss: '1', bb: '343' }
-params.toObject('search') // { ss: '1' }
-params.toObject('hash') // { bb: '343' }
+u.toObject() // { ss: '1', bb: '343' }
+u.toObject('search') // { ss: '1' }
+u.toObject('hash') // { bb: '343' }
 
 // Detailed info (with source)
-params.toDetailObject()
+u.toDetailObject()
 // {
 //   search: { ss: '1' },
 //   hash: { bb: '343' },
@@ -894,35 +894,12 @@ params.toDetailObject()
 // }
 
 // Chainable modifications
-params.set('token', 'abc').set('page', 1).delete('ss')
-params.toString() // '?token=abc&page=1'
+u.set('token', 'abc').set('page', 1).delete('ss')
+u.toString() // 'https://a.cn/?token=abc&page=1#/path?bb=343'
 
 // Operate on hash params
-params.set('bb', '999', 'hash')
-params.toString('hash') // 'bb=999'
-
-// Build full URL
-params.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
-
-// Static methods
-URLParams.current() // From current page URL
-URLParams.fromQueryString('a=1&b=2') // From query string only
-```
-
-### Url Class (Chainable Builder)
-
-```js
-import { Url, url } from 'js-cool'
-
-// Create instance
-const u = new Url('https://example.com?id=123')
-
-// Get parameter
-u.get('id') // '123'
-
-// Chainable methods
-u.set('page', 2).delete('id').toString()
-// 'https://example.com?page=2'
+u.set('bb', '999', 'hash')
+u.toURL() // 'https://a.cn/?token=abc&page=1#/path?bb=999'
 
 // URL building
 new Url('https://api.example.com')
@@ -940,11 +917,14 @@ u.pathname // '/api/users'
 u.search // '?id=123'
 u.hash // '#section'
 
-// Iteration
-u.keys() // ['id', 'page']
-u.values() // ['123', '2']
-u.entries() // [['id', '123'], ['page', '2']]
-u.toParams() // { id: '123', page: '2' }
+// Static methods
+Url.parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
+Url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+Url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+Url.getHost('https://example.com:8080/path') // 'example.com:8080'
+Url.getPathname('https://example.com/api/users?id=1') // '/api/users'
+Url.current() // From current page URL
+Url.fromQueryString('a=1&b=2') // From query string
 ```
 
 ### url Namespace (Factory + Static)
@@ -952,12 +932,8 @@ u.toParams() // { id: '123', page: '2' }
 ```js
 import { url } from 'js-cool'
 
-// Factory method
-url.from('https://example.com?id=123').get('id') // '123'
-url.from('https://example.com').set('page', 2).toString()
-
 // Static methods
-url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 
 // URLSearchParams-like (static)
@@ -980,10 +956,6 @@ url.getHostname('https://example.com:8080/path') // 'example.com'
 url.getPathname('https://example.com/api/users?id=1') // '/api/users'
 url.getSearch('https://example.com?key=value') // '?key=value'
 url.getHash('https://example.com/path#section') // '#section'
-
-// Constants
-url.PATTERNS // URL_PATTERNS
-url.VALUE_MAP // VALUE_MAP
 ```
 
 ### Direct Function Imports
@@ -1007,14 +979,12 @@ import {
   getHash,
   parse,
   stringify,
-  URL_PATTERNS,
-  VALUE_MAP,
 } from 'js-cool'
 
 // Same as url.* static methods
 get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
-parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 ```
 

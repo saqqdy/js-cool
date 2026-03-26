@@ -144,7 +144,7 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/api/url/url-params', text: 'URLParams' },
+								{ link: '/api/url/Url-class', text: 'Url' },
 								{ link: '/api/url/url', text: 'url' },
 								{ link: '/api/url/get-dir-params', text: 'getDirParams' },
 								{ link: '/api/url/ua', text: 'ua' },
@@ -479,7 +479,7 @@ export default defineConfig({
 						{
 							collapsed: true,
 							items: [
-								{ link: '/zh/api/url/url-params', text: 'URLParams' },
+								{ link: '/zh/api/url/Url-class', text: 'Url' },
 								{ link: '/zh/api/url/url', text: 'url' },
 								{ link: '/zh/api/url/get-dir-params', text: 'getDirParams' },
 								{ link: '/zh/api/url/ua', text: 'ua' },

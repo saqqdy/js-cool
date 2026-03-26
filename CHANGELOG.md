@@ -19,12 +19,12 @@ All notable changes to this project will be documented in this file.
   - `pattern` → `validation`
   - `trim` → `String.prototype.trim()`
   - `isExitsVariable` → `getGlobal(name) != null`
-  - `getQueryParam` → `url.get()` or `new URLParams(url).get()`
-  - `getQueryParams` → `url.parse()` or `new URLParams(url).toObject()`
-  - `getUrlParam` → `url.get()` or `new URLParams(url).get()`
-  - `getUrlParams` → `url.parse()` or `new URLParams(url).toObject()`
+  - `getQueryParam` → `url.get()` or `new Url(url).get()`
+  - `getQueryParams` → `url.parse()` or `new Url(url).toObject()`
+  - `getUrlParam` → `url.get()` or `new Url(url).get()`
+  - `getUrlParams` → `url.parse()` or `new Url(url).toObject()`
   - `parseUrlParam` → `url.parse()`
-  - `spliceUrlParam` → `url.set()` or `new URLParams(url).set().toURL()`
+  - `spliceUrlParam` → `url.stringify()` or `new Url(url).set()`
 
 - **Module Renamed**: `client` → `ua`
 - **Type Change**: `base64ToFile()` returns `File | Blob` (IE11 returns Blob)
@@ -37,8 +37,7 @@ All notable changes to this project will be documented in this file.
   - Type exports: `UA`, `UAInfo`, `DeviceInfo`, `OSInfo`, `BrowserInfo`, `EnvironmentInfo`
 
 - **New `url` Module**: Chainable URL builder with URLSearchParams-like API
-  - `Url` class: `new Url(url).set('key', value).toString()`
-  - `URLParams` class: Enhanced URLSearchParams that parses both search and hash parameters
+  - `Url` class: Enhanced URL builder that parses both search and hash parameters
   - Static methods: `get()`, `set()`, `parse()`, `stringify()`, etc.
   - Descriptive function aliases: `parseQueryString`, `stringifyQueryString`, `getQueryParamValue`, `setQueryParam`, etc.
   - URL property extraction: `getOrigin()`, `getHost()`, `getHostname()`, `getPathname()`, `getSearch()`, `getHash()`

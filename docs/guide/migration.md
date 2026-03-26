@@ -70,17 +70,17 @@ import jsCool from 'js-cool'
 
 ### Deprecated Functions
 
-| v5.x (Deprecated)     | v6.x (Replacement)                                |
-| --------------------- | ------------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                                    |
-| `getOsVersion()`      | `osVersion()`                                     |
-| `getScrollPosition()` | `scroll.getPosition()`                            |
-| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`         |
-| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`  |
-| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`         |
-| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`  |
-| `parseUrlParam()`     | `url.parse()`                                     |
-| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()` |
+| v5.x (Deprecated)     | v6.x (Replacement)                            |
+| --------------------- | --------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                |
+| `getOsVersion()`      | `osVersion()`                                 |
+| `getScrollPosition()` | `scroll.getPosition()`                        |
+| `getQueryParam()`     | `url.get()` or `new Url(url).get()`           |
+| `getQueryParams()`    | `url.parse()` or `new Url(url).toObject()`    |
+| `getUrlParam()`       | `url.get()` or `new Url(url).get()`           |
+| `getUrlParams()`      | `url.parse()` or `new Url(url).toObject()`    |
+| `parseUrlParam()`     | `url.parse()`                                 |
+| `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`     |
 
 ```js
 // v5.x
@@ -94,8 +94,8 @@ const params = getUrlParams(url)
 const version = appVersion('Chrome')
 const os = osVersion()
 const pos = scroll.getPosition()
-const id = url.get('id', url) // or new URLParams(url).get('id')
-const params = url.parse(url) // or new URLParams(url).toObject()
+const id = url.get('id', url) // or new Url(url).get('id')
+const params = url.parse(url) // or new Url(url).toObject()
 ```
 
 ### Removed Functions
@@ -557,7 +557,7 @@ const apiUrl = new Url('https://api.example.com')
 
 // 2. url namespace - factory + static methods
 url.from('https://example.com?id=123').get('id') // '123'
-url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
+url.parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 
 // 3. Direct function imports (tree-shaking friendly)
@@ -587,7 +587,7 @@ v6.0.0 provides descriptive aliases for better code readability:
 // Using descriptive names
 import { parseQueryString, getQueryParamValue, setQueryParam } from 'js-cool'
 
-const params = parseQueryString('?page=1&size=20&active=true', { covert: true })
+const params = parseQueryString('?page=1&size=20&active=true', { convert: true })
 // { page: 1, size: 20, active: true }
 
 const page = getQueryParamValue('page', 'https://example.com?page=2')
@@ -621,30 +621,29 @@ import { url, Url, parseQueryString, stringifyQueryString } from 'js-cool/url'
 
 ### URL Parameter Methods Migration Guide
 
-v6.0.0 introduces the new `url` namespace and `URLParams` class that can replace multiple existing URL parameter methods. Here's the complete migration guide.
+v6.0.0 introduces the new `url` namespace and `Url` class that can replace multiple existing URL parameter methods. Here's the complete migration guide.
 
 ::: warning Breaking Change in v6.0.0
 The following functions have been **removed** in v6.0.0:
 
-- `getUrlParams` - Use `url.parse()` or `URLParams.toObject('search')`
-- `getUrlParam` - Use `url.get()` or `URLParams.get(name, 'search')`
-- `parseUrlParam` - Use `url.parse()` with `{ covert: true }`
+- `getUrlParams` - Use `url.parse()` or `new Url(url).toObject()`
+- `getUrlParam` - Use `url.get()` or `new Url(url).get(name)`
+- `parseUrlParam` - Use `url.parse()` with `{ convert: true }`
 - `spliceUrlParam` - Use `url.stringify()`
-- `getQueryParam` - Use `URLParams.get(name, 'hash')`
-- `getQueryParams` - Use `URLParams.toObject('hash')`
+- `getQueryParam` - Use `new Url(url).get(name, 'hash')`
+- `getQueryParams` - Use `new Url(url).toObject('hash')`
   :::
 
 #### Replacement Compatibility Table
 
-| Original Method  | `url` Module | `URLParams` Class | Status    | Notes                             |
-| ---------------- | ------------ | ----------------- | --------- | --------------------------------- |
-| `getUrlParams`   | ✅           | ✅                | Removed   | Both handle search params only    |
-| `getUrlParam`    | ✅           | ✅                | Removed   | Both handle search params only    |
-| `parseUrlParam`  | ✅           | ✅                | Removed   | Both handle search params only    |
-| `spliceUrlParam` | ✅           | ✅                | Removed   | Parameter building                |
-| `getQueryParam`  | ❌           | ✅                | Removed   | `url` module doesn't support hash |
-| `getQueryParams` | ❌           | ✅                | Removed   | `url` module doesn't support hash |
-| `getDirParams`   | ❌           | ❌                | Available | Different functionality (paths)   |
+| Original Method  | `url` Module | `Url` Class | Status  | Notes                             |
+| ---------------- | ------------ | ----------- | ------- | --------------------------------- |
+| `getUrlParams`   | ✅           | ✅          | Removed | Both handle search params only    |
+| `getUrlParam`    | ✅           | ✅          | Removed | Both handle search params only    |
+| `parseUrlParam`  | ✅           | ✅          | Removed | Both handle search params only    |
+| `spliceUrlParam` | ✅           | ✅          | Removed | Parameter building                |
+| `getQueryParam`  | ❌           | ✅          | Removed | `url` module doesn't support hash |
+| `getQueryParams` | ❌           | ✅          | Removed | `url` module doesn't support hash |
 
 #### `getUrlParams` Migration
 
@@ -663,9 +662,9 @@ url.parse('?a=1&b=2')
 url.from('https://example.com?a=1&b=2').toParams()
 // { a: '1', b: '2' }
 
-// Alternative 3: URLParams
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?a=1&b=2').toObject('search')
+// Alternative 3: Url
+import { Url } from 'js-cool'
+new Url('https://example.com?a=1&b=2').toObject()
 // { a: '1', b: '2' }
 ```
 
@@ -686,9 +685,9 @@ url.get('id', 'https://example.com?id=123')
 url.from('https://example.com?id=123').get('id')
 // '123'
 
-// Alternative 3: URLParams
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?id=123').get('id', 'search')
+// Alternative 3: Url
+import { Url } from 'js-cool'
+new Url('https://example.com?id=123').get('id')
 // '123'
 ```
 
@@ -702,7 +701,7 @@ parseUrlParam('?count=100&active=true', true)
 
 // Alternative: url.parse (with covert option)
 import { url } from 'js-cool'
-url.parse('?count=100&active=true', { covert: true })
+url.parse('?count=100&active=true', { convert: true })
 // { count: 100, active: true }
 ```
 
@@ -727,7 +726,7 @@ url.stringify({ a: 1, name: 'test' }, { encode: true })
 #### `getQueryParam` / `getQueryParams` Migration
 
 ::: warning Important
-The `url` module **does not support** hash parameters. You must use the `URLParams` class instead.
+The `url` module **does not support** hash parameters. You must use the `Url` class instead.
 :::
 
 ```js
@@ -739,12 +738,12 @@ getQueryParam('id', 'https://example.com?id=100#/home?id=200')
 getQueryParams('https://example.com?id=100#/home?id=200')
 // { id: '200' }
 
-// Alternative: URLParams (specify scope='hash')
-import { URLParams } from 'js-cool'
-new URLParams('https://example.com?id=100#/home?id=200').get('id', 'hash')
+// Alternative: Url (specify scope='hash')
+import { Url } from 'js-cool'
+new Url('https://example.com?id=100#/home?id=200').get('id', 'hash')
 // '200'
 
-new URLParams('https://example.com?id=100#/home?id=200').toObject('hash')
+new Url('https://example.com?id=100#/home?id=200').toObject('hash')
 // { id: '200' }
 
 // Note: url module only gets search params
@@ -752,14 +751,14 @@ url.get('id', 'https://example.com?id=100#/home?id=200')
 // '100' (only gets search param, not what you want)
 ```
 
-#### `URLParams` Advanced Usage
+#### `Url` Advanced Usage
 
-`URLParams` is the most complete solution, supporting both search and hash parameters:
+`Url` is the most complete solution, supporting both search and hash parameters:
 
 ```js
-import { URLParams } from 'js-cool'
+import { Url } from 'js-cool'
 
-const params = new URLParams('https://example.com?token=old#/page?token=new')
+const params = new Url('https://example.com?token=old#/page?token=new')
 
 // Distinguish parameter sources
 params.get('token', 'search') // 'old' - search param
@@ -783,14 +782,14 @@ params.toURL()
 
 #### Selection Recommendations
 
-| Scenario                          | Recommended                     |
-| --------------------------------- | ------------------------------- |
-| Only search params (simple cases) | `url` module (simpler API)      |
-| Need to handle hash params        | `URLParams` class (only option) |
-| Handle both search and hash       | `URLParams` class               |
-| Need URL property extraction      | `url` module or `getDirParams`  |
-| Need URL path segments            | `getDirParams`                  |
-| Need chainable URL building       | `Url` class or `URLParams`      |
+| Scenario                          | Recommended                    |
+| --------------------------------- | ------------------------------ |
+| Only search params (simple cases) | `url` module (simpler API)     |
+| Need to handle hash params        | `Url` class (only option)      |
+| Handle both search and hash       | `Url` class                    |
+| Need URL property extraction      | `url` module or `getDirParams` |
+| Need URL path segments            | `getDirParams`                 |
+| Need chainable URL building       | `Url` class                    |
 
 ## TypeScript Migration
 

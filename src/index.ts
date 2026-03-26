@@ -268,8 +268,6 @@ export { default as isNumberBrowser } from './isNumberBrowser'
 export { default as nextVersion, type Version } from './nextVersion'
 export { default as openUrl } from './openUrl'
 export { default as osVersion, type OsVersion } from './osVersion'
-// URLParams 已合并到 Url 类，此处保留别名导出
-export { Url as URLParams, type ParamScope } from './url/index'
 export {
 	default as ua,
 	UAParser,

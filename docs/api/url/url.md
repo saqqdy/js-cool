@@ -1,6 +1,6 @@
-# url & Url <Badge type="tip" text="since v6.0.0" />
+# Url <Badge type="tip" text="since v6.0.0" />
 
-Chainable URL builder and URLSearchParams-like API for URL parsing and manipulation.
+URL utilities with URLSearchParams-like API and a chainable `Url` class.
 
 ## Installation
 
@@ -11,24 +11,33 @@ pnpm add js-cool
 ## Usage
 
 ```js
-// Full import from main entry
-import { url, Url } from 'js-cool'
+// Import Url class
+import { Url } from 'js-cool'
 
-// Or import specific functions (with descriptive names)
+// Or import static functions directly
 import {
-  parseQueryString,
-  stringifyQueryString,
-  getQueryParamValue,
-  setQueryParam,
+  parse,
+  stringify,
   getOrigin,
+  getHost,
+  getHostname,
+  getPathname,
+  getSearch,
+  getHash,
+} from 'js-cool'
+
+// Or use descriptive aliases
+import {
+  parse as parseQueryString,
+  stringify as stringifyQueryString,
 } from 'js-cool'
 ```
 
-## Three Ways to Use
+## Two Ways to Use
 
 ### 1. Url Class (Chainable Builder)
 
-The `Url` class provides a chainable API for building and manipulating URLs.
+The `Url` class provides a chainable API for building and manipulating URLs with support for both search and hash parameters.
 
 ```js
 import { Url } from 'js-cool'
@@ -45,52 +54,42 @@ u.set('page', 2).set('size', 10).delete('id').toString()
 
 // URL building
 new Url('https://api.example.com')
-  .path('users', '123', 'profile')
+  .path('users', '123')
   .set('fields', 'name,email')
-  .setHash('section')
+  .setHashPath('/profile')
   .toString()
-// 'https://api.example.com/users/123/profile?fields=name,email#section'
+// 'https://api.example.com/users/123?fields=name,email#/profile'
 ```
 
-### 2. url Namespace (Factory + Static Methods)
-
-The `url` namespace provides a factory method and static utility functions.
-
-```js
-import { url } from 'js-cool'
-
-// Factory method - creates Url instance
-url.from('https://example.com?id=123').get('id') // '123'
-
-url.from('https://example.com').set('page', 1).set('size', 10).toString()
-// 'https://example.com?page=1&size=10'
-
-// Static utility methods
-url.parse('?a=1&b=true', { covert: true }) // { a: 1, b: true }
-url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
-url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
-```
-
-### 3. Direct Function Imports
+### 2. Static Functions
 
 Import specific functions for smaller bundle sizes.
 
 ```js
 import {
-  getQueryParamValue,
-  setQueryParam,
-  hasQueryParam,
-  appendQueryParam,
-  deleteParam,
-  parseQueryString,
-  stringifyQueryString,
+  parse,
+  stringify,
   getOrigin,
   getHost,
   getHostname,
+  getPathname,
+  getSearch,
+  getHash,
 } from 'js-cool'
 
-getQueryParamValue('id', 'https://example.com?id=123') // '123'
-setQueryParam('page', 2, 'https://example.com') // 'https://example.com/?page=2'
+// Parse query string
+parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
+
+// Build query string
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+
+// Extract URL parts
+getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+getHost('https://example.com:8080/path') // 'example.com:8080'
+getHostname('https://example.com:8080/path') // 'example.com'
+getPathname('https://example.com/api/users?id=1') // '/api/users'
+getSearch('https://example.com?key=value') // '?key=value'
+getHash('https://example.com/path#section') // '#section'
 ```
 
 ## Url Class API
@@ -98,38 +97,58 @@ setQueryParam('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 ### Constructor
 
 ```js
-const u = new Url() // Empty instance
+const u = new Url() // Use current page URL in browser
 const u = new Url('https://example.com?id=123') // With URL string
+const u = new Url(urlObject) // With URL object
 ```
+
+### Parameter Scope
+
+The `Url` class supports both search parameters (before `#`) and hash parameters (after `#`):
+
+| Scope     | Description                                       |
+| --------- | ------------------------------------------------- |
+| `'search'`| Only handle parameters before `#`                  |
+| `'hash'`  | Only handle parameters after `#` (in hash)        |
+| `'all'`   | Handle all parameters, hash takes priority (default) |
 
 ### URLSearchParams-like Methods
 
 ```js
-const u = new Url('https://example.com?id=1&id=2&page=1')
+const u = new Url('https://example.com?id=1&id=2&page=1#/path?token=abc')
 
-// Get single value
-u.get('id') // '1' (first value)
+// Get single value (from all scopes by default)
+u.get('id') // '1'
+u.get('id', 'search') // '1' (from search only)
+u.get('token', 'hash') // 'abc' (from hash only)
 
 // Get all values
 u.getAll('id') // ['1', '2']
 
 // Check existence
 u.has('id') // true
-u.has('token') // false
+u.has('token') // true
+u.has('missing') // false
 
 // Set (chainable)
 u.set('page', 2) // Returns this for chaining
+u.set('tab', 'info', 'hash') // Set in hash scope
 
 // Append (chainable)
 u.append('id', '3') // Adds id=3
 
 // Delete (chainable)
-u.delete('token') // Returns this for chaining
+u.delete('token') // Deletes from all scopes
+u.delete('token', 'hash') // Deletes from hash only
+
+// Clear all parameters
+u.clear() // Clear all
+u.clear('hash') // Clear hash params only
 
 // Iteration
-u.keys() // ['id', 'page']
-u.values() // ['1', '2']
-u.entries() // [['id', '1'], ['id', '2'], ['page', '1']]
+u.keys() // ['id', 'page', 'token']
+u.values() // ['1', 'page value', 'abc']
+u.entries() // [['id', '1'], ['page', 'value'], ['token', 'abc']]
 ```
 
 ### URL Property Getters
@@ -153,156 +172,139 @@ const u = new Url('https://example.com')
 // Set path segments (chainable)
 u.path('api', 'v1', 'users')
 // URL becomes: 'https://example.com/api/v1/users'
-
-// Preserves search and hash
-u.set('key', 'value').setHash('section').path('api', 'users')
-// 'https://example.com/api/users?key=value#section'
 ```
 
-### Hash Manipulation
+### Hash Path Operations
 
 ```js
-const u = new Url('https://example.com')
+const u = new Url('https://example.com#/path/to/page?id=123')
 
-// Set hash (chainable)
-u.setHash('section') // 'https://example.com#section'
+// Get hash path (part between # and ?)
+u.getHashPath() // '/path/to/page'
 
-// Replace existing hash
-u.setHash('new-section') // 'https://example.com#new-section'
+// Set hash path (chainable)
+u.setHashPath('/new/path')
+// URL becomes: 'https://example.com#/new/path?id=123'
 ```
 
-### Parse & Convert
+### Conversion Methods
 
 ```js
-const u = new Url('https://example.com?a=1&b=true&page=2')
-
-// Parse query string
-u.parse() // { a: '1', b: 'true', page: '2' }
-u.parse({ covert: true }) // { a: 1, b: true, page: 2 }
+const u = new Url('https://example.com?a=1&b=true&page=2#/path?token=abc')
 
 // Get params as object
-u.toParams() // { a: '1', b: 'true', page: '2' }
+u.toObject() // { a: '1', b: 'true', page: '2', token: 'abc' }
+u.toObject('search') // { a: '1', b: 'true', page: '2' }
+u.toObject('hash') // { token: 'abc' }
+
+// Get detailed info with source tracking
+u.toDetailObject()
+// {
+//   search: { a: '1', b: 'true', page: '2' },
+//   hash: { token: 'abc' },
+//   all: { a: '1', b: 'true', page: '2', token: 'abc' },
+//   source: { a: 'search', b: 'search', page: 'search', token: 'hash' }
+// }
 
 // Convert to string
-u.toString() // 'https://example.com?a=1&b=true&page=2'
+u.toString() // Full URL string
+u.toURL() // Same as toString()
 ```
 
-## url Namespace API
-
-### Factory Method
+### Iterator Support
 
 ```js
-// Create Url instance
-const u = url.from('https://example.com?id=123')
-u.get('id') // '123'
+const u = new Url('https://example.com?a=1&b=2')
+
+// Use for...of
+for (const [key, value] of u) {
+  console.log(key, value)
+}
+
+// Spread to array
+;[...u] // [['a', '1'], ['b', '2']]
 ```
 
-### URLSearchParams-like Methods (Static)
+## Static Methods
+
+### parse(str, options?)
+
+Parse query string to object.
 
 ```js
-// Get single value
-url.get('id', 'https://example.com?id=123') // '123'
-url.get('missing', 'https://example.com?id=123') // null
+import { parse } from 'js-cool'
 
-// Get all values
-url.getAll('id', 'https://example.com?id=1&id=2') // ['1', '2']
+parse('?a=1&b=true')
+// { a: '1', b: 'true' }
 
-// Check existence
-url.has('token', 'https://example.com?token=abc') // true
-
-// Set parameter (returns new URL string)
-url.set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
-url.set('page', 3, 'https://example.com?page=1') // 'https://example.com/?page=3'
-
-// Append parameter
-url.append('id', 2, 'https://example.com?id=1') // 'https://example.com/?id=1&id=2'
-
-// Delete parameter
-url.delete('token', 'https://example.com?token=abc&id=1') // 'https://example.com/?id=1'
-
-// Iteration
-url.keys('https://example.com?a=1&b=2') // ['a', 'b']
-url.values('https://example.com?a=1&b=2') // ['1', '2']
-url.entries('https://example.com?a=1&b=2') // [['a', '1'], ['b', '2']]
+parse('?a=1&b=true', { convert: true })
+// { a: 1, b: true }
 ```
 
-### URL Property Extraction (Static)
+### stringify(params, options?)
+
+Build query string from object.
 
 ```js
-// Origin (protocol + host)
-url.getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
-url.getOrigin('/relative/path') // '' (empty for relative URLs)
+import { stringify } from 'js-cool'
 
-// Host (hostname + port)
-url.getHost('https://example.com:8080/path') // 'example.com:8080'
+stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 
-// Hostname (without port)
-url.getHostname('https://example.com:8080/path') // 'example.com'
+stringify({ a: 1 }, { withQuestionMark: false }) // 'a=1'
 
-// Pathname
-url.getPathname('https://example.com/api/users?id=1') // '/api/users'
-
-// Search (query string with ?)
-url.getSearch('https://example.com?key=value') // '?key=value'
-
-// Hash (with #)
-url.getHash('https://example.com/path#section') // '#section'
+stringify({ name: 'hello world' }, { encode: true }) // '?name=hello%20world'
 ```
 
-### Parse & Stringify
+### URL Property Extraction
 
 ```js
-// Parse query string to object
-url.parse('?a=1&b=2&c=true')
-// { a: '1', b: '2', c: 'true' }
+import { getOrigin, getHost, getHostname, getPathname, getSearch, getHash } from 'js-cool'
 
-// With type conversion
-url.parse('?a=1&b=true&c=null', { covert: true })
-// { a: 1, b: true, c: null }
-
-// Build query string from object
-url.stringify({ a: 1, b: 2 }) // '?a=1&b=2'
-
-// Without ? prefix
-url.stringify({ a: 1 }, { withQuestionMark: false }) // 'a=1'
-
-// With URI encoding
-url.stringify({ name: 'hello world' }, { encode: true }) // '?name=hello%20world'
+getOrigin('https://example.com:8080/path') // 'https://example.com:8080'
+getHost('https://example.com:8080/path') // 'example.com:8080'
+getHostname('https://example.com:8080/path') // 'example.com'
+getPathname('https://example.com/api/users?id=1') // '/api/users'
+getSearch('https://example.com?key=value') // '?key=value'
+getHash('https://example.com/path#section') // '#section'
 ```
 
-### Constants
+### Url.current()
+
+Create instance from current page URL (browser only).
 
 ```js
-// URL parsing patterns
-url.PATTERNS // URL_PATTERNS object
+const u = Url.current()
+```
 
-// Value conversion map
-url.VALUE_MAP // { 'true': true, 'false': false, 'null': null, ... }
+### Url.fromQueryString(queryString)
+
+Create instance from query string.
+
+```js
+const u = Url.fromQueryString('a=1&b=2')
+u.toObject() // { a: '1', b: '2' }
 ```
 
 ## Types
 
 ```ts
-import type { URLPatternName, URLInput, ParseOptions, StringifyOptions } from 'js-cool'
+import type { ParamScope, ParseOptions, StringifyOptions } from 'js-cool'
 
-// Parse options
+type ParamScope = 'search' | 'hash' | 'all'
+
 interface ParseOptions {
   /** Convert special values (true/false/null/undefined/number) */
-  covert?: boolean
+  convert?: boolean
 }
 
-// Stringify options
 interface StringifyOptions {
   /** Convert null/undefined to empty string */
-  covert?: boolean
+  convert?: boolean
   /** URI encode values */
   encode?: boolean
   /** Include ? prefix */
   withQuestionMark?: boolean
 }
-
-// URL input type
-type URLInput = string | URL
 ```
 
 ## Examples
@@ -320,54 +322,50 @@ const apiUrl = new Url('https://api.example.com')
 // 'https://api.example.com/v2/users/123?fields=name,email,avatar&include=posts,comments'
 ```
 
-### Pagination Helper
+### Working with Hash Parameters
 
 ```js
-import { url } from 'js-cool'
+import { Url } from 'js-cool'
 
-function buildPaginationUrl(baseUrl, page, size, filters = {}) {
-  return url
-    .from(baseUrl)
-    .set('page', page)
-    .set('size', size)
-    .set('filters', JSON.stringify(filters))
-    .toString()
-}
+const u = new Url('https://example.com?token=old#/page?token=new')
 
-buildPaginationUrl('https://api.example.com/users', 1, 20, { status: 'active' })
+// Distinguish parameter sources
+u.get('token', 'search') // 'old' - search param
+u.get('token', 'hash') // 'new' - hash param
+u.get('token') // 'new' - hash priority by default
+
+// Get detailed source info
+u.toDetailObject()
+// { search: { token: 'old' }, hash: { token: 'new' }, all: { token: 'new' }, source: { token: 'both' } }
 ```
 
-### Query String Parsing
+### SPA Hash Routing
 
 ```js
-import { url } from 'js-cool'
+import { Url } from 'js-cool'
 
-// From current page URL
-const params = url.parse(location.search, { covert: true })
-// { page: 1, size: 20, active: true }
-
-// From any URL
-const { page, size } = url.parse('?page=2&size=10', { covert: true })
-```
-
-### URL Manipulation
-
-```js
-import { url } from 'js-cool'
-
-// Remove tracking parameters
-let cleanUrl = 'https://example.com/page?id=123&utm_source=google&utm_campaign=ads'
-cleanUrl = url.delete('utm_source', cleanUrl)
-cleanUrl = url.delete('utm_campaign', cleanUrl)
-// 'https://example.com/page?id=123'
-
-// Add parameters
-const newUrl = url.set('ref', 'email', cleanUrl)
-// 'https://example.com/page?id=123&ref=email'
+// Parse hash route with parameters
+const u = new Url(window.location.href)
+const route = u.getHashPath() // '/user/profile'
+const params = u.toObject('hash') // { tab: 'settings', id: '123' }
 ```
 
 ## Migration from v5.x
 
-The URL utilities are new in v6.0.0. No migration needed for existing functions like `getUrlParam`, `parseUrlParam`, etc. - they continue to work as before.
+The URL utilities are new in v6.0.0. The following deprecated functions have been removed:
+
+| Removed             | Replacement                                  |
+| ------------------- | -------------------------------------------- |
+| `getUrlParam()`     | `Url.get()` or `new Url(url).get()`          |
+| `getUrlParams()`    | `parse()` or `new Url(url).toObject()`       |
+| `parseUrlParam()`   | `parse()` with `{ convert: true }`           |
+| `spliceUrlParam()`  | `stringify()`                                |
+| `getQueryParam()`   | `new Url(url).get(name, 'hash')`             |
+| `getQueryParams()`  | `new Url(url).toObject('hash')`              |
 
 See the [Migration Guide](../../guide/migration.md#url-utilities) for details.
+
+## Related
+
+- [Url Class](/api/url/Url-class) - Detailed Url class documentation
+- [getDirParams](/api/url/get-dir-params) - Get URL path segments
