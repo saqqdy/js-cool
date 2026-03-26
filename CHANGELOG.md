@@ -60,6 +60,7 @@ All notable changes to this project will be documented in this file.
   - Async: `debounce`, `throttle`, `retry`
 
 - **IE11 Compatibility**: Built-in support without external polyfills
+  - New `hasOwn()` compatibility method for `Object.hasOwn()`
 - **Rolldown Migration**: ~110ms build time (was ~6-8s)
 - **VitePress Docs**: Bilingual documentation site
 

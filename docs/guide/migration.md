@@ -70,17 +70,17 @@ import jsCool from 'js-cool'
 
 ### Deprecated Functions
 
-| v5.x (Deprecated)     | v6.x (Replacement)                                 |
-| --------------------- | -------------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                                     |
-| `getOsVersion()`      | `osVersion()`                                      |
-| `getScrollPosition()` | `scroll.getPosition()`                             |
-| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`          |
-| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`   |
-| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`          |
-| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`   |
-| `parseUrlParam()`     | `url.parse()`                                      |
-| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()`  |
+| v5.x (Deprecated)     | v6.x (Replacement)                                |
+| --------------------- | ------------------------------------------------- |
+| `getAppVersion()`     | `appVersion()`                                    |
+| `getOsVersion()`      | `osVersion()`                                     |
+| `getScrollPosition()` | `scroll.getPosition()`                            |
+| `getQueryParam()`     | `url.get()` or `new URLParams(url).get()`         |
+| `getQueryParams()`    | `url.parse()` or `new URLParams(url).toObject()`  |
+| `getUrlParam()`       | `url.get()` or `new URLParams(url).get()`         |
+| `getUrlParams()`      | `url.parse()` or `new URLParams(url).toObject()`  |
+| `parseUrlParam()`     | `url.parse()`                                     |
+| `spliceUrlParam()`    | `url.set()` or `new URLParams(url).set().toURL()` |
 
 ```js
 // v5.x

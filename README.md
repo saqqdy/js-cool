@@ -111,6 +111,7 @@ The library includes an internal `_compat.ts` module that provides IE11-compatib
 | `Object.values()`      | `objectValues()`                    |
 | `Object.entries()`     | `objectEntries()`                   |
 | `Object.fromEntries()` | `objectFromEntries()`               |
+| `Object.hasOwn()`      | `hasOwn()`                          |
 | `globalThis`           | `getGlobalObject()`                 |
 | `new File()`           | `createFile()` (falls back to Blob) |
 | `Symbol.iterator`      | `isIterableCompat()`                |
