@@ -32,7 +32,7 @@ const compareA = ref('1.2.3')
 const compareB = ref('1.2.4')
 const versionInput = ref('1.2.3')
 
-// Url class examples - 链式构建
+// Url class examples - chainable builder
 const urlBuilderInput = ref('https://api.example.com')
 const urlBuilderOutput = computed(() => {
 	return new Url(urlBuilderInput.value)
@@ -42,11 +42,11 @@ const urlBuilderOutput = computed(() => {
 		.toString()
 })
 
-// Url 实例示例
+// Url instance example
 const urlInstanceInput = ref('https://example.com:8080/api/users?id=123&page=1#section')
 const urlInstance = computed(() => new Url(urlInstanceInput.value))
 
-// Url 参数操作示例
+// Url params operation example
 const urlParamsInput = ref('https://a.cn/?ss=1#/path?bb=343')
 const urlParamsKey = ref('ss')
 const urlParamsScope = ref<'search' | 'hash' | 'all'>('all')
@@ -62,7 +62,7 @@ const urlParamsResult = computed(() => {
 	}
 })
 
-// Url builder 示例
+// Url builder example
 const urlBuilderInput2 = ref('https://api.example.com')
 const urlBuilderOutput2 = computed(() => {
 	return new Url(urlBuilderInput2.value)
@@ -73,7 +73,7 @@ const urlBuilderOutput2 = computed(() => {
 		.toURL()
 })
 
-// Hash params 示例
+// Hash params example
 const hashUrlInput = ref('https://example.com#/profile?tab=settings&mode=dark')
 const hashUrlInstance = computed(() => new Url(hashUrlInput.value))
 
@@ -101,14 +101,14 @@ const uaScreen = computed(() => ua.getScreen())
 		<n-h1>Url</n-h1>
 		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.Url }}</p>
 
-		<!-- Url 类 - 链式构建 -->
+		<!-- Url class - chainable builder -->
 		<FunctionCard
-			title="Url class - 链式构建"
-			description="使用 Url 类链式构建 URL，支持参数操作、路径设置、hash 操作"
+			:title="t.url.classChainBuildTitle"
+			:description="t.url.classChainBuildDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
-// 链式构建 URL
+// Chainable URL builder
 const url = new Url('https://api.example.com')
   .path('users', '123')
   .set('fields', 'name,email')
@@ -116,11 +116,11 @@ const url = new Url('https://api.example.com')
   .toString()
 // 'https://api.example.com/users/123?fields=name,email#section'
 
-// 参数操作
+// Params operations
 const u = new Url('https://example.com?id=123&token=abc')
 u.get('id')           // '123'
-u.set('page', 2)      // 链式
-u.delete('token')     // 链式
+u.set('page', 2)      // chainable
+u.delete('token')     // chainable
 u.toString()          // 'https://example.com/?id=123&page=2'`"
 		>
 			<template #input>
@@ -138,10 +138,10 @@ u.toString()          // 'https://example.com/?id=123&page=2'`"
 			</template>
 		</FunctionCard>
 
-		<!-- Url 类 - URL 属性访问 -->
+		<!-- Url class - URL properties -->
 		<FunctionCard
-			title="Url 类 - URL 属性访问"
-			description="获取 URL 的各个组成部分（origin, host, hostname, pathname, search, hash）"
+			:title="t.url.classPropertiesTitle"
+			:description="t.url.classPropertiesDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
@@ -187,25 +187,25 @@ u.hash      // '#section'`"
 			</template>
 		</FunctionCard>
 
-		<!-- Url 类 - search/hash 参数操作 -->
+		<!-- Url class - search/hash params -->
 		<FunctionCard
-			title="Url 类 - search/hash 参数操作"
-			description="同时操作 search（#前）和 hash（#后）参数，支持 scope 控制"
+			:title="t.url.classParamsTitle"
+			:description="t.url.classParamsDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
 const u = new Url('https://a.cn/?ss=1#/path?bb=343')
 
-// 自动从 search + hash 查找（hash 优先）
+// Auto search from search + hash (hash priority)
 u.get('ss')              // '1' (from search)
 u.get('bb')              // '343' (from hash)
 
-// 指定范围
+// Specify scope
 u.get('ss', 'search')    // '1'
 u.get('ss', 'hash')      // null
-u.get('ss', 'all')       // '1' (默认，hash 优先)
+u.get('ss', 'all')       // '1' (default, hash priority)
 
-// 获取所有参数
+// Get all params
 u.toObject()             // { ss: '1', bb: '343' }
 u.toObject('search')     // { ss: '1' }
 u.toObject('hash')       // { bb: '343' }`"
@@ -262,7 +262,7 @@ u.toObject('hash')       // { bb: '343' }`"
 		<!-- Url.toDetailObject() -->
 		<FunctionCard
 			title="Url.toDetailObject()"
-			description="获取详细的参数信息，区分参数来源（search/hash/both）"
+			:description="t.url.toDetailObjectDesc"
 			since="6.0.0"
 			:code="`const u = new Url('https://a.cn/?ss=1#/path?bb=343')
 u.toDetailObject()
@@ -273,7 +273,7 @@ u.toDetailObject()
 //   source: { ss: 'search', bb: 'hash' }
 // }
 
-// 重复 key 追踪
+// Duplicate key tracking
 new Url('https://example.com?token=old#/path?token=new')
   .toDetailObject()
 // { ..., source: { token: 'both' } }`"
@@ -283,18 +283,18 @@ new Url('https://example.com?token=old#/path?token=new')
 			</template>
 		</FunctionCard>
 
-		<!-- Url 链式修改 -->
+		<!-- Url chain modification -->
 		<FunctionCard
-			title="Url 链式修改"
-			description="链式修改 URL 参数、路径、hash"
+			:title="t.url.chainModifyTitle"
+			:description="t.url.chainModifyDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
 const url = new Url('https://api.example.com')
   .set('token', 'abc123')
   .set('page', 1)
-  .set('tab', 'profile', 'hash')  // 设置 hash 参数
-  .setHashPath('/user/settings')   // 设置 hash 路径
+  .set('tab', 'profile', 'hash')  // set hash param
+  .setHashPath('/user/settings')   // set hash path
   .toURL()
 // 'https://api.example.com/?token=abc123&page=1#/user/settings?tab=profile'`"
 		>
@@ -311,23 +311,23 @@ const url = new Url('https://api.example.com')
 			</template>
 		</FunctionCard>
 
-		<!-- Hash 参数处理 -->
+		<!-- Hash params handling -->
 		<FunctionCard
-			title="Hash 参数处理"
-			description="专门处理 hash（#后）参数的场景"
+			:title="t.url.hashParamsTitle"
+			:description="t.url.hashParamsDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
 const u = new Url('https://example.com#/profile?tab=settings&mode=dark')
 
-// 获取 hash 参数
+// Get hash params
 u.get('tab', 'hash')      // 'settings'
 u.get('mode', 'hash')     // 'dark'
 
-// 获取 hash 路径
+// Get hash path
 u.getHashPath()           // '/profile'
 
-// 获取 hash 下所有参数
+// Get all hash params
 u.toObject('hash')        // { tab: 'settings', mode: 'dark' }`"
 		>
 			<template #input>
@@ -347,25 +347,25 @@ u.toObject('hash')        // { tab: 'settings', mode: 'dark' }`"
 			</template>
 		</FunctionCard>
 
-		<!-- 静态方法 - parse / stringify -->
+		<!-- Static methods - parse / stringify -->
 		<FunctionCard
-			title="Url.parse() / Url.stringify()"
-			description="解析和构建查询字符串（静态方法或独立函数）"
+			:title="t.url.parseStringifyTitle"
+			:description="t.url.parseStringifyDesc"
 			since="6.0.0"
 			:code="`import { Url, parse, stringify } from 'js-cool'
 
-// 解析查询字符串
+// Parse query string
 Url.parse('a=1&b=2&c=true')
 // { a: '1', b: '2', c: 'true' }
 
 Url.parse('a=1&b=2&c=true', { convert: true })
-// { a: 1, b: 2, c: true }  // 自动转换类型
+// { a: 1, b: 2, c: true }  // auto type conversion
 
-// 构建查询字符串
+// Build query string
 Url.stringify({ name: 'John', age: 25 })
 // '?name=John&age=25'
 
-// 独立函数（推荐）
+// Standalone functions (recommended)
 parse('?a=1&b=true', { convert: true })
 // { a: 1, b: true }
 
@@ -399,10 +399,10 @@ stringify({ name: 'John' }, { withQuestionMark: false })
 			</template>
 		</FunctionCard>
 
-		<!-- 静态方法 - URL 属性提取 -->
+		<!-- URL property extraction -->
 		<FunctionCard
-			title="URL 属性提取函数"
-			description="从 URL 字符串中提取各个组成部分"
+			:title="t.url.extractTitle"
+			:description="t.url.extractDesc"
 			since="6.0.0"
 			:code="`import { getOrigin, getHost, getHostname, getPathname, getSearch, getHash } from 'js-cool'
 
@@ -460,7 +460,7 @@ getHash('https://example.com#section')
 		<!-- getDirParams -->
 		<FunctionCard
 			title="getDirParams"
-			description="解析 URL 路径信息，返回结构化的组成部分"
+			:description="t.url.getDirParamsDesc"
 			since="6.0.0"
 			:code="`import { getDirParams } from 'js-cool'
 
@@ -483,17 +483,17 @@ getDirParams('https://example.com/user/123/profile')
 			</template>
 		</FunctionCard>
 
-		<!-- Url 静态工厂方法 -->
+		<!-- Url static factory methods -->
 		<FunctionCard
-			title="Url 静态工厂方法"
-			description="从当前页面 URL 或查询字符串创建 Url 实例"
+			:title="t.url.staticFactoryTitle"
+			:description="t.url.staticFactoryDesc"
 			since="6.0.0"
 			:code="`import { Url } from 'js-cool'
 
-// 从当前页面 URL 创建（浏览器环境）
+// Create from current page URL (browser environment)
 const currentUrl = Url.current()
 
-// 从查询字符串创建
+// Create from query string
 const params = Url.fromQueryString('a=1&b=2')
 params.toObject()  // { a: '1', b: '2' }`"
 		>
@@ -501,7 +501,7 @@ params.toObject()  // { a: '1', b: '2' }`"
 				<n-space vertical>
 					<n-space align="center">
 						<code class="code-inline">Url.current()</code>
-						<n-tag type="info" size="small" :bordered="false">{{ Url.current()?.toString() ?? 'null (非浏览器环境)' }}</n-tag>
+						<n-tag type="info" size="small" :bordered="false">{{ Url.current()?.toString() ?? t.url.notBrowserEnv }}</n-tag>
 					</n-space>
 					<n-space align="center">
 						<code class="code-inline">Url.fromQueryString('a=1&b=2').toObject()</code>
@@ -513,8 +513,8 @@ params.toObject()  // { a: '1', b: '2' }`"
 
 		<!-- UA Detection -->
 		<FunctionCard
-			title="ua (User Agent Detection)"
-			description="全面的 User Agent 检测 - 设备、系统、浏览器、环境"
+			:title="t.url.uaTitle"
+			:description="t.url.uaDesc"
 			since="6.0.0"
 			:code="`import { ua } from 'js-cool'
 
@@ -567,7 +567,7 @@ ua.browser     // BrowserInfo`"
 		<!-- browserVersion / osVersion -->
 		<FunctionCard
 			title="browserVersion / osVersion / appVersion"
-			description="获取浏览器和系统信息"
+			:description="t.url.browserOsVersionDesc"
 			since="1.0.0"
 			:code="`browserVersion() // { name: 'Chrome', version: '123.0.0.0' }
 osVersion() // { name: 'Mac OS', version: '10.15.7' }
@@ -598,7 +598,7 @@ appVersion('Chrome') // '123.0.0.0'`"
 		<!-- compareVersion -->
 		<FunctionCard
 			title="compareVersion"
-			description="比较版本号"
+			:description="t.url.compareVersionDesc"
 			since="1.0.0"
 			:code="`compareVersion('1.2.3', '1.2.4') // -1
 compareVersion('2.0.0', '1.9.9') // 1
@@ -628,7 +628,7 @@ compareVersion('1.0.0', '1.0.0') // 0`"
 		<!-- nextVersion -->
 		<FunctionCard
 			title="nextVersion"
-			description="获取下一个版本号"
+			:description="t.url.nextVersionDesc"
 			since="1.0.0"
 			:code="`nextVersion('1.2.3', 'major') // '2.0.0'
 nextVersion('1.2.3', 'minor') // '1.3.0'

@@ -325,11 +325,7 @@ const getCategoryDescription = (cat: (typeof categories)[0]) => {
 			<n-gi span="2 m:1">
 				<FunctionCard
 					title="randomString"
-					:description="
-						locale === 'zh'
-							? '生成指定长度的随机字符串'
-							: 'Generate a random string with specified length'
-					"
+					:description="t.homeMore.generateRandomString"
 					:result="randomResult"
 					:code="`randomString(${randomLen}) // '${randomResult}'`"
 				>
@@ -358,7 +354,7 @@ const getCategoryDescription = (cat: (typeof categories)[0]) => {
 			<n-gi span="2 m:1">
 				<FunctionCard
 					title="uuid"
-					:description="locale === 'zh' ? '生成 UUID v4' : 'Generate a UUID v4'"
+					:description="t.homeMore.generateUUID"
 					:result="uuidResult"
 					:code="`uuid() // '${uuidResult}'`"
 				>

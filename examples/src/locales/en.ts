@@ -144,4 +144,66 @@ export default {
 	chinese: 'chinese',
 	set: 'set',
 	predicate: 'predicate',
+
+	// Url functions
+	url: {
+		classChainBuildTitle: 'Url class - Chainable builder',
+		classChainBuildDesc:
+			'Build URLs using chainable Url class with params, path, and hash operations',
+		classPropertiesTitle: 'Url class - URL properties',
+		classPropertiesDesc: 'Get URL components (origin, host, hostname, pathname, search, hash)',
+		classParamsTitle: 'Url class - search/hash params',
+		classParamsDesc:
+			'Operate on both search (before #) and hash (after #) params with scope control',
+		toDetailObjectDesc: 'Get detailed params info with source tracking (search/hash/both)',
+		chainModifyTitle: 'Url chain modification',
+		chainModifyDesc: 'Chain modify URL params, path, and hash',
+		hashParamsTitle: 'Hash params handling',
+		hashParamsDesc: 'Handle hash (after #) params specifically',
+		parseStringifyTitle: 'Url.parse() / Url.stringify()',
+		parseStringifyDesc:
+			'Parse and build query strings (static methods or standalone functions)',
+		extractTitle: 'URL property extraction',
+		extractDesc: 'Extract URL components from URL string',
+		getDirParamsDesc: 'Parse URL path info and return structured components',
+		staticFactoryTitle: 'Url static factory methods',
+		staticFactoryDesc: 'Create Url instance from current page URL or query string',
+		uaTitle: 'ua (User Agent Detection)',
+		uaDesc: 'Comprehensive User Agent detection - device, OS, browser, environment',
+		browserOsVersionDesc: 'Get browser and system info',
+		compareVersionDesc: 'Compare version numbers',
+		nextVersionDesc: 'Get next version number',
+		notBrowserEnv: 'null (non-browser environment)',
+	},
+
+	// Date functions additional
+	dateMore: {
+		year: 'Year',
+		month: 'Month',
+		selectDate: 'Select date',
+		dateLabel: 'Date',
+		rangeLabel: 'Range',
+	},
+
+	// Changelog
+	changelog: {
+		title: 'Changelog',
+		migrationGuide: 'Migration Guide v5 → v6',
+		clickHint: 'Tip: Click an item to jump to the method details',
+		added: 'Added',
+		changed: 'Changed',
+		fixed: 'Fixed',
+		breaking: 'Breaking',
+	},
+
+	// Home
+	homeMore: {
+		generateRandomString: 'Generate a random string of specified length',
+		generateUUID: 'Generate a UUID v4',
+	},
+
+	// Validate
+	validate: {
+		chineseTest: 'Chinese test',
+	},
 }

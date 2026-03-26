@@ -11,34 +11,34 @@ import {
 import { changelog, getChangesByType } from '@/data/changelog'
 import { useI18n } from '@/locales'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
-const typeConfig = {
+const typeConfig = computed(() => ({
 	new: {
 		label: 'New',
-		labelZh: '新增',
+		labelZh: t.value.changelog.added,
 		color: 'success' as const,
 		icon: AddCircleOutline,
 	},
 	update: {
 		label: 'Update',
-		labelZh: '更新',
+		labelZh: t.value.changelog.changed,
 		color: 'info' as const,
 		icon: BuildOutline,
 	},
 	fix: {
 		label: 'Fix',
-		labelZh: '修复',
+		labelZh: t.value.changelog.fixed,
 		color: 'warning' as const,
 		icon: BugOutline,
 	},
 	breaking: {
 		label: 'Breaking',
-		labelZh: '破坏性变更',
+		labelZh: t.value.changelog.breaking,
 		color: 'error' as const,
 		icon: WarningOutline,
 	},
-}
+}))
 
 const groupedChanges = computed(() =>
 	[
@@ -80,7 +80,7 @@ const getDescription = (item: (typeof changelog.changes)[0]) => {
 	<div>
 		<!-- Header -->
 		<n-h1 style="display: flex; align-items: center; gap: 12px">
-			<span>{{ locale === 'zh' ? '更新日志' : 'Changelog' }}</span>
+			<span>{{ t.changelog.title }}</span>
 			<n-tag type="primary" round>v{{ changelog.version }}</n-tag>
 		</n-h1>
 
@@ -103,7 +103,7 @@ const getDescription = (item: (typeof changelog.changes)[0]) => {
 				"
 			>
 				<n-icon size="16" :component="ArrowForwardOutline" />
-				{{ locale === 'zh' ? '迁移指南 v5 → v6' : 'Migration Guide v5 → v6' }}
+				{{ t.changelog.migrationGuide }}
 			</a>
 		</div>
 
@@ -189,11 +189,7 @@ const getDescription = (item: (typeof changelog.changes)[0]) => {
 		<!-- Legend -->
 		<div class="legend-box">
 			<p style="font-size: 12px; margin: 0">
-				{{
-					locale === 'zh'
-						? '提示：点击条目可跳转到对应方法的详细用法'
-						: 'Tip: Click on an item to navigate to the function for detailed usage'
-				}}
+				{{ t.changelog.clickHint }}
 			</p>
 		</div>
 	</div>

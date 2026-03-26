@@ -22,7 +22,7 @@ const patternResults = [
 		result: validation.url.test('https://example.com'),
 	},
 	{ name: 'number', test: '123.45', result: validation.number.test('123.45') },
-	{ name: 'chinese', test: '中文测试', result: validation.chinese.test('中') },
+	{ name: 'chinese', test: '中', result: validation.chinese.test('中') },
 	{ name: 'qq', test: '123456789', result: validation.qq.test('123456789') },
 	{ name: 'ipv4', test: '192.168.1.1', result: validation.ipv4.test('192.168.1.1') },
 	{ name: 'ipv6', test: '2001:db8::1', result: validation.ipv6.test('2001:db8::1') },

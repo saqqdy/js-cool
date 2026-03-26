@@ -18,7 +18,7 @@ const { t } = useI18n()
 
 const textInput = ref('Hello World')
 const svgInput = ref('<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="red"/></svg>')
-const base64Input = ref('Hello, 世界!')
+const base64Input = ref('Hello World!')
 
 const blobUrl = ref('')
 const createBlobFromText = () => {
@@ -51,7 +51,6 @@ const jsonArrayInput = ref([
 			description="Encode and decode Base64 strings (supports Unicode)"
 			since="5.0.0"
 			:code="`encodeBase64('Hello') // 'SGVsbG8='
-encodeBase64('你好') // '5L2g5aW9'
 decodeBase64('SGVsbG8=') // 'Hello'`"
 		>
 			<template #input>

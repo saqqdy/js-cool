@@ -11,7 +11,7 @@ const base64Input = ref('Hello World')
 const base64Encoded = ref('')
 const base64Decoded = ref('')
 
-const utf8Input = ref('你好世界')
+const utf8Input = ref('Hello World')
 const utf8Encoded = ref('')
 const utf8Decoded = ref('')
 
@@ -54,7 +54,7 @@ const handleUtf8Decode = () => {
 decodeBase64('SGVsbG8gV29ybGQ=') // 'Hello World'
 
 // Handle Unicode
-encodeBase64('你好') // Works with Chinese characters`"
+encodeBase64('Hello 世界') // Works with Unicode characters`"
 		>
 			<template #input>
 				<n-space align="center">
@@ -109,8 +109,8 @@ encodeBase64('你好') // Works with Chinese characters`"
 			title="encodeUtf8 / decodeUtf8"
 			description="UTF-8 encoding/decoding"
 			since="5.0.0"
-			:code="`encodeUtf8('Hello 世界') // UTF-8 encoded
-decodeUtf8(encoded) // 'Hello 世界'`"
+			:code="`encodeUtf8('Hello World') // UTF-8 encoded
+decodeUtf8(encoded) // 'Hello World'`"
 		>
 			<template #input>
 				<n-space align="center">

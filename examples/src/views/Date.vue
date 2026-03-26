@@ -31,7 +31,7 @@ import {
 import type { DateUnit } from 'js-cool'
 import { useI18n } from '@/locales'
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 
 const formatPattern = ref('YYYY-MM-DD HH:mm:ss')
 const diffStart = ref('2024-01-01')
@@ -101,7 +101,6 @@ const minMaxDates = ref([
 			:description="t.date.formatDesc"
 			since="6.0.0"
 			:code="`formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
-formatDate(new Date(), 'YYYY年MM月DD日')
 formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
 		>
 			<template #input>
@@ -186,7 +185,7 @@ formatDate(new Date(), 'MM/DD/YYYY hh:mm:ss A')`"
 			:description="t.date.relativeDesc"
 			since="6.0.0"
 			:code="`relativeTime(new Date(Date.now() - 3600000)) // '1 hour(s) ago'
-relativeTime(new Date(Date.now() - 3600000), new Date(), 'zh') // '1小时前'`"
+relativeTime(new Date(Date.now() - 3600000), undefined, 'zh') // '1小时前' (Chinese locale)`"
 		>
 			<template #input>
 				<input
@@ -278,9 +277,9 @@ getDaysInMonth(2023, 2) // 28`"
 		>
 			<template #input>
 				<n-space align="center">
-					<code class="code-inline">{{ locale === 'zh' ? '年' : 'Year' }}:</code>
+					<code class="code-inline">{{ t.dateMore.year }}:</code>
 					<n-input-number v-model:value="yearInput" style="width: 100px" />
-					<code class="code-inline">{{ locale === 'zh' ? '月' : 'Month' }}:</code>
+					<code class="code-inline">{{ t.dateMore.month }}:</code>
 					<n-input-number v-model:value="monthInput" style="width: 70px" />
 				</n-space>
 			</template>
@@ -344,7 +343,7 @@ isTomorrow(new Date(Date.now() + 86400000)) // true`"
 		>
 			<template #input>
 				<n-space align="center">
-					<code class="code-inline">{{ locale === 'zh' ? '选择日期' : 'Select date' }}:</code>
+					<code class="code-inline">{{ t.dateMore.selectDate }}:</code>
 					<n-date-picker v-model:value="checkDateInput" type="date" style="width: 150px" />
 				</n-space>
 			</template>
@@ -370,7 +369,7 @@ isLeapYear(2023) // false`"
 		>
 			<template #input>
 				<n-space align="center">
-					<code class="code-inline">{{ locale === 'zh' ? '年份' : 'Year' }}:</code>
+					<code class="code-inline">{{ t.dateMore.year }}:</code>
 					<n-input-number v-model:value="yearInput" style="width: 100px" />
 				</n-space>
 			</template>
@@ -446,11 +445,11 @@ isSame('2024-01-01', '2024-01-01') // true`"
 			<template #input>
 				<n-space vertical>
 					<n-space align="center">
-						<code class="code-inline">{{ locale === 'zh' ? '日期' : 'Date' }}:</code>
+						<code class="code-inline">{{ t.dateMore.dateLabel }}:</code>
 						<n-date-picker v-model:value="checkDateInput" type="date" style="width: 140px" />
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">{{ locale === 'zh' ? '范围' : 'Range' }}:</code>
+						<code class="code-inline">{{ t.dateMore.rangeLabel }}:</code>
 						<n-date-picker v-model:value="betweenStart" type="date" style="width: 120px" />
 						<span style="color: #666">-</span>
 						<n-date-picker v-model:value="betweenEnd" type="date" style="width: 120px" />
@@ -478,7 +477,7 @@ getWeekOfYear(new Date()) // 1-53`"
 		>
 			<template #input>
 				<n-space align="center">
-					<code class="code-inline">{{ locale === 'zh' ? '选择日期' : 'Select date' }}:</code>
+					<code class="code-inline">{{ t.dateMore.selectDate }}:</code>
 					<n-date-picker v-model:value="checkDateInput" type="date" style="width: 150px" />
 				</n-space>
 			</template>

@@ -141,4 +141,64 @@ export default {
 	chinese: '中文',
 	set: '集合',
 	predicate: '判断',
+
+	// Url functions
+	url: {
+		classChainBuildTitle: 'Url 类 - 链式构建',
+		classChainBuildDesc: '使用 Url 类链式构建 URL，支持参数操作、路径设置、hash 操作',
+		classPropertiesTitle: 'Url 类 - URL 属性访问',
+		classPropertiesDesc:
+			'获取 URL 的各个组成部分（origin, host, hostname, pathname, search, hash）',
+		classParamsTitle: 'Url 类 - search/hash 参数操作',
+		classParamsDesc: '同时操作 search（#前）和 hash（#后）参数，支持 scope 控制',
+		toDetailObjectDesc: '获取详细的参数信息，区分参数来源（search/hash/both）',
+		chainModifyTitle: 'Url 链式修改',
+		chainModifyDesc: '链式修改 URL 参数、路径、hash',
+		hashParamsTitle: 'Hash 参数处理',
+		hashParamsDesc: '专门处理 hash（#后）参数的场景',
+		parseStringifyTitle: 'Url.parse() / Url.stringify()',
+		parseStringifyDesc: '解析和构建查询字符串（静态方法或独立函数）',
+		extractTitle: 'URL 属性提取函数',
+		extractDesc: '从 URL 字符串中提取各个组成部分',
+		getDirParamsDesc: '解析 URL 路径信息，返回结构化的组成部分',
+		staticFactoryTitle: 'Url 静态工厂方法',
+		staticFactoryDesc: '从当前页面 URL 或查询字符串创建 Url 实例',
+		uaTitle: 'ua (User Agent 检测)',
+		uaDesc: '全面的 User Agent 检测 - 设备、系统、浏览器、环境',
+		browserOsVersionDesc: '获取浏览器和系统信息',
+		compareVersionDesc: '比较版本号',
+		nextVersionDesc: '获取下一个版本号',
+		notBrowserEnv: 'null (非浏览器环境)',
+	},
+
+	// Date functions additional
+	dateMore: {
+		year: '年',
+		month: '月',
+		selectDate: '选择日期',
+		dateLabel: '日期',
+		rangeLabel: '范围',
+	},
+
+	// Changelog
+	changelog: {
+		title: '更新日志',
+		migrationGuide: '迁移指南 v5 → v6',
+		clickHint: '提示：点击条目可跳转到对应方法的详细用法',
+		added: '新增',
+		changed: '更新',
+		fixed: '修复',
+		breaking: '破坏性变更',
+	},
+
+	// Home
+	homeMore: {
+		generateRandomString: '生成指定长度的随机字符串',
+		generateUUID: '生成 UUID v4',
+	},
+
+	// Validate
+	validate: {
+		chineseTest: '中文测试',
+	},
 }

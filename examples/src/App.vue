@@ -69,7 +69,7 @@ const categories = [
 	{ name: 'Network', path: 'network', icon: WifiOutline },
 ]
 
-const menuOptions: MenuOption[] = [
+const menuOptions = computed<MenuOption[]>(() => [
 	{
 		label: () =>
 			h(
@@ -100,11 +100,11 @@ const menuOptions: MenuOption[] = [
 		key: cat.path,
 		icon: renderIcon(cat.icon),
 	})),
-]
+])
 
 const filteredMenuOptions = computed(() => {
-	if (!searchQuery.value) return menuOptions
-	return menuOptions.filter(item => {
+	if (!searchQuery.value) return menuOptions.value
+	return menuOptions.value.filter(item => {
 		if (item.type === 'divider') return true
 		const label =
 			typeof item.label === 'function'
