@@ -27,10 +27,7 @@ import {
 } from 'js-cool'
 
 // Or use descriptive aliases
-import {
-  parse as parseQueryString,
-  stringify as stringifyQueryString,
-} from 'js-cool'
+import { parse as parseQueryString, stringify as stringifyQueryString } from 'js-cool'
 ```
 
 ## Two Ways to Use
@@ -106,11 +103,11 @@ const u = new Url(urlObject) // With URL object
 
 The `Url` class supports both search parameters (before `#`) and hash parameters (after `#`):
 
-| Scope     | Description                                       |
-| --------- | ------------------------------------------------- |
-| `'search'`| Only handle parameters before `#`                  |
-| `'hash'`  | Only handle parameters after `#` (in hash)        |
-| `'all'`   | Handle all parameters, hash takes priority (default) |
+| Scope      | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| `'search'` | Only handle parameters before `#`                    |
+| `'hash'`   | Only handle parameters after `#` (in hash)           |
+| `'all'`    | Handle all parameters, hash takes priority (default) |
 
 ### URLSearchParams-like Methods
 
@@ -354,14 +351,14 @@ const params = u.toObject('hash') // { tab: 'settings', id: '123' }
 
 The URL utilities are new in v6.0.0. The following deprecated functions have been removed:
 
-| Removed             | Replacement                                  |
-| ------------------- | -------------------------------------------- |
-| `getUrlParam()`     | `Url.get()` or `new Url(url).get()`          |
-| `getUrlParams()`    | `parse()` or `new Url(url).toObject()`       |
-| `parseUrlParam()`   | `parse()` with `{ convert: true }`           |
-| `spliceUrlParam()`  | `stringify()`                                |
-| `getQueryParam()`   | `new Url(url).get(name, 'hash')`             |
-| `getQueryParams()`  | `new Url(url).toObject('hash')`              |
+| Removed            | Replacement                            |
+| ------------------ | -------------------------------------- |
+| `getUrlParam()`    | `Url.get()` or `new Url(url).get()`    |
+| `getUrlParams()`   | `parse()` or `new Url(url).toObject()` |
+| `parseUrlParam()`  | `parse()` with `{ convert: true }`     |
+| `spliceUrlParam()` | `stringify()`                          |
+| `getQueryParam()`  | `new Url(url).get(name, 'hash')`       |
+| `getQueryParams()` | `new Url(url).toObject('hash')`        |
 
 See the [Migration Guide](../../guide/migration.md#url-utilities) for details.
 

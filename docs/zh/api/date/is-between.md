@@ -21,12 +21,12 @@ function isBetween(
 
 ## 参数
 
-| 参数       | 类型                       | 描述                     |
-| ---------- | -------------------------- | ------------------------ |
-| `date`     | `Date \| string \| number` | 要检查的日期             |
-| `start`    | `Date \| string \| number` | 开始日期                 |
-| `end`      | `Date \| string \| number` | 结束日期                 |
-| `inclusive`| `boolean`                  | 是否包含边界（默认：`true`）|
+| 参数        | 类型                       | 描述                         |
+| ----------- | -------------------------- | ---------------------------- |
+| `date`      | `Date \| string \| number` | 要检查的日期                 |
+| `start`     | `Date \| string \| number` | 开始日期                     |
+| `end`       | `Date \| string \| number` | 结束日期                     |
+| `inclusive` | `boolean`                  | 是否包含边界（默认：`true`） |
 
 ## 返回值
 

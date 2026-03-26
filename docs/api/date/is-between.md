@@ -21,12 +21,12 @@ function isBetween(
 
 ## Parameters
 
-| Parameter   | Type                       | Description                                  |
-| ----------- | -------------------------- | -------------------------------------------- |
-| `date`      | `Date \| string \| number` | The date to check                            |
-| `start`     | `Date \| string \| number` | The start date                               |
-| `end`       | `Date \| string \| number` | The end date                                 |
-| `inclusive` | `boolean`                  | Include boundaries (default: `true`)         |
+| Parameter   | Type                       | Description                          |
+| ----------- | -------------------------- | ------------------------------------ |
+| `date`      | `Date \| string \| number` | The date to check                    |
+| `start`     | `Date \| string \| number` | The start date                       |
+| `end`       | `Date \| string \| number` | The end date                         |
+| `inclusive` | `boolean`                  | Include boundaries (default: `true`) |
 
 ## Returns
 

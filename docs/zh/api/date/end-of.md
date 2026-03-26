@@ -30,12 +30,12 @@ function endOf(date: Date | string | number, unit: DateUnit): Date
 ## 示例
 
 ```js
-endOf(new Date(), 'day')      // 今天 23:59:59.999
-endOf(new Date(), 'week')     // 本周六 23:59:59.999
-endOf(new Date(), 'month')    // 本月最后一天 23:59:59.999
-endOf(new Date(), 'year')     // 今年最后一天 23:59:59.999
-endOf(new Date(), 'hour')     // 当前小时 59:59.999
-endOf(new Date(), 'minute')   // 当前分钟 59.999 秒
+endOf(new Date(), 'day') // 今天 23:59:59.999
+endOf(new Date(), 'week') // 本周六 23:59:59.999
+endOf(new Date(), 'month') // 本月最后一天 23:59:59.999
+endOf(new Date(), 'year') // 今年最后一天 23:59:59.999
+endOf(new Date(), 'hour') // 当前小时 59:59.999
+endOf(new Date(), 'minute') // 当前分钟 59.999 秒
 ```
 
 ## 相关

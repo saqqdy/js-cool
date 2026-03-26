@@ -11,16 +11,13 @@ import { compareDate } from 'js-cool'
 ## 签名
 
 ```typescript
-function compareDate(
-  date1: Date | string | number,
-  date2: Date | string | number
-): -1 | 0 | 1
+function compareDate(date1: Date | string | number, date2: Date | string | number): -1 | 0 | 1
 ```
 
 ## 参数
 
-| 参数    | 类型                       | 描述     |
-| ------- | -------------------------- | -------- |
+| 参数    | 类型                       | 描述       |
+| ------- | -------------------------- | ---------- |
 | `date1` | `Date \| string \| number` | 第一个日期 |
 | `date2` | `Date \| string \| number` | 第二个日期 |
 

@@ -75,7 +75,10 @@ class Url {
 
   // Static methods
   static parse(str: string, options?: { convert?: boolean }): Record<string, unknown>
-  static stringify(params: Record<string, unknown>, options?: { encode?: boolean; withQuestionMark?: boolean }): string
+  static stringify(
+    params: Record<string, unknown>,
+    options?: { encode?: boolean; withQuestionMark?: boolean }
+  ): string
   static getOrigin(url: string): string
   static getHost(url: string): string
   static getHostname(url: string): string
@@ -268,16 +271,16 @@ for (const [key, value] of u) {
 
 ## Comparison with Native URLSearchParams
 
-| Feature                     | URLSearchParams | Url    |
-| --------------------------- | --------------- | ------ |
-| search params               | ✅              | ✅     |
-| hash params                 | ❌              | ✅     |
-| URL properties              | ❌              | ✅     |
-| Parameter scope distinction | ❌              | ✅     |
-| Source tracking             | ❌              | ✅     |
-| Hash path operations        | ❌              | ✅     |
-| Auto URL building           | ❌              | ✅     |
-| Chainable API               | ❌              | ✅     |
+| Feature                     | URLSearchParams | Url |
+| --------------------------- | --------------- | --- |
+| search params               | ✅              | ✅  |
+| hash params                 | ❌              | ✅  |
+| URL properties              | ❌              | ✅  |
+| Parameter scope distinction | ❌              | ✅  |
+| Source tracking             | ❌              | ✅  |
+| Hash path operations        | ❌              | ✅  |
+| Auto URL building           | ❌              | ✅  |
+| Chainable API               | ❌              | ✅  |
 
 ## Related
 

@@ -64,105 +64,105 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '120'
 
 ### Validation Patterns
 
-| Pattern | Description | Example |
-|---------|-------------|---------|
-| `email` | Email address | `user@example.com` |
-| `mobile` | Chinese mobile phone | `13800138000` |
-| `url` | URL (with or without protocol) | `https://example.com` |
-| `ipv4` | IPv4 address | `192.168.1.1` |
-| `ipv6` | IPv6 address | `2001:db8::1` |
-| `ipv4Private` | Private IPv4 | `192.168.1.1` |
-| `mac` | MAC address | `00:1A:2B:3C:4D:5E` |
-| `uuid` | UUID v1-v5 | `550e8400-e29b-...` |
-| `semver` | Semantic version | `1.2.3-beta.1` |
-| `base64` | Base64 encoded | `SGVsbG8=` |
-| `hexColor` | Hex color code | `#fff` or `#ffffff` |
-| `date` | Date YYYY-MM-DD | `2024-01-15` |
-| `time` | Time HH:mm:ss | `23:59:59` |
-| `datetime` | Datetime | `2024-01-15 12:30:00` |
-| `idCard` | Chinese ID card | `11010519491231002X` |
-| `bankCard` | Bank card number | `6222021234567890123` |
-| `creditCard` | Credit card number | `4111111111111111` |
-| `username` | Username (3-15 chars) | `user_name` |
-| `password` | Password (6-16 chars) | `abc123` |
-| `qq` | QQ number | `12345678` |
-| `postcode` | Chinese postal code | `100000` |
-| `tel` | Chinese telephone | `010-12345678` |
-| `slug` | URL slug | `hello-world-123` |
-| `json` | JSON object string | `{"key":"value"}` |
-| `array` | JSON array string | `[1, 2, 3]` |
+| Pattern       | Description                    | Example               |
+| ------------- | ------------------------------ | --------------------- |
+| `email`       | Email address                  | `user@example.com`    |
+| `mobile`      | Chinese mobile phone           | `13800138000`         |
+| `url`         | URL (with or without protocol) | `https://example.com` |
+| `ipv4`        | IPv4 address                   | `192.168.1.1`         |
+| `ipv6`        | IPv6 address                   | `2001:db8::1`         |
+| `ipv4Private` | Private IPv4                   | `192.168.1.1`         |
+| `mac`         | MAC address                    | `00:1A:2B:3C:4D:5E`   |
+| `uuid`        | UUID v1-v5                     | `550e8400-e29b-...`   |
+| `semver`      | Semantic version               | `1.2.3-beta.1`        |
+| `base64`      | Base64 encoded                 | `SGVsbG8=`            |
+| `hexColor`    | Hex color code                 | `#fff` or `#ffffff`   |
+| `date`        | Date YYYY-MM-DD                | `2024-01-15`          |
+| `time`        | Time HH:mm:ss                  | `23:59:59`            |
+| `datetime`    | Datetime                       | `2024-01-15 12:30:00` |
+| `idCard`      | Chinese ID card                | `11010519491231002X`  |
+| `bankCard`    | Bank card number               | `6222021234567890123` |
+| `creditCard`  | Credit card number             | `4111111111111111`    |
+| `username`    | Username (3-15 chars)          | `user_name`           |
+| `password`    | Password (6-16 chars)          | `abc123`              |
+| `qq`          | QQ number                      | `12345678`            |
+| `postcode`    | Chinese postal code            | `100000`              |
+| `tel`         | Chinese telephone              | `010-12345678`        |
+| `slug`        | URL slug                       | `hello-world-123`     |
+| `json`        | JSON object string             | `{"key":"value"}`     |
+| `array`       | JSON array string              | `[1, 2, 3]`           |
 
 ### Device Patterns
 
-| Pattern | Description |
-|---------|-------------|
-| `mobile` | Any mobile device |
-| `tablet` | Tablet devices |
-| `phone` | Smartphones |
-| `touch` | Touch devices |
-| `iphone` | iPhone |
-| `ipad` | iPad |
-| `androidPhone` | Android phone |
-| `androidTablet` | Android tablet |
+| Pattern         | Description       |
+| --------------- | ----------------- |
+| `mobile`        | Any mobile device |
+| `tablet`        | Tablet devices    |
+| `phone`         | Smartphones       |
+| `touch`         | Touch devices     |
+| `iphone`        | iPhone            |
+| `ipad`          | iPad              |
+| `androidPhone`  | Android phone     |
+| `androidTablet` | Android tablet    |
 
 ### OS Patterns
 
-| Pattern | Description |
-|---------|-------------|
+| Pattern     | Description      |
+| ----------- | ---------------- |
 | `harmonyOS` | Huawei HarmonyOS |
-| `windows` | Windows |
-| `macOS` | macOS |
-| `iOS` | iOS |
-| `iPadOS` | iPadOS |
-| `android` | Android |
-| `linux` | Linux |
-| `chromeOS` | Chrome OS |
+| `windows`   | Windows          |
+| `macOS`     | macOS            |
+| `iOS`       | iOS              |
+| `iPadOS`    | iPadOS           |
+| `android`   | Android          |
+| `linux`     | Linux            |
+| `chromeOS`  | Chrome OS        |
 
 ### Browser Patterns
 
-| Pattern | Description |
-|---------|-------------|
-| `chrome` | Google Chrome |
-| `safari` | Apple Safari |
-| `firefox` | Mozilla Firefox |
-| `edge` | Microsoft Edge |
-| `opera` | Opera |
-| `ie` | Internet Explorer |
-| `samsung` | Samsung Browser |
-| `uc` | UC Browser |
-| `quark` | Quark Browser |
-| `arc` | Arc Browser |
-| `brave` | Brave Browser |
-| `yandex` | Yandex Browser |
-| `vivaldi` | Vivaldi Browser |
+| Pattern   | Description       |
+| --------- | ----------------- |
+| `chrome`  | Google Chrome     |
+| `safari`  | Apple Safari      |
+| `firefox` | Mozilla Firefox   |
+| `edge`    | Microsoft Edge    |
+| `opera`   | Opera             |
+| `ie`      | Internet Explorer |
+| `samsung` | Samsung Browser   |
+| `uc`      | UC Browser        |
+| `quark`   | Quark Browser     |
+| `arc`     | Arc Browser       |
+| `brave`   | Brave Browser     |
+| `yandex`  | Yandex Browser    |
+| `vivaldi` | Vivaldi Browser   |
 
 ### Environment Patterns
 
-| Pattern | Description |
-|---------|-------------|
-| `wechat` | WeChat |
-| `wxwork` | WeChat Work |
-| `dingtalk` | DingTalk |
-| `qq` | QQ App |
-| `qqBrowser` | QQ Browser |
-| `weibo` | Weibo |
-| `alipay` | Alipay |
-| `douyin` | Douyin/TikTok |
-| `kuaishou` | Kuaishou |
-| `baidu` | Baidu App |
-| `xiaomi` | Xiaomi Browser |
-| `huawei` | Huawei Browser |
-| `vivo` | Vivo Browser |
-| `oppo` | OPPO Browser |
-| `xiaohongshu` | Xiaohongshu |
-| `meituan` | Meituan |
-| `dianping` | Dianping |
-| `taobao` | Taobao App |
-| `tmall` | Tmall App |
-| `jd` | JD App |
-| `pinduoduo` | Pinduoduo |
-| `miniProgram` | Mini Program |
-| `miniGame` | Mini Game |
+| Pattern       | Description    |
+| ------------- | -------------- |
+| `wechat`      | WeChat         |
+| `wxwork`      | WeChat Work    |
+| `dingtalk`    | DingTalk       |
+| `qq`          | QQ App         |
+| `qqBrowser`   | QQ Browser     |
+| `weibo`       | Weibo          |
+| `alipay`      | Alipay         |
+| `douyin`      | Douyin/TikTok  |
+| `kuaishou`    | Kuaishou       |
+| `baidu`       | Baidu App      |
+| `xiaomi`      | Xiaomi Browser |
+| `huawei`      | Huawei Browser |
+| `vivo`        | Vivo Browser   |
+| `oppo`        | OPPO Browser   |
+| `xiaohongshu` | Xiaohongshu    |
+| `meituan`     | Meituan        |
+| `dianping`    | Dianping       |
+| `taobao`      | Taobao App     |
+| `tmall`       | Tmall App      |
+| `jd`          | JD App         |
+| `pinduoduo`   | Pinduoduo      |
+| `miniProgram` | Mini Program   |
+| `miniGame`    | Mini Game      |
 
 ## Utility Functions
 

@@ -16,8 +16,8 @@ function isAfter(date1: Date | string | number, date2: Date | string | number): 
 
 ## 参数
 
-| 参数    | 类型                       | 描述     |
-| ------- | -------------------------- | -------- |
+| 参数    | 类型                       | 描述       |
+| ------- | -------------------------- | ---------- |
 | `date1` | `Date \| string \| number` | 第一个日期 |
 | `date2` | `Date \| string \| number` | 第二个日期 |
 

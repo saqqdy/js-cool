@@ -16,9 +16,9 @@ function maxDate(...dates: (Date | string | number)[]): Date
 
 ## Parameters
 
-| Parameter | Type                                       | Description          |
-| --------- | ------------------------------------------ | -------------------- |
-| `...dates`| `(Date \| string \| number)[]`             | List of dates        |
+| Parameter  | Type                           | Description   |
+| ---------- | ------------------------------ | ------------- |
+| `...dates` | `(Date \| string \| number)[]` | List of dates |
 
 ## Returns
 

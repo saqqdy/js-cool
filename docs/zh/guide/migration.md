@@ -70,17 +70,17 @@ import jsCool from 'js-cool'
 
 ### 废弃函数替换
 
-| v5.x（已废弃）        | v6.x（替代方案）                              |
-| --------------------- | --------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                                |
-| `getOsVersion()`      | `osVersion()`                                 |
-| `getScrollPosition()` | `scroll.getPosition()`                        |
-| `getQueryParam()`     | `url.get()` 或 `new Url(url).get()`           |
-| `getQueryParams()`    | `url.parse()` 或 `new Url(url).toObject()`    |
-| `getUrlParam()`       | `url.get()` 或 `new Url(url).get()`           |
-| `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()`    |
-| `parseUrlParam()`     | `url.parse()`                                 |
-| `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`     |
+| v5.x（已废弃）        | v6.x（替代方案）                           |
+| --------------------- | ------------------------------------------ |
+| `getAppVersion()`     | `appVersion()`                             |
+| `getOsVersion()`      | `osVersion()`                              |
+| `getScrollPosition()` | `scroll.getPosition()`                     |
+| `getQueryParam()`     | `url.get()` 或 `new Url(url).get()`        |
+| `getQueryParams()`    | `url.parse()` 或 `new Url(url).toObject()` |
+| `getUrlParam()`       | `url.get()` 或 `new Url(url).get()`        |
+| `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()` |
+| `parseUrlParam()`     | `url.parse()`                              |
+| `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`  |
 
 ```js
 // v5.x
@@ -782,13 +782,13 @@ params.toURL()
 
 #### 选择建议
 
-| 场景                           | 推荐使用                   |
-| ------------------------------ | -------------------------- |
-| 只处理 search 参数（简单场景） | `url` 模块（API 更简洁）   |
-| 需要处理 hash 参数             | `Url` 类（唯一选择）       |
-| 需要同时处理 search 和 hash    | `Url` 类                   |
+| 场景                           | 推荐使用                    |
+| ------------------------------ | --------------------------- |
+| 只处理 search 参数（简单场景） | `url` 模块（API 更简洁）    |
+| 需要处理 hash 参数             | `Url` 类（唯一选择）        |
+| 需要同时处理 search 和 hash    | `Url` 类                    |
 | 需要 URL 属性解析              | `url` 模块或 `getDirParams` |
-| 需要链式构建 URL               | `Url` 类                   |
+| 需要链式构建 URL               | `Url` 类                    |
 
 ## TypeScript 迁移
 

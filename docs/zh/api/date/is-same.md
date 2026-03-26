@@ -22,11 +22,11 @@ function isSame(
 
 ## 参数
 
-| 参数    | 类型                       | 描述                    |
-| ------- | -------------------------- | ----------------------- |
-| `date1` | `Date \| string \| number` | 第一个日期              |
-| `date2` | `Date \| string \| number` | 第二个日期              |
-| `unit`  | `DateComparisonUnit`       | 比较单位（默认：`'day'`）|
+| 参数    | 类型                       | 描述                      |
+| ------- | -------------------------- | ------------------------- |
+| `date1` | `Date \| string \| number` | 第一个日期                |
+| `date2` | `Date \| string \| number` | 第二个日期                |
+| `unit`  | `DateComparisonUnit`       | 比较单位（默认：`'day'`） |
 
 ## 返回值
 

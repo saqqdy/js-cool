@@ -24,14 +24,14 @@ import { DEVICE_PATTERNS } from 'js-cool'
 
 const ua = navigator.userAgent
 
-DEVICE_PATTERNS.mobile.test(ua)     // 任意移动设备
-DEVICE_PATTERNS.tablet.test(ua)     // 平板设备
-DEVICE_PATTERNS.phone.test(ua)      // 智能手机
-DEVICE_PATTERNS.touch.test(ua)      // 触摸设备
-DEVICE_PATTERNS.iphone.test(ua)     // iPhone
-DEVICE_PATTERNS.ipad.test(ua)       // iPad
-DEVICE_PATTERNS.androidPhone.test(ua)   // 安卓手机
-DEVICE_PATTERNS.androidTablet.test(ua)  // 安卓平板
+DEVICE_PATTERNS.mobile.test(ua) // 任意移动设备
+DEVICE_PATTERNS.tablet.test(ua) // 平板设备
+DEVICE_PATTERNS.phone.test(ua) // 智能手机
+DEVICE_PATTERNS.touch.test(ua) // 触摸设备
+DEVICE_PATTERNS.iphone.test(ua) // iPhone
+DEVICE_PATTERNS.ipad.test(ua) // iPad
+DEVICE_PATTERNS.androidPhone.test(ua) // 安卓手机
+DEVICE_PATTERNS.androidTablet.test(ua) // 安卓平板
 ```
 
 ## 操作系统模式
@@ -41,14 +41,14 @@ import { OS_PATTERNS, extractVersion, getUserAgent } from 'js-cool'
 
 const ua = getUserAgent()
 
-OS_PATTERNS.harmonyOS.test(ua)  // 鸿蒙系统
-OS_PATTERNS.windows.test(ua)    // Windows
-OS_PATTERNS.macOS.test(ua)      // macOS
-OS_PATTERNS.iOS.test(ua)        // iOS
-OS_PATTERNS.iPadOS.test(ua)     // iPadOS
-OS_PATTERNS.android.test(ua)    // Android
-OS_PATTERNS.linux.test(ua)      // Linux
-OS_PATTERNS.chromeOS.test(ua)   // Chrome OS
+OS_PATTERNS.harmonyOS.test(ua) // 鸿蒙系统
+OS_PATTERNS.windows.test(ua) // Windows
+OS_PATTERNS.macOS.test(ua) // macOS
+OS_PATTERNS.iOS.test(ua) // iOS
+OS_PATTERNS.iPadOS.test(ua) // iPadOS
+OS_PATTERNS.android.test(ua) // Android
+OS_PATTERNS.linux.test(ua) // Linux
+OS_PATTERNS.chromeOS.test(ua) // Chrome OS
 
 // 提取操作系统版本
 const windowsVersion = extractVersion(ua, OS_PATTERNS.windows)
@@ -62,19 +62,19 @@ import { BROWSER_PATTERNS, extractVersion, getUserAgent } from 'js-cool'
 
 const ua = getUserAgent()
 
-BROWSER_PATTERNS.chrome.test(ua)   // Chrome
-BROWSER_PATTERNS.safari.test(ua)   // Safari
-BROWSER_PATTERNS.firefox.test(ua)  // Firefox
-BROWSER_PATTERNS.edge.test(ua)     // Edge
-BROWSER_PATTERNS.opera.test(ua)    // Opera
-BROWSER_PATTERNS.ie.test(ua)       // Internet Explorer
-BROWSER_PATTERNS.samsung.test(ua)  // 三星浏览器
-BROWSER_PATTERNS.uc.test(ua)       // UC浏览器
-BROWSER_PATTERNS.quark.test(ua)    // 夸克浏览器
-BROWSER_PATTERNS.arc.test(ua)      // Arc浏览器
-BROWSER_PATTERNS.brave.test(ua)    // Brave浏览器
-BROWSER_PATTERNS.yandex.test(ua)   // Yandex浏览器
-BROWSER_PATTERNS.vivaldi.test(ua)  // Vivaldi浏览器
+BROWSER_PATTERNS.chrome.test(ua) // Chrome
+BROWSER_PATTERNS.safari.test(ua) // Safari
+BROWSER_PATTERNS.firefox.test(ua) // Firefox
+BROWSER_PATTERNS.edge.test(ua) // Edge
+BROWSER_PATTERNS.opera.test(ua) // Opera
+BROWSER_PATTERNS.ie.test(ua) // Internet Explorer
+BROWSER_PATTERNS.samsung.test(ua) // 三星浏览器
+BROWSER_PATTERNS.uc.test(ua) // UC浏览器
+BROWSER_PATTERNS.quark.test(ua) // 夸克浏览器
+BROWSER_PATTERNS.arc.test(ua) // Arc浏览器
+BROWSER_PATTERNS.brave.test(ua) // Brave浏览器
+BROWSER_PATTERNS.yandex.test(ua) // Yandex浏览器
+BROWSER_PATTERNS.vivaldi.test(ua) // Vivaldi浏览器
 
 // 提取浏览器版本
 const chromeVersion = extractVersion(ua, BROWSER_PATTERNS.chrome)
@@ -87,11 +87,11 @@ import { ENGINE_PATTERNS } from 'js-cool'
 
 const ua = navigator.userAgent
 
-ENGINE_PATTERNS.blink.test(ua)     // Blink（Chrome、Edge、Opera）
-ENGINE_PATTERNS.gecko.test(ua)     // Gecko（Firefox）
-ENGINE_PATTERNS.webkit.test(ua)    // WebKit（Safari）
-ENGINE_PATTERNS.trident.test(ua)   // Trident（IE）
-ENGINE_PATTERNS.edgeHTML.test(ua)  // EdgeHTML（旧版Edge）
+ENGINE_PATTERNS.blink.test(ua) // Blink（Chrome、Edge、Opera）
+ENGINE_PATTERNS.gecko.test(ua) // Gecko（Firefox）
+ENGINE_PATTERNS.webkit.test(ua) // WebKit（Safari）
+ENGINE_PATTERNS.trident.test(ua) // Trident（IE）
+ENGINE_PATTERNS.edgeHTML.test(ua) // EdgeHTML（旧版Edge）
 ```
 
 ## 环境模式
@@ -102,37 +102,37 @@ import { ENV_PATTERNS } from 'js-cool'
 const ua = navigator.userAgent
 
 // 国产应用
-ENV_PATTERNS.wechat.test(ua)      // 微信
-ENV_PATTERNS.wxwork.test(ua)      // 企业微信
-ENV_PATTERNS.dingtalk.test(ua)    // 钉钉
-ENV_PATTERNS.qq.test(ua)          // QQ App
-ENV_PATTERNS.qqBrowser.test(ua)   // QQ浏览器
-ENV_PATTERNS.weibo.test(ua)       // 微博
-ENV_PATTERNS.alipay.test(ua)      // 支付宝
-ENV_PATTERNS.douyin.test(ua)      // 抖音/TikTok
-ENV_PATTERNS.kuaishou.test(ua)    // 快手
-ENV_PATTERNS.baidu.test(ua)       // 百度App
+ENV_PATTERNS.wechat.test(ua) // 微信
+ENV_PATTERNS.wxwork.test(ua) // 企业微信
+ENV_PATTERNS.dingtalk.test(ua) // 钉钉
+ENV_PATTERNS.qq.test(ua) // QQ App
+ENV_PATTERNS.qqBrowser.test(ua) // QQ浏览器
+ENV_PATTERNS.weibo.test(ua) // 微博
+ENV_PATTERNS.alipay.test(ua) // 支付宝
+ENV_PATTERNS.douyin.test(ua) // 抖音/TikTok
+ENV_PATTERNS.kuaishou.test(ua) // 快手
+ENV_PATTERNS.baidu.test(ua) // 百度App
 ENV_PATTERNS.xiaohongshu.test(ua) // 小红书
-ENV_PATTERNS.meituan.test(ua)     // 美团
-ENV_PATTERNS.dianping.test(ua)    // 大众点评
+ENV_PATTERNS.meituan.test(ua) // 美团
+ENV_PATTERNS.dianping.test(ua) // 大众点评
 
 // 电商应用
-ENV_PATTERNS.taobao.test(ua)      // 淘宝App
-ENV_PATTERNS.tmall.test(ua)       // 天猫App
-ENV_PATTERNS.jd.test(ua)          // 京东App
-ENV_PATTERNS.pinduoduo.test(ua)   // 拼多多
+ENV_PATTERNS.taobao.test(ua) // 淘宝App
+ENV_PATTERNS.tmall.test(ua) // 天猫App
+ENV_PATTERNS.jd.test(ua) // 京东App
+ENV_PATTERNS.pinduoduo.test(ua) // 拼多多
 
 // 手机厂商浏览器
-ENV_PATTERNS.xiaomi.test(ua)      // 小米浏览器
-ENV_PATTERNS.huawei.test(ua)      // 华为浏览器
-ENV_PATTERNS.vivo.test(ua)        // vivo浏览器
-ENV_PATTERNS.oppo.test(ua)        // OPPO浏览器
-ENV_PATTERNS.uc.test(ua)          // UC浏览器
-ENV_PATTERNS.quark.test(ua)       // 夸克浏览器
+ENV_PATTERNS.xiaomi.test(ua) // 小米浏览器
+ENV_PATTERNS.huawei.test(ua) // 华为浏览器
+ENV_PATTERNS.vivo.test(ua) // vivo浏览器
+ENV_PATTERNS.oppo.test(ua) // OPPO浏览器
+ENV_PATTERNS.uc.test(ua) // UC浏览器
+ENV_PATTERNS.quark.test(ua) // 夸克浏览器
 
 // 小程序
 ENV_PATTERNS.miniProgram.test(ua) // 小程序
-ENV_PATTERNS.miniGame.test(ua)    // 小游戏
+ENV_PATTERNS.miniGame.test(ua) // 小游戏
 ```
 
 ## 工具函数

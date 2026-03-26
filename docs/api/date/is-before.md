@@ -16,10 +16,10 @@ function isBefore(date1: Date | string | number, date2: Date | string | number):
 
 ## Parameters
 
-| Parameter | Type                       | Description       |
-| --------- | -------------------------- | ----------------- |
-| `date1`   | `Date \| string \| number` | The first date    |
-| `date2`   | `Date \| string \| number` | The second date   |
+| Parameter | Type                       | Description     |
+| --------- | -------------------------- | --------------- |
+| `date1`   | `Date \| string \| number` | The first date  |
+| `date2`   | `Date \| string \| number` | The second date |
 
 ## Returns
 

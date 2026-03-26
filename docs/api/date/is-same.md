@@ -22,11 +22,11 @@ function isSame(
 
 ## Parameters
 
-| Parameter | Type                       | Description                                |
-| --------- | -------------------------- | ------------------------------------------ |
-| `date1`   | `Date \| string \| number` | The first date                             |
-| `date2`   | `Date \| string \| number` | The second date                            |
-| `unit`    | `DateComparisonUnit`       | Comparison unit (default: `'day'`)         |
+| Parameter | Type                       | Description                        |
+| --------- | -------------------------- | ---------------------------------- |
+| `date1`   | `Date \| string \| number` | The first date                     |
+| `date2`   | `Date \| string \| number` | The second date                    |
+| `unit`    | `DateComparisonUnit`       | Comparison unit (default: `'day'`) |
 
 ## Returns
 

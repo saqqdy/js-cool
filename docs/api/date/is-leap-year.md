@@ -16,8 +16,8 @@ function isLeapYear(year: number): boolean
 
 ## Parameters
 
-| Parameter | Type     | Description     |
-| --------- | -------- | --------------- |
+| Parameter | Type     | Description       |
+| --------- | -------- | ----------------- |
 | `year`    | `number` | The year to check |
 
 ## Returns

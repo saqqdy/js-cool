@@ -75,7 +75,10 @@ class Url {
 
   // 静态方法
   static parse(str: string, options?: { convert?: boolean }): Record<string, unknown>
-  static stringify(params: Record<string, unknown>, options?: { encode?: boolean; withQuestionMark?: boolean }): string
+  static stringify(
+    params: Record<string, unknown>,
+    options?: { encode?: boolean; withQuestionMark?: boolean }
+  ): string
   static getOrigin(url: string): string
   static getHost(url: string): string
   static getHostname(url: string): string
@@ -89,11 +92,11 @@ class Url {
 
 ## 参数范围 (scope)
 
-| 值        | 说明                                        |
-| --------- | ------------------------------------------ |
-| `'search'` | 只处理 `#` 前的参数（location.search）      |
-| `'hash'`   | 只处理 `#` 后的参数（hash 内的查询参数）     |
-| `'all'`    | 处理所有参数，读取时 hash 优先（默认值）     |
+| 值         | 说明                                     |
+| ---------- | ---------------------------------------- |
+| `'search'` | 只处理 `#` 前的参数（location.search）   |
+| `'hash'`   | 只处理 `#` 后的参数（hash 内的查询参数） |
+| `'all'`    | 处理所有参数，读取时 hash 优先（默认值） |
 
 ## 示例
 
@@ -268,16 +271,16 @@ for (const [key, value] of u) {
 
 ## 与原生 URLSearchParams 对比
 
-| 特性           | URLSearchParams | Url   |
-| -------------- | --------------- | ----- |
-| search 参数    | ✅              | ✅    |
-| hash 参数      | ❌              | ✅    |
-| URL 属性       | ❌              | ✅    |
-| 参数范围区分   | ❌              | ✅    |
-| 来源追踪       | ❌              | ✅    |
-| Hash 路径操作  | ❌              | ✅    |
-| 自动 URL 构建  | ❌              | ✅    |
-| 链式 API       | ❌              | ✅    |
+| 特性          | URLSearchParams | Url |
+| ------------- | --------------- | --- |
+| search 参数   | ✅              | ✅  |
+| hash 参数     | ❌              | ✅  |
+| URL 属性      | ❌              | ✅  |
+| 参数范围区分  | ❌              | ✅  |
+| 来源追踪      | ❌              | ✅  |
+| Hash 路径操作 | ❌              | ✅  |
+| 自动 URL 构建 | ❌              | ✅  |
+| 链式 API      | ❌              | ✅  |
 
 ## 相关
 

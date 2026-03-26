@@ -90,18 +90,18 @@ v6.x 使用正确的条件导出：
 
 ### 4. 移除废弃函数
 
-| 已移除                | 替代方案                                  |
-| --------------------- | ----------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                            |
-| `getOsVersion()`      | `osVersion()`                             |
-| `getDirParam()`       | `getDirParams()`                          |
-| `getScrollPosition()` | `scroll.getPosition()`                    |
-| `getQueryParam()`     | `url.get()` 或 `new Url(url).get()`       |
-| `getQueryParams()`    | `url.parse()` 或 `new Url(url).toObject()`|
-| `getUrlParam()`       | `url.get()` 或 `new Url(url).get()`       |
-| `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()`|
-| `parseUrlParam()`     | `url.parse()`                             |
-| `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()` |
+| 已移除                | 替代方案                                   |
+| --------------------- | ------------------------------------------ |
+| `getAppVersion()`     | `appVersion()`                             |
+| `getOsVersion()`      | `osVersion()`                              |
+| `getDirParam()`       | `getDirParams()`                           |
+| `getScrollPosition()` | `scroll.getPosition()`                     |
+| `getQueryParam()`     | `url.get()` 或 `new Url(url).get()`        |
+| `getQueryParams()`    | `url.parse()` 或 `new Url(url).toObject()` |
+| `getUrlParam()`       | `url.get()` 或 `new Url(url).get()`        |
+| `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()` |
+| `parseUrlParam()`     | `url.parse()`                              |
+| `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`  |
 
 ### 5. 移除 `pattern` 对象
 

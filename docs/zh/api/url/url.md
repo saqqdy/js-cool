@@ -27,10 +27,7 @@ import {
 } from 'js-cool'
 
 // 或使用描述性别名
-import {
-  parse as parseQueryString,
-  stringify as stringifyQueryString,
-} from 'js-cool'
+import { parse as parseQueryString, stringify as stringifyQueryString } from 'js-cool'
 ```
 
 ## 两种使用方式
@@ -106,11 +103,11 @@ const u = new Url(urlObject) // 带 URL 对象
 
 `Url` 类同时支持 search 参数（`#` 前）和 hash 参数（`#` 后）：
 
-| 范围      | 说明                                |
-| --------- | ---------------------------------- |
-| `'search'`| 只处理 `#` 前的参数                  |
-| `'hash'`  | 只处理 `#` 后的参数（hash 内）        |
-| `'all'`   | 处理所有参数，hash 优先（默认）        |
+| 范围       | 说明                            |
+| ---------- | ------------------------------- |
+| `'search'` | 只处理 `#` 前的参数             |
+| `'hash'`   | 只处理 `#` 后的参数（hash 内）  |
+| `'all'`    | 处理所有参数，hash 优先（默认） |
 
 ### 类 URLSearchParams 方法
 
@@ -354,14 +351,14 @@ const params = u.toObject('hash') // { tab: 'settings', id: '123' }
 
 URL 工具是 v6.0.0 新增功能。以下废弃函数已被移除：
 
-| 已移除             | 替代方案                                  |
-| ------------------ | ----------------------------------------- |
-| `getUrlParam()`    | `parse()` 或 `new Url(url).get()`         |
-| `getUrlParams()`   | `parse()` 或 `new Url(url).toObject()`    |
-| `parseUrlParam()`  | `parse()` 并使用 `{ convert: true }`       |
-| `spliceUrlParam()` | `stringify()`                             |
-| `getQueryParam()`  | `new Url(url).get(name, 'hash')`          |
-| `getQueryParams()` | `new Url(url).toObject('hash')`           |
+| 已移除             | 替代方案                               |
+| ------------------ | -------------------------------------- |
+| `getUrlParam()`    | `parse()` 或 `new Url(url).get()`      |
+| `getUrlParams()`   | `parse()` 或 `new Url(url).toObject()` |
+| `parseUrlParam()`  | `parse()` 并使用 `{ convert: true }`   |
+| `spliceUrlParam()` | `stringify()`                          |
+| `getQueryParam()`  | `new Url(url).get(name, 'hash')`       |
+| `getQueryParams()` | `new Url(url).toObject('hash')`        |
 
 完整说明请参考 [迁移指南](../../guide/migration.md#url-工具)。
 

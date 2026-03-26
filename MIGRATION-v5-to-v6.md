@@ -90,18 +90,18 @@ v6.x uses proper conditional exports:
 
 ### 4. Deprecated Functions Removed
 
-| Removed               | Replacement                                  |
-| --------------------- | -------------------------------------------- |
-| `getAppVersion()`     | `appVersion()`                               |
-| `getOsVersion()`      | `osVersion()`                                |
-| `getDirParam()`       | `getDirParams()`                             |
-| `getScrollPosition()` | `scroll.getPosition()`                       |
-| `getQueryParam()`     | `url.get()` or `new Url(url).get()`          |
-| `getQueryParams()`    | `url.parse()` or `new Url(url).toObject()`   |
-| `getUrlParam()`       | `url.get()` or `new Url(url).get()`          |
-| `getUrlParams()`      | `url.parse()` or `new Url(url).toObject()`   |
-| `parseUrlParam()`     | `url.parse()`                                |
-| `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`    |
+| Removed               | Replacement                                |
+| --------------------- | ------------------------------------------ |
+| `getAppVersion()`     | `appVersion()`                             |
+| `getOsVersion()`      | `osVersion()`                              |
+| `getDirParam()`       | `getDirParams()`                           |
+| `getScrollPosition()` | `scroll.getPosition()`                     |
+| `getQueryParam()`     | `url.get()` or `new Url(url).get()`        |
+| `getQueryParams()`    | `url.parse()` or `new Url(url).toObject()` |
+| `getUrlParam()`       | `url.get()` or `new Url(url).get()`        |
+| `getUrlParams()`      | `url.parse()` or `new Url(url).toObject()` |
+| `parseUrlParam()`     | `url.parse()`                              |
+| `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`  |
 
 ### 5. `pattern` Object Removed
 

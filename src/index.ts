@@ -303,6 +303,7 @@ export {
 	getSearch,
 	getHash,
 	// Types
+	type ParamScope,
 	type ParseOptions,
 	type StringifyOptions,
 } from './url/index'

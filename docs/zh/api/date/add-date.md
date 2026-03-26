@@ -31,12 +31,12 @@ function addDate(date: Date | string | number, value: number, unit: DateUnit): D
 ## 示例
 
 ```js
-addDate(new Date(), 1, 'day')      // 明天
-addDate(new Date(), 2, 'week')     // 两周后
-addDate(new Date(), 1, 'month')    // 一个月后
-addDate(new Date(), 1, 'year')     // 一年后
-addDate(new Date(), 30, 'minute')  // 30 分钟后
-addDate(new Date(), 2, 'hour')     // 2 小时后
+addDate(new Date(), 1, 'day') // 明天
+addDate(new Date(), 2, 'week') // 两周后
+addDate(new Date(), 1, 'month') // 一个月后
+addDate(new Date(), 1, 'year') // 一年后
+addDate(new Date(), 30, 'minute') // 30 分钟后
+addDate(new Date(), 2, 'hour') // 2 小时后
 ```
 
 ## 相关

@@ -30,12 +30,12 @@ function startOf(date: Date | string | number, unit: DateUnit): Date
 ## 示例
 
 ```js
-startOf(new Date(), 'day')      // 今天 00:00:00
-startOf(new Date(), 'week')     // 本周日 00:00:00
-startOf(new Date(), 'month')    // 本月第一天 00:00:00
-startOf(new Date(), 'year')     // 今年第一天 00:00:00
-startOf(new Date(), 'hour')     // 当前小时 00:00
-startOf(new Date(), 'minute')   // 当前分钟 00 秒
+startOf(new Date(), 'day') // 今天 00:00:00
+startOf(new Date(), 'week') // 本周日 00:00:00
+startOf(new Date(), 'month') // 本月第一天 00:00:00
+startOf(new Date(), 'year') // 今年第一天 00:00:00
+startOf(new Date(), 'hour') // 当前小时 00:00
+startOf(new Date(), 'minute') // 当前分钟 00 秒
 ```
 
 ## 相关

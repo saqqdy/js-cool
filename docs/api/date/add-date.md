@@ -18,11 +18,11 @@ function addDate(date: Date | string | number, value: number, unit: DateUnit): D
 
 ## Parameters
 
-| Parameter | Type                       | Description          |
-| --------- | -------------------------- | -------------------- |
-| `date`    | `Date \| string \| number` | The date to modify   |
-| `value`   | `number`                   | The amount to add    |
-| `unit`    | `DateUnit`                 | The unit of time     |
+| Parameter | Type                       | Description        |
+| --------- | -------------------------- | ------------------ |
+| `date`    | `Date \| string \| number` | The date to modify |
+| `value`   | `number`                   | The amount to add  |
+| `unit`    | `DateUnit`                 | The unit of time   |
 
 ## Returns
 
@@ -31,12 +31,12 @@ function addDate(date: Date | string | number, value: number, unit: DateUnit): D
 ## Examples
 
 ```js
-addDate(new Date(), 1, 'day')      // Tomorrow
-addDate(new Date(), 2, 'week')     // 2 weeks from now
-addDate(new Date(), 1, 'month')    // 1 month from now
-addDate(new Date(), 1, 'year')     // 1 year from now
-addDate(new Date(), 30, 'minute')  // 30 minutes from now
-addDate(new Date(), 2, 'hour')     // 2 hours from now
+addDate(new Date(), 1, 'day') // Tomorrow
+addDate(new Date(), 2, 'week') // 2 weeks from now
+addDate(new Date(), 1, 'month') // 1 month from now
+addDate(new Date(), 1, 'year') // 1 year from now
+addDate(new Date(), 30, 'minute') // 30 minutes from now
+addDate(new Date(), 2, 'hour') // 2 hours from now
 ```
 
 ## Related

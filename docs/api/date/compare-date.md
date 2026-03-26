@@ -11,18 +11,15 @@ import { compareDate } from 'js-cool'
 ## Signature
 
 ```typescript
-function compareDate(
-  date1: Date | string | number,
-  date2: Date | string | number
-): -1 | 0 | 1
+function compareDate(date1: Date | string | number, date2: Date | string | number): -1 | 0 | 1
 ```
 
 ## Parameters
 
-| Parameter | Type                       | Description       |
-| --------- | -------------------------- | ----------------- |
-| `date1`   | `Date \| string \| number` | The first date    |
-| `date2`   | `Date \| string \| number` | The second date   |
+| Parameter | Type                       | Description     |
+| --------- | -------------------------- | --------------- |
+| `date1`   | `Date \| string \| number` | The first date  |
+| `date2`   | `Date \| string \| number` | The second date |
 
 ## Returns
 

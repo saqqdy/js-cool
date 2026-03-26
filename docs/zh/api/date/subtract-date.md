@@ -31,12 +31,12 @@ function subtractDate(date: Date | string | number, value: number, unit: DateUni
 ## 示例
 
 ```js
-subtractDate(new Date(), 1, 'day')      // 昨天
-subtractDate(new Date(), 2, 'week')     // 两周前
-subtractDate(new Date(), 1, 'month')    // 一个月前
-subtractDate(new Date(), 1, 'year')     // 一年前
-subtractDate(new Date(), 30, 'minute')  // 30 分钟前
-subtractDate(new Date(), 2, 'hour')     // 2 小时前
+subtractDate(new Date(), 1, 'day') // 昨天
+subtractDate(new Date(), 2, 'week') // 两周前
+subtractDate(new Date(), 1, 'month') // 一个月前
+subtractDate(new Date(), 1, 'year') // 一年前
+subtractDate(new Date(), 30, 'minute') // 30 分钟前
+subtractDate(new Date(), 2, 'hour') // 2 小时前
 ```
 
 ## 相关

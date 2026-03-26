@@ -18,10 +18,10 @@ function startOf(date: Date | string | number, unit: DateUnit): Date
 
 ## Parameters
 
-| Parameter | Type                       | Description          |
-| --------- | -------------------------- | -------------------- |
-| `date`    | `Date \| string \| number` | The date to modify   |
-| `unit`    | `DateUnit`                 | The unit of time     |
+| Parameter | Type                       | Description        |
+| --------- | -------------------------- | ------------------ |
+| `date`    | `Date \| string \| number` | The date to modify |
+| `unit`    | `DateUnit`                 | The unit of time   |
 
 ## Returns
 
@@ -30,12 +30,12 @@ function startOf(date: Date | string | number, unit: DateUnit): Date
 ## Examples
 
 ```js
-startOf(new Date(), 'day')      // Today at 00:00:00
-startOf(new Date(), 'week')     // This Sunday at 00:00:00
-startOf(new Date(), 'month')    // First day of month at 00:00:00
-startOf(new Date(), 'year')     // January 1st at 00:00:00
-startOf(new Date(), 'hour')     // Current hour at 00:00
-startOf(new Date(), 'minute')   // Current minute at 00 seconds
+startOf(new Date(), 'day') // Today at 00:00:00
+startOf(new Date(), 'week') // This Sunday at 00:00:00
+startOf(new Date(), 'month') // First day of month at 00:00:00
+startOf(new Date(), 'year') // January 1st at 00:00:00
+startOf(new Date(), 'hour') // Current hour at 00:00
+startOf(new Date(), 'minute') // Current minute at 00 seconds
 ```
 
 ## Related

@@ -18,11 +18,11 @@ function subtractDate(date: Date | string | number, value: number, unit: DateUni
 
 ## Parameters
 
-| Parameter | Type                       | Description          |
-| --------- | -------------------------- | -------------------- |
-| `date`    | `Date \| string \| number` | The date to modify   |
+| Parameter | Type                       | Description            |
+| --------- | -------------------------- | ---------------------- |
+| `date`    | `Date \| string \| number` | The date to modify     |
 | `value`   | `number`                   | The amount to subtract |
-| `unit`    | `DateUnit`                 | The unit of time     |
+| `unit`    | `DateUnit`                 | The unit of time       |
 
 ## Returns
 
@@ -31,12 +31,12 @@ function subtractDate(date: Date | string | number, value: number, unit: DateUni
 ## Examples
 
 ```js
-subtractDate(new Date(), 1, 'day')      // Yesterday
-subtractDate(new Date(), 2, 'week')     // 2 weeks ago
-subtractDate(new Date(), 1, 'month')    // 1 month ago
-subtractDate(new Date(), 1, 'year')     // 1 year ago
-subtractDate(new Date(), 30, 'minute')  // 30 minutes ago
-subtractDate(new Date(), 2, 'hour')     // 2 hours ago
+subtractDate(new Date(), 1, 'day') // Yesterday
+subtractDate(new Date(), 2, 'week') // 2 weeks ago
+subtractDate(new Date(), 1, 'month') // 1 month ago
+subtractDate(new Date(), 1, 'year') // 1 year ago
+subtractDate(new Date(), 30, 'minute') // 30 minutes ago
+subtractDate(new Date(), 2, 'hour') // 2 hours ago
 ```
 
 ## Related
