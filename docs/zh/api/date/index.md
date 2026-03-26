@@ -396,7 +396,7 @@ getWeekOfYear('2024-01-15') // 3
 getDayOfYear('2024-02-01') // 32
 ```
 
-### add / subtract / startOf / endOf
+### addDate / subtractDate / startOf / endOf
 
 日期操作函数。
 
