@@ -268,7 +268,8 @@ export { default as isNumberBrowser } from './isNumberBrowser'
 export { default as nextVersion, type Version } from './nextVersion'
 export { default as openUrl } from './openUrl'
 export { default as osVersion, type OsVersion } from './osVersion'
-export { default as URLParams, type ParamScope } from './URLParams'
+// URLParams 已合并到 Url 类，此处保留别名导出
+export { Url as URLParams, type ParamScope } from './url/index'
 export {
 	default as ua,
 	UAParser,
@@ -290,24 +291,10 @@ export {
 
 // ==================== URL Utilities ====================
 export {
-	url,
 	Url,
-	URL_PATTERNS,
-	VALUE_MAP,
-	convertValue,
 	// Query string parsing & building
 	parse as parseQueryString,
 	stringify as stringifyQueryString,
-	// URLSearchParams-like methods
-	get as getQueryParamValue,
-	getAll as getAllQueryParamValues,
-	has as hasQueryParam,
-	set as setQueryParam,
-	append as appendQueryParam,
-	deleteParam,
-	keys as getQueryParamKeys,
-	values as getQueryParamValues,
-	entries as getQueryParamEntries,
 	// URL property extraction
 	getOrigin,
 	getHost,
@@ -316,8 +303,6 @@ export {
 	getSearch,
 	getHash,
 	// Types
-	type URLPatternName,
-	type URLInput,
 	type ParseOptions,
 	type StringifyOptions,
 } from './url/index'

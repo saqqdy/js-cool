@@ -1,4 +1,9 @@
-import { URL_PATTERNS } from './url/utils'
+// URL 解析正则模式
+const URL_PATTERNS = {
+	origin: /^(https?:\/\/[^/?#]+)/,
+	host: /^https?:\/\/([^/]+)/,
+	port: /:\d+$/,
+} as const
 
 export interface DirParamsResult {
 	/** 完整 origin，如 'https://example.com' */

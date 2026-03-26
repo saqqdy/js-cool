@@ -1,235 +1,15 @@
 import { describe, expect, it } from 'vitest'
 import {
-	append,
-	append as appendQueryParam,
-	deleteParam,
-	deleteParam as deleteQueryParam,
-	entries,
-	get,
-	getAll,
-	getAll as getAllQueryParamValues,
-	getHash,
+	Url,
+	parse,
+	stringify,
+	getOrigin,
 	getHost,
 	getHostname,
-	getOrigin,
 	getPathname,
-	entries as getQueryParamEntries,
-	keys as getQueryParamKeys,
-	get as getQueryParamValue,
-	values as getQueryParamValues,
 	getSearch,
-	getHash as getURLHash,
-	getHost as getURLHost,
-	getHostname as getURLHostname,
-	getOrigin as getURLOrigin,
-	getPathname as getURLPathname,
-	getSearch as getURLSearch,
-	has,
-	has as hasQueryParam,
-	keys,
-	parse,
-	// Alias exports
-	parse as parseQueryString,
-	set,
-	set as setQueryParam,
-	stringify,
-	stringify as stringifyQueryString,
-	url,
-	Url,
-	URL_PATTERNS,
-	VALUE_MAP,
-	values,
+	getHash,
 } from '../src/url/index'
-
-describe('URL patterns', () => {
-	it('should have url patterns', () => {
-		expect(URL_PATTERNS).toBeDefined()
-		expect(VALUE_MAP).toBeDefined()
-	})
-
-	it('should have URLSearchParams-like methods', () => {
-		expect(typeof get).toBe('function')
-		expect(typeof getAll).toBe('function')
-		expect(typeof has).toBe('function')
-		expect(typeof set).toBe('function')
-		expect(typeof append).toBe('function')
-		expect(typeof deleteParam).toBe('function')
-		expect(typeof keys).toBe('function')
-		expect(typeof values).toBe('function')
-		expect(typeof entries).toBe('function')
-	})
-
-	it('should have URL property extraction methods', () => {
-		expect(typeof getOrigin).toBe('function')
-		expect(typeof getHost).toBe('function')
-		expect(typeof getHostname).toBe('function')
-		expect(typeof getPathname).toBe('function')
-		expect(typeof getSearch).toBe('function')
-		expect(typeof getHash).toBe('function')
-	})
-
-	it('should have parse and stringify methods', () => {
-		expect(typeof parse).toBe('function')
-		expect(typeof stringify).toBe('function')
-	})
-})
-
-describe('URL patterns - get', () => {
-	it('should get parameter value', () => {
-		expect(get('id', 'https://example.com?id=123')).toBe('123')
-		expect(get('name', 'https://example.com?name=John')).toBe('John')
-	})
-
-	it('should return null for non-existent parameter', () => {
-		expect(get('missing', 'https://example.com?id=123')).toBeNull()
-	})
-
-	it('should return null for empty key', () => {
-		expect(get('', 'https://example.com?id=123')).toBeNull()
-	})
-
-	it('should decode URI encoded values', () => {
-		expect(get('name', 'https://example.com?name=John%20Doe')).toBe('John Doe')
-	})
-})
-
-describe('URL patterns - getAll', () => {
-	it('should get all values for parameter', () => {
-		expect(getAll('id', 'https://example.com?id=1&id=2&id=3')).toEqual(['1', '2', '3'])
-	})
-
-	it('should return empty array for non-existent parameter', () => {
-		expect(getAll('missing', 'https://example.com?id=123')).toEqual([])
-	})
-})
-
-describe('URL patterns - has', () => {
-	it('should return true if parameter exists', () => {
-		expect(has('id', 'https://example.com?id=123')).toBeTruthy()
-	})
-
-	it('should return false if parameter does not exist', () => {
-		expect(has('missing', 'https://example.com?id=123')).toBeFalsy()
-	})
-})
-
-describe('URL patterns - set', () => {
-	it('should set parameter value', () => {
-		expect(set('page', 2, 'https://example.com')).toBe('https://example.com/?page=2')
-	})
-
-	it('should replace existing parameter', () => {
-		expect(set('id', 2, 'https://example.com?id=1')).toBe('https://example.com/?id=2')
-	})
-})
-
-describe('URL patterns - append', () => {
-	it('should append parameter value', () => {
-		expect(append('id', 2, 'https://example.com?id=1')).toBe('https://example.com/?id=1&id=2')
-	})
-})
-
-describe('URL patterns - delete', () => {
-	it('should delete parameter', () => {
-		expect(deleteParam('token', 'https://example.com?token=abc&id=1')).toBe(
-			'https://example.com/?id=1'
-		)
-	})
-})
-
-describe('URL patterns - keys/values/entries', () => {
-	it('should return all parameter names', () => {
-		expect(keys('https://example.com?a=1&b=2')).toEqual(['a', 'b'])
-	})
-
-	it('should return all parameter values', () => {
-		expect(values('https://example.com?a=1&b=2')).toEqual(['1', '2'])
-	})
-
-	it('should return all parameter entries', () => {
-		expect(entries('https://example.com?a=1&b=2')).toEqual([
-			['a', '1'],
-			['b', '2'],
-		])
-	})
-})
-
-describe('URL patterns - URL property extraction', () => {
-	it('should extract origin', () => {
-		expect(getOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
-		expect(getOrigin('/relative/path')).toBe('')
-	})
-
-	it('should extract host', () => {
-		expect(getHost('https://example.com:8080/path')).toBe('example.com:8080')
-	})
-
-	it('should extract hostname', () => {
-		expect(getHostname('https://example.com:8080/path')).toBe('example.com')
-	})
-
-	it('should extract pathname', () => {
-		expect(getPathname('https://example.com/api/users?id=1')).toBe('/api/users')
-	})
-
-	it('should extract search', () => {
-		expect(getSearch('https://example.com?key=value')).toBe('?key=value')
-		expect(getSearch('https://example.com')).toBe('')
-	})
-
-	it('should extract hash', () => {
-		expect(getHash('https://example.com/path#section')).toBe('#section')
-		expect(getHash('https://example.com')).toBe('')
-	})
-})
-
-describe('URL patterns - parse', () => {
-	it('should parse query string', () => {
-		expect(parse('?a=1&b=2')).toEqual({ a: '1', b: '2' })
-	})
-
-	it('should convert values with covert option', () => {
-		const result = parse('?a=1&b=true&c=null', { covert: true })
-		expect(result).toEqual({ a: 1, b: true, c: null })
-	})
-
-	it('should return empty object for empty string', () => {
-		expect(parse('')).toEqual({})
-	})
-})
-
-describe('URL patterns - stringify', () => {
-	it('should stringify object', () => {
-		expect(stringify({ a: 1, b: 2 })).toBe('?a=1&b=2')
-	})
-
-	it('should return empty string for null/undefined', () => {
-		expect(stringify(null as any)).toBe('')
-		expect(stringify(undefined as any)).toBe('')
-	})
-
-	it('should support withoutQuestionMark option', () => {
-		expect(stringify({ a: 1 }, { withQuestionMark: false })).toBe('a=1')
-	})
-})
-
-describe('URL_PATTERNS constant', () => {
-	it('should have queryParam pattern', () => {
-		expect(URL_PATTERNS.queryParam).toBeInstanceOf(RegExp)
-	})
-
-	it('should have origin pattern', () => {
-		expect(URL_PATTERNS.origin).toBeInstanceOf(RegExp)
-	})
-
-	it('should have host pattern', () => {
-		expect(URL_PATTERNS.host).toBeInstanceOf(RegExp)
-	})
-
-	it('should have url pattern', () => {
-		expect(URL_PATTERNS.url).toBeInstanceOf(RegExp)
-	})
-})
 
 // ============================================
 // Url Class Tests
@@ -239,12 +19,20 @@ describe('Url class', () => {
 	describe('constructor', () => {
 		it('should create instance with URL string', () => {
 			const u = new Url('https://example.com?id=123')
-			expect(u.toString()).toBe('https://example.com?id=123')
+			// URL constructor normalizes to include trailing slash for root
+			expect(u.toString()).toBe('https://example.com/?id=123')
 		})
 
 		it('should create empty instance', () => {
 			const u = new Url()
-			expect(u.toString()).toBe('')
+			// In happy-dom environment, location.href is available
+			expect(u.toString()).toBeTruthy()
+		})
+
+		it('should work with URL object', () => {
+			const urlObj = new URL('https://example.com?id=123')
+			const u = new Url(urlObj)
+			expect(u.get('id')).toBe('123')
 		})
 	})
 
@@ -352,35 +140,33 @@ describe('Url class', () => {
 			u.path('/users/', '/123/')
 			expect(u.toString()).toBe('https://example.com/users/123')
 		})
+	})
 
-		it('should set hash (chainable)', () => {
-			const u = new Url('https://example.com')
-			const result = u.setHash('section')
-			expect(result).toBe(u) // chainable
-			expect(u.toString()).toBe('https://example.com#section')
+	describe('hash operations', () => {
+		it('should get hash path', () => {
+			const u = new Url('https://example.com#/path?a=1')
+			expect(u.getHashPath()).toBe('/path')
 		})
 
-		it('should replace existing hash', () => {
-			const u = new Url('https://example.com#old')
-			u.setHash('new')
-			expect(u.toString()).toBe('https://example.com#new')
+		it('should set hash path', () => {
+			const u = new Url('https://example.com#/old?a=1')
+			u.setHashPath('/new')
+			expect(u.getHashPath()).toBe('/new')
 		})
 	})
 
-	describe('parse & stringify', () => {
-		it('should parse query string', () => {
-			const u = new Url('https://example.com?a=1&b=true')
-			expect(u.parse()).toEqual({ a: '1', b: 'true' })
-		})
-
-		it('should parse with covert option', () => {
-			const u = new Url('https://example.com?a=1&b=true')
-			expect(u.parse({ covert: true })).toEqual({ a: 1, b: true })
-		})
-
-		it('should convert to params object', () => {
+	describe('toObject / toDetailObject', () => {
+		it('should convert to object', () => {
 			const u = new Url('https://example.com?a=1&b=2')
-			expect(u.toParams()).toEqual({ a: '1', b: '2' })
+			expect(u.toObject()).toEqual({ a: '1', b: '2' })
+		})
+
+		it('should convert to detail object', () => {
+			const u = new Url('https://example.com?a=1#/path?b=2')
+			const detail = u.toDetailObject()
+			expect(detail.search).toEqual({ a: '1' })
+			expect(detail.hash).toEqual({ b: '2' })
+			expect(detail.all).toEqual({ a: '1', b: '2' })
 		})
 	})
 
@@ -389,7 +175,7 @@ describe('Url class', () => {
 			const result = new Url('https://api.example.com')
 				.path('users', '123')
 				.set('fields', 'name')
-				.setHash('section')
+				.setHashPath('section')
 				.toString()
 
 			expect(result).toBe('https://api.example.com/users/123?fields=name#section')
@@ -402,174 +188,202 @@ describe('Url class', () => {
 				.set('page', 2)
 				.toString()
 
-			// append adds at the end, set modifies/adds parameters
 			expect(result).toBe('https://example.com/?id=1&id=backup&page=2')
 		})
 	})
-})
 
-// ============================================
-// url Namespace Tests
-// ============================================
-
-describe('url namespace', () => {
-	describe('url.from factory', () => {
-		it('should create Url instance', () => {
-			const u = url.from('https://example.com?id=123')
-			expect(u).toBeInstanceOf(Url)
-			expect(u.get('id')).toBe('123')
+	describe('hash parameters', () => {
+		it('should get hash parameters', () => {
+			const u = new Url('https://example.com?id=1#/path?token=abc')
+			expect(u.get('id', 'search')).toBe('1')
+			expect(u.get('token', 'hash')).toBe('abc')
+			expect(u.get('id')).toBe('1') // hash doesn't have id, returns search
+			expect(u.get('token')).toBe('abc') // hash has token, returns hash value
 		})
 
-		it('should support chaining from factory', () => {
-			const result = url.from('https://example.com').set('page', 1).set('size', 10).toString()
-
-			expect(result).toBe('https://example.com/?page=1&size=10')
-		})
-	})
-
-	describe('static methods', () => {
-		it('should have parse method', () => {
-			expect(url.parse('?a=1&b=2')).toEqual({ a: '1', b: '2' })
+		it('should set hash parameters', () => {
+			const u = new Url('https://example.com')
+			u.set('token', 'abc', 'hash')
+			expect(u.toString()).toBe('https://example.com/#?token=abc')
 		})
 
-		it('should have stringify method', () => {
-			expect(url.stringify({ a: 1, b: 2 })).toBe('?a=1&b=2')
-		})
-
-		it('should have get method', () => {
-			expect(url.get('id', 'https://example.com?id=123')).toBe('123')
-		})
-
-		it('should have getAll method', () => {
-			expect(url.getAll('id', 'https://example.com?id=1&id=2')).toEqual(['1', '2'])
-		})
-
-		it('should have has method', () => {
-			expect(url.has('id', 'https://example.com?id=123')).toBeTruthy()
-		})
-
-		it('should have set method', () => {
-			expect(url.set('page', 2, 'https://example.com')).toBe('https://example.com/?page=2')
-		})
-
-		it('should have append method', () => {
-			expect(url.append('id', 2, 'https://example.com?id=1')).toBe(
-				'https://example.com/?id=1&id=2'
-			)
-		})
-
-		it('should have delete method', () => {
-			expect(url.delete('token', 'https://example.com?token=abc&id=1')).toBe(
-				'https://example.com/?id=1'
-			)
-		})
-
-		it('should have keys method', () => {
-			expect(url.keys('https://example.com?a=1&b=2')).toEqual(['a', 'b'])
-		})
-
-		it('should have values method', () => {
-			expect(url.values('https://example.com?a=1&b=2')).toEqual(['1', '2'])
-		})
-
-		it('should have entries method', () => {
-			expect(url.entries('https://example.com?a=1&b=2')).toEqual([
-				['a', '1'],
-				['b', '2'],
-			])
-		})
-
-		it('should have URL property extraction methods', () => {
-			expect(url.getOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
-			expect(url.getHost('https://example.com:8080/path')).toBe('example.com:8080')
-			expect(url.getHostname('https://example.com:8080/path')).toBe('example.com')
-			expect(url.getPathname('https://example.com/api/users')).toBe('/api/users')
-			expect(url.getSearch('https://example.com?key=value')).toBe('?key=value')
-			expect(url.getHash('https://example.com#section')).toBe('#section')
-		})
-	})
-
-	describe('constants', () => {
-		it('should have PATTERNS constant', () => {
-			expect(url.PATTERNS).toBe(URL_PATTERNS)
-		})
-
-		it('should have VALUE_MAP constant', () => {
-			expect(url.VALUE_MAP).toBe(VALUE_MAP)
+		it('should delete from specific scope', () => {
+			const u = new Url('https://example.com?id=1#/path?id=2')
+			u.delete('id', 'search')
+			expect(u.get('id')).toBe('2') // only hash parameter remains
 		})
 	})
 })
 
 // ============================================
-// Alias Export Tests
+// Static Methods Tests
 // ============================================
 
-describe('URL alias exports', () => {
-	describe('parseQueryString / stringifyQueryString', () => {
-		it('should work as parse/stringify aliases', () => {
-			expect(parseQueryString('?a=1&b=2')).toEqual({ a: '1', b: '2' })
-			expect(parseQueryString('?a=1&b=true', { covert: true })).toEqual({ a: 1, b: true })
-			expect(stringifyQueryString({ a: 1, b: 2 })).toBe('?a=1&b=2')
-			expect(stringifyQueryString({ a: 1 }, { withQuestionMark: false })).toBe('a=1')
+describe('Url static methods', () => {
+	describe('parse', () => {
+		it('should parse query string', () => {
+			expect(Url.parse('?a=1&b=2')).toEqual({ a: '1', b: '2' })
+		})
+
+		it('should convert values with convert option', () => {
+			const result = Url.parse('?a=1&b=true&c=null', { convert: true })
+			expect(result).toEqual({ a: 1, b: true, c: null })
+		})
+
+		it('should return empty object for empty string', () => {
+			expect(Url.parse('')).toEqual({})
 		})
 	})
 
-	describe('getQueryParamValue / getAllQueryParamValues', () => {
-		it('should work as get/getAll aliases', () => {
-			expect(getQueryParamValue('id', 'https://example.com?id=123')).toBe('123')
-			expect(getQueryParamValue('missing', 'https://example.com?id=123')).toBeNull()
-			expect(getAllQueryParamValues('id', 'https://example.com?id=1&id=2')).toEqual([
-				'1',
-				'2',
-			])
+	describe('stringify', () => {
+		it('should stringify object', () => {
+			expect(Url.stringify({ a: 1, b: 2 })).toBe('?a=1&b=2')
+		})
+
+		it('should return empty string for null/undefined', () => {
+			expect(Url.stringify(null as any)).toBe('')
+			expect(Url.stringify(undefined as any)).toBe('')
+		})
+
+		it('should support withQuestionMark option', () => {
+			expect(Url.stringify({ a: 1 }, { withQuestionMark: false })).toBe('a=1')
 		})
 	})
 
-	describe('hasQueryParam', () => {
-		it('should work as has alias', () => {
-			expect(hasQueryParam('id', 'https://example.com?id=123')).toBeTruthy()
-			expect(hasQueryParam('missing', 'https://example.com?id=123')).toBeFalsy()
+	describe('getOrigin', () => {
+		it('should extract origin', () => {
+			expect(Url.getOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
+		})
+
+		it('should return empty string for relative URL', () => {
+			expect(Url.getOrigin('/relative/path')).toBe('')
 		})
 	})
 
-	describe('setQueryParam / appendQueryParam', () => {
-		it('should work as set/append aliases', () => {
-			expect(setQueryParam('page', 2, 'https://example.com')).toBe(
-				'https://example.com/?page=2'
-			)
-			expect(appendQueryParam('id', 2, 'https://example.com?id=1')).toBe(
-				'https://example.com/?id=1&id=2'
-			)
+	describe('getHost', () => {
+		it('should extract host', () => {
+			expect(Url.getHost('https://example.com:8080/path')).toBe('example.com:8080')
 		})
 	})
 
-	describe('deleteQueryParam', () => {
-		it('should work as deleteParam alias', () => {
-			expect(deleteQueryParam('token', 'https://example.com?token=abc&id=1')).toBe(
-				'https://example.com/?id=1'
-			)
+	describe('getHostname', () => {
+		it('should extract hostname', () => {
+			expect(Url.getHostname('https://example.com:8080/path')).toBe('example.com')
 		})
 	})
 
-	describe('getQueryParamKeys / getQueryParamValues / getQueryParamEntries', () => {
-		it('should work as keys/values/entries aliases', () => {
-			expect(getQueryParamKeys('https://example.com?a=1&b=2')).toEqual(['a', 'b'])
-			expect(getQueryParamValues('https://example.com?a=1&b=2')).toEqual(['1', '2'])
-			expect(getQueryParamEntries('https://example.com?a=1&b=2')).toEqual([
-				['a', '1'],
-				['b', '2'],
-			])
+	describe('getPathname', () => {
+		it('should extract pathname', () => {
+			expect(Url.getPathname('https://example.com/api/users?id=1')).toBe('/api/users')
 		})
 	})
 
-	describe('URL property extraction aliases', () => {
-		it('should work as expected', () => {
-			expect(getURLOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
-			expect(getURLHost('https://example.com:8080/path')).toBe('example.com:8080')
-			expect(getURLHostname('https://example.com:8080/path')).toBe('example.com')
-			expect(getURLPathname('https://example.com/api/users?id=1')).toBe('/api/users')
-			expect(getURLSearch('https://example.com?key=value')).toBe('?key=value')
-			expect(getURLHash('https://example.com/path#section')).toBe('#section')
+	describe('getSearch', () => {
+		it('should extract search', () => {
+			expect(Url.getSearch('https://example.com?key=value')).toBe('?key=value')
+			expect(Url.getSearch('https://example.com')).toBe('')
 		})
+	})
+
+	describe('getHash', () => {
+		it('should extract hash', () => {
+			expect(Url.getHash('https://example.com/path#section')).toBe('#section')
+			expect(Url.getHash('https://example.com')).toBe('')
+		})
+	})
+
+	describe('current', () => {
+		it('should return Url instance or null depending on environment', () => {
+			// In happy-dom environment, location is available
+			const result = Url.current()
+			expect(result === null || result instanceof Url).toBeTruthy()
+		})
+	})
+
+	describe('fromQueryString', () => {
+		it('should create Url from query string', () => {
+			const u = Url.fromQueryString('a=1&b=2')
+			expect(u.toObject()).toEqual({ a: '1', b: '2' })
+		})
+	})
+})
+
+// ============================================
+// Standalone Function Tests
+// ============================================
+
+describe('standalone functions', () => {
+	describe('parse', () => {
+		it('should work as Url.parse alias', () => {
+			expect(parse('?a=1&b=2')).toEqual({ a: '1', b: '2' })
+		})
+	})
+
+	describe('stringify', () => {
+		it('should work as Url.stringify alias', () => {
+			expect(stringify({ a: 1, b: 2 })).toBe('?a=1&b=2')
+		})
+	})
+
+	describe('getOrigin', () => {
+		it('should work as Url.getOrigin alias', () => {
+			expect(getOrigin('https://example.com:8080/path')).toBe('https://example.com:8080')
+		})
+	})
+
+	describe('getHost', () => {
+		it('should work as Url.getHost alias', () => {
+			expect(getHost('https://example.com:8080/path')).toBe('example.com:8080')
+		})
+	})
+
+	describe('getHostname', () => {
+		it('should work as Url.getHostname alias', () => {
+			expect(getHostname('https://example.com:8080/path')).toBe('example.com')
+		})
+	})
+
+	describe('getPathname', () => {
+		it('should work as Url.getPathname alias', () => {
+			expect(getPathname('https://example.com/api/users?id=1')).toBe('/api/users')
+		})
+	})
+
+	describe('getSearch', () => {
+		it('should work as Url.getSearch alias', () => {
+			expect(getSearch('https://example.com?key=value')).toBe('?key=value')
+		})
+	})
+
+	describe('getHash', () => {
+		it('should work as Url.getHash alias', () => {
+			expect(getHash('https://example.com/path#section')).toBe('#section')
+		})
+	})
+})
+
+// ============================================
+// Iterator Tests
+// ============================================
+
+describe('Url iterator', () => {
+	it('should be iterable', () => {
+		const u = new Url('https://example.com?a=1&b=2')
+		const entries = [...u]
+		expect(entries).toEqual([
+			['a', '1'],
+			['b', '2'],
+		])
+	})
+})
+
+// ============================================
+// URLParams Alias Tests
+// ============================================
+
+describe('URLParams alias', () => {
+	it('should be Url class', async () => {
+		const { URLParams } = await import('../src/url/index')
+		expect(URLParams).toBe(Url)
 	})
 })
