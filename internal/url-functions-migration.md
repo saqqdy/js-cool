@@ -1,18 +1,18 @@
 # URL 函数迁移指南
 
-本文档说明旧的 URL 函数如何迁移到新的 `url` 命名空间。
+本文档说明旧的 URL 函数如何迁移到新的 `url` 命名空间和 `Url` 类。
 
 ## 快速对照表
 
-| 旧函数           | 新 `url` 替代   | 是否完全替代  | 说明            |
-| ---------------- | --------------- | ------------- | --------------- |
-| `parseUrlParam`  | `url.parse`     | ✅ 完全替代   | 功能相同        |
-| `spliceUrlParam` | `url.stringify` | ✅ 完全替代   | 功能相同        |
-| `getUrlParams`   | `url.parse`     | ✅ 完全替代   | 功能相同        |
-| `getUrlParam`    | `url.get`       | ✅ 完全替代   | 功能相同        |
-| `getQueryParams` | ❌ 无直接替代   | ⚠️ 需手动处理 | hash 内参数解析 |
-| `getQueryParam`  | ❌ 无直接替代   | ⚠️ 需手动处理 | hash 内参数解析 |
-| `getDirParam`    | `getDirParams`  | ✅ 已替代     | 返回结构更完善  |
+| 旧函数           | 新替代                        | 是否完全替代  | 说明            |
+| ---------------- | ----------------------------- | ------------- | --------------- |
+| `parseUrlParam`  | `url.parse` / `Url.parse`     | ✅ 完全替代   | 功能相同        |
+| `spliceUrlParam` | `url.stringify` / `Url.stringify` | ✅ 完全替代 | 功能相同        |
+| `getUrlParams`   | `url.parse` / `Url.parse`     | ✅ 完全替代   | 功能相同        |
+| `getUrlParam`    | `url.parse` + 取值 或 `new Url().get()` | ✅ 完全替代 | 功能相同 |
+| `getQueryParams` | `new Url().toObject('hash')`  | ✅ 完全替代   | hash 内参数解析 |
+| `getQueryParam`  | `new Url().get(name, 'hash')` | ✅ 完全替代   | hash 内参数解析 |
+| `getDirParam`    | `getDirParams`                | ✅ 已替代     | 返回结构更完善  |
 
 ---
 
@@ -36,7 +36,12 @@ import { url } from 'js-cool'
 url.parse('?key1=100&key2=true&key3=null')
 // { key1: '100', key2: 'true', key3: 'null' }
 
-url.parse('?key1=100&key2=true', { covert: true })
+url.parse('?key1=100&key2=true', { convert: true })
+// { key1: 100, key2: true }
+
+// 或使用 Url 类静态方法
+import { Url } from 'js-cool'
+Url.parse('?key1=100&key2=true', { convert: true })
 // { key1: 100, key2: true }
 ```
 
@@ -66,6 +71,11 @@ url.stringify({ name: '测试' }, { encode: true })
 
 url.stringify({ key1: '100' }, { withQuestionMark: false })
 // 'key1=100'
+
+// 或使用 Url 类静态方法
+import { Url } from 'js-cool'
+Url.stringify({ key1: '100' }, { withQuestionMark: false })
+// 'key1=100'
 ```
 
 ### 3. `getUrlParams` → `url.parse` ✅
@@ -86,11 +96,11 @@ import { url } from 'js-cool'
 url.parse('https://test.com?key1=100#/home?key1=200')
 // { key1: '100' }  ← 只取 search 部分
 
-url.parse('https://test.com?id=100&active=true', { covert: true })
+url.parse('https://test.com?id=100&active=true', { convert: true })
 // { id: 100, active: true }
 ```
 
-### 4. `getUrlParam` → `url.get` ✅
+### 4. `getUrlParam` → `new Url().get()` ✅
 
 ```js
 // 旧写法
@@ -103,18 +113,22 @@ getUrlParam('token') // 使用当前页面 URL
 // 'abc123'
 
 // 新写法
-import { url } from 'js-cool'
+import { Url } from 'js-cool'
 
-url.get('key1', 'https://test.com?key1=100#/home?key1=200')
-// '100'  ← 只取 search 部分
+new Url('https://test.com?key1=100#/home?key1=200').get('key1')
+// '100'  ← 默认 hash 优先
 
-url.get('token') // 使用当前页面 URL
+new Url('https://test.com?key1=100#/home?key1=200').get('key1', 'search')
+// '100'  ← 显式指定 search
+
+// 使用当前页面 URL
+Url.current()?.get('token')
 // 'abc123'
 ```
 
-### 5. `getQueryParams` / `getQueryParam` ⚠️ 无直接替代
+### 5. `getQueryParams` / `getQueryParam` → `new Url()` ✅
 
-这两个函数处理的是 **hash 内的参数**（`#` 后面的参数），新的 `url` 命名空间只处理 **search 参数**（`?` 后面的参数）。
+新的 `Url` 类已支持 hash 内参数解析，不再需要单独的函数：
 
 ```js
 // 旧写法 - 获取 hash 内参数
@@ -126,18 +140,31 @@ getQueryParams('https://test.com?key1=100#/home?key2=200')
 getQueryParam('key2', 'https://test.com?key1=100#/home?key2=200')
 // '200'
 
-// 新写法 - 需要手动处理
-import { url, Url } from 'js-cool'
+// 新写法 - 使用 Url 类
+import { Url } from 'js-cool'
 
 const u = new Url('https://test.com?key1=100#/home?key2=200')
-const hashParams = url.parse(u.hash.replace(/^#/, '').replace(/^[^?]*/, ''))
+
+// 获取 hash 内单个参数
+u.get('key2', 'hash')
+// '200'
+
+// 获取 hash 内所有参数
+u.toObject('hash')
 // { key2: '200' }
 
-// 或者提取 hash 中的查询字符串
-const hash = 'https://test.com#/home?key2=200'.split('#')[1] || ''
-const hashSearch = hash.includes('?') ? '?' + hash.split('?')[1] : ''
-url.parse(hashSearch)
-// { key2: '200' }
+// 获取所有参数（区分来源）
+u.toDetailObject()
+// {
+//   search: { key1: '100' },
+//   hash: { key2: '200' },
+//   all: { key1: '100', key2: '200' },
+//   source: { key1: 'search', key2: 'hash' }
+// }
+
+// 获取所有参数（hash 优先）
+u.toObject()
+// { key1: '100', key2: '200' }
 ```
 
 ### 6. `getDirParam` → `getDirParams` ✅
@@ -163,63 +190,85 @@ const { origin, segments } = getDirParams('https://example.com/user/123')
 
 ## 新增功能
 
-新的 `url` 命名空间提供了旧函数没有的功能：
+新的 `Url` 类提供了旧函数没有的功能：
 
 ### 链式 URL 构建
 
 ```js
-import { Url, url } from 'js-cool'
+import { Url } from 'js-cool'
 
-// 使用 Url 类
+// 链式构建 URL
 const newUrl = new Url('https://api.example.com')
   .path('users', '123', 'profile')
   .set('fields', 'name,email')
-  .setHash('section')
+  .setHashPath('section')
   .toString()
 // 'https://api.example.com/users/123/profile?fields=name,email#section'
 
-// 使用 url.from 工厂方法
-url.from('https://example.com?id=123').set('page', 2).delete('id').toString()
+// 修改现有 URL
+new Url('https://example.com?id=123')
+  .set('page', 2)
+  .delete('id')
+  .toString()
 // 'https://example.com?page=2'
 ```
 
 ### URLSearchParams-like 方法
 
 ```js
-import { url } from 'js-cool'
+import { Url } from 'js-cool'
+
+const u = new Url('https://example.com?id=1&id=2&token=abc')
 
 // 获取所有值（重复参数）
-url.getAll('id', 'https://example.com?id=1&id=2&id=3')
-// ['1', '2', '3']
+u.getAll('id')
+// ['1', '2']
 
 // 检查参数是否存在
-url.has('token', 'https://example.com?token=abc')
+u.has('token')
 // true
 
 // 追加参数（不覆盖）
-url.append('id', 2, 'https://example.com?id=1')
-// 'https://example.com/?id=1&id=2'
+u.append('id', '3').toString()
+// 'https://example.com/?id=1&id=2&id=3&token=abc'
 
 // 删除参数
-url.delete('token', 'https://example.com?token=abc&id=1')
-// 'https://example.com/?id=1'
+u.delete('token').toString()
+// 'https://example.com/?id=1&id=2'
 
-// 迭代
-url.keys('https://example.com?a=1&b=2')
-// ['a', 'b']
+// 获取所有参数名
+u.keys()
+// ['id', 'token']
 
-url.values('https://example.com?a=1&b=2')
-// ['1', '2']
+// 获取所有参数值
+u.values()
+// ['1', '2', 'abc']
 
-url.entries('https://example.com?a=1&b=2')
-// [['a', '1'], ['b', '2']]
+// 获取所有键值对
+u.entries()
+// [['id', '1'], ['id', '2'], ['token', 'abc']]
+
+// 清空所有参数
+u.clear().toString()
+// 'https://example.com/'
 ```
 
-### URL 属性提取
+### URL 属性访问
 
 ```js
-import { url } from 'js-cool'
+import { Url, url } from 'js-cool'
 
+const u = new Url('https://example.com:8080/api/users?id=1#section')
+
+// 实例属性
+u.origin    // 'https://example.com:8080'
+u.host      // 'example.com:8080'
+u.hostname  // 'example.com'
+u.pathname  // '/api/users'
+u.search    // '?id=1'
+u.hash      // '#section'
+
+// 静态方法（无需实例化）
 url.getOrigin('https://example.com:8080/path')
 // 'https://example.com:8080'
 
@@ -239,17 +288,77 @@ url.getHash('https://example.com/path#section')
 // '#section'
 ```
 
+### Hash 路径操作
+
+```js
+import { Url } from 'js-cool'
+
+const u = new Url('https://example.com#/user/profile?tab=settings')
+
+// 获取 hash 路径（# 后到 ? 之前的部分）
+u.getHashPath()
+// '/user/profile'
+
+// 设置 hash 路径
+u.setHashPath('/dashboard').toString()
+// 'https://example.com#/dashboard?tab=settings'
+```
+
+### 工厂方法
+
+```js
+import { Url } from 'js-cool'
+
+// 从当前页面 URL 创建
+Url.current()
+// Url 实例（浏览器环境）
+
+// 从查询字符串创建
+Url.fromQueryString('a=1&b=2').toObject()
+// { a: '1', b: '2' }
+```
+
+---
+
+## 直接导入 vs 命名空间导入
+
+```js
+// 方式 1: 命名空间导入
+import { url, Url } from 'js-cool'
+
+url.parse('?a=1')
+url.stringify({ a: 1 })
+url.getPathname('https://example.com/path')
+
+// 方式 2: 直接导入静态方法
+import { parse, stringify, getPathname } from 'js-cool/url'
+
+parse('?a=1')
+stringify({ a: 1 })
+getPathname('https://example.com/path')
+
+// 方式 3: 使用 Url 类
+import { Url } from 'js-cool'
+
+Url.parse('?a=1')
+Url.stringify({ a: 1 })
+new Url('https://example.com').get('id')
+```
+
 ---
 
 ## 总结
 
-| 场景                   | 推荐方案                                              |
-| ---------------------- | ----------------------------------------------------- |
-| 解析查询字符串         | `url.parse()` 替代 `parseUrlParam()`                  |
-| 构建查询字符串         | `url.stringify()` 替代 `spliceUrlParam()`             |
-| 获取单个参数（search） | `url.get()` 替代 `getUrlParam()`                      |
-| 获取所有参数（search） | `url.parse()` 替代 `getUrlParams()`                   |
-| 获取 hash 内参数       | 保留 `getQueryParams()`/`getQueryParam()`，或手动处理 |
-| 链式 URL 构建          | 使用 `new Url()` 或 `url.from()`                      |
+| 场景                   | 推荐方案                                          |
+| ---------------------- | ------------------------------------------------- |
+| 解析查询字符串         | `url.parse()` 或 `Url.parse()`                    |
+| 构建查询字符串         | `url.stringify()` 或 `Url.stringify()`            |
+| 获取单个参数（search） | `new Url(url).get(name, 'search')`                |
+| 获取单个参数（hash）   | `new Url(url).get(name, 'hash')`                  |
+| 获取所有参数（search） | `new Url(url).toObject('search')`                 |
+| 获取所有参数（hash）   | `new Url(url).toObject('hash')`                   |
+| 链式 URL 构建          | `new Url(url).set().delete().toString()`          |
+| URL 属性提取           | `url.getPathname()` 等静态方法                    |
+| 区分参数来源           | `new Url(url).toDetailObject()`                   |
 
-**注意**：`getQueryParams` 和 `getQueryParam` 两个函数建议保留使用，因为新的 `url` 模块不支持 hash 内参数解析。其他函数都可以用新的 `url` 命名空间替代。
+**推荐**：新的 `Url` 类功能更全面，支持 search 和 hash 两套参数系统，推荐统一使用 `Url` 类处理所有 URL 相关需求。

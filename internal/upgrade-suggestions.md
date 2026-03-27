@@ -709,13 +709,52 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-## 五、实施路线图
+## 五、已完成功能（v6.0.0）
+
+### ✅ URL 模块重构
+
+- `Url` 类支持 search 和 hash 双参数系统
+- 链式 URL 构建
+- URLSearchParams-like 方法
+- URL 属性提取静态方法
+- Hash 路径操作
+
+### ✅ UA 模块重构
+
+- 支持 HarmonyOS、iPadOS 检测
+- 支持钉钉、抖音、快手、小红书等国产应用检测
+- 支持微信、企业微信、微博、支付宝、淘宝等检测
+- 新增 `patterns` 模块统一管理正则
+
+### ✅ Date 模块增强
+
+- 新增 `DateParser` 类
+- 支持链式日期操作
+- 新增 `isBefore`、`isAfter`、`isSame`、`isBetween`
+- 新增 `addDate`、`subtractDate`、`startOf`、`endOf`
+- 新增 `minDate`、`maxDate`、`compareDate`
+
+### ✅ Scroll 模块新增
+
+- `scrollTo`、`scrollToTop`、`scrollToBottom`
+- `lockScroll`、`unlockScroll`
+- `isInViewport`、`getScrollbarWidth`
+- `getProgress`、`getDirection`
+
+### ✅ 其他增强
+
+- 新增 `safeParse`、`safeStringify` 安全 JSON 处理
+- 新增 `promiseFactory` Promise 工厂
+- 新增 Storage 错误类型：`StorageQuotaError`、`StorageUnavailableError`
+- 新增 Retry 错误类型：`RetryTimeoutError`、`RetryAbortError`
+
+---
+
+## 六、实施路线图
 
 ### Phase 1: 核心功能增强（v6.1）
 
 **时间**：2-3 周
-
-> **已完成（v6.0）**: `ua` 模块重构完成，支持 HarmonyOS、iPadOS、钉钉、抖音等检测
 
 | 任务                             | 优先级 | 预估工时 |
 | -------------------------------- | ------ | -------- |
@@ -753,12 +792,12 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-## 六、优先级总结
+## 七、优先级总结
 
 ### 立即实施（P0）
 
-1. ✅ 新增高频数组方法：`take`、`findIndex`、`partition`
-2. ✅ 新增对象方法：`mapValues`、`has`
+1. ✅ ~~新增高频数组方法：`take`、`findIndex`、`partition`~~
+2. ✅ ~~新增对象方法：`mapValues`、`has`~~
 3. ✅ 完善 TypeScript 类型定义
 4. ✅ 提升测试覆盖率到 90%+
 
@@ -785,8 +824,13 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-> 文档生成时间：2025-03-23
+> 文档更新时间：2026-03-27
 >
 > 基于 js-cool v6.0.0 版本分析
 >
-> **注意**: v6.0.0 已将 `client` 模块重命名为 `ua` (User Agent)，提供更强大的浏览器/设备/环境检测功能，包括 HarmonyOS、iPadOS、钉钉、抖音等检测支持。
+> **已完成功能**:
+> - `ua` 模块重构，支持 HarmonyOS、iPadOS、钉钉、抖音等检测
+> - `Url` 类支持 search/hash 双参数系统
+> - `DateParser` 类支持链式日期操作
+> - `scroll` 模块新增滚动工具
+> - `patterns` 模块统一管理正则模式
