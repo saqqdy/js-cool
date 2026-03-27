@@ -408,6 +408,34 @@ export const changelog: ChangelogData = {
 			descriptionZh: '在精确的时间间隔执行回调（秒、分、时）',
 			anchor: 'punctualtimer',
 		},
+
+		// Breaking Changes - Storage
+		{
+			type: 'breaking',
+			name: 'Storage API redesign',
+			category: 'Storage',
+			description:
+				'Individual storage functions replaced by unified `storage` namespace with local, session, cookie',
+			descriptionZh: '独立的存储函数被统一的 `storage` 命名空间替代，包含 local、session、cookie',
+			anchor: 'storage',
+		},
+		{
+			type: 'new',
+			name: 'storage namespace',
+			category: 'Storage',
+			description:
+				'Unified storage API with expiration support, generic types, and error handling',
+			descriptionZh: '统一的存储 API，支持过期时间、泛型类型和错误处理',
+			anchor: 'storage',
+		},
+		{
+			type: 'new',
+			name: 'StorageQuotaError / StorageUnavailableError',
+			category: 'Storage',
+			description: 'Proper error classes for storage quota exceeded and unavailable scenarios',
+			descriptionZh: '存储空间已满和不可用场景的错误类',
+			anchor: 'storage',
+		},
 	],
 }
 

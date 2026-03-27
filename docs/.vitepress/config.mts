@@ -181,18 +181,7 @@ export default defineConfig({
 						},
 						{
 							collapsed: true,
-							items: [
-								{ link: '/api/storage/set-cache', text: 'setCache' },
-								{ link: '/api/storage/get-cache', text: 'getCache' },
-								{ link: '/api/storage/del-cache', text: 'delCache' },
-								{ link: '/api/storage/set-session', text: 'setSession' },
-								{ link: '/api/storage/get-session', text: 'getSession' },
-								{ link: '/api/storage/del-session', text: 'delSession' },
-								{ link: '/api/storage/set-cookie', text: 'setCookie' },
-								{ link: '/api/storage/get-cookie', text: 'getCookie' },
-								{ link: '/api/storage/get-cookies', text: 'getCookies' },
-								{ link: '/api/storage/del-cookie', text: 'delCookie' },
-							],
+							items: [{ link: '/api/storage/', text: 'storage' }],
 							text: 'Storage',
 						},
 						{
@@ -516,18 +505,7 @@ export default defineConfig({
 						},
 						{
 							collapsed: true,
-							items: [
-								{ link: '/zh/api/storage/set-cache', text: 'setCache' },
-								{ link: '/zh/api/storage/get-cache', text: 'getCache' },
-								{ link: '/zh/api/storage/del-cache', text: 'delCache' },
-								{ link: '/zh/api/storage/set-session', text: 'setSession' },
-								{ link: '/zh/api/storage/get-session', text: 'getSession' },
-								{ link: '/zh/api/storage/del-session', text: 'delSession' },
-								{ link: '/zh/api/storage/set-cookie', text: 'setCookie' },
-								{ link: '/zh/api/storage/get-cookie', text: 'getCookie' },
-								{ link: '/zh/api/storage/get-cookies', text: 'getCookies' },
-								{ link: '/zh/api/storage/del-cookie', text: 'delCookie' },
-							],
+							items: [{ link: '/zh/api/storage/', text: 'storage' }],
 							text: '存储',
 						},
 						{

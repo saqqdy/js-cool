@@ -133,17 +133,13 @@ export const versions: Record<string, string> = {
 	isInViewport: '6.0.0',
 	getScrollbarWidth: '6.0.0',
 
-	// Storage
-	setCache: '1.0.0',
-	getCache: '1.0.0',
-	delCache: '1.0.0',
-	setSession: '1.0.0',
-	getSession: '1.0.0',
-	delSession: '1.0.0',
-	setCookie: '1.0.0',
-	getCookie: '1.0.0',
-	getCookies: '1.0.0',
-	delCookie: '1.0.0',
+	// Storage (v6.0.0 - unified namespace)
+	storage: '6.0.0',
+	local: '6.0.0',
+	session: '6.0.0',
+	cookie: '6.0.0',
+	StorageQuotaError: '6.0.0',
+	StorageUnavailableError: '6.0.0',
 
 	// Convert
 	base64ToArrayBuffer: '5.0.0',

@@ -53,15 +53,15 @@ import { randomString } from 'js-cool'
 
 ### 快速概览
 
-| 变更                  | v5.x                        | v6.x                           |
-| --------------------- | --------------------------- | ------------------------------ |
-| CJS 输出              | `dist/index.cjs.js`         | `dist/index.js`                |
-| IIFE 输出             | `dist/index.global.prod.js` | `dist/index.iife.min.js`       |
-| 全局变量              | `window.JsCool`             | `window.jsCool`                |
-| Client 模块           | `client`                    | `ua`                           |
-| `getAppVersion()`     | ✅                          | ❌ 使用 `appVersion()`         |
-| `getOsVersion()`      | ✅                          | ❌ 使用 `osVersion()`          |
-| `getScrollPosition()` | ✅                          | ❌ 使用 `scroll.getPosition()` |
+| 变更                  | v5.x                        | v6.x                                                 |
+| --------------------- | --------------------------- | ---------------------------------------------------- |
+| CJS 输出              | `dist/index.cjs.js`         | `dist/index.js`                                      |
+| IIFE 输出             | `dist/index.global.prod.js` | `dist/index.iife.min.js`                             |
+| 全局变量              | `window.JsCool`             | `window.jsCool`                                      |
+| Client 模块           | `client`                    | `ua`                                                 |
+| `getAppVersion()`     | ✅                          | ❌ 使用 `appVersion()`                               |
+| `getOsVersion()`      | ✅                          | ❌ 使用 `osVersion()`                                |
+| `getScrollPosition()` | ✅                          | ❌ 使用 `scroll.getPosition()`                       |
 | 存储函数              | `setCache`, `getCache`, ... | `storage.local`, `storage.session`, `storage.cookie` |
 
 ### `client` → `ua` 迁移
@@ -150,7 +150,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                                                                      |
 | **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
-| **存储**        | 浏览器存储          | `storage`, `local`, `session`, `cookie`                                                                                                                 |
+| **存储**        | 浏览器存储          | `storage`, `local`, `session`, `cookie`                                                                                                                                                                                                           |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **日期**        | 日期处理            | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
@@ -1164,11 +1164,11 @@ storage.cookie.set('name', 'value')
 
 // 设置完整选项
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,        // 过期时间（秒）
-  path: '/',             // Cookie 路径
+  expires: 86400, // 过期时间（秒）
+  path: '/', // Cookie 路径
   domain: '.example.com', // Cookie 域名
-  secure: true,          // 仅 HTTPS
-  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
+  secure: true, // 仅 HTTPS
+  sameSite: 'Strict', // 'Strict' | 'Lax' | 'None'
 })
 
 // 获取 cookie
@@ -1207,19 +1207,19 @@ try {
 
 #### 从 v5.x 迁移
 
-| v5.x | v6.x |
-|------|------|
-| `setCache(k, v)` | `storage.local.set(k, v)` |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
-| `getCache(k)` | `storage.local.get(k)` |
-| `delCache(k)` | `storage.local.delete(k)` |
-| `setSession(k, v)` | `storage.session.set(k, v)` |
-| `getSession(k)` | `storage.session.get(k)` |
-| `delSession(k)` | `storage.session.delete(k)` |
+| v5.x                       | v6.x                                             |
+| -------------------------- | ------------------------------------------------ |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  |
+| `getCache(k)`              | `storage.local.get(k)`                           |
+| `delCache(k)`              | `storage.local.delete(k)`                        |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      |
+| `getSession(k)`            | `storage.session.get(k)`                         |
+| `delSession(k)`            | `storage.session.delete(k)`                      |
 | `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
-| `getCookie(k)` | `storage.cookie.get(k)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(k)` | `storage.cookie.delete(k)` |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          |
+| `getCookies()`             | `storage.cookie.getAll()`                        |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       |
 
 ---
 

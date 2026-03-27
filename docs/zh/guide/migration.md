@@ -531,26 +531,26 @@ d.getDayOfYear() // 年中天数
 
 #### API 迁移对照表
 
-| v5.x | v6.x | 说明 |
-| ---- | ---- | ---- |
-| `setCache(k, v)` | `storage.local.set(k, v)` | 统一命名空间 |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | 选项对象 |
-| `getCache(k)` | `storage.local.get(k)` | 返回 `T \| null` |
-| `delCache(k)` | `storage.local.delete(k)` | 方法重命名 |
-| - | `storage.local.has(k)` | **新增**：检查是否存在 |
-| - | `storage.local.keys()` | **新增**：获取所有键名 |
-| - | `storage.local.clear()` | **新增**：清空所有 |
-| - | `storage.local.length` | **新增**：存储项数量 |
-| `setSession(k, v)` | `storage.session.set(k, v)` | 与 local 相同 |
-| `getSession(k)` | `storage.session.get(k)` | 与 local 相同 |
-| `delSession(k)` | `storage.session.delete(k)` | 与 local 相同 |
-| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | 选项对象 |
-| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | 选项对象 |
-| `getCookie(k)` | `storage.cookie.get(k)` | 返回 `string \| null` |
-| `getCookies()` | `storage.cookie.getAll()` | 方法重命名 |
-| `delCookie(k)` | `storage.cookie.delete(k)` | 方法重命名 |
-| - | `storage.cookie.has(k)` | **新增**：检查是否存在 |
-| - | `storage.cookie.clear()` | **新增**：清空所有 |
+| v5.x                       | v6.x                                             | 说明                   |
+| -------------------------- | ------------------------------------------------ | ---------------------- |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        | 统一命名空间           |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  | 选项对象               |
+| `getCache(k)`              | `storage.local.get(k)`                           | 返回 `T \| null`       |
+| `delCache(k)`              | `storage.local.delete(k)`                        | 方法重命名             |
+| -                          | `storage.local.has(k)`                           | **新增**：检查是否存在 |
+| -                          | `storage.local.keys()`                           | **新增**：获取所有键名 |
+| -                          | `storage.local.clear()`                          | **新增**：清空所有     |
+| -                          | `storage.local.length`                           | **新增**：存储项数量   |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      | 与 local 相同          |
+| `getSession(k)`            | `storage.session.get(k)`                         | 与 local 相同          |
+| `delSession(k)`            | `storage.session.delete(k)`                      | 与 local 相同          |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | 选项对象               |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | 选项对象               |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          | 返回 `string \| null`  |
+| `getCookies()`             | `storage.cookie.getAll()`                        | 方法重命名             |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       | 方法重命名             |
+| -                          | `storage.cookie.has(k)`                          | **新增**：检查是否存在 |
+| -                          | `storage.cookie.clear()`                         | **新增**：清空所有     |
 
 #### 新增功能
 
@@ -573,7 +573,10 @@ import { storage, local, session, cookie } from 'js-cool/storage'
 3. **泛型类型支持**：
 
 ```ts
-interface User { id: number; name: string }
+interface User {
+  id: number
+  name: string
+}
 storage.local.set<User>('user', { id: 1, name: 'John' })
 const user = storage.local.get<User>('user') // User | null
 ```

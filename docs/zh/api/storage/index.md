@@ -12,7 +12,14 @@ import { storage, local, session, cookie } from 'js-cool'
 import { storage, local, session, cookie } from 'js-cool/storage'
 
 // 导入类型
-import type { StorageOptions, CookieOptions, CookieDeleteOptions, StorageAPI, CookieAPI, StorageNamespace } from 'js-cool/storage'
+import type {
+  StorageOptions,
+  CookieOptions,
+  CookieDeleteOptions,
+  StorageAPI,
+  CookieAPI,
+  StorageNamespace,
+} from 'js-cool/storage'
 
 // 导入错误类
 import { StorageQuotaError, StorageUnavailableError } from 'js-cool/storage'
@@ -22,9 +29,9 @@ import { StorageQuotaError, StorageUnavailableError } from 'js-cool/storage'
 
 ```ts
 const storage: StorageNamespace = {
-  local: StorageAPI,    // localStorage
-  session: StorageAPI,  // sessionStorage
-  cookie: CookieAPI     // Cookie
+  local: StorageAPI, // localStorage
+  session: StorageAPI, // sessionStorage
+  cookie: CookieAPI, // Cookie
 }
 ```
 
@@ -42,24 +49,27 @@ localStorage API，支持过期时间和泛型类型。
 storage.local.set('name', 'John')
 storage.local.set('token', 'abc', { expires: 3600 }) // 1小时过期
 
-interface User { id: number; name: string }
+interface User {
+  id: number
+  name: string
+}
 storage.local.set<User>('user', { id: 1, name: 'John' })
 ```
 
 **参数：**
 
-| 参数 | 类型 | 描述 |
-|------|------|------|
-| `key` | `string` | 存储键名 |
-| `value` | `T` | 存储值（可 JSON 序列化） |
+| 参数      | 类型             | 描述                               |
+| --------- | ---------------- | ---------------------------------- |
+| `key`     | `string`         | 存储键名                           |
+| `value`   | `T`              | 存储值（可 JSON 序列化）           |
 | `options` | `StorageOptions` | 可选：`{ expires?: number }`（秒） |
 
 **异常：**
 
-| 错误 | 条件 |
-|------|------|
+| 错误                      | 条件                                 |
+| ------------------------- | ------------------------------------ |
 | `StorageUnavailableError` | localStorage 不可用（SSR、隐私模式） |
-| `StorageQuotaError` | 存储空间已满 |
+| `StorageQuotaError`       | 存储空间已满                         |
 
 #### get\<T\>(key): T | null
 
@@ -142,31 +152,31 @@ storage.cookie.set('token', 'abc123')
 
 // 带选项
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,        // 1天（秒）
-  path: '/',             // Cookie 路径
+  expires: 86400, // 1天（秒）
+  path: '/', // Cookie 路径
   domain: '.example.com', // Cookie 域名
-  secure: true,          // 仅 HTTPS
-  sameSite: 'Strict'     // SameSite 策略
+  secure: true, // 仅 HTTPS
+  sameSite: 'Strict', // SameSite 策略
 })
 ```
 
 **参数：**
 
-| 参数 | 类型 | 描述 |
-|------|------|------|
-| `name` | `string` | Cookie 名称 |
-| `value` | `string \| number \| boolean` | Cookie 值 |
-| `options` | `CookieOptions` | Cookie 选项 |
+| 参数      | 类型                          | 描述        |
+| --------- | ----------------------------- | ----------- |
+| `name`    | `string`                      | Cookie 名称 |
+| `value`   | `string \| number \| boolean` | Cookie 值   |
+| `options` | `CookieOptions`               | Cookie 选项 |
 
 **CookieOptions：**
 
-| 选项 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `expires` | `number` | `86400` | 过期时间（秒） |
-| `path` | `string` | `'/'` | Cookie 路径 |
-| `domain` | `string` | - | Cookie 域名 |
-| `secure` | `boolean` | `false` | 仅 HTTPS |
-| `sameSite` | `'Strict' \| 'Lax' \| 'None'` | - | SameSite 策略 |
+| 选项       | 类型                          | 默认值  | 描述           |
+| ---------- | ----------------------------- | ------- | -------------- |
+| `expires`  | `number`                      | `86400` | 过期时间（秒） |
+| `path`     | `string`                      | `'/'`   | Cookie 路径    |
+| `domain`   | `string`                      | -       | Cookie 域名    |
+| `secure`   | `boolean`                     | `false` | 仅 HTTPS       |
+| `sameSite` | `'Strict' \| 'Lax' \| 'None'` | -       | SameSite 策略  |
 
 ::: warning SameSite=None
 `SameSite=None` 需要 `secure: true` 才能生效。
@@ -199,7 +209,7 @@ storage.cookie.delete('token')
 // 需要匹配 path/domain
 storage.cookie.delete('session', {
   path: '/app',
-  domain: '.example.com'
+  domain: '.example.com',
 })
 ```
 
@@ -311,16 +321,16 @@ interface StorageNamespace {
 
 ## 从 v5.x 迁移
 
-| v5.x | v6.x |
-|------|------|
-| `setCache(k, v)` | `storage.local.set(k, v)` |
-| `setCache(k, v, s)` | `storage.local.set(k, v, { expires: s })` |
-| `getCache(k)` | `storage.local.get(k)` |
-| `delCache(k)` | `storage.local.delete(k)` |
-| `setSession(k, v)` | `storage.session.set(k, v)` |
-| `getSession(k)` | `storage.session.get(k)` |
-| `delSession(k)` | `storage.session.delete(k)` |
+| v5.x                 | v6.x                                       |
+| -------------------- | ------------------------------------------ |
+| `setCache(k, v)`     | `storage.local.set(k, v)`                  |
+| `setCache(k, v, s)`  | `storage.local.set(k, v, { expires: s })`  |
+| `getCache(k)`        | `storage.local.get(k)`                     |
+| `delCache(k)`        | `storage.local.delete(k)`                  |
+| `setSession(k, v)`   | `storage.session.set(k, v)`                |
+| `getSession(k)`      | `storage.session.get(k)`                   |
+| `delSession(k)`      | `storage.session.delete(k)`                |
 | `setCookie(k, v, s)` | `storage.cookie.set(k, v, { expires: s })` |
-| `getCookie(k)` | `storage.cookie.get(k)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(k)` | `storage.cookie.delete(k)` |
+| `getCookie(k)`       | `storage.cookie.get(k)`                    |
+| `getCookies()`       | `storage.cookie.getAll()`                  |
+| `delCookie(k)`       | `storage.cookie.delete(k)`                 |

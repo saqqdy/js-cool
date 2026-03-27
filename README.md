@@ -61,15 +61,15 @@ import { randomString } from 'js-cool'
 
 ### Quick Summary
 
-| Change                | v5.x                        | v6.x                          |
-| --------------------- | --------------------------- | ----------------------------- |
-| CJS output            | `dist/index.cjs.js`         | `dist/index.js`               |
-| IIFE output           | `dist/index.global.prod.js` | `dist/index.iife.min.js`      |
-| Global variable       | `window.JsCool`             | `window.jsCool`               |
-| Client module         | `client`                    | `ua`                          |
-| `getAppVersion()`     | ✅                          | ❌ Use `appVersion()`         |
-| `getOsVersion()`      | ✅                          | ❌ Use `osVersion()`          |
-| `getScrollPosition()` | ✅                          | ❌ Use `scroll.getPosition()` |
+| Change                | v5.x                        | v6.x                                                 |
+| --------------------- | --------------------------- | ---------------------------------------------------- |
+| CJS output            | `dist/index.cjs.js`         | `dist/index.js`                                      |
+| IIFE output           | `dist/index.global.prod.js` | `dist/index.iife.min.js`                             |
+| Global variable       | `window.JsCool`             | `window.jsCool`                                      |
+| Client module         | `client`                    | `ua`                                                 |
+| `getAppVersion()`     | ✅                          | ❌ Use `appVersion()`                                |
+| `getOsVersion()`      | ✅                          | ❌ Use `osVersion()`                                 |
+| `getScrollPosition()` | ✅                          | ❌ Use `scroll.getPosition()`                        |
 | Storage functions     | `setCache`, `getCache`, ... | `storage.local`, `storage.session`, `storage.cookie` |
 
 ### `client` → `ua` Migration
@@ -158,7 +158,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`, `download`, `saveFile`, `downloadFile`, `downloadUrlFile`                                                                                                           |
 | **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
-| **Storage**       | Browser storage                   | `storage`, `local`, `session`, `cookie`                                                                                                                 |
+| **Storage**       | Browser storage                   | `storage`, `local`, `session`, `cookie`                                                                                                                                                                                                           |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
@@ -1341,11 +1341,11 @@ storage.cookie.set('name', 'value')
 
 // Set with full options
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,        // Expiration in seconds
-  path: '/',             // Cookie path
+  expires: 86400, // Expiration in seconds
+  path: '/', // Cookie path
   domain: '.example.com', // Cookie domain
-  secure: true,          // HTTPS only
-  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
+  secure: true, // HTTPS only
+  sameSite: 'Strict', // 'Strict' | 'Lax' | 'None'
 })
 
 // Get cookie
@@ -1384,19 +1384,19 @@ try {
 
 #### Migration from v5.x
 
-| v5.x | v6.x |
-|------|------|
-| `setCache(k, v)` | `storage.local.set(k, v)` |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
-| `getCache(k)` | `storage.local.get(k)` |
-| `delCache(k)` | `storage.local.delete(k)` |
-| `setSession(k, v)` | `storage.session.set(k, v)` |
-| `getSession(k)` | `storage.session.get(k)` |
-| `delSession(k)` | `storage.session.delete(k)` |
+| v5.x                       | v6.x                                             |
+| -------------------------- | ------------------------------------------------ |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  |
+| `getCache(k)`              | `storage.local.get(k)`                           |
+| `delCache(k)`              | `storage.local.delete(k)`                        |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      |
+| `getSession(k)`            | `storage.session.get(k)`                         |
+| `delSession(k)`            | `storage.session.delete(k)`                      |
 | `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
-| `getCookie(k)` | `storage.cookie.get(k)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(k)` | `storage.cookie.delete(k)` |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          |
+| `getCookies()`             | `storage.cookie.getAll()`                        |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       |
 
 ---
 

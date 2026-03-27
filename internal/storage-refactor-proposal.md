@@ -14,28 +14,28 @@
 
 ### 1.1 方法列表
 
-| 方法 | 存储类型 | 功能 |
-|------|----------|------|
-| `setCache` | localStorage | 设置（支持过期） |
-| `getCache` | localStorage | 获取（自动过期清理） |
-| `delCache` | localStorage | 删除 |
-| `setSession` | sessionStorage | 设置（支持过期） |
+| 方法         | 存储类型       | 功能                 |
+| ------------ | -------------- | -------------------- |
+| `setCache`   | localStorage   | 设置（支持过期）     |
+| `getCache`   | localStorage   | 获取（自动过期清理） |
+| `delCache`   | localStorage   | 删除                 |
+| `setSession` | sessionStorage | 设置（支持过期）     |
 | `getSession` | sessionStorage | 获取（自动过期清理） |
-| `delSession` | sessionStorage | 删除 |
-| `setCookie` | Cookie | 设置 |
-| `getCookie` | Cookie | 获取单个 |
-| `getCookies` | Cookie | 获取所有 |
-| `delCookie` | Cookie | 删除 |
+| `delSession` | sessionStorage | 删除                 |
+| `setCookie`  | Cookie         | 设置                 |
+| `getCookie`  | Cookie         | 获取单个             |
+| `getCookies` | Cookie         | 获取所有             |
+| `delCookie`  | Cookie         | 删除                 |
 
 ### 1.2 现有问题
 
-| 问题 | 描述 |
-|------|------|
-| API 不一致 | `setCache` 有错误类型，`setSession` 没有；参数风格不统一 |
-| Cookie 功能缺失 | 缺少 `domain`、`secure` 选项 |
-| 类型不完整 | `getSession` 返回 `any`，缺少泛型支持 |
-| 缺少实用方法 | 没有 `has`、`clear`、`keys` 等 |
-| 命名冗余 | `getCache`/`setCache` vs `getCookie`/`setCookie` 风格不一 |
+| 问题            | 描述                                                      |
+| --------------- | --------------------------------------------------------- |
+| API 不一致      | `setCache` 有错误类型，`setSession` 没有；参数风格不统一  |
+| Cookie 功能缺失 | 缺少 `domain`、`secure` 选项                              |
+| 类型不完整      | `getSession` 返回 `any`，缺少泛型支持                     |
+| 缺少实用方法    | 没有 `has`、`clear`、`keys` 等                            |
+| 命名冗余        | `getCache`/`setCache` vs `getCookie`/`setCookie` 风格不一 |
 
 ---
 
@@ -197,7 +197,14 @@ interface StorageNamespace {
 
 // 导出
 export const storage: StorageNamespace
-export type { StorageOptions, CookieOptions, CookieDeleteOptions, StorageAPI, CookieAPI, StorageNamespace }
+export type {
+  StorageOptions,
+  CookieOptions,
+  CookieDeleteOptions,
+  StorageAPI,
+  CookieAPI,
+  StorageNamespace,
+}
 ```
 
 ---
@@ -219,15 +226,15 @@ src/storage/
 
 ### 3.2 文件职责
 
-| 文件 | 职责 |
-|------|------|
-| `types.ts` | 所有类型定义 |
-| `errors.ts` | `StorageQuotaError`、`StorageUnavailableError` |
-| `utils.ts` | `isStorageAvailable`、`parseStorageData` 等工具函数 |
-| `local.ts` | localStorage API 实现 |
-| `session.ts` | sessionStorage API 实现 |
-| `cookie.ts` | Cookie API 实现 |
-| `index.ts` | 组装并导出 `storage` 命名空间 |
+| 文件         | 职责                                                |
+| ------------ | --------------------------------------------------- |
+| `types.ts`   | 所有类型定义                                        |
+| `errors.ts`  | `StorageQuotaError`、`StorageUnavailableError`      |
+| `utils.ts`   | `isStorageAvailable`、`parseStorageData` 等工具函数 |
+| `local.ts`   | localStorage API 实现                               |
+| `session.ts` | sessionStorage API 实现                             |
+| `cookie.ts`  | Cookie API 实现                                     |
+| `index.ts`   | 组装并导出 `storage` 命名空间                       |
 
 ---
 
@@ -304,7 +311,7 @@ export interface StorageNamespace {
 
 ### 4.2 errors.ts - 错误类型
 
-```ts
+````ts
 /**
  * Storage error types
  * @module storage/errors
@@ -343,7 +350,7 @@ export class StorageUnavailableError extends Error {
     this.name = 'StorageUnavailableError'
   }
 }
-```
+````
 
 ### 4.3 utils.ts - 工具函数
 
@@ -375,10 +382,7 @@ export function isStorageAvailable(storage: Storage): boolean {
  * @param data - 原始存储字符串
  * @param removeExpired - 过期时删除的回调
  */
-export function parseStorageData<T>(
-  data: string | null,
-  removeExpired: () => void
-): T | null {
+export function parseStorageData<T>(data: string | null, removeExpired: () => void): T | null {
   if (!data) return null
 
   try {
@@ -454,7 +458,9 @@ export const local: StorageAPI = {
       return parseStorageData<T>(data, () => {
         try {
           localStorage.removeItem(name)
-        } catch { /* ignore */ }
+        } catch {
+          /* ignore */
+        }
       })
     } catch {
       return null
@@ -464,7 +470,9 @@ export const local: StorageAPI = {
   delete(name: string): void {
     try {
       localStorage.removeItem(name)
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   },
 
   has(name: string): boolean {
@@ -486,7 +494,9 @@ export const local: StorageAPI = {
   clear(): void {
     try {
       localStorage.clear()
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   },
 
   get length(): number {
@@ -539,7 +549,9 @@ export const session: StorageAPI = {
       return parseStorageData<T>(data, () => {
         try {
           sessionStorage.removeItem(name)
-        } catch { /* ignore */ }
+        } catch {
+          /* ignore */
+        }
       })
     } catch {
       return null
@@ -549,7 +561,9 @@ export const session: StorageAPI = {
   delete(name: string): void {
     try {
       sessionStorage.removeItem(name)
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   },
 
   has(name: string): boolean {
@@ -571,7 +585,9 @@ export const session: StorageAPI = {
   clear(): void {
     try {
       sessionStorage.clear()
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   },
 
   get length(): number {
@@ -599,13 +615,7 @@ import type { CookieAPI, CookieOptions, CookieDeleteOptions } from './types'
  */
 export const cookie: CookieAPI = {
   set(name: string, value: string | number | boolean, options?: CookieOptions): void {
-    const {
-      expires = 86400,
-      path = '/',
-      domain,
-      secure = false,
-      sameSite,
-    } = options ?? {}
+    const { expires = 86400, path = '/', domain, secure = false, sameSite } = options ?? {}
 
     const date = new Date(Date.now() + expires * 1000)
     let cookieStr = `${name}=${encodeURIComponent(value)};expires=${date.toUTCString()};path=${path}`
@@ -679,7 +689,7 @@ export const cookie: CookieAPI = {
 
 ### 4.7 index.ts - 入口文件
 
-```ts
+````ts
 /**
  * Storage module - Unified storage API
  *
@@ -735,7 +745,7 @@ export const storage = {
 } as const
 
 export default storage
-```
+````
 
 ---
 
@@ -777,23 +787,26 @@ import { storage } from 'js-cool'
 
 // 基础用法
 storage.local.set('name', 'John')
-storage.local.get('name')  // 'John'
-storage.local.has('name')  // true
+storage.local.get('name') // 'John'
+storage.local.has('name') // true
 storage.local.delete('name')
-storage.local.get('name')  // null
+storage.local.get('name') // null
 
 // 存储对象
-interface User { id: number; name: string }
+interface User {
+  id: number
+  name: string
+}
 storage.local.set<User>('user', { id: 1, name: 'John' })
-const user = storage.local.get<User>('user')  // { id: 1, name: 'John' }
+const user = storage.local.get<User>('user') // { id: 1, name: 'John' }
 
 // 带过期时间
-storage.local.set('token', 'abc123', { expires: 3600 })  // 1小时过期
+storage.local.set('token', 'abc123', { expires: 3600 }) // 1小时过期
 
 // 批量操作
-storage.local.keys()      // ['user', 'token']
-storage.local.length      // 2
-storage.local.clear()     // 清空所有
+storage.local.keys() // ['user', 'token']
+storage.local.length // 2
+storage.local.clear() // 清空所有
 
 // 错误处理
 try {
@@ -828,20 +841,20 @@ import { storage } from 'js-cool'
 
 // 基础用法
 storage.cookie.set('token', 'abc123')
-storage.cookie.get('token')  // 'abc123'
-storage.cookie.has('token')  // true
+storage.cookie.get('token') // 'abc123'
+storage.cookie.has('token') // true
 
 // 带选项
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,       // 1天
+  expires: 86400, // 1天
   path: '/',
   domain: '.example.com',
   secure: true,
-  sameSite: 'Strict'
+  sameSite: 'Strict',
 })
 
 // 获取所有
-storage.cookie.getAll()  // { token: 'abc123', session: 'xyz' }
+storage.cookie.getAll() // { token: 'abc123', session: 'xyz' }
 
 // 删除（需匹配 path/domain）
 storage.cookie.delete('session', { path: '/', domain: '.example.com' })
@@ -856,28 +869,28 @@ storage.cookie.clear()
 
 ### 7.1 对照表
 
-| 旧 API | 新 API |
-|--------|--------|
-| `setCache('key', value)` | `storage.local.set('key', value)` |
-| `setCache('key', value, 60)` | `storage.local.set('key', value, { expires: 60 })` |
-| `getCache('key')` | `storage.local.get('key')` |
-| `delCache('key')` | `storage.local.delete('key')` |
-| - | `storage.local.has('key')` |
-| - | `storage.local.keys()` |
-| - | `storage.local.clear()` |
-| `setSession('key', value)` | `storage.session.set('key', value)` |
-| `setSession('key', value, 60)` | `storage.session.set('key', value, { expires: 60 })` |
-| `getSession('key')` | `storage.session.get('key')` |
-| `delSession('key')` | `storage.session.delete('key')` |
-| - | `storage.session.has('key')` |
-| - | `storage.session.clear()` |
-| `setCookie('key', value, 60)` | `storage.cookie.set('key', value, { expires: 60 })` |
+| 旧 API                             | 新 API                                                         |
+| ---------------------------------- | -------------------------------------------------------------- |
+| `setCache('key', value)`           | `storage.local.set('key', value)`                              |
+| `setCache('key', value, 60)`       | `storage.local.set('key', value, { expires: 60 })`             |
+| `getCache('key')`                  | `storage.local.get('key')`                                     |
+| `delCache('key')`                  | `storage.local.delete('key')`                                  |
+| -                                  | `storage.local.has('key')`                                     |
+| -                                  | `storage.local.keys()`                                         |
+| -                                  | `storage.local.clear()`                                        |
+| `setSession('key', value)`         | `storage.session.set('key', value)`                            |
+| `setSession('key', value, 60)`     | `storage.session.set('key', value, { expires: 60 })`           |
+| `getSession('key')`                | `storage.session.get('key')`                                   |
+| `delSession('key')`                | `storage.session.delete('key')`                                |
+| -                                  | `storage.session.has('key')`                                   |
+| -                                  | `storage.session.clear()`                                      |
+| `setCookie('key', value, 60)`      | `storage.cookie.set('key', value, { expires: 60 })`            |
 | `setCookie('key', value, 60, '/')` | `storage.cookie.set('key', value, { expires: 60, path: '/' })` |
-| `getCookie('key')` | `storage.cookie.get('key')` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie('key')` | `storage.cookie.delete('key')` |
-| - | `storage.cookie.has('key')` |
-| - | `storage.cookie.clear()` |
+| `getCookie('key')`                 | `storage.cookie.get('key')`                                    |
+| `getCookies()`                     | `storage.cookie.getAll()`                                      |
+| `delCookie('key')`                 | `storage.cookie.delete('key')`                                 |
+| -                                  | `storage.cookie.has('key')`                                    |
+| -                                  | `storage.cookie.clear()`                                       |
 
 ### 7.2 迁移示例
 
@@ -904,7 +917,7 @@ storage.local.delete('token')
 storage.cookie.set('session', 'xyz', {
   expires: 86400,
   path: '/',
-  secure: true
+  secure: true,
 })
 const session = storage.cookie.get('session')
 ```
@@ -934,18 +947,18 @@ delCookie   → storage.cookie.delete
 
 ### 8.2 参数变更
 
-| 变更 | 旧 | 新 |
-|------|----|----|
-| 过期参数位置 | `setCache(k, v, 60)` | `storage.local.set(k, v, { expires: 60 })` |
-| Cookie 参数 | `setCookie(k, v, seconds, path, samesite)` | `storage.cookie.set(k, v, { expires, path, sameSite })` |
-| 删除方法名 | `delCache` | `storage.local.delete` |
+| 变更         | 旧                                         | 新                                                      |
+| ------------ | ------------------------------------------ | ------------------------------------------------------- |
+| 过期参数位置 | `setCache(k, v, 60)`                       | `storage.local.set(k, v, { expires: 60 })`              |
+| Cookie 参数  | `setCookie(k, v, seconds, path, samesite)` | `storage.cookie.set(k, v, { expires, path, sameSite })` |
+| 删除方法名   | `delCache`                                 | `storage.local.delete`                                  |
 
 ### 8.3 类型变更
 
-| 变更 | 旧 | 新 |
-|------|----|----|
-| getSession 返回类型 | `any` | `T \| null` |
-| getCache 返回类型 | `unknown \| null` | `T \| null` |
+| 变更                | 旧                | 新          |
+| ------------------- | ----------------- | ----------- |
+| getSession 返回类型 | `any`             | `T \| null` |
+| getCache 返回类型   | `unknown \| null` | `T \| null` |
 
 ---
 

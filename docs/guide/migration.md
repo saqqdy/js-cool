@@ -531,26 +531,26 @@ The storage functions have been completely redesigned with a unified namespace A
 
 #### API Migration Table
 
-| v5.x | v6.x | Notes |
-| ---- | ---- | ----- |
-| `setCache(k, v)` | `storage.local.set(k, v)` | Unified namespace |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | Options object |
-| `getCache(k)` | `storage.local.get(k)` | Returns `T \| null` |
-| `delCache(k)` | `storage.local.delete(k)` | Method renamed |
-| - | `storage.local.has(k)` | **NEW**: Check existence |
-| - | `storage.local.keys()` | **NEW**: Get all keys |
-| - | `storage.local.clear()` | **NEW**: Clear all |
-| - | `storage.local.length` | **NEW**: Item count |
-| `setSession(k, v)` | `storage.session.set(k, v)` | Same as local |
-| `getSession(k)` | `storage.session.get(k)` | Same as local |
-| `delSession(k)` | `storage.session.delete(k)` | Same as local |
-| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object |
-| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object |
-| `getCookie(k)` | `storage.cookie.get(k)` | Returns `string \| null` |
-| `getCookies()` | `storage.cookie.getAll()` | Method renamed |
-| `delCookie(k)` | `storage.cookie.delete(k)` | Method renamed |
-| - | `storage.cookie.has(k)` | **NEW**: Check existence |
-| - | `storage.cookie.clear()` | **NEW**: Clear all |
+| v5.x                       | v6.x                                             | Notes                    |
+| -------------------------- | ------------------------------------------------ | ------------------------ |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        | Unified namespace        |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  | Options object           |
+| `getCache(k)`              | `storage.local.get(k)`                           | Returns `T \| null`      |
+| `delCache(k)`              | `storage.local.delete(k)`                        | Method renamed           |
+| -                          | `storage.local.has(k)`                           | **NEW**: Check existence |
+| -                          | `storage.local.keys()`                           | **NEW**: Get all keys    |
+| -                          | `storage.local.clear()`                          | **NEW**: Clear all       |
+| -                          | `storage.local.length`                           | **NEW**: Item count      |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      | Same as local            |
+| `getSession(k)`            | `storage.session.get(k)`                         | Same as local            |
+| `delSession(k)`            | `storage.session.delete(k)`                      | Same as local            |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object           |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object           |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          | Returns `string \| null` |
+| `getCookies()`             | `storage.cookie.getAll()`                        | Method renamed           |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       | Method renamed           |
+| -                          | `storage.cookie.has(k)`                          | **NEW**: Check existence |
+| -                          | `storage.cookie.clear()`                         | **NEW**: Clear all       |
 
 #### New Features
 
@@ -573,7 +573,10 @@ import { storage, local, session, cookie } from 'js-cool/storage'
 3. **Generic type support**:
 
 ```ts
-interface User { id: number; name: string }
+interface User {
+  id: number
+  name: string
+}
 storage.local.set<User>('user', { id: 1, name: 'John' })
 const user = storage.local.get<User>('user') // User | null
 ```

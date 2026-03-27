@@ -12,7 +12,14 @@ import { storage, local, session, cookie } from 'js-cool'
 import { storage, local, session, cookie } from 'js-cool/storage'
 
 // Import types
-import type { StorageOptions, CookieOptions, CookieDeleteOptions, StorageAPI, CookieAPI, StorageNamespace } from 'js-cool/storage'
+import type {
+  StorageOptions,
+  CookieOptions,
+  CookieDeleteOptions,
+  StorageAPI,
+  CookieAPI,
+  StorageNamespace,
+} from 'js-cool/storage'
 
 // Import error classes
 import { StorageQuotaError, StorageUnavailableError } from 'js-cool/storage'
@@ -22,9 +29,9 @@ import { StorageQuotaError, StorageUnavailableError } from 'js-cool/storage'
 
 ```ts
 const storage: StorageNamespace = {
-  local: StorageAPI,    // localStorage
-  session: StorageAPI,  // sessionStorage
-  cookie: CookieAPI     // Cookie
+  local: StorageAPI, // localStorage
+  session: StorageAPI, // sessionStorage
+  cookie: CookieAPI, // Cookie
 }
 ```
 
@@ -42,24 +49,27 @@ Set an item in localStorage.
 storage.local.set('name', 'John')
 storage.local.set('token', 'abc', { expires: 3600 }) // 1 hour
 
-interface User { id: number; name: string }
+interface User {
+  id: number
+  name: string
+}
 storage.local.set<User>('user', { id: 1, name: 'John' })
 ```
 
 **Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `key` | `string` | Storage key |
-| `value` | `T` | Value to store (JSON serializable) |
+| Parameter | Type             | Description                                |
+| --------- | ---------------- | ------------------------------------------ |
+| `key`     | `string`         | Storage key                                |
+| `value`   | `T`              | Value to store (JSON serializable)         |
 | `options` | `StorageOptions` | Optional: `{ expires?: number }` (seconds) |
 
 **Throws:**
 
-| Error | Condition |
-|-------|-----------|
+| Error                     | Condition                                         |
+| ------------------------- | ------------------------------------------------- |
 | `StorageUnavailableError` | localStorage is not available (SSR, private mode) |
-| `StorageQuotaError` | Storage quota exceeded |
+| `StorageQuotaError`       | Storage quota exceeded                            |
 
 #### get\<T\>(key): T | null
 
@@ -142,31 +152,31 @@ storage.cookie.set('token', 'abc123')
 
 // With options
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,        // 1 day in seconds
-  path: '/',             // Cookie path
+  expires: 86400, // 1 day in seconds
+  path: '/', // Cookie path
   domain: '.example.com', // Cookie domain
-  secure: true,          // HTTPS only
-  sameSite: 'Strict'     // SameSite policy
+  secure: true, // HTTPS only
+  sameSite: 'Strict', // SameSite policy
 })
 ```
 
 **Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `name` | `string` | Cookie name |
-| `value` | `string \| number \| boolean` | Cookie value |
-| `options` | `CookieOptions` | Cookie options |
+| Parameter | Type                          | Description    |
+| --------- | ----------------------------- | -------------- |
+| `name`    | `string`                      | Cookie name    |
+| `value`   | `string \| number \| boolean` | Cookie value   |
+| `options` | `CookieOptions`               | Cookie options |
 
 **CookieOptions:**
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `expires` | `number` | `86400` | Expiration in seconds |
-| `path` | `string` | `'/'` | Cookie path |
-| `domain` | `string` | - | Cookie domain |
-| `secure` | `boolean` | `false` | HTTPS only |
-| `sameSite` | `'Strict' \| 'Lax' \| 'None'` | - | SameSite policy |
+| Option     | Type                          | Default | Description           |
+| ---------- | ----------------------------- | ------- | --------------------- |
+| `expires`  | `number`                      | `86400` | Expiration in seconds |
+| `path`     | `string`                      | `'/'`   | Cookie path           |
+| `domain`   | `string`                      | -       | Cookie domain         |
+| `secure`   | `boolean`                     | `false` | HTTPS only            |
+| `sameSite` | `'Strict' \| 'Lax' \| 'None'` | -       | SameSite policy       |
 
 ::: warning SameSite=None
 `SameSite=None` requires `secure: true` to work.
@@ -199,7 +209,7 @@ storage.cookie.delete('token')
 // With matching path/domain
 storage.cookie.delete('session', {
   path: '/app',
-  domain: '.example.com'
+  domain: '.example.com',
 })
 ```
 
@@ -311,16 +321,16 @@ interface StorageNamespace {
 
 ## Migration from v5.x
 
-| v5.x | v6.x |
-|------|------|
-| `setCache(k, v)` | `storage.local.set(k, v)` |
-| `setCache(k, v, s)` | `storage.local.set(k, v, { expires: s })` |
-| `getCache(k)` | `storage.local.get(k)` |
-| `delCache(k)` | `storage.local.delete(k)` |
-| `setSession(k, v)` | `storage.session.set(k, v)` |
-| `getSession(k)` | `storage.session.get(k)` |
-| `delSession(k)` | `storage.session.delete(k)` |
+| v5.x                 | v6.x                                       |
+| -------------------- | ------------------------------------------ |
+| `setCache(k, v)`     | `storage.local.set(k, v)`                  |
+| `setCache(k, v, s)`  | `storage.local.set(k, v, { expires: s })`  |
+| `getCache(k)`        | `storage.local.get(k)`                     |
+| `delCache(k)`        | `storage.local.delete(k)`                  |
+| `setSession(k, v)`   | `storage.session.set(k, v)`                |
+| `getSession(k)`      | `storage.session.get(k)`                   |
+| `delSession(k)`      | `storage.session.delete(k)`                |
 | `setCookie(k, v, s)` | `storage.cookie.set(k, v, { expires: s })` |
-| `getCookie(k)` | `storage.cookie.get(k)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(k)` | `storage.cookie.delete(k)` |
+| `getCookie(k)`       | `storage.cookie.get(k)`                    |
+| `getCookies()`       | `storage.cookie.getAll()`                  |
+| `delCookie(k)`       | `storage.cookie.delete(k)`                 |

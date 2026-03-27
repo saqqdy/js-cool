@@ -129,19 +129,19 @@ The `client` module has been completely removed and replaced with `ua`.
 
 The individual storage functions have been replaced by a unified `storage` namespace:
 
-| v5.x (Removed) | v6.x |
-| -------------- | ---- |
-| `setCache(k, v)` | `storage.local.set(k, v)` |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
-| `getCache(k)` | `storage.local.get(k)` |
-| `delCache(k)` | `storage.local.delete(k)` |
-| `setSession(k, v)` | `storage.session.set(k, v)` |
-| `getSession(k)` | `storage.session.get(k)` |
-| `delSession(k)` | `storage.session.delete(k)` |
+| v5.x (Removed)             | v6.x                                             |
+| -------------------------- | ------------------------------------------------ |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  |
+| `getCache(k)`              | `storage.local.get(k)`                           |
+| `delCache(k)`              | `storage.local.delete(k)`                        |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      |
+| `getSession(k)`            | `storage.session.get(k)`                         |
+| `delSession(k)`            | `storage.session.delete(k)`                      |
 | `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
-| `getCookie(k)` | `storage.cookie.get(k)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(k)` | `storage.cookie.delete(k)` |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          |
+| `getCookies()`             | `storage.cookie.getAll()`                        |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       |
 
 ---
 
@@ -1043,26 +1043,26 @@ storage.local.delete('token')
 
 ### API Mapping Table
 
-| Old API | New API | Notes |
-| ------- | ------- | ----- |
-| `setCache(k, v)` | `storage.local.set(k, v)` | Unified namespace |
-| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | Options object |
-| `getCache(k)` | `storage.local.get(k)` | Returns `T \| null` |
-| `delCache(k)` | `storage.local.delete(k)` | Method renamed |
-| - | `storage.local.has(k)` | **NEW**: Check existence |
-| - | `storage.local.keys()` | **NEW**: Get all keys |
-| - | `storage.local.clear()` | **NEW**: Clear all |
-| - | `storage.local.length` | **NEW**: Item count |
-| `setSession(k, v)` | `storage.session.set(k, v)` | Same as local |
-| `getSession(k)` | `storage.session.get(k)` | Same as local |
-| `delSession(k)` | `storage.session.delete(k)` | Same as local |
-| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object |
-| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object |
-| `getCookie(k)` | `storage.cookie.get(k)` | Returns `string \| null` |
-| `getCookies()` | `storage.cookie.getAll()` | Method renamed |
-| `delCookie(k)` | `storage.cookie.delete(k)` | Method renamed |
-| - | `storage.cookie.has(k)` | **NEW**: Check existence |
-| - | `storage.cookie.clear()` | **NEW**: Clear all |
+| Old API                    | New API                                          | Notes                    |
+| -------------------------- | ------------------------------------------------ | ------------------------ |
+| `setCache(k, v)`           | `storage.local.set(k, v)`                        | Unified namespace        |
+| `setCache(k, v, seconds)`  | `storage.local.set(k, v, { expires: seconds })`  | Options object           |
+| `getCache(k)`              | `storage.local.get(k)`                           | Returns `T \| null`      |
+| `delCache(k)`              | `storage.local.delete(k)`                        | Method renamed           |
+| -                          | `storage.local.has(k)`                           | **NEW**: Check existence |
+| -                          | `storage.local.keys()`                           | **NEW**: Get all keys    |
+| -                          | `storage.local.clear()`                          | **NEW**: Clear all       |
+| -                          | `storage.local.length`                           | **NEW**: Item count      |
+| `setSession(k, v)`         | `storage.session.set(k, v)`                      | Same as local            |
+| `getSession(k)`            | `storage.session.get(k)`                         | Same as local            |
+| `delSession(k)`            | `storage.session.delete(k)`                      | Same as local            |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object           |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object           |
+| `getCookie(k)`             | `storage.cookie.get(k)`                          | Returns `string \| null` |
+| `getCookies()`             | `storage.cookie.getAll()`                        | Method renamed           |
+| `delCookie(k)`             | `storage.cookie.delete(k)`                       | Method renamed           |
+| -                          | `storage.cookie.has(k)`                          | **NEW**: Check existence |
+| -                          | `storage.cookie.clear()`                         | **NEW**: Clear all       |
 
 ### Cookie Options
 
@@ -1074,11 +1074,11 @@ setCookie('session', 'xyz', 86400, '/app')
 
 // v6.x - Full options
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,        // Expiration in seconds
-  path: '/app',          // Cookie path
+  expires: 86400, // Expiration in seconds
+  path: '/app', // Cookie path
   domain: '.example.com', // Cookie domain
-  secure: true,          // HTTPS only
-  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
+  secure: true, // HTTPS only
+  sameSite: 'Strict', // 'Strict' | 'Lax' | 'None'
 })
 ```
 

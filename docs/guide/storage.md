@@ -154,11 +154,11 @@ storage.cookie.clear()
 
 ```js
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,       // Expiration in seconds (default: 86400 = 1 day)
-  path: '/',            // Cookie path (default: '/')
+  expires: 86400, // Expiration in seconds (default: 86400 = 1 day)
+  path: '/', // Cookie path (default: '/')
   domain: '.example.com', // Cookie domain
-  secure: true,         // Only send over HTTPS
-  sameSite: 'Strict',   // 'Strict' | 'Lax' | 'None'
+  secure: true, // Only send over HTTPS
+  sameSite: 'Strict', // 'Strict' | 'Lax' | 'None'
 })
 ```
 
@@ -210,25 +210,25 @@ cookie.set('key', 'value')
 
 The old individual functions have been replaced by the unified namespace:
 
-| v5.x (Removed) | v6.x |
-| -------------- | ---- |
-| `setCache(key, value)` | `storage.local.set(key, value)` |
-| `setCache(key, value, seconds)` | `storage.local.set(key, value, { expires: seconds })` |
-| `getCache(key)` | `storage.local.get(key)` |
-| `delCache(key)` | `storage.local.delete(key)` |
-| `setSession(key, value)` | `storage.session.set(key, value)` |
-| `getSession(key)` | `storage.session.get(key)` |
-| `delSession(key)` | `storage.session.delete(key)` |
-| `setCookie(key, value, seconds)` | `storage.cookie.set(key, value, { expires: seconds })` |
+| v5.x (Removed)                         | v6.x                                                         |
+| -------------------------------------- | ------------------------------------------------------------ |
+| `setCache(key, value)`                 | `storage.local.set(key, value)`                              |
+| `setCache(key, value, seconds)`        | `storage.local.set(key, value, { expires: seconds })`        |
+| `getCache(key)`                        | `storage.local.get(key)`                                     |
+| `delCache(key)`                        | `storage.local.delete(key)`                                  |
+| `setSession(key, value)`               | `storage.session.set(key, value)`                            |
+| `getSession(key)`                      | `storage.session.get(key)`                                   |
+| `delSession(key)`                      | `storage.session.delete(key)`                                |
+| `setCookie(key, value, seconds)`       | `storage.cookie.set(key, value, { expires: seconds })`       |
 | `setCookie(key, value, seconds, path)` | `storage.cookie.set(key, value, { expires: seconds, path })` |
-| `getCookie(key)` | `storage.cookie.get(key)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(key)` | `storage.cookie.delete(key)` |
-| - | `storage.local.has(key)` |
-| - | `storage.local.keys()` |
-| - | `storage.local.clear()` |
-| - | `storage.cookie.has(key)` |
-| - | `storage.cookie.clear()` |
+| `getCookie(key)`                       | `storage.cookie.get(key)`                                    |
+| `getCookies()`                         | `storage.cookie.getAll()`                                    |
+| `delCookie(key)`                       | `storage.cookie.delete(key)`                                 |
+| -                                      | `storage.local.has(key)`                                     |
+| -                                      | `storage.local.keys()`                                       |
+| -                                      | `storage.local.clear()`                                      |
+| -                                      | `storage.cookie.has(key)`                                    |
+| -                                      | `storage.cookie.clear()`                                     |
 
 ### Migration Example
 
@@ -264,11 +264,11 @@ const session = storage.cookie.get('session')
 
 ### When to Use What?
 
-| Storage | Capacity | Expiration | Use Case |
-| ------- | -------- | ---------- | -------- |
-| localStorage | ~5MB | Manual | User preferences, cached data |
-| sessionStorage | ~5MB | Tab close | Temporary session data |
-| Cookie | ~4KB | Custom | Authentication, tracking |
+| Storage        | Capacity | Expiration | Use Case                      |
+| -------------- | -------- | ---------- | ----------------------------- |
+| localStorage   | ~5MB     | Manual     | User preferences, cached data |
+| sessionStorage | ~5MB     | Tab close  | Temporary session data        |
+| Cookie         | ~4KB     | Custom     | Authentication, tracking      |
 
 ### Example: User Session
 

@@ -154,11 +154,11 @@ storage.cookie.clear()
 
 ```js
 storage.cookie.set('session', 'xyz', {
-  expires: 86400,       // 过期时间（秒），默认 86400（1天）
-  path: '/',            // Cookie 路径，默认 '/'
+  expires: 86400, // 过期时间（秒），默认 86400（1天）
+  path: '/', // Cookie 路径，默认 '/'
   domain: '.example.com', // Cookie 域名
-  secure: true,         // 仅 HTTPS 传输
-  sameSite: 'Strict',   // 'Strict' | 'Lax' | 'None'
+  secure: true, // 仅 HTTPS 传输
+  sameSite: 'Strict', // 'Strict' | 'Lax' | 'None'
 })
 ```
 
@@ -210,25 +210,25 @@ cookie.set('key', 'value')
 
 旧的独立函数已被统一命名空间取代：
 
-| v5.x（已移除） | v6.x |
-| -------------- | ---- |
-| `setCache(key, value)` | `storage.local.set(key, value)` |
-| `setCache(key, value, seconds)` | `storage.local.set(key, value, { expires: seconds })` |
-| `getCache(key)` | `storage.local.get(key)` |
-| `delCache(key)` | `storage.local.delete(key)` |
-| `setSession(key, value)` | `storage.session.set(key, value)` |
-| `getSession(key)` | `storage.session.get(key)` |
-| `delSession(key)` | `storage.session.delete(key)` |
-| `setCookie(key, value, seconds)` | `storage.cookie.set(key, value, { expires: seconds })` |
+| v5.x（已移除）                         | v6.x                                                         |
+| -------------------------------------- | ------------------------------------------------------------ |
+| `setCache(key, value)`                 | `storage.local.set(key, value)`                              |
+| `setCache(key, value, seconds)`        | `storage.local.set(key, value, { expires: seconds })`        |
+| `getCache(key)`                        | `storage.local.get(key)`                                     |
+| `delCache(key)`                        | `storage.local.delete(key)`                                  |
+| `setSession(key, value)`               | `storage.session.set(key, value)`                            |
+| `getSession(key)`                      | `storage.session.get(key)`                                   |
+| `delSession(key)`                      | `storage.session.delete(key)`                                |
+| `setCookie(key, value, seconds)`       | `storage.cookie.set(key, value, { expires: seconds })`       |
 | `setCookie(key, value, seconds, path)` | `storage.cookie.set(key, value, { expires: seconds, path })` |
-| `getCookie(key)` | `storage.cookie.get(key)` |
-| `getCookies()` | `storage.cookie.getAll()` |
-| `delCookie(key)` | `storage.cookie.delete(key)` |
-| - | `storage.local.has(key)` |
-| - | `storage.local.keys()` |
-| - | `storage.local.clear()` |
-| - | `storage.cookie.has(key)` |
-| - | `storage.cookie.clear()` |
+| `getCookie(key)`                       | `storage.cookie.get(key)`                                    |
+| `getCookies()`                         | `storage.cookie.getAll()`                                    |
+| `delCookie(key)`                       | `storage.cookie.delete(key)`                                 |
+| -                                      | `storage.local.has(key)`                                     |
+| -                                      | `storage.local.keys()`                                       |
+| -                                      | `storage.local.clear()`                                      |
+| -                                      | `storage.cookie.has(key)`                                    |
+| -                                      | `storage.cookie.clear()`                                     |
 
 ### 迁移示例
 
@@ -264,11 +264,11 @@ const session = storage.cookie.get('session')
 
 ### 何时使用哪种存储？
 
-| 存储 | 容量 | 过期方式 | 使用场景 |
-| ---- | ---- | -------- | -------- |
-| localStorage | ~5MB | 手动 | 用户偏好、缓存数据 |
-| sessionStorage | ~5MB | 关闭标签页 | 临时会话数据 |
-| Cookie | ~4KB | 自定义 | 认证、跟踪 |
+| 存储           | 容量 | 过期方式   | 使用场景           |
+| -------------- | ---- | ---------- | ------------------ |
+| localStorage   | ~5MB | 手动       | 用户偏好、缓存数据 |
+| sessionStorage | ~5MB | 关闭标签页 | 临时会话数据       |
+| Cookie         | ~4KB | 自定义     | 认证、跟踪         |
 
 ### 示例：用户会话
 
