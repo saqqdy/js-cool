@@ -125,6 +125,24 @@ validation.email.test('user@example.com')
 
 `client` 模块已被完全移除，替换为 `ua`。
 
+### 6. 存储函数替换为命名空间 API
+
+独立的存储函数已被统一的 `storage` 命名空间替代：
+
+| v5.x (已移除) | v6.x |
+| -------------- | ---- |
+| `setCache(k, v)` | `storage.local.set(k, v)` |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
+| `getCache(k)` | `storage.local.get(k)` |
+| `delCache(k)` | `storage.local.delete(k)` |
+| `setSession(k, v)` | `storage.session.set(k, v)` |
+| `getSession(k)` | `storage.session.get(k)` |
+| `delSession(k)` | `storage.session.delete(k)` |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
+| `getCookie(k)` | `storage.cookie.get(k)` |
+| `getCookies()` | `storage.cookie.getAll()` |
+| `delCookie(k)` | `storage.cookie.delete(k)` |
+
 ---
 
 ## 构建系统迁移
@@ -976,6 +994,120 @@ get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+---
+
+## 迁移：存储函数 → `storage` 命名空间
+
+### 为什么要改？
+
+存储函数已完全重构为统一的命名空间 API：
+
+- **统一的 API** - `localStorage`、`sessionStorage` 和 `Cookie` 接口一致
+- **泛型类型支持** - 类型安全的存储 `storage.local.get<T>()`
+- **错误处理** - `StorageQuotaError` 和 `StorageUnavailableError` 类
+- **更多方法** - 所有存储类型都有 `has()`、`keys()`、`clear()`、`length`
+- **更完善的 Cookie 选项** - 完全控制 `path`、`domain`、`secure`、`sameSite`
+- **Tree-shaking** - 通过 `js-cool/storage` 子路径导入
+
+### 基础迁移
+
+```js
+// v5.x（已废弃）
+import { setCache, getCache, delCache } from 'js-cool'
+
+setCache('user', { id: 1 })
+setCache('token', 'abc', 3600)
+const user = getCache('user')
+delCache('token')
+
+// v6.x
+import { storage } from 'js-cool'
+
+storage.local.set('user', { id: 1 })
+storage.local.set('token', 'abc', { expires: 3600 })
+const user = storage.local.get('user')
+storage.local.delete('token')
+```
+
+### API 对照表
+
+| 旧 API | 新 API | 说明 |
+| ------- | ------- | ----- |
+| `setCache(k, v)` | `storage.local.set(k, v)` | 统一命名空间 |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | 选项对象 |
+| `getCache(k)` | `storage.local.get(k)` | 返回 `T \| null` |
+| `delCache(k)` | `storage.local.delete(k)` | 方法重命名 |
+| - | `storage.local.has(k)` | **新增**：检查是否存在 |
+| - | `storage.local.keys()` | **新增**：获取所有键 |
+| - | `storage.local.clear()` | **新增**：清空所有 |
+| - | `storage.local.length` | **新增**：条目数量 |
+| `setSession(k, v)` | `storage.session.set(k, v)` | 与 local 相同 |
+| `getSession(k)` | `storage.session.get(k)` | 与 local 相同 |
+| `delSession(k)` | `storage.session.delete(k)` | 与 local 相同 |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | 选项对象 |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | 选项对象 |
+| `getCookie(k)` | `storage.cookie.get(k)` | 返回 `string \| null` |
+| `getCookies()` | `storage.cookie.getAll()` | 方法重命名 |
+| `delCookie(k)` | `storage.cookie.delete(k)` | 方法重命名 |
+| - | `storage.cookie.has(k)` | **新增**：检查是否存在 |
+| - | `storage.cookie.clear()` | **新增**：清空所有 |
+
+### Cookie 选项
+
+v6.x 提供完整的 Cookie 选项支持：
+
+```js
+// v5.x - 选项有限
+setCookie('session', 'xyz', 86400, '/app')
+
+// v6.x - 完整选项
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,        // 过期时间（秒）
+  path: '/app',          // Cookie 路径
+  domain: '.example.com', // Cookie 域名
+  secure: true,          // 仅 HTTPS
+  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
+})
+```
+
+### 泛型类型支持
+
+```ts
+// v6.x - 类型安全的存储
+interface User {
+  id: number
+  name: string
+}
+
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
+```
+
+### 错误处理
+
+```ts
+// v6.x - 正确的错误处理
+import { storage, StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('存储空间已满')
+  } else if (e instanceof StorageUnavailableError) {
+    console.error('存储不可用（SSR 或隐私模式）')
+  }
+}
+```
+
+### 子路径导入
+
+```js
+// v6.x - 支持 tree-shaking
+import { storage, local, session, cookie } from 'js-cool/storage'
+import type { StorageOptions, CookieOptions } from 'js-cool/storage'
 ```
 
 ---

@@ -125,6 +125,24 @@ See [Migration: `pattern` → `patterns`](#migration-pattern--patterns) for deta
 
 The `client` module has been completely removed and replaced with `ua`.
 
+### 6. Storage Functions Replaced with Namespace API
+
+The individual storage functions have been replaced by a unified `storage` namespace:
+
+| v5.x (Removed) | v6.x |
+| -------------- | ---- |
+| `setCache(k, v)` | `storage.local.set(k, v)` |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
+| `getCache(k)` | `storage.local.get(k)` |
+| `delCache(k)` | `storage.local.delete(k)` |
+| `setSession(k, v)` | `storage.session.set(k, v)` |
+| `getSession(k)` | `storage.session.get(k)` |
+| `delSession(k)` | `storage.session.delete(k)` |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
+| `getCookie(k)` | `storage.cookie.get(k)` |
+| `getCookies()` | `storage.cookie.getAll()` |
+| `delCookie(k)` | `storage.cookie.delete(k)` |
+
 ---
 
 ## Build System Migration
@@ -986,6 +1004,120 @@ get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+---
+
+## Migration: Storage Functions → `storage` Namespace
+
+### Why the Change?
+
+The storage functions have been completely redesigned with a unified namespace API:
+
+- **Unified API** - Consistent interface for `localStorage`, `sessionStorage`, and `Cookie`
+- **Generic type support** - Type-safe storage with `storage.local.get<T>()`
+- **Error handling** - `StorageQuotaError` and `StorageUnavailableError` classes
+- **More methods** - `has()`, `keys()`, `clear()`, `length` for all storage types
+- **Better cookie options** - Full control over `path`, `domain`, `secure`, `sameSite`
+- **Tree-shaking** - Subpath import via `js-cool/storage`
+
+### Basic Migration
+
+```js
+// v5.x (deprecated)
+import { setCache, getCache, delCache } from 'js-cool'
+
+setCache('user', { id: 1 })
+setCache('token', 'abc', 3600)
+const user = getCache('user')
+delCache('token')
+
+// v6.x
+import { storage } from 'js-cool'
+
+storage.local.set('user', { id: 1 })
+storage.local.set('token', 'abc', { expires: 3600 })
+const user = storage.local.get('user')
+storage.local.delete('token')
+```
+
+### API Mapping Table
+
+| Old API | New API | Notes |
+| ------- | ------- | ----- |
+| `setCache(k, v)` | `storage.local.set(k, v)` | Unified namespace |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | Options object |
+| `getCache(k)` | `storage.local.get(k)` | Returns `T \| null` |
+| `delCache(k)` | `storage.local.delete(k)` | Method renamed |
+| - | `storage.local.has(k)` | **NEW**: Check existence |
+| - | `storage.local.keys()` | **NEW**: Get all keys |
+| - | `storage.local.clear()` | **NEW**: Clear all |
+| - | `storage.local.length` | **NEW**: Item count |
+| `setSession(k, v)` | `storage.session.set(k, v)` | Same as local |
+| `getSession(k)` | `storage.session.get(k)` | Same as local |
+| `delSession(k)` | `storage.session.delete(k)` | Same as local |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object |
+| `getCookie(k)` | `storage.cookie.get(k)` | Returns `string \| null` |
+| `getCookies()` | `storage.cookie.getAll()` | Method renamed |
+| `delCookie(k)` | `storage.cookie.delete(k)` | Method renamed |
+| - | `storage.cookie.has(k)` | **NEW**: Check existence |
+| - | `storage.cookie.clear()` | **NEW**: Clear all |
+
+### Cookie Options
+
+v6.x provides full cookie options support:
+
+```js
+// v5.x - Limited options
+setCookie('session', 'xyz', 86400, '/app')
+
+// v6.x - Full options
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,        // Expiration in seconds
+  path: '/app',          // Cookie path
+  domain: '.example.com', // Cookie domain
+  secure: true,          // HTTPS only
+  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
+})
+```
+
+### Generic Type Support
+
+```ts
+// v6.x - Type-safe storage
+interface User {
+  id: number
+  name: string
+}
+
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
+```
+
+### Error Handling
+
+```ts
+// v6.x - Proper error handling
+import { storage, StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('Storage quota exceeded')
+  } else if (e instanceof StorageUnavailableError) {
+    console.error('Storage not available (SSR or private mode)')
+  }
+}
+```
+
+### Subpath Import
+
+```js
+// v6.x - Tree-shaking friendly
+import { storage, local, session, cookie } from 'js-cool/storage'
+import type { StorageOptions, CookieOptions } from 'js-cool/storage'
 ```
 
 ---

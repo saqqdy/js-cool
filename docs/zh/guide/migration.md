@@ -525,6 +525,109 @@ d.getWeekOfYear() // 年中周数
 d.getDayOfYear() // 年中天数
 ```
 
+### 存储工具
+
+存储函数已完全重新设计，采用统一的命名空间 API。
+
+#### API 迁移对照表
+
+| v5.x | v6.x | 说明 |
+| ---- | ---- | ---- |
+| `setCache(k, v)` | `storage.local.set(k, v)` | 统一命名空间 |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | 选项对象 |
+| `getCache(k)` | `storage.local.get(k)` | 返回 `T \| null` |
+| `delCache(k)` | `storage.local.delete(k)` | 方法重命名 |
+| - | `storage.local.has(k)` | **新增**：检查是否存在 |
+| - | `storage.local.keys()` | **新增**：获取所有键名 |
+| - | `storage.local.clear()` | **新增**：清空所有 |
+| - | `storage.local.length` | **新增**：存储项数量 |
+| `setSession(k, v)` | `storage.session.set(k, v)` | 与 local 相同 |
+| `getSession(k)` | `storage.session.get(k)` | 与 local 相同 |
+| `delSession(k)` | `storage.session.delete(k)` | 与 local 相同 |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | 选项对象 |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | 选项对象 |
+| `getCookie(k)` | `storage.cookie.get(k)` | 返回 `string \| null` |
+| `getCookies()` | `storage.cookie.getAll()` | 方法重命名 |
+| `delCookie(k)` | `storage.cookie.delete(k)` | 方法重命名 |
+| - | `storage.cookie.has(k)` | **新增**：检查是否存在 |
+| - | `storage.cookie.clear()` | **新增**：清空所有 |
+
+#### 新增功能
+
+1. **统一命名空间 API**：
+
+```js
+import { storage } from 'js-cool'
+
+storage.local.set('key', 'value')
+storage.session.set('key', 'value')
+storage.cookie.set('key', 'value')
+```
+
+2. **子路径导入支持 tree-shaking**：
+
+```js
+import { storage, local, session, cookie } from 'js-cool/storage'
+```
+
+3. **泛型类型支持**：
+
+```ts
+interface User { id: number; name: string }
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
+```
+
+4. **错误处理**：
+
+```ts
+import { StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('存储空间已满')
+  }
+}
+```
+
+5. **完整的 Cookie 选项**：
+
+```js
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,
+  path: '/',
+  domain: '.example.com',
+  secure: true,
+  sameSite: 'Strict',
+})
+```
+
+#### 迁移示例
+
+```js
+// v5.x
+import { setCache, getCache, delCache, setCookie, getCookie } from 'js-cool'
+
+setCache('user', userData, 3600)
+const user = getCache('user')
+delCache('user')
+
+setCookie('token', 'abc', 86400, '/', true)
+const token = getCookie('token')
+
+// v6.x
+import { storage } from 'js-cool'
+
+storage.local.set('user', userData, { expires: 3600 })
+const user = storage.local.get('user')
+storage.local.delete('user')
+
+storage.cookie.set('token', 'abc', { expires: 86400, path: '/', secure: true })
+const token = storage.cookie.get('token')
+```
+
 ### URL 工具
 
 `url` 命名空间和 `Url` 类是 v6.0.0 新增功能。现有函数如 `getUrlParam`、`parseUrlParam` 等无需迁移，继续正常工作。

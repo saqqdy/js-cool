@@ -25,6 +25,16 @@ All notable changes to this project will be documented in this file.
   - `getUrlParams` → `url.parse()` or `new Url(url).toObject()`
   - `parseUrlParam` → `url.parse()`
   - `spliceUrlParam` → `url.stringify()` or `new Url(url).set()`
+  - `setCache` → `storage.local.set()`
+  - `getCache` → `storage.local.get()`
+  - `delCache` → `storage.local.delete()`
+  - `setSession` → `storage.session.set()`
+  - `getSession` → `storage.session.get()`
+  - `delSession` → `storage.session.delete()`
+  - `setCookie` → `storage.cookie.set()`
+  - `getCookie` → `storage.cookie.get()`
+  - `getCookies` → `storage.cookie.getAll()`
+  - `delCookie` → `storage.cookie.delete()`
 
 - **Module Renamed**: `client` → `ua`
 - **Type Change**: `base64ToFile()` returns `File | Blob` (IE11 returns Blob)
@@ -43,6 +53,14 @@ All notable changes to this project will be documented in this file.
   - URL property extraction: `getOrigin()`, `getHost()`, `getHostname()`, `getPathname()`, `getSearch()`, `getHash()`
 
 - **New `scroll` Module**: `getPosition()`, `getProgress()`, `scrollTo()`, `lock()`, `unlock()`, etc.
+
+- **New `storage` Module**: Unified storage namespace with consistent API
+  - `storage.local`: localStorage with expiration, generic types, and error handling
+  - `storage.session`: sessionStorage with same features as local
+  - `storage.cookie`: Cookie with full options support (`path`, `domain`, `secure`, `sameSite`)
+  - Methods: `set()`, `get()`, `delete()`, `has()`, `keys()`, `clear()`, `length`
+  - Error classes: `StorageQuotaError`, `StorageUnavailableError`
+  - Subpath import: `import { storage } from 'js-cool/storage'`
 
 - **New `patterns` Module**: Unified validation and UA patterns
   - `validation.email`, `validation.mobile`, `validation.idCard`, etc.

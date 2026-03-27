@@ -525,6 +525,109 @@ d.getWeekOfYear() // week of year
 d.getDayOfYear() // day of year
 ```
 
+### Storage Utilities
+
+The storage functions have been completely redesigned with a unified namespace API.
+
+#### API Migration Table
+
+| v5.x | v6.x | Notes |
+| ---- | ---- | ----- |
+| `setCache(k, v)` | `storage.local.set(k, v)` | Unified namespace |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` | Options object |
+| `getCache(k)` | `storage.local.get(k)` | Returns `T \| null` |
+| `delCache(k)` | `storage.local.delete(k)` | Method renamed |
+| - | `storage.local.has(k)` | **NEW**: Check existence |
+| - | `storage.local.keys()` | **NEW**: Get all keys |
+| - | `storage.local.clear()` | **NEW**: Clear all |
+| - | `storage.local.length` | **NEW**: Item count |
+| `setSession(k, v)` | `storage.session.set(k, v)` | Same as local |
+| `getSession(k)` | `storage.session.get(k)` | Same as local |
+| `delSession(k)` | `storage.session.delete(k)` | Same as local |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` | Options object |
+| `setCookie(k, v, s, path)` | `storage.cookie.set(k, v, { expires: s, path })` | Options object |
+| `getCookie(k)` | `storage.cookie.get(k)` | Returns `string \| null` |
+| `getCookies()` | `storage.cookie.getAll()` | Method renamed |
+| `delCookie(k)` | `storage.cookie.delete(k)` | Method renamed |
+| - | `storage.cookie.has(k)` | **NEW**: Check existence |
+| - | `storage.cookie.clear()` | **NEW**: Clear all |
+
+#### New Features
+
+1. **Unified namespace API**:
+
+```js
+import { storage } from 'js-cool'
+
+storage.local.set('key', 'value')
+storage.session.set('key', 'value')
+storage.cookie.set('key', 'value')
+```
+
+2. **Subpath import for tree-shaking**:
+
+```js
+import { storage, local, session, cookie } from 'js-cool/storage'
+```
+
+3. **Generic type support**:
+
+```ts
+interface User { id: number; name: string }
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
+```
+
+4. **Error handling**:
+
+```ts
+import { StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('Storage full')
+  }
+}
+```
+
+5. **Full Cookie options**:
+
+```js
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,
+  path: '/',
+  domain: '.example.com',
+  secure: true,
+  sameSite: 'Strict',
+})
+```
+
+#### Migration Example
+
+```js
+// v5.x
+import { setCache, getCache, delCache, setCookie, getCookie } from 'js-cool'
+
+setCache('user', userData, 3600)
+const user = getCache('user')
+delCache('user')
+
+setCookie('token', 'abc', 86400, '/', true)
+const token = getCookie('token')
+
+// v6.x
+import { storage } from 'js-cool'
+
+storage.local.set('user', userData, { expires: 3600 })
+const user = storage.local.get('user')
+storage.local.delete('user')
+
+storage.cookie.set('token', 'abc', { expires: 86400, path: '/', secure: true })
+const token = storage.cookie.get('token')
+```
+
 ### URL Utilities
 
 The `url` namespace and `Url` class are new in v6.0.0. No migration needed for existing functions like `getUrlParam`, `parseUrlParam`, etc. - they continue to work as before.

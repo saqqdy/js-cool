@@ -70,6 +70,7 @@ import { randomString } from 'js-cool'
 | `getAppVersion()`     | ✅                          | ❌ Use `appVersion()`         |
 | `getOsVersion()`      | ✅                          | ❌ Use `osVersion()`          |
 | `getScrollPosition()` | ✅                          | ❌ Use `scroll.getPosition()` |
+| Storage functions     | `setCache`, `getCache`, ... | `storage.local`, `storage.session`, `storage.cookie` |
 
 ### `client` → `ua` Migration
 
@@ -157,7 +158,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`, `download`, `saveFile`, `downloadFile`, `downloadUrlFile`                                                                                                           |
 | **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
-| **Storage**       | Browser storage                   | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                                                                 |
+| **Storage**       | Browser storage                   | `storage`, `local`, `session`, `cookie`                                                                                                                 |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
@@ -1278,85 +1279,124 @@ getDirParams('https://example.com/api/users?id=123#section')
 
 ### Storage
 
-#### localStorage (getCache / setCache / delCache)
+The `storage` namespace provides a unified API for browser storage with expiration support, generic types, and error handling.
 
 ```js
-import { delCache, getCache, setCache } from 'js-cool'
+import { storage } from 'js-cool'
 
-// Store string
-setCache('name', 'value')
-
-// Store object (auto JSON stringify/parse)
-setCache('user', { id: 1, name: 'John' })
-getCache('user') // { id: 1, name: 'John' }
-
-// Store number
-setCache('count', 100)
-getCache('count') // 100
-
-// Store boolean
-setCache('flag', true)
-getCache('flag') // true
-
-// With expiration (in seconds)
-setCache('session', 'data', 3600) // expires in 1 hour
-setCache('token', 'abc123', 86400) // expires in 24 hours
-
-// Get non-existent key
-getCache('nonexistent') // null
-
-// Delete
-delCache('name')
-delCache('user')
+// Or from subpath for tree-shaking
+import { storage, local, session, cookie } from 'js-cool/storage'
 ```
 
-#### sessionStorage (getSession / setSession / delSession)
+#### storage.local (localStorage)
 
 ```js
-import { delSession, getSession, setSession } from 'js-cool'
+// Set item
+storage.local.set('name', 'value')
+storage.local.set('token', 'abc', { expires: 3600 }) // 1 hour expiration
 
-setSession('temp', 'data')
-getSession('temp') // 'data'
+// Get item (returns null if not found or expired)
+const name = storage.local.get('name')
 
-setSession('list', [1, 2, 3])
-getSession('list') // [1, 2, 3]
+// Check existence
+storage.local.has('name') // true
 
-setSession('config', { theme: 'dark' }, 1800) // 30 min expiry
-getSession('config') // { theme: 'dark' }
+// Delete item
+storage.local.delete('name')
 
-delSession('temp')
+// Get all keys
+storage.local.keys() // ['key1', 'key2', ...]
+
+// Get count
+storage.local.length // 2
+
+// Clear all
+storage.local.clear()
+
+// Generic type support
+interface User { id: number; name: string }
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
 ```
 
-#### Cookie (getCookie / getCookies / setCookie / delCookie)
+#### storage.session (sessionStorage)
+
+Same API as `storage.local`:
 
 ```js
-import { delCookie, getCookie, getCookies, setCookie } from 'js-cool'
+storage.session.set('temp', 'value', { expires: 1800 }) // 30 min expiration
+const temp = storage.session.get('temp')
+storage.session.has('temp')
+storage.session.delete('temp')
+storage.session.keys()
+storage.session.clear()
+storage.session.length
+```
 
+#### storage.cookie (Cookie)
+
+```js
 // Set cookie (default: 1 day)
-setCookie('name', 'value')
+storage.cookie.set('name', 'value')
 
-// Set with options
-setCookie('name', 'value', { days: 7 })
-setCookie('name', 'value', { days: 30, path: '/' })
-setCookie('name', 'value', {
-  days: 7,
-  path: '/',
-  domain: '.example.com',
-  secure: true,
-  sameSite: 'Strict',
+// Set with full options
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,        // Expiration in seconds
+  path: '/',             // Cookie path
+  domain: '.example.com', // Cookie domain
+  secure: true,          // HTTPS only
+  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
 })
 
-// Get single cookie
-getCookie('name') // 'value'
-getCookie('nonexistent') // null
+// Get cookie
+storage.cookie.get('name') // 'value'
+storage.cookie.get('nonexistent') // null
 
 // Get all cookies
-getCookies() // { name: 'value', other: 'data' }
+storage.cookie.getAll() // { name: 'value', other: 'data' }
+
+// Check existence
+storage.cookie.has('name') // true
 
 // Delete cookie
-delCookie('name')
-delCookie('name', { path: '/', domain: '.example.com' })
+storage.cookie.delete('name')
+storage.cookie.delete('name', { path: '/', domain: '.example.com' })
+
+// Clear all cookies
+storage.cookie.clear()
 ```
+
+#### Error Handling
+
+```ts
+import { storage, StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('Storage quota exceeded')
+  } else if (e instanceof StorageUnavailableError) {
+    console.error('Storage not available (SSR or private mode)')
+  }
+}
+```
+
+#### Migration from v5.x
+
+| v5.x | v6.x |
+|------|------|
+| `setCache(k, v)` | `storage.local.set(k, v)` |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
+| `getCache(k)` | `storage.local.get(k)` |
+| `delCache(k)` | `storage.local.delete(k)` |
+| `setSession(k, v)` | `storage.session.set(k, v)` |
+| `getSession(k)` | `storage.session.get(k)` |
+| `delSession(k)` | `storage.session.delete(k)` |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
+| `getCookie(k)` | `storage.cookie.get(k)` |
+| `getCookies()` | `storage.cookie.getAll()` |
+| `delCookie(k)` | `storage.cookie.delete(k)` |
 
 ---
 

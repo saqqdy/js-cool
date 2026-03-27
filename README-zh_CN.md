@@ -62,6 +62,7 @@ import { randomString } from 'js-cool'
 | `getAppVersion()`     | ✅                          | ❌ 使用 `appVersion()`         |
 | `getOsVersion()`      | ✅                          | ❌ 使用 `osVersion()`          |
 | `getScrollPosition()` | ✅                          | ❌ 使用 `scroll.getPosition()` |
+| 存储函数              | `setCache`, `getCache`, ... | `storage.local`, `storage.session`, `storage.cookie` |
 
 ### `client` → `ua` 迁移
 
@@ -149,7 +150,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **URL与浏览器** | URL解析和浏览器检测 | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
 | **DOM**         | DOM操作             | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`                                                                                                                                                                      |
 | **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
-| **存储**        | 浏览器存储          | `setCache`, `getCache`, `delCache`, `setSession`, `getSession`, `delSession`, `setCookie`, `getCookie`, `getCookies`, `delCookie`                                                                                                                 |
+| **存储**        | 浏览器存储          | `storage`, `local`, `session`, `cookie`                                                                                                                 |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **日期**        | 日期处理            | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
@@ -1101,85 +1102,124 @@ getDirParams('https://example.com/api/users?id=123#section')
 
 ### 存储
 
-#### localStorage (getCache / setCache / delCache)
+`storage` 命名空间提供统一的浏览器存储 API，支持过期时间、泛型类型和错误处理。
 
 ```js
-import { delCache, getCache, setCache } from 'js-cool'
+import { storage } from 'js-cool'
 
-// 存储字符串
-setCache('name', 'value')
-
-// 存储对象 (自动 JSON 序列化)
-setCache('user', { id: 1, name: 'John' })
-getCache('user') // { id: 1, name: 'John' }
-
-// 存储数字
-setCache('count', 100)
-getCache('count') // 100
-
-// 存储布尔值
-setCache('flag', true)
-getCache('flag') // true
-
-// 设置过期时间 (秒)
-setCache('session', 'data', 3600) // 1小时后过期
-setCache('token', 'abc123', 86400) // 24小时后过期
-
-// 获取不存在的 key
-getCache('nonexistent') // null
-
-// 删除
-delCache('name')
-delCache('user')
+// 或从子路径导入（支持 tree-shaking）
+import { storage, local, session, cookie } from 'js-cool/storage'
 ```
 
-#### sessionStorage (getSession / setSession / delSession)
+#### storage.local (localStorage)
 
 ```js
-import { delSession, getSession, setSession } from 'js-cool'
+// 设置项
+storage.local.set('name', 'value')
+storage.local.set('token', 'abc', { expires: 3600 }) // 1小时后过期
 
-setSession('temp', 'data')
-getSession('temp') // 'data'
+// 获取项（不存在或过期返回 null）
+const name = storage.local.get('name')
 
-setSession('list', [1, 2, 3])
-getSession('list') // [1, 2, 3]
+// 检查是否存在
+storage.local.has('name') // true
 
-setSession('config', { theme: 'dark' }, 1800) // 30分钟后过期
-getSession('config') // { theme: 'dark' }
+// 删除项
+storage.local.delete('name')
 
-delSession('temp')
+// 获取所有键
+storage.local.keys() // ['key1', 'key2', ...]
+
+// 获取数量
+storage.local.length // 2
+
+// 清空所有
+storage.local.clear()
+
+// 泛型类型支持
+interface User { id: number; name: string }
+storage.local.set<User>('user', { id: 1, name: 'John' })
+const user = storage.local.get<User>('user') // User | null
 ```
 
-#### Cookie (getCookie / getCookies / setCookie / delCookie)
+#### storage.session (sessionStorage)
+
+与 `storage.local` API 相同：
 
 ```js
-import { delCookie, getCookie, getCookies, setCookie } from 'js-cool'
+storage.session.set('temp', 'value', { expires: 1800 }) // 30分钟后过期
+const temp = storage.session.get('temp')
+storage.session.has('temp')
+storage.session.delete('temp')
+storage.session.keys()
+storage.session.clear()
+storage.session.length
+```
 
-// 设置 cookie (默认: 1天)
-setCookie('name', 'value')
+#### storage.cookie (Cookie)
 
-// 带选项设置
-setCookie('name', 'value', { days: 7 })
-setCookie('name', 'value', { days: 30, path: '/' })
-setCookie('name', 'value', {
-  days: 7,
-  path: '/',
-  domain: '.example.com',
-  secure: true,
-  sameSite: 'Strict',
+```js
+// 设置 cookie（默认：1天）
+storage.cookie.set('name', 'value')
+
+// 设置完整选项
+storage.cookie.set('session', 'xyz', {
+  expires: 86400,        // 过期时间（秒）
+  path: '/',             // Cookie 路径
+  domain: '.example.com', // Cookie 域名
+  secure: true,          // 仅 HTTPS
+  sameSite: 'Strict'     // 'Strict' | 'Lax' | 'None'
 })
 
-// 获取单个 cookie
-getCookie('name') // 'value'
-getCookie('nonexistent') // null
+// 获取 cookie
+storage.cookie.get('name') // 'value'
+storage.cookie.get('nonexistent') // null
 
-// 获取所有 cookie
-getCookies() // { name: 'value', other: 'data' }
+// 获取所有 cookies
+storage.cookie.getAll() // { name: 'value', other: 'data' }
+
+// 检查是否存在
+storage.cookie.has('name') // true
 
 // 删除 cookie
-delCookie('name')
-delCookie('name', { path: '/', domain: '.example.com' })
+storage.cookie.delete('name')
+storage.cookie.delete('name', { path: '/', domain: '.example.com' })
+
+// 清空所有 cookies
+storage.cookie.clear()
 ```
+
+#### 错误处理
+
+```ts
+import { storage, StorageQuotaError, StorageUnavailableError } from 'js-cool'
+
+try {
+  storage.local.set('key', largeData)
+} catch (e) {
+  if (e instanceof StorageQuotaError) {
+    console.error('存储空间已满')
+  } else if (e instanceof StorageUnavailableError) {
+    console.error('存储不可用（SSR 或隐私模式）')
+  }
+}
+```
+
+#### 从 v5.x 迁移
+
+| v5.x | v6.x |
+|------|------|
+| `setCache(k, v)` | `storage.local.set(k, v)` |
+| `setCache(k, v, seconds)` | `storage.local.set(k, v, { expires: seconds })` |
+| `getCache(k)` | `storage.local.get(k)` |
+| `delCache(k)` | `storage.local.delete(k)` |
+| `setSession(k, v)` | `storage.session.set(k, v)` |
+| `getSession(k)` | `storage.session.get(k)` |
+| `delSession(k)` | `storage.session.delete(k)` |
+| `setCookie(k, v, seconds)` | `storage.cookie.set(k, v, { expires: seconds })` |
+| `getCookie(k)` | `storage.cookie.get(k)` |
+| `getCookies()` | `storage.cookie.getAll()` |
+| `delCookie(k)` | `storage.cookie.delete(k)` |
 
 ---
 
