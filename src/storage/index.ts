@@ -1,34 +1,58 @@
 /**
- * Storage utilities collection (localStorage, sessionStorage, cookie)
- *
- * @example
- * ```ts
- * import { setCache, getCache, setSession, getSession, setCookie, getCookie } from 'js-cool/storage'
- *
- * // localStorage with expiration
- * setCache('key', 'value', 60) // expires in 60 seconds
- * getCache('key') // 'value' (within 60s) or null (after 60s)
- *
- * // sessionStorage
- * setSession('key', { data: 123 })
- * getSession('key') // { data: 123 }
- *
- * // Cookie
- * setCookie('key', 'value', { days: 7 })
- * getCookie('key') // 'value'
- * ```
+ * Storage module - Unified storage API
  *
  * @module storage
  * @since 6.0.0
+ *
+ * @example
+ * ```ts
+ * import { storage } from 'js-cool'
+ *
+ * // localStorage
+ * storage.local.set('user', { id: 1, name: 'John' })
+ * storage.local.set('token', 'abc', { expires: 3600 })
+ * const user = storage.local.get<{ id: number; name: string }>('user')
+ * storage.local.has('token')  // true
+ * storage.local.delete('token')
+ *
+ * // sessionStorage
+ * storage.session.set('temp', 'value', { expires: 60 })
+ * storage.session.get('temp')
+ * storage.session.clear()
+ *
+ * // Cookie
+ * storage.cookie.set('session', 'xyz', { expires: 86400, sameSite: 'Strict' })
+ * storage.cookie.get('session')
+ * storage.cookie.getAll()
+ * storage.cookie.delete('session')
+ * ```
  */
 
-export { default as delCache } from '../delCache'
-export { default as delCookie } from '../delCookie'
-export { default as delSession } from '../delSession'
-export { default as getCache, type CacheData } from '../getCache'
-export { default as getCookie } from '../getCookie'
-export { default as getCookies } from '../getCookies'
-export { default as getSession } from '../getSession'
-export { default as setCache, StorageQuotaError, StorageUnavailableError } from '../setCache'
-export { default as setCookie } from '../setCookie'
-export { default as setSession } from '../setSession'
+import { cookie } from './cookie'
+import { local } from './local'
+import { session } from './session'
+import type { StorageNamespace } from './types'
+
+export { local } from './local'
+export { session } from './session'
+export { cookie } from './cookie'
+export { StorageQuotaError, StorageUnavailableError } from './errors'
+export type {
+	StorageOptions,
+	CookieOptions,
+	CookieDeleteOptions,
+	StorageAPI,
+	CookieAPI,
+	StorageNamespace,
+} from './types'
+
+/**
+ * 统一存储命名空间
+ */
+export const storage: StorageNamespace = {
+	local,
+	session,
+	cookie,
+}
+
+export default storage

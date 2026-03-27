@@ -216,16 +216,20 @@ export {
 export type { ScrollToOptions, ScrollBehavior } from './scroll'
 
 // ==================== Storage 存储操作 ====================
-export { default as delCache } from './delCache'
-export { default as delCookie } from './delCookie'
-export { default as delSession } from './delSession'
-export { default as getCache, type CacheData } from './getCache'
-export { default as getCookie } from './getCookie'
-export { default as getCookies } from './getCookies'
-export { default as getSession } from './getSession'
-export { default as setCache, StorageQuotaError, StorageUnavailableError } from './setCache'
-export { default as setCookie } from './setCookie'
-export { default as setSession } from './setSession'
+export {
+	storage,
+	local,
+	session,
+	cookie,
+	StorageQuotaError,
+	StorageUnavailableError,
+	type StorageOptions,
+	type CookieOptions,
+	type CookieDeleteOptions,
+	type StorageAPI,
+	type CookieAPI,
+	type StorageNamespace,
+} from './storage/index'
 
 // ==================== String 字符串处理 ====================
 export { default as camel2Dash } from './camel2Dash'
