@@ -4,15 +4,15 @@
 
 ## 快速对照表
 
-| 旧函数           | 新替代                        | 是否完全替代  | 说明            |
-| ---------------- | ----------------------------- | ------------- | --------------- |
-| `parseUrlParam`  | `url.parse` / `Url.parse`     | ✅ 完全替代   | 功能相同        |
-| `spliceUrlParam` | `url.stringify` / `Url.stringify` | ✅ 完全替代 | 功能相同        |
-| `getUrlParams`   | `url.parse` / `Url.parse`     | ✅ 完全替代   | 功能相同        |
-| `getUrlParam`    | `url.parse` + 取值 或 `new Url().get()` | ✅ 完全替代 | 功能相同 |
-| `getQueryParams` | `new Url().toObject('hash')`  | ✅ 完全替代   | hash 内参数解析 |
-| `getQueryParam`  | `new Url().get(name, 'hash')` | ✅ 完全替代   | hash 内参数解析 |
-| `getDirParam`    | `getDirParams`                | ✅ 已替代     | 返回结构更完善  |
+| 旧函数           | 新替代                                  | 是否完全替代 | 说明            |
+| ---------------- | --------------------------------------- | ------------ | --------------- |
+| `parseUrlParam`  | `url.parse` / `Url.parse`               | ✅ 完全替代  | 功能相同        |
+| `spliceUrlParam` | `url.stringify` / `Url.stringify`       | ✅ 完全替代  | 功能相同        |
+| `getUrlParams`   | `url.parse` / `Url.parse`               | ✅ 完全替代  | 功能相同        |
+| `getUrlParam`    | `url.parse` + 取值 或 `new Url().get()` | ✅ 完全替代  | 功能相同        |
+| `getQueryParams` | `new Url().toObject('hash')`            | ✅ 完全替代  | hash 内参数解析 |
+| `getQueryParam`  | `new Url().get(name, 'hash')`           | ✅ 完全替代  | hash 内参数解析 |
+| `getDirParam`    | `getDirParams`                          | ✅ 已替代    | 返回结构更完善  |
 
 ---
 
@@ -206,10 +206,7 @@ const newUrl = new Url('https://api.example.com')
 // 'https://api.example.com/users/123/profile?fields=name,email#section'
 
 // 修改现有 URL
-new Url('https://example.com?id=123')
-  .set('page', 2)
-  .delete('id')
-  .toString()
+new Url('https://example.com?id=123').set('page', 2).delete('id').toString()
 // 'https://example.com?page=2'
 ```
 
@@ -261,12 +258,12 @@ import { Url, url } from 'js-cool'
 const u = new Url('https://example.com:8080/api/users?id=1#section')
 
 // 实例属性
-u.origin    // 'https://example.com:8080'
-u.host      // 'example.com:8080'
-u.hostname  // 'example.com'
-u.pathname  // '/api/users'
-u.search    // '?id=1'
-u.hash      // '#section'
+u.origin // 'https://example.com:8080'
+u.host // 'example.com:8080'
+u.hostname // 'example.com'
+u.pathname // '/api/users'
+u.search // '?id=1'
+u.hash // '#section'
 
 // 静态方法（无需实例化）
 url.getOrigin('https://example.com:8080/path')
@@ -349,16 +346,16 @@ new Url('https://example.com').get('id')
 
 ## 总结
 
-| 场景                   | 推荐方案                                          |
-| ---------------------- | ------------------------------------------------- |
-| 解析查询字符串         | `url.parse()` 或 `Url.parse()`                    |
-| 构建查询字符串         | `url.stringify()` 或 `Url.stringify()`            |
-| 获取单个参数（search） | `new Url(url).get(name, 'search')`                |
-| 获取单个参数（hash）   | `new Url(url).get(name, 'hash')`                  |
-| 获取所有参数（search） | `new Url(url).toObject('search')`                 |
-| 获取所有参数（hash）   | `new Url(url).toObject('hash')`                   |
-| 链式 URL 构建          | `new Url(url).set().delete().toString()`          |
-| URL 属性提取           | `url.getPathname()` 等静态方法                    |
-| 区分参数来源           | `new Url(url).toDetailObject()`                   |
+| 场景                   | 推荐方案                                 |
+| ---------------------- | ---------------------------------------- |
+| 解析查询字符串         | `url.parse()` 或 `Url.parse()`           |
+| 构建查询字符串         | `url.stringify()` 或 `Url.stringify()`   |
+| 获取单个参数（search） | `new Url(url).get(name, 'search')`       |
+| 获取单个参数（hash）   | `new Url(url).get(name, 'hash')`         |
+| 获取所有参数（search） | `new Url(url).toObject('search')`        |
+| 获取所有参数（hash）   | `new Url(url).toObject('hash')`          |
+| 链式 URL 构建          | `new Url(url).set().delete().toString()` |
+| URL 属性提取           | `url.getPathname()` 等静态方法           |
+| 区分参数来源           | `new Url(url).toDetailObject()`          |
 
 **推荐**：新的 `Url` 类功能更全面，支持 search 和 hash 两套参数系统，推荐统一使用 `Url` 类处理所有 URL 相关需求。

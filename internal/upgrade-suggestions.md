@@ -829,6 +829,7 @@ const lodashCompatPlugin: JsCoolPlugin = {
 > 基于 js-cool v6.0.0 版本分析
 >
 > **已完成功能**:
+>
 > - `ua` 模块重构，支持 HarmonyOS、iPadOS、钉钉、抖音等检测
 > - `Url` 类支持 search/hash 双参数系统
 > - `DateParser` 类支持链式日期操作

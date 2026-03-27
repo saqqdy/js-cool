@@ -116,13 +116,13 @@ const u = new Url(fullUrl)
 // ============ 读取参数 ============
 
 // 获取单个参数（默认 hash 优先）
-u.get('id')    // '10' (search)
-u.get('name')  // 'test' (hash)
+u.get('id') // '10' (search)
+u.get('name') // 'test' (hash)
 
 // 显式指定范围
-u.get('id', 'search')   // '10'
-u.get('id', 'hash')     // null
-u.get('name', 'hash')   // 'test'
+u.get('id', 'search') // '10'
+u.get('id', 'hash') // null
+u.get('name', 'hash') // 'test'
 u.get('name', 'search') // null
 
 // 获取所有参数（合并，hash 优先）
@@ -156,13 +156,13 @@ u.set('page', 2, 'hash').toString()
 // 'http://a.com/fae?id=10&bar=eee#/about?name=test&code=3&page=2'
 
 // 删除参数
-u.delete('id', 'search').toString()  // 删除 search 参数
-u.delete('name', 'hash').toString()  // 删除 hash 参数
-u.delete('id').toString()            // 删除所有范围的参数
+u.delete('id', 'search').toString() // 删除 search 参数
+u.delete('name', 'hash').toString() // 删除 hash 参数
+u.delete('id').toString() // 删除所有范围的参数
 
 // ============ Hash 路径操作 ============
 
-u.getHashPath()  // '/about'
+u.getHashPath() // '/about'
 u.setHashPath('/dashboard').toString()
 // 'http://a.com/fae?id=10&bar=eee#/dashboard?name=test&code=3'
 ```
@@ -171,12 +171,12 @@ u.setHashPath('/dashboard').toString()
 
 ## 与旧函数的关系
 
-| 旧函数           | 功能                 | 新替代方案                        |
-| ---------------- | -------------------- | --------------------------------- |
-| `getQueryParam`  | 获取 hash 内单个参数 | `new Url(url).get(name, 'hash')`  |
-| `getQueryParams` | 获取 hash 内所有参数 | `new Url(url).toObject('hash')`   |
-| `getUrlParam`    | 获取 search 单个参数 | `new Url(url).get(name, 'search')`|
-| `getUrlParams`   | 获取 search 所有参数 | `new Url(url).toObject('search')` |
+| 旧函数           | 功能                 | 新替代方案                         |
+| ---------------- | -------------------- | ---------------------------------- |
+| `getQueryParam`  | 获取 hash 内单个参数 | `new Url(url).get(name, 'hash')`   |
+| `getQueryParams` | 获取 hash 内所有参数 | `new Url(url).toObject('hash')`    |
+| `getUrlParam`    | 获取 search 单个参数 | `new Url(url).get(name, 'search')` |
+| `getUrlParams`   | 获取 search 所有参数 | `new Url(url).toObject('search')`  |
 
 ### 迁移示例
 
@@ -232,11 +232,7 @@ new Url('http://a.com?id=10#/about?name=test').toObject()
 ### 2. 链式操作
 
 ```js
-new Url(url)
-  .set('token', 'abc', 'search')
-  .set('page', 1, 'hash')
-  .delete('id', 'search')
-  .toString()
+new Url(url).set('token', 'abc', 'search').set('page', 1, 'hash').delete('id', 'search').toString()
 ```
 
 ### 3. 类型安全
@@ -253,9 +249,9 @@ const params: Record<string, string> = u.toObject('hash')
 import { url, Url } from 'js-cool'
 
 // 静态方法用于简单场景
-url.parse('?a=1')           // { a: '1' }
-url.stringify({ a: 1 })     // '?a=1'
-url.getPathname(fullUrl)    // '/fae'
+url.parse('?a=1') // { a: '1' }
+url.stringify({ a: 1 }) // '?a=1'
+url.getPathname(fullUrl) // '/fae'
 
 // Url 类用于复杂场景
 const u = new Url(fullUrl)
@@ -267,12 +263,12 @@ u.toObject('hash')
 
 ## 历史方案对比
 
-| 方案                                          | 优点                          | 缺点                                | 状态   |
-| --------------------------------------------- | ----------------------------- | ----------------------------------- | ------ |
-| 方案一：新增 `getHashParams` / `getHashParam` | 简单直观，与现有 API 风格一致 | 新增方法较多                        | ❌ 未采用 |
-| 方案二：扩展 `parse` / `get` 支持 `part` 参数 | 不增加新方法，API 简洁        | 改变现有 API 语义，可能影响现有用户 | ❌ 未采用 |
-| 方案三：新增 `hash` 命名空间                  | 结构清晰，可扩展性强          | 需要新增命名空间                    | ❌ 未采用 |
-| **方案四：`Url` 类内置双参数系统**            | 面向对象，链式调用友好，API 统一 | 需要实例化                       | ✅ 已采用 |
+| 方案                                          | 优点                             | 缺点                                | 状态      |
+| --------------------------------------------- | -------------------------------- | ----------------------------------- | --------- |
+| 方案一：新增 `getHashParams` / `getHashParam` | 简单直观，与现有 API 风格一致    | 新增方法较多                        | ❌ 未采用 |
+| 方案二：扩展 `parse` / `get` 支持 `part` 参数 | 不增加新方法，API 简洁           | 改变现有 API 语义，可能影响现有用户 | ❌ 未采用 |
+| 方案三：新增 `hash` 命名空间                  | 结构清晰，可扩展性强             | 需要新增命名空间                    | ❌ 未采用 |
+| **方案四：`Url` 类内置双参数系统**            | 面向对象，链式调用友好，API 统一 | 需要实例化                          | ✅ 已采用 |
 
 ---
 

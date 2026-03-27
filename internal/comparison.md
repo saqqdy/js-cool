@@ -414,56 +414,56 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### Array 数组 (18)
 
-| 方法           | 描述        | Lodash 对应      |
-| -------------- | ----------- | ---------------- |
-| `unique`       | 数组去重    | `_.uniq`         |
-| `shuffle`      | 随机打乱    | `_.shuffle`      |
-| `sorter`       | 排序器      | `_.sortBy`       |
-| `sortPinyin`   | 拼音排序    | -                |
-| `chunk`        | 分块        | `_.chunk`        |
-| `flatten`      | 扁平化      | `_.flatten`      |
-| `flattenDeep`  | 深度扁平化  | `_.flattenDeep`  |
-| `groupBy`      | 分组        | `_.groupBy`      |
-| `keyBy`        | 键值映射    | `_.keyBy`        |
-| `sample`       | 随机取一    | `_.sample`       |
-| `sampleSize`   | 随机取 N 个 | `_.sampleSize`   |
-| `intersect`    | 交集        | `_.intersection` |
-| `union`        | 并集        | `_.union`        |
-| `minus`        | 差集        | `_.difference`   |
-| `complement`   | 补集        | -                |
-| `contains`     | 包含检查    | `_.includes`     |
-| `all`          | 全部满足    | `_.every`        |
-| `any`          | 任一满足    | `_.some`         |
+| 方法          | 描述        | Lodash 对应      |
+| ------------- | ----------- | ---------------- |
+| `unique`      | 数组去重    | `_.uniq`         |
+| `shuffle`     | 随机打乱    | `_.shuffle`      |
+| `sorter`      | 排序器      | `_.sortBy`       |
+| `sortPinyin`  | 拼音排序    | -                |
+| `chunk`       | 分块        | `_.chunk`        |
+| `flatten`     | 扁平化      | `_.flatten`      |
+| `flattenDeep` | 深度扁平化  | `_.flattenDeep`  |
+| `groupBy`     | 分组        | `_.groupBy`      |
+| `keyBy`       | 键值映射    | `_.keyBy`        |
+| `sample`      | 随机取一    | `_.sample`       |
+| `sampleSize`  | 随机取 N 个 | `_.sampleSize`   |
+| `intersect`   | 交集        | `_.intersection` |
+| `union`       | 并集        | `_.union`        |
+| `minus`       | 差集        | `_.difference`   |
+| `complement`  | 补集        | -                |
+| `contains`    | 包含检查    | `_.includes`     |
+| `all`         | 全部满足    | `_.every`        |
+| `any`         | 任一满足    | `_.some`         |
 
 #### Object 对象 (9)
 
-| 方法          | 描述           | Lodash 对应   |
-| ------------- | -------------- | ------------- |
-| `clone`       | 深拷贝         | `_.cloneDeep` |
-| `extend`      | 深度合并       | `_.merge`     |
-| `getProperty` | 获取嵌套属性   | `_.get`       |
-| `setProperty` | 设置嵌套属性   | `_.set`       |
-| `omit`        | 排除属性       | `_.omit`      |
-| `pick`        | 选取属性       | `_.pick`      |
-| `cleanData`   | 清理空值       | -             |
-| `isEqual`     | 深度相等比较   | `_.isEqual`   |
-| `searchObject`| 深度搜索对象   | -             |
+| 方法           | 描述         | Lodash 对应   |
+| -------------- | ------------ | ------------- |
+| `clone`        | 深拷贝       | `_.cloneDeep` |
+| `extend`       | 深度合并     | `_.merge`     |
+| `getProperty`  | 获取嵌套属性 | `_.get`       |
+| `setProperty`  | 设置嵌套属性 | `_.set`       |
+| `omit`         | 排除属性     | `_.omit`      |
+| `pick`         | 选取属性     | `_.pick`      |
+| `cleanData`    | 清理空值     | -             |
+| `isEqual`      | 深度相等比较 | `_.isEqual`   |
+| `searchObject` | 深度搜索对象 | -             |
 
 #### Type Check 类型判断 (11)
 
-| 方法            | 描述                | Lodash 对应       |
-| --------------- | ------------------- | ----------------- |
-| `getType`       | 获取类型            | -                 |
-| `isArray`       | 数组判断            | `_.isArray`       |
-| `isObject`      | 对象判断            | `_.isObject`      |
-| `isPlainObject` | 纯对象判断          | `_.isPlainObject` |
-| `isDate`        | 日期判断            | `_.isDate`        |
-| `isRegExp`      | 正则判断            | `_.isRegExp`      |
-| `isWindow`      | window 判断         | -                 |
-| `isIterable`    | 可迭代判断          | -                 |
-| `isEmpty`       | 空值判断            | `_.isEmpty`       |
-| `isNil`         | null/undefined 判断 | `_.isNil`         |
-| `isExitsFunction` | 函数存在判断      | -                 |
+| 方法              | 描述                | Lodash 对应       |
+| ----------------- | ------------------- | ----------------- |
+| `getType`         | 获取类型            | -                 |
+| `isArray`         | 数组判断            | `_.isArray`       |
+| `isObject`        | 对象判断            | `_.isObject`      |
+| `isPlainObject`   | 纯对象判断          | `_.isPlainObject` |
+| `isDate`          | 日期判断            | `_.isDate`        |
+| `isRegExp`        | 正则判断            | `_.isRegExp`      |
+| `isWindow`        | window 判断         | -                 |
+| `isIterable`      | 可迭代判断          | -                 |
+| `isEmpty`         | 空值判断            | `_.isEmpty`       |
+| `isNil`           | null/undefined 判断 | `_.isNil`         |
+| `isExitsFunction` | 函数存在判断        | -                 |
 
 #### Validate 验证 (5)
 
@@ -477,46 +477,46 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### URL & Browser URL和浏览器 (9)
 
-| 方法             | 描述                            |
-| ---------------- | ------------------------------- |
-| `ua`             | 浏览器/设备/环境检测（v6 新增） |
-| `appVersion`     | 应用版本检测                    |
-| `browserVersion` | 浏览器版本检测                  |
-| `osVersion`      | 操作系统版本检测                |
-| `compareVersion` | 版本比较                        |
-| `nextVersion`    | 版本递增                        |
-| `getDirParams`   | 获取目录参数                    |
-| `isNumberBrowser`| 是否 360 浏览器                 |
-| `openUrl`        | 打开 URL                        |
+| 方法              | 描述                            |
+| ----------------- | ------------------------------- |
+| `ua`              | 浏览器/设备/环境检测（v6 新增） |
+| `appVersion`      | 应用版本检测                    |
+| `browserVersion`  | 浏览器版本检测                  |
+| `osVersion`       | 操作系统版本检测                |
+| `compareVersion`  | 版本比较                        |
+| `nextVersion`     | 版本递增                        |
+| `getDirParams`    | 获取目录参数                    |
+| `isNumberBrowser` | 是否 360 浏览器                 |
+| `openUrl`         | 打开 URL                        |
 
 #### URL Utilities (9)
 
-| 方法            | 描述               |
-| --------------- | ------------------ |
-| `Url`           | URL 类（链式操作） |
-| `parse`         | 解析查询字符串     |
-| `stringify`     | 序列化查询参数     |
-| `getOrigin`     | 获取 origin        |
-| `getHost`       | 获取 host          |
-| `getHostname`   | 获取 hostname      |
-| `getPathname`   | 获取 pathname      |
-| `getSearch`     | 获取 search        |
-| `getHash`       | 获取 hash          |
+| 方法          | 描述               |
+| ------------- | ------------------ |
+| `Url`         | URL 类（链式操作） |
+| `parse`       | 解析查询字符串     |
+| `stringify`   | 序列化查询参数     |
+| `getOrigin`   | 获取 origin        |
+| `getHost`     | 获取 host          |
+| `getHostname` | 获取 hostname      |
+| `getPathname` | 获取 pathname      |
+| `getSearch`   | 获取 search        |
+| `getHash`     | 获取 hash          |
 
 #### DOM 操作 (10)
 
-| 方法          | 描述             |
-| ------------- | ---------------- |
-| `addEvent`    | 添加事件         |
-| `removeEvent` | 移除事件         |
-| `stopBubble`  | 阻止冒泡         |
-| `stopDefault` | 阻止默认行为     |
-| `copy`        | 复制到剪贴板     |
-| `windowSize`  | 获取窗口尺寸     |
-| `download`    | 下载文件         |
-| `saveFile`    | 保存文件         |
-| `downloadFile`| 下载文件（锚点） |
-| `downloadUrlFile` | 下载文件（XHR）|
+| 方法              | 描述             |
+| ----------------- | ---------------- |
+| `addEvent`        | 添加事件         |
+| `removeEvent`     | 移除事件         |
+| `stopBubble`      | 阻止冒泡         |
+| `stopDefault`     | 阻止默认行为     |
+| `copy`            | 复制到剪贴板     |
+| `windowSize`      | 获取窗口尺寸     |
+| `download`        | 下载文件         |
+| `saveFile`        | 保存文件         |
+| `downloadFile`    | 下载文件（锚点） |
+| `downloadUrlFile` | 下载文件（XHR）  |
 
 #### Storage 存储 (10)
 
@@ -555,18 +555,18 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### Number 数字 (10)
 
-| 方法          | 描述         | Lodash 对应 |
-| ------------- | ------------ | ----------- |
-| `clamp`       | 限制范围     | `_.clamp`   |
-| `round`       | 四舍五入     | `_.round`   |
-| `sum`         | 求和         | `_.sum`     |
-| `average`     | 平均值       | `_.mean`    |
-| `inRange`     | 范围判断     | `_.inRange` |
-| `fixNumber`   | 固定小数位   | -           |
-| `getNumber`   | 提取数字     | -           |
-| `randomNumber`| 随机数字     | -           |
-| `randomNumbers`| 随机数字数组| -           |
-| `toThousands` | 千分位格式化 | -           |
+| 方法            | 描述         | Lodash 对应 |
+| --------------- | ------------ | ----------- |
+| `clamp`         | 限制范围     | `_.clamp`   |
+| `round`         | 四舍五入     | `_.round`   |
+| `sum`           | 求和         | `_.sum`     |
+| `average`       | 平均值       | `_.mean`    |
+| `inRange`       | 范围判断     | `_.inRange` |
+| `fixNumber`     | 固定小数位   | -           |
+| `getNumber`     | 提取数字     | -           |
+| `randomNumber`  | 随机数字     | -           |
+| `randomNumbers` | 随机数字数组 | -           |
+| `toThousands`   | 千分位格式化 | -           |
 
 #### Date 日期 (24)
 
@@ -612,27 +612,27 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### Utility 工具 (6)
 
-| 方法          | 描述         |
-| ------------- | ------------ |
-| `uuid`        | 生成 UUID    |
-| `randomString`| 随机字符串   |
-| `nextIndex`   | 递增索引     |
-| `getFileType` | 获取文件类型 |
-| `getGlobal`   | 安全获取全局变量 |
-| `fingerprint` | 浏览器指纹   |
+| 方法           | 描述             |
+| -------------- | ---------------- |
+| `uuid`         | 生成 UUID        |
+| `randomString` | 随机字符串       |
+| `nextIndex`    | 递增索引         |
+| `getFileType`  | 获取文件类型     |
+| `getGlobal`    | 安全获取全局变量 |
+| `fingerprint`  | 浏览器指纹       |
 
 #### Async Flow 异步流程 (8)
 
-| 方法            | 描述                 | Lodash 对应  |
-| --------------- | -------------------- | ------------ |
-| `debounce`      | 防抖                 | `_.debounce` |
-| `throttle`      | 节流                 | `_.throttle` |
-| `retry`         | 重试                 | -            |
-| `awaitTo`       | async/await 错误处理 | -            |
-| `delay`         | 延迟管理器           | -            |
-| `waiting`       | 等待函数             | -            |
-| `punctualTimer` | 精准定时器           | -            |
-| `promiseFactory`| Promise 工厂         | -            |
+| 方法             | 描述                 | Lodash 对应  |
+| ---------------- | -------------------- | ------------ |
+| `debounce`       | 防抖                 | `_.debounce` |
+| `throttle`       | 节流                 | `_.throttle` |
+| `retry`          | 重试                 | -            |
+| `awaitTo`        | async/await 错误处理 | -            |
+| `delay`          | 延迟管理器           | -            |
+| `waiting`        | 等待函数             | -            |
+| `punctualTimer`  | 精准定时器           | -            |
+| `promiseFactory` | Promise 工厂         | -            |
 
 #### Encode 编码 (8)
 
@@ -649,57 +649,57 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 #### Scroll 滚动工具 (15)
 
-| 方法                  | 描述           |
-| --------------------- | -------------- |
-| `scroll`              | 滚动命名空间   |
-| `getPosition`         | 获取滚动位置   |
-| `getProgress`         | 获取滚动进度   |
-| `getDirection`        | 获取滚动方向   |
-| `createDirectionTracker`| 创建方向追踪器|
-| `isInViewport`        | 是否在视口内   |
-| `scrollTo`            | 滚动到指定位置 |
-| `scrollToTop`         | 滚动到顶部     |
-| `scrollToBottom`      | 滚动到底部     |
-| `scrollBy`            | 相对滚动       |
-| `lockScroll`          | 锁定滚动       |
-| `unlockScroll`        | 解锁滚动       |
-| `toggleScroll`        | 切换滚动锁定   |
-| `isScrollLocked`      | 是否已锁定     |
-| `getScrollbarWidth`   | 获取滚动条宽度 |
+| 方法                     | 描述           |
+| ------------------------ | -------------- |
+| `scroll`                 | 滚动命名空间   |
+| `getPosition`            | 获取滚动位置   |
+| `getProgress`            | 获取滚动进度   |
+| `getDirection`           | 获取滚动方向   |
+| `createDirectionTracker` | 创建方向追踪器 |
+| `isInViewport`           | 是否在视口内   |
+| `scrollTo`               | 滚动到指定位置 |
+| `scrollToTop`            | 滚动到顶部     |
+| `scrollToBottom`         | 滚动到底部     |
+| `scrollBy`               | 相对滚动       |
+| `lockScroll`             | 锁定滚动       |
+| `unlockScroll`           | 解锁滚动       |
+| `toggleScroll`           | 切换滚动锁定   |
+| `isScrollLocked`         | 是否已锁定     |
+| `getScrollbarWidth`      | 获取滚动条宽度 |
 
 #### Patterns 正则模式 (10)
 
-| 方法/常量          | 描述               |
-| ------------------ | ------------------ |
-| `patterns`         | 统一模式对象       |
-| `validation`       | 验证正则集合       |
-| `DEVICE_PATTERNS`  | 设备检测正则       |
-| `OS_PATTERNS`      | 操作系统正则       |
-| `BROWSER_PATTERNS` | 浏览器检测正则     |
-| `ENGINE_PATTERNS`  | 渲染引擎正则       |
-| `ENV_PATTERNS`     | 环境检测正则       |
-| `getUA`            | 获取 User Agent    |
-| `matchPattern`     | 匹配正则模式       |
-| `extractVersion`   | 提取版本号         |
+| 方法/常量          | 描述            |
+| ------------------ | --------------- |
+| `patterns`         | 统一模式对象    |
+| `validation`       | 验证正则集合    |
+| `DEVICE_PATTERNS`  | 设备检测正则    |
+| `OS_PATTERNS`      | 操作系统正则    |
+| `BROWSER_PATTERNS` | 浏览器检测正则  |
+| `ENGINE_PATTERNS`  | 渲染引擎正则    |
+| `ENV_PATTERNS`     | 环境检测正则    |
+| `getUA`            | 获取 User Agent |
+| `matchPattern`     | 匹配正则模式    |
+| `extractVersion`   | 提取版本号      |
 
 #### Environment 环境判断 (3)
 
-| 方法        | 描述                 |
-| ----------- | -------------------- |
-| `inBrowser` | 是否在浏览器环境     |
-| `inNodeJs`  | 是否在 Node.js 环境  |
-| `isDarkMode`| 是否深色模式         |
+| 方法         | 描述                |
+| ------------ | ------------------- |
+| `inBrowser`  | 是否在浏览器环境    |
+| `inNodeJs`   | 是否在 Node.js 环境 |
+| `isDarkMode` | 是否深色模式        |
 
 #### External 外部依赖 (6)
 
-| 方法         | 描述           |
-| ------------ | -------------- |
-| `loadSource` | 加载资源       |
-| `mountCss`   | 挂载 CSS       |
-| `mountImg`   | 加载图片       |
-| `mountJs`    | 挂载 JS        |
-| `mountStyle` | 注入样式       |
-| `preloader`  | 图片预加载     |
+| 方法         | 描述       |
+| ------------ | ---------- |
+| `loadSource` | 加载资源   |
+| `mountCss`   | 挂载 CSS   |
+| `mountImg`   | 加载图片   |
+| `mountJs`    | 挂载 JS    |
+| `mountStyle` | 注入样式   |
+| `preloader`  | 图片预加载 |
 
 #### Network 网络 (1)
 
