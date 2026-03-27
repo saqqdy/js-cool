@@ -81,6 +81,18 @@
 			},
 			"default": "./dist/scroll/index.js"
 		},
+		"./storage": {
+			"types": "./dist/storage/index.d.ts",
+			"require": {
+				"types": "./dist/storage/index.d.ts",
+				"default": "./dist/storage/index.js"
+			},
+			"import": {
+				"types": "./dist/storage/index.d.mts",
+				"default": "./dist/storage/index.mjs"
+			},
+			"default": "./dist/storage/index.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"directories": {

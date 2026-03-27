@@ -22,6 +22,13 @@ const subpathEntries = [
 	'date/parse',
 	'url/index',
 	'url/utils',
+	'scroll/index',
+	'storage/index',
+	'storage/types',
+	'storage/local',
+	'storage/session',
+	'storage/cookie',
+	'storage/errors',
 ]
 
 // Step 1: Run tsc to generate declarations for all files
