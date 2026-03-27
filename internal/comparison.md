@@ -56,7 +56,7 @@
 
 | 库名称           | 方法数量 | 分类数量 | 覆盖范围         |
 | ---------------- | -------- | -------- | ---------------- |
-| **js-cool**      | **160+** | 17       | 全面覆盖常见场景 |
+| **js-cool**      | **170+** | 17       | 全面覆盖常见场景 |
 | **Lodash**       | 300+     | 12       | 非常全面         |
 | **Underscore**   | 120+     | 8        | 基础覆盖         |
 | **Ramda**        | 250+     | 15       | 函数式全覆盖     |
@@ -65,24 +65,28 @@
 
 ### 3.2 js-cool 功能分类详解
 
-| 分类              | 方法数 | 典型方法                                                  | 对比 Lodash   |
-| ----------------- | ------ | --------------------------------------------------------- | ------------- |
-| **String**        | 16     | `camel2Dash`, `dash2Camel`, `truncate`, `escape`          | ✅ 覆盖核心   |
-| **Array**         | 22     | `unique`, `shuffle`, `chunk`, `flatten`, `groupBy`        | ✅ 常用全覆盖 |
-| **Object**        | 11     | `clone`, `extend`, `omit`, `pick`, `getProperty`          | ✅ 核心覆盖   |
-| **Type Check**    | 15     | `isArray`, `isObject`, `isDate`, `isEmpty`, `isEqual`     | ✅ 核心覆盖   |
-| **Validate**      | 5      | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard` | ➕ Lodash 无  |
-| **URL & Browser** | 12     | `getUrlParams`, `parseUrlParam`, `ua`, `browserVersion`   | ➕ Lodash 无  |
-| **DOM**           | 6      | `addEvent`, `copy`, `windowSize`                          | ➕ Lodash 无  |
-| **Storage**       | 10     | `setCache`, `getCache`, `setCookie`, `getCookie`          | ➕ Lodash 无  |
-| **Convert**       | 13     | `arrayBufferToBase64`, `base64ToBlob`, `fileToBase64`     | ➕ Lodash 无  |
-| **Number**        | 5      | `clamp`, `round`, `sum`, `average`                        | ✅ 核心覆盖   |
-| **Date**          | 5      | `formatDate`, `dateDiff`, `relativeTime`, `isToday`       | ➕ 需 dayjs   |
-| **Color**         | 7      | `hexToRGB`, `rgbToHSL`, `lighten`, `darken`               | ➕ Lodash 无  |
-| **Utility**       | 15     | `uuid`, `randomString`, `delay`, `fingerprint`            | ⚠️ 部分覆盖   |
-| **Async Flow**    | 4      | `debounce`, `throttle`, `retry`, `awaitTo`                | ✅ 核心覆盖   |
-| **Encode**        | 4      | `encodeBase64`, `decodeBase64`, `encodeUtf8`              | ➕ Lodash 无  |
-| **Network**       | 1      | `fillIPv6`                                                | ➕ Lodash 无  |
+| 分类              | 方法数 | 典型方法                                                         | 对比 Lodash   |
+| ----------------- | ------ | ---------------------------------------------------------------- | ------------- |
+| **String**        | 11     | `camel2Dash`, `dash2Camel`, `truncate`, `escape`, `kebabCase`    | ✅ 覆盖核心   |
+| **Array**         | 18     | `unique`, `shuffle`, `chunk`, `flatten`, `groupBy`, `sortPinyin` | ✅ 常用全覆盖 |
+| **Object**        | 9      | `clone`, `extend`, `omit`, `pick`, `getProperty`, `isEqual`      | ✅ 核心覆盖   |
+| **Type Check**    | 11     | `isArray`, `isObject`, `isDate`, `isEmpty`, `isEqual`, `isNil`   | ✅ 核心覆盖   |
+| **Validate**      | 5      | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`        | ➕ Lodash 无  |
+| **URL & Browser** | 9      | `appVersion`, `browserVersion`, `ua`, `compareVersion`           | ➕ Lodash 无  |
+| **DOM**           | 10     | `addEvent`, `copy`, `windowSize`, `download`, `saveFile`         | ➕ Lodash 无  |
+| **Storage**       | 10     | `setCache`, `getCache`, `setCookie`, `getCookie`, `setSession`   | ➕ Lodash 无  |
+| **Convert**       | 15     | `arrayBufferToBase64`, `base64ToBlob`, `fileToBase64`            | ➕ Lodash 无  |
+| **Number**        | 10     | `clamp`, `round`, `sum`, `average`, `toThousands`                | ✅ 核心覆盖   |
+| **Date**          | 24     | `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `addDate`   | ➕ 需 dayjs   |
+| **Color**         | 7      | `hexToRGB`, `rgbToHSL`, `lighten`, `darken`, `randomColor`       | ➕ Lodash 无  |
+| **Utility**       | 6      | `uuid`, `randomString`, `fingerprint`, `getGlobal`               | ⚠️ 部分覆盖   |
+| **Async Flow**    | 8      | `debounce`, `throttle`, `retry`, `awaitTo`, `waiting`            | ✅ 核心覆盖   |
+| **Encode**        | 8      | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `safeParse`        | ➕ Lodash 无  |
+| **Scroll**        | 15     | `scrollTo`, `lockScroll`, `isInViewport`, `getScrollbarWidth`    | ➕ Lodash 无  |
+| **Patterns**      | 10     | `patterns`, `validation`, `DEVICE_PATTERNS`, `BROWSER_PATTERNS`  | ➕ Lodash 无  |
+| **Network**       | 1      | `fillIPv6`                                                       | ➕ Lodash 无  |
+| **Environment**   | 3      | `inBrowser`, `inNodeJs`, `isDarkMode`                            | ➕ Lodash 无  |
+| **URL Utils**     | 9      | `Url`, `parse`, `stringify`, `getOrigin`, `getPathname`          | ➕ Lodash 无  |
 
 ### 3.3 功能覆盖对比矩阵
 
@@ -237,9 +241,9 @@ const debounced = debounce(fn, 300)
 
 ```javascript
 // js-cool
-import { isEmail, pattern } from 'js-cool'
+import { isEmail, validation } from 'js-cool'
 isEmail('test@example.com') // true
-pattern.email.test('test@example.com') // true
+validation.email.test('test@example.com') // true
 
 // validator.js (需安装)
 import isEmail from 'validator/lib/isEmail'
@@ -390,9 +394,9 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 ## 八、功能覆盖详情
 
-### 8.1 js-cool 完整方法列表（140+）
+### 8.1 js-cool 完整方法列表（170+）
 
-#### String 字符串 (16)
+#### String 字符串 (11)
 
 | 方法           | 描述             | Lodash 对应    |
 | -------------- | ---------------- | -------------- |
@@ -402,17 +406,13 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `kebabCase`    | 转短横线命名     | `_.kebabCase`  |
 | `snakeCase`    | 转下划线命名     | `_.snakeCase`  |
 | `truncate`     | 截断字符串       | `_.truncate`   |
-| `trim`         | 去除首尾空格     | `_.trim`       |
 | `clearHtml`    | 清除 HTML 标签   | -              |
 | `clearAttr`    | 清除 HTML 属性   | -              |
 | `cutCHSString` | 截取中文字符串   | -              |
 | `getCHSLength` | 获取中文字符长度 | -              |
 | `mapTemplate`  | 模板字符串替换   | `_.template`   |
-| `escape`       | HTML 转义        | `_.escape`     |
-| `unescape`     | HTML 反转义      | `_.unescape`   |
-| `getNumber`    | 提取数字         | -              |
 
-#### Array 数组 (22)
+#### Array 数组 (18)
 
 | 方法           | 描述        | Lodash 对应      |
 | -------------- | ----------- | ---------------- |
@@ -422,6 +422,7 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `sortPinyin`   | 拼音排序    | -                |
 | `chunk`        | 分块        | `_.chunk`        |
 | `flatten`      | 扁平化      | `_.flatten`      |
+| `flattenDeep`  | 深度扁平化  | `_.flattenDeep`  |
 | `groupBy`      | 分组        | `_.groupBy`      |
 | `keyBy`        | 键值映射    | `_.keyBy`        |
 | `sample`       | 随机取一    | `_.sample`       |
@@ -433,29 +434,26 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `contains`     | 包含检查    | `_.includes`     |
 | `all`          | 全部满足    | `_.every`        |
 | `any`          | 任一满足    | `_.some`         |
-| `searchObject` | 深度搜索    | -                |
 
-#### Object 对象 (11)
+#### Object 对象 (9)
 
-| 方法            | 描述             | Lodash 对应   |
-| --------------- | ---------------- | ------------- |
-| `clone`         | 深拷贝           | `_.cloneDeep` |
-| `extend`        | 深度合并         | `_.merge`     |
-| `getProperty`   | 获取嵌套属性     | `_.get`       |
-| `setProperty`   | 设置嵌套属性     | `_.set`       |
-| `omit`          | 排除属性         | `_.omit`      |
-| `pick`          | 选取属性         | `_.pick`      |
-| `cleanData`     | 清理空值         | -             |
-| `safeParse`     | 安全 JSON 解析   | -             |
-| `safeStringify` | 安全 JSON 序列化 | -             |
-| `arrayToCSV`    | 数组转 CSV       | -             |
-| `CSVToArray`    | CSV 转数组       | -             |
+| 方法          | 描述           | Lodash 对应   |
+| ------------- | -------------- | ------------- |
+| `clone`       | 深拷贝         | `_.cloneDeep` |
+| `extend`      | 深度合并       | `_.merge`     |
+| `getProperty` | 获取嵌套属性   | `_.get`       |
+| `setProperty` | 设置嵌套属性   | `_.set`       |
+| `omit`        | 排除属性       | `_.omit`      |
+| `pick`        | 选取属性       | `_.pick`      |
+| `cleanData`   | 清理空值       | -             |
+| `isEqual`     | 深度相等比较   | `_.isEqual`   |
+| `searchObject`| 深度搜索对象   | -             |
 
-#### Type Check 类型判断 (15)
+#### Type Check 类型判断 (11)
 
 | 方法            | 描述                | Lodash 对应       |
 | --------------- | ------------------- | ----------------- |
-| `getType`       | 获取类型            | `_.getType`       |
+| `getType`       | 获取类型            | -                 |
 | `isArray`       | 数组判断            | `_.isArray`       |
 | `isObject`      | 对象判断            | `_.isObject`      |
 | `isPlainObject` | 纯对象判断          | `_.isPlainObject` |
@@ -463,9 +461,9 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `isRegExp`      | 正则判断            | `_.isRegExp`      |
 | `isWindow`      | window 判断         | -                 |
 | `isIterable`    | 可迭代判断          | -                 |
-| `isEqual`       | 深度相等            | `_.isEqual`       |
 | `isEmpty`       | 空值判断            | `_.isEmpty`       |
 | `isNil`         | null/undefined 判断 | `_.isNil`         |
+| `isExitsFunction` | 函数存在判断      | -                 |
 
 #### Validate 验证 (5)
 
@@ -477,33 +475,48 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `isIDCard`     | 身份证验证（中国） | -                 |
 | `isCreditCard` | 信用卡验证         | `isCreditCard`    |
 
-#### URL & Browser URL和浏览器 (12)
+#### URL & Browser URL和浏览器 (9)
 
 | 方法             | 描述                            |
 | ---------------- | ------------------------------- |
-| `getUrlParams`   | 获取所有 URL 参数               |
-| `getUrlParam`    | 获取单个 URL 参数               |
-| `parseUrlParam`  | 解析参数字符串                  |
-| `spliceUrlParam` | 拼接参数字符串                  |
-| `getDirParam`    | 获取目录参数                    |
 | `ua`             | 浏览器/设备/环境检测（v6 新增） |
 | `appVersion`     | 应用版本检测                    |
 | `browserVersion` | 浏览器版本检测                  |
+| `osVersion`      | 操作系统版本检测                |
 | `compareVersion` | 版本比较                        |
 | `nextVersion`    | 版本递增                        |
-| `getQueryParam`  | 获取 hash 参数                  |
-| `getQueryParams` | 获取所有 hash 参数              |
+| `getDirParams`   | 获取目录参数                    |
+| `isNumberBrowser`| 是否 360 浏览器                 |
+| `openUrl`        | 打开 URL                        |
 
-#### DOM 操作 (6)
+#### URL Utilities (9)
 
-| 方法          | 描述         |
-| ------------- | ------------ |
-| `addEvent`    | 添加事件     |
-| `removeEvent` | 移除事件     |
-| `stopBubble`  | 阻止冒泡     |
-| `stopDefault` | 阻止默认行为 |
-| `copy`        | 复制到剪贴板 |
-| `windowSize`  | 获取窗口尺寸 |
+| 方法            | 描述               |
+| --------------- | ------------------ |
+| `Url`           | URL 类（链式操作） |
+| `parse`         | 解析查询字符串     |
+| `stringify`     | 序列化查询参数     |
+| `getOrigin`     | 获取 origin        |
+| `getHost`       | 获取 host          |
+| `getHostname`   | 获取 hostname      |
+| `getPathname`   | 获取 pathname      |
+| `getSearch`     | 获取 search        |
+| `getHash`       | 获取 hash          |
+
+#### DOM 操作 (10)
+
+| 方法          | 描述             |
+| ------------- | ---------------- |
+| `addEvent`    | 添加事件         |
+| `removeEvent` | 移除事件         |
+| `stopBubble`  | 阻止冒泡         |
+| `stopDefault` | 阻止默认行为     |
+| `copy`        | 复制到剪贴板     |
+| `windowSize`  | 获取窗口尺寸     |
+| `download`    | 下载文件         |
+| `saveFile`    | 保存文件         |
+| `downloadFile`| 下载文件（锚点） |
+| `downloadUrlFile` | 下载文件（XHR）|
 
 #### Storage 存储 (10)
 
@@ -520,41 +533,70 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `getCookies` | 获取所有 Cookie               |
 | `delCookie`  | 删除 Cookie                   |
 
-#### Convert 转换 (13)
+#### Convert 转换 (15)
 
 | 方法                  | 描述                 |
 | --------------------- | -------------------- |
 | `arrayBufferToBase64` | ArrayBuffer → Base64 |
 | `arrayBufferToBlob`   | ArrayBuffer → Blob   |
+| `arrayToCSV`          | 数组 → CSV           |
 | `base64ToArrayBuffer` | Base64 → ArrayBuffer |
 | `base64ToBlob`        | Base64 → Blob        |
 | `base64ToFile`        | Base64 → File        |
 | `blobToArrayBuffer`   | Blob → ArrayBuffer   |
 | `blobToBase64`        | Blob → Base64        |
 | `blobToUrl`           | Blob → URL           |
+| `CSVToArray`          | CSV → 数组           |
+| `CSVToJSON`           | CSV → JSON           |
 | `fileToBase64`        | File → Base64        |
+| `JSONToCSV`           | JSON → CSV           |
 | `svgToBlob`           | SVG → Blob           |
 | `urlToBlob`           | URL → Blob           |
 
-#### Number 数字 (5)
+#### Number 数字 (10)
 
-| 方法      | 描述     | Lodash 对应 |
-| --------- | -------- | ----------- |
-| `clamp`   | 限制范围 | `_.clamp`   |
-| `round`   | 四舍五入 | `_.round`   |
-| `sum`     | 求和     | `_.sum`     |
-| `average` | 平均值   | `_.mean`    |
-| `inRange` | 范围判断 | `_.inRange` |
+| 方法          | 描述         | Lodash 对应 |
+| ------------- | ------------ | ----------- |
+| `clamp`       | 限制范围     | `_.clamp`   |
+| `round`       | 四舍五入     | `_.round`   |
+| `sum`         | 求和         | `_.sum`     |
+| `average`     | 平均值       | `_.mean`    |
+| `inRange`     | 范围判断     | `_.inRange` |
+| `fixNumber`   | 固定小数位   | -           |
+| `getNumber`   | 提取数字     | -           |
+| `randomNumber`| 随机数字     | -           |
+| `randomNumbers`| 随机数字数组| -           |
+| `toThousands` | 千分位格式化 | -           |
 
-#### Date 日期 (5)
+#### Date 日期 (24)
 
-| 方法             | 描述         | dayjs 对应              |
-| ---------------- | ------------ | ----------------------- |
-| `formatDate`     | 格式化日期   | `dayjs().format()`      |
-| `dateDiff`       | 日期差值     | `dayjs().diff()`        |
-| `relativeTime`   | 相对时间     | `dayjs().fromNow()`     |
-| `isToday`        | 是否今天     | `dayjs().isToday()`     |
-| `getDaysInMonth` | 获取月份天数 | `dayjs().daysInMonth()` |
+| 方法             | 描述           | dayjs 对应              |
+| ---------------- | -------------- | ----------------------- |
+| `date`           | 日期命名空间   | `dayjs()`               |
+| `DateParser`     | 日期解析器类   | -                       |
+| `formatDate`     | 格式化日期     | `dayjs().format()`      |
+| `dateDiff`       | 日期差值       | `dayjs().diff()`        |
+| `relativeTime`   | 相对时间       | `dayjs().fromNow()`     |
+| `isToday`        | 是否今天       | `dayjs().isToday()`     |
+| `isYesterday`    | 是否昨天       | `dayjs().isYesterday()` |
+| `isTomorrow`     | 是否明天       | `dayjs().isTomorrow()`  |
+| `isWeekend`      | 是否周末       | -                       |
+| `isLeapYear`     | 是否闰年       | `dayjs().isLeapYear()`  |
+| `isBefore`       | 是否在之前     | `dayjs().isBefore()`    |
+| `isAfter`        | 是否在之后     | `dayjs().isAfter()`     |
+| `isSame`         | 是否相同       | `dayjs().isSame()`      |
+| `isBetween`      | 是否在区间内   | `dayjs().isBetween()`   |
+| `compareDate`    | 日期比较       | -                       |
+| `minDate`        | 最小日期       | -                       |
+| `maxDate`        | 最大日期       | -                       |
+| `getDaysInMonth` | 获取月份天数   | `dayjs().daysInMonth()` |
+| `getQuarter`     | 获取季度       | `dayjs().quarter()`     |
+| `getDayOfYear`   | 获取年中第几天 | `dayjs().dayOfYear()`   |
+| `getWeekOfYear`  | 获取年中第几周 | `dayjs().week()`        |
+| `addDate`        | 日期加法       | `dayjs().add()`         |
+| `subtractDate`   | 日期减法       | `dayjs().subtract()`    |
+| `startOf`        | 获取起始时间   | `dayjs().startOf()`     |
+| `endOf`          | 获取结束时间   | `dayjs().endOf()`       |
 
 #### Color 颜色 (7)
 
@@ -568,43 +610,102 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `isLightColor` | 是否浅色  |
 | `randomColor`  | 随机颜色  |
 
-#### Utility 工具 (15)
+#### Utility 工具 (6)
 
-| 方法            | 描述         |
-| --------------- | ------------ |
-| `delay`         | 延迟管理器   |
-| `uuid`          | 生成 UUID    |
-| `randomString`  | 随机字符串   |
-| `randomNumber`  | 随机数字     |
-| `randomNumbers` | 随机数字数组 |
-| `nextIndex`     | 递增索引     |
-| `getFileType`   | 获取文件类型 |
-| `getNumber`     | 提取数字     |
-| `fixNumber`     | 固定小数位   |
-| `toThousands`   | 千分位格式化 |
-| `openUrl`       | 打开 URL     |
-| `punctualTimer` | 精准定时器   |
-| `waiting`       | 等待函数     |
-| `fingerprint`   | 浏览器指纹   |
-| `download`      | 下载文件     |
+| 方法          | 描述         |
+| ------------- | ------------ |
+| `uuid`        | 生成 UUID    |
+| `randomString`| 随机字符串   |
+| `nextIndex`   | 递增索引     |
+| `getFileType` | 获取文件类型 |
+| `getGlobal`   | 安全获取全局变量 |
+| `fingerprint` | 浏览器指纹   |
 
-#### Async Flow 异步流程 (4)
+#### Async Flow 异步流程 (8)
 
-| 方法       | 描述                 | Lodash 对应  |
-| ---------- | -------------------- | ------------ |
-| `debounce` | 防抖                 | `_.debounce` |
-| `throttle` | 节流                 | `_.throttle` |
-| `retry`    | 重试                 | -            |
-| `awaitTo`  | async/await 错误处理 | -            |
+| 方法            | 描述                 | Lodash 对应  |
+| --------------- | -------------------- | ------------ |
+| `debounce`      | 防抖                 | `_.debounce` |
+| `throttle`      | 节流                 | `_.throttle` |
+| `retry`         | 重试                 | -            |
+| `awaitTo`       | async/await 错误处理 | -            |
+| `delay`         | 延迟管理器           | -            |
+| `waiting`       | 等待函数             | -            |
+| `punctualTimer` | 精准定时器           | -            |
+| `promiseFactory`| Promise 工厂         | -            |
 
-#### Encode 编码 (4)
+#### Encode 编码 (8)
 
-| 方法           | 描述        |
-| -------------- | ----------- |
-| `encodeBase64` | Base64 编码 |
-| `decodeBase64` | Base64 解码 |
-| `encodeUtf8`   | UTF-8 编码  |
-| `decodeUtf8`   | UTF-8 解码  |
+| 方法            | 描述             |
+| --------------- | ---------------- |
+| `encodeBase64`  | Base64 编码      |
+| `decodeBase64`  | Base64 解码      |
+| `encodeUtf8`    | UTF-8 编码       |
+| `decodeUtf8`    | UTF-8 解码       |
+| `escape`        | HTML 转义        |
+| `unescape`      | HTML 反转义      |
+| `safeParse`     | 安全 JSON 解析   |
+| `safeStringify` | 安全 JSON 序列化 |
+
+#### Scroll 滚动工具 (15)
+
+| 方法                  | 描述           |
+| --------------------- | -------------- |
+| `scroll`              | 滚动命名空间   |
+| `getPosition`         | 获取滚动位置   |
+| `getProgress`         | 获取滚动进度   |
+| `getDirection`        | 获取滚动方向   |
+| `createDirectionTracker`| 创建方向追踪器|
+| `isInViewport`        | 是否在视口内   |
+| `scrollTo`            | 滚动到指定位置 |
+| `scrollToTop`         | 滚动到顶部     |
+| `scrollToBottom`      | 滚动到底部     |
+| `scrollBy`            | 相对滚动       |
+| `lockScroll`          | 锁定滚动       |
+| `unlockScroll`        | 解锁滚动       |
+| `toggleScroll`        | 切换滚动锁定   |
+| `isScrollLocked`      | 是否已锁定     |
+| `getScrollbarWidth`   | 获取滚动条宽度 |
+
+#### Patterns 正则模式 (10)
+
+| 方法/常量          | 描述               |
+| ------------------ | ------------------ |
+| `patterns`         | 统一模式对象       |
+| `validation`       | 验证正则集合       |
+| `DEVICE_PATTERNS`  | 设备检测正则       |
+| `OS_PATTERNS`      | 操作系统正则       |
+| `BROWSER_PATTERNS` | 浏览器检测正则     |
+| `ENGINE_PATTERNS`  | 渲染引擎正则       |
+| `ENV_PATTERNS`     | 环境检测正则       |
+| `getUA`            | 获取 User Agent    |
+| `matchPattern`     | 匹配正则模式       |
+| `extractVersion`   | 提取版本号         |
+
+#### Environment 环境判断 (3)
+
+| 方法        | 描述                 |
+| ----------- | -------------------- |
+| `inBrowser` | 是否在浏览器环境     |
+| `inNodeJs`  | 是否在 Node.js 环境  |
+| `isDarkMode`| 是否深色模式         |
+
+#### External 外部依赖 (6)
+
+| 方法         | 描述           |
+| ------------ | -------------- |
+| `loadSource` | 加载资源       |
+| `mountCss`   | 挂载 CSS       |
+| `mountImg`   | 加载图片       |
+| `mountJs`    | 挂载 JS        |
+| `mountStyle` | 注入样式       |
+| `preloader`  | 图片预加载     |
+
+#### Network 网络 (1)
+
+| 方法       | 描述          |
+| ---------- | ------------- |
+| `fillIPv6` | IPv6 地址补全 |
 
 ---
 
@@ -614,7 +715,7 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 | 优势                       | 说明                                                      |
 | -------------------------- | --------------------------------------------------------- |
-| ✅ **一站式解决方案**      | 覆盖数组、对象、字符串、日期、存储、DOM、验证等 16 个领域 |
+| ✅ **一站式解决方案**      | 覆盖数组、对象、字符串、日期、存储、DOM、验证等 17 个领域 |
 | ✅ **体积小巧**            | Gzip 仅 ~8KB，支持 tree-shaking                           |
 | ✅ **开箱即用**            | 无需安装多个库，减少依赖管理成本                          |
 | ✅ **TypeScript 原生支持** | 完整类型定义，开发体验优秀                                |
@@ -667,7 +768,7 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 
 ---
 
-> 文档生成时间：2025-03-23
+> 文档生成时间：2026-03-27
 >
 > 数据来源：各库官方文档、npm、GitHub
 >
