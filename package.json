@@ -138,7 +138,7 @@
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.18.2",
-		"@eslint-sets/eslint-config": "^6.3.0-beta.2",
+		"@eslint-sets/eslint-config": "^6.3.0",
 		"@microsoft/api-extractor": "^7.57.7",
 		"@swc/core": "^1.15.21",
 		"@types/activex-excel": "^14.0.11",
