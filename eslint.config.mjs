@@ -15,6 +15,7 @@ export default eslintConfig({
 		'perfectionist/sort-exports': 'off',
 		'unicorn/no-new-array': 'off',
 		'unicorn/prefer-includes': 'off',
+		'jsonc/sort-keys': 'off',
 	},
 	stylistic: false,
 	typescript: true,

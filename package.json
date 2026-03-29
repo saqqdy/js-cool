@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "Collection of common JavaScript / TypeScript utilities",
-	"version": "6.0.0-beta.2",
+	"version": "6.0.0-beta.3",
 	"packageManager": "pnpm@9.15.9",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -10,88 +10,32 @@
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"require": {
-				"types": "./dist/index.d.ts",
-				"default": "./dist/index.js"
-			},
-			"import": {
-				"types": "./dist/index.d.mts",
-				"default": "./dist/index.mjs"
-			},
-			"default": "./dist/index.js"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./ua": {
-			"types": "./dist/ua/index.d.ts",
-			"require": {
-				"types": "./dist/ua/index.d.ts",
-				"default": "./dist/ua/index.js"
-			},
-			"import": {
-				"types": "./dist/ua/index.d.mts",
-				"default": "./dist/ua/index.mjs"
-			},
-			"default": "./dist/ua/index.js"
+			"import": "./dist/ua/index.mjs",
+			"require": "./dist/ua/index.js"
 		},
 		"./patterns": {
-			"types": "./dist/patterns/index.d.ts",
-			"require": {
-				"types": "./dist/patterns/index.d.ts",
-				"default": "./dist/patterns/index.js"
-			},
-			"import": {
-				"types": "./dist/patterns/index.d.mts",
-				"default": "./dist/patterns/index.mjs"
-			},
-			"default": "./dist/patterns/index.js"
+			"import": "./dist/patterns/index.mjs",
+			"require": "./dist/patterns/index.js"
 		},
 		"./date": {
-			"types": "./dist/date/index.d.ts",
-			"require": {
-				"types": "./dist/date/index.d.ts",
-				"default": "./dist/date/index.js"
-			},
-			"import": {
-				"types": "./dist/date/index.d.mts",
-				"default": "./dist/date/index.mjs"
-			},
-			"default": "./dist/date/index.js"
+			"import": "./dist/date/index.mjs",
+			"require": "./dist/date/index.js"
 		},
 		"./url": {
-			"types": "./dist/url/index.d.ts",
-			"require": {
-				"types": "./dist/url/index.d.ts",
-				"default": "./dist/url/index.js"
-			},
-			"import": {
-				"types": "./dist/url/index.d.mts",
-				"default": "./dist/url/index.mjs"
-			},
-			"default": "./dist/url/index.js"
+			"import": "./dist/url/index.mjs",
+			"require": "./dist/url/index.js"
 		},
 		"./scroll": {
-			"types": "./dist/scroll/index.d.ts",
-			"require": {
-				"types": "./dist/scroll/index.d.ts",
-				"default": "./dist/scroll/index.js"
-			},
-			"import": {
-				"types": "./dist/scroll/index.d.mts",
-				"default": "./dist/scroll/index.mjs"
-			},
-			"default": "./dist/scroll/index.js"
+			"import": "./dist/scroll/index.mjs",
+			"require": "./dist/scroll/index.js"
 		},
 		"./storage": {
-			"types": "./dist/storage/index.d.ts",
-			"require": {
-				"types": "./dist/storage/index.d.ts",
-				"default": "./dist/storage/index.js"
-			},
-			"import": {
-				"types": "./dist/storage/index.d.mts",
-				"default": "./dist/storage/index.mjs"
-			},
-			"default": "./dist/storage/index.js"
+			"import": "./dist/storage/index.mjs",
+			"require": "./dist/storage/index.js"
 		},
 		"./package.json": "./package.json"
 	},
@@ -125,7 +69,7 @@
 		"test:coverage": "vitest run --coverage",
 		"lint": "eslint --fix .",
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\"",
-		"typecheck": "attw --pack",
+		"typecheck": "attw --pack --ignore-rules no-resolution",
 		"pub.bak": "git add . && git commit -m $npm_package_version && git pull && git push"
 	},
 	"dependencies": {
