@@ -22,6 +22,7 @@ const subpathEntries = [
 	'url/index',
 	'scroll/index',
 	'storage/index',
+	'binary/index',
 ]
 
 // Version injection plugin

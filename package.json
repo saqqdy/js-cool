@@ -37,6 +37,10 @@
 			"import": "./dist/storage/index.mjs",
 			"require": "./dist/storage/index.js"
 		},
+		"./binary": {
+			"import": "./dist/binary/index.mjs",
+			"require": "./dist/binary/index.js"
+		},
 		"./package.json": "./package.json"
 	},
 	"directories": {
