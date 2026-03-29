@@ -125,21 +125,6 @@ reader.onload = () => {
 reader.readAsArrayBuffer(file)
 ```
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { arrayBufferToBase64, arrayBufferToBlob } from 'js-cool'
-arrayBufferToBase64(buffer)
-arrayBufferToBlob(buffer, 'text/plain')
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-binary.arrayBuffer.toBase64(buffer)
-binary.arrayBuffer.toBlob(buffer, 'text/plain')
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述
-- [arrayBufferToBase64](/zh/api/convert/array-buffer-to-base64) - ArrayBuffer 转 Base64（旧 API）

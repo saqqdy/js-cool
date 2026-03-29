@@ -95,18 +95,6 @@ try {
 Due to browser security policies, cross-origin requests require the server to configure CORS headers. If the server doesn't support CORS, the request will fail.
 :::
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { urlToBlob } from 'js-cool'
-await urlToBlob(url)
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.url.toBlob(url)
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview

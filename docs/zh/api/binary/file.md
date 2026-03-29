@@ -93,19 +93,6 @@ const blob = binary.file.toBlob(file)
 const newFile = binary.blob.toFile(blob, 'new-name.txt')
 ```
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { fileToBase64 } from 'js-cool'
-await fileToBase64(file)
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.file.toBase64(file)
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述
-- [fileToBase64](/zh/api/convert/file-to-base64) - File 转 Base64（旧 API）

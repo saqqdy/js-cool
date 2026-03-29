@@ -127,22 +127,6 @@ const file = binary.base64.toFile(base64Data, 'hello.txt', 'text/plain')
 binary.download(file, 'hello.txt')
 ```
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { encodeBase64, decodeBase64 } from 'js-cool'
-encodeBase64('Hello')
-decodeBase64('SGVsbG8=')
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-binary.base64.encode('Hello')
-binary.base64.decode('SGVsbG8=')
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述
-- [encodeBase64](/zh/api/string/encode-base64) - 字符串 Base64 编码（旧 API）
-- [decodeBase64](/zh/api/string/decode-base64) - 字符串 Base64 解码（旧 API）

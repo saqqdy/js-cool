@@ -107,18 +107,6 @@ const blob = binary.svg.toBlob(svgString)
 binary.download(blob, 'image.svg')
 ```
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { svgToBlob } from 'js-cool'
-svgToBlob(svgString)
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-binary.svg.toBlob(svgString)
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview

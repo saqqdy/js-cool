@@ -95,18 +95,6 @@ try {
 由于浏览器安全策略，跨域请求需要服务器配置 CORS 头。如果服务器不支持 CORS，请求会失败。
 :::
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { urlToBlob } from 'js-cool'
-await urlToBlob(url)
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.url.toBlob(url)
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述

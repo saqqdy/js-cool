@@ -158,24 +158,6 @@ for (const chunk of chunks) {
 }
 ```
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { blobToBase64, blobToArrayBuffer, blobToUrl } from 'js-cool'
-await blobToBase64(blob)
-await blobToArrayBuffer(blob)
-blobToUrl(blob)
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.blob.toBase64(blob)
-await binary.blob.toArrayBuffer(blob)
-binary.blob.toURL(blob)
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview
-- [blobToBase64](/api/convert/blob-to-base64) - Blob to Base64 (legacy API)
-- [blobToArrayBuffer](/api/convert/blob-to-array-buffer) - Blob to ArrayBuffer (legacy API)

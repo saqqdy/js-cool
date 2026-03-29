@@ -110,18 +110,6 @@ const blob = binary.svg.toBlob(svgString)
 binary.download(blob, 'image.svg')
 ```
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { svgToBlob } from 'js-cool'
-svgToBlob(svgString)
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-binary.svg.toBlob(svgString)
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述

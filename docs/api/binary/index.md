@@ -257,14 +257,6 @@ const info = binary.parse(data)
 //   data: ...,
 //   type: 'blob' | 'file' | 'arrayBuffer' | 'base64' | 'dataURL' | 'url' | 'svg',
 //   mime: 'text/plain',
-//   name: 'file.txt',
 //   size: 1024
 // }
 ```
-
-## Related
-
-- [encodeBase64](/api/string/encode-base64) - String Base64 encoding (legacy API)
-- [decodeBase64](/api/string/decode-base64) - String Base64 decoding (legacy API)
-- [fileToBase64](/api/convert/file-to-base64) - File to Base64 (legacy API)
-- [base64ToBlob](/api/convert/base64-to-blob) - Base64 to Blob (legacy API)

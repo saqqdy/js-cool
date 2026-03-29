@@ -93,19 +93,6 @@ const blob = binary.file.toBlob(file)
 const newFile = binary.blob.toFile(blob, 'new-name.txt')
 ```
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { fileToBase64 } from 'js-cool'
-await fileToBase64(file)
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.file.toBase64(file)
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview
-- [fileToBase64](/api/convert/file-to-base64) - File to Base64 (legacy API)

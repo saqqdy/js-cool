@@ -158,24 +158,6 @@ for (const chunk of chunks) {
 }
 ```
 
-## 替代旧 API
-
-```js
-// 旧 API
-import { blobToBase64, blobToArrayBuffer, blobToUrl } from 'js-cool'
-await blobToBase64(blob)
-await blobToArrayBuffer(blob)
-blobToUrl(blob)
-
-// 新 API (v6.0.0)
-import { binary } from 'js-cool'
-await binary.blob.toBase64(blob)
-await binary.blob.toArrayBuffer(blob)
-binary.blob.toURL(blob)
-```
-
 ## 相关
 
 - [binary](/zh/api/binary/) - Binary 模块概述
-- [blobToBase64](/zh/api/convert/blob-to-base64) - Blob 转 Base64（旧 API）
-- [blobToArrayBuffer](/zh/api/convert/blob-to-array-buffer) - Blob 转 ArrayBuffer（旧 API）

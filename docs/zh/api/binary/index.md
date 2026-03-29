@@ -257,14 +257,6 @@ const info = binary.parse(data)
 //   data: ...,
 //   type: 'blob' | 'file' | 'arrayBuffer' | 'base64' | 'dataURL' | 'url' | 'svg',
 //   mime: 'text/plain',
-//   name: 'file.txt',
 //   size: 1024
 // }
 ```
-
-## 相关
-
-- [encodeBase64](/zh/api/string/encode-base64) - 字符串 Base64 编码（旧 API）
-- [decodeBase64](/zh/api/string/decode-base64) - 字符串 Base64 解码（旧 API）
-- [fileToBase64](/zh/api/convert/file-to-base64) - File 转 Base64（旧 API）
-- [base64ToBlob](/zh/api/convert/base64-to-blob) - Base64 转 Blob（旧 API）

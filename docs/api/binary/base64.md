@@ -127,22 +127,6 @@ const file = binary.base64.toFile(base64Data, 'hello.txt', 'text/plain')
 binary.download(file, 'hello.txt')
 ```
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { encodeBase64, decodeBase64 } from 'js-cool'
-encodeBase64('Hello')
-decodeBase64('SGVsbG8=')
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-binary.base64.encode('Hello')
-binary.base64.decode('SGVsbG8=')
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview
-- [encodeBase64](/api/string/encode-base64) - String Base64 encoding (legacy API)
-- [decodeBase64](/api/string/decode-base64) - String Base64 decoding (legacy API)

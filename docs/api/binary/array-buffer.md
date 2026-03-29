@@ -125,21 +125,6 @@ reader.onload = () => {
 reader.readAsArrayBuffer(file)
 ```
 
-## Replaces Legacy API
-
-```js
-// Legacy API
-import { arrayBufferToBase64, arrayBufferToBlob } from 'js-cool'
-arrayBufferToBase64(buffer)
-arrayBufferToBlob(buffer, 'text/plain')
-
-// New API (v6.0.0)
-import { binary } from 'js-cool'
-binary.arrayBuffer.toBase64(buffer)
-binary.arrayBuffer.toBlob(buffer, 'text/plain')
-```
-
 ## Related
 
 - [binary](/api/binary/) - Binary module overview
-- [arrayBufferToBase64](/api/convert/array-buffer-to-base64) - ArrayBuffer to Base64 (legacy API)
