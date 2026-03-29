@@ -95,7 +95,9 @@ const CRC32_TABLE = (() => {
  * ```
  */
 function crc32(data: BinaryInput): number {
-	let buffer: ArrayBuffer
+	let buffer: ArrayBuffer,
+		crc: number,
+		i: number
 
 	if (data instanceof ArrayBuffer) {
 		buffer = data
@@ -115,8 +117,8 @@ function crc32(data: BinaryInput): number {
 	}
 
 	const bytes = new Uint8Array(buffer)
-	let crc = 0xFFFFFFFF,
-		i = 0
+	crc = 0xFFFFFFFF
+	i = 0
 
 	for (; i < bytes.length; i++) {
 		crc = CRC32_TABLE[(crc ^ bytes[i]) & 0xFF] ^ (crc >>> 8)
@@ -188,16 +190,17 @@ function md5Hash(message: Uint8Array): string {
 
 	// Initialize hash values
 	let a0 = 0x67452301,
-	 b0 = 0xEFCDAB89,
-	 c0 = 0x98BADCFE,
-	 d0 = 0x10325476
+		b0 = 0xEFCDAB89,
+		c0 = 0x98BADCFE,
+		d0 = 0x10325476,
+		paddedLength: number
 
 	// Pre-processing: adding padding bits
 	const originalLength = message.length
 	const bitLength = BigInt(originalLength * 8)
 
 	// Calculate padded length
-	let paddedLength = originalLength + 1
+	paddedLength = originalLength + 1
 	while (paddedLength % 64 !== 56) {
 		paddedLength++
 	}
@@ -213,19 +216,19 @@ function md5Hash(message: Uint8Array): string {
 	lengthView.setBigUint64(0, bitLength, true)
 
 	// Process each 64-byte chunk
-	for (chunkStart = 0; chunkStart < paddedLength; chunkStart += 64) {
+	for (let chunkStart = 0; chunkStart < paddedLength; chunkStart += 64) {
 		const chunk = new DataView(padded.buffer, chunkStart, 64)
 
 		// Initialize hash value for this chunk
 		let A = a0,
-		 B = b0,
-		 C = c0,
-		 D = d0
+			B = b0,
+			C = c0,
+			D = d0
 
 		// Main loop
 		for (let i = 0; i < 64; i++) {
 			let f: number,
-			 g: number
+				g: number
 
 			if (i < 16) {
 				f = F(B, C, D)
