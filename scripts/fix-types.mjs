@@ -29,6 +29,7 @@ const subpathEntries = [
 	'storage/session',
 	'storage/cookie',
 	'storage/errors',
+	'binary/index',
 ]
 
 // Step 1: Run tsc to generate declarations for all files
