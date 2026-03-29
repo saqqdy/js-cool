@@ -536,7 +536,8 @@ describe('binary module', () => {
 
 	describe('svg module', () => {
 		it('should convert SVG to Blob', () => {
-			const svg = '<svg xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40"/></svg>'
+			const svg =
+				'<svg xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40"/></svg>'
 			const blob = binary.svg.toBlob(svg)
 			expect(blob.type).toBe('image/svg+xml')
 		})
@@ -574,7 +575,9 @@ describe('binary module', () => {
 				statusText: 'Not Found',
 			})
 
-			await expect(binary.url.toBlob('https://example.com/notfound')).rejects.toThrow('HTTP 404')
+			await expect(binary.url.toBlob('https://example.com/notfound')).rejects.toThrow(
+				'HTTP 404'
+			)
 		})
 
 		it('should fetch URL and convert to data URL', async () => {
@@ -695,7 +698,10 @@ describe('binary module', () => {
 
 		it('should handle options parameter', () => {
 			const buffer = new ArrayBuffer(8)
-			const converter = binary.from(buffer, { name: 'custom.bin', mime: 'application/custom' })
+			const converter = binary.from(buffer, {
+				name: 'custom.bin',
+				mime: 'application/custom',
+			})
 			expect(converter.getMime()).toBe('application/custom')
 		})
 
@@ -850,7 +856,9 @@ describe('binary module', () => {
 				click: vi.fn(),
 			}
 
-			const createElementSpy = vi.spyOn(document, 'createElement').mockReturnValue(linkSpy as any)
+			const createElementSpy = vi
+				.spyOn(document, 'createElement')
+				.mockReturnValue(linkSpy as any)
 			const bodySpy = {
 				appendChild: vi.fn(),
 				removeChild: vi.fn(),
@@ -874,7 +882,9 @@ describe('binary module', () => {
 				click: vi.fn(),
 			}
 
-			const createElementSpy = vi.spyOn(document, 'createElement').mockReturnValue(linkSpy as any)
+			const createElementSpy = vi
+				.spyOn(document, 'createElement')
+				.mockReturnValue(linkSpy as any)
 			const bodySpy = {
 				appendChild: vi.fn(),
 				removeChild: vi.fn(),
@@ -895,7 +905,9 @@ describe('binary module', () => {
 				click: vi.fn(),
 			}
 
-			const createElementSpy = vi.spyOn(document, 'createElement').mockReturnValue(linkSpy as any)
+			const createElementSpy = vi
+				.spyOn(document, 'createElement')
+				.mockReturnValue(linkSpy as any)
 			const bodySpy = {
 				appendChild: vi.fn(),
 				removeChild: vi.fn(),

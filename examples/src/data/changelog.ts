@@ -44,7 +44,8 @@ export const changelog: ChangelogData = {
 			category: 'Binary',
 			description:
 				'Chainable binary converter: binary.from(blob).toBase64(), binary.from(file).toArrayBuffer(), etc.',
-			descriptionZh: '链式二进制转换器：binary.from(blob).toBase64()、binary.from(file).toArrayBuffer() 等',
+			descriptionZh:
+				'链式二进制转换器：binary.from(blob).toBase64()、binary.from(file).toArrayBuffer() 等',
 			anchor: 'binary',
 		},
 		{

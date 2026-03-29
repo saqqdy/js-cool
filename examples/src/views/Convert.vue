@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { NH1, NInput, NTag, NButton, NSpace, NAlert } from 'naive-ui'
+import { NH1, NInput, NTag, NSpace, NAlert } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import { arrayToCSV, CSVToArray, CSVToJSON, JSONToCSV } from 'js-cool'
 import { useI18n } from '@/locales'
@@ -17,7 +17,7 @@ const jsonArrayInput = ref([
 
 <template>
 	<div>
-		<n-h1>Convert</n1>
+		<n-h1>Convert</n-h1>
 		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.Convert }}</p>
 
 		<!-- Binary Module Link -->
@@ -74,7 +74,8 @@ CSVToJSON('name,age\\nJohn,25') // [{ name: 'John', age: '25' }]`"
 			title="JSONToCSV / arrayToCSV"
 			description="Convert JSON or array to CSV string"
 			since="5.0.0"
-			:code="'JSONToCSV([{ name: \\'John\\', age: 25 }], [\\'name\\', \\'age\\'])\\narrayToCSV([[\\'a\\',\\'b\\'], [\\'1\\',\\'2\\']])'"
+			:code="`JSONToCSV([{ name: 'John', age: 25 }], ['name', 'age'])
+arrayToCSV([['a','b'], ['1','2']])`"
 		>
 			<template #result>
 				<n-space vertical>

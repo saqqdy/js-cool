@@ -8,4 +8,3 @@ if (!globalThis.crypto) {
 if (!globalThis.Uint8Array) {
 	globalThis.Uint8Array = Uint8Array
 }
-

@@ -18,21 +18,21 @@ import {
   blobToArrayBuffer,
   blobToBase64,
   fileToBase64,
-  urlToBlob
+  urlToBlob,
 } from 'js-cool'
 ```
 
 ### 2. 现有代码问题
 
-| 方法 | 问题 |
-|------|------|
-| `arrayBufferToBase64` | 使用 spread operator，大文件会爆栈 |
-| `urlToBlob` | `!fetch` 判断不严谨，未检查 HTTP 状态码 |
-| `base64ToBlob` | 不支持纯 base64 字符串（无 data URL 前缀） |
-| `base64ToFile` | 同上，不支持纯 base64 |
-| `blobToUrl` | 缺少自动清理机制，用户容易忘记 revoke |
-| `base64ToArrayBuffer` | `split(',')` 可能误分割 base64 内容中的逗号 |
-| 类型不一致 | 有的返回 `ArrayBuffer`，有的返回 `Uint8Array` |
+| 方法                  | 问题                                          |
+| --------------------- | --------------------------------------------- |
+| `arrayBufferToBase64` | 使用 spread operator，大文件会爆栈            |
+| `urlToBlob`           | `!fetch` 判断不严谨，未检查 HTTP 状态码       |
+| `base64ToBlob`        | 不支持纯 base64 字符串（无 data URL 前缀）    |
+| `base64ToFile`        | 同上，不支持纯 base64                         |
+| `blobToUrl`           | 缺少自动清理机制，用户容易忘记 revoke         |
+| `base64ToArrayBuffer` | `split(',')` 可能误分割 base64 内容中的逗号   |
+| 类型不一致            | 有的返回 `ArrayBuffer`，有的返回 `Uint8Array` |
 
 ### 3. 缺少的方法
 
@@ -197,7 +197,7 @@ const blob = new Blob(['Hello'], { type: 'text/plain' })
 const base64 = await binary.from(blob).toBase64()
 const buffer = await binary.from(blob).toArrayBuffer()
 const url = await binary.from(blob).toURL()
-url.revoke()  // 清理
+url.revoke() // 清理
 
 // Base64 转换
 const base64Str = 'SGVsbG8gV29ybGQ='
@@ -206,7 +206,7 @@ const buffer = await binary.from(base64Str).toArrayBuffer()
 
 // data URL 转换
 const dataURL = 'data:image/png;base64,iVBORw0KGgo...'
-const blob = await binary.from(dataURL).toBlob()  // 自动识别 mime
+const blob = await binary.from(dataURL).toBlob() // 自动识别 mime
 const file = await binary.from(dataURL).toFile('image.png')
 
 // ArrayBuffer 转换
@@ -225,7 +225,7 @@ const base64 = await binary.from('https://example.com/image.png').toDataURL()
 
 // SVG 转换
 const svgString = '<svg>...</svg>'
-const blob = binary.from(svgString).toBlob()  // 自动设为 image/svg+xml
+const blob = binary.from(svgString).toBlob() // 自动设为 image/svg+xml
 
 // 链式调用增强方法
 const hash = await binary.from(blob).hash('sha256')
@@ -294,7 +294,7 @@ interface BinaryMeta {
   mime: string
   name?: string
   lastModified?: number
-  extension?: string      // 从 mime 或名称推断
+  extension?: string // 从 mime 或名称推断
   isImage: boolean
   isVideo: boolean
   isAudio: boolean
@@ -313,7 +313,7 @@ const resized = await binary.image.resize(blob, {
   width: 800,
   height: 600,
   fit: 'contain' | 'cover' | 'fill',
-  quality: 0.9
+  quality: 0.9,
 })
 
 // 压缩
@@ -393,48 +393,43 @@ binary.download(blob, 'file.txt')
 
 ### 映射表
 
-| 旧方法 | 新方法 |
-|--------|--------|
-| `blobToUrl(blob)` | `binary.blob.toURL(blob)` 或 `binary.from(blob).toURL()` |
-| `svgToBlob(svg)` | `binary.svg.toBlob(svg)` 或 `binary.from(svg).toBlob()` |
-| `arrayBufferToBase64(buf, mime)` | `binary.arrayBuffer.toBase64(buf, mime)` |
-| `base64ToArrayBuffer(b64)` | `binary.base64.toArrayBuffer(b64)` |
-| `arrayBufferToBlob(buf, mime)` | `binary.arrayBuffer.toBlob(buf, mime)` |
-| `base64ToBlob(b64)` | `binary.base64.toBlob(b64)` |
-| `base64ToFile(b64, name)` | `binary.base64.toFile(b64, name)` |
-| `blobToArrayBuffer(blob)` | `binary.blob.toArrayBuffer(blob)` |
-| `blobToBase64(blob)` | `binary.blob.toBase64(blob)` |
-| `fileToBase64(file)` | `binary.file.toBase64(file)` |
-| `urlToBlob(url)` | `binary.url.toBlob(url)` |
+| 旧方法                           | 新方法                                                   |
+| -------------------------------- | -------------------------------------------------------- |
+| `blobToUrl(blob)`                | `binary.blob.toURL(blob)` 或 `binary.from(blob).toURL()` |
+| `svgToBlob(svg)`                 | `binary.svg.toBlob(svg)` 或 `binary.from(svg).toBlob()`  |
+| `arrayBufferToBase64(buf, mime)` | `binary.arrayBuffer.toBase64(buf, mime)`                 |
+| `base64ToArrayBuffer(b64)`       | `binary.base64.toArrayBuffer(b64)`                       |
+| `arrayBufferToBlob(buf, mime)`   | `binary.arrayBuffer.toBlob(buf, mime)`                   |
+| `base64ToBlob(b64)`              | `binary.base64.toBlob(b64)`                              |
+| `base64ToFile(b64, name)`        | `binary.base64.toFile(b64, name)`                        |
+| `blobToArrayBuffer(blob)`        | `binary.blob.toArrayBuffer(blob)`                        |
+| `blobToBase64(blob)`             | `binary.blob.toBase64(blob)`                             |
+| `fileToBase64(file)`             | `binary.file.toBase64(file)`                             |
+| `urlToBlob(url)`                 | `binary.url.toBlob(url)`                                 |
 
 ### 新增方法总览
 
-| 类别 | 方法 |
-|------|------|
+| 类别         | 方法                                                                               |
+| ------------ | ---------------------------------------------------------------------------------- |
 | **新增转换** | `blob.toFile`, `file.toBlob`, `base64.encode/decode`, `arrayBuffer.toString/toHex` |
-| **文本编码** | `text.encode/decode`, `text.toBase64/fromBase64` |
-| **DataURL** | `dataURL.parse/build/isValid` |
-| **十六进制** | `hex.encode/decode` |
-| **哈希** | `hash.md5/sha1/sha256/crc32` |
-| **元信息** | `meta.get` |
-| **图片处理** | `image.resize/compress/crop/rotate/convert/getDimensions/toCanvas/fromCanvas` |
-| **压缩** | `compress.gzip/gunzip/deflate/inflate` |
-| **分片** | `chunk.split/merge` |
-| **流式** | `stream.fromBlob/toBlob/iterate` |
-| **工具** | `compare/clone/download` |
-| **类型检测** | `isBlob/isFile/isArrayBuffer/isDataURL/isBase64` |
+| **文本编码** | `text.encode/decode`, `text.toBase64/fromBase64`                                   |
+| **DataURL**  | `dataURL.parse/build/isValid`                                                      |
+| **十六进制** | `hex.encode/decode`                                                                |
+| **哈希**     | `hash.md5/sha1/sha256/crc32`                                                       |
+| **元信息**   | `meta.get`                                                                         |
+| **图片处理** | `image.resize/compress/crop/rotate/convert/getDimensions/toCanvas/fromCanvas`      |
+| **压缩**     | `compress.gzip/gunzip/deflate/inflate`                                             |
+| **分片**     | `chunk.split/merge`                                                                |
+| **流式**     | `stream.fromBlob/toBlob/iterate`                                                   |
+| **工具**     | `compare/clone/download`                                                           |
+| **类型检测** | `isBlob/isFile/isArrayBuffer/isDataURL/isBase64`                                   |
 
 ---
 
 ## 类型定义
 
 ```typescript
-type BinaryInput =
-  | Blob
-  | File
-  | ArrayBuffer
-  | Uint8Array
-  | string  // base64, data URL, or URL
+type BinaryInput = Blob | File | ArrayBuffer | Uint8Array | string // base64, data URL, or URL
 
 interface BinaryData {
   data: Blob | File | ArrayBuffer | string
@@ -624,20 +619,20 @@ interface StreamAPI {
 
 ### IE11 不支持的 API
 
-| API | IE11 状态 | 解决方案 |
-|-----|-----------|----------|
-| `File` 构造函数 | 不支持 | 使用 `Blob` + 手动添加 `name` 属性 |
-| `URL.createObjectURL` | 支持 | 无需处理 |
-| `btoa` / `atob` | 支持 | 无需处理 |
-| `FileReader` | 支持 | 无需处理 |
-| `Blob` | 支持 | 无需处理 |
-| `ArrayBuffer` | 支持 | 无需处理 |
-| `Uint8Array` | 支持 | 无需处理 |
-| `TextEncoder` / `TextDecoder` | 不支持 | 提供 polyfill 或替代实现 |
-| `CompressionStream` | 不支持 | 降级提示或跳过压缩 |
-| `ReadableStream` | 不支持 | 使用回调或 XHR 替代 |
-| `Canvas` 图片处理 | 部分支持 | 使用 `canvas.toBlob` polyfill |
-| `crypto.subtle` (Hash) | 不支持 | 使用纯 JS 实现或降级 |
+| API                           | IE11 状态 | 解决方案                           |
+| ----------------------------- | --------- | ---------------------------------- |
+| `File` 构造函数               | 不支持    | 使用 `Blob` + 手动添加 `name` 属性 |
+| `URL.createObjectURL`         | 支持      | 无需处理                           |
+| `btoa` / `atob`               | 支持      | 无需处理                           |
+| `FileReader`                  | 支持      | 无需处理                           |
+| `Blob`                        | 支持      | 无需处理                           |
+| `ArrayBuffer`                 | 支持      | 无需处理                           |
+| `Uint8Array`                  | 支持      | 无需处理                           |
+| `TextEncoder` / `TextDecoder` | 不支持    | 提供 polyfill 或替代实现           |
+| `CompressionStream`           | 不支持    | 降级提示或跳过压缩                 |
+| `ReadableStream`              | 不支持    | 使用回调或 XHR 替代                |
+| `Canvas` 图片处理             | 部分支持  | 使用 `canvas.toBlob` polyfill      |
+| `crypto.subtle` (Hash)        | 不支持    | 使用纯 JS 实现或降级               |
 
 ### 兼容实现策略
 
@@ -691,7 +686,7 @@ export const textEncoder = {
       }
     }
     return new Uint8Array(bytes)
-  }
+  },
 }
 
 /**
@@ -721,7 +716,7 @@ export const textDecoder = {
       }
     }
     return str
-  }
+  },
 }
 ```
 
@@ -738,9 +733,7 @@ async function gzip(data: Blob | ArrayBuffer): Promise<Blob> {
     return data instanceof Blob ? data : new Blob([data])
   }
 
-  const stream = data instanceof Blob
-    ? data.stream()
-    : new Blob([data]).stream()
+  const stream = data instanceof Blob ? data.stream() : new Blob([data]).stream()
 
   const compressed = stream.pipeThrough(new CompressionStream('gzip'))
   return new Response(compressed).blob()
@@ -823,7 +816,7 @@ async function fromCanvas(canvas: HTMLCanvasElement, mime = 'image/png'): Promis
   return new Promise((resolve, reject) => {
     // 现代浏览器支持 toBlob
     if (canvas.toBlob) {
-      canvas.toBlob((blob) => {
+      canvas.toBlob(blob => {
         if (blob) resolve(blob)
         else reject(new Error('Failed to convert canvas to blob'))
       }, mime)
@@ -857,7 +850,7 @@ export function detectCapabilities(): CompatConfig {
   return {
     compression: typeof CompressionStream !== 'undefined',
     hash: typeof crypto !== 'undefined' && typeof crypto.subtle !== 'undefined',
-    stream: typeof ReadableStream !== 'undefined'
+    stream: typeof ReadableStream !== 'undefined',
   }
 }
 
@@ -995,16 +988,11 @@ function blobToUrl(input: Blob): string {
 ### 旧 API
 
 ```typescript
-import {
-  blobToUrl,
-  blobToBase64,
-  base64ToArrayBuffer,
-  arrayBufferToBlob
-} from 'js-cool'
+import { blobToUrl, blobToBase64, base64ToArrayBuffer, arrayBufferToBlob } from 'js-cool'
 
 const blob = new Blob(['Hello'])
 const url = blobToUrl(blob)
-URL.revokeObjectURL(url)  // 手动清理
+URL.revokeObjectURL(url) // 手动清理
 
 const base64 = await blobToBase64(blob)
 const buffer = base64ToArrayBuffer(base64)
@@ -1020,7 +1008,7 @@ const blob = new Blob(['Hello'])
 
 // 方式一：便捷方法
 const { url, revoke } = binary.blob.toURL(blob)
-revoke()  // 自动清理
+revoke() // 自动清理
 
 // 方式二：链式调用
 const base64 = await binary.from(blob).toBase64()

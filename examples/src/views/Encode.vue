@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { NH1, NInput, NTag, NButton, NSpace } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
-import { encodeBase64, decodeBase64, encodeUtf8, decodeUtf8 } from 'js-cool'
+import { binary, encodeUtf8, decodeUtf8 } from 'js-cool'
 import { useI18n } from '@/locales'
 
 const { t } = useI18n()
@@ -16,12 +16,12 @@ const utf8Encoded = ref('')
 const utf8Decoded = ref('')
 
 const handleBase64Encode = () => {
-	base64Encoded.value = encodeBase64(base64Input.value)
+	base64Encoded.value = binary.base64.encode(base64Input.value)
 }
 
 const handleBase64Decode = () => {
 	try {
-		base64Decoded.value = decodeBase64(base64Encoded.value)
+		base64Decoded.value = binary.base64.decode(base64Encoded.value)
 	} catch {
 		base64Decoded.value = 'Invalid base64'
 	}

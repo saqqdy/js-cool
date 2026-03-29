@@ -207,7 +207,8 @@ export default {
 	binary: {
 		typeDetection: '检测输入值是否为 Blob、File、ArrayBuffer、DataURL 或 Base64',
 		parseDesc: '解析二进制输入，返回类型、MIME、大小等信息',
-		chainDesc: '链式转换 API，支持 Blob、File、ArrayBuffer、Base64、DataURL、URL、SVG 等格式互转',
+		chainDesc:
+			'链式转换 API，支持 Blob、File、ArrayBuffer、Base64、DataURL、URL、SVG 等格式互转',
 		base64Desc: 'Base64 编码解码，支持 Unicode 字符',
 		textDesc: '文本编码解码，支持 UTF-8',
 		hexDesc: '十六进制编码解码',

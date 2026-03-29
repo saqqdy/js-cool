@@ -212,7 +212,8 @@ export default {
 	binary: {
 		typeDetection: 'Check if value is Blob, File, ArrayBuffer, DataURL, or Base64',
 		parseDesc: 'Parse binary input and return type, MIME, size and other info',
-		chainDesc: 'Chainable conversion API supporting Blob, File, ArrayBuffer, Base64, DataURL, URL, SVG formats',
+		chainDesc:
+			'Chainable conversion API supporting Blob, File, ArrayBuffer, Base64, DataURL, URL, SVG formats',
 		base64Desc: 'Base64 encode/decode with Unicode support',
 		textDesc: 'Text encoding/decoding with UTF-8 support',
 		hexDesc: 'Hexadecimal encoding/decoding',

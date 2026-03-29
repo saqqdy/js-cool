@@ -67,7 +67,7 @@
 		"sync": "tsx scripts/sync",
 		"workflow:publish-test": "zx scripts/workflow.mjs",
 		"clean": "rm-all dist es lib temp",
-		"dist": "run-s lint prettier build",
+		"dist": "run-s lint build",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
