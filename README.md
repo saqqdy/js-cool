@@ -159,14 +159,14 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **DOM**           | DOM manipulation                  | `addEvent`, `removeEvent`, `stopBubble`, `stopDefault`, `copy`, `windowSize`, `download`, `saveFile`, `downloadFile`, `downloadUrlFile`                                                                                                           |
 | **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
 | **Storage**       | Browser storage                   | `storage`, `local`, `session`, `cookie`                                                                                                                                                                                                           |
-| **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
+| **Convert**       | Format conversion                 | `arrayToCSV`, `CSVToArray`, `CSVToJSON`, `JSONToCSV`                                                                                                                                                                                              |
 | **Binary**        | Binary data conversion (v6.0.0+)  | `binary`, `binary.from()`, `binary.base64`, `binary.blob`, `binary.arrayBuffer`, `binary.file`, `binary.url`, `binary.svg`, `binary.text`, `binary.dataURL`, `binary.hex`, `binary.hash`, `binary.meta`                                            |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
 | **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                                                            |
 | **Utility**       | General utilities                 | `delay`, `uuid`, `randomString`, `randomNumber`, `randomNumbers`, `nextIndex`, `getFileType`, `getGlobal`, `getNumber`, `fixNumber`, `toThousands`, `openUrl`, `punctualTimer`, `waiting`, `fingerprint`                                          |
 | **Async Flow**    | Async flow control                | `debounce`, `throttle`, `retry`, `awaitTo`                                                                                                                                                                                                        |
-| **Encode**        | Encoding/decoding                 | `encodeBase64`, `decodeBase64`, `encodeUtf8`, `decodeUtf8`                                                                                                                                                                                        |
+| **Encode**        | Encoding/decoding                 | `encodeUtf8`, `decodeUtf8`                                                                                                                                                                                                                        |
 | **Network**       | Network utilities                 | `fillIPv6`                                                                                                                                                                                                                                        |
 
 ---
@@ -1978,54 +1978,6 @@ await preloader(['image1.jpg', 'image2.jpg', 'image3.jpg'])
 
 ---
 
-### Binary Conversion (Legacy)
-
-> **Note:** For new projects, use the `binary` module (v6.0.0+) which provides a unified, chainable API. See [Binary Module](#binary-module-v600) below.
-
-```js
-import {
-  arrayBufferToBase64,
-  arrayBufferToBlob,
-  base64ToArrayBuffer,
-  base64ToBlob,
-  base64ToFile,
-  blobToArrayBuffer,
-  blobToBase64,
-  blobToUrl,
-  fileToBase64,
-  svgToBlob,
-  urlToBlob,
-} from 'js-cool'
-
-// ArrayBuffer conversions
-const buffer = new ArrayBuffer(10)
-const base64 = arrayBufferToBase64(buffer)
-const base64WithMime = arrayBufferToBase64(buffer, 'image/png')
-const blob = arrayBufferToBlob(buffer, 'image/png')
-
-// Base64 conversions
-const buffer = base64ToArrayBuffer('aGVsbG8=')
-const blob = base64ToBlob('data:image/png;base64,...')
-const file = base64ToFile('data:image/png;base64,...', 'image.png', 'image/png')
-
-// Blob conversions
-const buffer = await blobToArrayBuffer(blob)
-const base64 = await blobToBase64(blob)
-const url = blobToUrl(blob) // 'blob:origin/uuid'
-
-// File conversions
-const base64 = await fileToBase64(file) // 'data:image/png;base64,...'
-
-// SVG conversion
-const blob = svgToBlob('<svg viewBox="0 0 100 100">...</svg>')
-// Blob with type 'image/svg+xml'
-
-// URL to Blob
-const blob = await urlToBlob('https://example.com/image.png')
-```
-
----
-
 ### Binary Module (v6.0.0+)
 
 The `binary` module provides a unified, chainable API for binary data conversion. It's the recommended replacement for legacy conversion functions.
@@ -2124,23 +2076,6 @@ binary.download(blob, 'file.txt')
 const info = binary.parse(data)
 // { data, type, mime, name, size }
 ```
-
-#### Migration from Legacy Functions
-
-| Legacy Function | New Binary API |
-|----------------|----------------|
-| `encodeBase64(str)` | `binary.base64.encode(str)` |
-| `decodeBase64(str)` | `binary.base64.decode(str)` |
-| `fileToBase64(file)` | `await binary.file.toBase64(file)` |
-| `base64ToFile(base64, name, mime)` | `binary.base64.toFile(base64, name, mime)` |
-| `base64ToBlob(base64, mime)` | `binary.base64.toBlob(base64, mime)` |
-| `blobToBase64(blob)` | `await binary.blob.toBase64(blob)` |
-| `blobToArrayBuffer(blob)` | `await binary.blob.toArrayBuffer(blob)` |
-| `blobToUrl(blob)` | `binary.blob.toURL(blob)` |
-| `arrayBufferToBase64(buffer)` | `binary.arrayBuffer.toBase64(buffer)` |
-| `arrayBufferToBlob(buffer, mime)` | `binary.arrayBuffer.toBlob(buffer, mime)` |
-| `svgToBlob(svg)` | `binary.svg.toBlob(svg)` |
-| `urlToBlob(url)` | `await binary.url.toBlob(url)` |
 
 ---
 

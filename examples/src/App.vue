@@ -31,6 +31,7 @@ import {
 	LanguageOutline,
 	RocketOutline,
 	ArrowDownOutline,
+	CodeSlashOutline,
 } from '@vicons/ionicons5'
 import { useI18n } from './locales'
 
@@ -59,6 +60,7 @@ const categories = [
 	{ name: 'Dom', path: 'dom', icon: FingerPrintOutline },
 	{ name: 'Scroll', path: 'scroll', icon: ArrowDownOutline },
 	{ name: 'Storage', path: 'storage', icon: SaveOutline },
+	{ name: 'Binary', path: 'binary', icon: CodeSlashOutline },
 	{ name: 'Convert', path: 'convert', icon: SyncOutline },
 	{ name: 'Number', path: 'number', icon: RemoveOutline },
 	{ name: 'Date', path: 'date', icon: CalendarOutline },

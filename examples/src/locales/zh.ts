@@ -45,6 +45,7 @@ export default {
 		Dom: 'DOM 操作工具',
 		Scroll: '滚动工具，处理滚动相关操作',
 		Storage: '存储工具',
+		Binary: '二进制转换工具 - 统一的二进制数据处理 API',
 		Convert: '转换工具',
 		Number: '数字工具',
 		Date: '日期工具',
@@ -200,5 +201,25 @@ export default {
 	// Validate
 	validate: {
 		chineseTest: '中文测试',
+	},
+
+	// Binary functions
+	binary: {
+		typeDetection: '检测输入值是否为 Blob、File、ArrayBuffer、DataURL 或 Base64',
+		parseDesc: '解析二进制输入，返回类型、MIME、大小等信息',
+		chainDesc: '链式转换 API，支持 Blob、File、ArrayBuffer、Base64、DataURL、URL、SVG 等格式互转',
+		base64Desc: 'Base64 编码解码，支持 Unicode 字符',
+		textDesc: '文本编码解码，支持 UTF-8',
+		hexDesc: '十六进制编码解码',
+		blobDesc: 'Blob 操作：转换、合并、切片',
+		arrayBufferDesc: 'ArrayBuffer 操作：转换为 Base64、Blob、字符串、十六进制',
+		fileDesc: '文件操作：读取 Base64、ArrayBuffer，获取元数据',
+		hashDesc: '计算 MD5、SHA-1、SHA-256、CRC32 哈希值',
+		svgDesc: 'SVG 字符串转换：Blob、DataURL、URL',
+		dataURLDesc: 'Data URL 解析和构建',
+		urlDesc: '从 URL 获取数据并转换为 Blob 或 DataURL',
+		compareCloneDesc: '比较二进制数据是否相等，克隆二进制数据',
+		downloadDesc: '触发浏览器下载二进制数据',
+		fullApiDesc: '完整的 API 参考文档',
 	},
 }

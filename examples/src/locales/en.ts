@@ -48,6 +48,7 @@ export default {
 		Dom: 'DOM manipulation utilities',
 		Scroll: 'Scroll utilities for handling scroll-related operations',
 		Storage: 'Storage utilities',
+		Binary: 'Binary conversion utilities - Unified binary data handling API',
 		Convert: 'Conversion utilities',
 		Number: 'Number utilities',
 		Date: 'Date utilities',
@@ -205,5 +206,25 @@ export default {
 	// Validate
 	validate: {
 		chineseTest: 'Chinese test',
+	},
+
+	// Binary functions
+	binary: {
+		typeDetection: 'Check if value is Blob, File, ArrayBuffer, DataURL, or Base64',
+		parseDesc: 'Parse binary input and return type, MIME, size and other info',
+		chainDesc: 'Chainable conversion API supporting Blob, File, ArrayBuffer, Base64, DataURL, URL, SVG formats',
+		base64Desc: 'Base64 encode/decode with Unicode support',
+		textDesc: 'Text encoding/decoding with UTF-8 support',
+		hexDesc: 'Hexadecimal encoding/decoding',
+		blobDesc: 'Blob operations: conversion, concat, slice',
+		arrayBufferDesc: 'ArrayBuffer operations: convert to Base64, Blob, string, hex',
+		fileDesc: 'File operations: read Base64, ArrayBuffer, get metadata',
+		hashDesc: 'Calculate MD5, SHA-1, SHA-256, CRC32 hash values',
+		svgDesc: 'SVG string conversion: Blob, DataURL, URL',
+		dataURLDesc: 'Data URL parsing and building',
+		urlDesc: 'Fetch URL and convert to Blob or DataURL',
+		compareCloneDesc: 'Compare binary data for equality, clone binary data',
+		downloadDesc: 'Trigger browser download for binary data',
+		fullApiDesc: 'Full API reference documentation',
 	},
 }
