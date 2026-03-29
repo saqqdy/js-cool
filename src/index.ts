@@ -71,21 +71,10 @@ export {
 } from './binary/index'
 
 // ==================== Convert 格式转换 ====================
-export { default as arrayBufferToBase64 } from './arrayBufferToBase64'
-export { default as arrayBufferToBlob } from './arrayBufferToBlob'
 export { default as arrayToCSV } from './arrayToCSV'
-export { default as base64ToArrayBuffer } from './base64ToArrayBuffer'
-export { default as base64ToBlob } from './base64ToBlob'
-export { default as base64ToFile } from './base64ToFile'
-export { default as blobToArrayBuffer } from './blobToArrayBuffer'
-export { default as blobToBase64 } from './blobToBase64'
-export { default as blobToUrl } from './blobToUrl'
 export { default as CSVToArray } from './CSVToArray'
 export { default as CSVToJSON } from './CSVToJSON'
-export { default as fileToBase64 } from './fileToBase64'
 export { default as JSONToCSV } from './JSONToCSV'
-export { default as svgToBlob } from './svgToBlob'
-export { default as urlToBlob } from './urlToBlob'
 
 // ==================== Date 日期处理 ====================
 // New date module with namespace API
@@ -147,9 +136,7 @@ export {
 } from './download'
 
 // ==================== Encode 编码解码 ====================
-export { default as decodeBase64 } from './decodeBase64'
 export { default as decodeUtf8 } from './decodeUtf8'
-export { default as encodeBase64 } from './encodeBase64'
 export { default as encodeUtf8 } from './encodeUtf8'
 export { default as escape } from './escape'
 export { default as safeParse } from './safeParse'
