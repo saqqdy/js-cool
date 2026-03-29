@@ -45,6 +45,31 @@ export { default as randomColor } from './randomColor'
 export { default as RGBToHex } from './RGBToHex'
 export { default as rgbToHSL, type HSLColor } from './rgbToHSL'
 
+// ==================== Binary 二进制转换 ====================
+export {
+	binary,
+	default as binaryDefault,
+	type ArrayBufferAPI,
+	type Base64API,
+	type BinaryAPI,
+	type BinaryConverter,
+	type BinaryData,
+	type BinaryFromOptions,
+	type BinaryInput,
+	type BinaryMeta,
+	type BinaryType,
+	type URLAPI as BinaryURLAPI,
+	type BlobAPI,
+	type DataURLAPI,
+	type FileAPI,
+	type HashAPI,
+	type HexAPI,
+	type MetaAPI,
+	type SVGAPI,
+	type TextAPI,
+	type URLResult,
+} from './binary/index'
+
 // ==================== Convert 格式转换 ====================
 export { default as arrayBufferToBase64 } from './arrayBufferToBase64'
 export { default as arrayBufferToBlob } from './arrayBufferToBlob'
