@@ -85,7 +85,13 @@ describe('binary module', () => {
 			expect(dataURL).toBe('data:text/plain;base64,SGVsbG8=')
 		})
 
-		it('should convert base64 to File', () => {			const file = binary.base64.toFile('SGVsbG8=', 'test.txt', 'text/plain')			expect(file instanceof Blob).toBe(true)			// File constructor is supported in test environment			expect((file as File).name).toBe('test.txt')				expect((file as File).type).toBe('text/plain')				})
+		it('should convert base64 to File', () => {
+			const file = binary.base64.toFile('SGVsbG8=', 'test.txt', 'text/plain')
+			expect(file instanceof Blob).toBe(true)
+			// File constructor is supported in test environment
+			expect((file as File).name).toBe('test.txt')
+			expect((file as File).type).toBe('text/plain')
+		})
 
 		it('should convert base64 to File without mime', () => {
 			const file = binary.base64.toFile('SGVsbG8=', 'test.txt')
@@ -128,9 +134,8 @@ describe('binary module', () => {
 			const blob = new Blob(['Hello'], { type: 'text/plain' })
 			const file = binary.blob.toFile(blob, 'test.txt')
 			expect(file instanceof Blob).toBe(true)
-			if ('name' in file) {
-				expect(file.name).toBe('test.txt')
-			}
+			// File constructor is supported in test environment
+			expect((file as File).name).toBe('test.txt')
 		})
 
 		it('should convert Blob to URL', () => {
@@ -648,9 +653,8 @@ describe('binary module', () => {
 		it('should convert Blob to File', async () => {
 			const blob = new Blob(['Hello'], { type: 'text/plain' })
 			const file = await binary.from(blob).toFile('test.txt')
-			if ('name' in file) {
-				expect(file.name).toBe('test.txt')
-			}
+			// File constructor is supported in test environment
+			expect((file as File).name).toBe('test.txt')
 		})
 
 		it('should convert to URL', async () => {
