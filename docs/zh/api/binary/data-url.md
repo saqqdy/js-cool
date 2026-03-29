@@ -25,12 +25,13 @@ function parse(dataURL: string): {
 ```
 
 ```js
-const dataUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+const dataUrl =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
 
 const { mime, base64, data } = binary.dataURL.parse(dataUrl)
-console.log(mime)    // 'image/png'
-console.log(base64)  // 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
-console.log(data)    // ArrayBuffer
+console.log(mime) // 'image/png'
+console.log(base64) // 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+console.log(data) // ArrayBuffer
 ```
 
 ### build(base64, mime)
@@ -42,7 +43,8 @@ function build(base64: string, mime: string): string
 ```
 
 ```js
-const base64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+const base64 =
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
 const dataUrl = binary.dataURL.build(base64, 'image/png')
 console.log(dataUrl) // 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
 ```
@@ -68,7 +70,7 @@ binary.dataURL.isValid('https://example.com/image.png')
 ### 解析用户粘贴的 Data URL
 
 ```js
-input.addEventListener('paste', async (e) => {
+input.addEventListener('paste', async e => {
   const text = e.clipboardData.getData('text')
 
   if (binary.dataURL.isValid(text)) {
@@ -111,6 +113,7 @@ data:[<mediatype>][;base64],<data>
 ```
 
 例如：
+
 - `data:text/plain;base64,SGVsbG8=`
 - `data:image/png;base64,iVBORw0KGgo...`
 - `data:text/html,<h1>Hello</h1>`

@@ -20,15 +20,15 @@ Get metadata of a File or Blob.
 function get(data: Blob | File): BinaryMeta
 
 interface BinaryMeta {
-  size: number        // Size in bytes
-  mime: string        // MIME type
-  name?: string       // Filename (File only)
+  size: number // Size in bytes
+  mime: string // MIME type
+  name?: string // Filename (File only)
   lastModified?: number // Last modified timestamp (File only)
-  extension?: string  // File extension
-  isImage: boolean    // Is image
-  isVideo: boolean    // Is video
-  isAudio: boolean    // Is audio
-  isText: boolean     // Is text
+  extension?: string // File extension
+  isImage: boolean // Is image
+  isVideo: boolean // Is video
+  isAudio: boolean // Is audio
+  isText: boolean // Is text
 }
 ```
 
@@ -116,12 +116,12 @@ console.log(info)
 
 `isImage`, `isVideo`, `isAudio`, `isText` are determined by MIME type:
 
-| Type   | MIME Prefix         |
-| ------ | ------------------- |
-| Image  | `image/*`           |
-| Video  | `video/*`           |
-| Audio  | `audio/*`           |
-| Text   | `text/*`, `application/json`, `application/xml`, etc. |
+| Type  | MIME Prefix                                           |
+| ----- | ----------------------------------------------------- |
+| Image | `image/*`                                             |
+| Video | `video/*`                                             |
+| Audio | `audio/*`                                             |
+| Text  | `text/*`, `application/json`, `application/xml`, etc. |
 
 ## Related
 

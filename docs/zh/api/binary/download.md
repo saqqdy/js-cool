@@ -18,11 +18,11 @@ function download(data: Blob | File | ArrayBuffer, filename: string, mime?: stri
 
 ## 参数
 
-| 参数       | 类型                       | 描述                       |
-| ---------- | -------------------------- | -------------------------- |
-| `data`     | `Blob \| File \| ArrayBuffer` | 要下载的数据             |
-| `filename` | `string`                   | 下载的文件名               |
-| `mime`     | `string`                   | MIME 类型（ArrayBuffer 时必需） |
+| 参数       | 类型                          | 描述                            |
+| ---------- | ----------------------------- | ------------------------------- |
+| `data`     | `Blob \| File \| ArrayBuffer` | 要下载的数据                    |
+| `filename` | `string`                      | 下载的文件名                    |
+| `mime`     | `string`                      | MIME 类型（ArrayBuffer 时必需） |
 
 ## 示例
 

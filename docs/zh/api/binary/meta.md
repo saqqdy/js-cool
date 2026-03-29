@@ -20,15 +20,15 @@ const { meta } = binary
 function get(data: Blob | File): BinaryMeta
 
 interface BinaryMeta {
-  size: number        // 文件大小（字节）
-  mime: string        // MIME 类型
-  name?: string       // 文件名（仅 File）
+  size: number // 文件大小（字节）
+  mime: string // MIME 类型
+  name?: string // 文件名（仅 File）
   lastModified?: number // 最后修改时间（仅 File）
-  extension?: string  // 文件扩展名
-  isImage: boolean    // 是否为图片
-  isVideo: boolean    // 是否为视频
-  isAudio: boolean    // 是否为音频
-  isText: boolean     // 是否为文本
+  extension?: string // 文件扩展名
+  isImage: boolean // 是否为图片
+  isVideo: boolean // 是否为视频
+  isAudio: boolean // 是否为音频
+  isText: boolean // 是否为文本
 }
 ```
 
@@ -116,12 +116,12 @@ console.log(info)
 
 `isImage`、`isVideo`、`isAudio`、`isText` 基于 MIME 类型判断：
 
-| 类型     | MIME 前缀         |
-| -------- | ----------------- |
-| 图片     | `image/*`         |
-| 视频     | `video/*`         |
-| 音频     | `audio/*`         |
-| 文本     | `text/*`, `application/json`, `application/xml` 等 |
+| 类型 | MIME 前缀                                          |
+| ---- | -------------------------------------------------- |
+| 图片 | `image/*`                                          |
+| 视频 | `video/*`                                          |
+| 音频 | `audio/*`                                          |
+| 文本 | `text/*`, `application/json`, `application/xml` 等 |
 
 ## 相关
 

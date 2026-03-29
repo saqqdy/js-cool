@@ -18,19 +18,19 @@ function from(input: BinaryInput, options?: BinaryFromOptions): BinaryConverter
 type BinaryInput = Blob | File | ArrayBuffer | Uint8Array | string
 
 interface BinaryFromOptions {
-  mime?: string   // MIME 类型提示
-  name?: string   // 文件名提示
+  mime?: string // MIME 类型提示
+  name?: string // 文件名提示
 }
 ```
 
 ## 参数
 
-| 参数       | 类型           | 描述                         |
-| ---------- | -------------- | ---------------------------- |
-| `input`    | `BinaryInput`  | 输入数据                     |
-| `options`  | `object`       | 可选配置                     |
-| `options.mime` | `string`   | MIME 类型提示（用于转换）    |
-| `options.name` | `string`   | 文件名提示                   |
+| 参数           | 类型          | 描述                      |
+| -------------- | ------------- | ------------------------- |
+| `input`        | `BinaryInput` | 输入数据                  |
+| `options`      | `object`      | 可选配置                  |
+| `options.mime` | `string`      | MIME 类型提示（用于转换） |
+| `options.name` | `string`      | 文件名提示                |
 
 ## 返回值
 
@@ -38,16 +38,16 @@ interface BinaryFromOptions {
 
 ## 转换器方法
 
-| 方法              | 返回值                    | 描述                   |
-| ----------------- | ------------------------- | ---------------------- |
-| `toBase64()`      | `Promise<string>`         | 转换为 Base64 字符串   |
-| `toDataURL(mime?)`| `Promise<string>`         | 转换为 Data URL        |
-| `toArrayBuffer()` | `Promise<ArrayBuffer>`    | 转换为 ArrayBuffer     |
-| `toBlob(mime?)`   | `Promise<Blob>`           | 转换为 Blob            |
+| 方法                  | 返回值                  | 描述                 |
+| --------------------- | ----------------------- | -------------------- |
+| `toBase64()`          | `Promise<string>`       | 转换为 Base64 字符串 |
+| `toDataURL(mime?)`    | `Promise<string>`       | 转换为 Data URL      |
+| `toArrayBuffer()`     | `Promise<ArrayBuffer>`  | 转换为 ArrayBuffer   |
+| `toBlob(mime?)`       | `Promise<Blob>`         | 转换为 Blob          |
 | `toFile(name, mime?)` | `Promise<File \| Blob>` | 转换为 File          |
-| `toURL()`         | `Promise<URLResult>`      | 转换为 Blob URL        |
-| `getMime()`       | `string \| undefined`     | 获取 MIME 类型         |
-| `getSize()`       | `number`                  | 获取数据大小（字节）   |
+| `toURL()`             | `Promise<URLResult>`    | 转换为 Blob URL      |
+| `getMime()`           | `string \| undefined`   | 获取 MIME 类型       |
+| `getSize()`           | `number`                | 获取数据大小（字节） |
 
 ## 示例
 
@@ -117,8 +117,8 @@ const file = await binary.from(dataUrl).toFile('image.png')
 const file = input.files[0]
 const converter = binary.from(file)
 
-console.log(converter.getMime())  // 'image/png'
-console.log(converter.getSize())  // 1024
+console.log(converter.getMime()) // 'image/png'
+console.log(converter.getSize()) // 1024
 ```
 
 ## 相关

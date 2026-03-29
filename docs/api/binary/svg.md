@@ -21,7 +21,8 @@ function toBlob(svg: string): Blob
 ```
 
 ```js
-const svgString = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="red"/></svg>'
+const svgString =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="red"/></svg>'
 
 const blob = binary.svg.toBlob(svgString)
 // Blob { type: 'image/svg+xml', size: ... }

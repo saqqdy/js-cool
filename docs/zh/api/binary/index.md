@@ -46,11 +46,11 @@ const base64 = await binary.from(buffer).toBase64()
 ## 类型检测
 
 ```js
-binary.isBlob(data)        // 检测是否为 Blob
-binary.isFile(data)        // 检测是否为 File
+binary.isBlob(data) // 检测是否为 Blob
+binary.isFile(data) // 检测是否为 File
 binary.isArrayBuffer(data) // 检测是否为 ArrayBuffer
-binary.isDataURL(str)      // 检测是否为 Data URL
-binary.isBase64(str)       // 检测是否为 Base64 字符串
+binary.isDataURL(str) // 检测是否为 Data URL
+binary.isBase64(str) // 检测是否为 Base64 字符串
 ```
 
 ## 子模块

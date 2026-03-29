@@ -26,9 +26,9 @@ interface BinaryData {
 
 ## 参数
 
-| 参数    | 类型          | 描述       |
-| ------- | ------------- | ---------- |
-| `input` | `BinaryInput` | 输入数据   |
+| 参数    | 类型          | 描述     |
+| ------- | ------------- | -------- |
+| `input` | `BinaryInput` | 输入数据 |
 
 ## 返回值
 
@@ -103,14 +103,14 @@ switch (info.type) {
 
 ## 类型识别
 
-| 类型           | 判断条件                    |
-| -------------- | --------------------------- |
-| `file`         | `instanceof File`           |
-| `blob`         | `instanceof Blob`           |
-| `arrayBuffer`  | `instanceof ArrayBuffer`    |
-| `dataURL`      | 以 `data:` 开头             |
-| `url`          | 以 `http://` 或 `https://` 开头 |
-| `base64`       | 可能是有效的 Base64 字符串  |
+| 类型          | 判断条件                        |
+| ------------- | ------------------------------- |
+| `file`        | `instanceof File`               |
+| `blob`        | `instanceof Blob`               |
+| `arrayBuffer` | `instanceof ArrayBuffer`        |
+| `dataURL`     | 以 `data:` 开头                 |
+| `url`         | 以 `http://` 或 `https://` 开头 |
+| `base64`      | 可能是有效的 Base64 字符串      |
 
 ## 相关
 

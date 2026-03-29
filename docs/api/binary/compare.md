@@ -20,10 +20,10 @@ type BinaryInput = Blob | File | ArrayBuffer | Uint8Array | string
 
 ## Parameters
 
-| Parameter | Type          | Description              |
-| --------- | ------------- | ------------------------ |
-| `a`       | `BinaryInput` | First binary data        |
-| `b`       | `BinaryInput` | Second binary data       |
+| Parameter | Type          | Description        |
+| --------- | ------------- | ------------------ |
+| `a`       | `BinaryInput` | First binary data  |
+| `b`       | `BinaryInput` | Second binary data |
 
 ## Returns
 
@@ -99,6 +99,7 @@ console.log(`After dedup: ${uniqueFiles.length} files`)
 ## Performance Considerations
 
 For large files, comparison may take time. Suggestions:
+
 - Compare file sizes first
 - Use hash comparison (faster but less precise)
 - For deduplication, calculate and cache hash values first

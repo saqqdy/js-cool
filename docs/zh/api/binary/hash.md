@@ -125,13 +125,13 @@ if (crc1 !== crc2) {
 
 所有哈希方法支持以下输入类型：
 
-| 类型          | 描述           |
-| ------------- | -------------- |
-| `string`      | 字符串         |
-| `Blob`        | Blob 对象      |
-| `File`        | File 对象      |
-| `ArrayBuffer` | ArrayBuffer    |
-| `Uint8Array`  | Uint8Array     |
+| 类型          | 描述        |
+| ------------- | ----------- |
+| `string`      | 字符串      |
+| `Blob`        | Blob 对象   |
+| `File`        | File 对象   |
+| `ArrayBuffer` | ArrayBuffer |
+| `Uint8Array`  | Uint8Array  |
 
 ## 性能说明
 

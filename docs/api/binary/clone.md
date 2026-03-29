@@ -18,9 +18,9 @@ function clone(data: Blob | File | ArrayBuffer): Blob | ArrayBuffer
 
 ## Parameters
 
-| Parameter | Type                       | Description          |
-| --------- | -------------------------- | -------------------- |
-| `data`    | `Blob \| File \| ArrayBuffer` | Data to clone     |
+| Parameter | Type                          | Description   |
+| --------- | ----------------------------- | ------------- |
+| `data`    | `Blob \| File \| ArrayBuffer` | Data to clone |
 
 ## Returns
 

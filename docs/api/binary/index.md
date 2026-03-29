@@ -46,11 +46,11 @@ const base64 = await binary.from(buffer).toBase64()
 ## Type Detection
 
 ```js
-binary.isBlob(data)        // Check if Blob
-binary.isFile(data)        // Check if File
+binary.isBlob(data) // Check if Blob
+binary.isFile(data) // Check if File
 binary.isArrayBuffer(data) // Check if ArrayBuffer
-binary.isDataURL(str)      // Check if Data URL
-binary.isBase64(str)       // Check if Base64 string
+binary.isDataURL(str) // Check if Data URL
+binary.isBase64(str) // Check if Base64 string
 ```
 
 ## Sub-modules

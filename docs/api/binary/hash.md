@@ -125,13 +125,13 @@ if (crc1 !== crc2) {
 
 All hash methods support the following input types:
 
-| Type          | Description         |
-| ------------- | ------------------- |
-| `string`      | String              |
-| `Blob`        | Blob object         |
-| `File`        | File object         |
-| `ArrayBuffer` | ArrayBuffer         |
-| `Uint8Array`  | Uint8Array          |
+| Type          | Description |
+| ------------- | ----------- |
+| `string`      | String      |
+| `Blob`        | Blob object |
+| `File`        | File object |
+| `ArrayBuffer` | ArrayBuffer |
+| `Uint8Array`  | Uint8Array  |
 
 ## Performance Notes
 

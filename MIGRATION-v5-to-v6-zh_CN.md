@@ -1015,33 +1015,27 @@ stringify({ a: 1, b: 2 }) // '?a=1&b=2'
 
 ### 函数对照表
 
-| 旧函数 (v5.x)                   | 新模块 API (v6.x)                                       |
-| ------------------------------- | ------------------------------------------------------- |
-| `encodeBase64(str)`             | `binary.base64.encode(str)` 或 `binary.text.toBase64(str)` |
+| 旧函数 (v5.x)                   | 新模块 API (v6.x)                                            |
+| ------------------------------- | ------------------------------------------------------------ |
+| `encodeBase64(str)`             | `binary.base64.encode(str)` 或 `binary.text.toBase64(str)`   |
 | `decodeBase64(str)`             | `binary.base64.decode(str)` 或 `binary.text.fromBase64(str)` |
-| `arrayBufferToBase64(buf)`      | `binary.arrayBuffer.toBase64(buf)`                      |
-| `base64ToArrayBuffer(b64)`      | `binary.base64.toArrayBuffer(b64)`                      |
-| `base64ToBlob(b64, mime)`       | `binary.base64.toBlob(b64, mime)`                       |
-| `base64ToFile(b64, name, mime)` | `binary.base64.toFile(b64, name, mime)`                 |
-| `blobToArrayBuffer(blob)`       | `await binary.blob.toArrayBuffer(blob)`                 |
-| `blobToBase64(blob)`            | `await binary.blob.toBase64(blob)`                      |
-| `blobToUrl(blob)`               | `binary.blob.toURL(blob).url`                           |
-| `fileToBase64(file)`            | `await binary.file.toBase64(file)`                      |
-| `svgToBlob(svg)`                | `binary.svg.toBlob(svg)`                                |
-| `urlToBlob(url)`                | `await binary.url.toBlob(url)`                          |
-| `arrayBufferToBlob(buf, mime)`  | `binary.arrayBuffer.toBlob(buf, mime)`                  |
+| `arrayBufferToBase64(buf)`      | `binary.arrayBuffer.toBase64(buf)`                           |
+| `base64ToArrayBuffer(b64)`      | `binary.base64.toArrayBuffer(b64)`                           |
+| `base64ToBlob(b64, mime)`       | `binary.base64.toBlob(b64, mime)`                            |
+| `base64ToFile(b64, name, mime)` | `binary.base64.toFile(b64, name, mime)`                      |
+| `blobToArrayBuffer(blob)`       | `await binary.blob.toArrayBuffer(blob)`                      |
+| `blobToBase64(blob)`            | `await binary.blob.toBase64(blob)`                           |
+| `blobToUrl(blob)`               | `binary.blob.toURL(blob).url`                                |
+| `fileToBase64(file)`            | `await binary.file.toBase64(file)`                           |
+| `svgToBlob(svg)`                | `binary.svg.toBlob(svg)`                                     |
+| `urlToBlob(url)`                | `await binary.url.toBlob(url)`                               |
+| `arrayBufferToBlob(buf, mime)`  | `binary.arrayBuffer.toBlob(buf, mime)`                       |
 
 ### 基础迁移
 
 ```js
 // v5.x - 独立函数
-import {
-  encodeBase64,
-  decodeBase64,
-  blobToBase64,
-  base64ToBlob,
-  fileToBase64,
-} from 'js-cool'
+import { encodeBase64, decodeBase64, blobToBase64, base64ToBlob, fileToBase64 } from 'js-cool'
 
 const b64 = encodeBase64('Hello World')
 const str = decodeBase64(b64)

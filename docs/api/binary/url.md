@@ -67,12 +67,10 @@ localStorage.setItem('icon', dataUrl)
 const urls = [
   'https://example.com/image1.jpg',
   'https://example.com/image2.jpg',
-  'https://example.com/image3.jpg'
+  'https://example.com/image3.jpg',
 ]
 
-const blobs = await Promise.all(
-  urls.map(url => binary.url.toBlob(url))
-)
+const blobs = await Promise.all(urls.map(url => binary.url.toBlob(url)))
 
 // Download each
 blobs.forEach((blob, index) => {

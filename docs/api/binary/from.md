@@ -18,19 +18,19 @@ function from(input: BinaryInput, options?: BinaryFromOptions): BinaryConverter
 type BinaryInput = Blob | File | ArrayBuffer | Uint8Array | string
 
 interface BinaryFromOptions {
-  mime?: string   // MIME type hint
-  name?: string   // Filename hint
+  mime?: string // MIME type hint
+  name?: string // Filename hint
 }
 ```
 
 ## Parameters
 
-| Parameter       | Type           | Description                |
-| --------------- | -------------- | -------------------------- |
-| `input`         | `BinaryInput`  | Input data                 |
-| `options`       | `object`       | Optional configuration     |
-| `options.mime`  | `string`       | MIME type hint for conversion |
-| `options.name`  | `string`       | Filename hint              |
+| Parameter      | Type          | Description                   |
+| -------------- | ------------- | ----------------------------- |
+| `input`        | `BinaryInput` | Input data                    |
+| `options`      | `object`      | Optional configuration        |
+| `options.mime` | `string`      | MIME type hint for conversion |
+| `options.name` | `string`      | Filename hint                 |
 
 ## Returns
 
@@ -38,16 +38,16 @@ interface BinaryFromOptions {
 
 ## Converter Methods
 
-| Method              | Returns                    | Description            |
-| ------------------- | -------------------------- | ---------------------- |
-| `toBase64()`        | `Promise<string>`          | Convert to Base64      |
-| `toDataURL(mime?)`  | `Promise<string>`          | Convert to Data URL    |
-| `toArrayBuffer()`   | `Promise<ArrayBuffer>`     | Convert to ArrayBuffer |
-| `toBlob(mime?)`     | `Promise<Blob>`            | Convert to Blob        |
-| `toFile(name, mime?)` | `Promise<File \| Blob>`  | Convert to File        |
-| `toURL()`           | `Promise<URLResult>`       | Convert to Blob URL    |
-| `getMime()`         | `string \| undefined`      | Get MIME type          |
-| `getSize()`         | `number`                   | Get size in bytes      |
+| Method                | Returns                 | Description            |
+| --------------------- | ----------------------- | ---------------------- |
+| `toBase64()`          | `Promise<string>`       | Convert to Base64      |
+| `toDataURL(mime?)`    | `Promise<string>`       | Convert to Data URL    |
+| `toArrayBuffer()`     | `Promise<ArrayBuffer>`  | Convert to ArrayBuffer |
+| `toBlob(mime?)`       | `Promise<Blob>`         | Convert to Blob        |
+| `toFile(name, mime?)` | `Promise<File \| Blob>` | Convert to File        |
+| `toURL()`             | `Promise<URLResult>`    | Convert to Blob URL    |
+| `getMime()`           | `string \| undefined`   | Get MIME type          |
+| `getSize()`           | `number`                | Get size in bytes      |
 
 ## Examples
 
@@ -117,8 +117,8 @@ const file = await binary.from(dataUrl).toFile('image.png')
 const file = input.files[0]
 const converter = binary.from(file)
 
-console.log(converter.getMime())  // 'image/png'
-console.log(converter.getSize())  // 1024
+console.log(converter.getMime()) // 'image/png'
+console.log(converter.getSize()) // 1024
 ```
 
 ## Related

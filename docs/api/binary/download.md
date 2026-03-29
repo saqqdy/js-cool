@@ -18,11 +18,11 @@ function download(data: Blob | File | ArrayBuffer, filename: string, mime?: stri
 
 ## Parameters
 
-| Parameter  | Type                       | Description                              |
-| ---------- | -------------------------- | ---------------------------------------- |
-| `data`     | `Blob \| File \| ArrayBuffer` | Data to download                      |
-| `filename` | `string`                   | Download filename                        |
-| `mime`     | `string`                   | MIME type (required for ArrayBuffer)     |
+| Parameter  | Type                          | Description                          |
+| ---------- | ----------------------------- | ------------------------------------ |
+| `data`     | `Blob \| File \| ArrayBuffer` | Data to download                     |
+| `filename` | `string`                      | Download filename                    |
+| `mime`     | `string`                      | MIME type (required for ArrayBuffer) |
 
 ## Examples
 

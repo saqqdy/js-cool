@@ -26,9 +26,9 @@ interface BinaryData {
 
 ## Parameters
 
-| Parameter | Type          | Description    |
-| --------- | ------------- | -------------- |
-| `input`   | `BinaryInput` | Input data     |
+| Parameter | Type          | Description |
+| --------- | ------------- | ----------- |
+| `input`   | `BinaryInput` | Input data  |
 
 ## Returns
 
@@ -103,14 +103,14 @@ switch (info.type) {
 
 ## Type Detection
 
-| Type          | Condition                       |
-| ------------- | ------------------------------- |
-| `file`        | `instanceof File`               |
-| `blob`        | `instanceof Blob`               |
-| `arrayBuffer` | `instanceof ArrayBuffer`        |
-| `dataURL`     | Starts with `data:`             |
+| Type          | Condition                           |
+| ------------- | ----------------------------------- |
+| `file`        | `instanceof File`                   |
+| `blob`        | `instanceof Blob`                   |
+| `arrayBuffer` | `instanceof ArrayBuffer`            |
+| `dataURL`     | Starts with `data:`                 |
 | `url`         | Starts with `http://` or `https://` |
-| `base64`      | Possibly valid Base64 string    |
+| `base64`      | Possibly valid Base64 string        |
 
 ## Related
 
