@@ -6,7 +6,7 @@ describe('mapTemplate', () => {
 	it('should replace ${} placeholders', () => {
 		const tmp = "My name is ${name}, I'm ${age} years old."
 
-		expect(mapTemplate(tmp, { age: 18, name: 'saqqdy' })).toBe(
+		expect(mapTemplate(tmp, { name: 'saqqdy', age: 18 })).toBe(
 			"My name is saqqdy, I'm 18 years old."
 		)
 	})
@@ -14,7 +14,7 @@ describe('mapTemplate', () => {
 	it('should replace {{}} placeholders', () => {
 		const tmp = "My name is {{name}}, I'm {{age}} years old."
 
-		expect(mapTemplate(tmp, { age: 18, name: 'saqqdy' })).toBe(
+		expect(mapTemplate(tmp, { name: 'saqqdy', age: 18 })).toBe(
 			"My name is saqqdy, I'm 18 years old."
 		)
 	})
@@ -22,7 +22,7 @@ describe('mapTemplate', () => {
 	it('should work with function', () => {
 		const tmp = "My name is ${name}, I'm ${age} years old."
 
-		expect(mapTemplate(tmp, (key: string) => ({ age: 28, name: 'saqqdy' })[key])).toBe(
+		expect(mapTemplate(tmp, (key: string) => ({ name: 'saqqdy', age: 28 })[key])).toBe(
 			"My name is saqqdy, I'm 28 years old."
 		)
 	})

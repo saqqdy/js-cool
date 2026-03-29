@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-import { isNumberNaN } from '../_compat'
 import type { DateInput } from './types'
+import { isNumberNaN } from '../_compat'
 
 /**
  * Parse date input to Date object
@@ -75,17 +75,17 @@ export function parseDateWithFormat(dateStr: string, format: string): Date | nul
 
 	if (!yearMatch) return null
 
-	const year = parseInt(yearMatch[1], 10)
+	const year = Number.parseInt(yearMatch[1], 10)
 	// eslint-disable-next-line one-var
 	let month = 0, // Default January
 		day = 1 // Default 1st
 
 	if (monthMatch) {
-		month = parseInt(monthMatch[1], 10) - 1 // 0-indexed
+		month = Number.parseInt(monthMatch[1], 10) - 1 // 0-indexed
 	}
 
 	if (dayMatch) {
-		day = parseInt(dayMatch[1], 10)
+		day = Number.parseInt(dayMatch[1], 10)
 	}
 
 	const d = new Date(year, month, day)

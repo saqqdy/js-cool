@@ -40,13 +40,13 @@ import type {
 	UAInfo,
 } from './types'
 
+// Import for internal use
+import { getUserAgent } from '../patterns/ua'
 import { parseBrowser } from './browser'
 import { parseDevice } from './device'
 import { parseEnvironment } from './env'
 import { getNetworkInfo } from './network'
 import { parseOS } from './os'
-// Import for internal use
-import { getUserAgent } from '../patterns/ua'
 import { isDarkMode as checkDarkMode, getOrientationStatus, getScreenInfo } from './screen'
 
 // Re-export sub-modules for direct import
@@ -431,18 +431,18 @@ declare namespace ua {
 export default ua
 export { UAParser }
 export type {
-	UA,
-	UAInfo,
-	DeviceInfo,
-	OSInfo,
 	BrowserInfo,
-	EnvironmentInfo,
-	NetworkInfo,
-	ScreenInfo,
-	UAGetType,
-	IUAParser,
-	OSName,
 	BrowserName,
-	EngineName,
+	DeviceInfo,
 	DeviceType,
+	EngineName,
+	EnvironmentInfo,
+	IUAParser,
+	NetworkInfo,
+	OSInfo,
+	OSName,
+	ScreenInfo,
+	UA,
+	UAGetType,
+	UAInfo,
 }

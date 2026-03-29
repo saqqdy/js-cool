@@ -21,7 +21,9 @@
  * ```
  * @since 2.0.0
  * @param el - Target element
- * @param options - Options object with `fully` (if true, check if fully in viewport) and `offset` (offset from viewport edges)
+ * @param options - Options object
+ * @param options.fully - If true, check if fully in viewport
+ * @param options.offset - Offset from viewport edges
  * @returns - true, false, or 'partial' if partially visible
  */
 function isInViewport(

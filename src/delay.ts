@@ -53,9 +53,9 @@ function delay(): {
 					fn()
 				}
 				this.map[id] = {
+					id,
 					boo,
 					fn,
-					id,
 					time,
 					timeout: setTimeout(() => {
 						this.destroy(id)
@@ -68,9 +68,9 @@ function delay(): {
 					this.destroy(id)
 				}
 				this.map[id] = {
+					id,
 					boo,
 					fn,
-					id,
 					time,
 					timeout: setTimeout(fn, time),
 				}

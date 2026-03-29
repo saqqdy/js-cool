@@ -6,8 +6,8 @@
  * @since 6.0.0
  */
 
-import { isNumberNaN, padStart } from '../_compat'
 import type { DateInput, DateUnit, RelativeTimeLocale } from './types'
+import { isNumberNaN, padStart } from '../_compat'
 
 /**
  * Parse date input to Date object

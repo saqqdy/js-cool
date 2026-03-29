@@ -1,6 +1,6 @@
+import { spawnSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { spawnSync } from 'node:child_process'
 import pkg from '../package.json'
 
 const argv: string[] = process.argv.slice(2)

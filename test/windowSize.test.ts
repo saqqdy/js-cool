@@ -22,11 +22,11 @@ describe('windowSize', () => {
 
 		// Mock document.body
 		Object.defineProperty(document, 'body', {
-			configurable: true,
 			value: {
 				clientHeight: 600,
 				clientWidth: 800,
 			},
+			configurable: true,
 			writable: true,
 		})
 
@@ -42,11 +42,11 @@ describe('windowSize', () => {
 	it('should use document.documentElement.clientWidth', () => {
 		// Mock document.documentElement
 		Object.defineProperty(document, 'documentElement', {
-			configurable: true,
 			value: {
 				clientHeight: 768,
 				clientWidth: 1024,
 			},
+			configurable: true,
 			writable: true,
 		})
 

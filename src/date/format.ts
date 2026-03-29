@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-import { isNumberNaN, objectEntries, padStart } from '../_compat'
 import type { DateDiffResult, DateInput, RelativeTimeLocale } from './types'
+import { isNumberNaN, objectEntries, padStart } from '../_compat'
 import { relativeTimeLocales } from './utils'
 
 // Cached sorted token keys

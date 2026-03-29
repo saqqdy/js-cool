@@ -77,5 +77,5 @@ function isScrollLocked(): boolean {
 	return scrollLockCount > 0
 }
 
-export { lockScroll, unlockScroll, toggleScroll, isScrollLocked, getScrollbarWidth }
+export { getScrollbarWidth, isScrollLocked, lockScroll, toggleScroll, unlockScroll }
 export default lockScroll

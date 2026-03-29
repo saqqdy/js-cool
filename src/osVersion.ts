@@ -36,7 +36,7 @@ export interface OsVersion {
 function osVersion(ua?: string): OsVersion | null {
 	if (!ua) {
 		if (!inBrowser) {
-			console.info('url is required')
+			console.warn('ua is required')
 
 			return null
 		}

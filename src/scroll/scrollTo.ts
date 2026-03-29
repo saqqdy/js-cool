@@ -100,6 +100,6 @@ function scrollBy(amount: number, options: Omit<ScrollToOptions, 'offset'> = {})
 	}
 }
 
-export { scrollTo, scrollToTop, scrollToBottom, scrollBy }
-export type { ScrollToOptions, ScrollBehavior }
+export { scrollBy, scrollTo, scrollToBottom, scrollToTop }
+export type { ScrollBehavior, ScrollToOptions }
 export default scrollTo

@@ -93,9 +93,9 @@ export default defineConfig([
 	{
 		input: 'src/index.ts',
 		output: {
+			name: 'jsCool',
 			file: 'dist/index.iife.js',
 			format: 'iife',
-			name: 'jsCool',
 			banner,
 			exports: 'named',
 			sourcemap: true,
@@ -107,9 +107,9 @@ export default defineConfig([
 	{
 		input: 'src/index.ts',
 		output: {
+			name: 'jsCool',
 			file: 'dist/index.iife.min.js',
 			format: 'iife',
-			name: 'jsCool',
 			banner,
 			minify: true,
 			exports: 'named',

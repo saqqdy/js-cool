@@ -2,8 +2,6 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it } from 'vitest'
-import ua, { UAParser } from '../src/ua/index'
-
 // Import sub-modules for comprehensive testing
 import {
 	_resetBrowserCache,
@@ -24,6 +22,7 @@ import {
 	isWebKit,
 	parseBrowser,
 } from '../src/ua/browser'
+
 import {
 	_resetDeviceCache,
 	getDeviceInfo,
@@ -37,20 +36,6 @@ import {
 	isTablet,
 	parseDevice,
 } from '../src/ua/device'
-import {
-	_resetOSCache,
-	getOSInfo,
-	getOSName,
-	getOSVersion,
-	isAndroid,
-	isHarmonyOS,
-	isiOS,
-	isiPadOS,
-	isLinux,
-	isMacOS,
-	isWindows,
-	parseOS,
-} from '../src/ua/os'
 import {
 	_resetEnvCache,
 	getEnvInfo,
@@ -74,6 +59,7 @@ import {
 	isXiaomi,
 	parseEnvironment,
 } from '../src/ua/env'
+import ua, { UAParser } from '../src/ua/index'
 import {
 	getConnectionType,
 	getDownlink,
@@ -86,6 +72,20 @@ import {
 	isSaveData,
 	isSlowConnection,
 } from '../src/ua/network'
+import {
+	_resetOSCache,
+	getOSInfo,
+	getOSName,
+	getOSVersion,
+	isAndroid,
+	isHarmonyOS,
+	isiOS,
+	isiPadOS,
+	isLinux,
+	isMacOS,
+	isWindows,
+	parseOS,
+} from '../src/ua/os'
 import {
 	getAvailHeight,
 	getAvailWidth,

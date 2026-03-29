@@ -1,5 +1,5 @@
-import base64ToArrayBuffer from './base64ToArrayBuffer'
 import { createFile } from './_compat'
+import base64ToArrayBuffer from './base64ToArrayBuffer'
 
 /**
  * base64 to file

@@ -67,8 +67,8 @@ function getFileType(url: string): {
 	else if (['mp3', 'wav', 'wmv'].indexOf(suffix) !== -1) type = 'audio'
 
 	return {
-		suffix,
 		type,
+		suffix,
 	}
 }
 

@@ -58,7 +58,6 @@ function searchObject(
 	 * @private
 	 * @param tree - object
 	 * @param expression - expression
-	 * @returns Nodes
 	 */
 	function deepSearch(tree: any, expression: any): void {
 		for (let i = 0; i < tree.length; i++) {

@@ -2,11 +2,11 @@
  * @vitest-environment happy-dom
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { createDirectionTracker } from '../src/scroll/getDirection'
 import getPosition from '../src/scroll/getPosition'
 import getProgress from '../src/scroll/getProgress'
-import { createDirectionTracker } from '../src/scroll/getDirection'
+import scrollUtils from '../src/scroll/index'
 import isInViewport from '../src/scroll/isInViewport'
-import scrollTo, { scrollBy, scrollToBottom, scrollToTop } from '../src/scroll/scrollTo'
 import {
 	getScrollbarWidth,
 	isScrollLocked,
@@ -14,7 +14,7 @@ import {
 	toggleScroll,
 	unlockScroll,
 } from '../src/scroll/lockScroll'
-import scrollUtils from '../src/scroll/index'
+import scrollTo, { scrollBy, scrollToBottom, scrollToTop } from '../src/scroll/scrollTo'
 
 describe('scroll utilities', () => {
 	describe('getPosition', () => {
@@ -25,13 +25,13 @@ describe('scroll utilities', () => {
 		it('should return top when at top', () => {
 			vi.stubGlobal('scrollY', 0)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -41,13 +41,13 @@ describe('scroll utilities', () => {
 		it('should return bottom when at bottom', () => {
 			vi.stubGlobal('scrollY', 1200)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -57,13 +57,13 @@ describe('scroll utilities', () => {
 		it('should return undefined when in middle', () => {
 			vi.stubGlobal('scrollY', 500)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -73,13 +73,13 @@ describe('scroll utilities', () => {
 		it('should respect custom threshold', () => {
 			vi.stubGlobal('scrollY', 1195)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -95,13 +95,13 @@ describe('scroll utilities', () => {
 		it('should return 0 when at top', () => {
 			vi.stubGlobal('scrollY', 0)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -111,13 +111,13 @@ describe('scroll utilities', () => {
 		it('should return 100 when at bottom', () => {
 			vi.stubGlobal('scrollY', 1200)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -127,13 +127,13 @@ describe('scroll utilities', () => {
 		it('should return correct percentage in middle', () => {
 			vi.stubGlobal('scrollY', 600)
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 
@@ -175,13 +175,13 @@ describe('scroll utilities', () => {
 			} as Element
 
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerWidth', {
-				configurable: true,
 				value: 1200,
+				configurable: true,
 				writable: true,
 			})
 
@@ -201,13 +201,13 @@ describe('scroll utilities', () => {
 			} as Element
 
 			Object.defineProperty(window, 'innerHeight', {
-				configurable: true,
 				value: 800,
+				configurable: true,
 				writable: true,
 			})
 			Object.defineProperty(window, 'innerWidth', {
-				configurable: true,
 				value: 1200,
+				configurable: true,
 				writable: true,
 			})
 
@@ -365,8 +365,8 @@ describe('scroll utilities', () => {
 			const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
 
 			Object.defineProperty(document.documentElement, 'scrollHeight', {
-				configurable: true,
 				value: 2000,
+				configurable: true,
 				writable: true,
 			})
 

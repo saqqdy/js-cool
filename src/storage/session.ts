@@ -3,8 +3,8 @@
  * @module storage/session
  */
 
-import { StorageQuotaError, StorageUnavailableError } from './errors'
 import type { StorageAPI, StorageData, StorageOptions } from './types'
+import { StorageQuotaError, StorageUnavailableError } from './errors'
 import { createStorageData, isStorageAvailable, parseStorageData } from './utils'
 
 /** sessionStorage 存储 API */

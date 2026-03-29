@@ -33,11 +33,10 @@
  * @since 6.0.0
  */
 
+import { createDirectionTracker, getDirection } from './getDirection'
 import getPosition from './getPosition'
 import getProgress from './getProgress'
-import { createDirectionTracker, getDirection } from './getDirection'
 import isInViewport from './isInViewport'
-import scrollTo, { scrollBy, scrollToBottom, scrollToTop } from './scrollTo'
 import {
 	getScrollbarWidth,
 	isScrollLocked,
@@ -45,6 +44,7 @@ import {
 	toggleScroll,
 	unlockScroll,
 } from './lockScroll'
+import scrollTo, { scrollBy, scrollToBottom, scrollToTop } from './scrollTo'
 
 const scrollUtils = {
 	/** Get scroll position state */
@@ -78,21 +78,21 @@ const scrollUtils = {
 }
 
 export {
+	createDirectionTracker,
+	getDirection,
 	getPosition,
 	getProgress,
-	getDirection,
-	createDirectionTracker,
-	isInViewport,
-	scrollTo,
-	scrollToTop,
-	scrollToBottom,
-	scrollBy,
-	lockScroll,
-	unlockScroll,
-	toggleScroll,
-	isScrollLocked,
 	getScrollbarWidth,
+	isInViewport,
+	isScrollLocked,
+	lockScroll,
+	scrollBy,
+	scrollTo,
+	scrollToBottom,
+	scrollToTop,
+	toggleScroll,
+	unlockScroll,
 }
-export type { ScrollToOptions, ScrollBehavior } from './scrollTo'
+export type { ScrollBehavior, ScrollToOptions } from './scrollTo'
 
 export default scrollUtils

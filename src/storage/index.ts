@@ -28,22 +28,22 @@
  * ```
  */
 
+import type { StorageNamespace } from './types'
 import { cookie } from './cookie'
 import { local } from './local'
 import { session } from './session'
-import type { StorageNamespace } from './types'
 
 export { local } from './local'
 export { session } from './session'
 export { cookie } from './cookie'
 export { StorageQuotaError, StorageUnavailableError } from './errors'
 export type {
-	StorageOptions,
-	CookieOptions,
-	CookieDeleteOptions,
-	StorageAPI,
 	CookieAPI,
+	CookieDeleteOptions,
+	CookieOptions,
+	StorageAPI,
 	StorageNamespace,
+	StorageOptions,
 } from './types'
 
 /**

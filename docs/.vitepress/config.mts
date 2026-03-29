@@ -4,7 +4,7 @@ export default defineConfig({
 	base: '/js-cool/',
 	head: [
 		['link', { href: '/js-cool/logo.svg', rel: 'icon' }],
-		['meta', { content: '#3eaf7c', name: 'theme-color' }],
+		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 	],
 
 	locales: {

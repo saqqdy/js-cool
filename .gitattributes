@@ -1,11 +1,27 @@
-*.ts  linguist-language=TypeScript
-.eslintrc.js linguist-vendored
-.prettierrc.js linguist-vendored
-typedoc.js linguist-vendored
-*.config.js linguist-vendored
-**/*.config.js linguist-vendored
-scripts/*.mjs linguist-vendored
-bin/* linguist-vendored
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+
+# TypeScript
+*.ts linguist-language=TypeScript
+
+# Vendored files
 dist/* linguist-vendored
 lib/* linguist-vendored
 es/* linguist-vendored
+coverage/* linguist-vendored
+node_modules/* linguist-vendored
+pnpm-lock.yaml linguist-vendored
+*.config.js linguist-vendored
+
+# Generated files
+*.d.ts linguist-generated

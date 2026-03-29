@@ -1,5 +1,5 @@
-import encodeUtf8 from './encodeUtf8'
 import { isNumberNaN } from './_compat'
+import encodeUtf8 from './encodeUtf8'
 
 const _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
 

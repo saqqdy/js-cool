@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-import { isNumberNaN } from '../_compat'
 import type { DateComparisonUnit, DateInput } from './types'
+import { isNumberNaN } from '../_compat'
 
 // ============================================
 // Internal comparison helpers

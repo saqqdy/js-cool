@@ -3,8 +3,8 @@
  * @module storage/local
  */
 
-import { StorageQuotaError, StorageUnavailableError } from './errors'
 import type { StorageAPI, StorageData, StorageOptions } from './types'
+import { StorageQuotaError, StorageUnavailableError } from './errors'
 import { createStorageData, isStorageAvailable, parseStorageData } from './utils'
 
 /** localStorage 存储 API */

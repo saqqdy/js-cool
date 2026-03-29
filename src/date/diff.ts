@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-import { isNumberNaN } from '../_compat'
 import type { DateDiffResult, DateInput } from './types'
+import { isNumberNaN } from '../_compat'
 
 // Re-export DateDiffResult type
 export type { DateDiffResult } from './types'

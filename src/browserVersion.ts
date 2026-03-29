@@ -68,7 +68,7 @@ export interface BrowserVersion {
 function browserVersion(ua?: string): BrowserVersion | null {
 	if (!ua) {
 		if (!inBrowser) {
-			console.info('url is required')
+			console.warn('ua is required')
 
 			return null
 		}

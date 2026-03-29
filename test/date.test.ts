@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import date, { dateDiff, DateParser, formatDate, relativeTime } from '../src/date/index'
 import {
 	compare,
 	isAfter,
@@ -16,6 +15,8 @@ import {
 	max,
 	min,
 } from '../src/date/compare'
+import { diffIn } from '../src/date/diff'
+import date, { dateDiff, DateParser, formatDate, relativeTime } from '../src/date/index'
 import {
 	add,
 	clone,
@@ -29,7 +30,6 @@ import {
 	toEndOfDay,
 	toMidnight,
 } from '../src/date/manipulate'
-import { diffIn } from '../src/date/diff'
 import { isISODateString, parseDate, parseDateWithFormat, parseISODate } from '../src/date/parse'
 
 describe('date namespace', () => {

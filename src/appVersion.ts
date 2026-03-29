@@ -13,8 +13,6 @@ import inBrowser from './inBrowser'
  * ```
  * @since 5.1.0
  * @param appName - app name
- * @param ua - ua or any ua like string, allowed to be undefined, default is navigator.userAgent
- * @param ignoreCase - whether to ignore case
  * @return string|null
  */
 function appVersion(appName: string): string | null
@@ -23,13 +21,13 @@ function appVersion(appName: string, ua: boolean): string | null
 function appVersion(appName: string, ua: string, ignoreCase: boolean): string | null
 function appVersion(appName: string, ua?: string | boolean, ignoreCase?: boolean): string | null {
 	if (!appName || typeof appName !== 'string') {
-		console.info('appName is required')
+		console.warn('appName is required')
 
 		return null
 	} else if (typeof ua === 'boolean' || !ua) {
 		// us=undefined|true|false
 		if (!inBrowser) {
-			console.info('ua is required')
+			console.warn('ua is required')
 
 			return null
 		}

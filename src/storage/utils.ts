@@ -55,7 +55,7 @@ export function parseStorageData<T>(data: string | null, removeExpired: () => vo
  */
 export function createStorageData<T>(value: T, expires?: number): StorageData<T> {
 	return {
-		expires: expires ? Date.now() + expires * 1000 : undefined,
 		value,
+		expires: expires ? Date.now() + expires * 1000 : undefined,
 	}
 }

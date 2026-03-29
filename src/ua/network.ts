@@ -23,8 +23,8 @@ import type { NetworkInfo } from './types'
 export function getNetworkInfo(): NetworkInfo {
 	if (typeof navigator === 'undefined') {
 		return {
-			online: false,
 			type: 'unknown',
+			online: false,
 			effectiveType: 'unknown',
 			downlink: 0,
 			rtt: 0,
@@ -38,8 +38,8 @@ export function getNetworkInfo(): NetworkInfo {
 		(navigator as any).webkitConnection
 
 	return {
-		online: navigator.onLine,
 		type: connection?.type || 'unknown',
+		online: navigator.onLine,
 		effectiveType: connection?.effectiveType || 'unknown',
 		downlink: connection?.downlink || 0,
 		rtt: connection?.rtt || 0,

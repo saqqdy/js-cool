@@ -1,17 +1,17 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "es2015",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"noLib": false,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"module": "ESNext",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"paths": {
 			"#lib/*": ["./src/*"]
 		},
-		"types": ["node"],
 		"resolveJsonModule": true,
+		"types": ["node"],
 		"strict": true,
 		"noImplicitOverride": true,
 		"noImplicitThis": true,

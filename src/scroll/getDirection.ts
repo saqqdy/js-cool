@@ -58,5 +58,5 @@ function createDirectionTracker(): () => 'up' | 'down' | null {
 	}
 }
 
-export { getDirection, createDirectionTracker }
+export { createDirectionTracker, getDirection }
 export default createDirectionTracker

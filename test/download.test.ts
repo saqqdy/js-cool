@@ -57,12 +57,12 @@ describe('download', () => {
 		})
 
 		it('should navigate for "href" type', () => {
-			const originalHref = window.location.href
-			vi.spyOn(window, 'location', 'get').mockReturnValue({ href: originalHref } as Location)
+			const mockLocation = { href: '' }
+			vi.spyOn(window, 'location', 'get').mockReturnValue(mockLocation as unknown as Location)
 
-			// Note: Cannot fully test window.location.href assignment in happy-dom
-			// This is a basic test
 			download('https://example.com/file.pdf', 'document.pdf', 'href')
+
+			expect(mockLocation.href).toBe('https://example.com/file.pdf')
 		})
 	})
 

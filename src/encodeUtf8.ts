@@ -16,7 +16,7 @@
  * // 'Line1\nLine2'
  * ```
  * @since 1.0.1
- * @param input - the string to be encoded
+ * @param string - the string to be encoded
  * @returns - the UTF-8 encoding
  */
 function encodeUtf8(string: string): string {

@@ -20,7 +20,7 @@
  * // '"a","""b"" great"\n"c",3.1415'
  * ```
  * @since 1.0.9
- * @param data - 2D array
+ * @param arr - 2D array
  * @param delimiter - delimiter, default ','
  * @returns CSV string
  */

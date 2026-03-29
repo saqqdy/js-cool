@@ -5,9 +5,6 @@
  * @since 6.0.0
  */
 
-// Import validation patterns
-import { validation } from './validation'
-
 // Import UA patterns from sub-module
 import {
 	BROWSER_PATTERNS,
@@ -20,24 +17,27 @@ import {
 	OS_PATTERNS,
 } from './ua'
 
+// Import validation patterns
+import { validation } from './validation'
+
 // Re-export validation patterns
 export { validation, type ValidationPatternName } from './validation'
 
 // Re-export UA patterns from sub-module
 export {
-	DEVICE_PATTERNS,
-	OS_PATTERNS,
 	BROWSER_PATTERNS,
+	DEVICE_PATTERNS,
 	ENGINE_PATTERNS,
 	ENV_PATTERNS,
+	extractVersion,
 	getUserAgent,
 	matchPattern,
-	extractVersion,
-	type DevicePatternName,
-	type OSPatternName,
+	OS_PATTERNS,
 	type BrowserPatternName,
+	type DevicePatternName,
 	type EnginePatternName,
 	type EnvPatternName,
+	type OSPatternName,
 } from './ua'
 
 /**

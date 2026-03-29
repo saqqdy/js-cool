@@ -17,6 +17,6 @@ describe('CSVToJSON', () => {
 	})
 
 	it('should handle single data row', () => {
-		expect(CSVToJSON('name,age\nJohn,30')).toEqual([{ age: '30', name: 'John' }])
+		expect(CSVToJSON('name,age\nJohn,30')).toEqual([{ name: 'John', age: '30' }])
 	})
 })

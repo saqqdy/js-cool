@@ -4,11 +4,11 @@ import searchObject from '../src/searchObject'
 describe('searchObject', () => {
 	const tree = [
 		{
+			name: 'parent',
 			child: [
 				{ name: 'child1', value: 1 },
 				{ name: 'child2', value: 2 },
 			],
-			name: 'parent',
 		},
 	]
 
@@ -47,7 +47,7 @@ describe('searchObject', () => {
 	})
 
 	it('should use default keySet when not provided', () => {
-		const treeWithDefaultKeys = [{ child: [], name: 'test' }]
+		const treeWithDefaultKeys = [{ name: 'test', child: [] }]
 		const result = searchObject(treeWithDefaultKeys, 'test', {
 			childName: 'child',
 			keyName: 'name',

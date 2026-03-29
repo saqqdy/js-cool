@@ -20,7 +20,7 @@
  * // 'name,value\n"test","""quoted"""'
  * ```
  * @since 1.0.9
- * @param data - array of objects
+ * @param arr - array of objects
  * @param columns - the specified columns to include
  * @param delimiter - delimiter, default ','
  * @returns - CSV string

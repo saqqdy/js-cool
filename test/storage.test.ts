@@ -1,3 +1,4 @@
+import type { CookieOptions, StorageOptions } from '../src/storage'
 /**
  * @vitest-environment happy-dom
  */
@@ -10,7 +11,6 @@ import {
 	StorageQuotaError,
 	StorageUnavailableError,
 } from '../src/storage'
-import type { CookieOptions, StorageOptions } from '../src/storage'
 
 describe('storage namespace', () => {
 	it('should export storage namespace with local, session, cookie', () => {
@@ -199,8 +199,8 @@ describe('storage.local', () => {
 		it('should return null for expired value', () => {
 			// Manually set expired data
 			const expiredData = {
-				expires: Date.now() - 1000,
 				value: 'expired',
+				expires: Date.now() - 1000,
 			}
 			localStorage.setItem('expired', JSON.stringify(expiredData))
 
@@ -209,8 +209,8 @@ describe('storage.local', () => {
 
 		it('should remove expired value from storage', () => {
 			const expiredData = {
-				expires: Date.now() - 1000,
 				value: 'expired',
+				expires: Date.now() - 1000,
 			}
 			localStorage.setItem('expired', JSON.stringify(expiredData))
 
@@ -220,8 +220,8 @@ describe('storage.local', () => {
 
 		it('should return value for non-expired value', () => {
 			const futureData = {
-				expires: Date.now() + 10000,
 				value: 'valid',
+				expires: Date.now() + 10000,
 			}
 			localStorage.setItem('valid', JSON.stringify(futureData))
 
@@ -400,8 +400,8 @@ describe('storage.session', () => {
 
 		it('should return null for expired value', () => {
 			const expiredData = {
-				expires: Date.now() - 1000,
 				value: 'expired',
+				expires: Date.now() - 1000,
 			}
 			sessionStorage.setItem('expired', JSON.stringify(expiredData))
 
@@ -410,8 +410,8 @@ describe('storage.session', () => {
 
 		it('should return value for non-expired value', () => {
 			const futureData = {
-				expires: Date.now() + 10000,
 				value: 'valid',
+				expires: Date.now() + 10000,
 			}
 			sessionStorage.setItem('valid', JSON.stringify(futureData))
 

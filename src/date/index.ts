@@ -30,10 +30,6 @@ import type {
 	RelativeTimeLocale,
 } from './types'
 
-// Import sub-modules
-import { parseDate } from './parse'
-import { relativeTime as calcRelativeTime, formatDate } from './format'
-import { dateDiff } from './diff'
 import {
 	compare,
 	isAfter,
@@ -47,6 +43,8 @@ import {
 	max,
 	min,
 } from './compare'
+import { dateDiff } from './diff'
+import { relativeTime as calcRelativeTime, formatDate } from './format'
 import {
 	add,
 	endOf,
@@ -57,6 +55,8 @@ import {
 	startOf,
 	subtract,
 } from './manipulate'
+// Import sub-modules
+import { parseDate } from './parse'
 
 // Re-export types
 export type {
@@ -73,28 +73,28 @@ export type {
 export { formatDate, relativeTime } from './format'
 export { dateDiff } from './diff'
 export {
+	compare,
+	isAfter,
+	isBefore,
+	isBetween,
+	isLeapYear,
+	isSame,
 	isToday,
-	isYesterday,
 	isTomorrow,
 	isWeekend,
-	isLeapYear,
-	isBefore,
-	isAfter,
-	isSame,
-	isBetween,
-	compare,
-	min,
+	isYesterday,
 	max,
+	min,
 } from './compare'
 export {
+	add,
+	endOf,
+	getDayOfYear,
 	getDaysInMonth,
 	getQuarter,
-	getDayOfYear,
 	getWeekOfYear,
-	add,
-	subtract,
 	startOf,
-	endOf,
+	subtract,
 } from './manipulate'
 
 /**

@@ -21,8 +21,7 @@ import contains from './contains'
  * contains([], 1) // false
  * ```
  * @since 2.2.1
- * @param arr - the target array
- * @param item - the target to find
+ * @param args - arrays to intersect
  * @returns boolean
  */
 function intersect<T = unknown>(...args: T[][]): T[] {

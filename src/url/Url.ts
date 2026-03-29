@@ -184,6 +184,8 @@ export class Url {
 
 	/**
 	 * 设置参数（覆盖）
+	 * @param name - 参数名
+	 * @param value - 参数值
 	 * @param scope - 默认 'search'
 	 */
 	set(name: string, value: string | number | boolean, scope?: 'search' | 'hash'): this {
