@@ -34,8 +34,8 @@ stringifyVersion({ major: 1, minor: 0, patch: 0, preid: 'alpha', release: undefi
 #### 问题 B：`parseVersion` 对边界情况处理不当
 
 ```typescript
-parseVersion('1.2.3-alpha')  // => preid='', release=NaN
-parseVersion('1.2.3-.1')     // => 可能产生意外结果
+parseVersion('1.2.3-alpha') // => preid='', release=NaN
+parseVersion('1.2.3-.1') // => 可能产生意外结果
 ```
 
 `+subVer` 当 `subVer` 为空字符串时会得到 `0`，而不是 `undefined`。
@@ -50,16 +50,16 @@ parseVersion('1.2.3-.1')     // => 可能产生意外结果
 
 ### 1. 缺少常用 semver 方法
 
-| 方法 | 描述 | 示例 |
-|------|------|------|
-| `isValidVersion()` | 验证版本格式是否合法 | `isValidVersion('1.2.3') // true` |
-| `parseVersion()` | 解析版本为对象（导出供外部使用） | `parseVersion('1.2.3-beta.1')` |
-| `satisfies()` | 检查版本是否满足范围 | `satisfies('1.2.3', '^1.0.0')` |
-| `diff()` | 获取版本差异类型 | `diff('1.0.0', '2.0.0') // 'major'` |
-| `major()` / `minor()` / `patch()` | 快速提取版本号 | `major('1.2.3') // 1` |
-| `prerelease()` | 获取预发布信息 | `prerelease('1.0.0-alpha.1') // ['alpha', 1]` |
-| `coerce()` | 从字符串提取版本 | `coerce('v1.2.3') // '1.2.3'` |
-| `clean()` | 清理版本字符串 | `clean('=v1.2.3') // '1.2.3'` |
+| 方法                              | 描述                             | 示例                                          |
+| --------------------------------- | -------------------------------- | --------------------------------------------- |
+| `isValidVersion()`                | 验证版本格式是否合法             | `isValidVersion('1.2.3') // true`             |
+| `parseVersion()`                  | 解析版本为对象（导出供外部使用） | `parseVersion('1.2.3-beta.1')`                |
+| `satisfies()`                     | 检查版本是否满足范围             | `satisfies('1.2.3', '^1.0.0')`                |
+| `diff()`                          | 获取版本差异类型                 | `diff('1.0.0', '2.0.0') // 'major'`           |
+| `major()` / `minor()` / `patch()` | 快速提取版本号                   | `major('1.2.3') // 1`                         |
+| `prerelease()`                    | 获取预发布信息                   | `prerelease('1.0.0-alpha.1') // ['alpha', 1]` |
+| `coerce()`                        | 从字符串提取版本                 | `coerce('v1.2.3') // '1.2.3'`                 |
+| `clean()`                         | 清理版本字符串                   | `clean('=v1.2.3') // '1.2.3'`                 |
 
 ---
 
@@ -67,10 +67,10 @@ parseVersion('1.2.3-.1')     // => 可能产生意外结果
 
 ```typescript
 // 当前只支持精确比较，建议增加范围支持
-satisfies('1.2.3', '^1.0.0')     // true
+satisfies('1.2.3', '^1.0.0') // true
 satisfies('2.0.0', '>=1.0.0 <2.0.0') // false
-satisfies('1.5.0', '1.x')        // true
-satisfies('1.2.3', '~1.2.0')     // true
+satisfies('1.5.0', '1.x') // true
+satisfies('1.2.3', '~1.2.0') // true
 ```
 
 ---
@@ -115,12 +115,12 @@ parseVersion('1.0.0+build.123')
 
 ```typescript
 // 更直观的比较 API
-gt('1.2.3', '1.2.2')    // true (greater than)
-gte('1.2.3', '1.2.3')   // true (greater than or equal)
-lt('1.2.3', '1.2.4')    // true (less than)
-lte('1.2.3', '1.2.3')   // true (less than or equal)
-eq('1.2.3', '1.2.3')    // true (equal)
-neq('1.2.3', '1.2.4')   // true (not equal)
+gt('1.2.3', '1.2.2') // true (greater than)
+gte('1.2.3', '1.2.3') // true (greater than or equal)
+lt('1.2.3', '1.2.4') // true (less than)
+lte('1.2.3', '1.2.3') // true (less than or equal)
+eq('1.2.3', '1.2.3') // true (equal)
+neq('1.2.3', '1.2.4') // true (not equal)
 ```
 
 ---
@@ -148,7 +148,12 @@ export {
   prerelease,
 
   // 比较
-  gt, gte, lt, lte, eq, neq,
+  gt,
+  gte,
+  lt,
+  lte,
+  eq,
+  neq,
 
   // 范围
   satisfies,

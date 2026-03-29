@@ -416,7 +416,8 @@ export const changelog: ChangelogData = {
 			category: 'Storage',
 			description:
 				'Individual storage functions replaced by unified `storage` namespace with local, session, cookie',
-			descriptionZh: '独立的存储函数被统一的 `storage` 命名空间替代，包含 local、session、cookie',
+			descriptionZh:
+				'独立的存储函数被统一的 `storage` 命名空间替代，包含 local、session、cookie',
 			anchor: 'storage',
 		},
 		{
@@ -432,7 +433,8 @@ export const changelog: ChangelogData = {
 			type: 'new',
 			name: 'StorageQuotaError / StorageUnavailableError',
 			category: 'Storage',
-			description: 'Proper error classes for storage quota exceeded and unavailable scenarios',
+			description:
+				'Proper error classes for storage quota exceeded and unavailable scenarios',
 			descriptionZh: '存储空间已满和不可用场景的错误类',
 			anchor: 'storage',
 		},

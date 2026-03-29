@@ -17,8 +17,7 @@ export interface PunctualTimerReturns {
  * @since 5.18.0
  * @param handler - A function to be executed after the timer expires.
  * @param delay - The time, in milliseconds that the timer should wait before the specified function or code is executed. If this parameter is omitted, a value of 0 is used, meaning execute "immediately", or more accurately, the next event cycle.
- * @param args - Additional arguments which are passed through to the function specified by handler (passed as rest parameters).
- * @param args.0 - First additional argument
+ * @param args - Additional arguments which are passed through to the function specified by handler
  * @returns PunctualTimerReturns object with clear, count, and timer properties
  */
 function punctualTimer<TArgs extends any[]>(
