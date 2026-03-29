@@ -152,6 +152,7 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 | **滚动**        | 滚动工具            | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
 | **存储**        | 浏览器存储          | `storage`, `local`, `session`, `cookie`                                                                                                                                                                                                           |
 | **转换**        | 格式转换            | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
+| **二进制**      | 二进制数据转换 (v6.0.0+) | `binary`, `binary.from()`, `binary.base64`, `binary.blob`, `binary.arrayBuffer`, `binary.file`, `binary.url`, `binary.svg`, `binary.text`, `binary.dataURL`, `binary.hex`, `binary.hash`, `binary.meta`                                        |
 | **数字**        | 数字处理            | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **日期**        | 日期处理            | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
 | **颜色**        | 颜色处理            | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                                                            |
@@ -1789,7 +1790,9 @@ await preloader(['image1.jpg', 'image2.jpg', 'image3.jpg'])
 
 ---
 
-### 二进制转换
+### 二进制转换 (旧版)
+
+> **注意：** 新项目推荐使用 `binary` 模块 (v6.0.0+)，提供统一的链式 API。参见下方 [二进制模块](#二进制模块-v600)。
 
 ```js
 import {
@@ -1832,6 +1835,124 @@ const blob = svgToBlob('<svg viewBox="0 0 100 100">...</svg>')
 // URL 转 Blob
 const blob = await urlToBlob('https://example.com/image.png')
 ```
+
+---
+
+### 二进制模块 (v6.0.0+)
+
+`binary` 模块提供统一的链式 API 用于二进制数据转换。推荐用于替代旧的转换函数。
+
+```js
+import { binary } from 'js-cool'
+
+// ============ 链式转换 ============
+const blob = new Blob(['Hello World'], { type: 'text/plain' })
+
+// 转换为各种格式
+const base64 = await binary.from(blob).toBase64()
+const buffer = await binary.from(blob).toArrayBuffer()
+const dataUrl = await binary.from(blob).toDataURL()
+const { url, revoke } = await binary.from(blob).toURL()
+
+// 从 File 转换
+const file = input.files[0]
+const base64 = await binary.from(file).toBase64()
+
+// 从 Base64 转换
+const blob = await binary.from(base64String, { mime: 'image/png' }).toBlob()
+const file = await binary.from(base64String).toFile('image.png', 'image/png')
+
+// ============ 类型检测 ============
+binary.isBlob(data) // true/false
+binary.isFile(data) // true/false
+binary.isArrayBuffer(data) // true/false
+binary.isDataURL(str) // true/false
+binary.isBase64(str) // true/false
+
+// ============ 子模块 ============
+
+// binary.base64 - Base64 编解码
+const encoded = binary.base64.encode('Hello World')
+const decoded = binary.base64.decode(encoded)
+const blob = binary.base64.toBlob(base64String, 'image/png')
+
+// binary.blob - Blob 操作
+const base64 = await binary.blob.toBase64(blob)
+const buffer = await binary.blob.toArrayBuffer(blob)
+const { url, revoke } = binary.blob.toURL(blob)
+const combined = binary.blob.concat([blob1, blob2], 'text/plain')
+
+// binary.arrayBuffer - ArrayBuffer 转换
+const base64 = binary.arrayBuffer.toBase64(buffer)
+const blob = binary.arrayBuffer.toBlob(buffer, 'image/png')
+const hex = binary.arrayBuffer.toHex(buffer)
+
+// binary.file - File 转换
+const base64 = await binary.file.toBase64(file)
+const buffer = await binary.file.toArrayBuffer(file)
+
+// binary.url - URL 转 Blob
+const blob = await binary.url.toBlob('https://example.com/image.png')
+const dataUrl = await binary.url.toDataURL('https://example.com/image.png')
+
+// binary.svg - SVG 转换
+const blob = binary.svg.toBlob('<svg>...</svg>')
+const dataUrl = binary.svg.toDataURL('<svg>...</svg>')
+
+// binary.text - 文本编解码
+const buffer = binary.text.encode('Hello World')
+const str = binary.text.decode(buffer)
+
+// binary.dataURL - Data URL 解析
+const { mime, base64, data } = binary.dataURL.parse(dataUrl)
+const valid = binary.dataURL.isValid(str)
+
+// binary.hex - 十六进制编解码
+const hex = binary.hex.encode(buffer)
+const buffer = binary.hex.decode(hexString)
+
+// binary.hash - 哈希计算
+const md5 = await binary.hash.md5(data)
+const sha1 = await binary.hash.sha1(data)
+const sha256 = await binary.hash.sha256(data)
+const crc = binary.hash.crc32(data) // 同步方法
+
+// binary.meta - 文件元数据
+const meta = binary.meta.get(file)
+// { size, mime, name, extension, isImage, isVideo, isAudio, isText }
+
+// ============ 工具方法 ============
+
+// 比较两个二进制数据
+const same = await binary.compare(blob1, blob2) // true/false
+
+// 克隆二进制数据
+const cloned = binary.clone(blob)
+
+// 下载为文件
+binary.download(blob, 'file.txt')
+
+// 解析二进制数据
+const info = binary.parse(data)
+// { data, type, mime, name, size }
+```
+
+#### 从旧版函数迁移
+
+| 旧版函数 | 新版 Binary API |
+|----------------|----------------|
+| `encodeBase64(str)` | `binary.base64.encode(str)` |
+| `decodeBase64(str)` | `binary.base64.decode(str)` |
+| `fileToBase64(file)` | `await binary.file.toBase64(file)` |
+| `base64ToFile(base64, name, mime)` | `binary.base64.toFile(base64, name, mime)` |
+| `base64ToBlob(base64, mime)` | `binary.base64.toBlob(base64, mime)` |
+| `blobToBase64(blob)` | `await binary.blob.toBase64(blob)` |
+| `blobToArrayBuffer(blob)` | `await binary.blob.toArrayBuffer(blob)` |
+| `blobToUrl(blob)` | `binary.blob.toURL(blob)` |
+| `arrayBufferToBase64(buffer)` | `binary.arrayBuffer.toBase64(buffer)` |
+| `arrayBufferToBlob(buffer, mime)` | `binary.arrayBuffer.toBlob(buffer, mime)` |
+| `svgToBlob(svg)` | `binary.svg.toBlob(svg)` |
+| `urlToBlob(url)` | `await binary.url.toBlob(url)` |
 
 ---
 

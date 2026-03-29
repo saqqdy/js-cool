@@ -21,12 +21,67 @@ export interface ChangelogData {
 
 export const changelog: ChangelogData = {
 	version: version || '6.0.0',
-	date: '2025-03-24',
+	date: '2025-03-29',
 	summary:
-		'Major update: IE11 built-in support, new UA detector module, 40+ new utilities, deprecated client module',
-	summaryZh: '重大更新：内置 IE11 支持、新增 UA 检测模块、40+ 新工具函数、废弃 client 模块',
+		'Major update: New binary module, IE11 built-in support, new UA detector module, 50+ new utilities',
+	summaryZh: '重大更新：新增 binary 模块、内置 IE11 支持、新增 UA 检测模块、50+ 新工具函数',
 	migrationGuide: 'https://github.com/saqqdy/js-cool/blob/master/MIGRATION-v5-to-v6.md',
 	changes: [
+		// New Features - Binary Module (Featured)
+		{
+			type: 'new',
+			name: 'binary module',
+			category: 'Binary',
+			description:
+				'Unified binary data conversion API with chainable syntax, supporting Blob, File, ArrayBuffer, Base64, DataURL, URL, SVG formats',
+			descriptionZh:
+				'统一的二进制数据转换 API，支持链式调用，支持 Blob、File、ArrayBuffer、Base64、DataURL、URL、SVG 格式互转',
+			anchor: 'binary',
+		},
+		{
+			type: 'new',
+			name: 'binary.from() - Chainable',
+			category: 'Binary',
+			description:
+				'Chainable binary converter: binary.from(blob).toBase64(), binary.from(file).toArrayBuffer(), etc.',
+			descriptionZh: '链式二进制转换器：binary.from(blob).toBase64()、binary.from(file).toArrayBuffer() 等',
+			anchor: 'binary',
+		},
+		{
+			type: 'new',
+			name: 'binary.base64 / text / hex',
+			category: 'Binary',
+			description:
+				'Base64, text encoding, and hex encoding modules with encode/decode and conversion functions',
+			descriptionZh: 'Base64、文本编码和十六进制编码模块，支持编码解码和转换函数',
+			anchor: 'binary',
+		},
+		{
+			type: 'new',
+			name: 'binary.hash',
+			category: 'Binary',
+			description: 'Hash functions: MD5, SHA-1, SHA-256, CRC32 for binary data',
+			descriptionZh: '哈希函数：MD5、SHA-1、SHA-256、CRC32，支持二进制数据',
+			anchor: 'binary',
+		},
+		{
+			type: 'new',
+			name: 'binary.meta / compare / clone',
+			category: 'Binary',
+			description:
+				'File metadata extraction, binary comparison, cloning, and download utilities',
+			descriptionZh: '文件元数据提取、二进制比较、克隆和下载工具',
+			anchor: 'binary',
+		},
+		{
+			type: 'new',
+			name: 'Type detection',
+			category: 'Binary',
+			description: 'isBlob, isFile, isArrayBuffer, isDataURL, isBase64 type guards',
+			descriptionZh: 'isBlob、isFile、isArrayBuffer、isDataURL、isBase64 类型守卫',
+			anchor: 'binary',
+		},
+
 		// Breaking Changes
 		{
 			type: 'breaking',

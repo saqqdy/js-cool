@@ -13,6 +13,7 @@ v6.0.0 is a major release with breaking changes. The key changes are:
 3. **`client` module removed** - Replaced by the new `ua` module
 4. **Deprecated functions removed** - `getAppVersion`, `getOsVersion`, `getDirParam`
 5. **`pattern` object removed** - Replaced by `patterns` / `validation`
+6. **New `binary` module** - Unified binary data conversion API (recommended replacement for old convert functions)
 
 ### Quick Migration Checklist
 
@@ -21,6 +22,7 @@ v6.0.0 is a major release with breaking changes. The key changes are:
 - [ ] Replace `client` with `ua`
 - [ ] Replace `pattern` with `validation`
 - [ ] Replace deprecated functions
+- [ ] Migrate to new `binary` module (recommended)
 - [ ] Update TypeScript types
 
 ### Build System Migration
@@ -407,6 +409,104 @@ getDirParam('https://example.com/api/users?id=123')
 // v6.x - Fixed: query properly separated
 getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
+```
+
+### Binary Conversion Utilities
+
+The binary conversion functions have been unified into a new `binary` module with chainable API.
+
+#### Function Mapping Table
+
+| v5.x (Old Function)            | v6.x (`binary` Module)                                |
+| ------------------------------ | ----------------------------------------------------- |
+| `encodeBase64(str)`            | `binary.base64.encode(str)` or `binary.text.toBase64(str)` |
+| `decodeBase64(str)`            | `binary.base64.decode(str)` or `binary.text.fromBase64(str)` |
+| `arrayBufferToBase64(buf)`     | `binary.arrayBuffer.toBase64(buf)`                    |
+| `base64ToArrayBuffer(b64)`     | `binary.base64.toArrayBuffer(b64)`                    |
+| `base64ToBlob(b64, mime)`      | `binary.base64.toBlob(b64, mime)`                     |
+| `base64ToFile(b64, name, mime)`| `binary.base64.toFile(b64, name, mime)`               |
+| `blobToArrayBuffer(blob)`      | `await binary.blob.toArrayBuffer(blob)`               |
+| `blobToBase64(blob)`           | `await binary.blob.toBase64(blob)`                    |
+| `blobToUrl(blob)`              | `binary.blob.toURL(blob).url`                         |
+| `fileToBase64(file)`           | `await binary.file.toBase64(file)`                    |
+| `svgToBlob(svg)`               | `binary.svg.toBlob(svg)`                              |
+| `urlToBlob(url)`               | `await binary.url.toBlob(url)`                        |
+| `arrayBufferToBlob(buf, mime)` | `binary.arrayBuffer.toBlob(buf, mime)`                |
+
+#### Basic Migration
+
+```js
+// v5.x - Individual functions
+import {
+  encodeBase64,
+  decodeBase64,
+  blobToBase64,
+  base64ToBlob,
+  fileToBase64,
+} from 'js-cool'
+
+const b64 = encodeBase64('Hello World')
+const str = decodeBase64(b64)
+const base64FromBlob = await blobToBase64(blob)
+const blobFromBase64 = base64ToBlob(b64, 'image/png')
+
+// v6.x - Unified binary module
+import { binary } from 'js-cool'
+
+const b64 = binary.base64.encode('Hello World')
+const str = binary.base64.decode(b64)
+const base64FromBlob = await binary.blob.toBase64(blob)
+const blobFromBase64 = binary.base64.toBlob(b64, 'image/png')
+```
+
+#### Chainable Conversion (NEW)
+
+```js
+import { binary } from 'js-cool'
+
+// Convert from any input type to any output type
+const base64 = await binary.from(blob).toBase64()
+const arrayBuffer = await binary.from(file).toArrayBuffer()
+const dataURL = await binary.from(base64String).toDataURL('image/png')
+const { url, revoke } = await binary.from(arrayBuffer).toURL()
+
+// Get metadata
+const mime = binary.from(blob).getMime()
+const size = binary.from(file).getSize()
+```
+
+#### New Features
+
+**Hash Functions:**
+
+```js
+import { binary } from 'js-cool'
+
+const md5 = await binary.hash.md5('Hello World')
+const sha1 = await binary.hash.sha1('Hello World')
+const sha256 = await binary.hash.sha256('Hello World')
+const crc32 = binary.hash.crc32('Hello World')
+```
+
+**File Metadata:**
+
+```js
+import { binary } from 'js-cool'
+
+const meta = binary.meta.get(file)
+// { size, mime, name, extension, isImage, isVideo, isAudio, isText }
+```
+
+**Type Detection:**
+
+```js
+import { binary } from 'js-cool'
+
+binary.isBlob(new Blob(['hello'])) // true
+binary.isFile(new File(['hello'], 'test.txt')) // true
+binary.isArrayBuffer(new ArrayBuffer(8)) // true
+binary.isDataURL('data:text/plain;base64,SGVsbG8=') // true
+binary.isBase64('SGVsbG8gV29ybGQ=') // true
 ```
 
 ### Date Utilities

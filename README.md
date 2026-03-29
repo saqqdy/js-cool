@@ -160,6 +160,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 | **Scroll**        | Scroll utilities                  | `scroll`, `getPosition`, `getProgress`, `getDirection`, `isInViewport`, `scrollTo`, `scrollToTop`, `scrollToBottom`, `scrollBy`, `lockScroll`, `unlockScroll`, `getScrollbarWidth`                                                                |
 | **Storage**       | Browser storage                   | `storage`, `local`, `session`, `cookie`                                                                                                                                                                                                           |
 | **Convert**       | Format conversion                 | `arrayBufferToBase64`, `arrayBufferToBlob`, `base64ToArrayBuffer`, `base64ToBlob`, `base64ToFile`, `blobToArrayBuffer`, `blobToBase64`, `blobToUrl`, `fileToBase64`, `svgToBlob`, `urlToBlob`                                                     |
+| **Binary**        | Binary data conversion (v6.0.0+)  | `binary`, `binary.from()`, `binary.base64`, `binary.blob`, `binary.arrayBuffer`, `binary.file`, `binary.url`, `binary.svg`, `binary.text`, `binary.dataURL`, `binary.hex`, `binary.hash`, `binary.meta`                                            |
 | **Number**        | Number processing                 | `clamp`, `round`, `sum`, `average`, `inRange`                                                                                                                                                                                                     |
 | **Date**          | Date processing                   | `date`, `DateParser`, `formatDate`, `dateDiff`, `relativeTime`, `isToday`, `isYesterday`, `isTomorrow`, `isWeekend`, `isLeapYear`, `getDaysInMonth`, `getQuarter`, `getDayOfYear`, `getWeekOfYear`, `addDate`, `subtractDate`, `startOf`, `endOf` |
 | **Color**         | Color manipulation                | `hexToRGB`, `rgbToHSL`, `RGBToHex`, `lighten`, `darken`, `isLightColor`, `randomColor`                                                                                                                                                            |
@@ -1977,7 +1978,9 @@ await preloader(['image1.jpg', 'image2.jpg', 'image3.jpg'])
 
 ---
 
-### Binary Conversion
+### Binary Conversion (Legacy)
+
+> **Note:** For new projects, use the `binary` module (v6.0.0+) which provides a unified, chainable API. See [Binary Module](#binary-module-v600) below.
 
 ```js
 import {
@@ -2020,6 +2023,124 @@ const blob = svgToBlob('<svg viewBox="0 0 100 100">...</svg>')
 // URL to Blob
 const blob = await urlToBlob('https://example.com/image.png')
 ```
+
+---
+
+### Binary Module (v6.0.0+)
+
+The `binary` module provides a unified, chainable API for binary data conversion. It's the recommended replacement for legacy conversion functions.
+
+```js
+import { binary } from 'js-cool'
+
+// ============ Chainable Conversion ============
+const blob = new Blob(['Hello World'], { type: 'text/plain' })
+
+// Convert to various formats
+const base64 = await binary.from(blob).toBase64()
+const buffer = await binary.from(blob).toArrayBuffer()
+const dataUrl = await binary.from(blob).toDataURL()
+const { url, revoke } = await binary.from(blob).toURL()
+
+// From File
+const file = input.files[0]
+const base64 = await binary.from(file).toBase64()
+
+// From Base64
+const blob = await binary.from(base64String, { mime: 'image/png' }).toBlob()
+const file = await binary.from(base64String).toFile('image.png', 'image/png')
+
+// ============ Type Detection ============
+binary.isBlob(data) // true/false
+binary.isFile(data) // true/false
+binary.isArrayBuffer(data) // true/false
+binary.isDataURL(str) // true/false
+binary.isBase64(str) // true/false
+
+// ============ Sub-modules ============
+
+// binary.base64 - Base64 encoding/decoding
+const encoded = binary.base64.encode('Hello World')
+const decoded = binary.base64.decode(encoded)
+const blob = binary.base64.toBlob(base64String, 'image/png')
+
+// binary.blob - Blob operations
+const base64 = await binary.blob.toBase64(blob)
+const buffer = await binary.blob.toArrayBuffer(blob)
+const { url, revoke } = binary.blob.toURL(blob)
+const combined = binary.blob.concat([blob1, blob2], 'text/plain')
+
+// binary.arrayBuffer - ArrayBuffer conversions
+const base64 = binary.arrayBuffer.toBase64(buffer)
+const blob = binary.arrayBuffer.toBlob(buffer, 'image/png')
+const hex = binary.arrayBuffer.toHex(buffer)
+
+// binary.file - File conversions
+const base64 = await binary.file.toBase64(file)
+const buffer = await binary.file.toArrayBuffer(file)
+
+// binary.url - URL to Blob
+const blob = await binary.url.toBlob('https://example.com/image.png')
+const dataUrl = await binary.url.toDataURL('https://example.com/image.png')
+
+// binary.svg - SVG conversions
+const blob = binary.svg.toBlob('<svg>...</svg>')
+const dataUrl = binary.svg.toDataURL('<svg>...</svg>')
+
+// binary.text - Text encoding/decoding
+const buffer = binary.text.encode('Hello World')
+const str = binary.text.decode(buffer)
+
+// binary.dataURL - Data URL parsing
+const { mime, base64, data } = binary.dataURL.parse(dataUrl)
+const valid = binary.dataURL.isValid(str)
+
+// binary.hex - Hexadecimal encoding/decoding
+const hex = binary.hex.encode(buffer)
+const buffer = binary.hex.decode(hexString)
+
+// binary.hash - Hash calculations
+const md5 = await binary.hash.md5(data)
+const sha1 = await binary.hash.sha1(data)
+const sha256 = await binary.hash.sha256(data)
+const crc = binary.hash.crc32(data) // synchronous
+
+// binary.meta - File metadata
+const meta = binary.meta.get(file)
+// { size, mime, name, extension, isImage, isVideo, isAudio, isText }
+
+// ============ Utility Methods ============
+
+// Compare two binary inputs
+const same = await binary.compare(blob1, blob2) // true/false
+
+// Clone binary data
+const cloned = binary.clone(blob)
+
+// Download as file
+binary.download(blob, 'file.txt')
+
+// Parse binary data
+const info = binary.parse(data)
+// { data, type, mime, name, size }
+```
+
+#### Migration from Legacy Functions
+
+| Legacy Function | New Binary API |
+|----------------|----------------|
+| `encodeBase64(str)` | `binary.base64.encode(str)` |
+| `decodeBase64(str)` | `binary.base64.decode(str)` |
+| `fileToBase64(file)` | `await binary.file.toBase64(file)` |
+| `base64ToFile(base64, name, mime)` | `binary.base64.toFile(base64, name, mime)` |
+| `base64ToBlob(base64, mime)` | `binary.base64.toBlob(base64, mime)` |
+| `blobToBase64(blob)` | `await binary.blob.toBase64(blob)` |
+| `blobToArrayBuffer(blob)` | `await binary.blob.toArrayBuffer(blob)` |
+| `blobToUrl(blob)` | `binary.blob.toURL(blob)` |
+| `arrayBufferToBase64(buffer)` | `binary.arrayBuffer.toBase64(buffer)` |
+| `arrayBufferToBlob(buffer, mime)` | `binary.arrayBuffer.toBlob(buffer, mime)` |
+| `svgToBlob(svg)` | `binary.svg.toBlob(svg)` |
+| `urlToBlob(url)` | `await binary.url.toBlob(url)` |
 
 ---
 

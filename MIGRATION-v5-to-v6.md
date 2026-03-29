@@ -14,6 +14,7 @@ v6.0.0 is a major release with breaking changes. The key changes are:
 2. **Package exports** - Proper `exports` field with conditional exports
 3. **`client` module removed** - Replaced by the new `ua` module
 4. **Deprecated functions removed** - `getAppVersion`, `getOsVersion`
+5. **New `binary` module** - Unified binary data conversion API (recommended replacement for old convert functions)
 
 ---
 
@@ -23,6 +24,7 @@ v6.0.0 is a major release with breaking changes. The key changes are:
 - [ ] Update CDN links and global variable name
 - [ ] Replace `client` with `ua`
 - [ ] Replace deprecated functions
+- [ ] Migrate to new `binary` module (recommended)
 - [ ] Update TypeScript types
 
 ---
@@ -1004,6 +1006,277 @@ get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+---
+
+## Migration: Binary Conversion Functions → `binary` Module
+
+### Why the Change?
+
+The binary conversion functions have been unified into a new `binary` module with:
+
+- **Chainable API** - Convert between any formats with a single entry point
+- **Unified interface** - Consistent method names across all conversion types
+- **More features** - Hash functions (MD5, SHA-1, SHA-256, CRC32), file metadata, hex encoding
+- **Type detection** - `isBlob()`, `isFile()`, `isArrayBuffer()`, `isDataURL()`, `isBase64()`
+- **Better TypeScript support** - Full type definitions for all methods
+- **IE11 compatible** - Built-in compatibility layer
+
+### Function Mapping Table
+
+| Old Function (v5.x)             | New Module API (v6.x)                                    |
+| ------------------------------- | -------------------------------------------------------- |
+| `encodeBase64(str)`             | `binary.base64.encode(str)` or `binary.text.toBase64(str)` |
+| `decodeBase64(str)`             | `binary.base64.decode(str)` or `binary.text.fromBase64(str)` |
+| `arrayBufferToBase64(buf)`      | `binary.arrayBuffer.toBase64(buf)`                       |
+| `base64ToArrayBuffer(b64)`      | `binary.base64.toArrayBuffer(b64)`                       |
+| `base64ToBlob(b64, mime)`       | `binary.base64.toBlob(b64, mime)`                        |
+| `base64ToFile(b64, name, mime)` | `binary.base64.toFile(b64, name, mime)`                  |
+| `blobToArrayBuffer(blob)`       | `await binary.blob.toArrayBuffer(blob)`                  |
+| `blobToBase64(blob)`            | `await binary.blob.toBase64(blob)`                       |
+| `blobToUrl(blob)`               | `binary.blob.toURL(blob).url`                            |
+| `fileToBase64(file)`            | `await binary.file.toBase64(file)`                       |
+| `svgToBlob(svg)`                | `binary.svg.toBlob(svg)`                                 |
+| `urlToBlob(url)`                | `await binary.url.toBlob(url)`                           |
+| `arrayBufferToBlob(buf, mime)`  | `binary.arrayBuffer.toBlob(buf, mime)`                   |
+
+### Basic Migration
+
+```js
+// v5.x - Individual functions
+import {
+  encodeBase64,
+  decodeBase64,
+  blobToBase64,
+  base64ToBlob,
+  fileToBase64,
+} from 'js-cool'
+
+const b64 = encodeBase64('Hello World')
+const str = decodeBase64(b64)
+const base64FromBlob = await blobToBase64(blob)
+const blobFromBase64 = base64ToBlob(b64, 'image/png')
+const base64FromFile = await fileToBase64(file)
+
+// v6.x - Unified binary module
+import { binary } from 'js-cool'
+
+const b64 = binary.base64.encode('Hello World')
+const str = binary.base64.decode(b64)
+const base64FromBlob = await binary.blob.toBase64(blob)
+const blobFromBase64 = binary.base64.toBlob(b64, 'image/png')
+const base64FromFile = await binary.file.toBase64(file)
+```
+
+### Chainable Conversion (NEW)
+
+The new `binary.from()` method provides a chainable API for conversions:
+
+```js
+import { binary } from 'js-cool'
+
+// Convert from any input type to any output type
+const base64 = await binary.from(blob).toBase64()
+const arrayBuffer = await binary.from(file).toArrayBuffer()
+const dataURL = await binary.from(base64String).toDataURL('image/png')
+const { url, revoke } = await binary.from(arrayBuffer).toURL()
+
+// Get metadata
+const mime = binary.from(blob).getMime()
+const size = binary.from(file).getSize()
+```
+
+### New Features
+
+#### Hash Functions
+
+```js
+import { binary } from 'js-cool'
+
+// Calculate hashes
+const md5 = await binary.hash.md5('Hello World')
+// 'b10a8db164e0754105b7a99be72e3fe5'
+
+const sha1 = await binary.hash.sha1('Hello World')
+// '0a4d55a8d778e5022fab701977c5d840bbc486d0'
+
+const sha256 = await binary.hash.sha256('Hello World')
+// 'a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e'
+
+const crc32 = binary.hash.crc32('Hello World')
+// 2346237359
+```
+
+#### Hex Encoding
+
+```js
+import { binary } from 'js-cool'
+
+// Encode/decode hex
+const buffer = binary.text.encode('Hello')
+const hex = binary.hex.encode(buffer) // '48656c6c6f'
+
+const decoded = binary.hex.decode('48656c6c6f')
+const text = binary.text.decode(decoded) // 'Hello'
+```
+
+#### File Metadata
+
+```js
+import { binary } from 'js-cool'
+
+const meta = binary.meta.get(file)
+// {
+//   size: 1024,
+//   mime: 'image/png',
+//   name: 'image.png',
+//   extension: 'png',
+//   isImage: true,
+//   isVideo: false,
+//   isAudio: false,
+//   isText: false,
+//   lastModified: 1640000000000
+// }
+```
+
+#### Type Detection
+
+```js
+import { binary } from 'js-cool'
+
+binary.isBlob(new Blob(['hello'])) // true
+binary.isFile(new File(['hello'], 'test.txt')) // true
+binary.isArrayBuffer(new ArrayBuffer(8)) // true
+binary.isDataURL('data:text/plain;base64,SGVsbG8=') // true
+binary.isBase64('SGVsbG8gV29ybGQ=') // true
+```
+
+#### Binary Comparison & Cloning
+
+```js
+import { binary } from 'js-cool'
+
+// Compare binary data
+const same = await binary.compare(blob1, blob2) // true/false
+
+// Clone binary data
+const cloned = binary.clone(blob) // new Blob with same content
+
+// Download binary data
+binary.download(blob, 'file.txt')
+```
+
+### Sub-module APIs
+
+The `binary` module exports several sub-modules:
+
+```js
+import { binary } from 'js-cool'
+
+// base64 module
+binary.base64.encode(str)
+binary.base64.decode(b64)
+binary.base64.toBlob(b64, mime?)
+binary.base64.toArrayBuffer(b64)
+binary.base64.toDataURL(b64, mime)
+binary.base64.toFile(b64, filename, mime?)
+
+// blob module
+await binary.blob.toBase64(blob)
+await binary.blob.toArrayBuffer(blob)
+await binary.blob.toDataURL(blob)
+binary.blob.toFile(blob, filename)
+binary.blob.toURL(blob) // { url, revoke }
+binary.blob.concat([blob1, blob2], mime?)
+binary.blob.slice(blob, start, end, mime?)
+
+// arrayBuffer module
+binary.arrayBuffer.toBase64(buffer, mime?)
+binary.arrayBuffer.toDataURL(buffer, mime)
+binary.arrayBuffer.toBlob(buffer, mime?)
+binary.arrayBuffer.toString(buffer, encoding?)
+binary.arrayBuffer.toHex(buffer)
+
+// file module
+await binary.file.toBase64(file)
+await binary.file.toArrayBuffer(file)
+binary.file.toBlob(file)
+
+// text module
+binary.text.encode(str, encoding?)
+binary.text.decode(buffer, encoding?)
+binary.text.toBase64(str)
+binary.text.fromBase64(b64)
+
+// hex module
+binary.hex.encode(buffer)
+binary.hex.decode(hex)
+
+// dataURL module
+binary.dataURL.parse(dataURL) // { mime, base64, data }
+binary.dataURL.build(b64, mime)
+binary.dataURL.isValid(str)
+
+// svg module
+binary.svg.toBlob(svg)
+binary.svg.toDataURL(svg)
+binary.svg.toURL(svg) // { url, revoke }
+
+// url module
+await binary.url.toBlob(url)
+await binary.url.toDataURL(url)
+
+// hash module
+await binary.hash.md5(data)
+await binary.hash.sha1(data)
+await binary.hash.sha256(data)
+binary.hash.crc32(data)
+
+// meta module
+binary.meta.get(file)
+```
+
+### Migration Examples
+
+```js
+// v5.x - Base64 encoding
+import { encodeBase64, decodeBase64 } from 'js-cool'
+const encoded = encodeBase64('Hello 世界')
+const decoded = decodeBase64(encoded)
+
+// v6.x - Use binary module
+import { binary } from 'js-cool'
+const encoded = binary.base64.encode('Hello 世界')
+const decoded = binary.base64.decode(encoded)
+
+// v5.x - Blob conversion
+import { blobToBase64, blobToUrl } from 'js-cool'
+const b64 = await blobToBase64(blob)
+const url = blobToUrl(blob)
+
+// v6.x - Use binary module
+import { binary } from 'js-cool'
+const b64 = await binary.blob.toBase64(blob)
+const { url } = binary.blob.toURL(blob)
+
+// v5.x - File handling
+import { fileToBase64 } from 'js-cool'
+const b64 = await fileToBase64(file)
+
+// v6.x - Use binary module with chainable API
+import { binary } from 'js-cool'
+const b64 = await binary.from(file).toBase64()
+const meta = binary.meta.get(file)
+
+// v5.x - Multiple conversions
+import { blobToArrayBuffer, arrayBufferToBase64 } from 'js-cool'
+const buffer = await blobToArrayBuffer(blob)
+const b64 = arrayBufferToBase64(buffer)
+
+// v6.x - Single chainable call
+import { binary } from 'js-cool'
+const b64 = await binary.from(blob).toBase64()
 ```
 
 ---

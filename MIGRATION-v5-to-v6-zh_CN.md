@@ -14,6 +14,7 @@ v6.0.0 是一个包含破坏性变更的主要版本。主要变化包括：
 2. **包导出** - 正确的 `exports` 字段和条件导出
 3. **移除 `client` 模块** - 替换为新的 `ua` 模块
 4. **移除废弃函数** - `getAppVersion`、`getOsVersion`
+5. **新增 `binary` 模块** - 统一的二进制数据转换 API（推荐替代旧的转换函数）
 
 ---
 
@@ -23,6 +24,7 @@ v6.0.0 是一个包含破坏性变更的主要版本。主要变化包括：
 - [ ] 更新 CDN 链接和全局变量名
 - [ ] 将 `client` 替换为 `ua`
 - [ ] 替换废弃的函数
+- [ ] 迁移到新的 `binary` 模块（推荐）
 - [ ] 更新 TypeScript 类型
 
 ---
@@ -994,6 +996,277 @@ get('id', 'https://example.com?id=123') // '123'
 set('page', 2, 'https://example.com') // 'https://example.com/?page=2'
 parse('?a=1&b=true', { convert: true }) // { a: 1, b: true }
 stringify({ a: 1, b: 2 }) // '?a=1&b=2'
+```
+
+---
+
+## 迁移：二进制转换函数 → `binary` 模块
+
+### 为什么要改？
+
+二进制转换函数已统一到新的 `binary` 模块：
+
+- **链式 API** - 单一入口点，在任意格式间转换
+- **统一的接口** - 所有转换类型方法名一致
+- **更多功能** - 哈希函数（MD5、SHA-1、SHA-256、CRC32）、文件元数据、十六进制编码
+- **类型检测** - `isBlob()`、`isFile()`、`isArrayBuffer()`、`isDataURL()`、`isBase64()`
+- **更好的 TypeScript 支持** - 完整的类型定义
+- **IE11 兼容** - 内置兼容层
+
+### 函数对照表
+
+| 旧函数 (v5.x)                   | 新模块 API (v6.x)                                       |
+| ------------------------------- | ------------------------------------------------------- |
+| `encodeBase64(str)`             | `binary.base64.encode(str)` 或 `binary.text.toBase64(str)` |
+| `decodeBase64(str)`             | `binary.base64.decode(str)` 或 `binary.text.fromBase64(str)` |
+| `arrayBufferToBase64(buf)`      | `binary.arrayBuffer.toBase64(buf)`                      |
+| `base64ToArrayBuffer(b64)`      | `binary.base64.toArrayBuffer(b64)`                      |
+| `base64ToBlob(b64, mime)`       | `binary.base64.toBlob(b64, mime)`                       |
+| `base64ToFile(b64, name, mime)` | `binary.base64.toFile(b64, name, mime)`                 |
+| `blobToArrayBuffer(blob)`       | `await binary.blob.toArrayBuffer(blob)`                 |
+| `blobToBase64(blob)`            | `await binary.blob.toBase64(blob)`                      |
+| `blobToUrl(blob)`               | `binary.blob.toURL(blob).url`                           |
+| `fileToBase64(file)`            | `await binary.file.toBase64(file)`                      |
+| `svgToBlob(svg)`                | `binary.svg.toBlob(svg)`                                |
+| `urlToBlob(url)`                | `await binary.url.toBlob(url)`                          |
+| `arrayBufferToBlob(buf, mime)`  | `binary.arrayBuffer.toBlob(buf, mime)`                  |
+
+### 基础迁移
+
+```js
+// v5.x - 独立函数
+import {
+  encodeBase64,
+  decodeBase64,
+  blobToBase64,
+  base64ToBlob,
+  fileToBase64,
+} from 'js-cool'
+
+const b64 = encodeBase64('Hello World')
+const str = decodeBase64(b64)
+const base64FromBlob = await blobToBase64(blob)
+const blobFromBase64 = base64ToBlob(b64, 'image/png')
+const base64FromFile = await fileToBase64(file)
+
+// v6.x - 统一的 binary 模块
+import { binary } from 'js-cool'
+
+const b64 = binary.base64.encode('Hello World')
+const str = binary.base64.decode(b64)
+const base64FromBlob = await binary.blob.toBase64(blob)
+const blobFromBase64 = binary.base64.toBlob(b64, 'image/png')
+const base64FromFile = await binary.file.toBase64(file)
+```
+
+### 链式转换（新功能）
+
+新的 `binary.from()` 方法提供链式转换 API：
+
+```js
+import { binary } from 'js-cool'
+
+// 从任意输入类型转换到任意输出类型
+const base64 = await binary.from(blob).toBase64()
+const arrayBuffer = await binary.from(file).toArrayBuffer()
+const dataURL = await binary.from(base64String).toDataURL('image/png')
+const { url, revoke } = await binary.from(arrayBuffer).toURL()
+
+// 获取元数据
+const mime = binary.from(blob).getMime()
+const size = binary.from(file).getSize()
+```
+
+### 新功能
+
+#### 哈希函数
+
+```js
+import { binary } from 'js-cool'
+
+// 计算哈希值
+const md5 = await binary.hash.md5('Hello World')
+// 'b10a8db164e0754105b7a99be72e3fe5'
+
+const sha1 = await binary.hash.sha1('Hello World')
+// '0a4d55a8d778e5022fab701977c5d840bbc486d0'
+
+const sha256 = await binary.hash.sha256('Hello World')
+// 'a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e'
+
+const crc32 = binary.hash.crc32('Hello World')
+// 2346237359
+```
+
+#### 十六进制编码
+
+```js
+import { binary } from 'js-cool'
+
+// 十六进制编解码
+const buffer = binary.text.encode('Hello')
+const hex = binary.hex.encode(buffer) // '48656c6c6f'
+
+const decoded = binary.hex.decode('48656c6c6f')
+const text = binary.text.decode(decoded) // 'Hello'
+```
+
+#### 文件元数据
+
+```js
+import { binary } from 'js-cool'
+
+const meta = binary.meta.get(file)
+// {
+//   size: 1024,
+//   mime: 'image/png',
+//   name: 'image.png',
+//   extension: 'png',
+//   isImage: true,
+//   isVideo: false,
+//   isAudio: false,
+//   isText: false,
+//   lastModified: 1640000000000
+// }
+```
+
+#### 类型检测
+
+```js
+import { binary } from 'js-cool'
+
+binary.isBlob(new Blob(['hello'])) // true
+binary.isFile(new File(['hello'], 'test.txt')) // true
+binary.isArrayBuffer(new ArrayBuffer(8)) // true
+binary.isDataURL('data:text/plain;base64,SGVsbG8=') // true
+binary.isBase64('SGVsbG8gV29ybGQ=') // true
+```
+
+#### 二进制比较与克隆
+
+```js
+import { binary } from 'js-cool'
+
+// 比较二进制数据
+const same = await binary.compare(blob1, blob2) // true/false
+
+// 克隆二进制数据
+const cloned = binary.clone(blob) // 相同内容的新 Blob
+
+// 下载二进制数据
+binary.download(blob, 'file.txt')
+```
+
+### 子模块 API
+
+`binary` 模块导出多个子模块：
+
+```js
+import { binary } from 'js-cool'
+
+// base64 模块
+binary.base64.encode(str)
+binary.base64.decode(b64)
+binary.base64.toBlob(b64, mime?)
+binary.base64.toArrayBuffer(b64)
+binary.base64.toDataURL(b64, mime)
+binary.base64.toFile(b64, filename, mime?)
+
+// blob 模块
+await binary.blob.toBase64(blob)
+await binary.blob.toArrayBuffer(blob)
+await binary.blob.toDataURL(blob)
+binary.blob.toFile(blob, filename)
+binary.blob.toURL(blob) // { url, revoke }
+binary.blob.concat([blob1, blob2], mime?)
+binary.blob.slice(blob, start, end, mime?)
+
+// arrayBuffer 模块
+binary.arrayBuffer.toBase64(buffer, mime?)
+binary.arrayBuffer.toDataURL(buffer, mime)
+binary.arrayBuffer.toBlob(buffer, mime?)
+binary.arrayBuffer.toString(buffer, encoding?)
+binary.arrayBuffer.toHex(buffer)
+
+// file 模块
+await binary.file.toBase64(file)
+await binary.file.toArrayBuffer(file)
+binary.file.toBlob(file)
+
+// text 模块
+binary.text.encode(str, encoding?)
+binary.text.decode(buffer, encoding?)
+binary.text.toBase64(str)
+binary.text.fromBase64(b64)
+
+// hex 模块
+binary.hex.encode(buffer)
+binary.hex.decode(hex)
+
+// dataURL 模块
+binary.dataURL.parse(dataURL) // { mime, base64, data }
+binary.dataURL.build(b64, mime)
+binary.dataURL.isValid(str)
+
+// svg 模块
+binary.svg.toBlob(svg)
+binary.svg.toDataURL(svg)
+binary.svg.toURL(svg) // { url, revoke }
+
+// url 模块
+await binary.url.toBlob(url)
+await binary.url.toDataURL(url)
+
+// hash 模块
+await binary.hash.md5(data)
+await binary.hash.sha1(data)
+await binary.hash.sha256(data)
+binary.hash.crc32(data)
+
+// meta 模块
+binary.meta.get(file)
+```
+
+### 迁移示例
+
+```js
+// v5.x - Base64 编码
+import { encodeBase64, decodeBase64 } from 'js-cool'
+const encoded = encodeBase64('Hello 世界')
+const decoded = decodeBase64(encoded)
+
+// v6.x - 使用 binary 模块
+import { binary } from 'js-cool'
+const encoded = binary.base64.encode('Hello 世界')
+const decoded = binary.base64.decode(encoded)
+
+// v5.x - Blob 转换
+import { blobToBase64, blobToUrl } from 'js-cool'
+const b64 = await blobToBase64(blob)
+const url = blobToUrl(blob)
+
+// v6.x - 使用 binary 模块
+import { binary } from 'js-cool'
+const b64 = await binary.blob.toBase64(blob)
+const { url } = binary.blob.toURL(blob)
+
+// v5.x - 文件处理
+import { fileToBase64 } from 'js-cool'
+const b64 = await fileToBase64(file)
+
+// v6.x - 使用链式 API
+import { binary } from 'js-cool'
+const b64 = await binary.from(file).toBase64()
+const meta = binary.meta.get(file)
+
+// v5.x - 多次转换
+import { blobToArrayBuffer, arrayBufferToBase64 } from 'js-cool'
+const buffer = await blobToArrayBuffer(blob)
+const b64 = arrayBufferToBase64(buffer)
+
+// v6.x - 单次链式调用
+import { binary } from 'js-cool'
+const b64 = await binary.from(blob).toBase64()
 ```
 
 ---

@@ -13,6 +13,7 @@ v6.0.0 是一个包含破坏性变更的主要版本。主要变化包括：
 3. **移除 `client` 模块** - 替换为新的 `ua` 模块
 4. **移除废弃函数** - `getAppVersion`、`getOsVersion`、`getDirParam`、`getScrollPosition`
 5. **移除 `pattern` 对象** - 替换为 `patterns` / `validation`
+6. **新增 `binary` 模块** - 统一的二进制数据转换 API（推荐替代旧的转换函数）
 
 ### 快速迁移清单
 
@@ -21,6 +22,7 @@ v6.0.0 是一个包含破坏性变更的主要版本。主要变化包括：
 - [ ] 将 `client` 替换为 `ua`
 - [ ] 将 `pattern` 替换为 `validation`
 - [ ] 替换废弃的函数
+- [ ] 迁移到新的 `binary` 模块（推荐）
 - [ ] 更新 TypeScript 类型
 
 ### 构建系统迁移
@@ -407,6 +409,104 @@ getDirParam('https://example.com/api/users?id=123')
 // v6.x - 已修复：query 正确分离
 getDirParams('https://example.com/api/users?id=123')
 // { origin: 'https://example.com', segments: ['api', 'users'], query: 'id=123', ... }
+```
+
+### 二进制转换工具
+
+二进制转换函数已统一到新的 `binary` 模块，提供链式 API。
+
+#### 函数对照表
+
+| v5.x（旧函数）                 | v6.x（`binary` 模块）                                 |
+| ------------------------------ | ----------------------------------------------------- |
+| `encodeBase64(str)`            | `binary.base64.encode(str)` 或 `binary.text.toBase64(str)` |
+| `decodeBase64(str)`            | `binary.base64.decode(str)` 或 `binary.text.fromBase64(str)` |
+| `arrayBufferToBase64(buf)`     | `binary.arrayBuffer.toBase64(buf)`                    |
+| `base64ToArrayBuffer(b64)`     | `binary.base64.toArrayBuffer(b64)`                    |
+| `base64ToBlob(b64, mime)`      | `binary.base64.toBlob(b64, mime)`                     |
+| `base64ToFile(b64, name, mime)`| `binary.base64.toFile(b64, name, mime)`               |
+| `blobToArrayBuffer(blob)`      | `await binary.blob.toArrayBuffer(blob)`               |
+| `blobToBase64(blob)`           | `await binary.blob.toBase64(blob)`                    |
+| `blobToUrl(blob)`              | `binary.blob.toURL(blob).url`                         |
+| `fileToBase64(file)`           | `await binary.file.toBase64(file)`                    |
+| `svgToBlob(svg)`               | `binary.svg.toBlob(svg)`                              |
+| `urlToBlob(url)`               | `await binary.url.toBlob(url)`                        |
+| `arrayBufferToBlob(buf, mime)` | `binary.arrayBuffer.toBlob(buf, mime)`                |
+
+#### 基础迁移
+
+```js
+// v5.x - 独立函数
+import {
+  encodeBase64,
+  decodeBase64,
+  blobToBase64,
+  base64ToBlob,
+  fileToBase64,
+} from 'js-cool'
+
+const b64 = encodeBase64('Hello World')
+const str = decodeBase64(b64)
+const base64FromBlob = await blobToBase64(blob)
+const blobFromBase64 = base64ToBlob(b64, 'image/png')
+
+// v6.x - 统一的 binary 模块
+import { binary } from 'js-cool'
+
+const b64 = binary.base64.encode('Hello World')
+const str = binary.base64.decode(b64)
+const base64FromBlob = await binary.blob.toBase64(blob)
+const blobFromBase64 = binary.base64.toBlob(b64, 'image/png')
+```
+
+#### 链式转换（新功能）
+
+```js
+import { binary } from 'js-cool'
+
+// 从任意输入类型转换到任意输出类型
+const base64 = await binary.from(blob).toBase64()
+const arrayBuffer = await binary.from(file).toArrayBuffer()
+const dataURL = await binary.from(base64String).toDataURL('image/png')
+const { url, revoke } = await binary.from(arrayBuffer).toURL()
+
+// 获取元数据
+const mime = binary.from(blob).getMime()
+const size = binary.from(file).getSize()
+```
+
+#### 新功能
+
+**哈希函数：**
+
+```js
+import { binary } from 'js-cool'
+
+const md5 = await binary.hash.md5('Hello World')
+const sha1 = await binary.hash.sha1('Hello World')
+const sha256 = await binary.hash.sha256('Hello World')
+const crc32 = binary.hash.crc32('Hello World')
+```
+
+**文件元数据：**
+
+```js
+import { binary } from 'js-cool'
+
+const meta = binary.meta.get(file)
+// { size, mime, name, extension, isImage, isVideo, isAudio, isText }
+```
+
+**类型检测：**
+
+```js
+import { binary } from 'js-cool'
+
+binary.isBlob(new Blob(['hello'])) // true
+binary.isFile(new File(['hello'], 'test.txt')) // true
+binary.isArrayBuffer(new ArrayBuffer(8)) // true
+binary.isDataURL('data:text/plain;base64,SGVsbG8=') // true
+binary.isBase64('SGVsbG8gV29ybGQ=') // true
 ```
 
 ### 日期工具

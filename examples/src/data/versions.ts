@@ -214,6 +214,31 @@ export const versions: Record<string, string> = {
 
 	// Network
 	fillIPv6: '3.0.0',
+
+	// Binary (v6.0.0)
+	binary: '6.0.0',
+	binaryDefault: '6.0.0',
+	'binary.from': '6.0.0',
+	'binary.parse': '6.0.0',
+	'binary.isBlob': '6.0.0',
+	'binary.isFile': '6.0.0',
+	'binary.isArrayBuffer': '6.0.0',
+	'binary.isDataURL': '6.0.0',
+	'binary.isBase64': '6.0.0',
+	'binary.compare': '6.0.0',
+	'binary.clone': '6.0.0',
+	'binary.download': '6.0.0',
+	'binary.base64': '6.0.0',
+	'binary.blob': '6.0.0',
+	'binary.arrayBuffer': '6.0.0',
+	'binary.file': '6.0.0',
+	'binary.url': '6.0.0',
+	'binary.svg': '6.0.0',
+	'binary.text': '6.0.0',
+	'binary.dataURL': '6.0.0',
+	'binary.hex': '6.0.0',
+	'binary.hash': '6.0.0',
+	'binary.meta': '6.0.0',
 }
 
 export function getVersion(name: string): string | undefined {

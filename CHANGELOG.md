@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2026-03-25
+## [6.0.0] - 2026-03-29
 
 ### ⚠️ BREAKING CHANGES
 
@@ -40,6 +40,26 @@ All notable changes to this project will be documented in this file.
 - **Type Change**: `base64ToFile()` returns `File | Blob` (IE11 returns Blob)
 
 ### 🚀 Features
+
+- **New `binary` Module**: Unified binary data conversion API
+  - Chainable conversion: `binary.from(blob).toBase64()`, `binary.from(file).toArrayBuffer()`, etc.
+  - Type detection: `isBlob()`, `isFile()`, `isArrayBuffer()`, `isDataURL()`, `isBase64()`
+  - Sub-modules:
+    - `binary.base64`: encode/decode, toBlob/toArrayBuffer/toDataURL/toFile
+    - `binary.blob`: toBase64/toArrayBuffer/toDataURL/toFile/toURL, concat, slice
+    - `binary.arrayBuffer`: toBase64/toDataURL/toBlob/toString/toHex
+    - `binary.file`: toBase64/toArrayBuffer/toBlob
+    - `binary.text`: encode/decode, toBase64/fromBase64
+    - `binary.hex`: encode/decode
+    - `binary.dataURL`: parse/build/isValid
+    - `binary.svg`: toBlob/toDataURL/toURL
+    - `binary.url`: toBlob/toDataURL
+    - `binary.hash`: md5, sha1, sha256, crc32
+    - `binary.meta`: get file metadata (size, mime, extension, isImage, etc.)
+  - Utility methods: `compare()`, `clone()`, `download()`, `parse()`
+  - Full TypeScript support with comprehensive type definitions
+  - IE11 compatibility built-in
+  - **Recommended replacement for**: `encodeBase64`, `decodeBase64`, `arrayBufferToBase64`, `base64ToArrayBuffer`, `base64ToBlob`, `blobToBase64`, `blobToArrayBuffer`, `fileToBase64`, `base64ToFile`, `svgToBlob`, `urlToBlob`, `arrayBufferToBlob`, `blobToUrl`
 
 - **New `ua` Module**: Comprehensive User-Agent detection
   - Device, OS, browser, environment detection
@@ -101,6 +121,22 @@ pattern.email.test('user@example.com')
 import { ua, validation } from 'js-cool'
 ua.isMobile()
 validation.email.test('user@example.com')
+
+// New binary module (v6.0.0)
+import { binary } from 'js-cool'
+
+// Chainable conversion
+const base64 = await binary.from(blob).toBase64()
+const arrayBuffer = await binary.from(file).toArrayBuffer()
+const { url, revoke } = await binary.from(base64String).toURL()
+
+// Hash functions
+const sha256 = await binary.hash.sha256('Hello World')
+const md5 = await binary.hash.md5(data)
+
+// File metadata
+const meta = binary.meta.get(file)
+// { size, mime, name, extension, isImage, isVideo, isAudio, isText }
 ```
 
 ---
