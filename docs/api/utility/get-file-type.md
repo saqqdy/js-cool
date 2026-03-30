@@ -63,4 +63,4 @@ getFileType('/file.xyz')
 
 ## Related
 
-- [fileToBase64](/api/convert/file-to-base64) - Convert file to base64
+- [binary.file.toBase64](/api/binary/file) - Convert file to base64

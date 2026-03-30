@@ -41,5 +41,5 @@ startOf(new Date(), 'minute') // 当前分钟 00 秒
 ## 相关
 
 - [endOf](./end-of.md) - 获取时间段结束
-- [add](./add.md) - 给日期添加时间
-- [subtract](./subtract.md) - 从日期减去时间
+- [addDate](./add-date.md) - 给日期添加时间
+- [subtractDate](./subtract-date.md) - 从日期减去时间

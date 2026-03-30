@@ -63,4 +63,4 @@ getFileType('/file.xyz')
 
 ## 相关
 
-- [fileToBase64](/api/convert/file-to-base64) - 将文件转换为 base64
+- [binary.file.toBase64](/zh/api/binary/file) - 将文件转换为 base64

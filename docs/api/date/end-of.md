@@ -41,5 +41,5 @@ endOf(new Date(), 'minute') // Current minute at 59.999 seconds
 ## Related
 
 - [startOf](./start-of.md) - Get start of time period
-- [add](./add.md) - Add time to a date
-- [subtract](./subtract.md) - Subtract time from a date
+- [addDate](./add-date.md) - Add time to a date
+- [subtractDate](./subtract-date.md) - Subtract time from a date

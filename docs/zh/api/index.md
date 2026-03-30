@@ -24,27 +24,27 @@
 
 验证工具函数 - 5 个
 
-### [URL与浏览器](/zh/api/url/get-url-params)
+### [URL与浏览器](/zh/api/url/ua)
 
-URL 解析和浏览器检测 - 15 个
+URL 解析和浏览器检测 - 10 个
 
 ### [DOM](/zh/api/dom/add-event)
 
 DOM 操作工具函数 - 13 个
 
-### [存储](/zh/api/storage/set-cache)
+### [存储](/zh/api/storage/)
 
-浏览器存储工具函数 - 10 个
+浏览器存储工具函数 - 使用对象 API
 
-### [转换](/zh/api/convert/array-buffer-to-base64)
+### [转换](/zh/api/convert/csv-to-json)
 
-格式转换工具函数 - 12 个
+格式转换工具函数 - 3 个
 
 ### [数字](/zh/api/number/clamp)
 
-数字处理工具函数 - 7 个
+数字处理工具函数 - 5 个
 
-### [日期](/zh/api/date)
+### [日期](/zh/api/date/format-date)
 
 日期处理工具函数 - 20+ 个
 
@@ -54,11 +54,11 @@ DOM 操作工具函数 - 13 个
 
 ### [工具](/zh/api/utility/delay)
 
-通用工具函数 - 14 个
+通用工具函数 - 16 个
 
-### [滚动](/zh/api/scroll)
+### [滚动](/zh/api/storage/)
 
-滚动工具函数 - 9 个
+滚动工具函数 - 使用对象 API
 
 ### [异步流程](/zh/api/async/debounce)
 
@@ -159,18 +159,17 @@ DOM 操作工具函数 - 13 个
 
 ### URL与浏览器
 
-| 函数                                           | 描述            |
-| ---------------------------------------------- | --------------- |
-| [getUrlParams](/zh/api/url/get-url-params)     | 获取所有URL参数 |
-| [getUrlParam](/zh/api/url/get-url-param)       | 获取单个URL参数 |
-| [parseUrlParam](/zh/api/url/parse-url-param)   | 解析URL参数     |
-| [spliceUrlParam](/zh/api/url/splice-url-param) | 拼接URL参数     |
-| [getDirParams](/zh/api/url/get-dir-params)     | 获取目录参数    |
-| [ua](/zh/api/url/ua)                           | User-Agent 检测 |
-| [appVersion](/zh/api/url/app-version)          | APP版本         |
-| [browserVersion](/zh/api/url/browser-version)  | 浏览器版本      |
-| [compareVersion](/zh/api/url/compare-version)  | 版本比较        |
-| [nextVersion](/zh/api/url/next-version)        | 下一版本号      |
+| 函数                                          | 描述            |
+| --------------------------------------------- | --------------- |
+| [Url](/zh/api/url/Url-class)                  | URL解析类       |
+| [url](/zh/api/url/url)                        | URL工具         |
+| [getDirParams](/zh/api/url/get-dir-params)    | 获取目录参数    |
+| [ua](/zh/api/url/ua)                          | User-Agent 检测 |
+| [appVersion](/zh/api/url/app-version)         | APP版本         |
+| [browserVersion](/zh/api/url/browser-version) | 浏览器版本      |
+| [osVersion](/zh/api/url/os-version)           | 系统版本        |
+| [compareVersion](/zh/api/url/compare-version) | 版本比较        |
+| [nextVersion](/zh/api/url/next-version)       | 下一版本号      |
 
 ### DOM
 
@@ -182,17 +181,33 @@ DOM 操作工具函数 - 13 个
 | [stopDefault](/zh/api/dom/stop-default) | 阻止默认行为 |
 | [copy](/zh/api/dom/copy)                | 复制到剪贴板 |
 | [windowSize](/zh/api/dom/window-size)   | 窗口尺寸     |
+| [download](/zh/api/dom/download)        | 下载文件     |
+| [openUrl](/zh/api/dom/open-url)         | 打开URL      |
+| [preloader](/zh/api/dom/preloader)      | 预加载器     |
+| [inBrowser](/zh/api/dom/in-browser)     | 是否浏览器   |
+| [inNodeJs](/zh/api/dom/in-node-js)      | 是否Node.js  |
+| [isDarkMode](/zh/api/dom/is-dark-mode)  | 是否深色模式 |
 
 ### 存储
 
-| 函数                                      | 描述        |
-| ----------------------------------------- | ----------- |
-| [setCache](/zh/api/storage/set-cache)     | 设置缓存    |
-| [getCache](/zh/api/storage/get-cache)     | 获取缓存    |
-| [setSession](/zh/api/storage/set-session) | 设置Session |
-| [getSession](/zh/api/storage/get-session) | 获取Session |
-| [setCookie](/zh/api/storage/set-cookie)   | 设置Cookie  |
-| [getCookie](/zh/api/storage/get-cookie)   | 获取Cookie  |
+使用对象 API：`local`、`session`、`cookie`
+
+```js
+import { local, session, cookie } from 'js-cool'
+
+local.set('key', 'value')
+local.get('key')
+session.set('key', 'value')
+cookie.set('key', 'value')
+```
+
+### 转换
+
+| 函数                                | 描述     |
+| ----------------------------------- | -------- |
+| [CSVToJSON](/zh/api/convert/csv-to-json) | CSV转JSON |
+| [JSONToCSV](/zh/api/convert/json-to-csv) | JSON转CSV |
+| [RGBToHex](/zh/api/convert/rgb-to-hex)   | RGB转Hex  |
 
 ### 数字
 
@@ -208,62 +223,72 @@ DOM 操作工具函数 - 13 个
 
 | 函数                                             | 描述           |
 | ------------------------------------------------ | -------------- |
-| [date](/zh/api/date)                             | 日期模块入口   |
-| [DateParser](/zh/api/date)                       | 链式日期操作类 |
 | [formatDate](/zh/api/date/format-date)           | 格式化日期     |
 | [dateDiff](/zh/api/date/date-diff)               | 日期差值       |
 | [relativeTime](/zh/api/date/relative-time)       | 相对时间       |
 | [isToday](/zh/api/date/is-today)                 | 是否今天       |
-| [isYesterday](/zh/api/date)                      | 是否昨天       |
-| [isTomorrow](/zh/api/date)                       | 是否明天       |
-| [isWeekend](/zh/api/date)                        | 是否周末       |
-| [isLeapYear](/zh/api/date)                       | 是否闰年       |
-| [isBefore](/zh/api/date)                         | 是否在之前     |
-| [isAfter](/zh/api/date)                          | 是否在之后     |
-| [isSame](/zh/api/date)                           | 是否相同       |
-| [isBetween](/zh/api/date)                        | 是否在范围内   |
+| [isYesterday](/zh/api/date/is-yesterday)         | 是否昨天       |
+| [isTomorrow](/zh/api/date/is-tomorrow)           | 是否明天       |
+| [isWeekend](/zh/api/date/is-weekend)             | 是否周末       |
+| [isLeapYear](/zh/api/date/is-leap-year)          | 是否闰年       |
+| [isBefore](/zh/api/date/is-before)               | 是否在之前     |
+| [isAfter](/zh/api/date/is-after)                 | 是否在之后     |
+| [isSame](/zh/api/date/is-same)                   | 是否相同       |
+| [isBetween](/zh/api/date/is-between)             | 是否在范围内   |
 | [getDaysInMonth](/zh/api/date/get-days-in-month) | 获取月份天数   |
-| [getQuarter](/zh/api/date)                       | 获取季度       |
-| [getWeekOfYear](/zh/api/date)                    | 获取年中周数   |
-| [getDayOfYear](/zh/api/date)                     | 获取年中天数   |
-| [addDate](/zh/api/date)                          | 添加时间       |
-| [subtractDate](/zh/api/date)                     | 减去时间       |
-| [startOf](/zh/api/date)                          | 时间段开始     |
-| [endOf](/zh/api/date)                            | 时间段结束     |
+| [getQuarter](/zh/api/date/get-quarter)           | 获取季度       |
+| [getWeekOfYear](/zh/api/date/get-week-of-year)   | 获取年中周数   |
+| [getDayOfYear](/zh/api/date/get-day-of-year)     | 获取年中天数   |
+| [addDate](/zh/api/date/add-date)                 | 添加时间       |
+| [subtractDate](/zh/api/date/subtract-date)       | 减去时间       |
+| [startOf](/zh/api/date/start-of)                 | 时间段开始     |
+| [endOf](/zh/api/date/end-of)                     | 时间段结束     |
+| [compareDate](/zh/api/date/compare-date)         | 比较日期       |
+| [minDate](/zh/api/date/min-date)                 | 最小日期       |
+| [maxDate](/zh/api/date/max-date)                 | 最大日期       |
 
 ### 颜色
 
-| 函数                                 | 描述     |
-| ------------------------------------ | -------- |
-| [hexToRGB](/zh/api/color/hex-to-rgb) | Hex转RGB |
-| [rgbToHSL](/zh/api/color/rgb-to-hsl) | RGB转HSL |
-| [lighten](/zh/api/color/lighten)     | 颜色变亮 |
-| [darken](/zh/api/color/darken)       | 颜色变暗 |
+| 函数                                     | 描述       |
+| ---------------------------------------- | ---------- |
+| [hexToRGB](/zh/api/color/hex-to-rgb)     | Hex转RGB   |
+| [rgbToHSL](/zh/api/color/rgb-to-hsl)     | RGB转HSL   |
+| [lighten](/zh/api/color/lighten)         | 颜色变亮   |
+| [darken](/zh/api/color/darken)           | 颜色变暗   |
+| [isLightColor](/zh/api/color/is-light-color) | 是否浅色 |
 
 ### 工具
 
-| 函数                                          | 描述         |
-| --------------------------------------------- | ------------ |
-| [delay](/zh/api/utility/delay)                | 延迟执行     |
-| [uuid](/zh/api/utility/uuid)                  | 生成UUID     |
-| [randomString](/zh/api/utility/random-string) | 随机字符串   |
-| [randomNumber](/zh/api/utility/random-number) | 随机数       |
-| [getGlobal](/zh/api/utility/get-global)       | 获取全局变量 |
+| 函数                                              | 描述         |
+| ------------------------------------------------- | ------------ |
+| [delay](/zh/api/utility/delay)                    | 延迟执行     |
+| [uuid](/zh/api/utility/uuid)                      | 生成UUID     |
+| [randomString](/zh/api/utility/random-string)     | 随机字符串   |
+| [randomNumber](/zh/api/utility/random-number)     | 随机数       |
+| [getGlobal](/zh/api/utility/get-global)           | 获取全局变量 |
+| [getNumber](/zh/api/utility/get-number)           | 获取数字     |
+| [fixNumber](/zh/api/utility/fix-number)           | 修正数字     |
+| [nextIndex](/zh/api/utility/next-index)           | 下一个索引   |
+| [toThousands](/zh/api/utility/to-thousands)       | 千分位       |
+| [fingerprint](/zh/api/utility/fingerprint)        | 浏览器指纹   |
+| [getFileType](/zh/api/utility/get-file-type)      | 获取文件类型 |
+| [randomColor](/zh/api/utility/random-color)       | 随机颜色     |
+| [promiseFactory](/zh/api/utility/promise-factory) | Promise工厂  |
+| [punctualTimer](/zh/api/utility/punctual-timer)   | 精确定时器   |
+| [waiting](/zh/api/utility/waiting)                | 等待工具     |
+| [patterns](/zh/api/utility/patterns)              | 正则模式     |
 
 ### 滚动
 
-| 函数                             | 描述           |
-| -------------------------------- | -------------- |
-| [scroll](/zh/api/scroll)         | 滚动工具集合   |
-| [getPosition](/zh/api/scroll)    | 获取滚动位置   |
-| [getProgress](/zh/api/scroll)    | 获取滚动进度   |
-| [scrollTo](/zh/api/scroll)       | 滚动到元素     |
-| [scrollToTop](/zh/api/scroll)    | 滚动到顶部     |
-| [scrollToBottom](/zh/api/scroll) | 滚动到底部     |
-| [scrollBy](/zh/api/scroll)       | 按量滚动       |
-| [lockScroll](/zh/api/scroll)     | 锁定滚动       |
-| [unlockScroll](/zh/api/scroll)   | 解锁滚动       |
-| [isInViewport](/zh/api/scroll)   | 检测是否在视口 |
+使用 scroll 对象 API：
+
+```js
+import { scroll, scrollTo, scrollToTop, scrollToBottom, lockScroll, unlockScroll } from 'js-cool'
+
+scrollTo(element)
+scrollToTop()
+lockScroll()
+```
 
 ### 异步流程
 

@@ -41,5 +41,5 @@ endOf(new Date(), 'minute') // 当前分钟 59.999 秒
 ## 相关
 
 - [startOf](./start-of.md) - 获取时间段开始
-- [add](./add.md) - 给日期添加时间
-- [subtract](./subtract.md) - 从日期减去时间
+- [addDate](./add-date.md) - 给日期添加时间
+- [subtractDate](./subtract-date.md) - 从日期减去时间

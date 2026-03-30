@@ -2,6 +2,11 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	base: '/js-cool/',
+	vite: {
+		build: {
+			chunkSizeWarningLimit: 1000,
+		},
+	},
 	head: [
 		['link', { href: '/js-cool/logo.svg', rel: 'icon' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
@@ -184,32 +189,11 @@ export default defineConfig({
 							items: [{ link: '/api/storage/', text: 'storage' }],
 							text: 'Storage',
 						},
-						{
+{
 							collapsed: true,
 							items: [
-								{
-									link: '/api/convert/array-buffer-to-base64',
-									text: 'arrayBufferToBase64',
-								},
-								{
-									link: '/api/convert/base64-to-array-buffer',
-									text: 'base64ToArrayBuffer',
-								},
-								{
-									link: '/api/convert/array-buffer-to-blob',
-									text: 'arrayBufferToBlob',
-								},
-								{
-									link: '/api/convert/blob-to-array-buffer',
-									text: 'blobToArrayBuffer',
-								},
-								{ link: '/api/convert/blob-to-base64', text: 'blobToBase64' },
-								{ link: '/api/convert/base64-to-blob', text: 'base64ToBlob' },
-								{ link: '/api/convert/file-to-base64', text: 'fileToBase64' },
-								{ link: '/api/convert/base64-to-file', text: 'base64ToFile' },
-								{ link: '/api/convert/blob-to-url', text: 'blobToUrl' },
-								{ link: '/api/convert/url-to-blob', text: 'urlToBlob' },
-								{ link: '/api/convert/svg-to-blob', text: 'svgToBlob' },
+								{ link: '/api/convert/csv-to-json', text: 'CSVToJSON' },
+								{ link: '/api/convert/json-to-csv', text: 'JSONToCSV' },
 								{ link: '/api/convert/rgb-to-hex', text: 'RGBToHex' },
 							],
 							text: 'Convert',
@@ -531,32 +515,11 @@ export default defineConfig({
 							items: [{ link: '/zh/api/storage/', text: 'storage' }],
 							text: '存储',
 						},
-						{
+{
 							collapsed: true,
 							items: [
-								{
-									link: '/zh/api/convert/array-buffer-to-base64',
-									text: 'arrayBufferToBase64',
-								},
-								{
-									link: '/zh/api/convert/base64-to-array-buffer',
-									text: 'base64ToArrayBuffer',
-								},
-								{
-									link: '/zh/api/convert/array-buffer-to-blob',
-									text: 'arrayBufferToBlob',
-								},
-								{
-									link: '/zh/api/convert/blob-to-array-buffer',
-									text: 'blobToArrayBuffer',
-								},
-								{ link: '/zh/api/convert/blob-to-base64', text: 'blobToBase64' },
-								{ link: '/zh/api/convert/base64-to-blob', text: 'base64ToBlob' },
-								{ link: '/zh/api/convert/file-to-base64', text: 'fileToBase64' },
-								{ link: '/zh/api/convert/base64-to-file', text: 'base64ToFile' },
-								{ link: '/zh/api/convert/blob-to-url', text: 'blobToUrl' },
-								{ link: '/zh/api/convert/url-to-blob', text: 'urlToBlob' },
-								{ link: '/zh/api/convert/svg-to-blob', text: 'svgToBlob' },
+								{ link: '/zh/api/convert/csv-to-json', text: 'CSVToJSON' },
+								{ link: '/zh/api/convert/json-to-csv', text: 'JSONToCSV' },
 								{ link: '/zh/api/convert/rgb-to-hex', text: 'RGBToHex' },
 							],
 							text: '转换',

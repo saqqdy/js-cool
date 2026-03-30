@@ -24,27 +24,27 @@ Type checking utilities - 14 functions
 
 Validation functions - 5 functions
 
-### [URL & Browser](/api/url/get-url-params)
+### [URL & Browser](/api/url/ua)
 
-URL parsing and browser detection - 15 functions
+URL parsing and browser detection - 10 functions
 
 ### [DOM](/api/dom/add-event)
 
 DOM manipulation utilities - 13 functions
 
-### [Storage](/api/storage/set-cache)
+### [Storage](/api/storage/)
 
-Browser storage utilities - 10 functions
+Browser storage utilities - uses object API
 
-### [Convert](/api/convert/array-buffer-to-base64)
+### [Convert](/api/convert/csv-to-json)
 
-Format conversion utilities - 12 functions
+Format conversion utilities - 3 functions
 
 ### [Number](/api/number/clamp)
 
-Number processing utilities - 7 functions
+Number processing utilities - 5 functions
 
-### [Date](/api/date)
+### [Date](/api/date/format-date)
 
 Date processing utilities - 20+ functions
 
@@ -54,11 +54,11 @@ Color manipulation utilities - 5 functions
 
 ### [Utility](/api/utility/delay)
 
-General utility functions - 14 functions
+General utility functions - 16 functions
 
-### [Scroll](/api/scroll)
+### [Scroll](/api/storage/)
 
-Scroll utilities - 9 functions
+Scroll utilities - uses object API
 
 ### [Async Flow](/api/async/debounce)
 
@@ -159,18 +159,17 @@ Network utilities - 1 function
 
 ### URL & Browser
 
-| Function                                    | Description          |
-| ------------------------------------------- | -------------------- |
-| [getUrlParams](/api/url/get-url-params)     | Get all URL params   |
-| [getUrlParam](/api/url/get-url-param)       | Get single URL param |
-| [parseUrlParam](/api/url/parse-url-param)   | Parse URL params     |
-| [spliceUrlParam](/api/url/splice-url-param) | Splice URL params    |
-| [getDirParams](/api/url/get-dir-params)     | Get directory params |
-| [ua](/api/url/ua)                           | User-Agent detection |
-| [appVersion](/api/url/app-version)          | App version          |
-| [browserVersion](/api/url/browser-version)  | Browser version      |
-| [compareVersion](/api/url/compare-version)  | Compare versions     |
-| [nextVersion](/api/url/next-version)        | Get next version     |
+| Function                                   | Description          |
+| ------------------------------------------ | -------------------- |
+| [Url](/api/url/Url-class)                  | URL parsing class    |
+| [url](/api/url/url)                        | URL utilities        |
+| [getDirParams](/api/url/get-dir-params)    | Get directory params |
+| [ua](/api/url/ua)                          | User-Agent detection |
+| [appVersion](/api/url/app-version)         | App version          |
+| [browserVersion](/api/url/browser-version) | Browser version      |
+| [osVersion](/api/url/os-version)           | OS version           |
+| [compareVersion](/api/url/compare-version) | Compare versions     |
+| [nextVersion](/api/url/next-version)       | Get next version     |
 
 ### DOM
 
@@ -182,17 +181,33 @@ Network utilities - 1 function
 | [stopDefault](/api/dom/stop-default) | Stop default          |
 | [copy](/api/dom/copy)                | Copy to clipboard     |
 | [windowSize](/api/dom/window-size)   | Get window size       |
+| [download](/api/dom/download)        | Download file         |
+| [openUrl](/api/dom/open-url)         | Open URL              |
+| [preloader](/api/dom/preloader)      | Preloader             |
+| [inBrowser](/api/dom/in-browser)     | Check if in browser   |
+| [inNodeJs](/api/dom/in-node-js)      | Check if in Node.js   |
+| [isDarkMode](/api/dom/is-dark-mode)  | Check if dark mode    |
 
 ### Storage
 
-| Function                               | Description        |
-| -------------------------------------- | ------------------ |
-| [setCache](/api/storage/set-cache)     | Set localStorage   |
-| [getCache](/api/storage/get-cache)     | Get localStorage   |
-| [setSession](/api/storage/set-session) | Set sessionStorage |
-| [getSession](/api/storage/get-session) | Get sessionStorage |
-| [setCookie](/api/storage/set-cookie)   | Set cookie         |
-| [getCookie](/api/storage/get-cookie)   | Get cookie         |
+Use the object API: `local`, `session`, `cookie`
+
+```js
+import { local, session, cookie } from 'js-cool'
+
+local.set('key', 'value')
+local.get('key')
+session.set('key', 'value')
+cookie.set('key', 'value')
+```
+
+### Convert
+
+| Function                           | Description   |
+| ---------------------------------- | ------------- |
+| [CSVToJSON](/api/convert/csv-to-json) | CSV to JSON   |
+| [JSONToCSV](/api/convert/json-to-csv) | JSON to CSV   |
+| [RGBToHex](/api/convert/rgb-to-hex)   | RGB to Hex    |
 
 ### Number
 
@@ -206,64 +221,74 @@ Network utilities - 1 function
 
 ### Date
 
-| Function                                      | Description          |
-| --------------------------------------------- | -------------------- |
-| [date](/api/date)                             | Date module entry    |
-| [DateParser](/api/date)                       | Chainable date class |
-| [formatDate](/api/date/format-date)           | Format date          |
-| [dateDiff](/api/date/date-diff)               | Date difference      |
-| [relativeTime](/api/date/relative-time)       | Relative time        |
-| [isToday](/api/date/is-today)                 | Check if today       |
-| [isYesterday](/api/date)                      | Check if yesterday   |
-| [isTomorrow](/api/date)                       | Check if tomorrow    |
-| [isWeekend](/api/date)                        | Check if weekend     |
-| [isLeapYear](/api/date)                       | Check if leap year   |
-| [isBefore](/api/date)                         | Check if before      |
-| [isAfter](/api/date)                          | Check if after       |
-| [isSame](/api/date)                           | Check if same        |
-| [isBetween](/api/date)                        | Check if between     |
-| [getDaysInMonth](/api/date/get-days-in-month) | Get days in month    |
-| [getQuarter](/api/date)                       | Get quarter          |
-| [getWeekOfYear](/api/date)                    | Get week of year     |
-| [getDayOfYear](/api/date)                     | Get day of year      |
-| [addDate](/api/date)                          | Add time             |
-| [subtractDate](/api/date)                     | Subtract time        |
-| [startOf](/api/date)                          | Get start of period  |
-| [endOf](/api/date)                            | Get end of period    |
+| Function                                        | Description          |
+| ----------------------------------------------- | -------------------- |
+| [formatDate](/api/date/format-date)             | Format date          |
+| [dateDiff](/api/date/date-diff)                 | Date difference      |
+| [relativeTime](/api/date/relative-time)         | Relative time        |
+| [isToday](/api/date/is-today)                   | Check if today       |
+| [isYesterday](/api/date/is-yesterday)           | Check if yesterday   |
+| [isTomorrow](/api/date/is-tomorrow)             | Check if tomorrow    |
+| [isWeekend](/api/date/is-weekend)               | Check if weekend     |
+| [isLeapYear](/api/date/is-leap-year)            | Check if leap year   |
+| [isBefore](/api/date/is-before)                 | Check if before      |
+| [isAfter](/api/date/is-after)                   | Check if after       |
+| [isSame](/api/date/is-same)                     | Check if same        |
+| [isBetween](/api/date/is-between)               | Check if between     |
+| [getDaysInMonth](/api/date/get-days-in-month)   | Get days in month    |
+| [getQuarter](/api/date/get-quarter)             | Get quarter          |
+| [getWeekOfYear](/api/date/get-week-of-year)     | Get week of year     |
+| [getDayOfYear](/api/date/get-day-of-year)       | Get day of year      |
+| [addDate](/api/date/add-date)                   | Add time             |
+| [subtractDate](/api/date/subtract-date)         | Subtract time        |
+| [startOf](/api/date/start-of)                   | Get start of period  |
+| [endOf](/api/date/end-of)                       | Get end of period    |
+| [compareDate](/api/date/compare-date)           | Compare dates        |
+| [minDate](/api/date/min-date)                   | Minimum date         |
+| [maxDate](/api/date/max-date)                   | Maximum date         |
 
 ### Color
 
-| Function                          | Description   |
-| --------------------------------- | ------------- |
-| [hexToRGB](/api/color/hex-to-rgb) | Hex to RGB    |
-| [rgbToHSL](/api/color/rgb-to-hsl) | RGB to HSL    |
-| [lighten](/api/color/lighten)     | Lighten color |
-| [darken](/api/color/darken)       | Darken color  |
+| Function                              | Description   |
+| ------------------------------------- | ------------- |
+| [hexToRGB](/api/color/hex-to-rgb)     | Hex to RGB    |
+| [rgbToHSL](/api/color/rgb-to-hsl)     | RGB to HSL    |
+| [lighten](/api/color/lighten)         | Lighten color |
+| [darken](/api/color/darken)           | Darken color  |
+| [isLightColor](/api/color/is-light-color) | Check if light color |
 
 ### Utility
 
-| Function                                   | Description      |
-| ------------------------------------------ | ---------------- |
-| [delay](/api/utility/delay)                | Delay execution  |
-| [uuid](/api/utility/uuid)                  | Generate UUID    |
-| [randomString](/api/utility/random-string) | Random string    |
-| [randomNumber](/api/utility/random-number) | Random number    |
-| [getGlobal](/api/utility/get-global)       | Get global value |
+| Function                                         | Description      |
+| ------------------------------------------------ | ---------------- |
+| [delay](/api/utility/delay)                      | Delay execution  |
+| [uuid](/api/utility/uuid)                        | Generate UUID    |
+| [randomString](/api/utility/random-string)       | Random string    |
+| [randomNumber](/api/utility/random-number)       | Random number    |
+| [getGlobal](/api/utility/get-global)             | Get global value |
+| [getNumber](/api/utility/get-number)             | Get number       |
+| [fixNumber](/api/utility/fix-number)             | Fix number       |
+| [nextIndex](/api/utility/next-index)             | Next index       |
+| [toThousands](/api/utility/to-thousands)         | To thousands     |
+| [fingerprint](/api/utility/fingerprint)          | Browser fingerprint |
+| [getFileType](/api/utility/get-file-type)        | Get file type    |
+| [randomColor](/api/utility/random-color)         | Random color     |
+| [promiseFactory](/api/utility/promise-factory)   | Promise factory  |
+| [punctualTimer](/api/utility/punctual-timer)     | Punctual timer   |
+| [waiting](/api/utility/waiting)                  | Waiting utility  |
+| [patterns](/api/utility/patterns)                | Regex patterns   |
 
 ### Scroll
 
-| Function                      | Description          |
-| ----------------------------- | -------------------- |
-| [scroll](/api/scroll)         | Scroll utilities     |
-| [getPosition](/api/scroll)    | Get scroll position  |
-| [getProgress](/api/scroll)    | Get scroll progress  |
-| [scrollTo](/api/scroll)       | Scroll to element    |
-| [scrollToTop](/api/scroll)    | Scroll to top        |
-| [scrollToBottom](/api/scroll) | Scroll to bottom     |
-| [scrollBy](/api/scroll)       | Scroll by amount     |
-| [lockScroll](/api/scroll)     | Lock scroll          |
-| [unlockScroll](/api/scroll)   | Unlock scroll        |
-| [isInViewport](/api/scroll)   | Check if in viewport |
+Use the scroll object API:
+
+```js
+import { scroll, scrollTo, scrollToTop, scrollToBottom, lockScroll, unlockScroll } from 'js-cool'
+
+scrollTo(element)
+scrollToTop()
+lockScroll()
+```
 
 ### Async Flow
 
