@@ -37,6 +37,29 @@ upperFirst('hello') // 'Hello'
 upperFirst('hello world') // 'Hello world'
 ```
 
+### lowerFirst
+
+首字母小写。
+
+```js
+import { lowerFirst } from 'js-cool'
+
+lowerFirst('Hello') // 'hello'
+lowerFirst('Hello World') // 'hello World'
+```
+
+### capitalize
+
+首字母大写，其余小写。
+
+```js
+import { capitalize } from 'js-cool'
+
+capitalize('FRED') // 'Fred'
+capitalize('hello world') // 'Hello world'
+capitalize('HELLO WORLD') // 'Hello world'
+```
+
 ## 编码转换
 
 ### Base64

@@ -79,6 +79,52 @@ setProperty(obj, 'a.b.c', 1)
 // obj = { a: { b: { c: 1 } } }
 ```
 
+## 映射
+
+### mapKeys
+
+映射对象的键名。
+
+```js
+import { mapKeys } from 'js-cool'
+
+mapKeys({ a: 1, b: 2 }, (value, key) => key + value)
+// { a1: 1, b2: 2 }
+```
+
+### mapValues
+
+映射对象的值。
+
+```js
+import { mapValues } from 'js-cool'
+
+const users = {
+  fred: { user: 'fred', age: 40 },
+  pebbles: { user: 'pebbles', age: 1 }
+}
+
+mapValues(users, ({ age }) => age)
+// { fred: 40, pebbles: 1 }
+
+mapValues({ a: 1, b: 2 }, n => n * 2)
+// { a: 2, b: 4 }
+```
+
+### invert
+
+键值反转。
+
+```js
+import { invert } from 'js-cool'
+
+invert({ a: '1', b: '2', c: '3' })
+// { '1': 'a', '2': 'b', '3': 'c' }
+
+invert({ x: 'apple', y: 'banana' })
+// { apple: 'x', banana: 'y' }
+```
+
 ## 比较
 
 ### isEqual
