@@ -150,9 +150,9 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 
 | Category          | Description                       | Functions                                                                                                                                                                                                                                         |
 | ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                                                     |
-| **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`                                                |
-| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                                                            |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                          |
+| **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip` |
+| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `mapKeys`, `mapValues`, `invert`, `arrayToCSV`, `CSVToArray`                                                                           |
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
@@ -467,6 +467,34 @@ upperFirst('h') // 'H'
 upperFirst('') // ''
 ```
 
+#### lowerFirst
+
+Lowercase first letter.
+
+```js
+import { lowerFirst } from 'js-cool'
+
+lowerFirst('Fred') // 'fred'
+lowerFirst('FRED') // 'fRED'
+lowerFirst('hello') // 'hello'
+lowerFirst('A') // 'a'
+lowerFirst('') // ''
+```
+
+#### capitalize
+
+Capitalize first character and lowercase rest.
+
+```js
+import { capitalize } from 'js-cool'
+
+capitalize('FRED') // 'Fred'
+capitalize('HELLO WORLD') // 'Hello world'
+capitalize('Hello') // 'Hello'
+capitalize('a') // 'A'
+capitalize('') // ''
+```
+
 #### randomString
 
 Generate random string with various options.
@@ -681,6 +709,136 @@ any(['hello', 'world'], x => x.includes('o')) // true
 any([], x => x > 0) // false (empty array)
 ```
 
+#### countBy
+
+Count occurrences grouped by iteratee.
+
+```js
+import { countBy } from 'js-cool'
+
+countBy([6.1, 4.2, 6.3], Math.floor) // { '4': 1, '6': 2 }
+countBy(['one', 'two', 'three'], 'length') // { '3': 2, '5': 1 }
+countBy([{ type: 'a' }, { type: 'b' }, { type: 'a' }], 'type') // { a: 2, b: 1 }
+countBy(['apple', 'banana', 'apricot'], item => item[0]) // { a: 2, b: 1 }
+```
+
+#### intersectionBy
+
+Intersection with iteratee.
+
+```js
+import { intersectionBy } from 'js-cool'
+
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [2.1]
+intersectionBy([{ x: 1 }, { x: 2 }], [{ x: 1 }], 'x') // [{ x: 1 }]
+intersectionBy([1, 2, 3], [2, 3, 4], n => n) // [2, 3]
+```
+
+#### unionBy
+
+Union with iteratee.
+
+```js
+import { unionBy } from 'js-cool'
+
+unionBy([2.1], [1.2, 2.3], Math.floor) // [2.1, 1.2]
+unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x') // [{ x: 1 }, { x: 2 }]
+unionBy([1, 2], [2, 3], [3, 4]) // [1, 2, 3, 4]
+```
+
+#### differenceBy
+
+Difference with iteratee.
+
+```js
+import { differenceBy } from 'js-cool'
+
+differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [1.2]
+differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], 'x') // [{ x: 2 }]
+differenceBy([1, 2, 3], [], n => n) // [1, 2, 3]
+```
+
+#### drop / dropRight
+
+Drop elements from array.
+
+```js
+import { drop, dropRight } from 'js-cool'
+
+// drop - from beginning
+drop([1, 2, 3, 4, 5], 3) // [4, 5]
+drop([1, 2, 3]) // [2, 3] (default: 1)
+drop([1, 2, 3], 0) // [1, 2, 3]
+drop([1, 2, 3], 5) // []
+
+// dropRight - from end
+dropRight([1, 2, 3, 4, 5], 3) // [1, 2]
+dropRight([1, 2, 3]) // [1, 2] (default: 1)
+dropRight([1, 2, 3], 0) // [1, 2, 3]
+dropRight([1, 2, 3], 5) // []
+```
+
+#### take / takeRight
+
+Take elements from array.
+
+```js
+import { take, takeRight } from 'js-cool'
+
+// take - from beginning
+take([1, 2, 3, 4, 5], 3) // [1, 2, 3]
+take([1, 2, 3]) // [1] (default: 1)
+take([1, 2, 3], 0) // []
+take([1, 2, 3], 5) // [1, 2, 3]
+
+// takeRight - from end
+takeRight([1, 2, 3, 4, 5], 3) // [3, 4, 5]
+takeRight([1, 2, 3]) // [3] (default: 1)
+takeRight([1, 2, 3], 0) // []
+takeRight([1, 2, 3], 5) // [1, 2, 3]
+```
+
+#### findIndex / findLastIndex
+
+Find index with predicate.
+
+```js
+import { findIndex, findLastIndex } from 'js-cool'
+
+const users = [
+  { user: 'barney', active: false },
+  { user: 'fred', active: false },
+  { user: 'pebbles', active: true },
+]
+
+// findIndex - from beginning
+findIndex(users, ({ active }) => active) // 2
+findIndex(users, { user: 'fred' }) // 1
+findIndex(users, ['user', 'barney']) // 0
+findIndex(users, 'active') // 2 (truthy check)
+
+// findLastIndex - from end
+findLastIndex([1, 2, 3, 4], n => n > 2) // 3
+findLastIndex(users, { user: 'fred' }) // 1
+findLastIndex(users, 'active') // 2
+```
+
+#### zip / unzip
+
+Zip and unzip arrays.
+
+```js
+import { zip, unzip } from 'js-cool'
+
+// zip - combine arrays
+zip(['a', 'b', 'c'], [1, 2, 3]) // [['a', 1], ['b', 2], ['c', 3]]
+zip(['a', 'b'], [1, 2], [true, false]) // [['a', 1, true], ['b', 2, false]]
+
+// unzip - separate arrays
+unzip([['a', 1], ['b', 2]]) // [['a', 'b'], [1, 2]]
+unzip([['a', 1, true], ['b', 2, false]]) // [['a', 'b'], [1, 2], [true, false]]
+```
+
 ---
 
 ### Object
@@ -797,6 +955,33 @@ setProperty(obj, 'a.d.e', 'world')
 
 setProperty(obj, 'a.new', 'value')
 // obj.a.new === 'value'
+```
+
+#### mapKeys / mapValues
+
+Transform object keys or values.
+
+```js
+import { mapKeys, mapValues } from 'js-cool'
+
+// mapKeys - transform keys
+mapKeys({ a: 1, b: 2 }, (value, key) => key + value) // { a1: 1, b2: 2 }
+
+// mapValues - transform values
+mapValues({ a: 1, b: 2 }, n => n * 2) // { a: 2, b: 4 }
+mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x') // { a: 1, b: 2 }
+```
+
+#### invert
+
+Invert object keys and values.
+
+```js
+import { invert } from 'js-cool'
+
+invert({ a: '1', b: '2', c: '3' }) // { '1': 'a', '2': 'b', '3': 'c' }
+invert({ a: 1, b: 2, c: 1 }) // { '1': 'c', '2': 'b' } (duplicate values: last wins)
+invert({ x: 'apple', y: 'banana' }) // { apple: 'x', banana: 'y' }
 ```
 
 #### searchObject

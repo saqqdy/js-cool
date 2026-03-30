@@ -142,9 +142,9 @@ js-cool 提供 **140+ 工具函数**，分为 **16 个类别**：
 
 | 类别            | 描述                     | 函数                                                                                                                                                                                                                                              |
 | --------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **字符串**      | 字符串处理               | `camel2Dash`, `dash2Camel`, `upperFirst`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                                                     |
-| **数组**        | 数组处理                 | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`, `intersect`, `union`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`                                                |
-| **对象**        | 对象处理                 | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `arrayToCSV`, `CSVToArray`                                                                                                            |
+| **字符串**      | 字符串处理               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                          |
+| **数组**        | 数组处理                 | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip` |
+| **对象**        | 对象处理                 | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `mapKeys`, `mapValues`, `invert`, `arrayToCSV`, `CSVToArray`                                                                           |
 | **类型判断**    | 类型检查                 | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
 | **验证函数**    | 验证函数                 | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
 | **URL与浏览器** | URL解析和浏览器检测      | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
@@ -458,6 +458,34 @@ upperFirst('h') // 'H'
 upperFirst('') // ''
 ```
 
+#### lowerFirst
+
+首字母小写。
+
+```js
+import { lowerFirst } from 'js-cool'
+
+lowerFirst('Fred') // 'fred'
+lowerFirst('FRED') // 'fRED'
+lowerFirst('hello') // 'hello'
+lowerFirst('A') // 'a'
+lowerFirst('') // ''
+```
+
+#### capitalize
+
+首字母大写，其余小写。
+
+```js
+import { capitalize } from 'js-cool'
+
+capitalize('FRED') // 'Fred'
+capitalize('HELLO WORLD') // 'Hello world'
+capitalize('Hello') // 'Hello'
+capitalize('a') // 'A'
+capitalize('') // ''
+```
+
 #### randomString
 
 生成随机字符串（多种选项）。
@@ -672,6 +700,136 @@ any(['hello', 'world'], x => x.includes('o')) // true
 any([], x => x > 0) // false (空数组)
 ```
 
+#### countBy
+
+按迭代器分组计数。
+
+```js
+import { countBy } from 'js-cool'
+
+countBy([6.1, 4.2, 6.3], Math.floor) // { '4': 1, '6': 2 }
+countBy(['one', 'two', 'three'], 'length') // { '3': 2, '5': 1 }
+countBy([{ type: 'a' }, { type: 'b' }, { type: 'a' }], 'type') // { a: 2, b: 1 }
+countBy(['apple', 'banana', 'apricot'], item => item[0]) // { a: 2, b: 1 }
+```
+
+#### intersectionBy
+
+带迭代器的交集。
+
+```js
+import { intersectionBy } from 'js-cool'
+
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [2.1]
+intersectionBy([{ x: 1 }, { x: 2 }], [{ x: 1 }], 'x') // [{ x: 1 }]
+intersectionBy([1, 2, 3], [2, 3, 4], n => n) // [2, 3]
+```
+
+#### unionBy
+
+带迭代器的并集。
+
+```js
+import { unionBy } from 'js-cool'
+
+unionBy([2.1], [1.2, 2.3], Math.floor) // [2.1, 1.2]
+unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x') // [{ x: 1 }, { x: 2 }]
+unionBy([1, 2], [2, 3], [3, 4]) // [1, 2, 3, 4]
+```
+
+#### differenceBy
+
+带迭代器的差集。
+
+```js
+import { differenceBy } from 'js-cool'
+
+differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [1.2]
+differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], 'x') // [{ x: 2 }]
+differenceBy([1, 2, 3], [], n => n) // [1, 2, 3]
+```
+
+#### drop / dropRight
+
+移除数组元素。
+
+```js
+import { drop, dropRight } from 'js-cool'
+
+// drop - 从开头移除
+drop([1, 2, 3, 4, 5], 3) // [4, 5]
+drop([1, 2, 3]) // [2, 3] (默认: 1)
+drop([1, 2, 3], 0) // [1, 2, 3]
+drop([1, 2, 3], 5) // []
+
+// dropRight - 从末尾移除
+dropRight([1, 2, 3, 4, 5], 3) // [1, 2]
+dropRight([1, 2, 3]) // [1, 2] (默认: 1)
+dropRight([1, 2, 3], 0) // [1, 2, 3]
+dropRight([1, 2, 3], 5) // []
+```
+
+#### take / takeRight
+
+提取数组元素。
+
+```js
+import { take, takeRight } from 'js-cool'
+
+// take - 从开头提取
+take([1, 2, 3, 4, 5], 3) // [1, 2, 3]
+take([1, 2, 3]) // [1] (默认: 1)
+take([1, 2, 3], 0) // []
+take([1, 2, 3], 5) // [1, 2, 3]
+
+// takeRight - 从末尾提取
+takeRight([1, 2, 3, 4, 5], 3) // [3, 4, 5]
+takeRight([1, 2, 3]) // [3] (默认: 1)
+takeRight([1, 2, 3], 0) // []
+takeRight([1, 2, 3], 5) // [1, 2, 3]
+```
+
+#### findIndex / findLastIndex
+
+查找索引。
+
+```js
+import { findIndex, findLastIndex } from 'js-cool'
+
+const users = [
+  { user: 'barney', active: false },
+  { user: 'fred', active: false },
+  { user: 'pebbles', active: true },
+]
+
+// findIndex - 从前往后查找
+findIndex(users, ({ active }) => active) // 2
+findIndex(users, { user: 'fred' }) // 1
+findIndex(users, ['user', 'barney']) // 0
+findIndex(users, 'active') // 2 (真值检查)
+
+// findLastIndex - 从后往前查找
+findLastIndex([1, 2, 3, 4], n => n > 2) // 3
+findLastIndex(users, { user: 'fred' }) // 1
+findLastIndex(users, 'active') // 2
+```
+
+#### zip / unzip
+
+压缩和解压数组。
+
+```js
+import { zip, unzip } from 'js-cool'
+
+// zip - 合并数组
+zip(['a', 'b', 'c'], [1, 2, 3]) // [['a', 1], ['b', 2], ['c', 3]]
+zip(['a', 'b'], [1, 2], [true, false]) // [['a', 1, true], ['b', 2, false]]
+
+// unzip - 拆分数组
+unzip([['a', 1], ['b', 2]]) // [['a', 'b'], [1, 2]]
+unzip([['a', 1, true], ['b', 2, false]]) // [['a', 'b'], [1, 2], [true, false]]
+```
+
 ---
 
 ### 对象
@@ -821,6 +979,33 @@ searchObject(tree, item => item.id > 2, {
   children: 'children',
   id: 'id',
 })
+```
+
+#### mapKeys / mapValues
+
+转换对象的键或值。
+
+```js
+import { mapKeys, mapValues } from 'js-cool'
+
+// mapKeys - 转换键
+mapKeys({ a: 1, b: 2 }, (value, key) => key + value) // { a1: 1, b2: 2 }
+
+// mapValues - 转换值
+mapValues({ a: 1, b: 2 }, n => n * 2) // { a: 2, b: 4 }
+mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x') // { a: 1, b: 2 }
+```
+
+#### invert
+
+反转对象的键和值。
+
+```js
+import { invert } from 'js-cool'
+
+invert({ a: '1', b: '2', c: '3' }) // { '1': 'a', '2': 'b', '3': 'c' }
+invert({ a: 1, b: 2, c: 1 }) // { '1': 'c', '2': 'b' } (重复值: 后者覆盖)
+invert({ x: 'apple', y: 'banana' }) // { apple: 'x', banana: 'y' }
 ```
 
 ---

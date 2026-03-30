@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2026-03-29
+## [6.0.0] - 2026-03-30
 
 ### ⚠️ BREAKING CHANGES
 
@@ -86,11 +86,11 @@ All notable changes to this project will be documented in this file.
   - `validation.email`, `validation.mobile`, `validation.idCard`, etc.
   - `DEVICE_PATTERNS`, `OS_PATTERNS`, `BROWSER_PATTERNS`, `ENV_PATTERNS`
 
-- **30+ New Functions**:
-  - Array: `chunk`, `flatten`, `groupBy`, `keyBy`, `sample`, `sampleSize`
+- **50+ New Functions**:
+  - Array: `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip`
   - Number: `sum`, `average`, `clamp`, `round`, `inRange`
-  - String: `kebabCase`, `snakeCase`, `truncate`
-  - Object: `omit`, `pick`, `isEmpty`, `isNil`
+  - String: `kebabCase`, `snakeCase`, `truncate`, `capitalize`, `lowerFirst`
+  - Object: `omit`, `pick`, `isEmpty`, `isNil`, `mapKeys`, `mapValues`, `invert`
   - Validate: `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`
   - Color: `isLightColor`, `hexToRGB`, `rgbToHSL`, `lighten`, `darken`
   - Date: `isToday`, `formatDate`, `dateDiff`, `relativeTime`, `getDaysInMonth`

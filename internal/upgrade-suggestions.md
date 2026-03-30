@@ -14,19 +14,19 @@
 
 | 建议新增方法     | 描述          | Lodash 对应        | 优先级   | 状态   |
 | ---------------- | ------------- | ------------------ | -------- | ------ |
-| `differenceBy`   | 按条件求差集  | `_.differenceBy`   | ⭐⭐⭐   | ❌ 待开发 |
-| `intersectionBy` | 按条件求交集  | `_.intersectionBy` | ⭐⭐⭐   | ❌ 待开发 |
-| `unionBy`        | 按条件求并集  | `_.unionBy`        | ⭐⭐⭐   | ❌ 待开发 |
-| `findIndex`      | 查找索引      | `_.findIndex`      | ⭐⭐⭐⭐ | ❌ 待开发 |
-| `findLastIndex`  | 反向查找索引  | `_.findLastIndex`  | ⭐⭐⭐   | ❌ 待开发 |
-| `take`           | 取前 N 个元素 | `_.take`           | ⭐⭐⭐⭐ | ❌ 待开发 |
-| `takeRight`      | 取后 N 个元素 | `_.takeRight`      | ⭐⭐⭐⭐ | ❌ 待开发 |
-| `drop`           | 丢弃前 N 个   | `_.drop`           | ⭐⭐⭐   | ❌ 待开发 |
-| `dropRight`      | 丢弃后 N 个   | `_.dropRight`      | ⭐⭐⭐   | ❌ 待开发 |
-| `zip`            | 数组压缩      | `_.zip`            | ⭐⭐⭐   | ❌ 待开发 |
-| `unzip`          | 数组解压      | `_.unzip`          | ⭐⭐⭐   | ❌ 待开发 |
-| `partition`      | 分区          | `_.partition`      | ⭐⭐⭐⭐ | ❌ 待开发 |
-| `countBy`        | 计数分组      | `_.countBy`        | ⭐⭐⭐   | ❌ 待开发 |
+| `differenceBy`   | 按条件求差集  | `_.differenceBy`   | ⭐⭐⭐   | ✅ 已实现 |
+| `intersectionBy` | 按条件求交集  | `_.intersectionBy` | ⭐⭐⭐   | ✅ 已实现 |
+| `unionBy`        | 按条件求并集  | `_.unionBy`        | ⭐⭐⭐   | ✅ 已实现 |
+| `findIndex`      | 查找索引      | `_.findIndex`      | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `findLastIndex`  | 反向查找索引  | `_.findLastIndex`  | ⭐⭐⭐   | ✅ 已实现 |
+| `take`           | 取前 N 个元素 | `_.take`           | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `takeRight`      | 取后 N 个元素 | `_.takeRight`      | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `drop`           | 丢弃前 N 个   | `_.drop`           | ⭐⭐⭐   | ✅ 已实现 |
+| `dropRight`      | 丢弃后 N 个   | `_.dropRight`      | ⭐⭐⭐   | ✅ 已实现 |
+| `zip`            | 数组压缩      | `_.zip`            | ⭐⭐⭐   | ✅ 已实现 |
+| `unzip`          | 数组解压      | `_.unzip`          | ⭐⭐⭐   | ✅ 已实现 |
+| `partition`      | 分区          | `_.partition`      | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `countBy`        | 计数分组      | `_.countBy`        | ⭐⭐⭐   | ✅ 已实现 |
 | `unique`         | 数组去重      | `_.uniq`           | ⭐⭐⭐⭐ | ✅ 已实现 |
 | `shuffle`        | 随机打乱      | `_.shuffle`        | ⭐⭐⭐   | ✅ 已实现 |
 | `sorter`         | 按键排序      | `_.sortBy`         | ⭐⭐⭐   | ✅ 已实现 |
@@ -84,14 +84,14 @@ function countBy<T>(
 
 | 建议新增方法  | 描述         | Lodash 对应     | 优先级   | 状态   |
 | ------------- | ------------ | --------------- | -------- | ------ |
-| `mapKeys`     | 映射键名     | `_.mapKeys`     | ⭐⭐⭐   | ❌ 待开发 |
-| `mapValues`   | 映射值       | `_.mapValues`   | ⭐⭐⭐⭐ | ❌ 待开发 |
-| `invert`      | 键值反转     | `_.invert`      | ⭐⭐⭐   | ❌ 待开发 |
-| `keys`        | 获取键数组   | `_.keys`        | ⭐⭐     | ❌ 待开发（可用 Object.keys） |
-| `values`      | 获取值数组   | `_.values`      | ⭐⭐     | ❌ 待开发（可用 Object.values） |
-| `entries`     | 获取键值对   | `_.entries`     | ⭐⭐     | ❌ 待开发（可用 Object.entries） |
-| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐     | ❌ 待开发（可用 Object.fromEntries） |
-| `has`         | 检查属性存在 | `_.has`         | ⭐⭐⭐   | ❌ 待开发（可用 Object.hasOwn） |
+| `mapKeys`     | 映射键名     | `_.mapKeys`     | ⭐⭐⭐   | ✅ 已实现 |
+| `mapValues`   | 映射值       | `_.mapValues`   | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `invert`      | 键值反转     | `_.invert`      | ⭐⭐⭐   | ✅ 已实现 |
+| `keys`        | 获取键数组   | `_.keys`        | ⭐⭐     | ⚠️ 原生支持（Object.keys） |
+| `values`      | 获取值数组   | `_.values`      | ⭐⭐     | ⚠️ 原生支持（Object.values） |
+| `entries`     | 获取键值对   | `_.entries`     | ⭐⭐     | ⚠️ 原生支持（Object.entries） |
+| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐     | ⚠️ 原生支持（Object.fromEntries） |
+| `has`         | 检查属性存在 | `_.has`         | ⭐⭐⭐   | ⚠️ 原生支持（Object.hasOwn） |
 | `mergeWith`   | 自定义合并   | `_.mergeWith`   | ⭐⭐     | ⚠️ 部分实现（extend 支持深度合并） |
 | `transform`   | 对象转换     | `_.transform`   | ⭐⭐     | ❌ 待开发 |
 | `clone`       | 深拷贝       | `_.cloneDeep`   | ⭐⭐⭐⭐ | ✅ 已实现 |
@@ -134,11 +134,11 @@ function invert<T extends string | number>(obj: Record<string, T>): Record<T, st
 | 建议新增方法 | 描述               | Lodash 对应                 | 优先级 | 状态   |
 | ------------ | ------------------ | --------------------------- | ------ | ------ |
 | `words`      | 分词               | `_.words`                   | ⭐⭐   | ❌ 待开发 |
-| `capitalize` | 首字母大写其余小写 | `_.capitalize`              | ⭐⭐⭐ | ❌ 待开发 |
-| `lowerFirst` | 首字母小写         | `_.lowerFirst`              | ⭐⭐⭐ | ❌ 待开发 |
-| `padStart`   | 前填充             | `String.prototype.padStart` | ⭐⭐   | ❌ 待开发（原生支持） |
-| `padEnd`     | 后填充             | `String.prototype.padEnd`   | ⭐⭐   | ❌ 待开发（原生支持） |
-| `repeat`     | 重复字符串         | `String.prototype.repeat`   | ⭐⭐   | ❌ 待开发（原生支持） |
+| `capitalize` | 首字母大写其余小写 | `_.capitalize`              | ⭐⭐⭐ | ✅ 已实现 |
+| `lowerFirst` | 首字母小写         | `_.lowerFirst`              | ⭐⭐⭐ | ✅ 已实现 |
+| `padStart`   | 前填充             | `String.prototype.padStart` | ⭐⭐   | ⚠️ 原生支持 |
+| `padEnd`     | 后填充             | `String.prototype.padEnd`   | ⭐⭐   | ⚠️ 原生支持 |
+| `repeat`     | 重复字符串         | `String.prototype.repeat`   | ⭐⭐   | ⚠️ 原生支持 |
 | `template`   | 模板引擎           | `_.template`                | ⭐⭐⭐ | ❌ 待开发 |
 | `camel2Dash` | 驼峰转短横线       | `_.kebabCase`               | ⭐⭐⭐ | ✅ 已实现 |
 | `dash2Camel` | 短横线转驼峰       | `_.camelCase`               | ⭐⭐⭐ | ✅ 已实现 |
@@ -888,8 +888,8 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ### 立即实施（P0）
 
-1. 新增高频数组方法：`take`、`findIndex`、`partition`
-2. 新增对象方法：`mapValues`、`has`
+1. ✅ 新增高频数组方法：`take`、`findIndex`、`partition`
+2. ✅ 新增对象方法：`mapValues`、`mapKeys`、`invert`
 3. ✅ 完善 TypeScript 类型定义
 4. ✅ 提升测试覆盖率
 
@@ -953,4 +953,7 @@ const lodashCompatPlugin: JsCoolPlugin = {
 > - ✅ `storage` 模块 - 统一存储 API，支持过期时间
 > - ✅ `patterns` 模块 - 统一正则模式管理
 > - ✅ 子路径导入 - 支持 tree-shaking
-> - ✅ 128 个测试文件
+> - ✅ 数组方法增强 - 新增 `take`、`takeRight`、`drop`、`dropRight`、`findIndex`、`findLastIndex`、`partition`、`countBy`、`zip`、`unzip`、`differenceBy`、`intersectionBy`、`unionBy`
+> - ✅ 对象方法增强 - 新增 `mapKeys`、`mapValues`、`invert`
+> - ✅ 字符串方法增强 - 新增 `capitalize`、`lowerFirst`
+> - ✅ 140+ 个测试文件
