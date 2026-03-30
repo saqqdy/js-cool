@@ -12,21 +12,38 @@
 
 #### 数组方法
 
-| 建议新增方法     | 描述          | Lodash 对应        | 优先级   |
-| ---------------- | ------------- | ------------------ | -------- |
-| `differenceBy`   | 按条件求差集  | `_.differenceBy`   | ⭐⭐⭐   |
-| `intersectionBy` | 按条件求交集  | `_.intersectionBy` | ⭐⭐⭐   |
-| `unionBy`        | 按条件求并集  | `_.unionBy`        | ⭐⭐⭐   |
-| `findIndex`      | 查找索引      | `_.findIndex`      | ⭐⭐⭐⭐ |
-| `findLastIndex`  | 反向查找索引  | `_.findLastIndex`  | ⭐⭐⭐   |
-| `take`           | 取前 N 个元素 | `_.take`           | ⭐⭐⭐⭐ |
-| `takeRight`      | 取后 N 个元素 | `_.takeRight`      | ⭐⭐⭐⭐ |
-| `drop`           | 丢弃前 N 个   | `_.drop`           | ⭐⭐⭐   |
-| `dropRight`      | 丢弃后 N 个   | `_.dropRight`      | ⭐⭐⭐   |
-| `zip`            | 数组压缩      | `_.zip`            | ⭐⭐⭐   |
-| `unzip`          | 数组解压      | `_.unzip`          | ⭐⭐⭐   |
-| `partition`      | 分区          | `_.partition`      | ⭐⭐⭐⭐ |
-| `countBy`        | 计数分组      | `_.countBy`        | ⭐⭐⭐   |
+| 建议新增方法     | 描述          | Lodash 对应        | 优先级   | 状态   |
+| ---------------- | ------------- | ------------------ | -------- | ------ |
+| `differenceBy`   | 按条件求差集  | `_.differenceBy`   | ⭐⭐⭐   | ❌ 待开发 |
+| `intersectionBy` | 按条件求交集  | `_.intersectionBy` | ⭐⭐⭐   | ❌ 待开发 |
+| `unionBy`        | 按条件求并集  | `_.unionBy`        | ⭐⭐⭐   | ❌ 待开发 |
+| `findIndex`      | 查找索引      | `_.findIndex`      | ⭐⭐⭐⭐ | ❌ 待开发 |
+| `findLastIndex`  | 反向查找索引  | `_.findLastIndex`  | ⭐⭐⭐   | ❌ 待开发 |
+| `take`           | 取前 N 个元素 | `_.take`           | ⭐⭐⭐⭐ | ❌ 待开发 |
+| `takeRight`      | 取后 N 个元素 | `_.takeRight`      | ⭐⭐⭐⭐ | ❌ 待开发 |
+| `drop`           | 丢弃前 N 个   | `_.drop`           | ⭐⭐⭐   | ❌ 待开发 |
+| `dropRight`      | 丢弃后 N 个   | `_.dropRight`      | ⭐⭐⭐   | ❌ 待开发 |
+| `zip`            | 数组压缩      | `_.zip`            | ⭐⭐⭐   | ❌ 待开发 |
+| `unzip`          | 数组解压      | `_.unzip`          | ⭐⭐⭐   | ❌ 待开发 |
+| `partition`      | 分区          | `_.partition`      | ⭐⭐⭐⭐ | ❌ 待开发 |
+| `countBy`        | 计数分组      | `_.countBy`        | ⭐⭐⭐   | ❌ 待开发 |
+| `unique`         | 数组去重      | `_.uniq`           | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `shuffle`        | 随机打乱      | `_.shuffle`        | ⭐⭐⭐   | ✅ 已实现 |
+| `sorter`         | 按键排序      | `_.sortBy`         | ⭐⭐⭐   | ✅ 已实现 |
+| `chunk`          | 分块          | `_.chunk`          | ⭐⭐⭐   | ✅ 已实现 |
+| `flatten`        | 扁平化        | `_.flatten`        | ⭐⭐⭐   | ✅ 已实现 |
+| `groupBy`        | 分组          | `_.groupBy`        | ⭐⭐⭐   | ✅ 已实现 |
+| `keyBy`          | 键值映射      | `_.keyBy`          | ⭐⭐⭐   | ✅ 已实现 |
+| `sample`         | 随机取一个    | `_.sample`         | ⭐⭐⭐   | ✅ 已实现 |
+| `sampleSize`     | 随机取N个     | `_.sampleSize`     | ⭐⭐⭐   | ✅ 已实现 |
+| `intersect`      | 交集          | `_.intersection`   | ⭐⭐⭐   | ✅ 已实现 |
+| `union`          | 并集          | `_.union`          | ⭐⭐⭐   | ✅ 已实现 |
+| `minus`          | 差集          | `_.difference`     | ⭐⭐⭐   | ✅ 已实现 |
+| `complement`     | 补集          | `_.xor`            | ⭐⭐⭐   | ✅ 已实现 |
+| `contains`       | 包含检测      | `_.includes`       | ⭐⭐⭐   | ✅ 已实现 |
+| `all`            | 全部满足      | `_.every`          | ⭐⭐⭐   | ✅ 已实现 |
+| `any`            | 任意满足      | `_.some`           | ⭐⭐⭐   | ✅ 已实现 |
+| `searchObject`   | 树形查找      | -                  | ⭐⭐⭐   | ✅ 已实现 |
 
 **示例实现建议**：
 
@@ -65,18 +82,27 @@ function countBy<T>(
 
 #### 对象方法
 
-| 建议新增方法  | 描述         | Lodash 对应     | 优先级   |
-| ------------- | ------------ | --------------- | -------- |
-| `mapKeys`     | 映射键名     | `_.mapKeys`     | ⭐⭐⭐   |
-| `mapValues`   | 映射值       | `_.mapValues`   | ⭐⭐⭐⭐ |
-| `invert`      | 键值反转     | `_.invert`      | ⭐⭐⭐   |
-| `keys`        | 获取键数组   | `_.keys`        | ⭐⭐     |
-| `values`      | 获取值数组   | `_.values`      | ⭐⭐     |
-| `entries`     | 获取键值对   | `_.entries`     | ⭐⭐     |
-| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐     |
-| `has`         | 检查属性存在 | `_.has`         | ⭐⭐⭐   |
-| `mergeWith`   | 自定义合并   | `_.mergeWith`   | ⭐⭐     |
-| `transform`   | 对象转换     | `_.transform`   | ⭐⭐     |
+| 建议新增方法  | 描述         | Lodash 对应     | 优先级   | 状态   |
+| ------------- | ------------ | --------------- | -------- | ------ |
+| `mapKeys`     | 映射键名     | `_.mapKeys`     | ⭐⭐⭐   | ❌ 待开发 |
+| `mapValues`   | 映射值       | `_.mapValues`   | ⭐⭐⭐⭐ | ❌ 待开发 |
+| `invert`      | 键值反转     | `_.invert`      | ⭐⭐⭐   | ❌ 待开发 |
+| `keys`        | 获取键数组   | `_.keys`        | ⭐⭐     | ❌ 待开发（可用 Object.keys） |
+| `values`      | 获取值数组   | `_.values`      | ⭐⭐     | ❌ 待开发（可用 Object.values） |
+| `entries`     | 获取键值对   | `_.entries`     | ⭐⭐     | ❌ 待开发（可用 Object.entries） |
+| `fromEntries` | 键值对转对象 | `_.fromEntries` | ⭐⭐     | ❌ 待开发（可用 Object.fromEntries） |
+| `has`         | 检查属性存在 | `_.has`         | ⭐⭐⭐   | ❌ 待开发（可用 Object.hasOwn） |
+| `mergeWith`   | 自定义合并   | `_.mergeWith`   | ⭐⭐     | ⚠️ 部分实现（extend 支持深度合并） |
+| `transform`   | 对象转换     | `_.transform`   | ⭐⭐     | ❌ 待开发 |
+| `clone`       | 深拷贝       | `_.cloneDeep`   | ⭐⭐⭐⭐ | ✅ 已实现 |
+| `extend`      | 合并对象     | `_.merge`       | ⭐⭐⭐   | ✅ 已实现（支持深度合并） |
+| `getProperty` | 获取属性     | `_.get`         | ⭐⭐⭐   | ✅ 已实现 |
+| `setProperty` | 设置属性     | `_.set`         | ⭐⭐⭐   | ✅ 已实现 |
+| `omit`        | 排除属性     | `_.omit`        | ⭐⭐⭐   | ✅ 已实现 |
+| `pick`        | 选取属性     | `_.pick`        | ⭐⭐⭐   | ✅ 已实现 |
+| `cleanData`   | 数据清洗     | -               | ⭐⭐⭐   | ✅ 已实现 |
+| `isEqual`     | 深度比较     | `_.isEqual`     | ⭐⭐⭐   | ✅ 已实现 |
+| `isEmpty`     | 空值检测     | `_.isEmpty`     | ⭐⭐⭐   | ✅ 已实现 |
 
 **示例实现建议**：
 
@@ -105,15 +131,26 @@ function invert<T extends string | number>(obj: Record<string, T>): Record<T, st
 
 #### 字符串方法
 
-| 建议新增方法 | 描述               | Lodash 对应                 | 优先级 |
-| ------------ | ------------------ | --------------------------- | ------ |
-| `words`      | 分词               | `_.words`                   | ⭐⭐   |
-| `capitalize` | 首字母大写其余小写 | `_.capitalize`              | ⭐⭐⭐ |
-| `lowerFirst` | 首字母小写         | `_.lowerFirst`              | ⭐⭐⭐ |
-| `padStart`   | 前填充             | `String.prototype.padStart` | ⭐⭐   |
-| `padEnd`     | 后填充             | `String.prototype.padEnd`   | ⭐⭐   |
-| `repeat`     | 重复字符串         | `String.prototype.repeat`   | ⭐⭐   |
-| `template`   | 模板引擎           | `_.template`                | ⭐⭐⭐ |
+| 建议新增方法 | 描述               | Lodash 对应                 | 优先级 | 状态   |
+| ------------ | ------------------ | --------------------------- | ------ | ------ |
+| `words`      | 分词               | `_.words`                   | ⭐⭐   | ❌ 待开发 |
+| `capitalize` | 首字母大写其余小写 | `_.capitalize`              | ⭐⭐⭐ | ❌ 待开发 |
+| `lowerFirst` | 首字母小写         | `_.lowerFirst`              | ⭐⭐⭐ | ❌ 待开发 |
+| `padStart`   | 前填充             | `String.prototype.padStart` | ⭐⭐   | ❌ 待开发（原生支持） |
+| `padEnd`     | 后填充             | `String.prototype.padEnd`   | ⭐⭐   | ❌ 待开发（原生支持） |
+| `repeat`     | 重复字符串         | `String.prototype.repeat`   | ⭐⭐   | ❌ 待开发（原生支持） |
+| `template`   | 模板引擎           | `_.template`                | ⭐⭐⭐ | ❌ 待开发 |
+| `camel2Dash` | 驼峰转短横线       | `_.kebabCase`               | ⭐⭐⭐ | ✅ 已实现 |
+| `dash2Camel` | 短横线转驼峰       | `_.camelCase`               | ⭐⭐⭐ | ✅ 已实现 |
+| `upperFirst` | 首字母大写         | `_.upperFirst`              | ⭐⭐⭐ | ✅ 已实现 |
+| `kebabCase`  | 转短横线命名       | `_.kebabCase`               | ⭐⭐⭐ | ✅ 已实现 |
+| `snakeCase`  | 转下划线命名       | `_.snakeCase`               | ⭐⭐⭐ | ✅ 已实现 |
+| `truncate`   | 截断字符串         | `_.truncate`                | ⭐⭐⭐ | ✅ 已实现 |
+| `clearHtml`  | 清除HTML标签       | -                           | ⭐⭐⭐ | ✅ 已实现 |
+| `clearAttr`  | 清除HTML属性       | -                           | ⭐⭐⭐ | ✅ 已实现 |
+| `mapTemplate`| 模板字符串替换     | -                           | ⭐⭐⭐ | ✅ 已实现 |
+| `escape`     | HTML转义           | `_.escape`                  | ⭐⭐⭐ | ✅ 已实现 |
+| `unescape`   | HTML反转义         | `_.unescape`                | ⭐⭐⭐ | ✅ 已实现 |
 
 ### 1.2 中优先级 - 增强现有方法
 
@@ -498,7 +535,7 @@ function getProperty<T, P extends PathImpl<T, string>>(
 #### 3.1.2 增加类型工具
 
 ```typescript
-// types.ts - 新增工具类型
+// types.ts - 新增工具类型（已有部分实现）
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
 }
@@ -545,20 +582,35 @@ function getProperty(obj: any, path: string, defaultValue?: any): any {
 
 ### 3.3 Tree-shaking 优化
 
-**建议**：确保每个函数都是独立的模块，避免循环依赖
+**现状**：已支持子路径导入
 
-```typescript
-// 优化导出结构
-// src/index.ts 保持当前的独立导出方式
+```json
+{
+  "exports": {
+    ".": { "import": "./dist/index.mjs", "require": "./dist/index.js" },
+    "./ua": { "import": "./dist/ua/index.mjs", "require": "./dist/ua/index.js" },
+    "./date": { "import": "./dist/date/index.mjs", "require": "./dist/date/index.js" },
+    "./url": { "import": "./dist/url/index.mjs", "require": "./dist/url/index.js" },
+    "./scroll": { "import": "./dist/scroll/index.mjs", "require": "./dist/scroll/index.js" },
+    "./storage": { "import": "./dist/storage/index.mjs", "require": "./dist/storage/index.js" },
+    "./binary": { "import": "./dist/binary/index.mjs", "require": "./dist/binary/index.js" },
+    "./patterns": { "import": "./dist/patterns/index.mjs", "require": "./dist/patterns/index.js" }
+  }
+}
+```
 
-// 同时提供分组导出（可选）
-// src/string.ts
-export { default as camel2Dash } from './camel2Dash'
-export { default as dash2Camel } from './dash2Camel'
-// ...
+**建议**：增加更多子路径导出
 
-// 用户可以这样导入
-import { camel2Dash, dash2Camel } from 'js-cool/string'
+```json
+{
+  "exports": {
+    "./string": { "import": "./dist/string/index.mjs", "require": "./dist/string/index.js" },
+    "./array": { "import": "./dist/array/index.mjs", "require": "./dist/array/index.js" },
+    "./object": { "import": "./dist/object/index.mjs", "require": "./dist/object/index.js" },
+    "./number": { "import": "./dist/number/index.mjs", "require": "./dist/number/index.js" },
+    "./color": { "import": "./dist/color/index.mjs", "require": "./dist/color/index.js" }
+  }
+}
 ```
 
 ### 3.4 文档增强
@@ -593,7 +645,7 @@ import { camel2Dash, dash2Camel } from 'js-cool/string'
 
 ### 4.1 测试覆盖率提升
 
-**现状**：150+ 个测试文件（覆盖大部分函数）
+**现状**：128 个测试文件（覆盖大部分函数）
 
 **目标**：达到 95%+ 代码覆盖率
 
@@ -711,12 +763,32 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ## 五、已完成功能（v6.0.0）
 
+### ✅ Binary 模块（新增）
+
+全新的二进制数据处理模块，提供统一的转换 API：
+
+- **链式转换**：`binary.from(blob).toBase64()`
+- **类型检测**：`binary.isBlob()`, `binary.isFile()`, `binary.isArrayBuffer()`
+- **子模块**：
+  - `binary.base64` - Base64 编解码
+  - `binary.blob` - Blob 转换
+  - `binary.arrayBuffer` - ArrayBuffer 转换
+  - `binary.file` - File 转换
+  - `binary.url` - URL 获取二进制数据
+  - `binary.svg` - SVG 转换
+  - `binary.text` - 文本编解码
+  - `binary.dataURL` - Data URL 处理
+  - `binary.hex` - 十六进制编解码
+  - `binary.hash` - 哈希计算（MD5, SHA-1, SHA-256, CRC32）
+  - `binary.meta` - 元数据提取
+- **工具方法**：`binary.compare()`, `binary.clone()`, `binary.download()`
+
 ### ✅ URL 模块重构
 
 - `Url` 类支持 search 和 hash 双参数系统
 - 链式 URL 构建
 - URLSearchParams-like 方法
-- URL 属性提取静态方法
+- URL 属性提取静态方法（`getOrigin`, `getHost`, `getPathname` 等）
 - Hash 路径操作
 
 ### ✅ UA 模块重构
@@ -728,25 +800,45 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ### ✅ Date 模块增强
 
-- 新增 `DateParser` 类
-- 支持链式日期操作
-- 新增 `isBefore`、`isAfter`、`isSame`、`isBetween`
-- 新增 `addDate`、`subtractDate`、`startOf`、`endOf`
-- 新增 `minDate`、`maxDate`、`compareDate`
+- 新增 `DateParser` 类（链式日期操作）
+- 新增比较方法：`isBefore`、`isAfter`、`isSame`、`isBetween`
+- 新增操作方法：`addDate`、`subtractDate`、`startOf`、`endOf`
+- 新增聚合方法：`minDate`、`maxDate`、`compareDate`
+- 新增获取方法：`getQuarter`、`getWeekOfYear`、`getDayOfYear`
 
 ### ✅ Scroll 模块新增
 
-- `scrollTo`、`scrollToTop`、`scrollToBottom`
-- `lockScroll`、`unlockScroll`
+完整的滚动工具集合：
+
+- `scrollTo`、`scrollToTop`、`scrollToBottom`、`scrollBy`
+- `lockScroll`、`unlockScroll`、`toggleScroll`、`isScrollLocked`
 - `isInViewport`、`getScrollbarWidth`
-- `getProgress`、`getDirection`
+- `getProgress`、`getDirection`、`createDirectionTracker`
+
+### ✅ Storage 模块重构
+
+统一存储 API：
+
+- `storage.local` - localStorage 封装（支持过期时间）
+- `storage.session` - sessionStorage 封装（支持过期时间）
+- `storage.cookie` - Cookie 封装（完整选项支持）
+- 错误类型：`StorageQuotaError`、`StorageUnavailableError`
 
 ### ✅ 其他增强
 
 - 新增 `safeParse`、`safeStringify` 安全 JSON 处理
 - 新增 `promiseFactory` Promise 工厂
-- 新增 Storage 错误类型：`StorageQuotaError`、`StorageUnavailableError`
-- 新增 Retry 错误类型：`RetryTimeoutError`、`RetryAbortError`
+- 新增 `punctualTimer` 精确定时器
+- 新增 `download` 文件下载工具
+- 新增 `fingerprint` 浏览器指纹
+- 新增类型工具：`PickRequired`、`OmitRequired`、`PickPartial`、`OmitPartial`、`MaybePromiseOrGetter`
+- Retry 错误类型：`RetryTimeoutError`、`RetryAbortError`
+
+### ✅ 构建与导出优化
+
+- 使用 Rolldown 构建（更快）
+- 支持子路径导入（tree-shaking 友好）
+- 类型定义自动生成
 
 ---
 
@@ -796,10 +888,10 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ### 立即实施（P0）
 
-1. ✅ ~~新增高频数组方法：`take`、`findIndex`、`partition`~~
-2. ✅ ~~新增对象方法：`mapValues`、`has`~~
+1. 新增高频数组方法：`take`、`findIndex`、`partition`
+2. 新增对象方法：`mapValues`、`has`
 3. ✅ 完善 TypeScript 类型定义
-4. ✅ 提升测试覆盖率到 90%+
+4. ✅ 提升测试覆盖率
 
 ### 近期实施（P1）
 
@@ -824,14 +916,41 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-> 文档更新时间：2026-03-27
+## 八、当前模块概览
+
+| 模块     | 文件数 | 主要功能                               | 状态 |
+| -------- | ------ | -------------------------------------- | ---- |
+| string   | 15     | 字符串处理（驼峰转换、截断、模板等）   | ✅   |
+| array    | 22     | 数组处理（去重、排序、分组、采样等）   | ✅   |
+| object   | 21     | 对象处理（克隆、合并、属性操作等）     | ✅   |
+| date     | 8      | 日期处理（格式化、比较、操作等）       | ✅   |
+| url      | 2      | URL 解析和构建                         | ✅   |
+| ua       | 10     | User-Agent 检测                        | ✅   |
+| storage  | 7      | 存储操作（localStorage/session/cookie）| ✅   |
+| scroll   | 8      | 滚动工具                               | ✅   |
+| binary   | 8      | 二进制数据转换                         | ✅   |
+| patterns | 5      | 正则模式管理                           | ✅   |
+| color    | 6      | 颜色处理（RGB/HSL转换、亮度调整等）    | ✅   |
+| number   | 8      | 数字处理（范围、取整、求和等）         | ✅   |
+| validate | 5      | 验证函数（邮箱、手机、URL等）          | ✅   |
+| dom      | 13     | DOM 操作（事件、复制、下载等）         | ✅   |
+| utility  | 16     | 工具函数（UUID、延迟、指纹等）         | ✅   |
+| async    | 3      | 异步流程（防抖、节流、重试）           | ✅   |
+
+---
+
+> 文档更新时间：2026-03-30
 >
-> 基于 js-cool v6.0.0 版本分析
+> 基于 js-cool v6.0.0-beta.3 版本分析
 >
 > **已完成功能**:
 >
-> - `ua` 模块重构，支持 HarmonyOS、iPadOS、钉钉、抖音等检测
-> - `Url` 类支持 search/hash 双参数系统
-> - `DateParser` 类支持链式日期操作
-> - `scroll` 模块新增滚动工具
-> - `patterns` 模块统一管理正则模式
+> - ✅ `binary` 模块 - 统一二进制转换 API，支持链式调用、哈希计算、元数据提取
+> - ✅ `ua` 模块重构 - 支持 HarmonyOS、iPadOS、钉钉、抖音等检测
+> - ✅ `Url` 类 - 支持 search/hash 双参数系统，链式构建
+> - ✅ `DateParser` 类 - 链式日期操作，完整的比较和操作方法
+> - ✅ `scroll` 模块 - 完整滚动工具集
+> - ✅ `storage` 模块 - 统一存储 API，支持过期时间
+> - ✅ `patterns` 模块 - 统一正则模式管理
+> - ✅ 子路径导入 - 支持 tree-shaking
+> - ✅ 128 个测试文件
