@@ -181,6 +181,14 @@ export const changelog: ChangelogData = {
 			descriptionZh: '将字符串转换为短横线或下划线格式',
 			anchor: 'kebabcase',
 		},
+		{
+			type: 'new',
+			name: 'capitalize / lowerFirst',
+			category: 'String',
+			description: 'Capitalize first letter (rest lowercase) or convert first letter to lowercase',
+			descriptionZh: '首字母大写（其余小写）或首字母小写',
+			anchor: 'capitalize',
+		},
 
 		// New Features - Array
 		{
@@ -215,6 +223,46 @@ export const changelog: ChangelogData = {
 			descriptionZh: '从数组中获取随机元素',
 			anchor: 'sample',
 		},
+		{
+			type: 'new',
+			name: 'countBy / partition',
+			category: 'Array',
+			description: 'Count items by key or split array into two groups by predicate',
+			descriptionZh: '按键计数或根据条件将数组分成两组',
+			anchor: 'countby',
+		},
+		{
+			type: 'new',
+			name: 'findIndex / findLastIndex',
+			category: 'Array',
+			description: 'Find first or last index matching predicate (supports object, array, string predicates)',
+			descriptionZh: '查找第一个或最后一个匹配的索引（支持对象、数组、字符串谓词）',
+			anchor: 'findindex',
+		},
+		{
+			type: 'new',
+			name: 'drop / dropRight / take / takeRight',
+			category: 'Array',
+			description: 'Drop or take elements from start or end of array',
+			descriptionZh: '从数组开头或末尾删除或提取元素',
+			anchor: 'drop',
+		},
+		{
+			type: 'new',
+			name: 'differenceBy / intersectionBy / unionBy',
+			category: 'Array',
+			description: 'Set operations with iteratee function',
+			descriptionZh: '带迭代函数的集合操作',
+			anchor: 'differenceby',
+		},
+		{
+			type: 'new',
+			name: 'zip / unzip',
+			category: 'Array',
+			description: 'Combine arrays element-wise or separate combined arrays',
+			descriptionZh: '按元素组合数组或分离组合的数组',
+			anchor: 'zip',
+		},
 
 		// New Features - Object
 		{
@@ -224,6 +272,14 @@ export const changelog: ChangelogData = {
 			description: 'Create object with omitted or picked keys',
 			descriptionZh: '创建省略或选取指定键的对象',
 			anchor: 'omit',
+		},
+		{
+			type: 'new',
+			name: 'invert / mapKeys / mapValues',
+			category: 'Object',
+			description: 'Invert object keys/values, transform keys or values',
+			descriptionZh: '反转对象键值、转换键或值',
+			anchor: 'invert',
 		},
 		{
 			type: 'new',

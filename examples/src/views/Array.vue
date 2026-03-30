@@ -20,6 +20,19 @@ import {
 	sortPinyin,
 	sorter,
 	keyBy,
+	countBy,
+	differenceBy,
+	drop,
+	dropRight,
+	findIndex,
+	findLastIndex,
+	intersectionBy,
+	partition,
+	take,
+	takeRight,
+	unionBy,
+	unzip,
+	zip,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -55,6 +68,25 @@ const keyByInput = ref([
 	{ id: 2, name: 'Bob' },
 	{ id: 3, name: 'Charlie' },
 ])
+
+// findIndex demo
+const findIndexUsers = ref([
+	{ user: 'barney', active: false },
+	{ user: 'fred', active: false },
+	{ user: 'pebbles', active: true },
+])
+
+// partition demo
+const partitionUsers = ref([
+	{ user: 'barney', age: 36, active: true },
+	{ user: 'fred', age: 40, active: false },
+	{ user: 'pebbles', age: 1, active: true },
+])
+
+// zip demo
+const zipResult = zip(['a', 'b', 'c'], [1, 2, 3])
+const unzipResult = unzip([['a', 1], ['b', 2], ['c', 3]])
+
 </script>
 
 <template>
@@ -332,6 +364,195 @@ keyBy(data, 'id')
 					<pre class="code-block" style="font-size: 11px">{{
 						JSON.stringify(keyBy(keyByInput, 'id'), null, 2)
 					}}</pre>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- countBy -->
+		<FunctionCard
+			title="countBy"
+			:description="t.array.countByDesc || 'Count occurrences by iteratee'"
+			since="6.0.0"
+			:code="`countBy([6.1, 4.2, 6.3], Math.floor) // { '4': 1, '6': 2 }
+countBy(['one', 'two', 'three'], 'length') // { '3': 2, '5': 1 }
+countBy([{ type: 'a' }, { type: 'b' }, { type: 'a' }], 'type') // { 'a': 2, 'b': 1 }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">countBy([6.1, 4.2, 6.3], Math.floor)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(countBy([6.1, 4.2, 6.3], Math.floor))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">countBy(['one', 'two', 'three'], 'length')</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(countBy(['one', 'two', 'three'], 'length'))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">countBy([{type:'a'}, {type:'b'}, {type:'a'}], 'type')</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(countBy([{ type: 'a' }, { type: 'b' }, { type: 'a' }], 'type'))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- partition -->
+		<FunctionCard
+			title="partition"
+			:description="t.array.partitionDesc || 'Split array into two groups by predicate'"
+			since="6.0.0"
+			:code="`const users = [{ user: 'barney', age: 36, active: true }, { user: 'fred', age: 40, active: false }]
+partition(users, ({ active }) => active)
+// [[{ user: 'barney', active: true }], [{ user: 'fred', active: false }]]
+partition([1, 2, 3, 4], n => n % 2 === 0) // [[2, 4], [1, 3]]`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">partition(users, ({ active }) => active)</code>
+					</n-space>
+					<pre class="code-block" style="font-size: 11px">{{
+						JSON.stringify(partition(partitionUsers, ({ active }) => active), null, 2)
+					}}</pre>
+					<n-space align="center">
+						<code class="code-inline">partition([1, 2, 3, 4], n => n % 2 === 0)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(partition([1, 2, 3, 4], n => n % 2 === 0))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- findIndex / findLastIndex -->
+		<FunctionCard
+			title="findIndex / findLastIndex"
+			:description="t.array.findIndexDesc || 'Find first or last index matching predicate'"
+			since="6.0.0"
+			:code="`const users = [{ user: 'barney', active: false }, { user: 'fred', active: false }, { user: 'pebbles', active: true }]
+findIndex(users, ({ active }) => active) // 2
+findIndex(users, { user: 'fred' }) // 1
+findIndex(users, ['user', 'barney']) // 0
+findLastIndex([1, 2, 3, 4], n => n > 2) // 3`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">findIndex(users, ({ active }) => active)</code>
+						<n-tag type="info" size="small">{{
+							findIndex(findIndexUsers, ({ active }) => active)
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">findIndex(users, { user: 'fred' })</code>
+						<n-tag type="info" size="small">{{
+							findIndex(findIndexUsers, { user: 'fred' })
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">findIndex(users, ['user', 'barney'])</code>
+						<n-tag type="info" size="small">{{
+							findIndex(findIndexUsers, ['user', 'barney'])
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">findLastIndex([1, 2, 3, 4], n => n > 2)</code>
+						<n-tag type="info" size="small">{{
+							findLastIndex([1, 2, 3, 4], n => n > 2)
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- drop / dropRight / take / takeRight -->
+		<FunctionCard
+			title="drop / dropRight / take / takeRight"
+			:description="t.array.dropTakeDesc || 'Drop or take elements from start or end'"
+			since="6.0.0"
+			:code="`drop([1, 2, 3, 4, 5], 2) // [3, 4, 5]
+dropRight([1, 2, 3, 4, 5], 2) // [1, 2, 3]
+take([1, 2, 3, 4, 5], 2) // [1, 2]
+takeRight([1, 2, 3, 4, 5], 2) // [4, 5]`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">drop([1, 2, 3, 4, 5], 2)</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(drop([1, 2, 3, 4, 5], 2)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">dropRight([1, 2, 3, 4, 5], 2)</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(dropRight([1, 2, 3, 4, 5], 2)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">take([1, 2, 3, 4, 5], 2)</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(take([1, 2, 3, 4, 5], 2)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">takeRight([1, 2, 3, 4, 5], 2)</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(takeRight([1, 2, 3, 4, 5], 2)) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- differenceBy / intersectionBy / unionBy -->
+		<FunctionCard
+			title="differenceBy / intersectionBy / unionBy"
+			:description="t.array.iterateeOpsDesc || 'Set operations with iteratee function'"
+			since="6.0.0"
+			:code="`differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [1.2]
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor) // [2.1]
+unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x') // [{ x: 1 }, { x: 2 }]`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x')</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x'))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- zip / unzip -->
+		<FunctionCard
+			title="zip / unzip"
+			:description="t.array.zipDesc || 'Combine or separate arrays element-wise'"
+			since="6.0.0"
+			:code="`zip(['a', 'b', 'c'], [1, 2, 3]) // [['a', 1], ['b', 2], ['c', 3]]
+unzip([['a', 1], ['b', 2], ['c', 3]]) // [['a', 'b', 'c'], [1, 2, 3]]`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">zip(['a', 'b', 'c'], [1, 2, 3])</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(zipResult) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">unzip([['a', 1], ['b', 2], ['c', 3]])</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(unzipResult) }}</n-tag>
+					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>

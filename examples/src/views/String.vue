@@ -6,6 +6,8 @@ import {
 	camel2Dash,
 	dash2Camel,
 	upperFirst,
+	lowerFirst,
+	capitalize,
 	kebabCase,
 	snakeCase,
 	truncate,
@@ -24,6 +26,8 @@ const { t } = useI18n()
 const camelInput = ref('backgroundColor')
 const dashInput = ref('background-color')
 const upperInput = ref('hello')
+const lowerInput = ref('FRED')
+const capitalizeInput = ref('FRED')
 const truncateInput = ref('This is a long string that needs to be truncated')
 const truncateLen = ref(20)
 const htmlInput = ref('<div id="test">Hello <b>World</b></div>')
@@ -82,6 +86,40 @@ const templateData = { name: 'John', count: 5 }
 					<n-input v-model:value="upperInput" style="width: 200px" />
 					<span style="color: #999">→</span>
 					<n-tag type="info">{{ upperFirst(upperInput) }}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="lowerFirst"
+			:description="t.string.lowerFirstDesc || 'Convert first character to lowercase'"
+			since="6.0.0"
+			:result="lowerFirst(lowerInput)"
+			:code="`lowerFirst('Fred') // 'fred'
+lowerFirst('FRED') // 'fRED'`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-input v-model:value="lowerInput" style="width: 200px" />
+					<span style="color: #999">→</span>
+					<n-tag type="info">{{ lowerFirst(lowerInput) }}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="capitalize"
+			:description="t.string.capitalizeDesc || 'Capitalize first letter (rest lowercase)'"
+			since="6.0.0"
+			:result="capitalize(capitalizeInput)"
+			:code="`capitalize('FRED') // 'Fred'
+capitalize('hello world') // 'Hello world'`"
+		>
+			<template #input>
+				<n-space align="center">
+					<n-input v-model:value="capitalizeInput" style="width: 200px" />
+					<span style="color: #999">→</span>
+					<n-tag type="info">{{ capitalize(capitalizeInput) }}</n-tag>
 				</n-space>
 			</template>
 		</FunctionCard>

@@ -14,6 +14,9 @@ import {
 	isEqual,
 	cleanData,
 	searchObject,
+	invert,
+	mapKeys,
+	mapValues,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -274,6 +277,64 @@ searchObject(obj, node => node.name.includes('john'), { childName: 'children', k
 			<template #result>
 				<n-space vertical>
 					<pre class="code-block" style="font-size: 11px">{{ JSON.stringify(searchResult || searchObject(searchTarget, searchKeyword, { childName: 'children', keyName: 'name' }), null, 2) }}</pre>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- invert -->
+		<FunctionCard
+			title="invert"
+			description="Invert object keys and values"
+			since="6.0.0"
+			:code="`invert({ a: '1', b: '2', c: '3' }) // { '1': 'a', '2': 'b', '3': 'c' }
+invert({ a: 1, b: 2, c: 1 }) // { '1': 'c', '2': 'b' }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">invert({ a: '1', b: '2', c: '3' })</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(invert({ a: '1', b: '2', c: '3' }))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">invert({ a: 1, b: 2, c: 1 })</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(invert({ a: 1, b: 2, c: 1 }))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- mapKeys / mapValues -->
+		<FunctionCard
+			title="mapKeys / mapValues"
+			description="Transform object keys or values"
+			since="6.0.0"
+			:code="`mapKeys({ a: 1, b: 2 }, (v, k) => k + v) // { a1: 1, b2: 2 }
+mapValues({ a: 1, b: 2 }, n => n * 2) // { a: 2, b: 4 }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">mapKeys({ a: 1, b: 2 }, (v, k) => k + v)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mapKeys({ a: 1, b: 2 }, (v, k) => k + v))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">mapValues({ a: 1, b: 2 }, n => n * 2)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mapValues({ a: 1, b: 2 }, n => n * 2))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x')</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x'))
+						}}</n-tag>
+					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>
