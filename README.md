@@ -150,9 +150,9 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 
 | Category          | Description                       | Functions                                                                                                                                                                                                                                         |
 | ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `escape`, `unescape`                                          |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `template`, `words`, `escape`, `unescape` |
 | **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip` |
-| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `mapKeys`, `mapValues`, `invert`, `arrayToCSV`, `CSVToArray`                                                                           |
+| **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `mapKeys`, `mapValues`, `invert`, `mergeWith`, `transform`, `arrayToCSV`, `CSVToArray` |
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
 | **Validate**      | Validation functions              | `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`                                                                                                                                                                                         |
 | **URL & Browser** | URL parsing and browser detection | `getUrlParams`, `getUrlParam`, `parseUrlParam`, `spliceUrlParam`, `getDirParams`, `ua`, `appVersion`, `browserVersion`, `compareVersion`, `nextVersion`                                                                                           |
@@ -586,6 +586,64 @@ cutCHSString('abc', 10) // 'abc'
 cutCHSString('abc', 10, true) // 'abc'
 ```
 
+#### words
+
+Split string into an array of words.
+
+```js
+import { words } from 'js-cool'
+
+// Default: split by word boundaries
+words('fred, barney, & pebbles') // ['fred', 'barney', 'pebbles']
+words('camelCaseHTML') // ['camel', 'Case', 'HTML']
+words('PascalCase') // ['Pascal', 'Case']
+words('snake_case_string') // ['snake', 'case', 'string']
+words('kebab-case-string') // ['kebab', 'case', 'string']
+
+// With custom pattern
+words('camelCaseHTML', /[A-Z]{2,}/g) // ['HTML']
+words('hello world', /\w+/g) // ['hello', 'world']
+
+// Handle numbers
+words('version2Update') // ['version', '2', 'Update']
+
+// Consecutive uppercase
+words('HTMLParser') // ['HTML', 'Parser']
+```
+
+#### template
+
+Simple template engine with variable interpolation.
+
+```js
+import { template } from 'js-cool'
+
+// Basic usage
+const compiled = template('Hello, {{ name }}!')
+compiled({ name: 'World' }) // 'Hello, World!'
+
+// HTML escaping (default)
+const safe = template('{{ content }}')
+safe({ content: '<script>alert("xss")</script>' })
+// '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;'
+
+// Raw output (triple braces)
+const raw = template('{{{ html }}}')
+raw({ html: '<strong>bold</strong>' }) // '<strong>bold</strong>'
+
+// Nested properties
+const nested = template('{{ user.name }} is {{ user.age }} years old.')
+nested({ user: { name: 'John', age: 30 } }) // 'John is 30 years old.'
+
+// Custom delimiters
+const custom = template('Hello, ${ name }!', { open: '${', close: '}' })
+custom({ name: 'World' }) // 'Hello, World!'
+
+// Multiple variables
+const multi = template('{{ a }} and {{ b }} and {{ c }}')
+multi({ a: 1, b: 2, c: 3 }) // '1 and 2 and 3'
+```
+
 ---
 
 ### Array
@@ -982,6 +1040,60 @@ import { invert } from 'js-cool'
 invert({ a: '1', b: '2', c: '3' }) // { '1': 'a', '2': 'b', '3': 'c' }
 invert({ a: 1, b: 2, c: 1 }) // { '1': 'c', '2': 'b' } (duplicate values: last wins)
 invert({ x: 'apple', y: 'banana' }) // { apple: 'x', banana: 'y' }
+```
+
+#### mergeWith
+
+Merge objects with custom strategy function.
+
+```js
+import { mergeWith } from 'js-cool'
+
+// Custom array merge (concat instead of replace)
+mergeWith({ a: [1, 2] }, { a: [3, 4] }, (objValue, srcValue) => {
+  if (Array.isArray(objValue)) {
+    return objValue.concat(srcValue)
+  }
+})
+// { a: [1, 2, 3, 4] }
+
+// Skip certain properties
+mergeWith({ a: 1, b: 2 }, { a: 10, b: 20 }, (objValue, srcValue, key) => {
+  if (key === 'b') return objValue // keep original
+})
+// { a: 10, b: 2 }
+
+// Merge multiple objects
+mergeWith({ a: 1 }, { b: 2 }, { c: 3 }, (objValue, srcValue) => srcValue ?? objValue)
+// { a: 1, b: 2, c: 3 }
+```
+
+#### transform
+
+Transform object or array with custom accumulator.
+
+```js
+import { transform } from 'js-cool'
+
+// Transform object to array
+transform({ a: 1, b: 2, c: 3 }, (result, value, key) => {
+  result.push({ key, value })
+  return result
+}, [])
+// [{ key: 'a', value: 1 }, { key: 'b', value: 2 }, { key: 'c', value: 3 }]
+
+// Filter and transform
+transform({ a: 1, b: 2, c: 3, d: 4 }, (result, value, key) => {
+  if (value % 2 === 0) result[key] = value * 2
+}, {})
+// { b: 4, d: 8 }
+
+// Early exit by returning false
+transform({ a: 1, b: 2, c: 3 }, (result, value, key) => {
+  result[key] = value
+  if (key === 'b') return false
+}, {})
+// { a: 1, b: 2 }
 ```
 
 #### searchObject

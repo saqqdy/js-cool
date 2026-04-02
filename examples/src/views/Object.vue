@@ -17,6 +17,8 @@ import {
 	invert,
 	mapKeys,
 	mapValues,
+	mergeWith,
+	transform,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -333,6 +335,116 @@ mapValues({ a: 1, b: 2 }, n => n * 2) // { a: 2, b: 4 }`"
 						<code class="code-inline">mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x')</code>
 						<n-tag type="info" size="small">{{
 							JSON.stringify(mapValues({ a: { x: 1 }, b: { x: 2 } }, 'x'))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- mergeWith -->
+		<FunctionCard
+			title="mergeWith"
+			description="Merge objects with custom strategy function"
+			since="6.0.0"
+			:code="`// Custom array merge (concat instead of replace)
+mergeWith({ a: [1, 2] }, { a: [3, 4] }, (obj, src) => {
+  if (Array.isArray(obj)) return obj.concat(src)
+})
+// { a: [1, 2, 3, 4] }
+
+// Skip certain properties
+mergeWith({ a: 1, b: 2 }, { a: 10, b: 20 }, (obj, src, key) => {
+  if (key === 'b') return obj // keep original
+})
+// { a: 10, b: 2 }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">mergeWith({ a: [1, 2] }, { a: [3, 4] }, concat arrays)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mergeWith({ a: [1, 2] } as any, { a: [3, 4] }, (objValue, srcValue) => {
+								if (Array.isArray(objValue)) return objValue.concat(srcValue)
+							}))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">mergeWith({ a: 1, b: 2 }, { a: 10, b: 20 }, keep 'b')</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mergeWith({ a: 1, b: 2 }, { a: 10, b: 20, c: 30 }, (objValue, srcValue, key) => {
+								if (key === 'b') return objValue
+							}))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">mergeWith({ a: 1 }, { b: 2 }, { c: 3 }, merge all)</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(mergeWith({ a: 1 }, { b: 2 }, { c: 3 }, (objValue, srcValue) => srcValue ?? objValue))
+						}}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- transform -->
+		<FunctionCard
+			title="transform"
+			description="Transform object to new accumulator with iteratee"
+			since="6.0.0"
+			:code="`// Transform object to array
+transform({ a: 1, b: 2 }, (result, value, key) => {
+  result.push({ key, value })
+  return result
+}, [])
+// [{ key: 'a', value: 1 }, { key: 'b', value: 2 }]
+
+// Filter and transform
+transform({ a: 1, b: 2, c: 3 }, (result, value, key) => {
+  if (value > 1) result[key] = value * 2
+}, {})
+// { b: 4, c: 6 }
+
+// Early exit by returning false
+transform({ a: 1, b: 2, c: 3 }, (result, value, key) => {
+  result[key] = value
+  if (key === 'b') return false
+}, {})
+// { a: 1, b: 2 }`"
+		>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">transform to array</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(transform({ a: 1, b: 2, c: 3 }, (result: any[], value, key) => {
+								result.push({ key, value })
+								return result
+							}, []))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">filter even & double</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(transform({ a: 1, b: 2, c: 3, d: 4 }, (result: any, value, key) => {
+								if (value % 2 === 0) result[key] = value * 2
+							}, {}))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">early exit at 'b'</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(transform({ a: 1, b: 2, c: 3 }, (result: any, value, key) => {
+								result[key] = value
+								if (key === 'b') return false
+							}, {}))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">array to object</code>
+						<n-tag type="info" size="small">{{
+							JSON.stringify(transform(['a', 'b', 'c'], (result: any, value, index) => {
+								result[value] = index
+							}, {}))
 						}}</n-tag>
 					</n-space>
 				</n-space>

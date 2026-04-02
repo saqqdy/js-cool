@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2026-03-30
+## [6.0.0] - 2026-04-02
 
 ### ⚠️ BREAKING CHANGES
 
@@ -89,8 +89,8 @@ All notable changes to this project will be documented in this file.
 - **50+ New Functions**:
   - Array: `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip`
   - Number: `sum`, `average`, `clamp`, `round`, `inRange`
-  - String: `kebabCase`, `snakeCase`, `truncate`, `capitalize`, `lowerFirst`
-  - Object: `omit`, `pick`, `isEmpty`, `isNil`, `mapKeys`, `mapValues`, `invert`
+  - String: `kebabCase`, `snakeCase`, `truncate`, `capitalize`, `lowerFirst`, `words`, `template`
+  - Object: `omit`, `pick`, `isEmpty`, `isNil`, `mapKeys`, `mapValues`, `invert`, `mergeWith`, `transform`
   - Validate: `isEmail`, `isPhone`, `isURL`, `isIDCard`, `isCreditCard`
   - Color: `isLightColor`, `hexToRGB`, `rgbToHSL`, `lighten`, `darken`
   - Date: `isToday`, `formatDate`, `dateDiff`, `relativeTime`, `getDaysInMonth`

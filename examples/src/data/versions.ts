@@ -17,6 +17,8 @@ export const versions: Record<string, string> = {
 	getCHSLength: '1.0.0',
 	cutCHSString: '1.0.0',
 	mapTemplate: '2.2.0',
+	words: '6.0.0',
+	template: '6.0.0',
 
 	// Array
 	unique: '1.0.0',
@@ -67,6 +69,8 @@ export const versions: Record<string, string> = {
 	invert: '6.0.0',
 	mapKeys: '6.0.0',
 	mapValues: '6.0.0',
+	mergeWith: '6.0.0',
+	transform: '6.0.0',
 
 	// Typecheck
 	isArray: '1.0.0',

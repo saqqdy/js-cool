@@ -18,6 +18,8 @@ import {
 	getCHSLength,
 	cutCHSString,
 	mapTemplate,
+	words,
+	template,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -36,6 +38,33 @@ const chsInput = ref('hello世界')
 const chsLen = ref(6)
 const templateInput = ref('Hello, ${name}! You have ${count} messages.')
 const templateData = { name: 'John', count: 5 }
+
+// words function
+const wordsInput = ref('camelCaseHTML')
+const wordsPattern = ref('')
+
+// template function
+const templateInput2 = ref('Hello, {{ name }}!')
+const templateData2 = ref('{ "name": "World" }')
+
+// Template advanced examples
+const templateAdvancedInput = ref('{{ user.name }} is {{ user.age }} years old.')
+const templateAdvancedData = ref('{ "user": { "name": "John", "age": 30 } }')
+const templateEscapeInput = ref('{{ content }}')
+const templateEscapeData = ref('{ "content": "<script>alert(\\"xss\\")</script>" }')
+const templateRawInput = ref('{{{ html }}}')
+const templateRawData = ref('{ "html": "<strong>bold</strong>" }')
+const templateCustomInput = ref('Hello, ${ name }!')
+const templateCustomData = ref('{ "name": "World" }')
+
+// Helper to safely parse JSON
+const safeParse = (str: string) => {
+	try {
+		return JSON.parse(str || '{}')
+	} catch {
+		return {}
+	}
+}
 </script>
 
 <template>
@@ -150,10 +179,10 @@ capitalize('hello world') // 'Hello world'`"
 			:description="t.string.truncateDesc"
 			since="1.0.0"
 			:code="`truncate('hi-diddly-ho there, neighborino')
-// 'hi-diddly-ho there, neighbo...'
+	// 'hi-diddly-ho there, neighbo...'
 
 truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
-// 'hi-diddly-ho there,...'`"
+	// 'hi-diddly-ho there,...'`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -282,6 +311,96 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 					<n-space align="center">
 						<span style="color: #999; font-size: 12px">data:</span>
 						<n-tag type="info" size="small">{{ JSON.stringify(templateData) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="words"
+			:description="t.string.wordsDesc || 'Split string into an array of words'"
+			since="6.0.0"
+			:tags="[t.convert]"
+			:code="`words('fred, barney, & pebbles') // ['fred', 'barney', 'pebbles']
+words('camelCaseHTML') // ['camel', 'Case', 'HTML']
+words('camelCaseHTML', /[A-Z]{2,}/g) // ['HTML']
+words('hello world', /\\w+/g) // ['hello', 'world']`"
+		>
+			<template #input>
+				<n-space vertical>
+					<n-input v-model:value="wordsInput" style="width: 100%" placeholder="Enter string to split" />
+					<n-input v-model:value="wordsPattern" style="width: 200px" placeholder="Custom pattern (optional)" />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">words('fred, barney, & pebbles')</code>
+						<n-tag type="info" size="small">{{ words('fred, barney, & pebbles') }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">words(input)</code>
+						<n-tag type="info" size="small">{{ words(wordsInput) }}</n-tag>
+					</n-space>
+					<n-space align="center" v-if="wordsPattern">
+						<code class="code-inline">words(input, pattern)</code>
+						<n-tag type="info" size="small">{{ words(wordsInput, wordsPattern) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<FunctionCard
+			title="template"
+			:description="t.string.templateDesc || 'Simple template engine with variable interpolation and HTML escaping'"
+			since="6.0.0"
+			:tags="[t.convert]"
+			:code="`const compiled = template('Hello, {{ name }}!')
+compiled({ name: 'World' }) // 'Hello, World!'
+
+// HTML escaping (default)
+template('{{ content }}')({ content: '<b>bold</b>' })
+// '&lt;b&gt;bold&lt;/b&gt;'
+
+// Raw output (triple braces)
+template('{{{ html }}}')({ html: '<b>bold</b>' })
+// '<b>bold</b>'
+
+// Custom delimiters
+template('Hello, ${ name }!', { open: '\${', close: '}' })
+// 'Hello, World!'
+
+// Nested properties
+template('{{ user.name }} is {{ user.age }} years old.')
+// 'John is 30 years old.'`"
+		>
+			<template #input>
+				<n-space vertical style="width: 100%">
+					<n-input v-model:value="templateInput2" style="width: 100%" placeholder="Template string with {{ var }}" />
+					<n-input v-model:value="templateData2" style="width: 100%" placeholder='JSON data: { "key": "value" }' />
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">template(input)(data)</code>
+						<n-tag type="info" size="small">{{ template(templateInput2)(safeParse(templateData2)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">Nested: {{ user.name }}</code>
+						<n-tag type="info" size="small">{{ template(templateAdvancedInput)(safeParse(templateAdvancedData)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">HTML escaped {{ }}</code>
+						<n-tag type="info" size="small">{{ template(templateEscapeInput)(safeParse(templateEscapeData)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">Raw output {{{ }}}</code>
+						<n-tag type="info" size="small">{{ template(templateRawInput)(safeParse(templateRawData)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">Custom delimiters ${ }</code>
+						<n-tag type="info" size="small">{{ template(templateCustomInput, { open: '${', close: '}' })(safeParse(templateCustomData)) }}</n-tag>
 					</n-space>
 				</n-space>
 			</template>
