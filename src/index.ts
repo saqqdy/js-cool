@@ -198,10 +198,12 @@ export { default as invert } from './invert'
 export { default as isEqual } from './isEqual'
 export { default as mapKeys } from './mapKeys'
 export { default as mapValues } from './mapValues'
+export { default as mergeWith, type MergeStrategy } from './mergeWith'
 export { default as omit } from './omit'
 export { default as pick } from './pick'
 export { default as searchObject, type SearchKeySet } from './searchObject'
 export { default as setProperty } from './setProperty'
+export { default as transform } from './transform'
 
 // ==================== Patterns 正则模式 ====================
 export {
@@ -271,8 +273,10 @@ export { default as kebabCase } from './kebabCase'
 export { default as lowerFirst } from './lowerFirst'
 export { default as mapTemplate } from './mapTemplate'
 export { default as snakeCase } from './snakeCase'
+export { default as template, type TemplateOptions, type TemplateSettings } from './template'
 export { default as truncate, type TruncateOptions } from './truncate'
 export { default as upperFirst } from './upperFirst'
+export { default as words } from './words'
 
 // ==================== Type Check 类型判断 ====================
 export { default as isArray } from './isArray'
