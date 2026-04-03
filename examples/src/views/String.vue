@@ -51,7 +51,7 @@ const templateData2 = ref('{ "name": "World" }')
 const templateAdvancedInput = ref('{{ user.name }} is {{ user.age }} years old.')
 const templateAdvancedData = ref('{ "user": { "name": "John", "age": 30 } }')
 const templateEscapeInput = ref('{{ content }}')
-const templateEscapeData = ref('{ "content": "<script>alert(\\"xss\\")</script>" }')
+const templateEscapeData = ref('{ "content": "<b>bold</b>" }')
 const templateRawInput = ref('{{{ html }}}')
 const templateRawData = ref('{ "html": "<strong>bold</strong>" }')
 const templateCustomInput = ref('Hello, ${ name }!')
@@ -367,7 +367,7 @@ template('{{{ html }}}')({ html: '<b>bold</b>' })
 // '<b>bold</b>'
 
 // Custom delimiters
-template('Hello, ${ name }!', { open: '\${', close: '}' })
+template('Hello, $\{ name \}!', { open: '\${', close: '}' })
 // 'Hello, World!'
 
 // Nested properties
@@ -376,7 +376,7 @@ template('{{ user.name }} is {{ user.age }} years old.')
 		>
 			<template #input>
 				<n-space vertical style="width: 100%">
-					<n-input v-model:value="templateInput2" style="width: 100%" placeholder="Template string with {{ var }}" />
+					<n-input v-model:value="templateInput2" style="width: 100%" placeholder="Template string with \{\{ var \}\}" />
 					<n-input v-model:value="templateData2" style="width: 100%" placeholder='JSON data: { "key": "value" }' />
 				</n-space>
 			</template>
@@ -387,19 +387,19 @@ template('{{ user.name }} is {{ user.age }} years old.')
 						<n-tag type="info" size="small">{{ template(templateInput2)(safeParse(templateData2)) }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">Nested: {{ user.name }}</code>
+						<code class="code-inline">Nested: \{\{ user.name \}\}</code>
 						<n-tag type="info" size="small">{{ template(templateAdvancedInput)(safeParse(templateAdvancedData)) }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">HTML escaped {{ }}</code>
+						<code class="code-inline">HTML escaped \{\{ \}\}</code>
 						<n-tag type="info" size="small">{{ template(templateEscapeInput)(safeParse(templateEscapeData)) }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">Raw output {{{ }}}</code>
+						<code class="code-inline">Raw output \{\{\{ \}\}\}</code>
 						<n-tag type="info" size="small">{{ template(templateRawInput)(safeParse(templateRawData)) }}</n-tag>
 					</n-space>
 					<n-space align="center">
-						<code class="code-inline">Custom delimiters ${ }</code>
+						<code class="code-inline">Custom delimiters \$\{ \}</code>
 						<n-tag type="info" size="small">{{ template(templateCustomInput, { open: '${', close: '}' })(safeParse(templateCustomData)) }}</n-tag>
 					</n-space>
 				</n-space>

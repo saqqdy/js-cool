@@ -68,6 +68,8 @@ export default {
 		escapeDesc: '转义/反转义 HTML 特殊字符',
 		chsDesc: '处理中文字符（中文=2字节）',
 		mapTemplateDesc: '模板字符串插值',
+		wordsDesc: '将字符串拆分为单词数组',
+		templateDesc: '简单模板引擎，支持变量插值和 HTML 转义',
 		bytes: '字节',
 	},
 

@@ -371,7 +371,7 @@ mergeWith({ a: 1, b: 2 }, { a: 10, b: 20 }, (obj, src, key) => {
 					<n-space align="center">
 						<code class="code-inline">mergeWith({ a: 1, b: 2 }, { a: 10, b: 20 }, keep 'b')</code>
 						<n-tag type="info" size="small">{{
-							JSON.stringify(mergeWith({ a: 1, b: 2 }, { a: 10, b: 20, c: 30 }, (objValue, srcValue, key) => {
+							JSON.stringify(mergeWith({ a: 1, b: 2 }, { a: 10, b: 20, c: 30 }, (objValue, _srcValue, key) => {
 								if (key === 'b') return objValue
 							}))
 						}}</n-tag>

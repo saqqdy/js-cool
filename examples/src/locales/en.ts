@@ -71,6 +71,8 @@ export default {
 		escapeDesc: 'Escape/unescape HTML special characters',
 		chsDesc: 'Handle Chinese characters (Chinese = 2 bytes)',
 		mapTemplateDesc: 'Template string interpolation',
+		wordsDesc: 'Split string into an array of words',
+		templateDesc: 'Simple template engine with variable interpolation and HTML escaping',
 		bytes: 'bytes',
 	},
 

@@ -87,7 +87,7 @@
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.18.2",
 		"@eslint-sets/eslint-config": "^6.3.1",
-		"@microsoft/api-extractor": "^7.57.7",
+		"@microsoft/api-extractor": "^7.58.0",
 		"@swc/core": "^1.15.21",
 		"@types/activex-excel": "^14.0.11",
 		"@types/node": "^22.19.15",
@@ -102,7 +102,7 @@
 		"prettier-config-common": "^1.5.0",
 		"reinstaller": "^3.0.2",
 		"rm-all": "^1.1.1",
-		"rolldown": "1.0.0-rc.12",
+		"rolldown": "1.0.0-rc.13",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
 		"vitepress": "^1.6.4",
