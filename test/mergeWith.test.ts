@@ -72,4 +72,35 @@ describe('mergeWith', () => {
 		const result = mergeWith({ a: 1 }, () => 1)
 		expect(result).toEqual({ a: 1 })
 	})
+
+	it('should skip non-object arguments', () => {
+		const result = mergeWith({ a: 1 }, null as any, { b: 2 }, () => undefined)
+		expect(result).toEqual({ a: 1, b: 2 })
+	})
+
+	it('should handle undefined source value', () => {
+		const result = mergeWith(
+			{ a: 1 },
+			{ a: undefined },
+			() => undefined,
+		)
+		// When strategy returns undefined and srcValue is undefined, it keeps original
+		expect(result).toEqual({ a: 1 })
+	})
+
+	it('should handle source without hasOwn keys', () => {
+		const emptyObj = Object.create({ inherited: 'value' })
+		const result = mergeWith({ a: 1 }, emptyObj, () => undefined)
+		expect(result).toEqual({ a: 1 })
+	})
+
+	it('should skip invalid source objects', () => {
+		const result = mergeWith({ a: 1 }, 'string' as any, { b: 2 }, (obj, src) => src)
+		expect(result).toEqual({ a: 1, b: 2 })
+	})
+
+	it('should handle null source in array', () => {
+		const result = mergeWith({ a: 1 }, null as any, { b: 2 }, (obj, src) => src)
+		expect(result).toEqual({ a: 1, b: 2 })
+	})
 })

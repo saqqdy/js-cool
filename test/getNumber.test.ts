@@ -46,4 +46,8 @@ describe('getNumber', () => {
 	it('should return 0 for number type with no numbers', () => {
 		expect(getNumber('hello', { type: 'number' })).toBe(0)
 	})
+
+	it('should limit decimals with multiple option', () => {
+		expect(getNumber('1.234 5.678', { multiple: true, decimals: 1 })).toEqual(['1.2', '5.7'])
+	})
 })

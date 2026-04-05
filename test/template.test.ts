@@ -65,4 +65,32 @@ describe('template', () => {
 		const compiled = template('{{ value }}')
 		expect(compiled({ value: '"quotes" & <angles>' })).toBe('&quot;quotes&quot; &amp; &lt;angles&gt;')
 	})
+
+	it('should use function as data resolver', () => {
+		const compiled = template('Hello, {{ name }}!')
+		expect(compiled((path) => ({ name: 'World' }[path]))).toBe('Hello, World!')
+	})
+
+	it('should use function resolver with options', () => {
+		const result = template('Hello, {{ name }}!', {
+			data: (path) => ({ name: 'World' }[path]),
+		})
+		expect(result()).toBe('Hello, World!')
+	})
+
+	it('should not escape when escape option is false', () => {
+		const compiled = template('{{ content }}', { escape: false })
+		expect(compiled({ content: '<script>alert("xss")</script>' })).toBe('<script>alert("xss")</script>')
+	})
+
+	it('should handle nested property with null in path', () => {
+		const compiled = template('{{ user.profile.name }}')
+		expect(compiled({ user: null })).toBe('')
+		expect(compiled({ user: { profile: null } })).toBe('')
+	})
+
+	it('should handle non-object value in path', () => {
+		const compiled = template('{{ user.name }}')
+		expect(compiled({ user: 'string' })).toBe('')
+	})
 })

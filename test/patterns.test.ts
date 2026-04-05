@@ -4,6 +4,7 @@ import {
 	DEVICE_PATTERNS,
 	ENGINE_PATTERNS,
 	ENV_PATTERNS,
+	extract,
 	extractVersion,
 	matchPattern,
 	OS_PATTERNS,
@@ -16,6 +17,12 @@ describe('patterns', () => {
 		it('should have validation patterns', () => {
 			expect(patterns.validation).toBeDefined()
 			expect(patterns.validation.email).toBeInstanceOf(RegExp)
+		})
+
+		it('should have extract patterns', () => {
+			expect(patterns.extract).toBeDefined()
+			expect(patterns.extract.number).toBeInstanceOf(RegExp)
+			expect(patterns.extract.version).toBeInstanceOf(RegExp)
 		})
 
 		it('should have ua patterns', () => {
@@ -32,6 +39,37 @@ describe('patterns', () => {
 			expect(typeof patterns.ua.matchPattern).toBe('function')
 			expect(typeof patterns.ua.extractVersion).toBe('function')
 		})
+	})
+})
+
+describe('extract patterns', () => {
+	it('should extract numbers', () => {
+		expect('Price: $99.99'.match(extract.number)).toEqual(['99.99'])
+		expect('Temperature: -5.5°C'.match(extract.number)).toEqual(['-5.5'])
+		expect('a1b2c3'.match(extract.number)).toEqual(['1', '2', '3'])
+		expect('Range: 10-20'.match(extract.number)).toEqual(['10', '-20'])
+	})
+
+	it('should extract versions', () => {
+		expect('Chrome/120.0.6099.109'.match(extract.version)).toEqual(['120.0.6099.109'])
+		expect('v1.2.3-beta'.match(extract.version)).toEqual(['1.2.3'])
+		expect('Node.js v18.17.0'.match(extract.version)).toEqual(['18.17.0'])
+	})
+
+	it('should extract integers', () => {
+		expect('abc123def456'.match(extract.integer)).toEqual(['123', '456'])
+		expect('Temperature: -5 degrees'.match(extract.integer)).toEqual(['-5'])
+	})
+
+	it('should extract decimals', () => {
+		expect('Price $9.99, Tax 1.50'.match(extract.decimal)).toEqual(['9.99', '1.50'])
+		expect('Value: 3.14159'.match(extract.decimal)).toEqual(['3.14159'])
+		expect('Integer 5 only'.match(extract.decimal)).toBeNull()
+	})
+
+	it('should extract positive integers', () => {
+		expect('abc-123def456'.match(extract.positiveInteger)).toEqual(['123', '456'])
+		expect('Count: 42 items'.match(extract.positiveInteger)).toEqual(['42'])
 	})
 })
 

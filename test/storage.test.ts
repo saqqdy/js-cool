@@ -2,7 +2,7 @@ import type { CookieOptions, StorageOptions } from '../src/storage'
 /**
  * @vitest-environment happy-dom
  */
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
 	cookie,
 	local,
@@ -338,6 +338,42 @@ describe('storage.local', () => {
 			expect(storage.local.get('nested')).toEqual(nested)
 		})
 	})
+
+	describe('storage unavailable', () => {
+		it('should throw StorageUnavailableError when storage is not available on set', () => {
+			const originalSetItem = localStorage.setItem
+			Object.defineProperty(localStorage, 'setItem', {
+				value: vi.fn(() => {
+					throw new Error('QuotaExceededError')
+				}),
+				writable: true,
+				configurable: true,
+			})
+
+			// Override isStorageAvailable to return false
+			const originalGetItem = localStorage.getItem
+			Object.defineProperty(localStorage, 'getItem', {
+				value: vi.fn(() => {
+					throw new Error('not available')
+				}),
+				writable: true,
+				configurable: true,
+			})
+
+			expect(() => storage.local.set('key', 'value')).toThrow()
+
+			Object.defineProperty(localStorage, 'getItem', {
+				value: originalGetItem,
+				writable: true,
+				configurable: true,
+			})
+			Object.defineProperty(localStorage, 'setItem', {
+				value: originalSetItem,
+				writable: true,
+				configurable: true,
+			})
+		})
+	})
 })
 
 describe('storage.session', () => {
@@ -430,6 +466,35 @@ describe('storage.session', () => {
 		it('should handle invalid JSON in storage', () => {
 			sessionStorage.setItem('invalid', 'not json')
 			expect(storage.session.get('invalid')).toBe('not json')
+		})
+	})
+
+	describe('edge cases', () => {
+		it('should handle empty string value', () => {
+			storage.session.set('key', '')
+			expect(storage.session.get('key')).toBe('')
+		})
+
+		it('should handle special characters in key', () => {
+			storage.session.set('key-with-special.chars_123', 'value')
+			expect(storage.session.get('key-with-special.chars_123')).toBe('value')
+		})
+
+		it('should handle unicode in value', () => {
+			storage.session.set('key', '你好世界 🌍')
+			expect(storage.session.get('key')).toBe('你好世界 🌍')
+		})
+
+		it('should handle nested objects', () => {
+			const nested = {
+				level1: {
+					level2: {
+						level3: 'deep',
+					},
+				},
+			}
+			storage.session.set('nested', nested)
+			expect(storage.session.get('nested')).toEqual(nested)
 		})
 	})
 })

@@ -59,4 +59,9 @@ describe('toThousands', () => {
 		expect(toThousands(0, { prefix: '$' })).toBe('$0')
 		expect(toThousands(0, { suffix: '%' })).toBe('0%')
 	})
+
+	it('should add decimals when input has no decimal part', () => {
+		expect(toThousands(1000, { decimals: 2 })).toBe('1,000.00')
+		expect(toThousands(1000, { decimals: 0 })).toBe('1,000')
+	})
 })

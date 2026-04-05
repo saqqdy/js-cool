@@ -49,4 +49,8 @@ describe('changeCase', () => {
 	it('should lower first', () => {
 		expect(changeCase('Hello', 'lowerFirst')).toBe('hello')
 	})
+
+	it('should return original string for unknown case type', () => {
+		expect(changeCase('Hello', 'unknown' as any)).toBe('Hello')
+	})
 })

@@ -88,4 +88,30 @@ describe('transform', () => {
 		const result = transform([], () => {})
 		expect(result).toEqual([])
 	})
+
+	it('should use provided accumulator for null input', () => {
+		const result = transform(null as any, () => {}, { default: 'value' })
+		expect(result).toEqual({ default: 'value' })
+	})
+
+	it('should use provided accumulator for undefined input', () => {
+		const result = transform(undefined as any, () => {}, ['default'])
+		expect(result).toEqual(['default'])
+	})
+
+	it('should update accumulator when iteratee returns new value', () => {
+		const result = transform({ a: 1, b: 2 }, (result, value, key) => {
+			result[key] = value
+			return result
+		})
+		expect(result).toEqual({ a: 1, b: 2 })
+	})
+
+	it('should support early exit in array iteration', () => {
+		const result = transform([1, 2, 3, 4, 5], (result, value, index) => {
+			result.push(value)
+			if (index === 2) return false
+		}, [] as number[])
+		expect(result).toEqual([1, 2, 3])
+	})
 })
