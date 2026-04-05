@@ -4,7 +4,7 @@ import inBrowser from '../inBrowser'
 export type ParamScope = 'search' | 'hash' | 'all'
 
 export interface ParseOptions {
-	/** 是否转换特殊值（true/false/null/数字） */
+	/** Whether to convert special values (true/false/null/numbers) */
 	convert?: boolean
 }
 
@@ -14,7 +14,7 @@ export interface StringifyOptions {
 	withQuestionMark?: boolean
 }
 
-/** 值转换映射 */
+/** Value conversion map */
 const VALUE_MAP: Record<string, unknown> = {
 	'-Infinity': -Infinity,
 	false: false,
@@ -25,7 +25,7 @@ const VALUE_MAP: Record<string, unknown> = {
 	undefined,
 }
 
-/** 转换字符串值为适当类型 */
+/** Convert string value to appropriate type */
 function convertValue(value: string): unknown {
 	if (value in VALUE_MAP) return VALUE_MAP[value]
 	if (/^-?\d+(\.\d+)?$/.test(value)) return Number(value)
@@ -33,38 +33,38 @@ function convertValue(value: string): unknown {
 }
 
 /**
- * URL 处理器 - 链式构建 + 参数管理
+ * URL handler - chainable building + parameter management
  *
  * @description
- * 增强版 URLSearchParams，解决原生 URL 无法解析 hash 内参数的问题。
- * 支持 search 和 hash 两个范围的参数操作，hash 参数优先级更高。
+ * Enhanced URLSearchParams that solves the issue of native URL not being able to parse hash parameters.
+ * Supports parameter operations in both search and hash scopes, with hash parameters having higher priority.
  *
  * @example
  * ```ts
- * // 基础用法
+ * // Basic usage
  * const u = new Url('https://a.cn/?id=1#/path?token=abc')
  * u.get('id')              // '1' (search)
- * u.get('token')           // 'abc' (hash 优先)
+ * u.get('token')           // 'abc' (hash priority)
  * u.get('id', 'search')    // '1'
  * u.get('id', 'hash')      // null
  *
- * // 链式修改
+ * // Chainable modification
  * u.set('page', 2)
  *   .path('users', '123')
  *   .toString()
  *
- * // URL 属性访问
+ * // URL property access
  * u.origin    // 'https://a.cn'
  * u.pathname  // '/'
  * u.host      // 'a.cn'
  *
- * // Hash 路径操作
+ * // Hash path operations
  * u.getHashPath()           // '/path'
  * u.setHashPath('/detail')
  *
- * // 详细信息
+ * // Detailed info
  * u.toObject()              // { id: '1', token: 'abc' }
- * u.toDetailObject()        // 区分参数来源
+ * u.toDetailObject()        // Distinguish parameter sources
  * ```
  *
  * @since 6.0.0
@@ -92,44 +92,44 @@ export class Url {
 		this._hashPath = path
 	}
 
-	// ============ URL 属性 ============
+	// ============ URL Properties ============
 
-	/** 获取 origin */
+	/** Get origin */
 	get origin(): string {
 		return this._url?.origin ?? ''
 	}
 
-	/** 获取 host（含端口） */
+	/** Get host (with port) */
 	get host(): string {
 		return this._url?.host ?? ''
 	}
 
-	/** 获取 hostname（不含端口） */
+	/** Get hostname (without port) */
 	get hostname(): string {
 		return this._url?.hostname ?? ''
 	}
 
-	/** 获取 pathname */
+	/** Get pathname */
 	get pathname(): string {
 		return this._url?.pathname ?? '/'
 	}
 
-	/** 获取 search（含 ?） */
+	/** Get search (with ?) */
 	get search(): string {
 		return this._search.toString() ? `?${this._search}` : ''
 	}
 
-	/** 获取 hash（含 #） */
+	/** Get hash (with #) */
 	get hash(): string {
 		return this._buildHash()
 	}
 
-	// ============ 参数读取 ============
+	// ============ Parameter Reading ============
 
 	/**
-	 * 获取参数值
-	 * @param name - 参数名
-	 * @param scope - 范围，默认 'all'（hash 优先）
+	 * Get parameter value
+	 * @param name - Parameter name
+	 * @param scope - Scope, default 'all' (hash priority)
 	 */
 	get(name: string, scope?: ParamScope): string | null {
 		if (scope === 'search') return this._search.get(name)
@@ -138,7 +138,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取所有同名参数值
+	 * Get all values for a parameter name
 	 */
 	getAll(name: string, scope?: ParamScope): string[] {
 		if (scope === 'search') return this._search.getAll(name)
@@ -147,7 +147,7 @@ export class Url {
 	}
 
 	/**
-	 * 检查参数是否存在
+	 * Check if parameter exists
 	 */
 	has(name: string, scope?: ParamScope): boolean {
 		if (scope === 'search') return this._search.has(name)
@@ -156,7 +156,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取所有参数名
+	 * Get all parameter names
 	 */
 	keys(scope?: ParamScope): string[] {
 		if (scope === 'search') return [...this._search.keys()]
@@ -165,7 +165,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取所有参数值
+	 * Get all parameter values
 	 */
 	values(scope?: ParamScope): string[] {
 		return this.keys(scope)
@@ -174,19 +174,19 @@ export class Url {
 	}
 
 	/**
-	 * 获取所有键值对
+	 * Get all key-value pairs
 	 */
 	entries(scope?: ParamScope): [string, string][] {
 		return this.keys(scope).map(k => [k, this.get(k)!] as [string, string])
 	}
 
-	// ============ 参数写入（链式） ============
+	// ============ Parameter Writing (Chainable) ============
 
 	/**
-	 * 设置参数（覆盖）
-	 * @param name - 参数名
-	 * @param value - 参数值
-	 * @param scope - 默认 'search'
+	 * Set parameter (overwrite)
+	 * @param name - Parameter name
+	 * @param value - Parameter value
+	 * @param scope - Default 'search'
 	 */
 	set(name: string, value: string | number | boolean, scope?: 'search' | 'hash'): this {
 		const params = scope === 'hash' ? this._hash : this._search
@@ -195,7 +195,7 @@ export class Url {
 	}
 
 	/**
-	 * 追加参数
+	 * Append parameter
 	 */
 	append(name: string, value: string | number | boolean, scope?: 'search' | 'hash'): this {
 		const params = scope === 'hash' ? this._hash : this._search
@@ -204,7 +204,7 @@ export class Url {
 	}
 
 	/**
-	 * 删除参数
+	 * Delete parameter
 	 */
 	delete(name: string, scope?: ParamScope): this {
 		if (scope === 'all' || !scope) {
@@ -218,7 +218,7 @@ export class Url {
 	}
 
 	/**
-	 * 清空所有参数
+	 * Clear all parameters
 	 */
 	clear(scope?: ParamScope): this {
 		if (scope === 'hash') {
@@ -232,10 +232,10 @@ export class Url {
 		return this
 	}
 
-	// ============ 路径操作 ============
+	// ============ Path Operations ============
 
 	/**
-	 * 设置 pathname
+	 * Set pathname
 	 * @example
 	 * ```ts
 	 * new Url('https://api.example.com')
@@ -252,31 +252,31 @@ export class Url {
 	}
 
 	/**
-	 * 获取 hash 路径（# 后到 ? 之前的部分）
+	 * Get hash path (part after # and before ?)
 	 */
 	getHashPath(): string {
 		return this._hashPath
 	}
 
 	/**
-	 * 设置 hash 路径
+	 * Set hash path
 	 */
 	setHashPath(path: string): this {
 		this._hashPath = path
 		return this
 	}
 
-	// ============ 输出 ============
+	// ============ Output ============
 
 	/**
-	 * 转为对象
+	 * Convert to object
 	 */
 	toObject(scope?: ParamScope): Record<string, string> {
 		return Object.fromEntries(this.entries(scope))
 	}
 
 	/**
-	 * 转为详细对象（区分来源）
+	 * Convert to detailed object (distinguish sources)
 	 */
 	toDetailObject(): {
 		search: Record<string, string>
@@ -297,14 +297,14 @@ export class Url {
 	}
 
 	/**
-	 * 转为字符串
+	 * Convert to string
 	 */
 	toString(): string {
 		return this.toURL()
 	}
 
 	/**
-	 * 构建完整 URL
+	 * Build complete URL
 	 */
 	toURL(): string {
 		const base = this._url ? this._url.origin + this._url.pathname : '/'
@@ -321,7 +321,7 @@ export class Url {
 		return `${base}${search ? `?${search}` : ''}${hash}`
 	}
 
-	// ============ 迭代器 ============
+	// ============ Iterator ============
 
 	[Symbol.iterator](): Iterator<[string, string]> {
 		const entries = this.entries()
@@ -336,10 +336,10 @@ export class Url {
 		}
 	}
 
-	// ============ 静态方法（工具函数） ============
+	// ============ Static Methods (Utility Functions) ============
 
 	/**
-	 * 解析查询字符串为对象
+	 * Parse query string to object
 	 *
 	 * @example
 	 * ```ts
@@ -361,7 +361,7 @@ export class Url {
 	}
 
 	/**
-	 * 序列化对象为查询字符串
+	 * Stringify object to query string
 	 *
 	 * @example
 	 * ```ts
@@ -384,7 +384,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 origin
+	 * Get URL origin
 	 */
 	static getOrigin(url: string): string {
 		try {
@@ -395,7 +395,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 host（含端口）
+	 * Get URL host (with port)
 	 */
 	static getHost(url: string): string {
 		try {
@@ -406,7 +406,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 hostname（不含端口）
+	 * Get URL hostname (without port)
 	 */
 	static getHostname(url: string): string {
 		try {
@@ -417,7 +417,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 pathname
+	 * Get URL pathname
 	 */
 	static getPathname(url: string): string {
 		try {
@@ -428,7 +428,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 search（含 ?）
+	 * Get URL search (with ?)
 	 */
 	static getSearch(url: string): string {
 		try {
@@ -439,7 +439,7 @@ export class Url {
 	}
 
 	/**
-	 * 获取 URL 的 hash（含 #）
+	 * Get URL hash (with #)
 	 */
 	static getHash(url: string): string {
 		try {
@@ -450,21 +450,21 @@ export class Url {
 	}
 
 	/**
-	 * 从当前页面 URL 创建
+	 * Create from current page URL
 	 */
 	static current(): Url | null {
 		return inBrowser ? new Url(location.href) : null
 	}
 
 	/**
-	 * 从查询字符串创建
+	 * Create from query string
 	 */
 	static fromQueryString(queryString: string): Url {
 		const search = queryString.startsWith('?') ? queryString : `?${queryString}`
 		return new Url(`http://localhost${search}`)
 	}
 
-	// ============ 私有方法 ============
+	// ============ Private Methods ============
 
 	private _parse(url: string): URL | null {
 		try {

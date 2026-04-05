@@ -1,3 +1,5 @@
+import { arrayFrom } from './_compat'
+
 /**
  * Reverses a string (Unicode aware).
  *
@@ -31,9 +33,9 @@ function reverse(str: string): string {
 		return ''
 	}
 
-	// Use Array.from to properly handle Unicode characters
+	// Use arrayFrom (IE11 compatible) to properly handle Unicode characters
 	// This correctly splits surrogate pairs and combining characters
-	return Array.from(str).reverse().join('')
+	return arrayFrom(str).reverse().join('')
 }
 
 export default reverse

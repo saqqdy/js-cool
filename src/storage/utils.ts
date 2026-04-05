@@ -6,8 +6,8 @@
 import type { StorageData } from './types'
 
 /**
- * 检查 Web Storage 是否可用
- * @param storage - localStorage 或 sessionStorage
+ * Check if Web Storage is available
+ * @param storage - localStorage or sessionStorage
  */
 export function isStorageAvailable(storage: Storage): boolean {
 	try {
@@ -21,9 +21,9 @@ export function isStorageAvailable(storage: Storage): boolean {
 }
 
 /**
- * 解析存储数据（处理过期逻辑）
- * @param data - 原始存储字符串
- * @param removeExpired - 过期时删除的回调
+ * Parse stored data (handles expiration logic)
+ * @param data - Raw stored string
+ * @param removeExpired - Callback to remove expired data
  */
 export function parseStorageData<T>(data: string | null, removeExpired: () => void): T | null {
 	if (!data) return null
@@ -31,27 +31,27 @@ export function parseStorageData<T>(data: string | null, removeExpired: () => vo
 	try {
 		const obj: StorageData<T> = JSON.parse(data)
 
-		// 检查是否为 StorageData 结构
+		// Check if it's a StorageData structure
 		if (typeof obj === 'object' && obj !== null && ('value' in obj || 'expires' in obj)) {
-			// 检查过期
+			// Check expiration
 			if (!obj.expires || obj.expires > Date.now()) {
 				return obj.value
 			}
-			// 已过期，删除并返回 null
+			// Expired, remove and return null
 			removeExpired()
 			return null
 		}
 
-		// 兼容旧格式（直接存储的 JSON）
+		// Compatible with old format (directly stored JSON)
 		return obj as T
 	} catch {
-		// 非 JSON，返回原始字符串
+		// Not JSON, return raw string
 		return data as unknown as T
 	}
 }
 
 /**
- * 创建存储数据结构
+ * Create storage data structure
  */
 export function createStorageData<T>(value: T, expires?: number): StorageData<T> {
 	return {

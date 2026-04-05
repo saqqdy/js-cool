@@ -26,23 +26,23 @@
 function words(string: string, pattern?: RegExp | string): string[] {
 	if (!string || typeof string !== 'string') return []
 
-	// 如果提供了自定义模式
+	// If custom pattern is provided
 	if (pattern !== undefined) {
 		const regex = typeof pattern === 'string' ? new RegExp(pattern, 'g') : pattern
 		const matches = string.match(regex)
 		return matches ?? []
 	}
 
-	// 默认分词：匹配单词边界
-	// 支持 camelCase、PascalCase、snake_case、kebab-case、空格分隔等
+	// Default word splitting: match word boundaries
+	// Supports camelCase, PascalCase, snake_case, kebab-case, space-separated, etc.
 	const result: string[] = []
 
-	// 使用正则匹配所有单词
-	// 匹配模式：
-	// 1. 连续大写字母后跟小写字母（如 HTMLParser -> HTML, Parser）
-	// 2. 大写字母后跟小写字母序列（如 CamelCase -> Camel, Case）
-	// 3. 小写字母序列
-	// 4. 数字序列
+	// Use regex to match all words
+	// Match patterns:
+	// 1. Consecutive uppercase letters followed by lowercase (e.g., HTMLParser -> HTML, Parser)
+	// 2. Uppercase letter followed by lowercase sequence (e.g., CamelCase -> Camel, Case)
+	// 3. Lowercase letter sequences
+	// 4. Digit sequences
 	const wordPattern = /[A-Z]{2,}(?=[A-Z][a-z]|\b)|[A-Z]?[a-z]+|[A-Z]+|\d+/g
 
 	let match: RegExpExecArray | null = wordPattern.exec(string)

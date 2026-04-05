@@ -64,7 +64,7 @@ export function isWeChat(ua?: string): boolean {
 }
 
 /**
- * Check if WeChat Work (企业微信) environment
+ * Check if WeChat Work environment
  */
 export function isWxwork(ua?: string): boolean {
 	if (ua) return ENV_PATTERNS.wxwork.test(ua)
@@ -72,7 +72,7 @@ export function isWxwork(ua?: string): boolean {
 }
 
 /**
- * Check if DingTalk (钉钉) environment
+ * Check if DingTalk environment
  */
 export function isDingtalk(ua?: string): boolean {
 	if (ua) return ENV_PATTERNS.dingtalk.test(ua)

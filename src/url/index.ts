@@ -5,8 +5,8 @@
  * @since 6.0.0
  */
 
-// 类
-// 函数（静态方法别名，支持直接导入）
+// Class
+// Functions (static method aliases for direct import)
 import { Url } from './Url'
 
 export { Url, type ParamScope, type ParseOptions, type StringifyOptions } from './Url'

@@ -1,3 +1,5 @@
+import { extract } from './patterns'
+
 /**
  * Options for getNumber
  */
@@ -73,8 +75,8 @@ function getNumber(
 	}
 
 	if (multiple) {
-		// Extract all numbers (including decimals)
-		const matches = string.match(/-?\d+\.?\d*/g) || []
+		// Extract all numbers (including decimals) using extract pattern
+		const matches = string.match(extract.number) || []
 		const numbers = matches.map((match) => {
 			const num = parseFloat(match)
 			if (type === 'number') {

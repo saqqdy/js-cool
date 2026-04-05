@@ -72,29 +72,29 @@ export interface BrowserInfo {
  * Special environment detection (mainly Chinese apps)
  */
 export interface EnvironmentInfo {
-	/** WeChat (微信) */
+	/** WeChat */
 	wechat: boolean
-	/** WeChat Work (企业微信) */
+	/** WeChat Work */
 	wxwork: boolean
-	/** DingTalk (钉钉) */
+	/** DingTalk */
 	dingtalk: boolean
 	/** QQ built-in browser */
 	qq: boolean
 	/** QQ Browser */
 	qqBrowser: boolean
-	/** Weibo (微博) */
+	/** Weibo */
 	weibo: boolean
-	/** Alipay (支付宝) */
+	/** Alipay */
 	alipay: boolean
-	/** Douyin/TikTok (抖音) */
+	/** Douyin/TikTok */
 	douyin: boolean
-	/** Kuaishou (快手) */
+	/** Kuaishou */
 	kuaishou: boolean
-	/** Baidu App (百度App) */
+	/** Baidu App */
 	baidu: boolean
-	/** Xiaomi Browser (小米浏览器) */
+	/** Xiaomi Browser */
 	xiaomi: boolean
-	/** Huawei Browser (华为浏览器) */
+	/** Huawei Browser */
 	huawei: boolean
 	/** Vivo Browser */
 	vivo: boolean
@@ -102,11 +102,11 @@ export interface EnvironmentInfo {
 	oppo: boolean
 	/** UC Browser */
 	uc: boolean
-	/** Quark Browser (夸克浏览器) */
+	/** Quark Browser */
 	quark: boolean
-	/** Mini Program (小程序) */
+	/** Mini Program */
 	miniProgram: boolean
-	/** Mini Game (小游戏) */
+	/** Mini Game */
 	miniGame: boolean
 }
 

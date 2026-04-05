@@ -1,3 +1,5 @@
+import { repeatString } from './_compat'
+
 /**
  * Options for toThousands
  */
@@ -91,7 +93,7 @@ function toThousands(num: string | number, options?: ToThousandsOptions): string
 		if (parts.length === 1) {
 			// No decimal part, add zeros if needed
 			if (decimals > 0) {
-				numStr = `${parts[0]}.${'0'.repeat(decimals)}`
+				numStr = `${parts[0]}.${repeatString('0', decimals)}`
 			}
 		} else {
 			// Has decimal part, round to specified decimals

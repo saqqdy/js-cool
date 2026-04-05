@@ -4,7 +4,7 @@
  */
 
 /**
- * 存储配额超出错误
+ * Storage quota exceeded error
  *
  * @example
  * ```ts
@@ -25,10 +25,10 @@ export class StorageQuotaError extends Error {
 }
 
 /**
- * 存储不可用错误
+ * Storage unavailable error
  *
- * 当 localStorage/sessionStorage 不可用时抛出
- * （如：隐私模式、SSR 环境、存储被禁用）
+ * Thrown when localStorage/sessionStorage is not available
+ * (e.g., private mode, SSR environment, storage disabled)
  */
 export class StorageUnavailableError extends Error {
 	constructor(message: string = 'Storage is not available') {

@@ -47,7 +47,7 @@ export type {
 } from './types'
 
 /**
- * 统一存储命名空间
+ * Unified storage namespace
  */
 export const storage: StorageNamespace = {
 	local,

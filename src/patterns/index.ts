@@ -20,8 +20,14 @@ import {
 // Import validation patterns
 import { validation } from './validation'
 
+// Import extract patterns
+import { extract } from './extract'
+
 // Re-export validation patterns
 export { validation, type ValidationPatternName } from './validation'
+
+// Re-export extract patterns
+export { extract, type ExtractPatternName } from './extract'
 
 // Re-export UA patterns from sub-module
 export {
@@ -41,7 +47,7 @@ export {
 } from './ua'
 
 /**
- * Unified patterns object combining validation and UA patterns
+ * Unified patterns object combining validation, extract and UA patterns
  *
  * @example
  * ```js
@@ -50,6 +56,10 @@ export {
  * // Validation patterns
  * patterns.validation.email.test('user@example.com') // true
  * patterns.validation.mobile.test('13800138000') // true
+ *
+ * // Extract patterns
+ * 'Price: $99.99'.match(patterns.extract.number) // ['99.99']
+ * 'Chrome/120.0.0'.match(patterns.extract.version) // ['120.0.0']
  *
  * // UA patterns
  * patterns.ua.device.mobile.test(navigator.userAgent) // true/false
@@ -66,6 +76,11 @@ export const patterns = {
 	 * Validation patterns for common formats
 	 */
 	validation,
+
+	/**
+	 * Extract patterns for extracting data from strings
+	 */
+	extract,
 
 	/**
 	 * UA (User Agent) detection patterns and utilities

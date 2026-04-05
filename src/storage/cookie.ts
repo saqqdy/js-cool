@@ -6,7 +6,7 @@
 import type { CookieAPI, CookieDeleteOptions, CookieOptions } from './types'
 
 /**
- * Cookie 存储 API
+ * Cookie storage API
  */
 export const cookie: CookieAPI = {
 	set(name: string, value: string | number | boolean, options?: CookieOptions): void {
@@ -19,7 +19,7 @@ export const cookie: CookieAPI = {
 			cookieStr += `;domain=${domain}`
 		}
 
-		// SameSite=None 必须配合 Secure
+		// SameSite=None requires Secure
 		if (secure || sameSite === 'None') {
 			cookieStr += ';Secure'
 		}

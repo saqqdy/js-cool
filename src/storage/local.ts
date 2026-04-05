@@ -7,7 +7,7 @@ import type { StorageAPI, StorageData, StorageOptions } from './types'
 import { StorageQuotaError, StorageUnavailableError } from './errors'
 import { createStorageData, isStorageAvailable, parseStorageData } from './utils'
 
-/** localStorage 存储 API */
+/** localStorage storage API */
 export const local: StorageAPI = {
 	set<T = unknown>(name: string, value: T, options?: StorageOptions): void {
 		if (!isStorageAvailable(localStorage)) {

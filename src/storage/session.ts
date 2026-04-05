@@ -7,7 +7,7 @@ import type { StorageAPI, StorageData, StorageOptions } from './types'
 import { StorageQuotaError, StorageUnavailableError } from './errors'
 import { createStorageData, isStorageAvailable, parseStorageData } from './utils'
 
-/** sessionStorage 存储 API */
+/** sessionStorage storage API */
 export const session: StorageAPI = {
 	set<T = unknown>(name: string, value: T, options?: StorageOptions): void {
 		if (!isStorageAvailable(sessionStorage)) {

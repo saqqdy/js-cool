@@ -211,6 +211,7 @@ export {
 	DEVICE_PATTERNS,
 	ENGINE_PATTERNS,
 	ENV_PATTERNS,
+	extract,
 	extractVersion,
 	getUserAgent as getUA,
 	matchPattern,
@@ -221,6 +222,7 @@ export {
 	type DevicePatternName,
 	type EnginePatternName,
 	type EnvPatternName,
+	type ExtractPatternName,
 	type OSPatternName,
 	type ValidationPatternName,
 } from './patterns'

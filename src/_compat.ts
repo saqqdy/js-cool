@@ -14,6 +14,41 @@
 // ==================== Array ====================
 
 /**
+ * IE11-compatible alternative to Array.from()
+ * Uses native method when available for better performance.
+ */
+function _arrayFrom<T>(iterable: Iterable<T> | ArrayLike<T>): T[]
+function _arrayFrom<T, U>(iterable: Iterable<T> | ArrayLike<T>, mapFn: (v: T, i: number) => U, thisArg?: unknown): U[]
+function _arrayFrom<T, U>(
+	iterable: Iterable<T> | ArrayLike<T>,
+	mapFn?: (v: T, i: number) => U,
+	thisArg?: unknown
+): T[] | U[] {
+	const items = iterable as ArrayLike<T>
+	const len = items.length
+	const result = new Array(len)
+
+	if (mapFn) {
+		for (let i = 0; i < len; i++) {
+			result[i] = mapFn.call(thisArg, items[i], i)
+		}
+	} else {
+		for (let i = 0; i < len; i++) {
+			result[i] = items[i]
+		}
+	}
+	return result
+}
+
+export const arrayFrom: {
+	<T>(iterable: Iterable<T> | ArrayLike<T>): T[]
+	<T, U>(iterable: Iterable<T> | ArrayLike<T>, mapFn: (v: T, i: number) => U, thisArg?: unknown): U[]
+} =
+	typeof Array.from === 'function'
+		? (Array.from as typeof _arrayFrom)
+		: _arrayFrom
+
+/**
  * IE11-compatible alternative to Array.prototype.includes()
  * Uses native method when available for better performance.
  */
@@ -27,6 +62,23 @@ export const arrayIncludes: <T>(arr: T[], item: T) => boolean =
 		: _arrayIncludes
 
 // ==================== String ====================
+
+/**
+ * IE11-compatible alternative to String.prototype.repeat()
+ * Uses native method when available for better performance.
+ */
+function _repeatString(str: string, n: number): string {
+	if (n < 0) throw new RangeError('Invalid count value')
+	if (n === 0) return ''
+	if (n === 1) return str
+	// Use array join method for better performance
+	return new Array(n + 1).join(str)
+}
+
+export const repeatString: (str: string, n: number) => string =
+	typeof String.prototype.repeat === 'function'
+		? (str, n) => str.repeat(n)
+		: _repeatString
 
 /**
  * IE11-compatible alternative to String.prototype.includes()
@@ -76,7 +128,9 @@ function _padStart(str: string, len: number, fill: string = ' '): string {
 	str = String(str)
 	if (str.length >= len) return str
 	const fillLen = len - str.length
-	const fillStr = new Array(Math.ceil(fillLen / fill.length) + 1).join(fill).slice(0, fillLen)
+	const fillStr = fill.length === 1
+		? repeatString(fill, fillLen)
+		: new Array(Math.ceil(fillLen / fill.length) + 1).join(fill).slice(0, fillLen)
 	return fillStr + str
 }
 
@@ -93,7 +147,9 @@ function _padEnd(str: string, len: number, fill: string = ' '): string {
 	str = String(str)
 	if (str.length >= len) return str
 	const fillLen = len - str.length
-	const fillStr = new Array(Math.ceil(fillLen / fill.length) + 1).join(fill).slice(0, fillLen)
+	const fillStr = fill.length === 1
+		? repeatString(fill, fillLen)
+		: new Array(Math.ceil(fillLen / fill.length) + 1).join(fill).slice(0, fillLen)
 	return str + fillStr
 }
 
