@@ -1,7 +1,7 @@
 {
 	"name": "js-cool",
 	"description": "Collection of common JavaScript / TypeScript utilities",
-	"version": "6.0.0-beta.4",
+	"version": "6.0.0",
 	"packageManager": "pnpm@9.15.9",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -87,10 +87,10 @@
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.18.2",
 		"@eslint-sets/eslint-config": "^6.3.1",
-		"@microsoft/api-extractor": "^7.58.0",
-		"@swc/core": "^1.15.21",
+		"@microsoft/api-extractor": "^7.58.1",
+		"@swc/core": "^1.15.24",
 		"@types/activex-excel": "^14.0.11",
-		"@types/node": "^22.19.15",
+		"@types/node": "^22.19.17",
 		"@vitest/coverage-istanbul": "^3.2.4",
 		"@vitest/coverage-v8": "3.2.4",
 		"eslint": "^9.39.4",
