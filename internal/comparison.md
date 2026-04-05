@@ -463,7 +463,7 @@ import isMobilePhone from 'validator/lib/isMobilePhone'
 | `isIterable`      | 可迭代判断          | -                 |
 | `isEmpty`         | 空值判断            | `_.isEmpty`       |
 | `isNil`           | null/undefined 判断 | `_.isNil`         |
-| `isExitsFunction` | 函数存在判断        | -                 |
+| `isFunctionExists` | 函数存在判断        | -                 |
 
 #### Validate 验证 (5)
 

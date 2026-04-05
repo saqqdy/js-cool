@@ -394,11 +394,11 @@ export const changelog: ChangelogData = {
 		},
 		{
 			type: 'new',
-			name: 'isExitsFunction',
+			name: 'isFunctionExists',
 			category: 'Typecheck',
-			description: 'Check if a function exists in global scope by path',
-			descriptionZh: '检查全局作用域中是否存在指定路径的函数',
-			anchor: 'isexitsfunction',
+			description: 'Check if a function exists in global scope by path (replaces typo isExitsFunction)',
+			descriptionZh: '检查全局作用域中是否存在指定路径的函数（替代错误命名的 isExitsFunction）',
+			anchor: 'isfunctionexists',
 		},
 
 		// New Features - Validate

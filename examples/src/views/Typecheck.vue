@@ -13,7 +13,7 @@ import {
 	isEmpty,
 	isNil,
 	isWindow,
-	isExitsFunction,
+	isFunctionExists,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -53,12 +53,12 @@ const checkWindow = () => {
 	}
 }
 
-// isExitsFunction demo
+// isFunctionExists demo
 const funcNameInput = ref('JSON.parse')
 const funcExistsResult = ref(false)
 
 const checkFunction = () => {
-	funcExistsResult.value = isExitsFunction(funcNameInput.value)
+	funcExistsResult.value = isFunctionExists(funcNameInput.value)
 }
 
 onMounted(() => {
@@ -240,10 +240,10 @@ onMounted(() => {
 		</FunctionCard>
 
 		<FunctionCard
-			title="isExitsFunction"
+			title="isFunctionExists"
 			description="Check if a function exists in global scope by path"
-			since="1.0.0"
-			:code="`isExitsFunction('JSON.parse') // true\nisExitsFunction('nonExistent') // false`"
+			since="6.0.0"
+			:code="`isFunctionExists('JSON.parse') // true\nisFunctionExists('nonExistent') // false`"
 		>
 			<template #input>
 				<n-space align="center">
@@ -253,21 +253,21 @@ onMounted(() => {
 			<template #result>
 				<n-space vertical>
 					<n-space align="center">
-						<n-code :code="`isExitsFunction('${funcNameInput}')`" language="javascript" />
+						<n-code :code="`isFunctionExists('${funcNameInput}')`" language="javascript" />
 						<n-tag :type="funcExistsResult ? 'success' : 'default'">{{ funcExistsResult }}</n-tag>
 					</n-space>
 					<n-space wrap>
 						<n-space align="center">
 							<code class="code-inline">JSON.parse</code>
-							<n-tag size="small" :bordered="false">{{ isExitsFunction('JSON.parse') }}</n-tag>
+							<n-tag size="small" :bordered="false">{{ isFunctionExists('JSON.parse') }}</n-tag>
 						</n-space>
 						<n-space align="center">
 							<code class="code-inline">console.log</code>
-							<n-tag size="small" :bordered="false">{{ isExitsFunction('console.log') }}</n-tag>
+							<n-tag size="small" :bordered="false">{{ isFunctionExists('console.log') }}</n-tag>
 						</n-space>
 						<n-space align="center">
 							<code class="code-inline">nonExistent</code>
-							<n-tag size="small" :bordered="false">{{ isExitsFunction('nonExistent') }}</n-tag>
+							<n-tag size="small" :bordered="false">{{ isFunctionExists('nonExistent') }}</n-tag>
 						</n-space>
 					</n-space>
 				</n-space>

@@ -96,7 +96,7 @@ export const versions: Record<string, string> = {
 	isNil: '2.0.0',
 	isWindow: '1.0.0',
 	getType: '1.0.0',
-	isExitsFunction: '1.0.0',
+	isFunctionExists: '6.0.0',
 
 	// Validate
 	isEmail: '1.0.0',
