@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest'
 import getDirParams from '../src/getDirParams'
 
 describe('getDirParams', () => {
-	describe('完整 URL', () => {
-		it('应该正确解析带端口的 URL', () => {
+	describe('full URL', () => {
+		it('should parse URL with port correctly', () => {
 			const result = getDirParams('http://192.168.2.243:7004/media/video/test.mp4')
 
 			expect(result.origin).toBe('http://192.168.2.243:7004')
@@ -15,7 +15,7 @@ describe('getDirParams', () => {
 			expect(result.hash).toBe('')
 		})
 
-		it('应该正确解析 HTTPS URL', () => {
+		it('should parse HTTPS URL correctly', () => {
 			const result = getDirParams('https://example.com/path/to/file')
 
 			expect(result.origin).toBe('https://example.com')
@@ -25,7 +25,7 @@ describe('getDirParams', () => {
 			expect(result.segments).toEqual(['path', 'to', 'file'])
 		})
 
-		it('应该正确解析无路径的 URL', () => {
+		it('should parse URL without path', () => {
 			const result = getDirParams('http://example.com')
 
 			expect(result.origin).toBe('http://example.com')
@@ -35,8 +35,8 @@ describe('getDirParams', () => {
 		})
 	})
 
-	describe('带查询参数的 URL', () => {
-		it('应该正确分离 query string', () => {
+	describe('URL with query params', () => {
+		it('should separate query string correctly', () => {
 			const result = getDirParams('https://example.com/api/v1/users?id=123')
 
 			expect(result.pathname).toBe('/api/v1/users')
@@ -44,14 +44,14 @@ describe('getDirParams', () => {
 			expect(result.query).toBe('id=123')
 		})
 
-		it('应该正确处理多个查询参数', () => {
+		it('should handle multiple query params', () => {
 			const result = getDirParams('https://example.com/search?q=test&page=1&size=10')
 
 			expect(result.pathname).toBe('/search')
 			expect(result.query).toBe('q=test&page=1&size=10')
 		})
 
-		it('应该正确处理只有 query 的 URL', () => {
+		it('should handle URL with only query', () => {
 			const result = getDirParams('https://example.com?id=123')
 
 			expect(result.pathname).toBe('/')
@@ -59,15 +59,15 @@ describe('getDirParams', () => {
 		})
 	})
 
-	describe('带 hash 的 URL', () => {
-		it('应该正确分离 hash', () => {
+	describe('URL with hash', () => {
+		it('should separate hash correctly', () => {
 			const result = getDirParams('https://example.com/page#section')
 
 			expect(result.pathname).toBe('/page')
 			expect(result.hash).toBe('section')
 		})
 
-		it('应该正确处理完整 URL（query + hash）', () => {
+		it('should handle full URL (query + hash)', () => {
 			const result = getDirParams('https://example.com/api/v1/users?id=123#section')
 
 			expect(result.pathname).toBe('/api/v1/users')
@@ -77,23 +77,23 @@ describe('getDirParams', () => {
 		})
 	})
 
-	describe('相对路径', () => {
-		it('应该正确解析相对路径（浏览器环境会基于当前 origin）', () => {
+	describe('relative path', () => {
+		it('should parse relative path correctly (browser env uses current origin)', () => {
 			const result = getDirParams('/app/user/profile')
 
-			// 浏览器环境下会基于当前 origin 解析
+			// browser env parses based on current origin
 			expect(result.pathname).toBe('/app/user/profile')
 			expect(result.segments).toEqual(['app', 'user', 'profile'])
 		})
 
-		it('应该正确处理带 query 的相对路径', () => {
+		it('should handle relative path with query', () => {
 			const result = getDirParams('/api/users?id=123')
 
 			expect(result.pathname).toBe('/api/users')
 			expect(result.query).toBe('id=123')
 		})
 
-		it('应该正确处理带 hash 的相对路径', () => {
+		it('should handle relative path with hash', () => {
 			const result = getDirParams('/page#section')
 
 			expect(result.pathname).toBe('/page')
@@ -101,23 +101,23 @@ describe('getDirParams', () => {
 		})
 	})
 
-	describe('边界情况', () => {
-		it('应该处理空字符串（浏览器环境使用当前页面 URL）', () => {
+	describe('edge cases', () => {
+		it('should handle empty string (browser env uses current page URL)', () => {
 			const result = getDirParams('')
 
-			// 空字符串会使用当前页面 URL（浏览器环境）
+			// empty string uses current page URL (browser env)
 			expect(result.pathname).toBe('/')
 			expect(result.segments).toEqual([])
 		})
 
-		it('应该处理根路径', () => {
+		it('should handle root path', () => {
 			const result = getDirParams('https://example.com/')
 
 			expect(result.pathname).toBe('/')
 			expect(result.segments).toEqual([])
 		})
 
-		it('应该正确处理特殊字符路径', () => {
+		it('should handle special characters in path', () => {
 			const result = getDirParams('https://example.com/path/with%20space/file')
 
 			expect(result.segments).toEqual(['path', 'with%20space', 'file'])
