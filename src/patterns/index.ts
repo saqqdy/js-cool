@@ -5,6 +5,9 @@
  * @since 6.0.0
  */
 
+// Import extract patterns
+import { extract } from './extract'
+
 // Import UA patterns from sub-module
 import {
 	BROWSER_PATTERNS,
@@ -19,9 +22,6 @@ import {
 
 // Import validation patterns
 import { validation } from './validation'
-
-// Import extract patterns
-import { extract } from './extract'
 
 // Re-export validation patterns
 export { validation, type ValidationPatternName } from './validation'

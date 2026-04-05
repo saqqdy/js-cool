@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2026-04-02
+## [6.0.0] - 2026-04-05
 
 ### ⚠️ BREAKING CHANGES
 
@@ -35,6 +35,7 @@ All notable changes to this project will be documented in this file.
   - `getCookie` → `storage.cookie.get()`
   - `getCookies` → `storage.cookie.getAll()`
   - `delCookie` → `storage.cookie.delete()`
+  - `mapTemplate` → `template()` (v6.0.0, use `template` function)
 
 - **Module Renamed**: `client` → `ua`
 - **Type Change**: `base64ToFile()` returns `File | Blob` (IE11 returns Blob)
@@ -85,6 +86,7 @@ All notable changes to this project will be documented in this file.
 - **New `patterns` Module**: Unified validation and UA patterns
   - `validation.email`, `validation.mobile`, `validation.idCard`, etc.
   - `DEVICE_PATTERNS`, `OS_PATTERNS`, `BROWSER_PATTERNS`, `ENV_PATTERNS`
+  - `extract` patterns: `number`, `version`, `integer`, `decimal`, `positiveInteger` (NEW)
 
 - **50+ New Functions**:
   - Array: `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip`
@@ -95,6 +97,26 @@ All notable changes to this project will be documented in this file.
   - Color: `isLightColor`, `hexToRGB`, `rgbToHSL`, `lighten`, `darken`
   - Date: `isToday`, `formatDate`, `dateDiff`, `relativeTime`, `getDaysInMonth`
   - Async: `debounce`, `throttle`, `retry`
+
+- **New String Functions** (v6.0.0):
+  - `changeCase`: Unified case conversion API (camel, kebab, snake, pascal, constant, dot, title, swap, etc.)
+  - `constantCase`: Convert to CONSTANT_CASE
+  - `dotCase`: Convert to dot.case
+  - `pascalCase`: Convert to PascalCase
+  - `titleCase`: Convert to Title Case
+  - `swapCase`: Swap case of each character
+  - `reverse`: Reverse string (Unicode aware)
+  - `count`: Count substring occurrences
+
+- **Enhanced Functions**:
+  - `getNumber`: Added `type`, `multiple`, `decimals` options
+  - `toThousands`: Added `separator`, `decimals`, `prefix`, `suffix` options
+  - `camel2Dash`: Improved consecutive uppercase handling (XMLParser → xml-parser)
+  - `template`: Added function resolver support for dynamic values
+
+- **New IE11 Compatibility Functions**:
+  - `arrayFrom`: IE11-compatible `Array.from()`
+  - `repeatString`: IE11-compatible `String.prototype.repeat()`
 
 - **IE11 Compatibility**: Built-in support without external polyfills
   - New `hasOwn()` compatibility method for `Object.hasOwn()`

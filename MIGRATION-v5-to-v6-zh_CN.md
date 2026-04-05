@@ -104,6 +104,7 @@ v6.x 使用正确的条件导出：
 | `getUrlParams()`      | `url.parse()` 或 `new Url(url).toObject()` |
 | `parseUrlParam()`     | `url.parse()`                              |
 | `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`  |
+| `mapTemplate()`       | `template()` (增强版本)                    |
 
 ### 5. 移除 `pattern` 对象
 
@@ -1375,6 +1376,146 @@ try {
 // v6.x - 支持 tree-shaking
 import { storage, local, session, cookie } from 'js-cool/storage'
 import type { StorageOptions, CookieOptions } from 'js-cool/storage'
+```
+
+---
+
+## 迁移：`mapTemplate` → `template`
+
+### 为什么要改？
+
+`mapTemplate` 函数已被移除，替换为增强版的 `template` 函数：
+
+- **多种分隔符支持** - `{{ }}`、`${ }` 和自定义分隔符
+- **HTML 转义** - 自动 XSS 防护
+- **嵌套属性** - 访问深层对象属性
+- **函数解析器** - 动态值解析
+- **原始输出** - 三重花括号输出未转义内容
+
+### API 对比
+
+```js
+// v5.x（已移除）
+import { mapTemplate } from 'js-cool'
+
+mapTemplate('Hello, ${name}!', { name: 'World' })
+// 'Hello, World!'
+
+mapTemplate('Hello, {{name}}!', { name: 'World' })
+// 'Hello, World!'
+
+mapTemplate('Hello, {name}!', { name: 'World' })
+// 'Hello, World!'
+
+// v6.x
+import { template } from 'js-cool'
+
+// 先编译，再渲染
+const compiled = template('Hello, {{ name }}!')
+compiled({ name: 'World' }) // 'Hello, World!'
+
+// 或带选项
+template('Hello, {{ name }}!', { data: { name: 'World' } })()
+// 'Hello, World!'
+
+// 函数解析器（v6.x 新增）
+compiled((path) => ({ name: 'World' }[path]))
+// 'Hello, World!'
+
+// 自定义分隔符
+const custom = template('Hello, ${ name }!', { open: '${', close: '}' })
+custom({ name: 'World' }) // 'Hello, World!'
+```
+
+### 新功能
+
+```js
+import { template } from 'js-cool'
+
+// HTML 转义（默认，v6.x 新增）
+const safe = template('{{ content }}')
+safe({ content: '<script>alert("xss")</script>' })
+// '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;'
+
+// 原始输出（三重花括号）
+const raw = template('{{{ html }}}')
+raw({ html: '<strong>bold</strong>' }) // '<strong>bold</strong>'
+
+// 嵌套属性（v6.x 新增）
+const nested = template('{{ user.name }} 今年 {{ user.age }} 岁。')
+nested({ user: { name: '张三', age: 30 } }) // '张三 今年 30 岁。'
+
+// 函数解析器（v6.x 新增）
+template('Hello, {{ name }}!', {
+  data: (path) => ({ name: 'World' }[path])
+})()
+// 'Hello, World!'
+```
+
+---
+
+## v6.0.0 新增函数
+
+### 字符串函数
+
+| 函数             | 说明                        |
+| ---------------- | --------------------------- |
+| `changeCase`     | 统一的命名转换 API          |
+| `constantCase`   | 转换为 CONSTANT_CASE        |
+| `dotCase`        | 转换为 dot.case             |
+| `pascalCase`     | 转换为 PascalCase           |
+| `titleCase`      | 转换为 Title Case           |
+| `swapCase`       | 交换每个字符的大小写        |
+| `reverse`        | 反转字符串（Unicode 支持） |
+| `count`          | 计算子字符串出现次数        |
+| `words`          | 将字符串拆分为单词数组      |
+
+### 对象函数
+
+| 函数             | 说明                             |
+| ---------------- | -------------------------------- |
+| `mergeWith`      | 使用自定义策略函数合并对象      |
+| `transform`      | 将对象转换为新的累加器          |
+| `invert`         | 反转对象的键和值                 |
+| `mapKeys`        | 转换对象的键                     |
+| `mapValues`      | 转换对象的值                     |
+
+### 增强的函数
+
+#### `getNumber` 选项
+
+```js
+import { getNumber } from 'js-cool'
+
+// v6.x 新增选项
+getNumber('Price: $99.99', { type: 'number' }) // 99.99
+getNumber('a1b2c3', { multiple: true }) // ['1', '2', '3']
+getNumber('Temperature: 36.567°', { decimals: 1 }) // '36.6'
+```
+
+#### `toThousands` 选项
+
+```js
+import { toThousands } from 'js-cool'
+
+// v6.x 新增选项
+toThousands(1234567.89, { separator: ' ' }) // '1 234 567.89'
+toThousands(1234.5678, { decimals: 2 }) // '1,234.57'
+toThousands(1234.56, { prefix: '$' }) // '$1,234.56'
+toThousands(98.5, { suffix: '%' }) // '98.5%'
+```
+
+### 提取模式
+
+新增用于数据提取的模式：
+
+```js
+import { extract } from 'js-cool'
+
+'Price: $99.99'.match(extract.number) // ['99.99']
+'Chrome/120.0.6099.109'.match(extract.version) // ['120.0.6099.109']
+'abc123def456'.match(extract.integer) // ['123', '456']
+'Price $9.99, Tax 1.50'.match(extract.decimal) // ['9.99', '1.50']
 ```
 
 ---

@@ -104,6 +104,7 @@ v6.x uses proper conditional exports:
 | `getUrlParams()`      | `url.parse()` or `new Url(url).toObject()` |
 | `parseUrlParam()`     | `url.parse()`                              |
 | `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`  |
+| `mapTemplate()`       | `template()` (enhanced version)            |
 
 ### 5. `pattern` Object Removed
 
@@ -1385,6 +1386,146 @@ try {
 // v6.x - Tree-shaking friendly
 import { storage, local, session, cookie } from 'js-cool/storage'
 import type { StorageOptions, CookieOptions } from 'js-cool/storage'
+```
+
+---
+
+## Migration: `mapTemplate` → `template`
+
+### Why the Change?
+
+The `mapTemplate` function has been removed and replaced by an enhanced `template` function with:
+
+- **Multiple delimiter support** - `{{ }}`, `${ }`, and custom delimiters
+- **HTML escaping** - Automatic XSS protection
+- **Nested properties** - Access deep object properties
+- **Function resolver** - Dynamic value resolution
+- **Raw output** - Triple braces for unescaped content
+
+### API Comparison
+
+```js
+// v5.x (removed)
+import { mapTemplate } from 'js-cool'
+
+mapTemplate('Hello, ${name}!', { name: 'World' })
+// 'Hello, World!'
+
+mapTemplate('Hello, {{name}}!', { name: 'World' })
+// 'Hello, World!'
+
+mapTemplate('Hello, {name}!', { name: 'World' })
+// 'Hello, World!'
+
+// v6.x
+import { template } from 'js-cool'
+
+// Compile first, then render
+const compiled = template('Hello, {{ name }}!')
+compiled({ name: 'World' }) // 'Hello, World!'
+
+// Or with options
+template('Hello, {{ name }}!', { data: { name: 'World' } })()
+// 'Hello, World!'
+
+// Function resolver (NEW in v6.x)
+compiled((path) => ({ name: 'World' }[path]))
+// 'Hello, World!'
+
+// Custom delimiters
+const custom = template('Hello, ${ name }!', { open: '${', close: '}' })
+custom({ name: 'World' }) // 'Hello, World!'
+```
+
+### New Features
+
+```js
+import { template } from 'js-cool'
+
+// HTML escaping (default, NEW in v6.x)
+const safe = template('{{ content }}')
+safe({ content: '<script>alert("xss")</script>' })
+// '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;'
+
+// Raw output (triple braces)
+const raw = template('{{{ html }}}')
+raw({ html: '<strong>bold</strong>' }) // '<strong>bold</strong>'
+
+// Nested properties (NEW in v6.x)
+const nested = template('{{ user.name }} is {{ user.age }} years old.')
+nested({ user: { name: 'John', age: 30 } }) // 'John is 30 years old.'
+
+// Function resolver (NEW in v6.x)
+template('Hello, {{ name }}!', {
+  data: (path) => ({ name: 'World' }[path])
+})()
+// 'Hello, World!'
+```
+
+---
+
+## New Functions in v6.0.0
+
+### String Functions
+
+| Function          | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `changeCase`      | Unified case conversion API                    |
+| `constantCase`    | Convert to CONSTANT_CASE                       |
+| `dotCase`         | Convert to dot.case                            |
+| `pascalCase`      | Convert to PascalCase                          |
+| `titleCase`       | Convert to Title Case                          |
+| `swapCase`        | Swap case of each character                    |
+| `reverse`         | Reverse string (Unicode aware)                 |
+| `count`           | Count substring occurrences                    |
+| `words`           | Split string into array of words               |
+
+### Object Functions
+
+| Function          | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `mergeWith`       | Merge objects with custom strategy function    |
+| `transform`       | Transform object to new accumulator            |
+| `invert`          | Invert object keys and values                  |
+| `mapKeys`         | Transform object keys                          |
+| `mapValues`       | Transform object values                        |
+
+### Enhanced Functions
+
+#### `getNumber` Options
+
+```js
+import { getNumber } from 'js-cool'
+
+// New options in v6.x
+getNumber('Price: $99.99', { type: 'number' }) // 99.99
+getNumber('a1b2c3', { multiple: true }) // ['1', '2', '3']
+getNumber('Temperature: 36.567°', { decimals: 1 }) // '36.6'
+```
+
+#### `toThousands` Options
+
+```js
+import { toThousands } from 'js-cool'
+
+// New options in v6.x
+toThousands(1234567.89, { separator: ' ' }) // '1 234 567.89'
+toThousands(1234.5678, { decimals: 2 }) // '1,234.57'
+toThousands(1234.56, { prefix: '$' }) // '$1,234.56'
+toThousands(98.5, { suffix: '%' }) // '98.5%'
+```
+
+### Extract Patterns
+
+New extract patterns for data extraction:
+
+```js
+import { extract } from 'js-cool'
+
+'Price: $99.99'.match(extract.number) // ['99.99']
+'Chrome/120.0.6099.109'.match(extract.version) // ['120.0.6099.109']
+'abc123def456'.match(extract.integer) // ['123', '456']
+'Price $9.99, Tax 1.50'.match(extract.decimal) // ['9.99', '1.50']
 ```
 
 ---

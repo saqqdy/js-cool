@@ -42,17 +42,17 @@ interface TemplateOptions extends TemplateSettings {
 
 ```js
 // 基本用法
-const compiled = template('Hello, {{ name }}!')
+const compiled = template('Hello, \{\{ name \}\}!')
 compiled({ name: 'World' })
 // 'Hello, World!'
 
 // HTML 转义（默认开启）
-const compiled = template('{{ content }}')
+const compiled = template('\{\{ content \}\}')
 compiled({ content: '<script>alert("xss")</script>' })
 // '&lt;script&gt;alert("xss")&lt;/script&gt;'
 
 // 原始输出（三重大括号）
-const compiled = template('{{{ html }}}')
+const compiled = template('\{\{\{ html \}\}\}')
 compiled({ html: '<strong>bold</strong>' })
 // '<strong>bold</strong>'
 
@@ -62,18 +62,18 @@ compiled({ name: 'World' })
 // 'Hello, World!'
 
 // 直接传入数据调用
-template('Hello, {{ name }}!', { data: { name: 'World' } })
+template('Hello, \{\{ name \}\}!', { data: { name: 'World' } })
 // 'Hello, World!'
 
 // 复杂表达式（嵌套属性）
-const compiled = template('{{ user.name }} is {{ user.age }} years old.')
+const compiled = template('\{\{ user.name \}\} is \{\{ user.age \}\} years old.')
 compiled({ user: { name: 'John', age: 30 } })
 // 'John is 30 years old.'
 ```
 
 ## 注意
 
-- `{{ variable }}` - HTML 转义输出
-- `{{{ variable }}}` - 原始输出（不转义）
+- `\{\{ variable \}\}` - HTML 转义输出
+- `\{\{\{ variable \}\}\}` - 原始输出（不转义）
 - 支持嵌套属性访问（如 `user.name`）
 - 可自定义分隔符

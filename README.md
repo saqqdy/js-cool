@@ -99,10 +99,12 @@ The library includes an internal `_compat.ts` module that provides IE11-compatib
 
 | ES6+ Feature           | IE11 Compatible Alternative         |
 | ---------------------- | ----------------------------------- |
+| `Array.from()`         | `arrayFrom()`                       |
 | `Array.includes()`     | `arrayIncludes()`                   |
 | `String.includes()`    | `strIncludes()`                     |
 | `String.startsWith()`  | `strStartsWith()`                   |
 | `String.endsWith()`    | `strEndsWith()`                     |
+| `String.repeat()`      | `repeatString()`                    |
 | `String.padStart()`    | `padStart()`                        |
 | `String.padEnd()`      | `padEnd()`                          |
 | `Number.isNaN()`       | `isNumberNaN()`                     |
@@ -150,7 +152,7 @@ js-cool provides **140+ utility functions** organized into **16 categories**:
 
 | Category          | Description                       | Functions                                                                                                                                                                                                                                         |
 | ----------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `mapTemplate`, `template`, `words`, `escape`, `unescape` |
+| **String**        | String manipulation               | `camel2Dash`, `dash2Camel`, `upperFirst`, `lowerFirst`, `capitalize`, `kebabCase`, `snakeCase`, `constantCase`, `dotCase`, `pascalCase`, `titleCase`, `swapCase`, `changeCase`, `reverse`, `count`, `truncate`, `clearHtml`, `clearAttr`, `cutCHSString`, `getCHSLength`, `template`, `words`, `escape`, `unescape` |
 | **Array**         | Array processing                  | `unique`, `shuffle`, `sorter`, `sortPinyin`, `chunk`, `flatten`, `groupBy`, `keyBy`, `countBy`, `sample`, `sampleSize`, `intersect`, `intersectionBy`, `union`, `unionBy`, `differenceBy`, `minus`, `complement`, `contains`, `all`, `any`, `searchObject`, `drop`, `dropRight`, `take`, `takeRight`, `findIndex`, `findLastIndex`, `zip`, `unzip` |
 | **Object**        | Object manipulation               | `clone`, `extend`, `getProperty`, `setProperty`, `omit`, `pick`, `cleanData`, `safeParse`, `safeStringify`, `mapKeys`, `mapValues`, `invert`, `mergeWith`, `transform`, `arrayToCSV`, `CSVToArray` |
 | **Type Check**    | Type checking                     | `getType`, `isArray`, `isObject`, `isPlainObject`, `isDate`, `isRegExp`, `isWindow`, `isIterable`, `isEqual`, `isEmpty`, `isNil`                                                                                                                  |
@@ -225,16 +227,21 @@ ua.getOrientationStatus() // 'portrait' | 'landscape'
 
 #### patterns
 
-Unified patterns module combining validation and UA patterns.
+Unified patterns module combining validation, extract, and UA patterns.
 
 ```js
-import { patterns, validation, DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
+import { patterns, validation, extract, DEVICE_PATTERNS, BROWSER_PATTERNS } from 'js-cool'
 
 // Using patterns object
 patterns.validation.email.test('user@example.com') // true
 patterns.validation.mobile.test('13800138000') // true
 patterns.ua.device.mobile.test(navigator.userAgent) // true/false
 patterns.ua.browser.chrome.test(navigator.userAgent) // true/false
+
+// Extract patterns (NEW in v6.0.0)
+'Price: $99.99'.match(patterns.extract.number) // ['99.99']
+'Chrome/120.0.6099.109'.match(patterns.extract.version) // ['120.0.6099.109']
+'abc123def456'.match(patterns.extract.integer) // ['123', '456']
 
 // Or import directly
 validation.email.test('user@example.com') // true
@@ -255,6 +262,13 @@ patterns.ua.extractVersion(ua, /Chrome\/(\d+)/i) // '91.0'
 // validation.password, validation.postcode, validation.username, validation.tel
 // validation.json, validation.array, validation.float, validation.string
 // validation.date, validation.time, validation.datetime
+
+// Available extract patterns (NEW in v6.0.0):
+// extract.number - matches numbers (including decimals)
+// extract.integer - matches integers (including negative)
+// extract.decimal - matches decimal numbers
+// extract.positiveInteger - matches positive integers
+// extract.version - matches version strings
 
 // Available UA patterns:
 // DEVICE_PATTERNS - mobile, tablet, phone, touch, iphone, ipad, androidPhone, androidTablet
@@ -421,17 +435,31 @@ unescape('&quot;hello&quot;') // '"hello"'
 
 #### getNumber
 
-Extract number from string.
+Extract number(s) from string.
 
 ```js
 import { getNumber } from 'js-cool'
 
+// Basic usage - returns string
 getNumber('Chrome123.45') // '123.45'
 getNumber('price: $99.99') // '99.99'
 getNumber('version 2.0.1') // '2.0.1'
 getNumber('no numbers here') // ''
 getNumber('123abc456') // '123456'
 getNumber('-12.34') // '-12.34'
+
+// Return as number type
+getNumber('Price: $99.99', { type: 'number' }) // 99.99
+
+// Extract all numbers
+getNumber('a1b2c3', { multiple: true }) // ['1', '2', '3']
+getNumber('Range: 10-20', { multiple: true }) // [10, 20]
+
+// With decimal places
+getNumber('Temperature: 36.567°', { decimals: 1 }) // '36.6'
+
+// Multiple numbers as numbers
+getNumber('1, 2, 3', { multiple: true, type: 'number' }) // [1, 2, 3]
 ```
 
 #### camel2Dash / dash2Camel
@@ -445,7 +473,9 @@ import { camel2Dash, dash2Camel } from 'js-cool'
 camel2Dash('jsCool') // 'js-cool'
 camel2Dash('backgroundColor') // 'background-color'
 camel2Dash('marginTop') // 'margin-top'
-camel2Dash('XMLHttpRequest') // 'x-m-l-http-request'
+camel2Dash('XMLParser') // 'xml-parser' (consecutive uppercase handled)
+camel2Dash('HTMLElement') // 'html-element'
+camel2Dash('XMLHttpRequest') // 'xml-http-request'
 
 // kebab-case to camelCase
 dash2Camel('js-cool') // 'jsCool'
@@ -611,6 +641,120 @@ words('version2Update') // ['version', '2', 'Update']
 words('HTMLParser') // ['HTML', 'Parser']
 ```
 
+#### constantCase
+
+Convert string to CONSTANT_CASE.
+
+```js
+import { constantCase } from 'js-cool'
+
+constantCase('foo-bar') // 'FOO_BAR'
+constantCase('foo_bar') // 'FOO_BAR'
+constantCase('foo bar') // 'FOO_BAR'
+constantCase('fooBar') // 'FOO_BAR'
+constantCase('XML-parser') // 'XML_PARSER'
+```
+
+#### dotCase
+
+Convert string to dot.case.
+
+```js
+import { dotCase } from 'js-cool'
+
+dotCase('fooBar') // 'foo.bar'
+dotCase('foo-bar') // 'foo.bar'
+dotCase('foo_bar') // 'foo.bar'
+dotCase('foo bar') // 'foo.bar'
+```
+
+#### pascalCase
+
+Convert string to PascalCase.
+
+```js
+import { pascalCase } from 'js-cool'
+
+pascalCase('foo-bar') // 'FooBar'
+pascalCase('foo_bar') // 'FooBar'
+pascalCase('foo bar') // 'FooBar'
+pascalCase('XML-parser') // 'XmlParser'
+```
+
+#### titleCase
+
+Convert string to Title Case.
+
+```js
+import { titleCase } from 'js-cool'
+
+titleCase('hello world') // 'Hello World'
+titleCase('foo-bar-baz') // 'Foo Bar Baz'
+titleCase('foo_bar_baz') // 'Foo Bar Baz'
+titleCase('fooBarBaz') // 'Foo Bar Baz'
+```
+
+#### swapCase
+
+Swap the case of each character in a string.
+
+```js
+import { swapCase } from 'js-cool'
+
+swapCase('Hello World') // 'hELLO wORLD'
+swapCase('JavaScript') // 'jAVAsCRIPT'
+swapCase('ABCdef') // 'abcDEF'
+swapCase('123abc') // '123ABC'
+```
+
+#### changeCase
+
+Unified API for all case conversions.
+
+```js
+import { changeCase } from 'js-cool'
+
+changeCase('fooBar', 'kebab') // 'foo-bar'
+changeCase('foo-bar', 'camel') // 'fooBar'
+changeCase('foo_bar', 'pascal') // 'FooBar'
+changeCase('fooBar', 'snake') // 'foo_bar'
+changeCase('fooBar', 'constant') // 'FOO_BAR'
+changeCase('fooBar', 'dot') // 'foo.bar'
+changeCase('foo bar', 'title') // 'Foo Bar'
+changeCase('Hello', 'swap') // 'hELLO'
+changeCase('hello', 'upper') // 'HELLO'
+changeCase('HELLO', 'lower') // 'hello'
+changeCase('hello', 'upperFirst') // 'Hello'
+changeCase('Hello', 'lowerFirst') // 'hello'
+```
+
+#### reverse
+
+Reverse a string (Unicode aware).
+
+```js
+import { reverse } from 'js-cool'
+
+reverse('hello') // 'olleh'
+reverse('你好世界') // '界世好你'
+reverse('Hello 世界') // '界世 olleH'
+reverse('café') // 'éfac'
+```
+
+#### count
+
+Count occurrences of a substring.
+
+```js
+import { count } from 'js-cool'
+
+count('hello hello hello', 'hello') // 3
+count('aaa', 'aa') // 1 (non-overlapping by default)
+count('aaa', 'aa', { overlapping: true }) // 2 (overlapping matches)
+count('Hello World', 'hello', { caseSensitive: false }) // 1
+count('abc', 'd') // 0
+```
+
 #### template
 
 Simple template engine with variable interpolation.
@@ -634,6 +778,10 @@ raw({ html: '<strong>bold</strong>' }) // '<strong>bold</strong>'
 // Nested properties
 const nested = template('{{ user.name }} is {{ user.age }} years old.')
 nested({ user: { name: 'John', age: 30 } }) // 'John is 30 years old.'
+
+// Using function as data resolver
+const fnCompiled = template('Hello, {{ name }}!')
+fnCompiled((path) => ({ name: 'World' }[path])) // 'Hello, World!'
 
 // Custom delimiters
 const custom = template('Hello, ${ name }!', { open: '${', close: '}' })
@@ -1913,6 +2061,8 @@ openUrl('https://example.com/file.pdf') // Downloads if can't parse
 
 #### toThousands
 
+Format number with thousands separator.
+
 ```js
 import { toThousands } from 'js-cool'
 
@@ -1922,6 +2072,23 @@ toThousands(1234.567) // '1,234.567'
 toThousands('1234567') // '1,234,567'
 toThousands(null) // ''
 toThousands(undefined) // ''
+
+// Custom separator
+toThousands(1234567.89, { separator: ' ' }) // '1 234 567.89'
+toThousands(1234567.89, { separator: "'" }) // "1'234'567.89"
+
+// With decimals limit
+toThousands(1234.5678, { decimals: 2 }) // '1,234.57'
+
+// With currency prefix
+toThousands(1234.56, { prefix: '$' }) // '$1,234.56'
+toThousands(1234.56, { prefix: '¥', decimals: 2 }) // '¥1,234.56'
+
+// With suffix
+toThousands(98.5, { suffix: '%', decimals: 1 }) // '98.5%'
+
+// Combined options
+toThousands(1234567.89, { prefix: '$', separator: ' ', decimals: 2 }) // '$1 234 567.89'
 ```
 
 #### randomNumber / randomNumbers

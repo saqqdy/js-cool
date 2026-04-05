@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
-import { formatDate, relativeTime, formatDiff } from '../src/date/format'
 import type { DateDiffResult } from '../src/date/types'
+import { describe, expect, it } from 'vitest'
+import { formatDate, formatDiff, relativeTime } from '../src/date/format'
 
 describe('formatDate', () => {
 	it('should format date with default format', () => {

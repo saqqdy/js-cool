@@ -110,7 +110,7 @@ describe('truncate', () => {
 
 	it('should handle default options', () => {
 		const longString = 'a'.repeat(40)
-		expect(truncate(longString)).toBe('a'.repeat(27) + '...')
+		expect(truncate(longString)).toBe(`${'a'.repeat(27)  }...`)
 	})
 
 	it('should handle separator at position 0', () => {

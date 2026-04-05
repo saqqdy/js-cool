@@ -2,7 +2,7 @@ import type { CookieOptions, StorageOptions } from '../src/storage'
 /**
  * @vitest-environment happy-dom
  */
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
 	cookie,
 	local,
