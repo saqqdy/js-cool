@@ -21,13 +21,18 @@ export interface TemplateSettings {
 }
 
 /**
+ * Data resolver function type
+ */
+export type DataResolver = (path: string) => unknown
+
+/**
  * Template options
  */
 export interface TemplateOptions extends TemplateSettings {
 	/**
-	 * Data to interpolate into the template
+	 * Data to interpolate into the template (object or function)
 	 */
-	data?: Record<string, unknown>
+	data?: Record<string, unknown> | DataResolver
 }
 
 // HTML escape map
@@ -81,21 +86,32 @@ function escapeHtml(string: string): string {
  * template('Hello, {{ name }}!', { data: { name: 'World' } })
  * // 'Hello, World!'
  *
- * // Complex expressions
+ * // Complex expressions (nested properties)
  * const compiled = template('{{ user.name }} is {{ user.age }} years old.')
  * compiled({ user: { name: 'John', age: 30 } })
  * // 'John is 30 years old.'
+ *
+ * // Using function as data resolver
+ * const compiled = template('Hello, {{ name }}!')
+ * compiled((path) => ({ name: 'World' }[path]))
+ * // 'Hello, World!'
+ *
+ * // Using function with options
+ * template('Hello, {{ name }}!', {
+ *   data: (path) => ({ name: 'World' }[path])
+ * })()
+ * // 'Hello, World!'
  * ```
  *
  * @since 6.0.0
  * @param templateString - The template string
  * @param options - Template settings or data object
- * @returns - A compiled template function or rendered string
+ * @returns - A compiled template function
  */
 function template(
 	templateString: string,
 	options?: TemplateOptions,
-): (data?: Record<string, unknown>) => string {
+): (data?: Record<string, unknown> | DataResolver) => string {
 	if (!templateString || typeof templateString !== 'string') {
 		return () => ''
 	}
@@ -111,11 +127,17 @@ function template(
 		str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 	/**
-	 * Get a nested property from an object
+	 * Get a value from context (object or function resolver)
 	 */
-	function getNestedValue(obj: Record<string, unknown>, path: string): unknown {
+	function getValue(context: Record<string, unknown> | DataResolver, path: string): unknown {
+		// If context is a function, call it with the path
+		if (typeof context === 'function') {
+			return (context as DataResolver)(path)
+		}
+
+		// Otherwise, resolve nested property
 		const keys = path.trim().split('.')
-		let value: unknown = obj
+		let value: unknown = context
 
 		for (const key of keys) {
 			if (value === null || value === undefined) return undefined
@@ -129,7 +151,7 @@ function template(
 	/**
 	 * Compile and render the template
 	 */
-	return function render(data?: Record<string, unknown>): string {
+	return function render(data?: Record<string, unknown> | DataResolver): string {
 		const context = data ?? options?.data ?? {}
 
 		let result = templateString
@@ -138,7 +160,7 @@ function template(
 		// Match pattern like {{{ var }}} or {{{var}}}
 		const rawPattern = /\{\{\{\s*([\s\S]+?)\s*\}\}\}/g
 		result = result.replace(rawPattern, (_, path: string) => {
-			const value = getNestedValue(context, path)
+			const value = getValue(context, path)
 			return value !== undefined && value !== null ? String(value) : ''
 		})
 
@@ -152,13 +174,13 @@ function template(
 
 		if (settings.escape) {
 			result = result.replace(escapePattern, (_, path: string) => {
-				const value = getNestedValue(context, path)
+				const value = getValue(context, path)
 				const stringValue = value !== undefined && value !== null ? String(value) : ''
 				return escapeHtml(stringValue)
 			})
 		} else {
 			result = result.replace(escapePattern, (_, path: string) => {
-				const value = getNestedValue(context, path)
+				const value = getValue(context, path)
 				return value !== undefined && value !== null ? String(value) : ''
 			})
 		}

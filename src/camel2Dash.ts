@@ -14,6 +14,15 @@
  *
  * camel2Dash('borderTopLeftRadius')
  * // 'border-top-left-radius'
+ *
+ * camel2Dash('XMLParser')
+ * // 'xml-parser'
+ *
+ * camel2Dash('HTMLElement')
+ * // 'html-element'
+ *
+ * camel2Dash('HTTPSConnection')
+ * // 'https-connection'
  * ```
  * @since 1.0.1
  * @param string - the string to be converted
@@ -21,7 +30,8 @@
  */
 function camel2Dash(string: string): string {
 	return string
-		.replace(/([A-Z])/g, '-$1')
+		.replace(/([a-z])([A-Z])/g, '$1-$2')      // camelCase split: fooBar → foo-Bar
+		.replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2') // consecutive uppercase: XMLParser → XML-Parser
 		.replace(/^-/, '')
 		.toLocaleLowerCase()
 }
