@@ -195,6 +195,31 @@ describe('retry', () => {
 
 			await expect(retry(fn, { times: 1, timeout: 100, signal: controller.signal })).rejects.toThrow()
 		})
+
+		it('should throw RetryAbortError when signal is aborted before timeout starts', async () => {
+			const controller = new AbortController()
+			controller.abort()
+
+			const fn = vi.fn().mockResolvedValue('success')
+
+			await expect(
+				retry(fn, { times: 3, timeout: 100, signal: controller.signal })
+			).rejects.toThrow(RetryAbortError)
+			expect(fn).toHaveBeenCalledTimes(0)
+		})
+
+		it('should handle abort during timeout with signal already aborted in withTimeout', async () => {
+			// This tests the early return path in withTimeout when signal is already aborted
+			const controller = new AbortController()
+			controller.abort()
+
+			const fn = vi.fn().mockImplementation(() => new Promise(resolve => setTimeout(resolve, 100)))
+
+			// When signal is already aborted before withTimeout is called, it should throw RetryAbortError
+			await expect(
+				retry(fn, { times: 1, timeout: 1000, signal: controller.signal })
+			).rejects.toThrow(RetryAbortError)
+		})
 	})
 
 	describe('RetryTimeoutError', () => {

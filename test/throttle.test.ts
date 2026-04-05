@@ -201,6 +201,9 @@ describe('throttle', () => {
 		// Leading + trailing calls
 		expect(fn).toHaveBeenCalledTimes(2)
 
+		// Wait a bit more to ensure we're well past the throttle period
+		await new Promise(resolve => setTimeout(resolve, 10))
+
 		// New calls after throttle period
 		throttledFn() // new leading call
 
