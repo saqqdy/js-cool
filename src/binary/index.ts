@@ -99,17 +99,28 @@ async function compare(a: BinaryInput, b: BinaryInput): Promise<boolean> {
 	const sizeB = b instanceof Blob ? b.size : b instanceof ArrayBuffer ? b.byteLength : b instanceof Uint8Array ? b.length : (b as string).length
 
 	if (sizeA !== sizeB) return false
+	if (sizeA === 0) return true
 
 	// Convert to ArrayBuffer for comparison
 	const bufferA = await from(a).toArrayBuffer()
 	const bufferB = await from(b).toArrayBuffer()
 
-	// Compare byte by byte
-	const bytesA = new Uint8Array(bufferA)
-	const bytesB = new Uint8Array(bufferB)
+	// Use Uint32Array for faster comparison (4 bytes at a time)
+	const viewA = new Uint8Array(bufferA)
+	const viewB = new Uint8Array(bufferB)
 
-	for (let i = 0; i < bytesA.length; i++) {
-		if (bytesA[i] !== bytesB[i]) return false
+	// Compare using 32-bit chunks for better performance
+	const len32 = Math.floor(viewA.length / 4)
+	const u32A = new Uint32Array(bufferA, 0, len32)
+	const u32B = new Uint32Array(bufferB, 0, len32)
+
+	for (let i = 0; i < len32; i++) {
+		if (u32A[i] !== u32B[i]) return false
+	}
+
+	// Compare remaining bytes (0-3 bytes)
+	for (let i = len32 * 4; i < viewA.length; i++) {
+		if (viewA[i] !== viewB[i]) return false
 	}
 
 	return true
@@ -130,7 +141,7 @@ function clone(data: Blob | File | ArrayBuffer): Blob | ArrayBuffer {
 		return data.slice(0)
 	}
 	if (data instanceof Blob) {
-		return new Blob([data], { type: data.type || undefined })
+		return data.type ? new Blob([data], { type: data.type }) : new Blob([data])
 	}
 	throw new Error('Unsupported type for cloning')
 }

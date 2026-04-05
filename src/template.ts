@@ -58,7 +58,7 @@ function escapeHtml(string: string): string {
  * @description
  * Supports two delimiter styles:
  * - `{{ property }}` - Interpolate with optional HTML escaping
- * - `{{{ property }}}` - Interpolate without escaping (raw)
+ * - `{{{ property }}}` - Interpolate without escaping (raw, only with default delimiters)
  *
  * @example
  * ```js
@@ -156,17 +156,21 @@ function template(
 
 		let result = templateString
 
-		// First, handle raw output (triple braces: {{{ variable }}})
-		// Match pattern like {{{ var }}} or {{{var}}}
-		const rawPattern = /\{\{\{\s*([\s\S]+?)\s*\}\}\}/g
-		result = result.replace(rawPattern, (_, path: string) => {
-			const value = getValue(context, path)
-			return value !== undefined && value !== null ? String(value) : ''
-		})
-
-		// Then, handle escaped output (double braces: {{ variable }})
+		// Build regex patterns from settings
 		const openPattern = escapeRegex(settings.open!)
 		const closePattern = escapeRegex(settings.close!)
+
+		// First, handle raw output (triple braces: {{{ variable }}})
+		// Only applies when using default {{ }} delimiters
+		if (settings.open === '{{' && settings.close === '}}') {
+			const rawPattern = /\{\{\{\s*([\s\S]+?)\s*\}\}\}/g
+			result = result.replace(rawPattern, (_, path: string) => {
+				const value = getValue(context, path)
+				return value !== undefined && value !== null ? String(value) : ''
+			})
+		}
+
+		// Then, handle escaped output (double braces: {{ variable }})
 		const escapePattern = new RegExp(
 			`${openPattern}\\s*([\\s\\S]+?)\\s*${closePattern}`,
 			'g',

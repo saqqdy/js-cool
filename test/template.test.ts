@@ -93,4 +93,82 @@ describe('template', () => {
 		const compiled = template('{{ user.name }}')
 		expect(compiled({ user: 'string' })).toBe('')
 	})
+
+	describe('triple braces with custom delimiters', () => {
+		it('should handle triple braces with default delimiters', () => {
+			const compiled = template('{{{ html }}}')
+			expect(compiled({ html: '<strong>bold</strong>' })).toBe('<strong>bold</strong>')
+		})
+
+		it('should NOT treat triple delimiters as raw output with custom delimiters', () => {
+			// Triple braces only work with default {{ }} delimiters
+			// With custom delimiters, the pattern is different and won't match triple braces
+			 
+			const compiled = template('$$$ html $$$', { open: '$', close: '$' })
+			// With $ as delimiter, $$$ html $$$ matches as: $ + ( html ) + $
+			// So it becomes one variable match: "$ html $" (with leading/trailing $)
+			expect(compiled({ html: '<strong>bold</strong>' })).toBe(' html ')
+		})
+
+		it('should escape HTML with custom delimiters', () => {
+			// eslint-disable-next-line no-template-curly-in-string
+			const compiled = template('${ content }', { open: '${', close: '}' })
+			expect(compiled({ content: '<script>alert("xss")</script>' })).toBe(
+				'&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;',
+			)
+		})
+
+		it('should handle raw output with escape:false option for custom delimiters', () => {
+			// To get raw output with custom delimiters, use escape: false
+			// eslint-disable-next-line no-template-curly-in-string
+			const compiled = template('${ content }', { open: '${', close: '}', escape: false })
+			expect(compiled({ content: '<strong>bold</strong>' })).toBe('<strong>bold</strong>')
+		})
+	})
+
+	describe('edge cases', () => {
+		it('should handle template with only delimiters', () => {
+			// Empty variable name inside delimiters - the regex requires at least one character
+			const compiled = template('{{}}')
+			// This won't match because the regex is \s*([\s\S]+?)\s* which requires content
+			expect(compiled({})).toBe('{{}}')
+		})
+
+		it('should handle multiple triple braces', () => {
+			const compiled = template('{{{ a }}} and {{{ b }}}')
+			expect(compiled({ a: '<a>', b: '<b>' })).toBe('<a> and <b>')
+		})
+
+		it('should handle mixed double and triple braces', () => {
+			const compiled = template('{{ escaped }} and {{{ raw }}}')
+			expect(compiled({ escaped: '<script>', raw: '<script>' })).toBe(
+				'&lt;script&gt; and <script>',
+			)
+		})
+
+		it('should handle whitespace in variable names', () => {
+			const compiled = template('{{  name  }}')
+			expect(compiled({ name: 'World' })).toBe('World')
+		})
+
+		it('should handle numbers in values', () => {
+			const compiled = template('{{ num }}')
+			expect(compiled({ num: 42 })).toBe('42')
+		})
+
+		it('should handle boolean in values', () => {
+			const compiled = template('{{ bool }}')
+			expect(compiled({ bool: true })).toBe('true')
+		})
+
+		it('should handle zero in values', () => {
+			const compiled = template('{{ num }}')
+			expect(compiled({ num: 0 })).toBe('0')
+		})
+
+		it('should handle false in values', () => {
+			const compiled = template('{{ bool }}')
+			expect(compiled({ bool: false })).toBe('false')
+		})
+	})
 })

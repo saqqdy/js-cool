@@ -291,7 +291,6 @@ export { default as words } from './words'
 export { default as isArray } from './isArray'
 export { default as isDate } from './isDate'
 export { default as isEmpty } from './isEmpty'
-export { default as isExitsFunction } from './isExitsFunction'
 export { default as isIterable } from './isIterable'
 export { default as isNil } from './isNil'
 export { default as isObject } from './isObject'
@@ -304,6 +303,7 @@ export {
 } from './isPlainObject'
 export { default as isRegExp } from './isRegExp'
 export { default as isWindow } from './isWindow'
+export { default as isFunctionExists } from './isFunctionExists'
 export { default as getType } from './getType'
 
 // ==================== URL & Browser ====================

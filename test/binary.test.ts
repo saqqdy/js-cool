@@ -783,69 +783,141 @@ describe('binary module', () => {
 	})
 
 	describe('utility methods', () => {
-		it('should compare equal binary data', async () => {
-			const blob1 = new Blob(['Hello'])
-			const blob2 = new Blob(['Hello'])
-			const same = await binary.compare(blob1, blob2)
-			expect(same).toBe(true)
+		describe('compare', () => {
+			it('should compare equal binary data', async () => {
+				const blob1 = new Blob(['Hello'])
+				const blob2 = new Blob(['Hello'])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(true)
+			})
+
+			it('should compare different binary data', async () => {
+				const blob1 = new Blob(['Hello'])
+				const blob2 = new Blob(['World'])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(false)
+			})
+
+			it('should compare different size binary data', async () => {
+				const blob1 = new Blob(['Hello'])
+				const blob2 = new Blob(['Hello World'])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(false)
+			})
+
+			it('should compare ArrayBuffer data', async () => {
+				const buffer1 = new TextEncoder().encode('Hello').buffer
+				const buffer2 = new TextEncoder().encode('Hello').buffer
+				const same = await binary.compare(buffer1, buffer2)
+				expect(same).toBe(true)
+			})
+
+			it('should compare Uint8Array data', async () => {
+				const bytes1 = new TextEncoder().encode('Hello')
+				const bytes2 = new TextEncoder().encode('Hello')
+				const same = await binary.compare(bytes1, bytes2)
+				expect(same).toBe(true)
+			})
+
+			it('should compare string data', async () => {
+				const same = await binary.compare('SGVsbG8=', 'SGVsbG8=') // base64 encoded
+				expect(same).toBe(true)
+			})
+
+			it('should return true for empty binary data', async () => {
+				const blob1 = new Blob([''])
+				const blob2 = new Blob([''])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(true)
+			})
+
+			it('should return true for empty ArrayBuffer', async () => {
+				const buffer1 = new ArrayBuffer(0)
+				const buffer2 = new ArrayBuffer(0)
+				const same = await binary.compare(buffer1, buffer2)
+				expect(same).toBe(true)
+			})
+
+			it('should handle large binary data efficiently', async () => {
+				// Create large data (1MB) to test Uint32Array optimization
+				const size = 1024 * 1024
+				const data = new Uint8Array(size)
+				for (let i = 0; i < size; i++) {
+					data[i] = i % 256
+				}
+				const blob1 = new Blob([data])
+				const blob2 = new Blob([data])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(true)
+			})
+
+			it('should detect difference in large binary data', async () => {
+				// Create large data with one byte difference
+				const size = 1024 * 1024
+				const data1 = new Uint8Array(size).fill(0)
+				const data2 = new Uint8Array(size).fill(0)
+				data2[size - 1] = 1 // Change last byte
+				const blob1 = new Blob([data1])
+				const blob2 = new Blob([data2])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(false)
+			})
+
+			it('should handle data with remaining bytes (not multiple of 4)', async () => {
+				// 5 bytes = 4 bytes (Uint32) + 1 remaining byte
+				const data1 = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05])
+				const data2 = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05])
+				const blob1 = new Blob([data1])
+				const blob2 = new Blob([data2])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(true)
+			})
+
+			it('should detect difference in remaining bytes', async () => {
+				// 5 bytes with difference in the 5th byte
+				const data1 = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05])
+				const data2 = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x06])
+				const blob1 = new Blob([data1])
+				const blob2 = new Blob([data2])
+				const same = await binary.compare(blob1, blob2)
+				expect(same).toBe(false)
+			})
 		})
 
-		it('should compare different binary data', async () => {
-			const blob1 = new Blob(['Hello'])
-			const blob2 = new Blob(['World'])
-			const same = await binary.compare(blob1, blob2)
-			expect(same).toBe(false)
-		})
+		describe('clone', () => {
+			it('should clone Blob with type', () => {
+				const blob = new Blob(['Hello'], { type: 'text/plain' })
+				const cloned = binary.clone(blob)
+				expect(cloned).not.toBe(blob)
+				expect(cloned.size).toBe(blob.size)
+				expect((cloned as Blob).type).toBe('text/plain')
+			})
 
-		it('should compare different size binary data', async () => {
-			const blob1 = new Blob(['Hello'])
-			const blob2 = new Blob(['Hello World'])
-			const same = await binary.compare(blob1, blob2)
-			expect(same).toBe(false)
-		})
+			it('should clone Blob without type', () => {
+				const blob = new Blob(['Hello'])
+				const cloned = binary.clone(blob)
+				expect(cloned).not.toBe(blob)
+				expect(cloned.size).toBe(blob.size)
+				expect((cloned as Blob).type).toBe('')
+			})
 
-		it('should compare ArrayBuffer data', async () => {
-			const buffer1 = new TextEncoder().encode('Hello').buffer
-			const buffer2 = new TextEncoder().encode('Hello').buffer
-			const same = await binary.compare(buffer1, buffer2)
-			expect(same).toBe(true)
-		})
+			it('should clone ArrayBuffer', () => {
+				const buffer = new ArrayBuffer(8)
+				const cloned = binary.clone(buffer)
+				expect(cloned).not.toBe(buffer)
+				expect(cloned.byteLength).toBe(buffer.byteLength)
+			})
 
-		it('should compare Uint8Array data', async () => {
-			const bytes1 = new TextEncoder().encode('Hello')
-			const bytes2 = new TextEncoder().encode('Hello')
-			const same = await binary.compare(bytes1, bytes2)
-			expect(same).toBe(true)
-		})
+			it('should clone File', () => {
+				const file = new File(['Hello'], 'test.txt', { type: 'text/plain' })
+				const cloned = binary.clone(file)
+				expect(cloned).not.toBe(file)
+				expect(cloned.size).toBe(file.size)
+			})
 
-		it('should compare string data', async () => {
-			const same = await binary.compare('SGVsbG8=', 'SGVsbG8=') // base64 encoded
-			expect(same).toBe(true)
-		})
-
-		it('should clone Blob', () => {
-			const blob = new Blob(['Hello'], { type: 'text/plain' })
-			const cloned = binary.clone(blob)
-			expect(cloned).not.toBe(blob)
-			expect(cloned.size).toBe(blob.size)
-		})
-
-		it('should clone ArrayBuffer', () => {
-			const buffer = new ArrayBuffer(8)
-			const cloned = binary.clone(buffer)
-			expect(cloned).not.toBe(buffer)
-			expect(cloned.byteLength).toBe(buffer.byteLength)
-		})
-
-		it('should clone File', () => {
-			const file = new File(['Hello'], 'test.txt', { type: 'text/plain' })
-			const cloned = binary.clone(file)
-			expect(cloned).not.toBe(file)
-			expect(cloned.size).toBe(file.size)
-		})
-
-		it('should throw for unsupported clone type', () => {
-			expect(() => binary.clone('string' as any)).toThrow('Unsupported type for cloning')
+			it('should throw for unsupported clone type', () => {
+				expect(() => binary.clone('string' as any)).toThrow('Unsupported type for cloning')
+			})
 		})
 
 		it('should download Blob', () => {
