@@ -105,6 +105,7 @@ v6.x 使用正确的条件导出：
 | `parseUrlParam()`     | `url.parse()`                              |
 | `spliceUrlParam()`    | `url.stringify()` 或 `new Url(url).set()`  |
 | `mapTemplate()`       | `template()` (增强版本)                    |
+| `isExitsFunction()`   | `isFunctionExists()` (修正拼写错误)        |
 
 ### 5. 移除 `pattern` 对象
 
@@ -1479,6 +1480,12 @@ template('Hello, {{ name }}!', {
 | `invert`         | 反转对象的键和值                 |
 | `mapKeys`        | 转换对象的键                     |
 | `mapValues`      | 转换对象的值                     |
+
+### 类型检查函数
+
+| 函数               | 说明                             |
+| ------------------ | -------------------------------- |
+| `isFunctionExists` | 检查函数是否存在（修正拼写错误）|
 
 ### 增强的函数
 

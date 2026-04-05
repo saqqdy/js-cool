@@ -104,16 +104,19 @@ const params = url.parse(url) // or new Url(url).toObject()
 
 The following functions have been removed due to bugs or lack of usefulness:
 
-| Function            | Reason                                           | Alternative                   |
-| ------------------- | ------------------------------------------------ | ----------------------------- |
-| `isExitsVariable()` | Always returned `true` due to implementation bug | Use `getGlobal(name) != null` |
+| Function             | Reason                                           | Alternative                      |
+| -------------------- | ------------------------------------------------ | -------------------------------- |
+| `isExitsVariable()`  | Always returned `true` due to implementation bug | Use `getGlobal(name) != null`    |
+| `isExitsFunction()`  | Typo in function name                            | Use `isFunctionExists('name')`   |
 
 ```js
 // v5.x (removed - was broken)
 isExitsVariable('someVar') // always returned true
+isExitsFunction('someFunc') // typo in name
 
-// v6.x - use getGlobal instead
-import { getGlobal } from 'js-cool'
+// v6.x - use the new function
+import { isFunctionExists, getGlobal } from 'js-cool'
+isFunctionExists('JSON.parse') // true - check if function exists
 getGlobal('someVar') !== undefined // check if global variable exists
 ```
 
@@ -1386,12 +1389,13 @@ searchObject(data, 'john')
 New type checking functions:
 
 ```js
-import { isWindow, isExitsFunction } from 'js-cool'
+import { isWindow } from 'js-cool'
 
 // Check if Window object
 isWindow(window) // true in browser
 
-// Check if function exists
-isExitsFunction('JSON.parse') // true
-isExitsFunction('nonExistent.function') // false
+// Check if function exists (use getGlobal)
+import { getGlobal } from 'js-cool'
+typeof getGlobal('JSON.parse') === 'function' // true
+typeof getGlobal('nonExistent.function') === 'function' // false
 ```

@@ -1,17 +1,17 @@
-# isExitsFunction <Badge type="info" text="v1.0.1" />
+# isFunctionExists <Badge type="info" text="v6.0.0" />
 
 检查指定的函数是否存在。
 
 ## 用法
 
 ```js
-import { isExitsFunction } from 'js-cool'
+import { isFunctionExists } from 'js-cool'
 ```
 
 ## 签名
 
 ```typescript
-function isExitsFunction(name: string): boolean
+function isFunctionExists(name: string): boolean
 ```
 
 ## 参数
@@ -28,17 +28,17 @@ function isExitsFunction(name: string): boolean
 
 ```js
 // 检查全局函数
-isExitsFunction('console.log') // true
+isFunctionExists('console.log') // true
 
 // 检查不存在的函数
-isExitsFunction('test') // false
+isFunctionExists('test') // false
 
 // 检查内置函数
-isExitsFunction('Array.isArray') // true
-isExitsFunction('JSON.parse') // true
+isFunctionExists('Array.isArray') // true
+isFunctionExists('JSON.parse') // true
 
 // 检查嵌套函数
-isExitsFunction('document.querySelector') // true
+isFunctionExists('document.querySelector') // true
 ```
 
 ## 注意
@@ -47,3 +47,7 @@ isExitsFunction('document.querySelector') // true
 - 使用安全的求值方法检查函数是否存在
 - 如果函数在求值过程中抛出错误，返回 `false`
 - 如需检查全局变量是否存在，可使用 `getGlobal(name) !== undefined`
+
+## 相关
+
+- [getGlobal](../utility/get-global.md) - 通过路径获取全局变量

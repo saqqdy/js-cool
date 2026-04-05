@@ -86,6 +86,7 @@ export default defineConfig([
 			file: 'dist/index.mjs',
 			format: 'esm',
 			banner,
+			sourcemap: true,
 		},
 		external,
 		plugins: [versionPlugin()],

@@ -104,16 +104,19 @@ const params = url.parse(url) // 或 new Url(url).toObject()
 
 以下函数由于存在 bug 或缺乏实用性已被移除：
 
-| 函数                | 原因                        | 替代方案                       |
-| ------------------- | --------------------------- | ------------------------------ |
-| `isExitsVariable()` | 实现有 bug，始终返回 `true` | 使用 `getGlobal(name) != null` |
+| 函数                | 原因                        | 替代方案                              |
+| ------------------- | --------------------------- | ------------------------------------- |
+| `isExitsVariable()` | 实现有 bug，始终返回 `true` | 使用 `getGlobal(name) != null`        |
+| `isExitsFunction()` | 函数名拼写错误              | 使用 `isFunctionExists('name')`       |
 
 ```js
 // v5.x（已移除 - 存在 bug）
 isExitsVariable('someVar') // 始终返回 true
+isExitsFunction('someFunc') // 函数名拼写错误
 
-// v6.x - 使用 getGlobal 替代
-import { getGlobal } from 'js-cool'
+// v6.x - 使用新函数
+import { isFunctionExists, getGlobal } from 'js-cool'
+isFunctionExists('JSON.parse') // true - 检查函数是否存在
 getGlobal('someVar') !== undefined // 检查全局变量是否存在
 ```
 
@@ -1385,12 +1388,13 @@ searchObject(data, 'john')
 新的类型检查函数：
 
 ```js
-import { isWindow, isExitsFunction } from 'js-cool'
+import { isWindow } from 'js-cool'
 
 // 检查是否为 Window 对象
 isWindow(window) // 浏览器中返回 true
 
-// 检查函数是否存在
-isExitsFunction('JSON.parse') // true
-isExitsFunction('nonExistent.function') // false
+// 检查函数是否存在（使用 getGlobal）
+import { getGlobal } from 'js-cool'
+typeof getGlobal('JSON.parse') === 'function' // true
+typeof getGlobal('nonExistent.function') === 'function' // false
 ```

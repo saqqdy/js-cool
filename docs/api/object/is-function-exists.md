@@ -1,17 +1,17 @@
-# isExitsFunction <Badge type="info" text="since v1.0.1" />
+# isFunctionExists <Badge type="info" text="since v6.0.0" />
 
-The presence or absence of the specified function.
+Check if a function exists in the global scope.
 
 ## Usage
 
 ```js
-import { isExitsFunction } from 'js-cool'
+import { isFunctionExists } from 'js-cool'
 ```
 
 ## Signature
 
 ```typescript
-function isExitsFunction(name: string): boolean
+function isFunctionExists(name: string): boolean
 ```
 
 ## Parameters
@@ -28,17 +28,17 @@ function isExitsFunction(name: string): boolean
 
 ```js
 // Check global function
-isExitsFunction('console.log') // true
+isFunctionExists('console.log') // true
 
 // Check non-existent function
-isExitsFunction('test') // false
+isFunctionExists('test') // false
 
 // Check built-in functions
-isExitsFunction('Array.isArray') // true
-isExitsFunction('JSON.parse') // true
+isFunctionExists('Array.isArray') // true
+isFunctionExists('JSON.parse') // true
 
 // Check nested function
-isExitsFunction('document.querySelector') // true
+isFunctionExists('document.querySelector') // true
 ```
 
 ## Notes
@@ -47,3 +47,7 @@ isExitsFunction('document.querySelector') // true
 - Uses a safe evaluation method to check function existence
 - Returns `false` if the function throws an error during evaluation
 - To check if a global variable exists, use `getGlobal(name) !== undefined`
+
+## Related
+
+- [getGlobal](../utility/get-global.md) - Get global variable by path

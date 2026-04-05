@@ -107,15 +107,15 @@ isIterable({}) // false
 
 ## Existence Checks
 
-### isExitsFunction
+### isFunctionExists
 
 Check if a function exists globally.
 
 ```js
-import { isExitsFunction } from 'js-cool'
+import { isFunctionExists } from 'js-cool'
 
-isExitsFunction('JSON.parse') // true
-isExitsFunction('nonExistent') // false
+isFunctionExists('JSON.parse') // true
+isFunctionExists('nonExistent') // false
 ```
 
 ## Comparison

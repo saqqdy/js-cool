@@ -105,6 +105,7 @@ v6.x uses proper conditional exports:
 | `parseUrlParam()`     | `url.parse()`                              |
 | `spliceUrlParam()`    | `url.stringify()` or `new Url(url).set()`  |
 | `mapTemplate()`       | `template()` (enhanced version)            |
+| `isExitsFunction()`   | `isFunctionExists()` (fixed typo)          |
 
 ### 5. `pattern` Object Removed
 
@@ -1489,6 +1490,12 @@ template('Hello, {{ name }}!', {
 | `invert`          | Invert object keys and values                  |
 | `mapKeys`         | Transform object keys                          |
 | `mapValues`       | Transform object values                        |
+
+### Type Check Functions
+
+| Function            | Description                                    |
+| ------------------- | ---------------------------------------------- |
+| `isFunctionExists`  | Check if a function exists (replaces typo)     |
 
 ### Enhanced Functions
 

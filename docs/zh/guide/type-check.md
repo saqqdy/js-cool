@@ -107,15 +107,15 @@ isIterable({}) // false
 
 ## 存在性检查
 
-### isExitsFunction
+### isFunctionExists
 
 检查全局函数是否存在。
 
 ```js
-import { isExitsFunction } from 'js-cool'
+import { isFunctionExists } from 'js-cool'
 
-isExitsFunction('JSON.parse') // true
-isExitsFunction('nonExistent') // false
+isFunctionExists('JSON.parse') // true
+isFunctionExists('nonExistent') // false
 ```
 
 ## 比较
