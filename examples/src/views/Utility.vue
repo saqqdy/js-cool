@@ -30,6 +30,7 @@ const rsLength = ref(16)
 const rsCharTypes = ref<RandomStringCharType[]>(['uppercase', 'lowercase', 'number'])
 const rsNoConfuse = ref(false)
 const rsStrict = ref(false)
+const rsSecure = ref(false)
 const rsResult = ref('')
 
 const charTypeOptions = [
@@ -49,11 +50,13 @@ const rsCode = computed(() => {
 	}
 	if (rsNoConfuse.value) options.push('noConfuse: true')
 	if (rsStrict.value) options.push('strict: true')
+	if (rsSecure.value) options.push('secure: true')
 
 	if (
 		options.length === 1 &&
 		!rsNoConfuse.value &&
 		!rsStrict.value &&
+		!rsSecure.value &&
 		rsCharTypes.value.length === 3
 	) {
 		return `randomString(${rsLength.value})`
@@ -70,6 +73,7 @@ const generateRs = () => {
 				: undefined,
 		noConfuse: rsNoConfuse.value,
 		strict: rsStrict.value,
+		secure: rsSecure.value,
 	})
 }
 
@@ -125,13 +129,14 @@ onMounted(() => {
 		<!-- randomString -->
 		<FunctionCard
 			title="randomString"
-			description="Generate random string with various options"
+			description="Generate random string with various options, including secure mode for crypto-safe randomness"
 			since="1.0.0"
 			:code="`randomString() // default 32 chars
 randomString(16) // 16 chars
 randomString({ length: 6, charTypes: 'number' }) // '847291'
 randomString({ length: 16, noConfuse: true }) // exclude confusing chars
-randomString({ length: 16, strict: true }) // must include all char types`"
+randomString({ length: 16, strict: true }) // must include all char types
+randomString({ length: 32, secure: true }) // crypto-safe (for tokens, passwords)`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -159,6 +164,8 @@ randomString({ length: 16, strict: true }) // must include all char types`"
 						<n-switch v-model:value="rsNoConfuse" size="small" />
 						<span style="color: #999; font-size: 12px; margin-left: 12px">strict:</span>
 						<n-switch v-model:value="rsStrict" size="small" />
+						<span style="color: #999; font-size: 12px; margin-left: 12px">secure:</span>
+						<n-switch v-model:value="rsSecure" size="small" />
 					</n-space>
 					<n-space align="center">
 						<n-button size="small" type="primary" @click="generateRs"

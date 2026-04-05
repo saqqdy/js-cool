@@ -1,6 +1,6 @@
 # randomNumber <Badge type="info" text="since v5.0.0" />
 
-Generate a random number in range.
+Generate a random integer in range with uniform distribution.
 
 ## Usage
 
@@ -16,19 +16,31 @@ function randomNumber(min?: number, max?: number): number
 
 ## Parameters
 
-| Parameter | Type     | Description                  |
-| --------- | -------- | ---------------------------- |
-| `min`     | `number` | Minimum value (default: 0)   |
-| `max`     | `number` | Maximum value (default: 100) |
+| Parameter | Type     | Description                               |
+| --------- | -------- | ----------------------------------------- |
+| `min`     | `number` | Minimum value, inclusive (default: 1)     |
+| `max`     | `number` | Maximum value, inclusive (default: 10)    |
 
 ## Returns
 
-`number` - Random number in range.
+`number` - Random integer between min and max (inclusive).
 
 ## Examples
 
 ```js
-randomNumber() // 0-100
-randomNumber(1, 10) // 1-10
-randomNumber(0, 1) // 0 or 1
+// Default range (1-10)
+randomNumber() // 8
+
+// Custom range
+randomNumber(1, 100) // 42
+
+// Small range
+randomNumber(1, 3) // 2
+
+// Single value range
+randomNumber(5, 5) // 5
 ```
+
+## Notes
+
+Uses `Math.floor()` for uniform distribution across all values in the range.

@@ -589,31 +589,34 @@ randomString(true) // 32 chars with special characters
 
 #### getCHSLength
 
-Get string length (Chinese = 2 chars).
+Get string byte length (full-width chars = 2 bytes). Includes Chinese, emoji, and other wide characters.
 
 ```js
-import { getCHSLength } from 'js-cool'
+import { getCHSLength, isFullWidth } from 'js-cool'
 
 getCHSLength('hello') // 5
-getCHSLength('你好') // 4
+getCHSLength('你好') // 4 (2 Chinese chars × 2)
 getCHSLength('hello世界') // 9 (5 + 4)
-getCHSLength('测试Test') // 8 (4 + 4)
+getCHSLength('🎉') // 2 (emoji is full-width)
 getCHSLength('') // 0
+
+// Check if a character is full-width
+isFullWidth('中') // true
+isFullWidth('a') // false
+isFullWidth('🎉') // true
 ```
 
 #### cutCHSString
 
-Truncate string (Chinese = 2 bytes).
+Truncate string by byte length (full-width chars = 2 bytes).
 
 ```js
 import { cutCHSString } from 'js-cool'
 
-cutCHSString('hello世界', 6) // 'hello世'
-cutCHSString('hello世界', 6, true) // 'hello世...'
-cutCHSString('测试字符串', 4) // '测试'
-cutCHSString('测试字符串', 4, true) // '测试...'
-cutCHSString('abc', 10) // 'abc'
-cutCHSString('abc', 10, true) // 'abc'
+cutCHSString('hello世界', 6) // 'hello世' (5 + 2 = 7 bytes, but we stop at 6)
+cutCHSString('hello世界', 6, true) // 'hello世...' (with ellipsis)
+cutCHSString('测试字符串', 4) // '测试' (4 bytes = 2 Chinese chars)
+cutCHSString('abc', 10) // 'abc' (no truncation needed)
 ```
 
 #### words
@@ -2350,14 +2353,25 @@ users.sort(sorter('name', 'asc', name => name.toLowerCase()))
 
 #### sortPinyin
 
+Sort Chinese by pinyin with accurate character detection.
+
 ```js
 import { sortPinyin } from 'js-cool'
 
-sortPinyin(['张三', '李四', '王五'])
+// As compare function
+['张三', '李四', '王五'].sort(sortPinyin)
 // ['李四', '王五', '张三']
 
-sortPinyin(['北京', '上海', '广州', '深圳'])
-// ['北京', '广州', '上海', '深圳']
+// Using sort method (returns new array)
+sortPinyin.sort(['张三', '李四', '王五'])
+// ['李四', '王五', '张三']
+
+// Mixed content with null/undefined
+sortPinyin.sort(['中文', null, 'English', undefined])
+// ['English', '中文', null, undefined] - null/undefined at the end
+
+// With options
+sortPinyin.sort(['张三', '李四'], { numeric: true })
 ```
 
 #### punctualTimer

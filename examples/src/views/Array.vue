@@ -297,16 +297,27 @@ sampleSize([1, 2, 3, 4, 5], 2) // [3, 1] (2 random elements)`"
 		<FunctionCard
 			title="sortPinyin"
 			:description="t.array.sortPinyinDesc"
-			since="1.0.0"
-			:code="`['张三', '李四', '王五'].sort(sortPinyin) // ['李四', '王五', '张三']`"
+			since="5.14.0"
+			:code="`['张三', '李四', '王五'].sort(sortPinyin) // ['李四', '王五', '张三']
+sortPinyin.sort(['张三', '李四', '王五']) // ['李四', '王五', '张三'] (returns new array)`"
 		>
 			<template #input>
-				<n-space>
-					<n-tag>{{ JSON.stringify(pinyinInput) }}</n-tag>
-					<span style="color: #999">→</span>
-					<n-tag type="info">{{
-						JSON.stringify([...pinyinInput].sort(sortPinyin))
-					}}</n-tag>
+				<n-space vertical>
+					<n-space align="center">
+						<n-tag>{{ JSON.stringify(pinyinInput) }}</n-tag>
+						<span style="color: #999">→</span>
+						<n-tag type="info">{{
+							JSON.stringify([...pinyinInput].sort(sortPinyin))
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">sortPinyin.sort()</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(sortPinyin.sort(pinyinInput)) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">with null/undefined:</code>
+						<n-tag type="info" size="small">{{ JSON.stringify(sortPinyin.sort(['中文', null, 'English', undefined])) }}</n-tag>
+					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>

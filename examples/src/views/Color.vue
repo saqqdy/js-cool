@@ -251,12 +251,13 @@ isLightColor('#000000') // false`"
 		<!-- randomColor -->
 		<FunctionCard
 			title="randomColor"
-			description="Generate random color with various options"
+			description="Generate random color with various options including alpha support"
 			since="5.5.0"
 			:code="`randomColor() // '#bf444b'
 randomColor(200) // all channels >= 200 (lighter)
 randomColor(200, 255) // all channels 200-255
-randomColor([200, 100, 0], [255, 200, 100]) // warm colors`"
+randomColor({ alpha: true }) // with random alpha
+randomColor({ alpha: 128 }) // with specific alpha (0-255)`"
 		>
 			<template #input>
 				<n-space vertical>

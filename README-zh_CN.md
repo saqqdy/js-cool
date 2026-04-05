@@ -550,31 +550,34 @@ randomString(true) // 32位包含特殊字符
 
 #### getCHSLength
 
-获取字符串长度（中文=2字符）。
+获取字符串字节长度（全角字符=2字节）。支持中文、emoji 等宽字符。
 
 ```js
-import { getCHSLength } from 'js-cool'
+import { getCHSLength, isFullWidth } from 'js-cool'
 
 getCHSLength('hello') // 5
-getCHSLength('你好') // 4
+getCHSLength('你好') // 4 (2个中文 × 2)
 getCHSLength('hello世界') // 9 (5 + 4)
-getCHSLength('测试Test') // 8 (4 + 4)
+getCHSLength('🎉') // 2 (emoji 是全角字符)
 getCHSLength('') // 0
+
+// 判断单个字符是否为全角
+isFullWidth('中') // true
+isFullWidth('a') // false
+isFullWidth('🎉') // true
 ```
 
 #### cutCHSString
 
-截取字符串（中文=2字节）。
+按字节长度截取字符串（全角字符=2字节）。
 
 ```js
 import { cutCHSString } from 'js-cool'
 
-cutCHSString('hello世界', 6) // 'hello世'
-cutCHSString('hello世界', 6, true) // 'hello世...'
-cutCHSString('测试字符串', 4) // '测试'
-cutCHSString('测试字符串', 4, true) // '测试...'
-cutCHSString('abc', 10) // 'abc'
-cutCHSString('abc', 10, true) // 'abc'
+cutCHSString('hello世界', 6) // 'hello世' (5 + 2 = 7字节，但在6字节处截断)
+cutCHSString('hello世界', 6, true) // 'hello世...' (带省略号)
+cutCHSString('测试字符串', 4) // '测试' (4字节 = 2个中文字符)
+cutCHSString('abc', 10) // 'abc' (无需截断)
 ```
 
 ---
@@ -1883,14 +1886,25 @@ users.sort(sorter('name', 'asc', name => name.toLowerCase()))
 
 #### sortPinyin
 
+按拼音排序中文，支持精确的中文字符检测。
+
 ```js
 import { sortPinyin } from 'js-cool'
 
-sortPinyin(['张三', '李四', '王五'])
+// 作为比较函数
+['张三', '李四', '王五'].sort(sortPinyin)
 // ['李四', '王五', '张三']
 
-sortPinyin(['北京', '上海', '广州', '深圳'])
-// ['北京', '广州', '上海', '深圳']
+// 使用 sort 方法（返回新数组）
+sortPinyin.sort(['张三', '李四', '王五'])
+// ['李四', '王五', '张三']
+
+// 混合内容（含 null/undefined）
+sortPinyin.sort(['中文', null, 'English', undefined])
+// ['English', '中文', null, undefined] - null/undefined 排在末尾
+
+// 带选项
+sortPinyin.sort(['张三', '李四'], { numeric: true })
 ```
 
 #### punctualTimer

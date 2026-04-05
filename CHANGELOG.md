@@ -113,6 +113,14 @@ All notable changes to this project will be documented in this file.
   - `toThousands`: Added `separator`, `decimals`, `prefix`, `suffix` options
   - `camel2Dash`: Improved consecutive uppercase handling (XMLParser → xml-parser)
   - `template`: Added function resolver support for dynamic values
+  - `sortPinyin`: Optimized with accurate Chinese character detection using Unicode ranges (CJK Unified Ideographs), proper `null`/`undefined` handling, cached `Intl.Collator` instance for better performance, and new `sortPinyin.sort(array)` method
+  - `debounce`: Refactored to share core logic with `throttle`, both functions now use the same internal implementation, `throttle` is now a wrapper around `debounce` with `maxWait: wait`, improved TypeScript types with `DebouncedFunction<T>` interface
+  - `getCHSLength`: Improved full-width character detection, now correctly detects emoji and other full-width characters as 2 bytes, exported `isFullWidth()` helper function
+  - `cutCHSString`: Refactored to use `getCHSLength` internally, more accurate byte-length calculation, better handling of edge cases
+  - `randomNumber`: Fixed distribution bias using `Math.floor()` instead of `Math.round()` for uniform distribution
+  - `randomNumbers`: Improved distribution algorithm for better uniformity
+  - `randomColor`: Added alpha channel support with `alpha` option (boolean for random, 0-255 for specific), added options object API
+  - `randomString`: Added `secure` option for cryptographically secure random generation using `crypto.getRandomValues()`
 
 - **New IE11 Compatibility Functions**:
   - `arrayFrom`: IE11-compatible `Array.from()`

@@ -12,6 +12,8 @@ import { sortPinyin } from 'js-cool'
 
 ```typescript
 function sortPinyin<T = string, P = string>(a: T, b: P, options?: Intl.CollatorOptions): number
+
+function sortPinyin.sort<T>(array: T[], options?: Intl.CollatorOptions): T[]
 ```
 
 ## 参数
@@ -26,6 +28,13 @@ function sortPinyin<T = string, P = string>(a: T, b: P, options?: Intl.CollatorO
 
 `number` - 如果 `a` 应该在 `b` 前面，返回负数；如果 `a` 应该在 `b` 后面，返回正数；如果相等，返回 `0`。
 
+## 特性
+
+- **精确中文检测** - 使用 Unicode 范围精确检测中文汉字（CJK 统一汉字）
+- **空值处理** - `null` 和 `undefined` 会被排在数组末尾
+- **性能优化** - 缓存 `Intl.Collator` 实例，避免重复创建
+- **便捷方法** - 提供 `sortPinyin.sort()` 方法直接返回排序后的新数组
+
 ## 示例
 
 ```js
@@ -38,19 +47,23 @@ items.sort(sortPinyin)
 items.sort((a, b) => sortPinyin(a, b, { ignorePunctuation: true, numeric: true }))
 // [ 0, 3, "10", ",11", 13, "ä", "ABB", "abc", "ACD", "BDD", null, "阿吧", "啊我", "波拉" ]
 
-// 纯中文排序
-const chinese = ['张三', '李四', '王五']
-chinese.sort(sortPinyin)
-// 按拼音排序
+// 使用 sort 方法（返回新数组，不修改原数组）
+const sorted = sortPinyin.sort(['张三', '李四', '王五'])
+// ['李四', '王五', '张三']
 
-// 混合内容
-const mixed = ['中文', 'English', '123']
+// 混合内容（含 null/undefined）
+const mixed = ['中文', null, 'English', undefined, '123']
 mixed.sort(sortPinyin)
+// ['123', 'English', '中文', null, undefined] - null/undefined 排在末尾
+
+// 带选项的 sort 方法
+const sortedWithOptions = sortPinyin.sort(['张三', '李四'], { numeric: true })
 ```
 
 ## 注意
 
 - 非中文内容排在中文内容之前
+- `null` 和 `undefined` 排在数组末尾
 - 使用 `Intl.Collator` 并设置 `zh-Hans-CN` 区域进行中文排序
 - 默认选项包括 `ignorePunctuation: true` 和 `numeric: true`
 - 可以通过 `Intl.CollatorOptions` 自定义

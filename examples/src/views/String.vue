@@ -453,7 +453,9 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 			:description="t.string.chsDesc"
 			since="1.0.0"
 			:tags="[t.chinese]"
-			:code="`getCHSLength('${chsInput}') // ${getCHSLength(chsInput)}\ncutCHSString('${chsInput}', ${chsLen}) // '${cutCHSString(chsInput, chsLen)}'`"
+			:code="`getCHSLength('${chsInput}') // ${getCHSLength(chsInput)} (full-width chars = 2 bytes)
+getCHSLength('🎉') // 2 (emoji is full-width)
+cutCHSString('${chsInput}', ${chsLen}) // '${cutCHSString(chsInput, chsLen)}'`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -465,12 +467,18 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 						<n-input-number v-model:value="chsLen" :min="1" style="width: 80px" />
 						<span style="color: #999">{{ t.string.bytes }}</span>
 					</n-space>
+					<n-space align="center">
+						<code class="code-inline">getCHSLength('🎉')</code>
+						<n-tag type="info" size="small">{{ getCHSLength('🎉') }} (emoji)</n-tag>
+					</n-space>
 				</n-space>
 			</template>
 			<template #result>
-				<n-space>
-					<n-tag type="info">{{ cutCHSString(chsInput, chsLen) }}</n-tag>
-					<n-tag type="info">{{ cutCHSString(chsInput, chsLen, true) }}</n-tag>
+				<n-space vertical>
+					<n-space>
+						<n-tag type="info">{{ cutCHSString(chsInput, chsLen) }}</n-tag>
+						<n-tag type="info">{{ cutCHSString(chsInput, chsLen, true) }}</n-tag>
+					</n-space>
 				</n-space>
 			</template>
 		</FunctionCard>
