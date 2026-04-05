@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { NH1, NInput, NTag, NSpace, NInputNumber } from 'naive-ui'
+import { NH1, NInput, NTag, NSpace, NInputNumber, NSelect } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
 	clamp,
@@ -27,6 +27,10 @@ const inRangeVal = ref(5)
 const inRangeMin = ref(0)
 const inRangeMax = ref(10)
 const thousandsVal = ref(1234567.89)
+const thousandsSeparator = ref(',')
+const thousandsDecimals = ref<number | undefined>(undefined)
+const thousandsPrefix = ref('')
+const thousandsSuffix = ref('')
 const fixVal = ref(3.14159)
 const fixDecimals = ref(2)
 const getNumInput = ref('Chrome123.45')
@@ -34,6 +38,14 @@ const randomMin = ref(1)
 const randomMax = ref(100)
 const randomNumCount = ref(4)
 const randomNumSum = ref(100)
+
+const separatorOptions = [
+	{ label: ', (comma)', value: ',' },
+	{ label: ' (space)', value: ' ' },
+	{ label: "' (apostrophe)", value: "'" },
+	{ label: '. (dot)', value: '.' },
+	{ label: '_ (underscore)', value: '_' },
+]
 </script>
 
 <template>
@@ -147,15 +159,79 @@ average([1, 2, 3, 4, 5]) // 3`"
 			title="toThousands"
 			:description="t.number.toThousandsDesc"
 			since="1.0.0"
-			:code="`toThousands(1234567.89) // '1,234,567.89'`"
+			:tags="['NEW']"
+			:code="`// Basic usage
+	toThousands(1234567.89)  // '1,234,567.89'
+
+	// Custom separator
+	toThousands(1234567.89, { separator: ' ' })  // '1 234 567.89'
+
+	// With decimals limit
+	toThousands(1234.5678, { decimals: 2 })  // '1,234.57'
+
+	// With currency prefix
+	toThousands(1234.56, { prefix: '$', decimals: 2 })  // '$1,234.56'
+
+	// With suffix (e.g., percentage)
+	toThousands(98.5, { suffix: '%', decimals: 1 })  // '98.5%'
+
+	// Combined options
+	toThousands(1234567.89, { prefix: '¥', separator: ' ', decimals: 2 })
+	// '¥1 234 567.89'`"
 		>
 			<template #input>
-				<n-input-number v-model:value="thousandsVal" :step="0.01" style="width: 150px" />
+				<n-space vertical>
+					<n-space align="center">
+						<n-input-number v-model:value="thousandsVal" :step="0.01" style="width: 150px" />
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">separator:</code>
+						<n-select v-model:value="thousandsSeparator" :options="separatorOptions" style="width: 130px" />
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">decimals:</code>
+						<n-input-number v-model:value="thousandsDecimals" :min="0" :max="10" placeholder="auto" style="width: 80px" />
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">prefix:</code>
+						<n-input v-model:value="thousandsPrefix" placeholder="$, ¥, €..." style="width: 80px" />
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">suffix:</code>
+						<n-input v-model:value="thousandsSuffix" placeholder="%, 元..." style="width: 80px" />
+					</n-space>
+				</n-space>
 			</template>
 			<template #result>
-				<n-tag type="info" size="small" :bordered="false">{{
-					toThousands(thousandsVal)
-				}}</n-tag>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">toThousands(input, options)</code>
+						<n-tag type="info" size="small" :bordered="false">{{
+							toThousands(thousandsVal, {
+								separator: thousandsSeparator,
+								decimals: thousandsDecimals ?? undefined,
+								prefix: thousandsPrefix,
+								suffix: thousandsSuffix,
+							})
+						}}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">Basic (default)</code>
+						<n-tag size="small" :bordered="false">{{ toThousands(thousandsVal) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">Space separator</code>
+						<n-tag size="small" :bordered="false">{{ toThousands(thousandsVal, { separator: ' ' }) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">Currency ¥</code>
+						<n-tag size="small" :bordered="false">{{ toThousands(thousandsVal, { prefix: '¥', decimals: 2 }) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">Currency $</code>
+						<n-tag size="small" :bordered="false">{{ toThousands(thousandsVal, { prefix: '$', decimals: 2 }) }}</n-tag>
+					</n-space>
+				</n-space>
 			</template>
 		</FunctionCard>
 

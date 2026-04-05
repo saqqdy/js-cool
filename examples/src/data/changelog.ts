@@ -21,7 +21,7 @@ export interface ChangelogData {
 
 export const changelog: ChangelogData = {
 	version: version || '6.0.0',
-	date: '2025-03-29',
+	date: '2026-04-05',
 	summary:
 		'Major update: New binary module, IE11 built-in support, new UA detector module, 50+ new utilities',
 	summaryZh: '重大更新：新增 binary 模块、内置 IE11 支持、新增 UA 检测模块、50+ 新工具函数',
@@ -164,7 +164,44 @@ export const changelog: ChangelogData = {
 			descriptionZh: '鸿蒙、iPadOS 检测，改进的 iOS/Android 检测',
 		},
 
-		// New Features - String
+		// New Features - String (v6.0.0)
+		{
+			type: 'new',
+			name: 'changeCase',
+			category: 'String',
+			description:
+				'Unified case conversion API supporting camel, kebab, snake, pascal, constant, dot, title, swap, upper, lower cases',
+			descriptionZh:
+				'统一的命名风格转换 API，支持驼峰、短横线、下划线、帕斯卡、常量、点分隔、标题、大小写互换、大写、小写等格式',
+			anchor: 'changecase',
+		},
+		{
+			type: 'new',
+			name: 'constantCase / dotCase / pascalCase',
+			category: 'String',
+			description:
+				'Convert string to CONSTANT_CASE, dot.case, or PascalCase format',
+			descriptionZh: '将字符串转换为常量格式、点分隔格式或帕斯卡格式',
+			anchor: 'constantcase',
+		},
+		{
+			type: 'new',
+			name: 'titleCase / swapCase',
+			category: 'String',
+			description:
+				'Convert to Title Case or swap the case of each character',
+			descriptionZh: '转换为标题格式或交换每个字符的大小写',
+			anchor: 'titlecase',
+		},
+		{
+			type: 'new',
+			name: 'reverse / count',
+			category: 'String',
+			description:
+				'Reverse string (Unicode aware) or count substring occurrences with overlapping and case-sensitive options',
+			descriptionZh: '反转字符串（支持 Unicode）或计算子字符串出现次数，支持重叠和区分大小写选项',
+			anchor: 'reverse',
+		},
 		{
 			type: 'new',
 			name: 'truncate',
@@ -188,6 +225,22 @@ export const changelog: ChangelogData = {
 			description: 'Capitalize first letter (rest lowercase) or convert first letter to lowercase',
 			descriptionZh: '首字母大写（其余小写）或首字母小写',
 			anchor: 'capitalize',
+		},
+		{
+			type: 'new',
+			name: 'words',
+			category: 'String',
+			description: 'Split string into an array of words (supports camelCase, PascalCase, snake_case, kebab-case)',
+			descriptionZh: '将字符串拆分为单词数组（支持驼峰、帕斯卡、下划线、短横线格式）',
+			anchor: 'words',
+		},
+		{
+			type: 'new',
+			name: 'template',
+			category: 'String',
+			description: 'Template string interpolation with custom delimiters, nested properties, and HTML escaping',
+			descriptionZh: '模板字符串插值，支持自定义分隔符、嵌套属性和 HTML 转义',
+			anchor: 'template',
 		},
 
 		// New Features - Array
@@ -283,6 +336,22 @@ export const changelog: ChangelogData = {
 		},
 		{
 			type: 'new',
+			name: 'mergeWith',
+			category: 'Object',
+			description: 'Merge objects with custom strategy function for arrays, nested objects, etc.',
+			descriptionZh: '使用自定义策略函数合并对象，支持数组、嵌套对象等',
+			anchor: 'mergewith',
+		},
+		{
+			type: 'new',
+			name: 'transform',
+			category: 'Object',
+			description: 'Transform object to new accumulator with iteratee function',
+			descriptionZh: '使用迭代函数将对象转换为新累加器',
+			anchor: 'transform',
+		},
+		{
+			type: 'new',
 			name: 'cleanData',
 			category: 'Object',
 			description: 'Remove undefined, null, empty strings and specified keys from object',
@@ -375,14 +444,38 @@ export const changelog: ChangelogData = {
 			descriptionZh: '四舍五入、限制范围、检查是否在范围内',
 			anchor: 'round',
 		},
+		{
+			type: 'update',
+			name: 'getNumber',
+			category: 'Number',
+			description: 'Added type, multiple, decimals options for enhanced number extraction',
+			descriptionZh: '新增 type、multiple、decimals 选项，增强数字提取功能',
+			anchor: 'getnumber',
+		},
+		{
+			type: 'update',
+			name: 'toThousands',
+			category: 'Number',
+			description: 'Added separator, decimals, prefix, suffix options for flexible formatting',
+			descriptionZh: '新增 separator、decimals、prefix、suffix 选项，灵活格式化数字',
+			anchor: 'tothousands',
+		},
 
 		// New Features - Date
 		{
 			type: 'new',
+			name: 'date module',
+			category: 'Date',
+			description: 'Comprehensive date manipulation module with add, subtract, startOf, endOf, compare functions',
+			descriptionZh: '全面的日期操作模块，支持加、减、开始、结束、比较等函数',
+			anchor: 'date',
+		},
+		{
+			type: 'new',
 			name: 'formatDate / relativeTime',
 			category: 'Date',
-			description: 'Format date with pattern, get relative time string',
-			descriptionZh: '格式化日期，获取相对时间字符串',
+			description: 'Format date with pattern, get relative time string (supports en, zh, ja, ko, de, fr, es)',
+			descriptionZh: '格式化日期，获取相对时间字符串（支持中英日韩德法西语）',
 			anchor: 'formatdate',
 		},
 		{
@@ -484,8 +577,8 @@ export const changelog: ChangelogData = {
 			type: 'new',
 			name: 'retry',
 			category: 'Utility',
-			description: 'Retry async function with configurable attempts',
-			descriptionZh: '可配置重试次数的异步函数重试',
+			description: 'Retry async function with configurable attempts and timeout',
+			descriptionZh: '可配置重试次数和超时的异步函数重试',
 			anchor: 'retry',
 		},
 		{
@@ -549,6 +642,26 @@ export const changelog: ChangelogData = {
 				'Proper error classes for storage quota exceeded and unavailable scenarios',
 			descriptionZh: '存储空间已满和不可用场景的错误类',
 			anchor: 'storage',
+		},
+
+		// Patterns module
+		{
+			type: 'new',
+			name: 'patterns module',
+			category: 'Validate',
+			description:
+				'Unified validation patterns (email, mobile, idCard, url, etc.) and UA patterns for device, OS, browser, environment detection',
+			descriptionZh:
+				'统一的验证模式（邮箱、手机、身份证、URL 等）和用于设备、操作系统、浏览器、环境检测的 UA 模式',
+			anchor: 'patterns',
+		},
+		{
+			type: 'new',
+			name: 'extract patterns',
+			category: 'Validate',
+			description: 'Extract patterns for number, version, integer, decimal, positiveInteger',
+			descriptionZh: '提取模式：数字、版本号、整数、小数、正整数',
+			anchor: 'patterns',
 		},
 	],
 }

@@ -73,6 +73,10 @@ export default {
 		mapTemplateDesc: 'Template string interpolation',
 		wordsDesc: 'Split string into an array of words',
 		templateDesc: 'Simple template engine with variable interpolation and HTML escaping',
+		changeCaseDesc: 'Unified case conversion API supporting all common naming conventions',
+		individualCaseDesc: 'Individual case conversion functions for specific formats',
+		reverseDesc: 'Reverse string with proper Unicode handling (emoji, combining characters, surrogate pairs)',
+		countDesc: 'Count occurrences of a substring with overlapping and case-sensitive options',
 		bytes: 'bytes',
 	},
 

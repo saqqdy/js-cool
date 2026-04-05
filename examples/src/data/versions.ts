@@ -16,9 +16,16 @@ export const versions: Record<string, string> = {
 	unescape: '5.5.0',
 	getCHSLength: '1.0.0',
 	cutCHSString: '1.0.0',
-	mapTemplate: '2.2.0',
 	words: '6.0.0',
 	template: '6.0.0',
+	changeCase: '6.0.0',
+	constantCase: '6.0.0',
+	dotCase: '6.0.0',
+	pascalCase: '6.0.0',
+	titleCase: '6.0.0',
+	swapCase: '6.0.0',
+	reverse: '6.0.0',
+	count: '6.0.0',
 
 	// Array
 	unique: '1.0.0',
@@ -27,6 +34,7 @@ export const versions: Record<string, string> = {
 	groupBy: '2.0.0',
 	keyBy: '2.0.0',
 	flatten: '2.0.0',
+	flattenDeep: '6.0.0',
 	sample: '2.0.0',
 	sampleSize: '2.0.0',
 	sortBy: '1.0.0',
@@ -49,6 +57,9 @@ export const versions: Record<string, string> = {
 	takeRight: '6.0.0',
 	zip: '6.0.0',
 	unzip: '6.0.0',
+	minus: '6.0.0',
+	all: '3.0.0',
+	any: '3.0.0',
 	CSVToArray: '2.0.0',
 	CSVToJSON: '2.0.0',
 	JSONToCSV: '2.0.0',
@@ -71,6 +82,7 @@ export const versions: Record<string, string> = {
 	mapValues: '6.0.0',
 	mergeWith: '6.0.0',
 	transform: '6.0.0',
+	cleanData: '5.0.0',
 
 	// Typecheck
 	isArray: '1.0.0',
@@ -127,8 +139,10 @@ export const versions: Record<string, string> = {
 	getPathname: '6.0.0',
 	getSearch: '6.0.0',
 	getHash: '6.0.0',
-	URL_PATTERNS: '6.0.0',
-	VALUE_MAP: '6.0.0',
+	parseQueryString: '6.0.0',
+	stringifyQueryString: '6.0.0',
+	getQueryParamValue: '6.0.0',
+	setQueryParam: '6.0.0',
 
 	// Dom
 	copy: '1.0.0',
@@ -139,6 +153,10 @@ export const versions: Record<string, string> = {
 	windowSize: '1.0.0',
 	getScrollPosition: '1.0.0',
 	preloader: '1.0.0',
+	download: '6.0.0',
+	downloadFile: '6.0.0',
+	downloadUrlFile: '6.0.0',
+	saveFile: '6.0.0',
 
 	// Scroll (v6.0.0)
 	scroll: '6.0.0',
@@ -146,14 +164,16 @@ export const versions: Record<string, string> = {
 	scrollToTop: '6.0.0',
 	scrollToBottom: '6.0.0',
 	scrollBy: '6.0.0',
-	scrollLock: '6.0.0',
-	scrollUnlock: '6.0.0',
-	scrollToggle: '6.0.0',
+	lockScroll: '6.0.0',
+	unlockScroll: '6.0.0',
+	toggleScroll: '6.0.0',
 	getPosition: '6.0.0',
 	getProgress: '6.0.0',
 	getDirection: '6.0.0',
 	isInViewport: '6.0.0',
 	getScrollbarWidth: '6.0.0',
+	isScrollLocked: '6.0.0',
+	createDirectionTracker: '6.0.0',
 
 	// Storage (v6.0.0 - unified namespace)
 	storage: '6.0.0',
@@ -191,11 +211,31 @@ export const versions: Record<string, string> = {
 	toThousands: '1.0.0',
 
 	// Date
+	date: '6.0.0',
 	formatDate: '6.0.0',
 	dateDiff: '6.0.0',
 	isToday: '6.0.0',
+	isYesterday: '6.0.0',
+	isTomorrow: '6.0.0',
+	isWeekend: '6.0.0',
+	isLeapYear: '6.0.0',
+	isBefore: '6.0.0',
+	isAfter: '6.0.0',
+	isSame: '6.0.0',
+	isBetween: '6.0.0',
 	getDaysInMonth: '6.0.0',
+	getQuarter: '6.0.0',
+	getDayOfYear: '6.0.0',
+	getWeekOfYear: '6.0.0',
 	relativeTime: '6.0.0',
+	addDate: '6.0.0',
+	subtractDate: '6.0.0',
+	startOf: '6.0.0',
+	endOf: '6.0.0',
+	compareDate: '6.0.0',
+	minDate: '6.0.0',
+	maxDate: '6.0.0',
+	DateParser: '6.0.0',
 
 	// Color
 	hexToRGB: '6.0.0',
@@ -215,12 +255,12 @@ export const versions: Record<string, string> = {
 	inBrowser: '1.0.0',
 	inNodeJs: '1.0.0',
 	isDarkMode: '5.0.0',
-	all: '3.0.0',
-	any: '3.0.0',
 	delay: '2.0.0',
 	waiting: '2.0.0',
 	getGlobal: '6.0.0',
 	patterns: '6.0.0',
+	validation: '6.0.0',
+	extract: '6.0.0',
 
 	// Async
 	debounce: '1.0.0',
@@ -228,11 +268,13 @@ export const versions: Record<string, string> = {
 	retry: '2.0.0',
 	punctualTimer: '5.0.0',
 	promiseFactory: '5.0.0',
-	cleanData: '5.0.0',
+	awaitTo: '5.0.0',
 
 	// Encode
 	encodeUtf8: '5.0.0',
 	decodeUtf8: '5.0.0',
+	safeParse: '5.0.0',
+	safeStringify: '5.0.0',
 
 	// Network
 	fillIPv6: '3.0.0',
@@ -261,6 +303,28 @@ export const versions: Record<string, string> = {
 	'binary.hex': '6.0.0',
 	'binary.hash': '6.0.0',
 	'binary.meta': '6.0.0',
+
+	// UA (v6.0.0)
+	ua: '6.0.0',
+	UAParser: '6.0.0',
+	'ua.isMobile': '6.0.0',
+	'ua.isWeChat': '6.0.0',
+	'ua.isiOS': '6.0.0',
+	'ua.isAndroid': '6.0.0',
+	'ua.isHarmonyOS': '6.0.0',
+	'ua.getBrowser': '6.0.0',
+	'ua.getOS': '6.0.0',
+	'ua.getDevice': '6.0.0',
+	'ua.getNetwork': '6.0.0',
+	'ua.getScreen': '6.0.0',
+	'ua.getEnvironment': '6.0.0',
+
+	// External packages
+	loadSource: '5.0.0',
+	mountCss: '5.0.0',
+	mountImg: '5.0.0',
+	mountJs: '5.0.0',
+	mountStyle: '5.0.0',
 }
 
 export function getVersion(name: string): string | undefined {

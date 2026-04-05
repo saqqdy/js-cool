@@ -70,6 +70,10 @@ export default {
 		mapTemplateDesc: '模板字符串插值',
 		wordsDesc: '将字符串拆分为单词数组',
 		templateDesc: '简单模板引擎，支持变量插值和 HTML 转义',
+		changeCaseDesc: '统一的大小写转换 API，支持所有常见的命名规范',
+		individualCaseDesc: '独立的格式转换函数，用于特定格式',
+		reverseDesc: '反转字符串，正确处理 Unicode（emoji、组合字符、代理对）',
+		countDesc: '统计子字符串出现次数，支持重叠匹配和大小写敏感选项',
 		bytes: '字节',
 	},
 

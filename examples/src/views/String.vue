@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { NH1, NSpace, NInput, NInputNumber, NTag, NCode } from 'naive-ui'
+import { NH1, NSpace, NInput, NInputNumber, NTag, NCode, NSwitch, NSelect } from 'naive-ui'
 import FunctionCard from '@/components/FunctionCard.vue'
 import {
 	camel2Dash,
@@ -17,9 +17,17 @@ import {
 	unescape,
 	getCHSLength,
 	cutCHSString,
-	mapTemplate,
 	words,
 	template,
+	changeCase,
+	constantCase,
+	dotCase,
+	pascalCase,
+	titleCase,
+	swapCase,
+	reverse,
+	count,
+	type CaseType,
 } from 'js-cool'
 import { useI18n } from '@/locales'
 
@@ -36,8 +44,6 @@ const htmlInput = ref('<div id="test">Hello <b>World</b></div>')
 const escapeInput = ref('<div>test & "quote"</div>')
 const chsInput = ref('hello世界')
 const chsLen = ref(6)
-const templateInput = ref('Hello, ${name}! You have ${count} messages.')
-const templateData = { name: 'John', count: 5 }
 
 // words function
 const wordsInput = ref('camelCaseHTML')
@@ -57,6 +63,36 @@ const templateRawData = ref('{ "html": "<strong>bold</strong>" }')
 const templateCustomInput = ref('Hello, ${ name }!')
 const templateCustomData = ref('{ "name": "World" }')
 
+// changeCase - unified case conversion
+const changeCaseInput = ref('helloWorld')
+const changeCaseType = ref<CaseType>('kebab')
+const caseTypes: { label: string; value: CaseType }[] = [
+	{ label: 'camel (camelCase)', value: 'camel' },
+	{ label: 'kebab (kebab-case)', value: 'kebab' },
+	{ label: 'snake (snake_case)', value: 'snake' },
+	{ label: 'pascal (PascalCase)', value: 'pascal' },
+	{ label: 'constant (CONSTANT_CASE)', value: 'constant' },
+	{ label: 'dot (dot.case)', value: 'dot' },
+	{ label: 'title (Title Case)', value: 'title' },
+	{ label: 'swap (sWAP cASE)', value: 'swap' },
+	{ label: 'upper (UPPER)', value: 'upper' },
+	{ label: 'lower (lower)', value: 'lower' },
+	{ label: 'upperFirst (UpperFirst)', value: 'upperFirst' },
+	{ label: 'lowerFirst (lowerFirst)', value: 'lowerFirst' },
+]
+
+// Individual case converters
+const caseConverterInput = ref('hello world example')
+
+// reverse function
+const reverseInput = ref('Hello 世界 👋')
+
+// count function
+const countInput = ref('hello hello hello')
+const countSubstring = ref('hello')
+const countOverlapping = ref(false)
+const countCaseSensitive = ref(true)
+
 // Helper to safely parse JSON
 const safeParse = (str: string) => {
 	try {
@@ -71,6 +107,147 @@ const safeParse = (str: string) => {
 	<div>
 		<n-h1>String</n-h1>
 		<p style="color: #666; margin-bottom: 24px">{{ t.categoriesDesc.String }}</p>
+
+		<!-- changeCase - Unified Case Conversion API -->
+		<FunctionCard
+			title="changeCase"
+			:description="t.string.changeCaseDesc || 'Unified case conversion API supporting all common naming conventions'"
+			since="6.0.0"
+			:tags="[t.convert, 'NEW']"
+			:code="`changeCase('helloWorld', 'kebab')     // 'hello-world'
+changeCase('foo-bar', 'camel')      // 'fooBar'
+changeCase('foo_bar', 'pascal')     // 'FooBar'
+changeCase('fooBar', 'snake')       // 'foo_bar'
+changeCase('fooBar', 'constant')    // 'FOO_BAR'
+changeCase('fooBar', 'dot')         // 'foo.bar'
+changeCase('foo bar', 'title')      // 'Foo Bar'
+changeCase('Hello', 'swap')         // 'hELLO'
+changeCase('hello', 'upper')        // 'HELLO'
+changeCase('HELLO', 'lower')        // 'hello'
+changeCase('hello', 'upperFirst')   // 'Hello'
+changeCase('Hello', 'lowerFirst')   // 'hello'`"
+		>
+			<template #input>
+				<n-space vertical>
+					<n-space align="center">
+						<n-input v-model:value="changeCaseInput" style="width: 200px" placeholder="Enter string" />
+						<n-select v-model:value="changeCaseType" :options="caseTypes" style="width: 200px" />
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">changeCase('{{ changeCaseInput }}', '{{ changeCaseType }}')</code>
+						<n-tag type="info">{{ changeCase(changeCaseInput, changeCaseType) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- Individual Case Converters -->
+		<FunctionCard
+			title="constantCase / dotCase / pascalCase / titleCase / swapCase"
+			:description="t.string.individualCaseDesc || 'Individual case conversion functions for specific formats'"
+			since="6.0.0"
+			:tags="[t.convert, 'NEW']"
+			:code="`constantCase('foo-bar')   // 'FOO_BAR'
+dotCase('fooBar')        // 'foo.bar'
+pascalCase('foo_bar')    // 'FooBar'
+titleCase('hello world') // 'Hello World'
+swapCase('Hello World')  // 'hELLO wORLD'`"
+		>
+			<template #input>
+				<n-input v-model:value="caseConverterInput" style="width: 300px" placeholder="Enter string" />
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">constantCase</code>
+						<n-tag type="info">{{ constantCase(caseConverterInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">dotCase</code>
+						<n-tag type="info">{{ dotCase(caseConverterInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">pascalCase</code>
+						<n-tag type="info">{{ pascalCase(caseConverterInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">titleCase</code>
+						<n-tag type="info">{{ titleCase(caseConverterInput) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline">swapCase</code>
+						<n-tag type="info">{{ swapCase(caseConverterInput) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- reverse - Reverse string (Unicode aware) -->
+		<FunctionCard
+			title="reverse"
+			:description="t.string.reverseDesc || 'Reverse string with proper Unicode handling (emoji, combining characters, surrogate pairs)'"
+			since="6.0.0"
+			:tags="[t.convert, 'NEW']"
+			:code="`reverse('hello')     // 'olleh'
+reverse('你好世界')   // '界世好你'
+reverse('Hello 世界') // '界世 olleH'
+reverse('👋🏻')        // '👋🏻' (emoji preserved)`"
+		>
+			<template #input>
+				<n-input v-model:value="reverseInput" style="width: 300px" placeholder="Enter string to reverse" />
+			</template>
+			<template #result>
+				<n-space align="center">
+					<code class="code-inline">reverse('{{ reverseInput }}')</code>
+					<n-tag type="info">{{ reverse(reverseInput) }}</n-tag>
+				</n-space>
+			</template>
+		</FunctionCard>
+
+		<!-- count - Count substring occurrences -->
+		<FunctionCard
+			title="count"
+			:description="t.string.countDesc || 'Count occurrences of a substring with overlapping and case-sensitive options'"
+			since="6.0.0"
+			:tags="['NEW']"
+			:code="`count('hello hello hello', 'hello')  // 3
+count('aaa', 'aa')                  // 1 (non-overlapping)
+count('aaa', 'aa', { overlapping: true })  // 2
+count('Hello World', 'hello', { caseSensitive: false })  // 1`"
+		>
+			<template #input>
+				<n-space vertical>
+					<n-input v-model:value="countInput" style="width: 300px" placeholder="String to search" />
+					<n-space align="center">
+						<n-input v-model:value="countSubstring" style="width: 150px" placeholder="Substring" />
+						<n-space>
+							<span style="font-size: 12px; color: #666">overlapping:</span>
+							<n-switch v-model:value="countOverlapping" size="small" />
+						</n-space>
+						<n-space>
+							<span style="font-size: 12px; color: #666">caseSensitive:</span>
+							<n-switch v-model:value="countCaseSensitive" size="small" />
+						</n-space>
+					</n-space>
+				</n-space>
+			</template>
+			<template #result>
+				<n-space vertical>
+					<n-space align="center">
+						<code class="code-inline">count('{{ countInput }}', '{{ countSubstring }}')</code>
+						<n-tag type="info">{{ count(countInput, countSubstring) }}</n-tag>
+					</n-space>
+					<n-space align="center">
+						<code class="code-inline" style="font-size: 11px">with options</code>
+						<n-tag type="info">{{ count(countInput, countSubstring, { overlapping: countOverlapping, caseSensitive: countCaseSensitive }) }}</n-tag>
+					</n-space>
+				</n-space>
+			</template>
+		</FunctionCard>
 
 		<FunctionCard
 			title="camel2Dash / dash2Camel"
@@ -179,10 +356,10 @@ capitalize('hello world') // 'Hello world'`"
 			:description="t.string.truncateDesc"
 			since="1.0.0"
 			:code="`truncate('hi-diddly-ho there, neighborino')
-	// 'hi-diddly-ho there, neighbo...'
+		// 'hi-diddly-ho there, neighbo...'
 
 truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
-	// 'hi-diddly-ho there,...'`"
+		// 'hi-diddly-ho there,...'`"
 		>
 			<template #input>
 				<n-space vertical>
@@ -299,24 +476,6 @@ truncate('hi-diddly-ho there, neighborino', { separator: ' ' })
 		</FunctionCard>
 
 		<FunctionCard
-			title="mapTemplate"
-			:description="t.string.mapTemplateDesc"
-			since="2.2.0"
-			:result="mapTemplate(templateInput, templateData)"
-			:code="`const data = ${JSON.stringify(templateData)}\nmapTemplate('${templateInput}', data) // '${mapTemplate(templateInput, templateData)}'`"
-		>
-			<template #input>
-				<n-space vertical>
-					<n-input v-model:value="templateInput" style="width: 100%" />
-					<n-space align="center">
-						<span style="color: #999; font-size: 12px">data:</span>
-						<n-tag type="info" size="small">{{ JSON.stringify(templateData) }}</n-tag>
-					</n-space>
-				</n-space>
-			</template>
-		</FunctionCard>
-
-		<FunctionCard
 			title="words"
 			:description="t.string.wordsDesc || 'Split string into an array of words'"
 			since="6.0.0"
@@ -352,7 +511,7 @@ words('hello world', /\\w+/g) // ['hello', 'world']`"
 
 		<FunctionCard
 			title="template"
-			:description="t.string.templateDesc || 'Simple template engine with variable interpolation and HTML escaping'"
+			:description="t.string.templateDesc || 'Template string interpolation with custom delimiters, nested properties, and HTML escaping'"
 			since="6.0.0"
 			:tags="[t.convert]"
 			:code="`const compiled = template('Hello, {{ name }}!')
