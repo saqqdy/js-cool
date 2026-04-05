@@ -162,11 +162,12 @@ const stopTimer = () => {
 		<FunctionCard
 			title="debounce"
 			description="Execute after delay, reset on each input. Supports: leading, trailing, maxWait, cancel(), flush(), pending()"
-			since="1.0.0"
+			since="6.0.0"
 			:code="`const handler = debounce(fn, 300)
-const handler = debounce(fn, 300, { leading: true })
+const handler = debounce(fn, 300, { leading: true, maxWait: 1000 })
 handler.cancel() // cancel pending
-handler.flush() // execute immediately`"
+handler.flush() // execute immediately
+handler.pending() // check if pending`"
 		>
 			<template #input>
 				<n-input
@@ -195,13 +196,13 @@ handler.flush() // execute immediately`"
 		<!-- throttle -->
 		<FunctionCard
 			title="throttle"
-			description="Execute at most once per interval (1000ms)"
-			since="1.0.0"
-			:code="`const handler = throttle((val) => {
-  console.log(val)
-}, 1000)
-
-handler('input') // executes at most once per second`"
+			description="Execute at most once per interval (1000ms). Supports: leading, trailing, cancel(), flush(), pending()"
+			since="6.0.0"
+			:code="`const handler = throttle(fn, 300)
+const handler = throttle(fn, 300, { leading: true, trailing: true })
+handler.cancel() // cancel pending
+handler.flush() // execute immediately
+handler.pending() // check if pending`"
 		>
 			<template #input>
 				<n-input

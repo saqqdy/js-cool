@@ -1,6 +1,6 @@
 # debounce <Badge type="info" text="since v6.0.0" />
 
-Debounce function that delays invoking the function until after the specified wait time has elapsed since the last call.
+Debounce function that delays invoking the function until after the specified wait time has elapsed since the last call. If `maxWait` is provided, it will also throttle to ensure the function is called at most once within the `maxWait` period.
 
 ## Usage
 
@@ -15,12 +15,19 @@ function debounce<T extends AnyFunction>(
   fn: T,
   wait?: number,
   options?: DebounceOptions
-): T & { cancel: () => void; flush: () => void; pending: () => boolean }
+): DebouncedFunction<T>
 
 interface DebounceOptions {
   leading?: boolean
   trailing?: boolean
   maxWait?: number
+}
+
+interface DebouncedFunction<T extends AnyFunction> {
+  (...args: Parameters<T>): ReturnType<T> | undefined
+  cancel: () => void
+  flush: () => ReturnType<T> | undefined
+  pending: () => boolean
 }
 ```
 
@@ -38,11 +45,11 @@ interface DebounceOptions {
 | ---------- | --------- | --------------------------------------------------------- |
 | `leading`  | `boolean` | Whether to execute on the leading edge (default: `false`) |
 | `trailing` | `boolean` | Whether to execute on the trailing edge (default: `true`) |
-| `maxWait`  | `number`  | Maximum waiting time                                      |
+| `maxWait`  | `number`  | Maximum waiting time for throttling behavior              |
 
 ## Returns
 
-`T & { cancel: () => void; flush: () => void; pending: () => boolean }` - The debounced function with additional methods:
+`DebouncedFunction<T>` - The debounced function with additional methods:
 
 - `cancel()` - Cancel pending execution
 - `flush()` - Flush immediately and execute
@@ -58,6 +65,9 @@ const debouncedFn = debounce(() => {
 
 // With options
 const debouncedFn = debounce(fn, 300, { leading: true, trailing: true })
+
+// Using maxWait for throttle-like behavior
+const debouncedFn = debounce(fn, 300, { maxWait: 1000 })
 
 // Cancel pending execution
 debouncedFn.cancel()

@@ -1,6 +1,6 @@
 # throttle <Badge type="info" text="since v6.0.0" />
 
-Throttle function that limits the rate at which the function can be invoked.
+Throttle function that limits the function to execute at most once in a specified time period. Implemented using debounce with `maxWait` equal to the wait time.
 
 ## Usage
 
@@ -15,11 +15,18 @@ function throttle<T extends AnyFunction>(
   fn: T,
   wait?: number,
   options?: ThrottleOptions
-): T & { cancel: () => void; flush: () => void }
+): DebouncedFunction<T>
 
 interface ThrottleOptions {
   leading?: boolean
   trailing?: boolean
+}
+
+interface DebouncedFunction<T extends AnyFunction> {
+  (...args: Parameters<T>): ReturnType<T> | undefined
+  cancel: () => void
+  flush: () => ReturnType<T> | undefined
+  pending: () => boolean
 }
 ```
 
@@ -40,10 +47,11 @@ interface ThrottleOptions {
 
 ## Returns
 
-`T & { cancel: () => void; flush: () => void }` - The throttled function with additional methods:
+`DebouncedFunction<T>` - The throttled function with additional methods:
 
 - `cancel()` - Cancel pending execution
 - `flush()` - Flush immediately and execute
+- `pending()` - Check if there is a pending execution
 
 ## Examples
 
@@ -61,6 +69,11 @@ throttledFn.cancel()
 
 // Flush immediately
 throttledFn.flush()
+
+// Check if pending
+if (throttledFn.pending()) {
+  console.log('Execution is pending')
+}
 ```
 
 ## Related

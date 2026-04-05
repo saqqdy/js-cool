@@ -41,7 +41,7 @@ export { default as zip } from './zip'
 
 // ==================== Async Flow ====================
 export { default as awaitTo } from 'await-to-done'
-export { default as debounce, type DebounceOptions } from './debounce'
+export { default as debounce, type DebounceOptions, type DebouncedFunction } from './debounce'
 export { default as delay } from './delay'
 export { default as promiseFactory } from './promiseFactory'
 export { default as punctualTimer, type PunctualTimerReturns } from './punctualTimer'

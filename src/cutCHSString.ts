@@ -1,3 +1,5 @@
+import getCHSLength, { isFullWidth } from './getCHSLength'
+
 /**
  * Intercept string, Chinese counts as 2 bytes
  *
@@ -25,37 +27,38 @@
  * ```
  * @since 1.0.1
  * @param str - the string to be intercepted
- * @param len - the length to intercept (default: string length)
+ * @param len - the length to intercept (default: string byte length)
  * @param hasDot - whether to add ellipsis when truncated (default: false)
  * @returns - the intercepted string
  */
-function cutCHSString(str: string, len: number = str.length, hasDot = false): string {
+function cutCHSString(str: string, len?: number, hasDot = false): string {
 	if (!str) return ''
-	let newLength = 0,
-		newStr = '',
-		singleChar = ''
-	// eslint-disable-next-line no-control-regex, regexp/no-control-character
-	const chineseRegex = /[^\x00-\xFF]/g
-	const strLength = str.replace(chineseRegex, '**').length
 
-	for (let i = 0; i < strLength; i++) {
-		singleChar = str.charAt(i).toString()
-		if (singleChar.match(chineseRegex) != null) {
-			newLength += 2
-		} else {
-			newLength++
-		}
-		if (newLength > len) {
+	const byteLength = getCHSLength(str)
+	const targetLen = len ?? byteLength
+
+	// If target length is >= string byte length, return as-is
+	if (targetLen >= byteLength) {
+		return str
+	}
+
+	let currentLength = 0,
+	 result = ''
+
+	for (const char of str) {
+		const charLen = isFullWidth(char) ? 2 : 1
+		if (currentLength + charLen > targetLen) {
 			break
 		}
-		newStr += singleChar
+		result += char
+		currentLength += charLen
 	}
 
-	if (hasDot && strLength > len) {
-		newStr += '...'
+	if (hasDot) {
+		result += '...'
 	}
 
-	return newStr
+	return result
 }
 
 export default cutCHSString

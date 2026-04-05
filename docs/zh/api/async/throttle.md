@@ -1,6 +1,6 @@
 # throttle <Badge type="info" text="v6.0.0" />
 
-节流函数，限制函数在一定时间内只能执行一次。
+节流函数，限制函数在一定时间内只能执行一次。基于 debounce 实现，通过设置 `maxWait` 等于 `wait` 来实现节流效果。
 
 ## 用法
 
@@ -15,11 +15,18 @@ function throttle<T extends AnyFunction>(
   fn: T,
   wait?: number,
   options?: ThrottleOptions
-): T & { cancel: () => void; flush: () => void }
+): DebouncedFunction<T>
 
 interface ThrottleOptions {
   leading?: boolean
   trailing?: boolean
+}
+
+interface DebouncedFunction<T extends AnyFunction> {
+  (...args: Parameters<T>): ReturnType<T> | undefined
+  cancel: () => void
+  flush: () => ReturnType<T> | undefined
+  pending: () => boolean
 }
 ```
 
@@ -40,10 +47,11 @@ interface ThrottleOptions {
 
 ## 返回值
 
-`T & { cancel: () => void; flush: () => void }` - 返回节流后的函数，带有以下附加方法：
+`DebouncedFunction<T>` - 返回节流后的函数，带有以下附加方法：
 
 - `cancel()` - 取消待执行的函数
 - `flush()` - 立即执行并清空待执行的函数
+- `pending()` - 检查是否有待执行的函数
 
 ## 示例
 
@@ -61,6 +69,11 @@ throttledFn.cancel()
 
 // 立即执行
 throttledFn.flush()
+
+// 检查是否有待执行
+if (throttledFn.pending()) {
+  console.log('有待执行的函数')
+}
 ```
 
 ## 相关

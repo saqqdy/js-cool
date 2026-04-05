@@ -1,4 +1,5 @@
 import type { AnyFunction } from './types'
+import debounce, { type DebouncedFunction } from './debounce'
 
 export interface ThrottleOptions {
 	/**
@@ -13,6 +14,9 @@ export interface ThrottleOptions {
 
 /**
  * Throttle function
+ *
+ * Throttling ensures a function is called at most once in a specified time period.
+ * It's implemented using debounce with maxWait equal to wait time.
  *
  * @example
  * ```ts
@@ -41,81 +45,15 @@ function throttle<T extends AnyFunction>(
 	fn: T,
 	wait = 0,
 	options: ThrottleOptions = {}
-): T & { cancel: () => void; flush: () => void } {
+): DebouncedFunction<T> {
 	const { leading = true, trailing = true } = options
 
-	let timer: ReturnType<typeof setTimeout> | null = null,
-		lastArgs: any[] | null = null,
-		lastThis: any = null,
-		lastCallTime = 0,
-		result: any
-
-	function invokeFunc(): any {
-		const args = lastArgs
-		const thisArg = lastThis
-
-		lastArgs = null
-		lastThis = null
-
-		if (args) {
-			result = fn.apply(thisArg, args)
-		}
-		return result
-	}
-
-	function throttled(this: any, ...args: Parameters<T>): any {
-		const time = Date.now()
-
-		if (!lastCallTime && !leading) {
-			lastCallTime = time
-		}
-
-		const remaining = wait - (time - lastCallTime)
-
-		lastArgs = args
-		// eslint-disable-next-line ts/no-this-alias
-		lastThis = this
-
-		if (remaining <= 0 || remaining > wait) {
-			if (timer) {
-				clearTimeout(timer)
-				timer = null
-			}
-			lastCallTime = time
-			result = invokeFunc()
-		} else if (!timer && trailing) {
-			timer = setTimeout(() => {
-				lastCallTime = leading ? Date.now() : 0
-				timer = null
-				if (trailing && lastArgs) {
-					invokeFunc()
-				}
-			}, remaining)
-		}
-
-		return result
-	}
-
-	throttled.cancel = function () {
-		if (timer) {
-			clearTimeout(timer)
-			timer = null
-		}
-		lastCallTime = 0
-		lastArgs = null
-		lastThis = null
-	}
-
-	throttled.flush = function () {
-		if (timer) {
-			clearTimeout(timer)
-			timer = null
-			return invokeFunc()
-		}
-		return result
-	}
-
-	return throttled as T & { cancel: () => void; flush: () => void }
+	// Throttle is essentially debounce with maxWait equal to wait
+	return debounce(fn, wait, {
+		leading,
+		trailing,
+		maxWait: wait
+	})
 }
 
 export default throttle

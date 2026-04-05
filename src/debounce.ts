@@ -15,8 +15,19 @@ export interface DebounceOptions {
 	trailing?: boolean
 }
 
+export interface DebouncedFunction<T extends AnyFunction> {
+	(...args: Parameters<T>): ReturnType<T> | undefined
+	cancel: () => void
+	flush: () => ReturnType<T> | undefined
+	pending: () => boolean
+}
+
 /**
  * Debounce function
+ *
+ * Debouncing ensures a function is called after a specified delay since the last invocation.
+ * If maxWait is provided, it will also throttle to ensure the function is called at most
+ * once within the maxWait period.
  *
  * @example
  * ```ts
@@ -33,6 +44,9 @@ export interface DebounceOptions {
  *
  * // Flush immediately
  * debouncedFn.flush()
+ *
+ * // Check if there's a pending execution
+ * debouncedFn.pending()
  * ```
  *
  * @since 6.0.0
@@ -45,16 +59,19 @@ function debounce<T extends AnyFunction>(
 	fn: T,
 	wait = 0,
 	options: DebounceOptions = {}
-): T & { cancel: () => void; flush: () => void; pending: () => boolean } {
+): DebouncedFunction<T> {
 	const { leading = false, maxWait, trailing = true } = options
 
 	let timer: ReturnType<typeof setTimeout> | null = null,
 		lastCallTime = 0,
-		lastArgs: any[] | null = null,
+		lastArgs: Parameters<T> | null = null,
 		lastThis: any = null,
-		result: any
+		result: ReturnType<T> | undefined
 
-	function invokeFunc(): any {
+	const maxing = maxWait !== undefined
+	const maxWaitTime = maxing ? Math.max(maxWait, wait) : 0
+
+	function invokeFunc(): ReturnType<T> | undefined {
 		const args = lastArgs
 		const thisArg = lastThis
 
@@ -73,13 +90,49 @@ function debounce<T extends AnyFunction>(
 		timer = setTimeout(pendingFunc, waitTime)
 	}
 
-	function shouldCallLeading(time: number): boolean {
-		return leading && lastCallTime !== time
+	function remainingWait(time: number): number {
+		const timeSinceLastCall = time - lastCallTime
+		const remaining = wait - timeSinceLastCall
+		return maxing ? Math.min(remaining, maxWaitTime - timeSinceLastCall) : remaining
 	}
 
-	function debounced(this: any, ...args: Parameters<T>): any {
+	function shouldInvoke(time: number): boolean {
+		const timeSinceLastCall = time - lastCallTime
+
+		// First call or system time went backwards
+		if (timeSinceLastCall < 0 || timeSinceLastCall >= wait) {
+			return true
+		}
+		// Max wait exceeded (throttle behavior)
+		if (maxing && timeSinceLastCall >= maxWaitTime) {
+			return true
+		}
+		return false
+	}
+
+	function timerExpired(): void {
 		const time = Date.now()
-		const isInvoking = shouldCallLeading(time) || (!timer && trailing)
+		const isInvoking = shouldInvoke(time)
+
+		if (isInvoking) {
+			if (timer) {
+				clearTimeout(timer)
+				timer = null
+			}
+			lastCallTime = time
+			// Execute trailing edge
+			if (trailing && lastArgs) {
+				invokeFunc()
+			}
+		} else {
+			// Restart timer for remaining wait
+			startTimer(timerExpired, remainingWait(time))
+		}
+	}
+
+	function debounced(this: any, ...args: Parameters<T>): ReturnType<T> | undefined {
+		const time = Date.now()
+		const isInvoking = shouldInvoke(time)
 
 		lastArgs = args
 		// eslint-disable-next-line ts/no-this-alias
@@ -88,35 +141,26 @@ function debounce<T extends AnyFunction>(
 		if (isInvoking) {
 			if (!timer) {
 				lastCallTime = time
+				// Execute on leading edge
 				if (leading) {
-					invokeFunc()
+					return invokeFunc()
 				}
 			}
-		}
-
-		if (timer) {
-			clearTimeout(timer)
-		}
-
-		if (maxWait !== undefined) {
-			const timeSinceLastCall = time - lastCallTime
-			if (timeSinceLastCall >= maxWait) {
-				invokeFunc()
-				return result
+			// Handle maxWait (throttle behavior)
+			if (maxing) {
+				startTimer(timerExpired, remainingWait(time))
+				return invokeFunc()
 			}
 		}
 
-		startTimer(() => {
-			if (trailing) {
-				invokeFunc()
-			}
-			timer = null
-		}, wait)
+		if (!timer) {
+			startTimer(timerExpired, remainingWait(time))
+		}
 
 		return result
 	}
 
-	debounced.cancel = function () {
+	debounced.cancel = function (): void {
 		if (timer) {
 			clearTimeout(timer)
 			timer = null
@@ -126,7 +170,7 @@ function debounce<T extends AnyFunction>(
 		lastCallTime = 0
 	}
 
-	debounced.flush = function () {
+	debounced.flush = function (): ReturnType<T> | undefined {
 		if (timer) {
 			clearTimeout(timer)
 			timer = null
@@ -135,11 +179,11 @@ function debounce<T extends AnyFunction>(
 		return result
 	}
 
-	debounced.pending = function () {
+	debounced.pending = function (): boolean {
 		return timer !== null
 	}
 
-	return debounced as T & { cancel: () => void; flush: () => void; pending: () => boolean }
+	return debounced
 }
 
 export default debounce

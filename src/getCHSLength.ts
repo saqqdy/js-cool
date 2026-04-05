@@ -1,4 +1,20 @@
 /**
+ * Check if a character is a full-width character (CJK, emoji, etc.)
+ * Full-width characters count as 2 bytes in display width
+ */
+const isFullWidth = (char: string): boolean => {
+	const code = char.codePointAt(0) ?? 0
+	// CJK Unified Ideographs and extensions
+	// CJK Radicals Supplement, Kangxi Radicals, etc.
+	// Also covers most emoji and other wide characters
+	return (
+		code > 0xFF &&
+		(code < 0x0300 || code > 0x036F) && // Exclude combining diacritical marks
+		!(code >= 0x2000 && code <= 0x206F) // Exclude General Punctuation that might be narrow
+	)
+}
+
+/**
  * Get the length of the text, Chinese counts as 2 bytes
  *
  * @example
@@ -28,8 +44,12 @@
  * @returns - length (Chinese characters count as 2)
  */
 function getCHSLength(str: string): number {
-	// eslint-disable-next-line no-control-regex, regexp/no-control-character
-	return str.replace(/[^\x00-\xFF]/g, '**').length
+	let length = 0
+	for (const char of str) {
+		length += isFullWidth(char) ? 2 : 1
+	}
+	return length
 }
 
 export default getCHSLength
+export { isFullWidth }
