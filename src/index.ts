@@ -54,7 +54,7 @@ export { default as darken } from './darken'
 export { default as hexToRGB, type RGBColor } from './hexToRGB'
 export { default as isLightColor } from './isLightColor'
 export { default as lighten } from './lighten'
-export { default as randomColor } from './randomColor'
+export { default as randomColor, type RandomColorOptions } from './randomColor'
 export { default as RGBToHex } from './RGBToHex'
 export { default as rgbToHSL, type HSLColor } from './rgbToHSL'
 

@@ -4,6 +4,8 @@ import shuffle from './shuffle'
 /**
  * Generate n random integers that sum to a fixed sum
  *
+ * Uses an improved algorithm for better distribution.
+ *
  * @example
  * ```js
  * // Default: single number that sums to 100
@@ -38,20 +40,29 @@ function randomNumbers(n?: number, sum?: number, noZero?: boolean): number[] {
 
 	if (noZero && sum < n) throw new Error('When "noZero" is true, "sum" cannot be less than "n"')
 
-	let _reached = 0
-	// const _max = noZero ? Math.round(sum / n) : Math.ceil(sum / n)
-	const _max = Math.round(sum / n)
-	const numbers = []
+	// Generate n+1 random points to partition the sum
+	const points: number[] = [0, sum]
+	const minValue = noZero ? 1 : 0
 
-	while (--n > 0) {
-		const num = randomNumber(noZero ? 1 : 0, _max)
-
-		_reached += num
-		numbers.push(num)
+	// Generate random breakpoints
+	for (let i = 0; i < n - 1; i++) {
+		// Calculate valid range for breakpoint
+		// Each segment must be at least minValue
+		const maxPoint = sum - minValue * (n - 1 - i)
+		const minPoint = minValue * (i + 1)
+		points.push(randomNumber(minPoint, maxPoint))
 	}
-	numbers.push(sum - _reached)
 
-	return shuffle(numbers)
+	// Sort points to create segments
+	points.sort((a, b) => a - b)
+
+	// Calculate differences between consecutive points
+	const result: number[] = []
+	for (let i = 1; i <= n; i++) {
+		result.push(points[i] - points[i - 1])
+	}
+
+	return shuffle(result)
 }
 
 export default randomNumbers

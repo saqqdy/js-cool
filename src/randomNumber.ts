@@ -1,6 +1,8 @@
 /**
  * Get a random integer
  *
+ * Uses Math.floor for uniform distribution across the range.
+ *
  * @example
  * ```js
  * // Default range (1-10)
@@ -29,7 +31,8 @@
  * @returns - random integer between min and max (inclusive)
  */
 function randomNumber(min = 1, max = 10): number {
-	return min + Math.round(Math.random() * (max - min))
+	// Use floor for uniform distribution (round causes bias at endpoints)
+	return Math.floor(min + Math.random() * (max - min + 1))
 }
 
 export default randomNumber
