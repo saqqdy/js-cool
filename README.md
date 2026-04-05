@@ -17,9 +17,10 @@
 
 ## Online Playground
 
-Try js-cool directly in your browser with StackBlitz:
+Try js-cool directly in your browser:
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/saqqdy/js-cool/tree/master/examples?terminal=dev)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/saqqdy/js-cool/master?import=true)
 
 ---
 

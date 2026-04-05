@@ -15,6 +15,15 @@
 
 ---
 
+## 在线演示
+
+在浏览器中直接体验 js-cool：
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/saqqdy/js-cool/tree/master/examples?terminal=dev)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/saqqdy/js-cool/master?import=true)
+
+---
+
 ## 安装
 
 ```bash
