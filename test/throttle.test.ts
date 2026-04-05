@@ -123,7 +123,7 @@ describe('throttle', () => {
 	it('should preserve this context', async () => {
 		const obj = {
 			value: 42,
-			method: function () {
+			method () {
 				return this.value
 			}
 		}

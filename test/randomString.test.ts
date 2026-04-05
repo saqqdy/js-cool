@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, afterEach, beforeEach } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import randomString from '../src/randomString'
 
 describe('randomString', () => {

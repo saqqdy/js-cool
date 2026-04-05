@@ -52,7 +52,6 @@ describe('sortPinyin', () => {
 		// null and undefined should be at the end
 		const nullIndex = items.indexOf(null)
 		const undefinedIndex = items.indexOf(undefined)
-		const chineseIndex = items.indexOf('中文')
 		const englishIndex = items.indexOf('English')
 
 		expect(nullIndex).toBeGreaterThan(englishIndex)
