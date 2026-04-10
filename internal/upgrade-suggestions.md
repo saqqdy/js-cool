@@ -1,26 +1,243 @@
 # js-cool 升级优化建议
 
-> ✅ **大部分功能已完成** - 2026-04-02
+> **当前版本**: v6.0.0 (2026-04-05 发布)
+>
+> **v6.1.0 状态**: 📋 计划中，待开发
 >
 > 本文档梳理了 js-cool 的升级优化建议及实施状态。
 
 ---
 
-## 待实现功能汇总
+## 已完成功能汇总（v6.0.0）
 
-### ~~字符串方法（待开发）~~ ✅ 已完成
+### 字符串方法
 
-| 方法       | 描述         | Lodash 对应  | 状态      |
-| ---------- | ------------ | ------------ | --------- |
-| `words`    | 分词         | `_.words`    | ✅ 已完成 |
-| `template` | 模板引擎     | `_.template` | ✅ 已完成 |
+| 方法       | 描述         | Lodash 对应  | 状态        |
+| ---------- | ------------ | ------------ | ----------- |
+| `words`    | 分词         | `_.words`    | ✅ v6.0.0   |
+| `template` | 模板引擎     | `_.template` | ✅ v6.0.0   |
 
-### ~~对象方法（待开发）~~ ✅ 已完成
+### 对象方法
 
-| 方法        | 描述         | Lodash 对应    | 状态      |
-| ----------- | ------------ | -------------- | --------- |
-| `transform` | 对象转换     | `_.transform`  | ✅ 已完成 |
-| `mergeWith` | 自定义合并   | `_.mergeWith`  | ✅ 已完成 |
+| 方法        | 描述         | Lodash 对应    | 状态        |
+| ----------- | ------------ | -------------- | ----------- |
+| `transform` | 对象转换     | `_.transform`  | ✅ v6.0.0   |
+| `mergeWith` | 自定义合并   | `_.mergeWith`  | ✅ v6.0.0   |
+
+---
+
+## v6.1.0 待开发功能
+
+| 功能 | 描述 | 优先级 | 状态 |
+|------|------|--------|------|
+| `truncate` 多字节支持 | byWidth、breakEmoji 选项 | 高 | 📋 计划中 |
+| `randomString` 预设 | hex、alphanum、alpha 预设 | 中 | 📋 计划中 |
+| `clone` 增强 | 支持 Set/Map/TypedArray | 中 | 📋 计划中 |
+| `groupBy` 增强 | 多层级分组 | 中 | 📋 计划中 |
+| `chain` 链式调用 | 流式 API 支持 | 低 | 📋 计划中 |
+
+### 1. `truncate` 多字节字符支持
+
+**现状**：当前只支持字符长度，中文字符和 emoji 计数不准确。
+
+**计划新增选项**：
+
+```ts
+interface TruncateOptions {
+  length?: number
+  omission?: string
+  separator?: string | RegExp
+  /** 按视觉宽度计算（中文=2，emoji=2） */
+  byWidth?: boolean
+  /** 保持 emoji 完整不被截断 */
+  breakEmoji?: boolean
+}
+```
+
+**使用示例**：
+
+```ts
+// 按视觉宽度截断
+truncate('中文截断测试', { length: 6, byWidth: true })
+// '中文截' (中文占2宽度，总宽度=6)
+
+// 保持 emoji 完整
+truncate('Hello 🌍 World', { length: 10, breakEmoji: false })
+// 'Hello 🌍...'
+```
+
+### 2. `randomString` 预设字符集
+
+**现状**：特殊字符集固定，无法快速使用常用字符集。
+
+**计划新增选项**：
+
+```ts
+interface RandomStringOptions {
+  charTypes?: RandomStringCharType | RandomStringCharType[]
+  length?: number
+  noConfuse?: boolean
+  strict?: boolean
+  secure?: boolean
+  /** 预设字符集: 'hex' | 'alphanum' | 'alpha' | 'numeric' */
+  preset?: string
+  /** 自定义字符集 */
+  chars?: string
+}
+```
+
+**使用示例**：
+
+```ts
+// 预设字符集
+randomString({ length: 8, preset: 'hex' })      // 'a3f2b8c1'
+randomString({ length: 8, preset: 'alphanum' }) // 'x7Yz2aB9'
+randomString({ length: 8, preset: 'alpha' })    // 'aBcDeFgH'
+randomString({ length: 8, preset: 'numeric' })  // '84729136'
+
+// 自定义字符集
+randomString({ length: 16, chars: 'abcdef0123456789' })
+// 'a3f2b8c1d4e5f6a7'
+```
+
+### 3. `clone` 增强
+
+**现状**：当前代码注释明确写了 "Buffer, Promise, Set, Map are not supported"。
+
+**计划新增支持**：
+
+```ts
+function clone<T>(parent: T): T {
+  // ... 现有实现
+
+  // 新增类型支持
+  if (parent instanceof Set) {
+    return new Set([...parent].map(_clone)) as T
+  }
+  if (parent instanceof Map) {
+    return new Map([...parent].map(([k, v]) => [_clone(k), _clone(v)])) as T
+  }
+  if (ArrayBuffer.isView(parent)) {
+    return new (parent.constructor as any)(parent) as T
+  }
+  if (parent instanceof Promise) {
+    return parent.then(_clone) as T
+  }
+  // ...
+}
+```
+
+**使用示例**：
+
+```ts
+// Set 克隆
+const set = new Set([1, 2, 3])
+const clonedSet = clone(set) // Set {1, 2, 3}
+
+// Map 克隆
+const map = new Map([['a', 1], ['b', 2]])
+const clonedMap = clone(map) // Map {'a' => 1, 'b' => 2}
+
+// TypedArray 克隆
+const arr = new Uint8Array([1, 2, 3])
+const clonedArr = clone(arr) // Uint8Array [1, 2, 3]
+```
+
+### 4. `groupBy` 多层级分组
+
+**现状**：当前只支持单字段分组。
+
+**计划增强**：
+
+```ts
+// 支持数组形式的多字段分组
+function groupBy<T>(
+  array: T[],
+  iteratee: keyof T | ((value: T) => string) | (keyof T)[]
+): Record<string, T[]>
+```
+
+**使用示例**：
+
+```ts
+const users = [
+  { department: 'tech', team: 'frontend', name: 'Alice' },
+  { department: 'tech', team: 'backend', name: 'Bob' },
+  { department: 'tech', team: 'frontend', name: 'Charlie' },
+  { department: 'hr', team: 'recruit', name: 'David' },
+]
+
+// 单字段分组（当前支持）
+groupBy(users, 'department')
+// { tech: [...], hr: [...] }
+
+// 多字段分组（计划支持）
+groupBy(users, ['department', 'team'])
+// {
+//   'tech.frontend': [...],
+//   'tech.backend': [...],
+//   'hr.recruit': [...]
+// }
+```
+
+### 5. `chain` 链式调用支持
+
+**现状**：无链式调用支持，需要嵌套函数调用。
+
+**计划新增**：
+
+```ts
+class Chain<T> {
+  private value: T
+
+  constructor(value: T) {
+    this.value = value
+  }
+
+  // 字符串方法
+  trim(): Chain<string>
+  lowerCase(): Chain<string>
+  upperCase(): Chain<string>
+  kebabCase(): Chain<string>
+  snakeCase(): Chain<string>
+  capitalize(): Chain<string>
+  truncate(options: TruncateOptions): Chain<string>
+
+  // 数组方法
+  map<U>(fn: (value: T) => U): Chain<U[]>
+  filter(predicate: (value: T) => boolean): Chain<T[]>
+  take(n: number): Chain<T[]>
+  drop(n: number): Chain<T[]>
+  unique(): Chain<T[]>
+  sortBy(key: keyof T): Chain<T[]>
+
+  // 输出
+  value(): T
+}
+
+function chain<T>(value: T): Chain<T>
+```
+
+**使用示例**：
+
+```ts
+// 字符串处理链
+chain('  Hello World  ')
+  .trim()
+  .lowerCase()
+  .kebabCase()
+  .truncate(10)
+  .value()
+// 'hello-worl...'
+
+// 数组处理链
+chain([3, 1, 4, 1, 5, 9, 2, 6])
+  .unique()
+  .sortBy()
+  .take(5)
+  .value()
+// [1, 2, 3, 4, 5]
+```
 
 ---
 
@@ -870,7 +1087,7 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ## 六、实施路线图
 
-### Phase 1: 核心功能增强（v6.1）✅ 已完成
+### Phase 1: 核心功能增强 ✅ v6.0.0 已发布
 
 | 任务                             | 优先级 | 状态      |
 | -------------------------------- | ------ | --------- |
@@ -880,50 +1097,55 @@ const lodashCompatPlugin: JsCoolPlugin = {
 | 完善 TypeScript 类型定义         | 中     | ✅ 已完成 |
 | 增加边界测试                     | 中     | ✅ 已完成 |
 
-### Phase 2: 性能与体验优化（v6.2）⏳ 进行中
+### Phase 2: 功能增强与优化（v6.1.0）📋 计划中
 
-| 任务             | 优先级 | 状态      |
-| ---------------- | ------ | --------- |
-| 增强 `clone` 方法 | 中     | ⏳ 可选   |
-| 增强 `groupBy` 方法 | 中   | ⏳ 可选   |
-| 深拷贝性能优化   | 高     | ⏳ 可选   |
-| 日期解析增强     | 中     | ⏳ 可选   |
+| 任务                        | 优先级 | 状态      |
+| --------------------------- | ------ | --------- |
+| `truncate` 多字节字符支持   | 高     | 📋 计划中 |
+| `randomString` 预设字符集   | 中     | 📋 计划中 |
+| 增强 `clone` 支持 Set/Map   | 中     | 📋 计划中 |
+| 增强 `groupBy` 多层级分组   | 中     | 📋 计划中 |
+| 链式调用支持 `chain`        | 低     | 📋 计划中 |
 
-### Phase 3: 生态建设（v6.3）📋 计划中
+### Phase 3: 性能与生态（v6.2.0）📋 计划中
 
-| 任务            | 优先级 | 状态      |
-| --------------- | ------ | --------- |
-| 插件机制        | 低     | 📋 计划中 |
-| VS Code 扩展    | 低     | 📋 计划中 |
-| 迁移指南        | 中     | 📋 计划中 |
-| Lodash 兼容插件 | 低     | 📋 计划中 |
+| 任务                | 优先级 | 状态      |
+| ------------------- | ------ | --------- |
+| 深拷贝性能优化      | 高     | 📋 计划中 |
+| 日期解析增强        | 中     | 📋 计划中 |
+| 插件机制            | 低     | 📋 计划中 |
+| VS Code 扩展        | 低     | 📋 计划中 |
+| Lodash 迁移指南     | 中     | 📋 计划中 |
 
 ---
 
 ## 七、优先级总结
 
-### 已完成（P0）✅
+### v6.0.0 已发布 ✅
 
 1. ✅ 新增高频数组方法：`take`、`findIndex`、`partition`、`countBy`、`zip`、`unzip`
 2. ✅ 新增对象方法：`mapValues`、`mapKeys`、`invert`
 3. ✅ 完善 TypeScript 类型定义
 4. ✅ 提升测试覆盖率（140+ 测试文件）
+5. ✅ `binary` 模块、`Url` 类、`DateParser` 类、`scroll` 模块等
 
-### 可选增强（P1）⏳
+### v6.1.0 计划中 📋
 
-1. 增强 `clone` 支持 Set/Map/TypedArray
-2. 增强 `formatDate` 支持更多格式
-3. 优化深拷贝性能
-4. 完善 API 文档
+1. `truncate` 多字节字符支持（byWidth、breakEmoji）
+2. `randomString` 预设字符集（hex、alphanum、alpha）
+3. 增强 `clone` 支持 Set/Map/TypedArray
+4. 增强 `groupBy` 多层级分组
+5. 链式调用支持 `chain`
 
-### 计划中（P2）📋
+### v6.2.0 计划中 📋
 
-1. 链式调用支持
-2. 插件机制
-3. VS Code 扩展
-4. Lodash 迁移指南
+1. 深拷贝性能优化（使用 `structuredClone`）
+2. 日期解析增强
+3. 插件机制
+4. VS Code 扩展
+5. Lodash 迁移指南
 
-### 暂无计划（P3）
+### 暂无计划
 
 1. Schema 验证功能
 2. 惰性求值
@@ -955,19 +1177,11 @@ const lodashCompatPlugin: JsCoolPlugin = {
 
 ---
 
-> 文档更新时间：2026-04-02
+> 文档更新时间：2026-04-10
 >
-> 基于 js-cool v6.0.0 版本分析
+> **当前版本**: v6.0.0
 >
-> **所有计划功能已完成！**
->
-> **本次新增功能**:
-> - ✅ `words` - 分词（支持 camelCase、PascalCase、snake_case、kebab-case）
-> - ✅ `template` - 模板引擎（支持自定义分隔符、HTML 转义、嵌套属性）
-> - ✅ `transform` - 对象转换（支持数组/对象转换、提前退出）
-> - ✅ `mergeWith` - 自定义合并（支持自定义合并策略）
->
-> **之前已完成功能**:
+> **v6.0.0 已发布功能**:
 > - ✅ `binary` 模块 - 统一二进制转换 API，支持链式调用、哈希计算、元数据提取
 > - ✅ `ua` 模块重构 - 支持 HarmonyOS、iPadOS、钉钉、抖音等检测
 > - ✅ `Url` 类 - 支持 search/hash 双参数系统，链式构建
@@ -976,7 +1190,18 @@ const lodashCompatPlugin: JsCoolPlugin = {
 > - ✅ `storage` 模块 - 统一存储 API，支持过期时间
 > - ✅ `patterns` 模块 - 统一正则模式管理
 > - ✅ 子路径导入 - 支持 tree-shaking
+> - ✅ `words` - 分词（支持 camelCase、PascalCase、snake_case、kebab-case）
+> - ✅ `template` - 模板引擎（支持自定义分隔符、HTML 转义、嵌套属性）
+> - ✅ `transform` - 对象转换（支持数组/对象转换、提前退出）
+> - ✅ `mergeWith` - 自定义合并（支持自定义合并策略）
 > - ✅ 数组方法增强 - 新增 `take`、`takeRight`、`drop`、`dropRight`、`findIndex`、`findLastIndex`、`partition`、`countBy`、`zip`、`unzip`、`differenceBy`、`intersectionBy`、`unionBy`
 > - ✅ 对象方法增强 - 新增 `mapKeys`、`mapValues`、`invert`
 > - ✅ 字符串方法增强 - 新增 `capitalize`、`lowerFirst`
 > - ✅ 140+ 个测试文件
+>
+> **v6.1.0 计划功能（待开发）**:
+> - 📋 `truncate` 多字节字符支持
+> - 📋 `randomString` 预设字符集
+> - 📋 增强 `clone` 支持 Set/Map/TypedArray
+> - 📋 增强 `groupBy` 多层级分组
+> - 📋 链式调用支持 `chain`
